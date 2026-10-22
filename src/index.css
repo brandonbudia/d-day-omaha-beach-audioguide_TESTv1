@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sepia-dark: #2C1810;
+  --color-sepia-mid: #4a3728;
+  --color-khaki: #8B7355;
+  --color-sand: #D4B896;
+  --color-parchment: #F5E6D3;
+  --color-aged-white: #FAF0E6;
+
+  --color-surface: #10141a;
+  --color-surface-dim: #10141a;
+  --color-surface-bright: #353940;
+  --color-surface-container-lowest: #0a0e14;
+  --color-surface-container-low: #181c22;
+  --color-surface-container: #1c2026;
+  --color-surface-container-high: #262a31;
+  --color-surface-container-highest: #31353c;
+  --color-on-surface: #dfe2eb;
+  --color-on-surface-variant: #d0c5af;
+  --color-outline: #99907c;
+  --color-outline-variant: #4d4635;
+  --color-primary: #f2ca50;
+  --color-on-primary: #3c2f00;
+  --color-primary-container: #d4af37;
+  --color-on-primary-container: #554300;
+  --color-secondary: #c3cc8c;
+  --color-on-secondary: #2d3404;
+  --color-secondary-container: #434b18;
+  --color-on-secondary-container: #b1bb7c;
+  --color-tertiary: #c4d3b9;
+  --color-on-tertiary: #273421;
+
+  --font-serif: 'Playfair Display', 'Merriweather', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #10141a;
+    color: #dfe2eb;
+    font-family: 'Source Sans 3', 'Inter', sans-serif;
+  }
+  body {
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Subtle archival grain overlay (pure CSS, no external image) */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbars for slick mobile touch experience */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+}
+
+/* Direct sunlight high contrast mode */
+html.sun-mode {
+  filter: contrast(1.22) brightness(1.08);
+}
+html.high-contrast {
+  --color-surface: #000000;
+  --color-surface-container: #11151c;
+  --color-surface-container-high: #1c222c;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #f0ebe1;
+  --color-primary: #ffd700;
+  --color-on-primary: #000000;
+}
+
+/* Accessibility: enlarged text mode */
+html.large-text {
+  font-size: 114%;
+}

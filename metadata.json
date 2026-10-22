@@ -1,0 +1,6 @@
+{
+  "name": "D-Day Omaha Beach - Audioguide Officiel",
+  "description": "Audioguide officiel du Musée D-Day Omaha à Vierville-sur-Mer. Parcours intérieur des 22 pièces historiques de la collection racontées par Fabien et Antoine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
