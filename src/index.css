@@ -99,3 +99,181 @@ html.high-contrast {
 html.large-text {
   font-size: 114%;
 }
+
+
+/* --- Additive light theme and accessibility refinements from TEST --- */
+/* Complete light theme: surfaces, text and borders change as a system.
+   Use substring selectors so Tailwind opacity variants (e.g. /90 and /95)
+   receive the same treatment as their non-transparent counterparts. */
+html.light-mode,
+html.light-mode body {
+  background-color: #f5f1e8;
+  color: #292820;
+}
+
+/* Main surfaces: preserve a clear hierarchy instead of turning every card white. */
+html.light-mode [class*="bg-[#10141a]"],
+html.light-mode [class*="bg-[#0a0e14]"],
+html.light-mode [class*="bg-[#181c22]"],
+html.light-mode [class*="bg-[#1c2026]"] {
+  background-color: #f5f1e8 !important;
+}
+html.light-mode [class*="bg-[#262a31]"],
+html.light-mode [class*="bg-[#31353c]"] {
+  background-color: #e6dfd2 !important;
+}
+html.light-mode [class*="bg-[#434b18]"] {
+  background-color: #dce3bd !important;
+}
+
+/* Text colors follow the surface they sit on, including translucent badges. */
+html.light-mode [class*="text-[#dfe2eb]"],
+html.light-mode [class*="text-[#dfe8a6]"],
+html.light-mode [class*="text-[#c3cc8c]"],
+html.light-mode [class*="text-[#b1bb7c]"] {
+  color: #424b20 !important;
+}
+html.light-mode [class*="text-[#d0c5af]"] {
+  color: #625a49 !important;
+}
+html.light-mode [class*="text-[#99907c]"] {
+  color: #716650 !important;
+}
+
+/* Borders and dividers stay visible against the light surfaces. */
+html.light-mode [class*="border-[#262a31]"],
+html.light-mode [class*="border-[#31353c]"],
+html.light-mode [class*="border-[#4d4635]"] {
+  border-color: #c9c0b0 !important;
+}
+
+/* Selected navigation and completed-state markers use a coordinated pale green. */
+html.light-mode [class*="ring-[#d4af37]"] {
+  --tw-ring-color: #b8a35b !important;
+}
+/* The welcome cover keeps its dark photographic overlay in both themes.
+   Preserve its light foreground text so it remains readable over the image. */
+html.light-mode .welcome-hero [class*="text-[#dfe2eb]"] {
+  color: #dfe2eb !important;
+}
+html.light-mode .welcome-hero [class*="text-[#d0c5af]"] {
+  color: #d0c5af !important;
+}
+/* Keep the 22 Stations label dark on its pale green light-theme badge. */
+html.light-mode .welcome-hero [class*="text-[#dfe8a6]"] {
+  color: #424b20 !important;
+}
+/* Gold text needs a darker tone on pale surfaces; retain the original gold over the dark welcome photo. */
+html.light-mode [class*="text-[#f2ca50]"] { color: #735900 !important; }
+html.light-mode .welcome-hero [class*="text-[#f2ca50]"] { color: #f2ca50 !important; }
+html.light-mode [class*="bg-[#3c2f00]"] [class*="text-[#f2ca50]"] { color: #f2ca50 !important; }
+html.light-mode .welcome-hero [class*="bg-[#0a0e14]"] {
+  background-color: rgb(10 14 20 / 90%) !important;
+}
+html.light-mode .grain-overlay::after { opacity: 0.012; }
+
+
+/* --- Visual refinement: consistent surfaces, rhythm and accessible states --- */
+:root {
+  color-scheme: dark;
+  --museum-radius-card: 1.125rem;
+  --museum-radius-control: 0.75rem;
+  --museum-focus: #f2ca50;
+}
+html.light-mode { color-scheme: light; }
+html, body, #root { min-height: 100%; }
+body { line-height: 1.5; }
+button, input, select, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, [role="button"]:focus-visible {
+  outline: 3px solid var(--museum-focus);
+  outline-offset: 3px;
+}
+button:disabled { cursor: not-allowed; opacity: .55; }
+img { max-width: 100%; }
+main { isolation: isolate; }
+main > div { min-width: 0; }
+[class*="rounded-xl"], [class*="rounded-2xl"] { scroll-margin-top: 6rem; }
+@media (hover: hover) {
+  button:not(:disabled) { transition-property: color, background-color, border-color, box-shadow, transform, opacity; transition-duration: 180ms; }
+}
+html.light-mode .bg-\[\#10141a\],
+html.light-mode .bg-\[\#0a0e14\],
+html.light-mode .bg-\[\#181c22\],
+html.light-mode .bg-\[\#1c2026\] {
+  color: #292820;
+}
+html.light-mode input,
+html.light-mode select,
+html.light-mode textarea {
+  background-color: #fffdf8 !important;
+  color: #292820 !important;
+  border-color: #c9c0b0 !important;
+}
+html.light-mode input::placeholder { color: #716650 !important; opacity: 1; }
+html.light-mode option { background: #fffdf8; color: #292820; }
+html.light-mode button:focus-visible,
+html.light-mode a:focus-visible,
+html.light-mode input:focus-visible,
+html.light-mode select:focus-visible { outline-color: #6b5b19; }
+html.light-mode .welcome-hero {
+  isolation: isolate;
+  min-height: 21rem;
+}
+.welcome-hero {
+  background-position: center;
+  background-size: cover;
+}
+html.light-mode .welcome-hero .bg-gradient-to-t {
+  --tw-gradient-from: #10141a;
+}
+@media (max-width: 380px) {
+  .welcome-hero { min-height: 19rem; padding: 1rem; }
+  .welcome-hero h2 { font-size: clamp(1.65rem, 8vw, 2rem); }
+  nav[aria-label="Navigation principale"] button { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* Theme toggle reliability: explicit overrides for the app shell and fixed header.
+   Keep this outside Tailwind layers so it wins over utility backgrounds. */
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background-color: #f5f1e8 !important;
+  color: #292820 !important;
+  color-scheme: light;
+}
+html[data-theme="light"] #root,
+html[data-theme="light"] #root > div {
+  background-color: #f5f1e8 !important;
+  color: #292820 !important;
+}
+html[data-theme="light"] header.fixed {
+  background-color: rgb(245 241 232 / 96%) !important;
+  color: #292820 !important;
+  border-color: #c9c0b0 !important;
+}
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background-color: #10141a !important;
+  color: #dfe2eb !important;
+  color-scheme: dark;
+}
+html[data-theme="dark"] #root,
+html[data-theme="dark"] #root > div {
+  background-color: #10141a !important;
+  color: #dfe2eb !important;
+}
+html[data-theme="dark"] header.fixed {
+  background-color: rgb(16 20 26 / 95%) !important;
+  color: #dfe2eb !important;
+  border-color: rgb(38 42 49 / 60%) !important;
+}

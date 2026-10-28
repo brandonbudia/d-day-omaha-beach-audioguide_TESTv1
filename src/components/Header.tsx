@@ -10,19 +10,51 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => {
-  const [isHighContrast, setIsHighContrast] = React.useState(false);
-  const [isLargeText, setIsLargeText] = React.useState(false);
+  const [isHighContrast, setIsHighContrast] = React.useState(() => document.documentElement.classList.contains('high-contrast') || document.documentElement.classList.contains('sun-mode'));
+  const [isLightMode, setIsLightMode] = React.useState(() => {
+    try {
+      const savedTheme = window.localStorage.getItem('dday-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme === 'light';
+    } catch {
+      // Continue using the current document class when storage is unavailable.
+    }
+    return document.documentElement.classList.contains('light-mode');
+  });
+  const [isLargeText, setIsLargeText] = React.useState(() => document.documentElement.classList.contains('large-text'));
   const { isInstallable, isIOS, install } = usePWAInstall();
 
   const toggleContrast = () => {
     const next = !isHighContrast;
     setIsHighContrast(next);
-    if (next) {
-      document.documentElement.classList.add('high-contrast');
-    } else {
-      document.documentElement.classList.remove('high-contrast');
+    // The contrast control owns both the palette adjustments and the
+    // stronger contrast/brightness filter previously tied to "Visite intérieure".
+    document.documentElement.classList.toggle('high-contrast', next);
+    document.documentElement.classList.toggle('sun-mode', next);
+  };
+
+  const applyTheme = (light: boolean) => {
+    // Keep the theme class on both the document root and body so all global
+    // styles and components respond consistently.
+    document.documentElement.classList.toggle('light-mode', light);
+    document.body.classList.toggle('light-mode', light);
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    document.body.dataset.theme = light ? 'light' : 'dark';
+  };
+
+  const toggleTheme = () => {
+    const next = !isLightMode;
+    applyTheme(next);
+    setIsLightMode(next);
+    try {
+      window.localStorage.setItem('dday-theme', next ? 'light' : 'dark');
+    } catch {
+      // The theme still works for this session if storage is unavailable.
     }
   };
+
+  React.useEffect(() => {
+    applyTheme(isLightMode);
+  }, [isLightMode]);
 
   const toggleFontSize = () => {
     const next = !isLargeText;
@@ -51,7 +83,25 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
           </h1>
         </div>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 shrink-0 ml-2">
+          {/* Light / dark theme: added without removing the existing contrast, text-size or profile/install controls. */}
+          <button
+            onClick={toggleTheme}
+            aria-label={t(isLightMode ? 'theme_switch_to_dark' : 'theme_switch_to_light', currentLang)}
+            aria-pressed={isLightMode}
+            title={t(isLightMode ? 'theme_switch_to_dark' : 'theme_switch_to_light', currentLang)}
+            className={`w-10 h-10 flex items-center justify-center rounded-xl border transition-all active:scale-95 ${
+              isLightMode
+                ? 'bg-[#f2ca50] text-[#3c2f00] border-[#f2ca50] shadow-md'
+                : 'bg-[#262a31] border-[#31353c] text-[#d0c5af] hover:text-[#f2ca50] hover:border-[#d4af37]/60'
+            }`}
+            type="button"
+          >
+            <span className="material-symbols-outlined text-[21px]">
+              {isLightMode ? 'light_mode' : 'dark_mode'}
+            </span>
+          </button>
+
           {/* Contrast mode */}
           <button
             onClick={toggleContrast}

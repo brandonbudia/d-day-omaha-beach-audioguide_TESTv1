@@ -112,6 +112,17 @@ export const translations = {
     pwa_ios_step2: '2. Faites défiler et sélectionnez "Sur l’écran d’accueil".',
     close: 'Fermer',
     offline_badge: 'Mode Musée Hors-Ligne Actif — Tout fonctionne sans réseau.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Rechercher une station…',
+    all_sectors: 'Tous les secteurs',
+    no_stations_found: 'Aucune station trouvée',
+    adjust_search_filters: 'Modifiez votre recherche ou vos filtres.',
+    reset_filters: 'Réinitialiser les filtres',
+    enlarge_photo: 'Agrandir la photo',
+    theme_switch_to_light: 'Passer au thème clair',
+    theme_switch_to_dark: 'Passer au thème sombre',
+    visited_stations: 'Stations visitées',
   },
 
   en: {
@@ -201,6 +212,17 @@ export const translations = {
     pwa_ios_step2: '2. Tap "Add to Home Screen".',
     close: 'Close',
     offline_badge: 'Offline Museum Mode Active — No connection needed.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Search exhibits…',
+    all_sectors: 'All sectors',
+    no_stations_found: 'No exhibits found',
+    adjust_search_filters: 'Change your search or filters.',
+    reset_filters: 'Reset filters',
+    enlarge_photo: 'Enlarge photo',
+    theme_switch_to_light: 'Switch to light theme',
+    theme_switch_to_dark: 'Switch to dark theme',
+    visited_stations: 'Exhibits visited',
   },
 
   de: {
@@ -290,6 +312,17 @@ export const translations = {
     pwa_ios_step2: '2. "Zum Home-Bildschirm" wählen.',
     close: 'Schließen',
     offline_badge: 'Offline-Modus aktiv.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Exponat suchen…',
+    all_sectors: 'Alle Bereiche',
+    no_stations_found: 'Keine Exponate gefunden',
+    adjust_search_filters: 'Ändern Sie Ihre Suche oder Filter.',
+    reset_filters: 'Filter zurücksetzen',
+    enlarge_photo: 'Foto vergrößern',
+    theme_switch_to_light: 'Helles Design aktivieren',
+    theme_switch_to_dark: 'Dunkles Design aktivieren',
+    visited_stations: 'Besuchte Exponate',
   },
 
   it: {
@@ -379,6 +412,17 @@ export const translations = {
     pwa_ios_step2: '2. Seleziona "Aggiungi a Home".',
     close: 'Chiudi',
     offline_badge: 'Modalità Offline attiva.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Cerca un oggetto…',
+    all_sectors: 'Tutti i settori',
+    no_stations_found: 'Nessun oggetto trovato',
+    adjust_search_filters: 'Modifica la ricerca o i filtri.',
+    reset_filters: 'Reimposta filtri',
+    enlarge_photo: 'Ingrandisci la foto',
+    theme_switch_to_light: 'Attiva tema chiaro',
+    theme_switch_to_dark: 'Attiva tema scuro',
+    visited_stations: 'Oggetti visitati',
   },
 
   pl: {
@@ -468,6 +512,17 @@ export const translations = {
     pwa_ios_step2: '2. Wybierz "Do ekranu początkowego".',
     close: 'Zamknij',
     offline_badge: 'Tryb offline aktywny.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Szukaj eksponatu…',
+    all_sectors: 'Wszystkie sektory',
+    no_stations_found: 'Nie znaleziono eksponatów',
+    adjust_search_filters: 'Zmień wyszukiwanie lub filtry.',
+    reset_filters: 'Wyczyść filtry',
+    enlarge_photo: 'Powiększ zdjęcie',
+    theme_switch_to_light: 'Włącz jasny motyw',
+    theme_switch_to_dark: 'Włącz ciemny motyw',
+    visited_stations: 'Odwiedzone eksponaty',
   },
 
   nl: {
@@ -557,6 +612,17 @@ export const translations = {
     pwa_ios_step2: '2. Tik op "Zet op beginscherm".',
     close: 'Sluiten',
     offline_badge: 'Offline-modus actief.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Zoek een object…',
+    all_sectors: 'Alle sectoren',
+    no_stations_found: 'Geen objecten gevonden',
+    adjust_search_filters: 'Pas je zoekopdracht of filters aan.',
+    reset_filters: 'Filters wissen',
+    enlarge_photo: 'Foto vergroten',
+    theme_switch_to_light: 'Licht thema inschakelen',
+    theme_switch_to_dark: 'Donker thema inschakelen',
+    visited_stations: 'Bezochte objecten',
   },
 
   es: {
@@ -646,6 +712,17 @@ export const translations = {
     pwa_ios_step2: '2. Seleccione "Añadir a pantalla de inicio".',
     close: 'Cerrar',
     offline_badge: 'Modo sin conexión activo.',
+
+    // Search, sector filtering, photo and theme controls (added without removing existing translations)
+    search_stations: 'Buscar una pieza…',
+    all_sectors: 'Todos los sectores',
+    no_stations_found: 'No se encontraron piezas',
+    adjust_search_filters: 'Cambia la búsqueda o los filtros.',
+    reset_filters: 'Restablecer filtros',
+    enlarge_photo: 'Ampliar foto',
+    theme_switch_to_light: 'Activar tema claro',
+    theme_switch_to_dark: 'Activar tema oscuro',
+    visited_stations: 'Piezas visitadas',
   },
 } as const;
 
