@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => {
-  const [isHighContrast, setIsHighContrast] = React.useState(() => document.documentElement.classList.contains('high-contrast'));
+  const [isHighContrast, setIsHighContrast] = React.useState(() => document.documentElement.classList.contains('high-contrast') || document.documentElement.classList.contains('sun-mode'));
   const [isLightMode, setIsLightMode] = React.useState(() => {
     try {
       const savedTheme = window.localStorage.getItem('dday-theme');
@@ -26,11 +26,10 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
   const toggleContrast = () => {
     const next = !isHighContrast;
     setIsHighContrast(next);
-    if (next) {
-      document.documentElement.classList.add('high-contrast');
-    } else {
-      document.documentElement.classList.remove('high-contrast');
-    }
+    // The contrast control owns both the palette adjustments and the
+    // stronger contrast/brightness filter previously tied to "Visite intérieure".
+    document.documentElement.classList.toggle('high-contrast', next);
+    document.documentElement.classList.toggle('sun-mode', next);
   };
 
   const applyTheme = (light: boolean) => {
