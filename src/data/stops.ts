@@ -68,7 +68,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Site du 1er Hôpital de Campagne US',
     witnessBadge: 'Récit des Fondateurs • Fabien & Antoine',
     speakers: 'Fabien et Antoine, conservateurs et fils du fondateur',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
+    imageUrl: '/images/stop-01.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
@@ -124,7 +124,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Chasseur Fw 190 • Moteur radial',
     witnessBadge: 'Aviation • Luftwaffe & Chasse',
     speakers: 'Témoignage de découverte par Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
+    imageUrl: '/images/stop-02.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
@@ -180,7 +180,7 @@ export const STOPS: StopData[] = [
     spotTag: '7,5 cm PaK 40 • Camouflage 3 tons',
     witnessBadge: 'Artillerie • Normandie 1944',
     speakers: 'Souvenir de découverte père et fils',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
+    imageUrl: '/images/stop-03.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
@@ -236,7 +236,7 @@ export const STOPS: StopData[] = [
     spotTag: '2 cm Flakvierling 38 • Quadritube',
     witnessBadge: 'Défense Aérienne • DCA',
     speakers: 'Commentaire historique des collections',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
+    imageUrl: '/images/stop-04.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
@@ -293,7 +293,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Motif Erbsenmuster & Splittermuster',
     witnessBadge: 'Collection Privée • Passion Uniformes',
     speakers: 'Récit de collectionneur par Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
+    imageUrl: '/images/stop-05.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
@@ -349,7 +349,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Sd.Kfz. 2 Kettenkrad • Tissu parachute US',
     witnessBadge: 'Souvenir d’Enfance • Famille',
     speakers: 'Récit intime d’Antoine à l’âge de 9 ans',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
+    imageUrl: '/images/stop-06.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
@@ -405,7 +405,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Insignes de culte chrétien • Uniforme de campagne',
     witnessBadge: 'Spiritualité de Guerre',
     speakers: 'Récit historique et moral',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
+    imageUrl: '/images/stop-07.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
@@ -456,7 +456,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Opération Titanic • Leurre parachuté',
     witnessBadge: 'Opération Secrète • SAS & RAF',
     speakers: 'Récit de Fabien et Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6fqNmD_maIFqJmkncUGKHEiOIAfggBsccvt7zBxZNQPX_LOOPglwYHlqyDWlYNOkWhxp3P5GJYUVJOhsTL_DKcXMk62EzgHY4i2MGAYl_wZ792gdt_QEXJCpwGMp_D144-rz2d4wheNX1-OHx_WO2CvI6M4OLUcX8AKMqynv4cwi1XcK3OwQcjHvlzWleZmgdeQMu50N21L0ntzZdSAAAmuGgJO1Pm1OpPdDvFnw5TiJL3nqvO0sMlg',
+    imageUrl: '/images/stop-08.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6fqNmD_maIFqJmkncUGKHEiOIAfggBsccvt7zBxZNQPX_LOOPglwYHlqyDWlYNOkWhxp3P5GJYUVJOhsTL_DKcXMk62EzgHY4i2MGAYl_wZ792gdt_QEXJCpwGMp_D144-rz2d4wheNX1-OHx_WO2CvI6M4OLUcX8AKMqynv4cwi1XcK3OwQcjHvlzWleZmgdeQMu50N21L0ntzZdSAAAmuGgJO1Pm1OpPdDvFnw5TiJL3nqvO0sMlg',
@@ -507,7 +507,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Maschinengewehr 42 • Calibre 7.92x57mm',
     witnessBadge: 'Armement d’Infanterie',
     speakers: 'Témoignage sonore et analyse de cadence',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
+    imageUrl: '/images/stop-09.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
@@ -558,7 +558,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Sd.Kfz. 303a Goliath • Moteur essence',
     witnessBadge: 'Armes Spéciales • Panzer Lehr',
     speakers: 'Récit de recherche par Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
+    imageUrl: '/images/stop-10.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
@@ -614,7 +614,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Simonov PTRS-41 • Calibre 14.5x114mm',
     witnessBadge: 'Prise de Guerre • Front de l’Est',
     speakers: 'Souvenir fraternel par Fabien',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
+    imageUrl: '/images/stop-11.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
@@ -665,7 +665,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Insignes d’époque • 29th, Rangers, Engineers',
     witnessBadge: 'Unités Américaines du Débarquement',
     speakers: 'Présentation détaillée des insignes et devises',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
+    imageUrl: '/images/stop-12.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
@@ -721,7 +721,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Mine marine ORIN • Crapaud d’ancrage',
     witnessBadge: 'Guerre Sous-Marine & Mouillage',
     speakers: 'Historique de la guerre des mines',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
+    imageUrl: '/images/stop-13.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
@@ -772,7 +772,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Combinaison de saut Camouflage • Tenue Civile',
     witnessBadge: 'Opérations Spéciales • SOE Londres',
     speakers: 'Hommage vibrant à Claire Dumont',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
+    imageUrl: '/images/stop-14.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
@@ -828,7 +828,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Welbike Mark II • Moteur 2 temps 98cc',
     witnessBadge: 'Station IX • Welwyn Garden City',
     speakers: 'Présentation par Fabien et Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
+    imageUrl: '/images/stop-15.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
@@ -879,7 +879,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Diorama Grandeur Réelle • Hérissons tchèques',
     witnessBadge: 'Hommage Première Vague US',
     speakers: 'Hommage solennel aux combattants d’Omaha',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
+    imageUrl: '/images/stop-16.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
@@ -930,7 +930,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Rayons X de terrain • Tables chirurgicales',
     witnessBadge: 'Service Médical Militaire US',
     speakers: 'Récit des soins d’urgence sous la mitraille',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
+    imageUrl: '/images/stop-17.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw',
@@ -981,7 +981,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Diorama Vierville • Échelle réduite',
     witnessBadge: 'Analyse Tactique du Débarquement',
     speakers: 'Explication stratégique par les conservateurs',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
+    imageUrl: '/images/stop-18.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCt9Ww_ahkQ7yHCFZ4685KaJKCN9va7qhtqh4IlkjUdj9E7quRW5ImicNdi7HgT81-GODKjw3jaX7IOlUrxWDC8ZIv3Dfl3v-GcJnrnc62E594i072NvThwcZ0K3Ol5qRQcMAUIpOfvI-iw8WIglD1Ym7EjXWo1bWcxc9p4SyZkKbYlk1jI2YY-67x8mcry3TewPlwBetxoOcvsXc6V3GE66IC63z4mlHK4rtt2Cxc1KHcEftmHnMMH8Q',
@@ -1032,7 +1032,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Enigma M3 / M4 • Rotor & Clavier',
     witnessBadge: 'Trésor du Musée • Histoire Vraie',
     speakers: 'Récit rocambolesque par Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
+    imageUrl: '/images/stop-19.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOU3S9HiIN8UmyqUL1tmj22zPMNcIta7r7qLsWJWQ_aeX6Bhd5dPhhCfjjCc5INsxOHwX-71vTvUiXNIons_mB9xKTNeDQr6zp9kKRej6mNtHhtVnkWPxgEsJc_iaNpLmyJeTvS_onG2b3ffwg-1hejMyriK31VzdGY146J9M5JHu6KsNFN7BIDRhYuk7fxi3IE3cbp8uiLZAKdWBHJfLOEd_6oIrHDbPsV9lM6pSCMe9mvPAD4pAXeA',
@@ -1088,7 +1088,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Pigeons voyageurs • Cartes en soie • PIAT',
     witnessBadge: 'British Army • 6th Airborne',
     speakers: 'Souvenirs familiaux de Pegasus Bridge',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
+    imageUrl: '/images/stop-20.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBm3CIVIqooF26XC-wgBcD4CC4ssxxl-SvSo6aqIU1f8rIlsQsUdKBzSiKDtUdnwTIdWiGsjd90hrMQQo1x9nDrufHKTbAIJ6bD38BfIFj_mP-Qd0HmIC6pUOZdvFJhIpqNCVNSfj-oR8L-waXlfQe4bZuJKT-XdH_v8vkXrZ_M8jbRP-TfGGkINQt4_tuS6CRtrq180FcXfLnX3hG7PKtJQRbInocGkvieLTNiAIZtyS_M728wjYO_Pg',
@@ -1139,7 +1139,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Fallschirmjägergewehr 42 • Rareté mondiale',
     witnessBadge: 'Secret de Famille • Découverte Mystère',
     speakers: 'Récit intime et stupéfiant d’Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
+    imageUrl: '/images/stop-21.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuRvkFRJMd998Ztvb9L0DfMrKLdie-bBgUytEEfKIh5Ih4j2YNYMSBrVrfS1evF0dF4Cn_sBCzoDf7f0dWTbmKODfn3ZHlUYFaP5jaihtcyXin7cXbfPMpZOLIwq3xILfBwF17-BlmHa6QMJzwliWiSKEMqn8TZNWGdIswvWlR8GJUHRHBYfr-cHdoBP1yn3ulnknknnZ4n3rDb6jhNgN5xLGNkjnGLAtJTCNhcUML8xjZ_rwb_YqVEQ',
@@ -1195,7 +1195,7 @@ export const STOPS: StopData[] = [
     spotTag: 'Béret Commando Kieffer • Faux tampons',
     witnessBadge: 'Résistance Intérieure & Français Libres',
     speakers: 'Témoignage d’admiration par Fabien et Antoine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
+    imageUrl: '/images/stop-22.webp',
     photos: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJtNBfyJuwf756DOcTpRuSzemwI8mMjcBBFubAREsRmVq6o1sxalEeq1vAwKFKtqQKA6Ib0xoLa4XmLyzgFOemwWT9PDeqMGPlbf5Ydz4GNBFwuBAj2D0zD4f2QOvVvrx4tc5qNDtk9bc-hnZLYi1CPreL7SLLRjfsvy8jbU5F4QuB_kTdqxMSUuLIc-7H_jZoKW9gsvpoSiKdnwZBKCKwnmIz-PPbOpDamzlVWfcq_h6pqeMgjRP5nQ',
