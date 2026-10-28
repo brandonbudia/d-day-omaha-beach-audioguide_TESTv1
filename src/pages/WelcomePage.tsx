@@ -78,7 +78,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       {/* Carte Immersive Principale du Musée D-Day Omaha */}
       <div className="relative w-full rounded-xl overflow-hidden shadow-xl bg-[#1c2026] border border-[#31353c]/70">
         <div
-          className="w-full h-84 bg-cover bg-center relative flex flex-col justify-between p-4"
+          className="welcome-hero w-full min-h-[22rem] sm:min-h-[25rem] bg-cover bg-center relative flex flex-col justify-between p-4 sm:p-6"
           style={{
             backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw')`,
           }}
