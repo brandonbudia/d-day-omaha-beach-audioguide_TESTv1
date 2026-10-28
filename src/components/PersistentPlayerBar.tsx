@@ -32,16 +32,24 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
   return (
     <aside
       aria-label="Lecteur audio persistant"
-      className="fixed bottom-20 inset-x-0 z-40 bg-[#181c22]/95 backdrop-blur-xl border-t border-[#d4af37]/40 shadow-2xl"
+      className="fixed bottom-20 inset-x-0 z-40 bg-[#181c22]/95 backdrop-blur-2xl border-t border-[#d4af37]/30 shadow-xl"
     >
       {/* Scrubable mini-progress bar at top of docked player */}
       <div
         onClick={handleScrub}
-        className="w-full h-2 bg-[#262a31] cursor-pointer relative group"
+        className="w-full h-2 bg-[#262a31] cursor-pointer relative group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
         role="slider"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowRight") { event.preventDefault(); audioPlayer.seek(state.currentTime + 5); }
+          if (event.key === "ArrowLeft") { event.preventDefault(); audioPlayer.seek(state.currentTime - 5); }
+          if (event.key === "Home") { event.preventDefault(); audioPlayer.seek(0); }
+          if (event.key === "End") { event.preventDefault(); audioPlayer.seek(state.duration); }
+        }}
         aria-valuenow={Math.round(state.currentTime)}
         aria-valuemin={0}
         aria-valuemax={Math.round(state.duration)}
+        aria-valuetext={formatTime(state.currentTime) + " sur " + formatTime(state.duration)}
         aria-label="Progression audio"
       >
         <div
@@ -54,13 +62,17 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
         />
       </div>
 
-      <div className="h-16 px-3 flex items-center justify-between max-w-md mx-auto">
+      <div className="min-h-16 px-3 py-1 flex items-center justify-between max-w-md mx-auto gap-2">
         {/* Click to open full player */}
         <div
           onClick={onOpenFullPlayer}
-          className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer pr-2"
+          onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onOpenFullPlayer(); } }}
+          role="button"
+          tabIndex={0}
+          aria-label="Ouvrir le lecteur audio complet"
+          className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer pr-2 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
         >
-          <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-[#d4af37]/40">
+          <div className="relative w-11 h-11 rounded-xl overflow-hidden shrink-0 border border-[#d4af37]/40">
             <img
               src={currentStop.imageUrl}
               alt={currentStop.title}
