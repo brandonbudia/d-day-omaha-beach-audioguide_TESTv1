@@ -20,7 +20,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentTab, onSelectTab })
   ];
 
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#1c2026]/95 backdrop-blur-xl border-t border-[#31353c]/70">
+    <nav aria-label="Navigation principale" className="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#1c2026]/95 backdrop-blur-xl border-t border-[#31353c]/70">
       <div className="grid grid-cols-4 items-center h-20 px-2 max-w-md mx-auto">
         {tabs.map((tab) => {
           const isActive = currentTab === tab.id;
@@ -28,8 +28,9 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentTab, onSelectTab })
             <button
               key={tab.id}
               onClick={() => onSelectTab(tab.id)}
+              aria-label={t(tab.labelKey, currentLang)}
               aria-current={isActive ? 'page' : undefined}
-              className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors active:scale-95 ${
+              className={`flex flex-col items-center justify-center min-w-[56px] h-full transition-colors active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#f2ca50] ${
                 isActive ? 'text-[#f2ca50]' : 'text-[#d0c5af] hover:text-[#dfe2eb]'
               }`}
               type="button"

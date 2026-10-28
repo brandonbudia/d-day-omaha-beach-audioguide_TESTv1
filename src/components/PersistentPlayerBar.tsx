@@ -37,11 +37,19 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
       {/* Scrubable mini-progress bar at top of docked player */}
       <div
         onClick={handleScrub}
-        className="w-full h-2 bg-[#262a31] cursor-pointer relative group"
+        className="w-full h-2 bg-[#262a31] cursor-pointer relative group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
         role="slider"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === 'ArrowRight') { event.preventDefault(); audioPlayer.seek(state.currentTime + 5); }
+          if (event.key === 'ArrowLeft') { event.preventDefault(); audioPlayer.seek(state.currentTime - 5); }
+          if (event.key === 'Home') { event.preventDefault(); audioPlayer.seek(0); }
+          if (event.key === 'End') { event.preventDefault(); audioPlayer.seek(state.duration); }
+        }}
         aria-valuenow={Math.round(state.currentTime)}
         aria-valuemin={0}
         aria-valuemax={Math.round(state.duration)}
+        aria-valuetext={formatTime(state.currentTime) + ' sur ' + formatTime(state.duration)}
         aria-label="Progression audio"
       >
         <div
@@ -58,7 +66,16 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
         {/* Click to open full player */}
         <div
           onClick={onOpenFullPlayer}
-          className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer pr-2"
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              onOpenFullPlayer();
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Ouvrir le lecteur audio complet"
+          className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer pr-2 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
         >
           <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-[#d4af37]/40">
             <img
