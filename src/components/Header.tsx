@@ -38,6 +38,8 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
     // styles and components respond consistently.
     document.documentElement.classList.toggle('light-mode', light);
     document.body.classList.toggle('light-mode', light);
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    document.body.dataset.theme = light ? 'light' : 'dark';
   };
 
   const toggleTheme = () => {
