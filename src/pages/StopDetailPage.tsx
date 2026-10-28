@@ -18,11 +18,25 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'recit' | 'transcript' | 'photos' | 'carte'>('recit');
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [expandedPhoto, setExpandedPhoto] = useState<{ url: string; caption: string; source: string } | null>(null);
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
 
   React.useEffect(() => {
     return audioPlayer.subscribe((next) => setAudioState(next));
   }, []);
+
+  React.useEffect(() => {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem('dday_visited_stops') || '[]');
+      const visited: string[] = Array.isArray(stored) ? stored.filter((id): id is string => typeof id === 'string') : [];
+      if (!visited.includes(stopId)) {
+        window.localStorage.setItem('dday_visited_stops', JSON.stringify([...visited, stopId]));
+        window.dispatchEvent(new Event('dday-visited-stops-updated'));
+      }
+    } catch {
+      // Visiting a station remains available if browser storage is disabled.
+    }
+  }, [stopId]);
 
   const stop = STOPS.find((s) => s.id === stopId) || STOPS[0];
   const isCurrentActive = audioState.currentStopId === stop.id;
@@ -348,26 +362,36 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
 
       {/* Tab Content: Archival Photos */}
       {activeTab === 'photos' && (
-        <div className="mt-4 flex flex-col gap-4">
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {stop.photos.map((photo, idx) => (
-            <div
-              key={idx}
-              className="rounded-xl overflow-hidden bg-[#1c2026] border border-[#31353c] shadow-md"
-            >
-              <div
-                className="w-full h-48 bg-cover bg-center filter contrast-110"
-                style={{ backgroundImage: `url('${photo.url}')` }}
-              />
-              <div className="p-3">
-                <p className="text-[13px] font-bold text-[#dfe2eb] font-heading">
-                  {photo.caption}
-                </p>
-                <p className="text-[11px] text-[#d0c5af] mt-0.5">
-                  {photo.source}
-                </p>
-              </div>
-            </div>
+            <article key={idx} className="rounded-2xl overflow-hidden bg-[#1c2026] border border-[#31353c] shadow-md transition-transform duration-200 hover:-translate-y-0.5">
+              <button type="button" onClick={() => setExpandedPhoto({ url: photo.url, caption: photo.caption, source: photo.source })} aria-label={t('enlarge_photo', currentLang)} className="group block w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#f2ca50]">
+                <div className="w-full h-48 sm:h-52 bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.02]" role="img" aria-label={photo.caption} style={{ backgroundImage: "url('" + photo.url + "')" }} />
+                <div className="p-4">
+                  <p className="text-sm font-bold text-[#dfe2eb] font-heading leading-snug">{photo.caption}</p>
+                  <p className="text-xs text-[#d0c5af] mt-1.5 flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[15px]">photo_camera</span>{photo.source}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#f2ca50]">
+                    <span className="material-symbols-outlined text-[16px]">zoom_in</span>Agrandir la photo
+                  </span>
+                </div>
+              </button>
+            </article>
           ))}
+        </div>
+      )}
+
+      {expandedPhoto && (
+        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md p-4 sm:p-8 flex flex-col items-center justify-center" role="dialog" aria-modal="true" aria-label={expandedPhoto.caption} onClick={() => setExpandedPhoto(null)} onKeyDown={(event) => { if (event.key === 'Escape') setExpandedPhoto(null); }}>
+          <button type="button" autoFocus onClick={() => setExpandedPhoto(null)} aria-label={t('close', currentLang)} className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/10 border border-white/30 text-white flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">
+            <span className="material-symbols-outlined">close</span>
+          </button>
+          <img src={expandedPhoto.url} alt={expandedPhoto.caption} onClick={(event) => event.stopPropagation()} className="max-h-[72vh] max-w-full object-contain rounded-xl shadow-2xl" />
+          <div className="max-w-2xl text-center mt-4">
+            <p className="text-white font-semibold">{expandedPhoto.caption}</p>
+            <p className="text-sm text-white/70 mt-1">{expandedPhoto.source}</p>
+          </div>
         </div>
       )}
 
