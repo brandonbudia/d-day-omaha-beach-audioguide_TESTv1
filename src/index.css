@@ -241,3 +241,39 @@ html.light-mode .welcome-hero .bg-gradient-to-t {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Theme toggle reliability: explicit overrides for the app shell and fixed header.
+   Keep this outside Tailwind layers so it wins over utility backgrounds. */
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background-color: #f5f1e8 !important;
+  color: #292820 !important;
+  color-scheme: light;
+}
+html[data-theme="light"] #root,
+html[data-theme="light"] #root > div {
+  background-color: #f5f1e8 !important;
+  color: #292820 !important;
+}
+html[data-theme="light"] header.fixed {
+  background-color: rgb(245 241 232 / 96%) !important;
+  color: #292820 !important;
+  border-color: #c9c0b0 !important;
+}
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background-color: #10141a !important;
+  color: #dfe2eb !important;
+  color-scheme: dark;
+}
+html[data-theme="dark"] #root,
+html[data-theme="dark"] #root > div {
+  background-color: #10141a !important;
+  color: #dfe2eb !important;
+}
+html[data-theme="dark"] header.fixed {
+  background-color: rgb(16 20 26 / 95%) !important;
+  color: #dfe2eb !important;
+  border-color: rgb(38 42 49 / 60%) !important;
+}
