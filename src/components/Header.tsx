@@ -13,11 +13,12 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
   const [isHighContrast, setIsHighContrast] = React.useState(() => document.documentElement.classList.contains('high-contrast'));
   const [isLightMode, setIsLightMode] = React.useState(() => {
     try {
-      return window.localStorage.getItem('dday-theme') === 'light'
-        || document.documentElement.classList.contains('light-mode');
+      const savedTheme = window.localStorage.getItem('dday-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme === 'light';
     } catch {
-      return document.documentElement.classList.contains('light-mode');
+      // Continue using the current document class when storage is unavailable.
     }
+    return document.documentElement.classList.contains('light-mode');
   });
   const [isLargeText, setIsLargeText] = React.useState(() => document.documentElement.classList.contains('large-text'));
   const { isInstallable, isIOS, install } = usePWAInstall();
@@ -32,9 +33,16 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
     }
   };
 
+  const applyTheme = (light: boolean) => {
+    // Keep the theme class on both the document root and body so all global
+    // styles and components respond consistently.
+    document.documentElement.classList.toggle('light-mode', light);
+    document.body.classList.toggle('light-mode', light);
+  };
+
   const toggleTheme = () => {
-    const next = !document.documentElement.classList.contains('light-mode');
-    document.documentElement.classList.toggle('light-mode', next);
+    const next = !isLightMode;
+    applyTheme(next);
     setIsLightMode(next);
     try {
       window.localStorage.setItem('dday-theme', next ? 'light' : 'dark');
@@ -44,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide }) => 
   };
 
   React.useEffect(() => {
-    document.documentElement.classList.toggle('light-mode', isLightMode);
+    applyTheme(isLightMode);
   }, [isLightMode]);
 
   const toggleFontSize = () => {
