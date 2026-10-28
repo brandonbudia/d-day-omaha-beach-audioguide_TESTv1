@@ -122,6 +122,7 @@ export const translations = {
     enlarge_photo: 'Agrandir la photo',
     theme_switch_to_light: 'Passer au thème clair',
     theme_switch_to_dark: 'Passer au thème sombre',
+    visited_stations: 'Stations visitées',
   },
 
   en: {
@@ -221,6 +222,7 @@ export const translations = {
     enlarge_photo: 'Enlarge photo',
     theme_switch_to_light: 'Switch to light theme',
     theme_switch_to_dark: 'Switch to dark theme',
+    visited_stations: 'Exhibits visited',
   },
 
   de: {
@@ -320,6 +322,7 @@ export const translations = {
     enlarge_photo: 'Foto vergrößern',
     theme_switch_to_light: 'Helles Design aktivieren',
     theme_switch_to_dark: 'Dunkles Design aktivieren',
+    visited_stations: 'Besuchte Exponate',
   },
 
   it: {
@@ -419,6 +422,7 @@ export const translations = {
     enlarge_photo: 'Ingrandisci la foto',
     theme_switch_to_light: 'Attiva tema chiaro',
     theme_switch_to_dark: 'Attiva tema scuro',
+    visited_stations: 'Oggetti visitati',
   },
 
   pl: {
@@ -518,6 +522,7 @@ export const translations = {
     enlarge_photo: 'Powiększ zdjęcie',
     theme_switch_to_light: 'Włącz jasny motyw',
     theme_switch_to_dark: 'Włącz ciemny motyw',
+    visited_stations: 'Odwiedzone eksponaty',
   },
 
   nl: {
@@ -617,6 +622,7 @@ export const translations = {
     enlarge_photo: 'Foto vergroten',
     theme_switch_to_light: 'Licht thema inschakelen',
     theme_switch_to_dark: 'Donker thema inschakelen',
+    visited_stations: 'Bezochte objecten',
   },
 
   es: {
@@ -716,6 +722,7 @@ export const translations = {
     enlarge_photo: 'Ampliar foto',
     theme_switch_to_light: 'Activar tema claro',
     theme_switch_to_dark: 'Activar tema oscuro',
+    visited_stations: 'Piezas visitadas',
   },
 } as const;
 
