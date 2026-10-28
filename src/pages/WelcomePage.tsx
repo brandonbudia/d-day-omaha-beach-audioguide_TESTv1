@@ -17,13 +17,9 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
   const [isLargeText, setIsLargeText] = useState(false);
 
   const toggleComfort = () => {
-    const next = !isComfortMode;
-    setIsComfortMode(next);
-    if (next) {
-      document.documentElement.classList.add('sun-mode');
-    } else {
-      document.documentElement.classList.remove('sun-mode');
-    }
+    // "Visite intérieure" must not control contrast; that belongs to the
+    // dedicated contrast button in the application header.
+    setIsComfortMode((current) => !current);
   };
 
   const toggleSize = () => {
@@ -50,6 +46,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
           <button
             onClick={toggleComfort}
             aria-label={t('museum_guide_mode', currentLang)}
+            aria-pressed={isComfortMode}
             className={`px-2.5 py-1 flex items-center gap-1.5 rounded text-[12px] font-semibold transition-all active:scale-95 ${
               isComfortMode
                 ? 'bg-[#f2ca50] text-[#3c2f00]'
