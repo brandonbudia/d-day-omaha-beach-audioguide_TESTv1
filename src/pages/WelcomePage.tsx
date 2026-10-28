@@ -37,7 +37,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full gap-5 pb-28">
+    <div className="flex flex-col w-full gap-4 pb-28">
       {/* Zone Outils Visite Musée */}
       <div className="flex items-center justify-between bg-[#181c22] px-3.5 py-2 rounded-lg border border-[#262a31] shadow-sm">
         <div className="flex items-center gap-2">
@@ -76,15 +76,15 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       </div>
 
       {/* Carte Immersive Principale du Musée D-Day Omaha */}
-      <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-[#1c2026] border border-[#31353c]/70 ring-1 ring-white/5">
+      <div className="relative w-full rounded-xl overflow-hidden shadow-xl bg-[#1c2026] border border-[#31353c]/70">
         <div
-          className="welcome-hero w-full min-h-[22rem] sm:min-h-[25rem] bg-cover bg-center relative flex flex-col justify-between p-5 sm:p-6"
+          className="w-full h-84 bg-cover bg-center relative flex flex-col justify-between p-4"
           style={{
             backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz93dU9rQXhvncqbOs2yExY4TtNNFPwCEfQTuq4m02S7wjh5hFnaMRBVsdKqOFltjtR1k8mbr1i6kUbdM0Q3kWhr-qqe0QNrPUYdqMrBigmEvyB54SFZ8gZnz46LUcUgnvz_HQTy28bmm27iF3rMA2PzYUHdi5ASdhu3IMFtVbeIqtxQIMrckc-9oDnbcyRk5C0tpO2cE-kBJlmdVgnCBfd8XdPXJ3_fYRScflwKvzolxab4cUxkebyw')`,
           }}
         >
           {/* Gradient Scrim */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#10141a] via-[#10141a]/70 to-[#10141a]/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#10141a] via-[#10141a]/75 to-[#10141a]/30 pointer-events-none" />
 
           {/* Badges d'accueil musée */}
           <div className="relative z-10 flex items-center justify-between">
@@ -109,10 +109,10 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
                 {t('living_archive', currentLang)}
               </span>
             </div>
-            <h2 className="text-[clamp(1.8rem,8vw,2.35rem)] font-extrabold text-[#dfe2eb] tracking-tight leading-[1.05] drop-shadow-md font-heading max-w-[18ch]">
+            <h2 className="text-[30px] font-extrabold text-[#dfe2eb] tracking-tight leading-none drop-shadow-md font-heading">
               {t('app_title', currentLang)}
             </h2>
-            <p className="text-[15px] sm:text-base text-[#d0c5af] tracking-normal font-normal leading-relaxed max-w-[34ch]">
+            <p className="text-[15px] text-[#d0c5af] tracking-normal font-normal">
               {t('app_subtitle', currentLang)}
             </p>
           </div>
@@ -128,7 +128,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       {/* Bouton d'Action Principal XXL */}
       <button
         onClick={onStartTour}
-        className="w-full min-h-16 rounded-2xl bg-[#f2ca50] text-[#3c2f00] text-[15px] uppercase tracking-wider font-bold flex items-center justify-center gap-3 shadow-lg shadow-black/20 hover:brightness-105 hover:shadow-xl transition-all active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2ca50]"
+        className="w-full h-16 rounded-xl bg-[#f2ca50] text-[#3c2f00] text-[15px] uppercase tracking-wider font-bold flex items-center justify-center gap-3 shadow-xl hover:brightness-105 transition-all active:scale-[0.98]"
         type="button"
       >
         <div className="w-10 h-10 rounded-full bg-[#3c2f00] text-[#f2ca50] flex items-center justify-center shadow-inner">
@@ -139,7 +139,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
       </button>
 
       {/* Bannière Informations Pratiques du Musée */}
-      <div className="bg-[#181c22] rounded-2xl p-4 sm:p-5 flex flex-col gap-3 border border-[#262a31] shadow-sm">
+      <div className="bg-[#181c22] rounded-xl p-4 flex flex-col gap-3 border border-[#262a31] shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-[#dfe2eb]">
             <span className="material-symbols-outlined text-[#f2ca50] text-[20px]">timer</span>

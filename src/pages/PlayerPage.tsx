@@ -30,9 +30,9 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
     : 0;
 
   return (
-    <div className="flex flex-col w-full pb-28 space-y-5">
+    <div className="flex flex-col w-full pb-28 space-y-4">
       {/* Indoor Museum Context Banner */}
-      <div className="flex items-center justify-between gap-3 px-3.5 py-3 rounded-2xl bg-[#262a31] text-[#dfe2eb] shadow-sm border border-[#31353c]">
+      <div className="flex items-center justify-between px-3.5 py-2 rounded-xl bg-[#262a31] text-[#dfe2eb] shadow-md border border-[#31353c]">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[#f2ca50] animate-pulse" />
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#c3cc8c]">
@@ -46,7 +46,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
       </div>
 
       {/* Main Player Display Card */}
-      <section className="flex flex-col items-center bg-[#1c2026] border border-[#31353c]/70 rounded-2xl p-5 shadow-xl text-center relative overflow-hidden">
+      <section className="flex flex-col items-center bg-[#1c2026] border border-[#31353c]/70 rounded-xl p-4 shadow-xl text-center relative overflow-hidden">
         {/* Tactile atmospheric glow */}
         <div className="absolute -top-16 inset-x-0 h-36 bg-gradient-to-b from-[#f2ca50]/10 via-transparent to-transparent pointer-events-none" />
 
@@ -103,7 +103,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
       </section>
 
       {/* Giant Outdoor Transport Controls */}
-      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col gap-4">
+      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-xl p-4 shadow-xl flex flex-col gap-4">
         <div className="flex items-center justify-around w-full">
           {/* Jump Back -15s Button */}
           <button
@@ -176,7 +176,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
           <button
             onClick={() => audioPlayer.cyclePlaybackRate()}
             aria-label={t('speed', currentLang)}
-            className="min-h-[56px] h-14 px-3 rounded-2xl bg-[#262a31] border border-[#31353c] text-[#dfe2eb] flex items-center justify-between shadow active:scale-95 transition-transform"
+            className="min-h-[56px] h-14 px-3 rounded-xl bg-[#262a31] border border-[#31353c] text-[#dfe2eb] flex items-center justify-between shadow active:scale-95 transition-transform"
             type="button"
           >
             <div className="flex items-center gap-1.5">
@@ -191,7 +191,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
       </section>
 
       {/* Complete Transcript Accessibility Panel */}
-      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-xl shadow-xl overflow-hidden transition-all duration-300">
         <button
           onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}
           aria-expanded={isTranscriptOpen}

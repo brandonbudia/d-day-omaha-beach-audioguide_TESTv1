@@ -30,7 +30,7 @@ export const StopCard: React.FC<StopCardProps> = ({
         </div>
 
         {/* Highlighted Active Card with Brass Tint Elevation */}
-        <div className="flex-1 min-w-0 bg-[#262a31] border border-[#d4af37]/50 rounded-2xl p-4 sm:p-5 shadow-xl relative overflow-hidden">
+        <div className="flex-1 min-w-0 bg-[#262a31] border border-[#d4af37]/50 rounded-xl p-4 shadow-xl relative overflow-hidden">
           {/* Subtle Top Brass Accent Band */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-[#f2ca50]" />
 
@@ -55,7 +55,7 @@ export const StopCard: React.FC<StopCardProps> = ({
           {/* Tactical Image Frame */}
           <div
             onClick={() => onSelectDetail(stop.id)}
-            className="w-full h-40 sm:h-44 rounded-xl overflow-hidden my-3 relative cursor-pointer group border border-[#4d4635]/50"
+            className="w-full h-36 rounded-lg overflow-hidden my-3 relative cursor-pointer group border border-[#4d4635]/50"
           >
             <img
               src={stop.imageUrl}
@@ -110,7 +110,7 @@ export const StopCard: React.FC<StopCardProps> = ({
 
         <div
           onClick={() => onSelectDetail(stop.id)}
-          className="flex-1 min-w-0 bg-[#181c22] hover:bg-[#1c2026] border border-[#262a31] rounded-2xl p-4 transition-all active:scale-[0.99] cursor-pointer"
+          className="flex-1 min-w-0 bg-[#181c22] hover:bg-[#1c2026] border border-[#262a31] rounded-xl p-4 transition-all active:scale-[0.99] cursor-pointer"
         >
           <div className="flex items-center justify-between gap-2 mb-1">
             <span className="text-[11px] uppercase tracking-wider text-[#c3cc8c] font-bold">
@@ -148,7 +148,7 @@ export const StopCard: React.FC<StopCardProps> = ({
 
       <div
         onClick={() => onSelectDetail(stop.id)}
-        className="flex-1 min-w-0 bg-[#181c22] hover:bg-[#1c2026] border border-[#262a31] rounded-2xl p-4 cursor-pointer"
+        className="flex-1 min-w-0 bg-[#181c22] hover:bg-[#1c2026] border border-[#262a31] rounded-xl p-4 cursor-pointer"
       >
         <div className="flex items-center justify-between mb-1">
           <span className="text-[11px] text-[#d0c5af] uppercase tracking-wider font-semibold">
