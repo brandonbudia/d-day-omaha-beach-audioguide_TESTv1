@@ -78,12 +78,30 @@ export const Scrubber: React.FC<ScrubberProps> = ({
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={() => setIsDragging(false)}
+        onKeyDown={(event) => {
+          const step = 5;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+            event.preventDefault();
+            onSeek(currentTime + step);
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+            event.preventDefault();
+            onSeek(currentTime - step);
+          } else if (event.key === 'Home') {
+            event.preventDefault();
+            onSeek(0);
+          } else if (event.key === 'End') {
+            event.preventDefault();
+            onSeek(duration);
+          }
+        }}
         role="slider"
+        tabIndex={0}
         aria-label="Position audio"
         aria-valuemin={0}
         aria-valuemax={Math.round(duration)}
         aria-valuenow={Math.round(displayTime)}
-        className="relative w-full h-8 flex items-center cursor-pointer select-none touch-none"
+        aria-valuetext={`${formatTime(displayTime)} sur ${formatTime(duration)}`}
+        className="relative w-full h-8 flex items-center cursor-pointer select-none touch-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
       >
         <div className="w-full h-3.5 bg-[#31353c] rounded-full overflow-hidden shadow-inner">
           <div
