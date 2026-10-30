@@ -46,6 +46,12 @@ export interface StopData {
     title: string;
     text: string;
   }[];
+  timedTranscript?: TimedTranscriptSegment[];
+}
+
+export interface TimedTranscriptSegment {
+  startSeconds: number;
+  text: string;
 }
 
 export const STOPS: StopData[] = [
@@ -57,8 +63,8 @@ export const STOPS: StopData[] = [
     playerTitle: '01. Bienvenue dans notre histoire et celle d’Omaha',
     subtitle: 'Récit des frères Fabien et Antoine : l’héritage d’un père passionné et le premier hôpital de campagne d’Omaha.',
     detailDescription: 'Ce lieu abrite une collection chargée d’histoires. Cet endroit fut le premier hôpital de campagne installé sur les plages d’Omaha après le débarquement.',
-    duration: '02:45',
-    durationSeconds: 165,
+    duration: '01:54',
+    durationSeconds: 114.17,
     status: 'completed',
     isFavorite: true,
     sector: 'Hall d’accueil • Entrée du Musée',
@@ -103,6 +109,22 @@ export const STOPS: StopData[] = [
         title: 'Une quête de toute une vie',
         text: '« Mais laissez-moi nous présenter : nous sommes deux frères, Fabien et Antoine. Nous avons grandi avec un papa… assez particulier. Un vrai passionné d’histoire, qui consacra la plus grande partie de sa vie à chercher les vestiges de cette période. Nous avons passé notre jeunesse à travers les forêts, les rivières et les vieilles granges, à fouiller pour trouver toutes les traces laissées par les belligérants de la Seconde Guerre mondiale. Il trouva la mort en 2012... C’est un instinct insaisissable qui nous a convaincus de poursuivre l’aventure. Bienvenue dans notre histoire. Bienvenue dans l’histoire. »'
       }
+    ],
+    timedTranscript: [
+      { startSeconds: 0, text: '« Ici commence… des histoires de femmes et d’hommes, d’anecdotes de faits historiques, et parfois des drames. »' },
+      { startSeconds: 8.7, text: '« Ce lieu abrite une collection chargée d’histoires, qui témoigne du rapport de l’homme avec son passé. »' },
+      { startSeconds: 14.54, text: '« Cet endroit est aussi très important, car il fut le premier hôpital de campagne installé sur les plages d’Omaha après le débarquement des premières vagues d’assaut, dont beaucoup ont connu un sort tragique. »' },
+      { startSeconds: 26.44, text: '« Mais laissez-moi nous présenter : nous sommes deux frères, Fabien et Antoine. »' },
+      { startSeconds: 31.44, text: '« Nous avons grandi avec un papa… assez particulier. »' },
+      { startSeconds: 35, text: '« Un vrai passionné d’histoire, qui consacra la plus grande partie de sa vie à chercher les vestiges de cette période. »' },
+      { startSeconds: 42.12, text: '« Nous avons passé notre jeunesse à travers les forêts, les rivières et les vieilles granges, à fouiller pour trouver toutes les traces laissées par les belligérants de la Seconde Guerre mondiale. »' },
+      { startSeconds: 56.16, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
+      { startSeconds: 69.36, text: '« Il trouva la mort en 2012… »' },
+      { startSeconds: 71.66, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
+      { startSeconds: 92.18, text: '« C’est un instinct insaisissable qui nous a convaincus. »' },
+      { startSeconds: 96.42, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
+      { startSeconds: 107.58, text: '« Bienvenue dans notre histoire. »' },
+      { startSeconds: 109.46, text: '« Bienvenue dans l’histoire. »' },
     ]
   },
 

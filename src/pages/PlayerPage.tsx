@@ -4,6 +4,7 @@ import { STOPS, StopData } from '../data/stops';
 import { t, SupportedLanguage } from '../i18n/translations';
 import { Waveform } from '../components/Waveform';
 import { Scrubber } from '../components/Scrubber';
+import { SyncedTranscript } from '../components/SyncedTranscript';
 
 interface PlayerPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -16,6 +17,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
 }) => {
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
+  const [transcriptTextSize, setTranscriptTextSize] = useState(18);
 
   React.useEffect(() => {
     return audioPlayer.subscribe((next) => setAudioState(next));
@@ -24,10 +26,19 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
   const currentStop: StopData = STOPS.find((s) => s.id === audioState.currentStopId) || STOPS[0];
   const currentIndex = STOPS.findIndex((s) => s.id === currentStop.id);
   const nextStop = currentIndex < STOPS.length - 1 ? STOPS[currentIndex + 1] : null;
+  const hasSyncedTranscript = currentStop.id === '01'
+    && audioState.language === 'fr'
+    && Boolean(currentStop.timedTranscript?.length);
 
   const progressPercent = audioState.duration > 0
     ? (audioState.currentTime / audioState.duration) * 100
     : 0;
+
+  const formatDuration = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
 
   return (
     <div className="flex flex-col w-full pb-28 space-y-4">
@@ -98,7 +109,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
           duration={audioState.duration}
           onSeek={(seconds) => audioPlayer.seek(seconds)}
           subTextLeft={currentStop.sector}
-          subTextRight={t('total_duration', currentLang, { duration: currentStop.duration })}
+          subTextRight={t('total_duration', currentLang, { duration: formatDuration(audioState.duration) })}
         />
       </section>
 
@@ -188,6 +199,26 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
             </span>
           </button>
         </div>
+
+        <div className="grid grid-cols-2 gap-3 border-t border-[#31353c] pt-3">
+          <button
+            type="button"
+            onClick={() => audioPlayer.prevStop()}
+            disabled={currentIndex <= 0}
+            className="min-h-14 rounded-xl border border-[#31353c] bg-[#262a31] px-3 text-sm font-semibold text-[#dfe2eb] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
+          >
+            <span className="material-symbols-outlined mr-2 align-middle" aria-hidden="true">skip_previous</span>
+            {t('btn_prev', currentLang)}
+          </button>
+          <button
+            type="button"
+            onClick={() => audioPlayer.nextStop()}
+            className="min-h-14 rounded-xl border border-[#31353c] bg-[#262a31] px-3 text-sm font-semibold text-[#dfe2eb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
+          >
+            {t('btn_next', currentLang)}
+            <span className="material-symbols-outlined ml-2 align-middle" aria-hidden="true">skip_next</span>
+          </button>
+        </div>
       </section>
 
       {/* Complete Transcript Accessibility Panel */}
@@ -230,16 +261,49 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
               {t('archive_note_body', currentLang)}
             </div>
 
-            <div className="space-y-3 text-[#dfe2eb] text-[14px] leading-relaxed select-text">
-              {currentStop.transcript.map((item, idx) => (
-                <div key={idx} className="p-2.5 rounded bg-[#262a31] border border-[#31353c]/50">
-                  <p className="text-[#f2ca50] text-[11px] font-bold uppercase tracking-wider mb-1">
-                    {item.timeRange} • {item.title}
-                  </p>
-                  <p className="whitespace-pre-line">{item.text}</p>
+            {hasSyncedTranscript && currentStop.timedTranscript ? (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-3 rounded-lg border border-[#31353c] bg-[#10141a] p-2">
+                  <span className="pl-2 text-sm font-semibold text-[#dfe2eb]">Taille du texte</span>
+                  <div className="flex gap-2" role="group" aria-label="Taille du texte de la transcription">
+                    <button
+                      type="button"
+                      onClick={() => setTranscriptTextSize((size) => Math.max(16, size - 2))}
+                      disabled={transcriptTextSize <= 16}
+                      aria-label="Diminuer la taille du texte"
+                      className="min-h-11 min-w-11 rounded-lg border border-[#4d4635] bg-[#262a31] text-lg font-bold text-[#f2ca50] disabled:opacity-50"
+                    >A−</button>
+                    <button
+                      type="button"
+                      onClick={() => setTranscriptTextSize((size) => Math.min(26, size + 2))}
+                      disabled={transcriptTextSize >= 26}
+                      aria-label="Augmenter la taille du texte"
+                      className="min-h-11 min-w-11 rounded-lg border border-[#4d4635] bg-[#262a31] text-lg font-bold text-[#f2ca50] disabled:opacity-50"
+                    >A+</button>
+                  </div>
                 </div>
-              ))}
-            </div>
+                <SyncedTranscript
+                  segments={currentStop.timedTranscript}
+                  currentTime={audioState.currentTime}
+                  textSize={transcriptTextSize}
+                  onSelectPhrase={(seconds) => {
+                    audioPlayer.seek(seconds);
+                    if (!audioState.isPlaying) void audioPlayer.play();
+                  }}
+                />
+              </div>
+            ) : (
+              <div className="space-y-3 text-[#dfe2eb] text-[14px] leading-relaxed select-text">
+                {currentStop.transcript.map((item, idx) => (
+                  <div key={idx} className="p-2.5 rounded bg-[#262a31] border border-[#31353c]/50">
+                    <p className="text-[#f2ca50] text-[11px] font-bold uppercase tracking-wider mb-1">
+                      {item.timeRange} • {item.title}
+                    </p>
+                    <p className="whitespace-pre-line">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             <div className="pt-2 flex justify-end">
               <button
