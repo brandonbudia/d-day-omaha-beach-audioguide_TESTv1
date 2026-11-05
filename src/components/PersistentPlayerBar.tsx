@@ -1,6 +1,7 @@
 import React from 'react';
 import { audioPlayer, AudioState } from '../audio/audioStore';
 import { STOPS } from '../data/stops';
+import { t } from '../i18n/translations';
 
 interface PersistentPlayerBarProps {
   onOpenFullPlayer: () => void;
@@ -34,6 +35,7 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
       aria-label="Lecteur audio persistant"
       className="fixed bottom-20 inset-x-0 z-40 bg-[#181c22]/95 backdrop-blur-xl border-t border-[#d4af37]/40 shadow-2xl"
     >
+      {state.error && <p role="alert" className="mx-auto max-w-md px-3 py-2 text-sm text-[#dfe2eb]">{t('audio_error', state.language)}</p>}
       {/* Scrubable mini-progress bar at top of docked player */}
       <div
         onClick={handleScrub}

@@ -1,3 +1,5 @@
+import { STOP01_FR_WORD_TIMINGS } from './stop01-word-timings.fr';
+
 export interface ArchivalPhoto {
   url: string;
   caption: string;
@@ -52,6 +54,16 @@ export interface StopData {
 export interface TimedTranscriptSegment {
   startSeconds: number;
   text: string;
+  /** Word boundaries from a forced aligner; omitted until verified timings are available. */
+  wordTimings?: TimedTranscriptWord[];
+}
+
+export interface TimedTranscriptWord {
+  text: string;
+  startSeconds: number;
+  endSeconds: number;
+  /** Index of the spoken token; allows uncertain or divergent words to stay untimed. */
+  tokenIndex?: number;
 }
 
 export const STOPS: StopData[] = [
@@ -111,19 +123,19 @@ export const STOPS: StopData[] = [
       }
     ],
     timedTranscript: [
-      { startSeconds: 0, text: '« Ici commence… des histoires de femmes et d’hommes, d’anecdotes de faits historiques, et parfois des drames. »' },
-      { startSeconds: 8.7, text: '« Ce lieu abrite une collection chargée d’histoires, qui témoigne du rapport de l’homme avec son passé. »' },
-      { startSeconds: 14.54, text: '« Cet endroit est aussi très important, car il fut le premier hôpital de campagne installé sur les plages d’Omaha après le débarquement des premières vagues d’assaut, dont beaucoup ont connu un sort tragique. »' },
-      { startSeconds: 26.44, text: '« Mais laissez-moi nous présenter : nous sommes deux frères, Fabien et Antoine. »' },
-      { startSeconds: 31.44, text: '« Nous avons grandi avec un papa… assez particulier. »' },
-      { startSeconds: 35, text: '« Un vrai passionné d’histoire, qui consacra la plus grande partie de sa vie à chercher les vestiges de cette période. »' },
-      { startSeconds: 42.12, text: '« Nous avons passé notre jeunesse à travers les forêts, les rivières et les vieilles granges, à fouiller pour trouver toutes les traces laissées par les belligérants de la Seconde Guerre mondiale. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[0], startSeconds: 0, text: '« Ici commence… des histoires de femmes et d’hommes, d’anecdotes de faits historiques, et parfois des drames. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[1], startSeconds: 8.7, text: '« Ce lieu abrite une collection chargée d’histoires, qui témoigne du rapport de l’homme avec son passé. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[2], startSeconds: 14.54, text: '« Cet endroit est aussi très important, car il fut le premier hôpital de campagne installé sur les plages d’Omaha après le débarquement des premières vagues d’assaut, dont beaucoup ont connu un sort tragique. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[3], startSeconds: 26.44, text: '« Mais laissez-moi nous présenter : nous sommes deux frères, Fabien et Antoine. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[4], startSeconds: 31.44, text: '« Nous avons grandi avec un papa… assez particulier. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[5], startSeconds: 35, text: '« Un vrai passionné d’histoire, qui consacra la plus grande partie de sa vie à chercher les vestiges de cette période. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[6], startSeconds: 42.12, text: '« Nous avons passé notre jeunesse à travers les forêts, les rivières et les vieilles granges, à fouiller pour trouver toutes les traces laissées par les belligérants de la Seconde Guerre mondiale. »' },
       { startSeconds: 56.16, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
-      { startSeconds: 69.36, text: '« Il trouva la mort en 2012… »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[8], startSeconds: 69.36, text: '« Il trouva la mort en 2012… »' },
       { startSeconds: 71.66, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
-      { startSeconds: 92.18, text: '« C’est un instinct insaisissable qui nous a convaincus. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[10], startSeconds: 92.18, text: '« C’est un instinct insaisissable qui nous a convaincus. »' },
       { startSeconds: 96.42, text: 'Passage audio absent de la transcription actuelle — texte à compléter.' },
-      { startSeconds: 107.58, text: '« Bienvenue dans notre histoire. »' },
+      { wordTimings: STOP01_FR_WORD_TIMINGS[12], startSeconds: 107.58, text: '« Bienvenue dans notre histoire. »' },
       { startSeconds: 109.46, text: '« Bienvenue dans l’histoire. »' },
     ]
   },

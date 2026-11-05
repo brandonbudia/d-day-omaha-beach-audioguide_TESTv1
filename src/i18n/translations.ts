@@ -19,6 +19,7 @@ export const LANGUAGES: LanguageMeta[] = [
 
 export const translations = {
   fr: {
+    audio_error: 'Lecture impossible. Vérifiez votre connexion et réessayez avec le bouton de lecture.',
     // Nav
     nav_home: 'Accueil',
     nav_tour: 'Visite',
@@ -126,6 +127,7 @@ export const translations = {
   },
 
   en: {
+    audio_error: 'Unable to play audio. Check your connection and try the play button again.',
     nav_home: 'Home',
     nav_tour: 'Museum Tour',
     nav_stop: 'Exhibit',
@@ -226,6 +228,7 @@ export const translations = {
   },
 
   de: {
+    audio_error: 'Audio kann nicht abgespielt werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.',
     nav_home: 'Start',
     nav_tour: 'Museumsrundgang',
     nav_stop: 'Exponat',
@@ -326,6 +329,7 @@ export const translations = {
   },
 
   it: {
+    audio_error: 'Riproduzione non disponibile. Controlla la connessione e premi nuovamente il pulsante di riproduzione.',
     nav_home: 'Home',
     nav_tour: 'Visita Museo',
     nav_stop: 'Oggetto',
@@ -426,6 +430,7 @@ export const translations = {
   },
 
   pl: {
+    audio_error: 'Nie można odtworzyć nagrania. Sprawdź połączenie i ponownie naciśnij przycisk odtwarzania.',
     nav_home: 'Start',
     nav_tour: 'Muzeum',
     nav_stop: 'Eksponat',
@@ -526,6 +531,7 @@ export const translations = {
   },
 
   nl: {
+    audio_error: 'Audio kan niet worden afgespeeld. Controleer uw verbinding en probeer de afspeelknop opnieuw.',
     nav_home: 'Home',
     nav_tour: 'Museumtour',
     nav_stop: 'Object',
@@ -626,6 +632,7 @@ export const translations = {
   },
 
   es: {
+    audio_error: 'No se puede reproducir el audio. Comprueba la conexión y vuelve a pulsar el botón de reproducción.',
     nav_home: 'Inicio',
     nav_tour: 'Visita Museo',
     nav_stop: 'Pieza',

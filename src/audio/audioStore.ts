@@ -1,5 +1,5 @@
 import { STOPS, StopData } from '../data/stops';
-import { SupportedLanguage } from '../i18n/translations';
+import { LANGUAGES, SupportedLanguage } from '../i18n/translations';
 
 export interface AudioState {
   currentStopId: string;
@@ -9,6 +9,7 @@ export interface AudioState {
   playbackRate: number;
   isVoiceBoostActive: boolean;
   language: SupportedLanguage;
+  error: 'unavailable' | 'playback' | null;
 }
 
 type AudioListener = (state: AudioState) => void;
@@ -17,15 +18,20 @@ class GlobalAudioPlayer {
   private state: AudioState;
   private listeners: Set<AudioListener> = new Set();
   private audioElement: HTMLAudioElement | null = null;
+  private playbackFrame: number | null = null;
+  private lastFrameNotification = 0;
   private audioCtx: AudioContext | null = null;
   private sourceNode: MediaElementAudioSourceNode | null = null;
   private voiceFilterNode: BiquadFilterNode | null = null;
-  private ambientNoiseNode: AudioNode | null = null;
-  private isSynthesizing = false;
-  private synthTimer: number | null = null;
+  private playRequest = 0;
+  private pendingSeek: number | null = null;
 
   constructor() {
-    const savedLang = (typeof localStorage !== 'undefined' && localStorage.getItem('dday_lang')) as SupportedLanguage || 'fr';
+    let savedLang: SupportedLanguage = 'fr';
+    try {
+      const stored = localStorage.getItem('dday_lang');
+      if (LANGUAGES.some((language) => language.code === stored)) savedLang = stored as SupportedLanguage;
+    } catch { /* Playback remains available when storage is disabled. */ }
     const initialStop = STOPS.find((s) => s.id === '01') || STOPS[0];
 
     this.state = {
@@ -36,6 +42,7 @@ class GlobalAudioPlayer {
       playbackRate: 1.0,
       isVoiceBoostActive: true,
       language: savedLang,
+      error: null,
     };
 
     if (typeof window !== 'undefined') {
@@ -48,16 +55,43 @@ class GlobalAudioPlayer {
 
     this.audioElement = new Audio();
     this.audioElement.preload = 'metadata';
-    this.updateAudioSource();
 
     this.audioElement.addEventListener('timeupdate', () => {
-      if (this.audioElement && !this.isSynthesizing) {
+      if (this.audioElement) {
         this.state.currentTime = this.audioElement.currentTime;
         if (this.audioElement.duration && !isNaN(this.audioElement.duration)) {
           this.state.duration = this.audioElement.duration;
         }
         this.notify();
       }
+    });
+
+    const syncSeek = () => {
+      if (this.audioElement) {
+        this.state.currentTime = this.audioElement.currentTime;
+        this.notify();
+      }
+    };
+    this.audioElement.addEventListener('seeking', syncSeek);
+    this.audioElement.addEventListener('seeked', syncSeek);
+
+    this.audioElement.addEventListener('play', () => {
+      this.state.isPlaying = true;
+      this.state.error = null;
+      this.startPlaybackClock();
+      this.notify();
+    });
+    this.audioElement.addEventListener('pause', () => {
+      if (this.audioElement?.paused) {
+        this.state.isPlaying = false;
+        this.stopPlaybackClock();
+      }
+    });
+    this.audioElement.addEventListener('error', () => {
+      if (!this.audioElement?.error) return;
+      this.state.isPlaying = false;
+      this.state.error = 'unavailable';
+      this.stopPlaybackClock();
     });
 
     this.audioElement.addEventListener('ended', () => {
@@ -67,16 +101,56 @@ class GlobalAudioPlayer {
     this.audioElement.addEventListener('loadedmetadata', () => {
       if (this.audioElement && this.audioElement.duration && !isNaN(this.audioElement.duration)) {
         this.state.duration = this.audioElement.duration;
+        if (this.pendingSeek !== null) {
+          const target = this.pendingSeek;
+          this.pendingSeek = null;
+          this.seek(target);
+        }
         this.notify();
       }
     });
+    this.updateAudioSource();
   }
 
   private updateAudioSource() {
     if (!this.audioElement) return;
+    this.playRequest += 1;
+    this.state.isPlaying = false;
+    this.state.error = null;
+    this.stopPlaybackClock(false);
     const path = `/audio/${this.state.language}/stop-${this.state.currentStopId}.mp3`;
     this.audioElement.src = path;
     this.audioElement.playbackRate = this.state.playbackRate;
+  }
+
+  private startPlaybackClock() {
+    if (this.playbackFrame !== null || typeof window === 'undefined') return;
+
+    const tick = (now: number) => {
+      this.playbackFrame = null;
+      if (!this.audioElement || this.audioElement.paused) return;
+
+      // Keep the UI responsive for word highlighting without notifying React on every display frame.
+      if (now - this.lastFrameNotification >= 33) {
+        this.state.currentTime = this.audioElement.currentTime;
+        this.lastFrameNotification = now;
+        this.notify();
+      }
+      this.playbackFrame = window.requestAnimationFrame(tick);
+    };
+
+    this.playbackFrame = window.requestAnimationFrame(tick);
+  }
+
+  private stopPlaybackClock(syncTime = true) {
+    if (this.playbackFrame !== null && typeof window !== 'undefined') {
+      window.cancelAnimationFrame(this.playbackFrame);
+      this.playbackFrame = null;
+    }
+    if (this.audioElement && syncTime) {
+      this.state.currentTime = this.audioElement.currentTime;
+      this.notify();
+    }
   }
 
   private initWebAudio() {
@@ -126,16 +200,14 @@ class GlobalAudioPlayer {
   public setLanguage(lang: SupportedLanguage) {
     if (this.state.language === lang) return;
     this.state.language = lang;
-    if (typeof localStorage !== 'undefined') {
+    try {
       localStorage.setItem('dday_lang', lang);
-    }
+    } catch { /* Keep the language choice for this session. */ }
     const wasPlaying = this.state.isPlaying;
     const prevTime = this.state.currentTime;
 
     this.updateAudioSource();
-    if (this.audioElement) {
-      this.audioElement.currentTime = prevTime;
-    }
+    this.seek(prevTime);
     if (wasPlaying) {
       this.play();
     }
@@ -146,10 +218,13 @@ class GlobalAudioPlayer {
     const target = STOPS.find((s) => s.id === stopId);
     if (!target) return;
 
+    this.pause();
+    this.pendingSeek = null;
     this.state.currentStopId = stopId;
     this.state.currentTime = 0;
     this.state.duration = target.durationSeconds;
     this.updateAudioSource();
+    this.seek(0);
 
     if (autoPlay) {
       this.play();
@@ -161,49 +236,31 @@ class GlobalAudioPlayer {
 
   public async play() {
     this.initAudioElement();
-    this.initWebAudio();
-    if (this.audioCtx && this.audioCtx.state === 'suspended') {
-      await this.audioCtx.resume();
+    if (this.audioElement?.error) {
+      const position = this.state.currentTime;
+      this.updateAudioSource();
+      this.seek(position);
     }
-
-    if (this.audioElement) {
-      try {
-        await this.audioElement.play();
-        this.state.isPlaying = true;
-        this.notify();
-      } catch {
-        // Fallback simulated progress timer if media autoplay is blocked by browser
-        this.startSimulatedPlayback();
+    const request = ++this.playRequest;
+    try {
+      this.initWebAudio();
+      if (this.audioCtx?.state === 'suspended') await this.audioCtx.resume();
+      if (!this.audioElement || request !== this.playRequest) return;
+      await this.audioElement.play();
+    } catch (error) {
+      // A stale play request is expected when the visitor changes track or pauses.
+      if (request === this.playRequest && !(error instanceof DOMException && error.name === 'AbortError')) {
+        this.state.isPlaying = false;
+        this.state.error = this.audioElement?.error ? 'unavailable' : 'playback';
+        this.stopPlaybackClock();
       }
-    } else {
-      this.startSimulatedPlayback();
     }
-  }
-
-  private startSimulatedPlayback() {
-    this.state.isPlaying = true;
-    this.notify();
-    if (this.synthTimer) clearInterval(this.synthTimer);
-    this.synthTimer = window.setInterval(() => {
-      if (this.state.isPlaying) {
-        const nextTime = this.state.currentTime + 1 * this.state.playbackRate;
-        if (nextTime >= this.state.duration) {
-          this.handleTrackEnded();
-        } else {
-          this.state.currentTime = nextTime;
-          this.notify();
-        }
-      }
-    }, 1000);
   }
 
   public pause() {
+    this.playRequest += 1;
     if (this.audioElement) {
       this.audioElement.pause();
-    }
-    if (this.synthTimer) {
-      clearInterval(this.synthTimer);
-      this.synthTimer = null;
     }
     this.state.isPlaying = false;
     this.notify();
@@ -218,9 +275,11 @@ class GlobalAudioPlayer {
   }
 
   public seek(seconds: number) {
+    if (!Number.isFinite(seconds)) return;
     const clamped = Math.max(0, Math.min(seconds, this.state.duration));
     this.state.currentTime = clamped;
     if (this.audioElement) {
+      this.pendingSeek = this.audioElement.readyState === 0 ? clamped : null;
       try {
         this.audioElement.currentTime = clamped;
       } catch {

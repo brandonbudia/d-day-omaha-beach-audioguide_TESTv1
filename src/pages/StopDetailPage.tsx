@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { STOPS, StopData } from '../data/stops';
 import { t, SupportedLanguage } from '../i18n/translations';
 import { audioPlayer, AudioState } from '../audio/audioStore';
+import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
+import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
 
 interface StopDetailPageProps {
   stopId: string;
@@ -39,6 +41,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
   }, [stopId]);
 
   const stop = STOPS.find((s) => s.id === stopId) || STOPS[0];
+  const frenchTranscript = currentLang === 'fr' ? FRENCH_TRANSCRIPTS[stop.id] : undefined;
   const isCurrentActive = audioState.currentStopId === stop.id;
   const isPlaying = isCurrentActive && audioState.isPlaying;
 
@@ -65,7 +68,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full pb-36">
+    <div className="flex flex-col w-full pb-48">
       {/* Archival Visual Header Card */}
       <div className="relative w-full rounded-xl overflow-hidden bg-[#1c2026] shadow-xl border border-[#31353c]/70">
         <div
@@ -164,7 +167,9 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
               {isCurrentActive ? formatSecs(audioState.currentTime) : '00:00'}
             </span>
             <span className="tabular-nums">
-              {stop.duration}
+              {frenchTranscript
+                ? formatSecs(isCurrentActive && audioState.duration > 0 ? audioState.duration : frenchTranscript.durationSeconds)
+                : stop.duration}
             </span>
           </div>
         </div>
@@ -342,7 +347,14 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
       {/* Tab Content: Transcription Intégrale de la visite */}
       {activeTab === 'transcript' && (
         <div className="mt-4 p-4 rounded-xl bg-[#1c2026] border border-[#31353c] text-[#d0c5af] flex flex-col gap-3 shadow-md">
-          {stop.transcript.map((item, idx) => (
+          {frenchTranscript ? (
+            <>
+              <FrenchTranscriptNotice transcript={frenchTranscript} />
+              {frenchTranscript.segments.map((segment, index) => (
+                <p key={index} className="rounded-lg bg-[#262a31] p-3.5 text-lg leading-relaxed text-[#dfe2eb] select-text">{segment.text}</p>
+              ))}
+            </>
+          ) : stop.transcript.map((item, idx) => (
             <div key={idx} className="p-3.5 rounded-lg bg-[#262a31] border border-[#31353c]/50">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-[11px] font-bold text-[#f2ca50] uppercase tracking-wider">
@@ -425,7 +437,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
       )}
 
       {/* Sticky Bottom Navigation Bar (Thumb Friendly >56px Targets) */}
-      <div className="fixed bottom-20 inset-x-0 z-40 bg-[#0a0e14]/95 backdrop-blur-xl px-4 py-3 border-t border-[#262a31]">
+      <div className="fixed bottom-40 inset-x-0 z-40 bg-[#0a0e14]/95 backdrop-blur-xl px-4 py-3 border-t border-[#262a31]" role="navigation" aria-label="Navigation entre les pièces">
         <div className="max-w-md mx-auto grid grid-cols-2 gap-3">
           {/* Previous Station Action */}
           {prevStop ? (

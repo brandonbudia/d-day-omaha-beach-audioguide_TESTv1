@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Header } from './components/Header';
 import { BottomNav, ActiveTab } from './components/BottomNav';
 import { PersistentPlayerBar } from './components/PersistentPlayerBar';
@@ -16,6 +16,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('accueil');
   const [selectedStopId, setSelectedStopId] = useState<string>('01');
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
+  const lastAudioStopRef = useRef(audioState.currentStopId);
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const isOnline = useOnlineStatus();
 
@@ -23,7 +24,8 @@ export default function App() {
   useEffect(() => {
     return audioPlayer.subscribe((next) => {
       setAudioState(next);
-      if (next.currentStopId) {
+      if (next.currentStopId !== lastAudioStopRef.current) {
+        lastAudioStopRef.current = next.currentStopId;
         setSelectedStopId(next.currentStopId);
       }
     });
@@ -39,9 +41,12 @@ export default function App() {
         setActiveTab('parcours');
       } else if (path.startsWith('/stop/')) {
         const id = path.replace('/stop/', '').replace(/\/$/, '');
-        if (id) {
+        if (STOPS.some((stop) => stop.id === id)) {
           setSelectedStopId(id);
           setActiveTab('arret');
+        } else {
+          // An invalid or stale QR deep link should not masquerade as stop 01.
+          setActiveTab('accueil');
         }
       } else if (path.startsWith('/player') || path.startsWith('/lecteur')) {
         setActiveTab('lecteur');

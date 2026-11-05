@@ -229,6 +229,8 @@ html.light-mode .welcome-hero .bg-gradient-to-t {
   --tw-gradient-from: #10141a;
 }
 @media (max-width: 380px) {
+  header.fixed > div { height: auto; min-height: 5rem; flex-wrap: wrap; padding-block: .25rem; row-gap: .25rem; }
+  header.fixed > div > div:last-child { margin-left: auto; }
   .welcome-hero { min-height: 19rem; padding: 1rem; }
   .welcome-hero h2 { font-size: clamp(1.65rem, 8vw, 2rem); }
   nav[aria-label="Navigation principale"] button { min-width: 0; }
@@ -277,3 +279,24 @@ html[data-theme="dark"] header.fixed {
   color: #dfe2eb !important;
   border-color: rgb(38 42 49 / 60%) !important;
 }
+
+/* Dedicated transcript colors keep active words distinct in both themes. */
+.synced-transcript-phrase {
+  padding: 1rem;
+  border: 1px solid #4d535e;
+  border-radius: .75rem;
+  background: #1c2026;
+  color: #dfe2eb;
+  line-height: 1.8;
+}
+.synced-transcript-phrase[data-active="true"] { border-color: #f2ca50; background: #303621; }
+.transcript-phrase-button { width: 100%; min-height: 3.5rem; text-align: left; }
+.transcript-word { display: inline-block; min-width: 24px; min-height: 44px; padding: 0 .12em; border-radius: .25rem; }
+.transcript-word[data-word-state="read"] { color: #f9e6a0; }
+.transcript-word[data-word-state="upcoming"] { color: #c5cbd5; }
+.transcript-word[data-word-state="current"] { color: #171717; background: #f2ca50; box-shadow: 0 0 0 2px #f2ca50; font-weight: 700; }
+html.light-mode .synced-transcript-phrase { color: #292820; background: #fffdf8; border-color: #bbb29e; }
+html.light-mode .synced-transcript-phrase[data-active="true"] { background: #e5ead0; border-color: #735900; }
+html.light-mode .transcript-word[data-word-state="read"] { color: #685000; }
+html.light-mode .transcript-word[data-word-state="upcoming"] { color: #475145; }
+html.light-mode .transcript-word[data-word-state="current"] { color: #ffffff; background: #604600; box-shadow: 0 0 0 2px #604600; }

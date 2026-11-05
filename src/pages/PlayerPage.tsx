@@ -5,6 +5,8 @@ import { t, SupportedLanguage } from '../i18n/translations';
 import { Waveform } from '../components/Waveform';
 import { Scrubber } from '../components/Scrubber';
 import { SyncedTranscript } from '../components/SyncedTranscript';
+import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
+import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
 
 interface PlayerPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -26,9 +28,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
   const currentStop: StopData = STOPS.find((s) => s.id === audioState.currentStopId) || STOPS[0];
   const currentIndex = STOPS.findIndex((s) => s.id === currentStop.id);
   const nextStop = currentIndex < STOPS.length - 1 ? STOPS[currentIndex + 1] : null;
-  const hasSyncedTranscript = currentStop.id === '01'
-    && audioState.language === 'fr'
-    && Boolean(currentStop.timedTranscript?.length);
+  const frenchTranscript = audioState.language === 'fr' ? FRENCH_TRANSCRIPTS[currentStop.id] : undefined;
+  const hasSyncedTranscript = Boolean(frenchTranscript?.segments.length);
 
   const progressPercent = audioState.duration > 0
     ? (audioState.currentTime / audioState.duration) * 100
@@ -55,6 +56,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
           <span>{currentStop.spotTag}</span>
         </div>
       </div>
+
+      {audioState.error && <p role="alert" className="rounded-xl border border-[#f2ca50] bg-[#262a31] p-4 text-[#dfe2eb]">{t('audio_error', currentLang)}</p>}
 
       {/* Main Player Display Card */}
       <section className="flex flex-col items-center bg-[#1c2026] border border-[#31353c]/70 rounded-xl p-4 shadow-xl text-center relative overflow-hidden">
@@ -195,7 +198,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
               <span className="text-[13px] font-bold">{t('speed', currentLang)}</span>
             </div>
             <span className="px-2.5 py-1 rounded bg-[#0a0e14] text-[#f2ca50] text-[13px] font-bold shadow-inner border border-[#31353c]">
-              {audioState.playbackRate.toFixed(1)}x
+              {audioState.playbackRate}x
             </span>
           </button>
         </div>
@@ -261,7 +264,9 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
               {t('archive_note_body', currentLang)}
             </div>
 
-            {hasSyncedTranscript && currentStop.timedTranscript ? (
+            {frenchTranscript && <FrenchTranscriptNotice transcript={frenchTranscript} />}
+
+            {hasSyncedTranscript && frenchTranscript ? (
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-3 rounded-lg border border-[#31353c] bg-[#10141a] p-2">
                   <span className="pl-2 text-sm font-semibold text-[#dfe2eb]">Taille du texte</span>
@@ -282,17 +287,31 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
                     >A+</button>
                   </div>
                 </div>
+                <div className="flex items-center justify-between gap-3 rounded-lg border border-[#31353c] bg-[#10141a] p-2">
+                  <button
+                    type="button"
+                    aria-label={audioState.isPlaying ? 'Mettre en pause depuis la transcription' : 'Écouter depuis la transcription'}
+                    onClick={() => audioPlayer.togglePlayPause()}
+                    className="flex min-h-11 items-center gap-2 rounded-lg bg-[#f2ca50] px-4 font-semibold text-[#171717] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
+                  >
+                    <span className="material-symbols-outlined" aria-hidden="true">{audioState.isPlaying ? 'pause' : 'play_arrow'}</span>
+                    {audioState.isPlaying ? 'Pause' : 'Écouter'}
+                  </button>
+                  <span className="pr-2 text-sm tabular-nums text-[#dfe2eb]">{formatDuration(audioState.currentTime)} / {formatDuration(audioState.duration)}</span>
+                </div>
                 <SyncedTranscript
-                  segments={currentStop.timedTranscript}
+                  key={`${currentStop.id}-${audioState.language}`}
+                  segments={frenchTranscript.segments}
                   currentTime={audioState.currentTime}
                   textSize={transcriptTextSize}
+                  isPlaying={audioState.isPlaying}
                   onSelectPhrase={(seconds) => {
                     audioPlayer.seek(seconds);
                     if (!audioState.isPlaying) void audioPlayer.play();
                   }}
                 />
               </div>
-            ) : (
+            ) : !frenchTranscript ? (
               <div className="space-y-3 text-[#dfe2eb] text-[14px] leading-relaxed select-text">
                 {currentStop.transcript.map((item, idx) => (
                   <div key={idx} className="p-2.5 rounded bg-[#262a31] border border-[#31353c]/50">
@@ -303,7 +322,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
                   </div>
                 ))}
               </div>
-            )}
+            ) : null}
 
             <div className="pt-2 flex justify-end">
               <button
@@ -321,9 +340,10 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
 
       {/* Next Museum Exhibit Suggestion */}
       {nextStop && (
-        <aside
+        <button
+          type="button"
           onClick={() => onSelectStopDetail(nextStop.id)}
-          className="flex items-center gap-3 p-3.5 rounded-xl bg-[#181c22] border border-[#262a31] shadow-sm cursor-pointer hover:bg-[#1c2026] transition-colors"
+          className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-[#181c22] border border-[#262a31] shadow-sm text-left cursor-pointer hover:bg-[#1c2026] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
         >
           <div className="w-12 h-12 rounded-lg bg-[#262a31] border border-[#31353c] flex-shrink-0 flex items-center justify-center text-[#f2ca50]">
             <span className="material-symbols-outlined text-[24px]">museum</span>
@@ -337,7 +357,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({
             </p>
           </div>
           <span className="material-symbols-outlined text-[#d0c5af] text-[20px]">chevron_right</span>
-        </aside>
+        </button>
       )}
     </div>
   );
