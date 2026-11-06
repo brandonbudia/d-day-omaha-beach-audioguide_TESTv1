@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { STOPS, StopData } from '../data/stops';
+import { STOPS } from '../data/stops';
 import { StopCard } from '../components/StopCard';
 import { t, SupportedLanguage } from '../i18n/translations';
 import { audioPlayer, AudioState } from '../audio/audioStore';
@@ -50,12 +50,9 @@ export const ParcoursPage: React.FC<ParcoursPageProps> = ({
   }, []);
 
   const totalCount = STOPS.length; // 22 stops
-  const currentStopIndex = STOPS.findIndex((s) => s.id === audioState.currentStopId);
-  const currentStepNum = currentStopIndex >= 0 ? currentStopIndex + 1 : 1;
   const completedCount = STOPS.filter((s) => s.status === 'completed').length;
   const remainingCount = totalCount - completedCount;
-  const progressPercent = Math.round((currentStepNum / totalCount) * 100);
-  const visitedCount = visitedStopIds.filter((id) => STOPS.some((stop) => stop.id === id)).length;
+  const visitedCount = new Set(visitedStopIds.filter((id) => STOPS.some((stop) => stop.id === id))).size;
   const visitedPercent = Math.round((visitedCount / totalCount) * 100);
   const sectors = Array.from(new Set(STOPS.map((stop) => stop.sector).filter(Boolean)));
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase(currentLang);
@@ -83,54 +80,19 @@ export const ParcoursPage: React.FC<ParcoursPageProps> = ({
     <div className="flex flex-col w-full pb-32">
       {/* Progress Overview Card */}
       <div className="w-full bg-[#1c2026] border border-[#31353c]/60 rounded-xl p-4 shadow-md mb-6">
-        <div className="flex items-center justify-between mb-1.5">
-          <div className="flex items-center gap-2">
-            <span
-              className="material-symbols-outlined text-[#f2ca50] text-[20px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              museum
-            </span>
-            <span className="text-[12px] font-bold uppercase tracking-wider text-[#dfe2eb]">
-              {t('circuit_progress', currentLang)}
-            </span>
-          </div>
-          <span className="text-[14px] text-[#f2ca50] font-bold">{progressPercent}%</span>
-        </div>
-
-        <div className="flex items-baseline justify-between mb-2">
-          <span className="text-[20px] font-bold text-[#dfe2eb] font-heading">
-            Pièce {currentStepNum} <span className="text-[14px] text-[#d0c5af] font-normal">/ {totalCount}</span>
-          </span>
-          <span className="text-[11px] text-[#d0c5af] uppercase tracking-wider font-semibold">
-            {t('sector_omaha', currentLang)}
-          </span>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="w-full h-2 rounded-full bg-[#262a31] overflow-hidden mb-3 border border-[#31353c]">
-          <div
-            className="h-full bg-[#f2ca50] rounded-full transition-all duration-500 shadow-sm"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-
-        {/* Visited progress is tracked separately from the currently selected audio stop. */}
-        <div className="mt-3 mb-3 rounded-xl border border-[#31353c]/70 bg-[#181c22]/70 p-3">
-          <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-xs font-semibold text-[#d0c5af]">{t('visited_stations', currentLang)}</span>
-            <span className="text-xs font-bold text-[#f2ca50]">{visitedCount} / {totalCount} · {visitedPercent}%</span>
-          </div>
-          <div
-            className="h-1.5 w-full overflow-hidden rounded-full bg-[#262a31]"
-            role="progressbar"
-            aria-label={t('visited_stations', currentLang)}
-            aria-valuemin={0}
-            aria-valuemax={totalCount}
-            aria-valuenow={visitedCount}
-          >
-            <div className="h-full rounded-full bg-[#c3cc8c] transition-all duration-300" style={{ width: `${visitedPercent}%` }} />
-          </div>
+        <p className="mb-3 text-[20px] font-bold leading-snug text-[#dfe2eb] font-heading">
+          {t('visited_pieces_progress', currentLang, { visited: visitedCount, total: totalCount, percent: visitedPercent })}
+        </p>
+        <div
+          className="mb-4 h-2 w-full overflow-hidden rounded-full bg-[#262a31]"
+          role="progressbar"
+          aria-label={t('visited_pieces', currentLang)}
+          aria-valuemin={0}
+          aria-valuemax={totalCount}
+          aria-valuenow={visitedCount}
+          aria-valuetext={t('visited_pieces_progress', currentLang, { visited: visitedCount, total: totalCount, percent: visitedPercent })}
+        >
+          <div className="h-full rounded-full bg-[#c3cc8c] transition-all duration-300" style={{ width: `${visitedPercent}%` }} />
         </div>
 
         {/* Search and sector filters */}

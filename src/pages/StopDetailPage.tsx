@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { STOPS, StopData } from '../data/stops';
+import { STOPS } from '../data/stops';
 import { t, SupportedLanguage } from '../i18n/translations';
-import { audioPlayer, AudioState } from '../audio/audioStore';
-import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
-import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
+import { audioPlayer } from '../audio/audioStore';
 
 interface StopDetailPageProps {
   stopId: string;
@@ -18,14 +16,9 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
   onOpenPlayer,
   currentLang,
 }) => {
-  const [activeTab, setActiveTab] = useState<'recit' | 'transcript' | 'photos' | 'carte'>('recit');
+  const [activeTab, setActiveTab] = useState<'recit' | 'photos' | 'carte'>('recit');
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [expandedPhoto, setExpandedPhoto] = useState<{ url: string; caption: string; source: string } | null>(null);
-  const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
-
-  React.useEffect(() => {
-    return audioPlayer.subscribe((next) => setAudioState(next));
-  }, []);
 
   React.useEffect(() => {
     try {
@@ -41,31 +34,18 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
   }, [stopId]);
 
   const stop = STOPS.find((s) => s.id === stopId) || STOPS[0];
-  const frenchTranscript = currentLang === 'fr' ? FRENCH_TRANSCRIPTS[stop.id] : undefined;
-  const isCurrentActive = audioState.currentStopId === stop.id;
-  const isPlaying = isCurrentActive && audioState.isPlaying;
-
   const currentIndex = STOPS.findIndex((s) => s.id === stop.id);
   const prevStop = currentIndex > 0 ? STOPS[currentIndex - 1] : null;
   const nextStop = currentIndex < STOPS.length - 1 ? STOPS[currentIndex + 1] : null;
 
-  const progressPercent = isCurrentActive && audioState.duration > 0
-    ? (audioState.currentTime / audioState.duration) * 100
-    : 0;
-
-  const formatSecs = (secs: number) => {
-    const m = Math.floor(secs / 60);
-    const s = Math.floor(secs % 60);
-    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
-
-  const handlePlayToggle = () => {
-    if (audioState.currentStopId !== stop.id) {
+  const handleStartPlayback = () => {
+    const current = audioPlayer.getState();
+    if (current.currentStopId !== stop.id) {
       audioPlayer.setStop(stop.id, true);
-    } else {
-      audioPlayer.togglePlayPause();
+    } else if (!current.isPlaying) {
+      void audioPlayer.play();
     }
-    if (!isPlaying) onOpenPlayer();
+    onOpenPlayer();
   };
 
   return (
@@ -130,84 +110,14 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
         </p>
       </div>
 
-      {/* Prominent Field Audio Player */}
-      <div className="mt-5 p-4 rounded-xl bg-[#262a31] border border-[#d4af37]/40 shadow-xl flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={onOpenPlayer}>
-            <span className="material-symbols-outlined text-[#f2ca50] text-[22px]">volume_up</span>
-            <span className="text-[13px] font-bold text-[#dfe2eb] hover:text-[#f2ca50] transition-colors">
-              {t('immersive_guide', currentLang)}
-            </span>
-          </div>
-          <span className="px-2.5 py-0.5 rounded bg-[#31353c] text-[#c3cc8c] text-[11px] font-bold uppercase tracking-wider border border-[#4d4635]/50">
-            {t('original_voice', currentLang)}
-          </span>
-        </div>
-
-        {/* Scrubber Timeline */}
-        <div className="flex flex-col gap-1.5">
-          <div
-            onClick={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect();
-              const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-              if (isCurrentActive) {
-                audioPlayer.seek(ratio * audioState.duration);
-              } else {
-                audioPlayer.setStop(stop.id, true);
-              }
-            }}
-            className="relative w-full h-3 bg-[#181c22] rounded-full overflow-hidden flex items-center cursor-pointer border border-[#31353c]"
-          >
-            <div
-              className="h-full bg-[#f2ca50] rounded-full transition-all duration-150"
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
-          <div className="flex justify-between items-center text-[12px] font-semibold text-[#d0c5af]">
-            <span className="tabular-nums text-[#f2ca50]">
-              {isCurrentActive ? formatSecs(audioState.currentTime) : '00:00'}
-            </span>
-            <span className="tabular-nums">
-              {frenchTranscript
-                ? formatSecs(isCurrentActive && audioState.duration > 0 ? audioState.duration : frenchTranscript.durationSeconds)
-                : stop.duration}
-            </span>
-          </div>
-        </div>
-
-        {/* Player Controls (Ergonomic Touch Targets) */}
-        <div className="flex items-center justify-center gap-4 pt-1">
-          <button
-            onClick={() => audioPlayer.rewind(15)}
-            aria-label={t('rewind_15', currentLang)}
-            className="w-14 h-14 rounded-full bg-[#1c2026] hover:bg-[#31353c] text-[#dfe2eb] flex items-center justify-center transition-all active:scale-95 shadow-md border border-[#31353c]"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[24px]">replay_10</span>
-          </button>
-          <button
-            onClick={handlePlayToggle}
-            aria-label={isPlaying ? t('pause', currentLang) : t('play', currentLang)}
-            className="w-16 h-16 rounded-full bg-[#f2ca50] text-[#3c2f00] flex items-center justify-center shadow-xl hover:brightness-105 transition-all active:scale-90 ring-4 ring-[#ffe088]/20"
-            type="button"
-          >
-            <span
-              className="material-symbols-outlined text-[36px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              {isPlaying ? 'pause' : 'play_arrow'}
-            </span>
-          </button>
-          <button
-            onClick={() => audioPlayer.forward(15)}
-            aria-label={t('forward_15', currentLang)}
-            className="w-14 h-14 rounded-full bg-[#1c2026] hover:bg-[#31353c] text-[#dfe2eb] flex items-center justify-center transition-all active:scale-95 shadow-md border border-[#31353c]"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[24px]">forward_10</span>
-          </button>
-        </div>
-      </div>
+      <button
+        type="button"
+        onClick={handleStartPlayback}
+        className="mt-5 min-h-14 w-full rounded-xl bg-[#f2ca50] px-4 py-3 text-base font-bold text-[#3c2f00] flex items-center justify-center gap-3 shadow-md hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
+      >
+        <span className="material-symbols-outlined text-[26px]" aria-hidden="true">play_arrow</span>
+        {t('start_playback', currentLang)}
+      </button>
 
       {/* Tactical Navigation Tabs */}
       <div className="mt-5 flex gap-2 overflow-x-auto no-scrollbar py-1">
@@ -222,19 +132,6 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
         >
           <span className="material-symbols-outlined text-[18px]">history_edu</span>
           {t('tab_narrative', currentLang)}
-        </button>
-
-        <button
-          onClick={() => setActiveTab('transcript')}
-          className={`min-h-[44px] px-4 rounded-full text-[13px] font-bold flex items-center gap-1.5 whitespace-nowrap shadow-sm active:scale-95 transition-all ${
-            activeTab === 'transcript'
-              ? 'bg-[#f2ca50] text-[#3c2f00]'
-              : 'bg-[#1c2026] text-[#d0c5af] hover:text-[#dfe2eb] border border-[#31353c]'
-          }`}
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[18px]">subtitles</span>
-          {t('tab_transcript', currentLang)}
         </button>
 
         <button
@@ -342,34 +239,6 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
               </div>
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Tab Content: Transcription Intégrale de la visite */}
-      {activeTab === 'transcript' && (
-        <div className="mt-4 p-4 rounded-xl bg-[#1c2026] border border-[#31353c] text-[#d0c5af] flex flex-col gap-3 shadow-md">
-          {frenchTranscript ? (
-            <>
-              <FrenchTranscriptNotice transcript={frenchTranscript} />
-              {frenchTranscript.segments.map((segment, index) => (
-                <p key={index} className="rounded-lg bg-[#262a31] p-3.5 text-lg leading-relaxed text-[#dfe2eb] select-text">{segment.text}</p>
-              ))}
-            </>
-          ) : stop.transcript.map((item, idx) => (
-            <div key={idx} className="p-3.5 rounded-lg bg-[#262a31] border border-[#31353c]/50">
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className="text-[11px] font-bold text-[#f2ca50] uppercase tracking-wider">
-                  [{item.timeRange}]
-                </span>
-                <span className="text-[13px] font-bold text-[#dfe2eb] font-heading">
-                  {item.title}
-                </span>
-              </div>
-              <p className="text-[14px] text-[#dfe2eb] leading-relaxed select-text whitespace-pre-line">
-                {item.text}
-              </p>
-            </div>
-          ))}
         </div>
       )}
 

@@ -47,6 +47,7 @@ interface SyncedTranscriptProps {
   currentTime: number;
   textSize: number;
   isPlaying?: boolean;
+  reducedMotion?: boolean;
   onSelectPhrase: (seconds: number) => void;
 }
 
@@ -55,6 +56,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   currentTime,
   textSize,
   isPlaying = false,
+  reducedMotion = false,
   onSelectPhrase,
 }) => {
   const [isFollowing, setIsFollowing] = useState(true);
@@ -102,9 +104,9 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
     if (!force && targetRect.top >= visibleTop + margin && targetRect.bottom <= visibleBottom - margin) return;
     const targetHeight = Math.min(targetRect.height, visibleHeight);
     const offset = targetRect.top - visibleTop + targetHeight / 2 - visibleHeight / 2;
-    const behavior = behaviorOverride ?? (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+    const behavior = behaviorOverride ?? (reducedMotion || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
     viewport.scrollTo({ top: viewport.scrollTop + offset, behavior });
-  }, []);
+  }, [reducedMotion]);
 
   useEffect(() => {
     if (isFollowing) {
@@ -128,9 +130,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
     };
     const observer = new ResizeObserver(updateVisibleArea);
     if (transcriptViewportRef.current) observer.observe(transcriptViewportRef.current);
+    document.fonts?.addEventListener('loadingdone', updateVisibleArea);
     window.addEventListener('resize', updateVisibleArea);
     return () => {
       observer.disconnect();
+      document.fonts?.removeEventListener('loadingdone', updateVisibleArea);
       window.removeEventListener('resize', updateVisibleArea);
       if (frame !== undefined) window.cancelAnimationFrame(frame);
     };

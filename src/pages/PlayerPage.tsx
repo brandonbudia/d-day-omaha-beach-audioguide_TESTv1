@@ -7,6 +7,7 @@ import { Scrubber } from '../components/Scrubber';
 import { SyncedTranscript } from '../components/SyncedTranscript';
 import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
 import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
+import { useReadingPreferences } from '../hooks/useReadingPreferences';
 
 interface PlayerPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -18,6 +19,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(true);
   const [transcriptTextSize, setTranscriptTextSize] = useState(20);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const { preferences, toggle } = useReadingPreferences();
   const [shellHeights, setShellHeights] = useState({ header: 81, navigation: 81 });
   const settingsRef = useRef<HTMLDialogElement>(null);
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
@@ -60,7 +62,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   };
 
   return (
-    <div className="player-page" style={{
+    <div className="player-page" data-reduced-motion={preferences.reducedMotion} style={{
       '--player-header-height': `${shellHeights.header}px`,
       '--player-navigation-height': `${shellHeights.navigation}px`,
     } as React.CSSProperties}>
@@ -74,7 +76,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
           </button>
         </div>
-        <button ref={settingsButtonRef} type="button" className="player-icon-button player-settings-button" onClick={() => setSettingsOpen(true)} aria-label="Réglages d’écoute et informations sur la transcription">
+        <button ref={settingsButtonRef} type="button" className="player-icon-button player-settings-button" onClick={() => setSettingsOpen(true)} aria-label={t('reading_settings_label', currentLang)}>
           <Settings2 size={22} aria-hidden="true" />
         </button>
       </section>
@@ -85,12 +87,15 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             <FileText size={18} aria-hidden="true" /> {t('tab_transcript', currentLang)}
             <span aria-hidden="true">{isTranscriptOpen ? '−' : '+'}</span>
           </button>
-          <div className="player-text-size" role="group" aria-label="Taille du texte de la transcription">
-            <button type="button" className="player-icon-button" disabled={transcriptTextSize <= 16} onClick={() => setTranscriptTextSize((size) => Math.max(16, size - 2))} aria-label="Diminuer la taille du texte">A−</button>
-            <button type="button" className="player-icon-button" disabled={transcriptTextSize >= 30} onClick={() => setTranscriptTextSize((size) => Math.min(30, size + 2))} aria-label="Augmenter la taille du texte">A+</button>
+          <button type="button" className="player-speed-button" onClick={() => audioPlayer.cyclePlaybackRate()} aria-label={t('reading_speed_current', currentLang, { speed: audioState.playbackRate })}>
+            <span>{t('speed', currentLang)}</span><strong>{audioState.playbackRate}×</strong>
+          </button>
+          <div className="player-text-size" role="group" aria-label={t('reading_text_size', currentLang)}>
+            <button type="button" className="player-icon-button" disabled={transcriptTextSize <= 16} onClick={() => setTranscriptTextSize((size) => Math.max(16, size - 2))} aria-label={t('reading_text_decrease', currentLang)}>A−</button>
+            <button type="button" className="player-icon-button" disabled={transcriptTextSize >= 30} onClick={() => setTranscriptTextSize((size) => Math.min(30, size + 2))} aria-label={t('reading_text_increase', currentLang)}>A+</button>
           </div>
         </div>
-        <div id="player-transcript" className="player-transcript-content" hidden={!isTranscriptOpen}>
+        <div id="player-transcript" className="player-transcript-content" data-wide-spacing={preferences.wideSpacing} data-color-assistance={preferences.colorAssistance} data-dyslexic-font={preferences.dyslexicFont} hidden={!isTranscriptOpen}>
           {frenchTranscript?.segments.length ? (
             <SyncedTranscript
               key={`${currentStop.id}-${audioState.language}`}
@@ -98,6 +103,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
               currentTime={audioState.currentTime}
               textSize={transcriptTextSize}
               isPlaying={audioState.isPlaying}
+              reducedMotion={preferences.reducedMotion}
               onSelectPhrase={selectTime}
             />
           ) : (
@@ -127,9 +133,18 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
       </section>
 
       <dialog ref={settingsRef} className="player-settings" aria-labelledby="player-settings-title" onClose={() => { setSettingsOpen(false); settingsButtonRef.current?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
-        <div className="player-settings-heading"><h2 id="player-settings-title">Réglages d’écoute</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label="Fermer les réglages"><X size={22} aria-hidden="true" /></button></div>
-        <div className="player-setting-row"><span>{t('speed', currentLang)}</span><button type="button" className="player-secondary-button" onClick={() => audioPlayer.cyclePlaybackRate()} aria-label={t('speed', currentLang)}>{audioState.playbackRate}×</button></div>
-        <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{audioState.isVoiceBoostActive ? 'Activée' : 'Désactivée'}</button></div>
+        <div className="player-settings-heading"><h2 id="player-settings-title">{t('reading_settings', currentLang)}</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label={t('close_reading_settings', currentLang)}><X size={22} aria-hidden="true" /></button></div>
+        <aside className="player-reading-help" aria-label={t('reading_help_title', currentLang)}><h3>{t('reading_help_title', currentLang)}</h3><ul><li>{t('reading_help_color', currentLang)}</li><li>{t('reading_help_tap', currentLang)}</li><li>{t('reading_help_scroll', currentLang)}</li></ul></aside>
+        <div className="player-setting-row"><span>{t('reading_spacing', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={preferences.wideSpacing} onClick={() => toggle('wideSpacing')}>{t(preferences.wideSpacing ? 'reading_spacing_wide' : 'reading_spacing_normal', currentLang)}</button></div>
+        {([
+          ['colorAssistance', 'reading_color_assistance', 'reading_color_assistance_hint'],
+          ['dyslexicFont', 'reading_dyslexic_font', 'reading_dyslexic_hint'],
+          ['reducedMotion', 'reading_reduce_motion', null],
+        ] as const).map(([key, label, hint]) => <label className="player-setting-row player-reading-option" key={key}>
+          <span><strong>{t(label, currentLang)}</strong>{hint && <small>{t(hint, currentLang)}</small>}</span>
+          <input type="checkbox" checked={preferences[key]} onChange={() => toggle(key)} />
+        </label>)}
+        <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{t(audioState.isVoiceBoostActive ? 'reading_on' : 'reading_off', currentLang)}</button></div>
         <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p>{frenchTranscript && <FrenchTranscriptNotice transcript={frenchTranscript} />}</details>
         {nextStop && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong>{nextStop.title}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
       </dialog>

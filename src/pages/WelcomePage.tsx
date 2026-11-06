@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { t, SupportedLanguage } from '../i18n/translations';
 import { LanguageSelector } from '../components/LanguageSelector';
 
@@ -13,65 +13,8 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({
   currentLang,
   onLanguageChange,
 }) => {
-  const [isComfortMode, setIsComfortMode] = useState(false);
-  const [isLargeText, setIsLargeText] = useState(false);
-
-  const toggleComfort = () => {
-    // "Visite intérieure" must not control contrast; that belongs to the
-    // dedicated contrast button in the application header.
-    setIsComfortMode((current) => !current);
-  };
-
-  const toggleSize = () => {
-    const next = !isLargeText;
-    setIsLargeText(next);
-    if (next) {
-      document.documentElement.classList.add('large-text');
-    } else {
-      document.documentElement.classList.remove('large-text');
-    }
-  };
-
   return (
     <div className="flex flex-col w-full gap-4 pb-28">
-      {/* Zone Outils Visite Musée */}
-      <div className="flex items-center justify-between bg-[#181c22] px-3.5 py-2 rounded-lg border border-[#262a31] shadow-sm">
-        <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-[#f2ca50] text-[18px]">museum</span>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#d0c5af]">
-            {t('museum_status_bar', currentLang)}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={toggleComfort}
-            aria-label={t('museum_guide_mode', currentLang)}
-            aria-pressed={isComfortMode}
-            className={`px-2.5 py-1 flex items-center gap-1.5 rounded text-[12px] font-semibold transition-all active:scale-95 ${
-              isComfortMode
-                ? 'bg-[#f2ca50] text-[#3c2f00]'
-                : 'bg-[#262a31] text-[#dfe2eb] hover:bg-[#434b18]'
-            }`}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[16px] text-[#f2ca50]">headphones</span>
-            <span>{t('museum_guide_mode', currentLang)}</span>
-          </button>
-          <button
-            onClick={toggleSize}
-            aria-label={t('font_size', currentLang)}
-            className={`px-2.5 py-1 flex items-center rounded text-[12px] font-bold transition-all active:scale-95 ${
-              isLargeText
-                ? 'bg-[#c3cc8c] text-[#2d3404]'
-                : 'bg-[#262a31] text-[#dfe2eb] hover:bg-[#31353c]'
-            }`}
-            type="button"
-          >
-            <span>A+</span>
-          </button>
-        </div>
-      </div>
-
       {/* Carte Immersive Principale du Musée D-Day Omaha */}
       <div className="relative w-full rounded-xl overflow-hidden shadow-xl bg-[#1c2026] border border-[#31353c]/70">
         <div

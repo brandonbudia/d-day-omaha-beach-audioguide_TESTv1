@@ -5,6 +5,8 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { Scrubber } from '../src/components/Scrubber';
 import { SyncedTranscript } from '../src/components/SyncedTranscript';
 import type { TimedTranscriptSegment } from '../src/data/stops';
+import { normalizeReadingPreferences } from '../src/hooks/useReadingPreferences';
+import { translations, LANGUAGES, t } from '../src/i18n/translations';
 
 const segments: TimedTranscriptSegment[] = [
   {
@@ -62,4 +64,18 @@ test('audio position uses a labelled native range with exact fractional time and
   assert.doesNotMatch(html, /Marée|player-scrubber-caption/);
   const noMedia = renderToStaticMarkup(<Scrubber currentTime={0} duration={0} onSeek={() => {}} />);
   assert.match(noMedia, /disabled=""/);
+});
+
+test('reading choices reject malformed stored values and keep the four independent options', () => {
+  const defaults = { wideSpacing: false, colorAssistance: false, dyslexicFont: false, reducedMotion: false };
+  for (const invalid of [null, undefined, [], 'true', 12]) assert.deepEqual(normalizeReadingPreferences(invalid), defaults);
+  assert.deepEqual(normalizeReadingPreferences({ wideSpacing: true, colorAssistance: 'true', dyslexicFont: true, reducedMotion: false, unexpected: true }), { ...defaults, wideSpacing: true, dyslexicFont: true });
+});
+
+test('reading settings and visited-piece progress are available in all seven interface languages', () => {
+  const newKeys = Object.keys(translations.fr).filter((key) => key.startsWith('reading_') || ['start_playback', 'visited_pieces', 'visited_pieces_progress', 'close_reading_settings'].includes(key));
+  for (const language of LANGUAGES) {
+    for (const key of newKeys) assert.ok((translations[language.code] as Record<string, string>)[key], `${language.code}/${key}`);
+  }
+  assert.equal(t('visited_pieces_progress', 'fr', { visited: 5, total: 22, percent: 23 }), '5 / 22 pièces visitées · 23 %');
 });
