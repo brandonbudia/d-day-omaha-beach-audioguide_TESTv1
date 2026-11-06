@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnostic réel du lecteur partagé</title>
+<style>body{font:18px system-ui;max-width:60rem;margin:2rem auto;padding:1rem}button{font:inherit;padding:1rem}pre{white-space:pre-wrap}audio{display:block;width:100%;margin:1rem 0}</style>
+</head>
+<body>
+<h1>Vérification de la sortie audio réelle</h1>
+<p>Le MP3 et le moteur de l’application sont utilisés. Une sonde Web Audio indépendante mesure la sortie ; aucune donnée n’est envoyée.</p>
+<button id="run" disabled>Tester trois lectures et pauses</button>
+<div id="media"></div>
+<pre id="result" role="status">Chargement…</pre>
+<script type="module">
+  const NativeAudio = window.Audio;
+  const NativeContext = window.AudioContext || window.webkitAudioContext;
+  let media, context, probe, analyser;
+  const operations = [];
+  // Test-only observation. The production application creates its usual single player.
+  window.Audio = function (...args) {
+    media = new NativeAudio(...args);
+    media.controls = true;
+    document.querySelector('#media').append(media);
+    for (const event of ['play', 'playing', 'pause', 'ended', 'seeking', 'seeked']) {
+      media.addEventListener(event, () => operations.push({ event, time: media.currentTime, paused: media.paused }));
+    }
+    return media;
+  };
+  window.AudioContext = class extends NativeContext {
+    constructor(...args) {
+      super(...args);
+      context = this;
+      const physicalOutput = super.destination;
+      const observedOutput = this.createGain();
+      const streamOutput = this.createMediaStreamDestination();
+      observedOutput.connect(physicalOutput);
+      observedOutput.connect(streamOutput);
+      Object.defineProperty(this, 'destination', { value: observedOutput });
+      // A second context keeps measuring even when the player's context is suspended.
+      probe = new NativeContext();
+      analyser = probe.createAnalyser();
+      analyser.fftSize = 2048;
+      const silentProbeOutput = probe.createGain();
+      silentProbeOutput.gain.value = 0;
+      probe.createMediaStreamSource(streamOutput.stream).connect(analyser);
+      analyser.connect(silentProbeOutput).connect(probe.destination);
+    }
+  };
+  const { audioPlayer } = await import('/src/audio/audioStore.ts');
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const rms = () => {
+    const samples = new Float32Array(analyser.fftSize);
+    analyser.getFloatTimeDomainData(samples);
+    return Math.sqrt(samples.reduce((sum, value) => sum + value * value, 0) / samples.length);
+  };
+  const result = document.querySelector('#result');
+  const button = document.querySelector('#run');
+  button.disabled = false;
+  result.textContent = 'Prêt. Le test dure environ cinq secondes.';
+  button.addEventListener('click', async () => {
+    button.disabled = true;
+    operations.length = 0;
+    const checks = [];
+    try {
+      const firstPlay = audioPlayer.play();
+      if (probe?.state === 'suspended') await probe.resume();
+      await firstPlay;
+      if (!media.duration) await new Promise((resolve, reject) => {
+        media.addEventListener('loadedmetadata', resolve, { once: true });
+        media.addEventListener('error', reject, { once: true });
+      });
+      audioPlayer.pause();
+      for (const seconds of [2, 45, 70]) {
+        audioPlayer.seek(seconds);
+        await audioPlayer.play();
+        const speaking = [];
+        for (let i = 0; i < 8; i++) { await wait(50); speaking.push(rms()); }
+        audioPlayer.pause();
+        const immediateNativeTime = media.currentTime;
+        const immediatePublicTime = audioPlayer.getState().currentTime;
+        const pauseEventCount = operations.length;
+        // Allow the render quantum, stream transfer and output queues to drain.
+        await wait(150);
+        const silence = [];
+        for (let i = 0; i < 8; i++) { await wait(30); silence.push(rms()); }
+        const sample = {
+          seconds, immediateNativeTime, immediatePublicTime,
+          exactImmediatePosition: immediateNativeTime === immediatePublicTime,
+          fixedPosition: media.currentTime === immediateNativeTime && audioPlayer.getState().currentTime === immediateNativeTime,
+          nativePaused: media.paused, publicPaused: !audioPlayer.getState().isPlaying,
+          contextState: context.state,
+          peakPlayingRms: Math.max(...speaking), peakPausedRms: Math.max(...silence),
+          noRestartEvent: !operations.slice(pauseEventCount).some((event) => ['play', 'playing'].includes(event.event)),
+        };
+        sample.passed = sample.exactImmediatePosition && sample.fixedPosition && sample.nativePaused && sample.publicPaused
+          && sample.peakPlayingRms > 0.0001 && sample.peakPausedRms < 0.00001 && sample.noRestartEvent;
+        checks.push(sample);
+      }
+      result.textContent = JSON.stringify({ passed: checks.every((check) => check.passed), checks, operations }, null, 2);
+    } catch (error) {
+      result.textContent = JSON.stringify({ passed: false, error: String(error), checks, operations }, null, 2);
+    } finally {
+      audioPlayer.pause();
+      if (probe?.state === 'running') await probe.suspend();
+      button.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

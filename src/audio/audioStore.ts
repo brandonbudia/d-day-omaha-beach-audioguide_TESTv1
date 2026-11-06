@@ -23,6 +23,9 @@ class GlobalAudioPlayer {
   private audioCtx: AudioContext | null = null;
   private sourceNode: MediaElementAudioSourceNode | null = null;
   private voiceFilterNode: BiquadFilterNode | null = null;
+  private outputGainNode: GainNode | null = null;
+  private playbackIntent = false;
+  private contextOperation: Promise<void> = Promise.resolve();
   private playRequest = 0;
   private pendingSeek: number | null = null;
 
@@ -76,6 +79,14 @@ class GlobalAudioPlayer {
     this.audioElement.addEventListener('seeked', syncSeek);
 
     this.audioElement.addEventListener('play', () => {
+      // Native media events are queued: an old play event can arrive after Pause.
+      if (!this.playbackIntent) {
+        this.setOutputEnabled(false);
+        this.audioElement?.pause();
+        return;
+      }
+      if (this.audioElement?.paused) return;
+      this.setOutputEnabled(true);
       this.state.isPlaying = true;
       this.state.error = null;
       this.startPlaybackClock();
@@ -83,19 +94,31 @@ class GlobalAudioPlayer {
     });
     this.audioElement.addEventListener('pause', () => {
       if (this.audioElement?.paused) {
+        if (this.state.isPlaying && !this.audioElement.ended) {
+          // Also respect pauses initiated by the browser or device controls.
+          this.playbackIntent = false;
+          this.playRequest += 1;
+        }
+        this.setOutputEnabled(false);
         this.state.isPlaying = false;
         this.stopPlaybackClock();
+        // Keep the intent on a natural end; its subsequent ended event advances the tour.
+        if (!this.playbackIntent) void this.syncAudioContext().catch(() => {});
       }
     });
     this.audioElement.addEventListener('error', () => {
       if (!this.audioElement?.error) return;
+      this.playbackIntent = false;
+      this.playRequest += 1;
+      this.setOutputEnabled(false);
       this.state.isPlaying = false;
       this.state.error = 'unavailable';
       this.stopPlaybackClock();
+      void this.syncAudioContext().catch(() => {});
     });
 
     this.audioElement.addEventListener('ended', () => {
-      this.handleTrackEnded();
+      if (this.playbackIntent && this.audioElement?.ended) this.handleTrackEnded();
     });
 
     this.audioElement.addEventListener('loadedmetadata', () => {
@@ -115,12 +138,15 @@ class GlobalAudioPlayer {
   private updateAudioSource() {
     if (!this.audioElement) return;
     this.playRequest += 1;
+    this.playbackIntent = false;
+    this.setOutputEnabled(false);
     this.state.isPlaying = false;
     this.state.error = null;
     this.stopPlaybackClock(false);
     const path = `/audio/${this.state.language}/stop-${this.state.currentStopId}.mp3`;
     this.audioElement.src = path;
     this.audioElement.playbackRate = this.state.playbackRate;
+    void this.syncAudioContext().catch(() => {});
   }
 
   private startPlaybackClock() {
@@ -128,7 +154,7 @@ class GlobalAudioPlayer {
 
     const tick = (now: number) => {
       this.playbackFrame = null;
-      if (!this.audioElement || this.audioElement.paused) return;
+      if (!this.playbackIntent || !this.audioElement || this.audioElement.paused) return;
 
       // Keep the UI responsive for word highlighting without notifying React on every display frame.
       if (now - this.lastFrameNotification >= 33) {
@@ -168,12 +194,40 @@ class GlobalAudioPlayer {
         this.voiceFilterNode.Q.value = 1.2;
         this.voiceFilterNode.gain.value = this.state.isVoiceBoostActive ? 6.0 : 0.0;
 
+        // A separate output gate guarantees silence without touching the media position.
+        this.outputGainNode = this.audioCtx.createGain();
+        this.outputGainNode.gain.value = 0;
+
         this.sourceNode.connect(this.voiceFilterNode);
-        this.voiceFilterNode.connect(this.audioCtx.destination);
+        this.voiceFilterNode.connect(this.outputGainNode);
+        this.outputGainNode.connect(this.audioCtx.destination);
       }
     } catch {
       // Audio context might fail on restricted browser contexts, fall back to native element
     }
+  }
+
+  private setOutputEnabled(enabled: boolean) {
+    if (this.outputGainNode && this.audioCtx) {
+      this.outputGainNode.gain.setValueAtTime(enabled ? 1 : 0, this.audioCtx.currentTime);
+    }
+  }
+
+  private syncAudioContext(): Promise<void> {
+    const context = this.audioCtx;
+    if (!context) return Promise.resolve();
+    // Serialize hardware transitions and use the latest intent, so a delayed suspend
+    // cannot silence a newer Play and a delayed resume cannot undo Pause.
+    const operation = this.contextOperation.catch(() => {}).then(async () => {
+      if (context.state === 'closed') return;
+      if (this.playbackIntent) {
+        if (context.state === 'suspended') await context.resume();
+      } else if (context.state === 'running') {
+        await context.suspend();
+      }
+    });
+    this.contextOperation = operation;
+    return operation;
   }
 
   public subscribe(listener: AudioListener): () => void {
@@ -242,32 +296,42 @@ class GlobalAudioPlayer {
       this.seek(position);
     }
     const request = ++this.playRequest;
+    this.playbackIntent = true;
     try {
       this.initWebAudio();
-      if (this.audioCtx?.state === 'suspended') await this.audioCtx.resume();
-      if (!this.audioElement || request !== this.playRequest) return;
+      await this.syncAudioContext();
+      if (!this.audioElement || request !== this.playRequest || !this.playbackIntent) return;
       await this.audioElement.play();
+      if (!this.playbackIntent) this.audioElement.pause();
     } catch (error) {
       // A stale play request is expected when the visitor changes track or pauses.
       if (request === this.playRequest && !(error instanceof DOMException && error.name === 'AbortError')) {
+        this.playbackIntent = false;
+        this.setOutputEnabled(false);
+        this.audioElement?.pause();
         this.state.isPlaying = false;
         this.state.error = this.audioElement?.error ? 'unavailable' : 'playback';
         this.stopPlaybackClock();
+        void this.syncAudioContext().catch(() => {});
       }
     }
   }
 
   public pause() {
     this.playRequest += 1;
+    this.playbackIntent = false;
+    this.setOutputEnabled(false);
     if (this.audioElement) {
       this.audioElement.pause();
     }
     this.state.isPlaying = false;
-    this.notify();
+    // pause() updates the native clock immediately; its event comes in a later task.
+    this.stopPlaybackClock();
+    void this.syncAudioContext().catch(() => {});
   }
 
   public togglePlayPause() {
-    if (this.state.isPlaying) {
+    if (this.playbackIntent) {
       this.pause();
     } else {
       this.play();
