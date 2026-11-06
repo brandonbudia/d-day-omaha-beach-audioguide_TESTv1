@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { BookOpen, ChevronLeft, ChevronRight, FileText, Pause, Play, RotateCcw, RotateCw, Settings2, X } from 'lucide-react';
 import { audioPlayer, AudioState } from '../audio/audioStore';
-import { STOPS, StopData } from '../data/stops';
-import { t, SupportedLanguage } from '../i18n/translations';
-import { Waveform } from '../components/Waveform';
+import { STOPS } from '../data/stops';
+import { LANGUAGES, t, SupportedLanguage } from '../i18n/translations';
 import { Scrubber } from '../components/Scrubber';
 import { SyncedTranscript } from '../components/SyncedTranscript';
 import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
@@ -13,352 +13,126 @@ interface PlayerPageProps {
   currentLang: SupportedLanguage;
 }
 
-export const PlayerPage: React.FC<PlayerPageProps> = ({
-  onSelectStopDetail,
-  currentLang,
-}) => {
+export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, currentLang }) => {
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
-  const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
-  const [transcriptTextSize, setTranscriptTextSize] = useState(18);
+  const [isTranscriptOpen, setIsTranscriptOpen] = useState(true);
+  const [transcriptTextSize, setTranscriptTextSize] = useState(20);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [shellHeights, setShellHeights] = useState({ header: 81, navigation: 81 });
+  const settingsRef = useRef<HTMLDialogElement>(null);
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
 
-  React.useEffect(() => {
-    return audioPlayer.subscribe((next) => setAudioState(next));
+  useEffect(() => audioPlayer.subscribe(setAudioState), []);
+
+  // Include wrapped accessibility controls and safe-area insets in the available space.
+  useEffect(() => {
+    const header = document.querySelector('header');
+    const navigation = document.querySelector('[aria-label="Navigation principale"]');
+    const measure = () => setShellHeights({
+      header: header?.getBoundingClientRect().bottom ?? 81,
+      navigation: navigation?.getBoundingClientRect().height ?? 81,
+    });
+    const observer = new ResizeObserver(measure);
+    if (header) observer.observe(header);
+    if (navigation) observer.observe(navigation);
+    measure();
+    window.addEventListener('resize', measure);
+    return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
   }, []);
 
-  const currentStop: StopData = STOPS.find((s) => s.id === audioState.currentStopId) || STOPS[0];
-  const currentIndex = STOPS.findIndex((s) => s.id === currentStop.id);
-  const nextStop = currentIndex < STOPS.length - 1 ? STOPS[currentIndex + 1] : null;
+  useEffect(() => {
+    if (audioState.isPlaying) setIsTranscriptOpen(true);
+  }, [audioState.isPlaying, audioState.currentStopId]);
+
+  useEffect(() => {
+    const dialog = settingsRef.current;
+    if (settingsOpen && dialog && !dialog.open) dialog.showModal();
+    if (!settingsOpen && dialog?.open) dialog.close();
+  }, [settingsOpen]);
+
+  const currentStop = STOPS.find((stop) => stop.id === audioState.currentStopId) ?? STOPS[0];
+  const currentIndex = STOPS.findIndex((stop) => stop.id === currentStop.id);
+  const nextStop = STOPS[currentIndex + 1];
   const frenchTranscript = audioState.language === 'fr' ? FRENCH_TRANSCRIPTS[currentStop.id] : undefined;
-  const hasSyncedTranscript = Boolean(frenchTranscript?.segments.length);
-
-  const progressPercent = audioState.duration > 0
-    ? (audioState.currentTime / audioState.duration) * 100
-    : 0;
-
-  const formatDuration = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  const selectTime = (seconds: number) => {
+    audioPlayer.seek(seconds);
+    if (!audioState.isPlaying) void audioPlayer.play();
   };
 
   return (
-    <div className="flex flex-col w-full pb-28 space-y-4">
-      {/* Indoor Museum Context Banner */}
-      <div className="flex items-center justify-between px-3.5 py-2 rounded-xl bg-[#262a31] text-[#dfe2eb] shadow-md border border-[#31353c]">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#f2ca50] animate-pulse" />
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#c3cc8c]">
-            {t('museum_indoor_signal', currentLang)}
-          </span>
+    <div className="player-page" style={{
+      '--player-header-height': `${shellHeights.header}px`,
+      '--player-navigation-height': `${shellHeights.navigation}px`,
+    } as React.CSSProperties}>
+      <section className="player-station" aria-label={currentStop.title}>
+        <img className="player-cover" src={currentStop.imageUrl} alt={currentStop.title} />
+        <div className="player-station-copy">
+          <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
+          <h2>{currentStop.playerTitle}</h2>
+          <p className="player-speakers">{currentStop.speakers}</p>
+          <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
+            <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
+          </button>
         </div>
-        <div className="flex items-center gap-1 text-[#d0c5af] text-[11px] font-bold uppercase tracking-wider">
-          <span className="material-symbols-outlined text-[16px] text-[#f2ca50]">museum</span>
-          <span>{currentStop.spotTag}</span>
+        <button ref={settingsButtonRef} type="button" className="player-icon-button player-settings-button" onClick={() => setSettingsOpen(true)} aria-label="Réglages d’écoute et informations sur la transcription">
+          <Settings2 size={22} aria-hidden="true" />
+        </button>
+      </section>
+
+      <section className="player-reading" aria-label={t('text_transcript', currentLang)}>
+        <div className="player-reading-toolbar">
+          <button type="button" className="player-view-toggle" aria-expanded={isTranscriptOpen} aria-controls="player-transcript" onClick={() => setIsTranscriptOpen((open) => !open)}>
+            <FileText size={18} aria-hidden="true" /> {t('tab_transcript', currentLang)}
+            <span aria-hidden="true">{isTranscriptOpen ? '−' : '+'}</span>
+          </button>
+          <div className="player-text-size" role="group" aria-label="Taille du texte de la transcription">
+            <button type="button" className="player-icon-button" disabled={transcriptTextSize <= 16} onClick={() => setTranscriptTextSize((size) => Math.max(16, size - 2))} aria-label="Diminuer la taille du texte">A−</button>
+            <button type="button" className="player-icon-button" disabled={transcriptTextSize >= 30} onClick={() => setTranscriptTextSize((size) => Math.min(30, size + 2))} aria-label="Augmenter la taille du texte">A+</button>
+          </div>
         </div>
-      </div>
-
-      {audioState.error && <p role="alert" className="rounded-xl border border-[#f2ca50] bg-[#262a31] p-4 text-[#dfe2eb]">{t('audio_error', currentLang)}</p>}
-
-      {/* Main Player Display Card */}
-      <section className="flex flex-col items-center bg-[#1c2026] border border-[#31353c]/70 rounded-xl p-4 shadow-xl text-center relative overflow-hidden">
-        {/* Tactile atmospheric glow */}
-        <div className="absolute -top-16 inset-x-0 h-36 bg-gradient-to-b from-[#f2ca50]/10 via-transparent to-transparent pointer-events-none" />
-
-        {/* Archival Visual Sound Halo */}
-        <div className="relative w-44 h-44 my-2 flex items-center justify-center">
-          {audioState.isPlaying && (
-            <div className="absolute inset-0 rounded-full bg-[#434b18]/40 animate-ping opacity-35" />
-          )}
-          <div className="absolute inset-2 rounded-full bg-[#262a31] border border-[#d4af37]/40 flex items-center justify-center shadow-inner">
-            <img
-              src={currentStop.imageUrl}
-              alt={currentStop.title}
-              className="w-36 h-36 rounded-full object-cover shadow-lg filter contrast-125"
+        <div id="player-transcript" className="player-transcript-content" hidden={!isTranscriptOpen}>
+          {frenchTranscript?.segments.length ? (
+            <SyncedTranscript
+              key={`${currentStop.id}-${audioState.language}`}
+              segments={frenchTranscript.segments}
+              currentTime={audioState.currentTime}
+              textSize={transcriptTextSize}
+              isPlaying={audioState.isPlaying}
+              onSelectPhrase={selectTime}
             />
-          </div>
-          {/* Audio 3D Spatial Badge */}
-          <div className="absolute -bottom-2 px-3 py-1 rounded-full bg-[#434b18] text-[#dfe8a6] border border-[#c3cc8c]/40 shadow-md flex items-center gap-1.5">
-            <span
-              className="material-symbols-outlined text-[16px] text-[#f2ca50]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              volume_up
-            </span>
-            <span className="text-[10px] tracking-wider uppercase font-bold text-[#c3cc8c]">
-              {t('audio_spatial', currentLang)}
-            </span>
-          </div>
+          ) : (
+            <div className="player-static-transcript" tabIndex={0} style={{ fontSize: `${transcriptTextSize}px` }}>
+              {frenchTranscript ? <FrenchTranscriptNotice transcript={frenchTranscript} /> : currentStop.transcript.map((item, index) => (
+                <div key={index}><p className="player-eyebrow">{item.timeRange} · {item.title}</p><p>{item.text}</p></div>
+              ))}
+            </div>
+          )}
         </div>
-
-        {/* Track Identification & Title */}
-        <div className="mt-4 mb-2 px-2">
-          <span className="text-[11px] font-bold text-[#f2ca50] tracking-widest uppercase">
-            {currentStop.witnessBadge}
-          </span>
-          <h2 className="text-[20px] font-bold text-[#dfe2eb] mt-1 tracking-tight leading-snug font-heading">
-            {currentStop.playerTitle}
-          </h2>
-          <p className="text-[12px] text-[#d0c5af] mt-1.5 max-w-xs mx-auto">
-            {currentStop.speakers}
-          </p>
-        </div>
-
-        {/* Animated Waveform Visualizer */}
-        <Waveform isPlaying={audioState.isPlaying} progressPercent={progressPercent} />
-
-        {/* High-Contrast Progress Bar with Tactile Scrubber */}
-        <Scrubber
-          currentTime={audioState.currentTime}
-          duration={audioState.duration}
-          onSeek={(seconds) => audioPlayer.seek(seconds)}
-          subTextLeft={currentStop.sector}
-          subTextRight={t('total_duration', currentLang, { duration: formatDuration(audioState.duration) })}
-        />
+        {!isTranscriptOpen && <div className="player-resting-cover"><img src={currentStop.imageUrl} alt="" /><p>{currentStop.witnessBadge}</p><button type="button" className="player-secondary-button" onClick={() => setIsTranscriptOpen(true)}>{t('text_transcript', currentLang)}</button></div>}
       </section>
 
-      {/* Giant Outdoor Transport Controls */}
-      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-xl p-4 shadow-xl flex flex-col gap-4">
-        <div className="flex items-center justify-around w-full">
-          {/* Jump Back -15s Button */}
-          <button
-            onClick={() => audioPlayer.rewind(15)}
-            aria-label={t('rewind_15', currentLang)}
-            className="w-16 h-16 min-w-[56px] min-h-[56px] rounded-full bg-[#262a31] border border-[#31353c] text-[#dfe2eb] flex flex-col items-center justify-center active:scale-95 transition-transform shadow-md hover:bg-[#353940]"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[28px]">replay_10</span>
-            <span className="text-[10px] font-bold -mt-0.5">-15s</span>
+      <section className="player-transport" aria-label="Commandes de lecture">
+        {audioState.error && <p role="alert" className="player-error">{t('audio_error', currentLang)}</p>}
+        <Scrubber currentTime={audioState.currentTime} duration={audioState.duration} onSeek={(seconds) => audioPlayer.seek(seconds)} />
+        <div className="player-transport-buttons">
+          <button type="button" className="player-track-button" onClick={() => audioPlayer.prevStop()} disabled={currentIndex === 0} aria-label={t('btn_prev', currentLang)}><ChevronLeft size={26} aria-hidden="true" /><span>{t('btn_prev', currentLang)}</span></button>
+          <button type="button" className="player-skip-button" onClick={() => audioPlayer.rewind(15)} aria-label={t('rewind_15', currentLang)}><RotateCcw size={21} aria-hidden="true" /><span>15 s</span></button>
+          <button type="button" className="player-play-button" onClick={() => audioPlayer.togglePlayPause()} aria-label={audioState.isPlaying ? t('pause', currentLang) : t('play', currentLang)}>
+            {audioState.isPlaying ? <Pause size={27} fill="currentColor" aria-hidden="true" /> : <Play size={27} fill="currentColor" aria-hidden="true" />}
+            <span>{audioState.isPlaying ? 'Pause' : ({ fr: 'Écouter', en: 'Play', de: 'Start', it: 'Ascolta', pl: 'Odtwórz', nl: 'Afspelen', es: 'Escuchar' }[currentLang])}</span>
           </button>
-
-          {/* Giant XXL Central Play/Pause Button */}
-          <button
-            onClick={() => audioPlayer.togglePlayPause()}
-            aria-label={audioState.isPlaying ? t('pause', currentLang) : t('play', currentLang)}
-            className="w-24 h-24 min-w-[80px] min-h-[80px] rounded-full bg-[#f2ca50] text-[#3c2f00] flex items-center justify-center shadow-2xl active:scale-90 transition-transform ring-4 ring-[#ffe088]/25 hover:brightness-105"
-            type="button"
-          >
-            <span
-              className="material-symbols-outlined text-[48px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              {audioState.isPlaying ? 'pause' : 'play_arrow'}
-            </span>
-          </button>
-
-          {/* Jump Forward +15s Button */}
-          <button
-            onClick={() => audioPlayer.forward(15)}
-            aria-label={t('forward_15', currentLang)}
-            className="w-16 h-16 min-w-[56px] min-h-[56px] rounded-full bg-[#262a31] border border-[#31353c] text-[#dfe2eb] flex flex-col items-center justify-center active:scale-95 transition-transform shadow-md hover:bg-[#353940]"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[28px]">forward_10</span>
-            <span className="text-[10px] font-bold -mt-0.5">+15s</span>
-          </button>
-        </div>
-
-        {/* Ergonomic Audio Modifiers */}
-        <div className="grid grid-cols-2 gap-3 pt-1">
-          {/* Boost Voice Clarity Button */}
-          <button
-            onClick={() => audioPlayer.toggleVoiceBoost()}
-            aria-pressed={audioState.isVoiceBoostActive}
-            className={`min-h-[56px] h-14 px-3 rounded-xl flex items-center justify-center gap-2 shadow transition-all active:scale-95 border ${
-              audioState.isVoiceBoostActive
-                ? 'bg-[#434b18] text-[#dfe8a6] border-[#c3cc8c]/40'
-                : 'bg-[#262a31] text-[#dfe2eb] border-[#31353c]'
-            }`}
-            type="button"
-          >
-            <span
-              className="material-symbols-outlined text-[22px] text-[#f2ca50]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              record_voice_over
-            </span>
-            <div className="text-left">
-              <span className="block text-[11px] font-bold uppercase tracking-wider text-[#c3cc8c]">
-                {t('voice_boost', currentLang)}
-              </span>
-              <span className="block text-[11px] opacity-80 leading-none">
-                {t('wind_cut', currentLang)}
-              </span>
-            </div>
-          </button>
-
-          {/* Playback Speed Cycle Selector */}
-          <button
-            onClick={() => audioPlayer.cyclePlaybackRate()}
-            aria-label={t('speed', currentLang)}
-            className="min-h-[56px] h-14 px-3 rounded-xl bg-[#262a31] border border-[#31353c] text-[#dfe2eb] flex items-center justify-between shadow active:scale-95 transition-transform"
-            type="button"
-          >
-            <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[20px] text-[#d0c5af]">speed</span>
-              <span className="text-[13px] font-bold">{t('speed', currentLang)}</span>
-            </div>
-            <span className="px-2.5 py-1 rounded bg-[#0a0e14] text-[#f2ca50] text-[13px] font-bold shadow-inner border border-[#31353c]">
-              {audioState.playbackRate}x
-            </span>
-          </button>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 border-t border-[#31353c] pt-3">
-          <button
-            type="button"
-            onClick={() => audioPlayer.prevStop()}
-            disabled={currentIndex <= 0}
-            className="min-h-14 rounded-xl border border-[#31353c] bg-[#262a31] px-3 text-sm font-semibold text-[#dfe2eb] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-          >
-            <span className="material-symbols-outlined mr-2 align-middle" aria-hidden="true">skip_previous</span>
-            {t('btn_prev', currentLang)}
-          </button>
-          <button
-            type="button"
-            onClick={() => audioPlayer.nextStop()}
-            className="min-h-14 rounded-xl border border-[#31353c] bg-[#262a31] px-3 text-sm font-semibold text-[#dfe2eb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-          >
-            {t('btn_next', currentLang)}
-            <span className="material-symbols-outlined ml-2 align-middle" aria-hidden="true">skip_next</span>
-          </button>
+          <button type="button" className="player-skip-button" onClick={() => audioPlayer.forward(15)} aria-label={t('forward_15', currentLang)}><RotateCw size={21} aria-hidden="true" /><span>15 s</span></button>
+          <button type="button" className="player-track-button" onClick={() => audioPlayer.nextStop()} aria-label={t('btn_next', currentLang)}><ChevronRight size={26} aria-hidden="true" /><span>{t('btn_next', currentLang)}</span></button>
         </div>
       </section>
 
-      {/* Complete Transcript Accessibility Panel */}
-      <section className="bg-[#1c2026] border border-[#31353c]/70 rounded-xl shadow-xl overflow-hidden transition-all duration-300">
-        <button
-          onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}
-          aria-expanded={isTranscriptOpen}
-          className="w-full min-h-[56px] p-4 flex items-center justify-between text-left bg-[#262a31] hover:bg-[#31353c] text-[#dfe2eb] transition-colors"
-          type="button"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-[#1c2026] flex items-center justify-center text-[#f2ca50] border border-[#d4af37]/30">
-              <span className="material-symbols-outlined text-[20px]">subtitles</span>
-            </div>
-            <div>
-              <span className="block text-[16px] font-bold font-heading">
-                {t('text_transcript', currentLang)}
-              </span>
-              <span className="block text-[11px] text-[#d0c5af]">
-                {t('transcript_comfort', currentLang)}
-              </span>
-            </div>
-          </div>
-          <span
-            className={`material-symbols-outlined text-[24px] text-[#d0c5af] transition-transform duration-300 ${
-              isTranscriptOpen ? 'rotate-180' : ''
-            }`}
-          >
-            expand_more
-          </span>
-        </button>
-
-        {/* Collapsible Transcript Content */}
-        {isTranscriptOpen && (
-          <div className="p-4 bg-[#1c2026] space-y-3">
-            <div className="p-3 rounded bg-[#0a0e14] border border-[#262a31] text-[#d0c5af] text-[12px]">
-              <span className="font-bold text-[#f2ca50] block mb-1">
-                {t('archive_note_title', currentLang)}
-              </span>
-              {t('archive_note_body', currentLang)}
-            </div>
-
-            {frenchTranscript && <FrenchTranscriptNotice transcript={frenchTranscript} />}
-
-            {hasSyncedTranscript && frenchTranscript ? (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between gap-3 rounded-lg border border-[#31353c] bg-[#10141a] p-2">
-                  <span className="pl-2 text-sm font-semibold text-[#dfe2eb]">Taille du texte</span>
-                  <div className="flex gap-2" role="group" aria-label="Taille du texte de la transcription">
-                    <button
-                      type="button"
-                      onClick={() => setTranscriptTextSize((size) => Math.max(16, size - 2))}
-                      disabled={transcriptTextSize <= 16}
-                      aria-label="Diminuer la taille du texte"
-                      className="min-h-11 min-w-11 rounded-lg border border-[#4d4635] bg-[#262a31] text-lg font-bold text-[#f2ca50] disabled:opacity-50"
-                    >A−</button>
-                    <button
-                      type="button"
-                      onClick={() => setTranscriptTextSize((size) => Math.min(26, size + 2))}
-                      disabled={transcriptTextSize >= 26}
-                      aria-label="Augmenter la taille du texte"
-                      className="min-h-11 min-w-11 rounded-lg border border-[#4d4635] bg-[#262a31] text-lg font-bold text-[#f2ca50] disabled:opacity-50"
-                    >A+</button>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-lg border border-[#31353c] bg-[#10141a] p-2">
-                  <button
-                    type="button"
-                    aria-label={audioState.isPlaying ? 'Mettre en pause depuis la transcription' : 'Écouter depuis la transcription'}
-                    onClick={() => audioPlayer.togglePlayPause()}
-                    className="flex min-h-11 items-center gap-2 rounded-lg bg-[#f2ca50] px-4 font-semibold text-[#171717] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-                  >
-                    <span className="material-symbols-outlined" aria-hidden="true">{audioState.isPlaying ? 'pause' : 'play_arrow'}</span>
-                    {audioState.isPlaying ? 'Pause' : 'Écouter'}
-                  </button>
-                  <span className="pr-2 text-sm tabular-nums text-[#dfe2eb]">{formatDuration(audioState.currentTime)} / {formatDuration(audioState.duration)}</span>
-                </div>
-                <SyncedTranscript
-                  key={`${currentStop.id}-${audioState.language}`}
-                  segments={frenchTranscript.segments}
-                  currentTime={audioState.currentTime}
-                  textSize={transcriptTextSize}
-                  isPlaying={audioState.isPlaying}
-                  onSelectPhrase={(seconds) => {
-                    audioPlayer.seek(seconds);
-                    if (!audioState.isPlaying) void audioPlayer.play();
-                  }}
-                />
-              </div>
-            ) : !frenchTranscript ? (
-              <div className="space-y-3 text-[#dfe2eb] text-[14px] leading-relaxed select-text">
-                {currentStop.transcript.map((item, idx) => (
-                  <div key={idx} className="p-2.5 rounded bg-[#262a31] border border-[#31353c]/50">
-                    <p className="text-[#f2ca50] text-[11px] font-bold uppercase tracking-wider mb-1">
-                      {item.timeRange} • {item.title}
-                    </p>
-                    <p className="whitespace-pre-line">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            ) : null}
-
-            <div className="pt-2 flex justify-end">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="h-10 px-3 rounded bg-[#262a31] text-[#dfe2eb] text-[12px] font-semibold flex items-center gap-1 active:scale-95 border border-[#31353c]"
-                type="button"
-              >
-                <span className="material-symbols-outlined text-[16px]">arrow_upward</span>
-                <span>{t('back_to_player', currentLang)}</span>
-              </button>
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* Next Museum Exhibit Suggestion */}
-      {nextStop && (
-        <button
-          type="button"
-          onClick={() => onSelectStopDetail(nextStop.id)}
-          className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-[#181c22] border border-[#262a31] shadow-sm text-left cursor-pointer hover:bg-[#1c2026] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-        >
-          <div className="w-12 h-12 rounded-lg bg-[#262a31] border border-[#31353c] flex-shrink-0 flex items-center justify-center text-[#f2ca50]">
-            <span className="material-symbols-outlined text-[24px]">museum</span>
-          </div>
-          <div className="min-w-0 flex-1">
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-[#c3cc8c]">
-              {t('next_stop_distance', currentLang)}
-            </span>
-            <p className="text-[13px] font-bold text-[#dfe2eb] truncate font-heading">
-              {nextStop.title}
-            </p>
-          </div>
-          <span className="material-symbols-outlined text-[#d0c5af] text-[20px]">chevron_right</span>
-        </button>
-      )}
+      <dialog ref={settingsRef} className="player-settings" aria-labelledby="player-settings-title" onClose={() => { setSettingsOpen(false); settingsButtonRef.current?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
+        <div className="player-settings-heading"><h2 id="player-settings-title">Réglages d’écoute</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label="Fermer les réglages"><X size={22} aria-hidden="true" /></button></div>
+        <div className="player-setting-row"><span>{t('speed', currentLang)}</span><button type="button" className="player-secondary-button" onClick={() => audioPlayer.cyclePlaybackRate()} aria-label={t('speed', currentLang)}>{audioState.playbackRate}×</button></div>
+        <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{audioState.isVoiceBoostActive ? 'Activée' : 'Désactivée'}</button></div>
+        <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p>{frenchTranscript && <FrenchTranscriptNotice transcript={frenchTranscript} />}</details>
+        {nextStop && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong>{nextStop.title}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
+      </dialog>
     </div>
   );
 };

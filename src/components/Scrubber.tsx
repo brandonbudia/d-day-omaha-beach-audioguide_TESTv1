@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 interface ScrubberProps {
   currentTime: number;
@@ -12,117 +12,51 @@ export const Scrubber: React.FC<ScrubberProps> = ({
   currentTime,
   duration,
   onSeek,
-  subTextLeft = 'Marée montante 06h30',
+  subTextLeft,
   subTextRight,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragTime, setDragTime] = useState<number | null>(null);
+  const safeDuration = Number.isFinite(duration) ? Math.max(0, duration) : 0;
+  const displayTime = Number.isFinite(currentTime) ? Math.max(0, Math.min(currentTime, safeDuration)) : 0;
+  const progressPercent = safeDuration > 0 ? (displayTime / safeDuration) * 100 : 0;
 
-  const displayTime = isDragging && dragTime !== null ? dragTime : currentTime;
-  const progressPercent = duration > 0 ? Math.min(100, Math.max(0, (displayTime / duration) * 100)) : 0;
-  const remainingSecs = Math.max(0, duration - displayTime);
-
-  const formatTime = (secs: number) => {
-    const m = Math.floor(secs / 60);
-    const s = Math.floor(secs % 60);
-    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
-
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    e.currentTarget.setPointerCapture(e.pointerId);
-    setIsDragging(true);
-    updateFromPointer(e.clientX);
-  };
-
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (isDragging) {
-      updateFromPointer(e.clientX);
-    }
-  };
-
-  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (isDragging) {
-      if (dragTime !== null) {
-        onSeek(dragTime);
-      }
-      setIsDragging(false);
-      setDragTime(null);
-    }
-  };
-
-  const updateFromPointer = (clientX: number) => {
-    if (!containerRef.current || duration <= 0) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-    const target = ratio * duration;
-    setDragTime(target);
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainder = Math.floor(seconds % 60);
+    return `${minutes.toString().padStart(2, '0')}:${remainder.toString().padStart(2, '0')}`;
   };
 
   return (
-    <div className="w-full mt-2">
-      {/* High-visibility Large Timers */}
-      <div className="flex justify-between items-baseline mb-1.5 px-1">
-        <span className="text-[20px] font-bold text-[#f2ca50] tabular-nums font-heading">
-          {formatTime(displayTime)}
-        </span>
-        <span className="text-[20px] font-bold text-[#d0c5af] tabular-nums font-heading">
-          -{formatTime(remainingSecs)}
-        </span>
-      </div>
-
-      {/* Giant Touch Scrubber */}
-      <div
-        ref={containerRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={() => setIsDragging(false)}
+    <div className="player-scrubber">
+      <input
+        type="range"
+        className="player-range"
+        min={0}
+        max={safeDuration}
+        step={0.01}
+        value={displayTime}
+        disabled={safeDuration <= 0}
+        onChange={(event) => onSeek(event.currentTarget.valueAsNumber)}
         onKeyDown={(event) => {
-          const step = 5;
-          if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+          const direction = ['ArrowRight', 'ArrowUp'].includes(event.key) ? 1 : ['ArrowLeft', 'ArrowDown'].includes(event.key) ? -1 : 0;
+          if (direction) {
             event.preventDefault();
-            onSeek(currentTime + step);
-          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
-            event.preventDefault();
-            onSeek(currentTime - step);
-          } else if (event.key === 'Home') {
-            event.preventDefault();
-            onSeek(0);
-          } else if (event.key === 'End') {
-            event.preventDefault();
-            onSeek(duration);
+            onSeek(Math.max(0, Math.min(safeDuration, displayTime + direction * 5)));
           }
         }}
-        role="slider"
-        tabIndex={0}
         aria-label="Position audio"
-        aria-valuemin={0}
-        aria-valuemax={Math.round(duration)}
-        aria-valuenow={Math.round(displayTime)}
-        aria-valuetext={`${formatTime(displayTime)} sur ${formatTime(duration)}`}
-        className="relative w-full h-8 flex items-center cursor-pointer select-none touch-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-      >
-        <div className="w-full h-3.5 bg-[#31353c] rounded-full overflow-hidden shadow-inner">
-          <div
-            className="h-full bg-[#f2ca50] rounded-full shadow transition-all duration-75"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-
-        {/* High Contrast Thumb Handle */}
-        <div
-          className="absolute -translate-x-1/2 w-8 h-8 rounded-full bg-[#f2ca50] shadow-xl flex items-center justify-center pointer-events-none ring-2 ring-[#ffe088]"
-          style={{ left: `${progressPercent}%` }}
-        >
-          <div className="w-3.5 h-3.5 rounded-full bg-[#3c2f00]" />
-        </div>
+        aria-valuetext={`${formatTime(displayTime)} sur ${formatTime(safeDuration)}`}
+        style={{ '--audio-progress': `${progressPercent}%`, minHeight: 44 } as React.CSSProperties}
+      />
+      <div className="player-times">
+        <span>{formatTime(displayTime)}</span>
+        <span>−{formatTime(safeDuration - displayTime)}</span>
       </div>
-
-      <div className="flex justify-between items-center text-[#d0c5af] text-[11px] font-bold uppercase tracking-wider px-1 mt-1">
-        <span>{subTextLeft}</span>
-        <span>{subTextRight || `Durée totale : ${formatTime(duration)}`}</span>
-      </div>
+      {(subTextLeft || subTextRight) && (
+        <div className="player-scrubber-caption">
+          <span>{subTextLeft}</span>
+          <span>{subTextRight}</span>
+        </div>
+      )}
     </div>
   );
 };

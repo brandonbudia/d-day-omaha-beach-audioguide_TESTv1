@@ -65,6 +65,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({
     } else {
       audioPlayer.togglePlayPause();
     }
+    if (!isPlaying) onOpenPlayer();
   };
 
   return (

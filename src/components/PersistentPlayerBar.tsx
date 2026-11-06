@@ -119,7 +119,10 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
           </button>
 
           <button
-            onClick={() => audioPlayer.togglePlayPause()}
+            onClick={() => {
+              audioPlayer.togglePlayPause();
+              if (!state.isPlaying) onOpenFullPlayer();
+            }}
             aria-label={state.isPlaying ? 'Mettre en pause' : 'Lancer la lecture'}
             className="w-11 h-11 rounded-full bg-[#f2ca50] text-[#3c2f00] flex items-center justify-center shadow-lg hover:brightness-105 transition-all active:scale-90"
             type="button"

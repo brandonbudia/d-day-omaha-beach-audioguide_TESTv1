@@ -87,14 +87,19 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
     const viewportRect = viewport.getBoundingClientRect();
     const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 0;
     const navigationTop = document.querySelector('[aria-label="Navigation principale"]')?.getBoundingClientRect().top ?? window.innerHeight;
+    const transportRect = document.querySelector('.player-transport')?.getBoundingClientRect();
+    // In landscape the controls sit beside the text, rather than underneath it.
+    const transportTop = transportRect && transportRect.left < viewportRect.right && transportRect.right > viewportRect.left
+      ? transportRect.top : window.innerHeight;
     const visibleTop = Math.max(viewportRect.top, headerBottom + 8);
-    const visibleBottom = Math.min(viewportRect.bottom, navigationTop - 8, window.innerHeight);
+    const visibleBottom = Math.min(viewportRect.bottom, navigationTop - 8, transportTop - 8, window.innerHeight);
     const visibleHeight = visibleBottom - visibleTop;
-    if (visibleHeight < 60) return;
+    if (visibleHeight < 24) return;
     const activeWord = activePhrase.querySelector<HTMLElement>('.transcript-word[data-word-state="current"]');
     if (!force && !activeWord) return;
     const targetRect = (activeWord ?? activePhrase).getBoundingClientRect();
-    if (!force && targetRect.top >= visibleTop + 16 && targetRect.bottom <= visibleBottom - 16) return;
+    const margin = Math.min(16, Math.max(0, (visibleHeight - targetRect.height) / 2));
+    if (!force && targetRect.top >= visibleTop + margin && targetRect.bottom <= visibleBottom - margin) return;
     const targetHeight = Math.min(targetRect.height, visibleHeight);
     const offset = targetRect.top - visibleTop + targetHeight / 2 - visibleHeight / 2;
     const behavior = behaviorOverride ?? (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
@@ -121,8 +126,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
         scrollToActivePhrase(false, 'auto');
       });
     };
+    const observer = new ResizeObserver(updateVisibleArea);
+    if (transcriptViewportRef.current) observer.observe(transcriptViewportRef.current);
     window.addEventListener('resize', updateVisibleArea);
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', updateVisibleArea);
       if (frame !== undefined) window.cancelAnimationFrame(frame);
     };
@@ -159,16 +167,16 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-sm text-[#d0c5af]" id="synced-transcript-help">
-          Touchez un mot aligné ou « Lire cette phrase » pour reprendre l’écoute à cet endroit.
+    <div className="synced-transcript">
+      <div className="transcript-follow-bar">
+        <p id="synced-transcript-help">
+          Touchez un mot pour l’écouter.
         </p>
         {!isFollowing && (
           <button
             type="button"
             onClick={resumeFollowing}
-            className="min-h-11 shrink-0 rounded-lg border border-[#d4af37]/50 bg-[#262a31] px-3 text-sm font-semibold text-[#f2ca50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
+            className="transcript-resume"
           >
             Reprendre le suivi
           </button>
@@ -177,7 +185,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
 
       <div
         ref={transcriptViewportRef}
-        className="max-h-[48vh] overflow-y-auto overscroll-contain rounded-xl border border-[#31353c] bg-[#10141a] p-2"
+        className="transcript-viewport"
         onWheel={pauseFollowingForManualScroll}
         onTouchStart={pauseFollowingForPointer}
         onTouchMove={pauseFollowingForManualScroll}
@@ -187,8 +195,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
         }}
         onPointerUp={() => { pointerInteractionRef.current = false; }}
         onPointerCancel={() => { pointerInteractionRef.current = false; }}
+        onFocus={(event) => {
+          if (event.target.matches(':focus-visible')) pauseFollowingForManualScroll();
+        }}
         onKeyDown={(event) => {
-          if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End'].includes(event.key)) {
+          if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', 'Tab'].includes(event.key)) {
             pauseFollowingForManualScroll();
           }
         }}
@@ -197,7 +208,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
         aria-label="Transcription synchronisée"
         aria-describedby="synced-transcript-help"
       >
-        <ol className="space-y-2">
+        <ol>
           {segments.map((segment, index) => {
             const isActive = index === activeIndex;
             return (
@@ -212,7 +223,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
                   {timedWords[index].length ? (
                     <>
                       <TimedWords text={segment.text} words={timedWords[index]} currentTime={isActive ? currentTime : index < activeIndex ? Infinity : -Infinity} onSelect={selectTime} />
-                      <button type="button" className="mt-2 block min-h-11 rounded border px-3 text-sm" onClick={() => selectTime(segment.startSeconds)} aria-label={`Lire cette phrase : ${segment.text}`}>Lire cette phrase</button>
+                      <button type="button" className="transcript-phrase-replay" onClick={() => selectTime(segment.startSeconds)} aria-label={`Lire cette phrase : ${segment.text}`}>Lire cette phrase</button>
                     </>
                   ) : <button type="button" className="transcript-phrase-button" onClick={() => selectTime(segment.startSeconds)}>{segment.text}</button>}
                 </div>

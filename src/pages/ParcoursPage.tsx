@@ -75,6 +75,7 @@ export const ParcoursPage: React.FC<ParcoursPageProps> = ({
       audioPlayer.pause();
     } else {
       audioPlayer.setStop(stopId, true);
+      onOpenPlayer();
     }
   };
 

@@ -8,6 +8,7 @@ import { FRENCH_TRANSCRIPTS, FRENCH_TRANSCRIPT_EVIDENCE } from '../src/data/fren
 import { STOPS } from '../src/data/stops';
 import { getTimedTokens, getWordState, tokenizeTranscript } from '../src/audio/transcriptTiming';
 import { SyncedTranscript } from '../src/components/SyncedTranscript';
+import transcriptSource from '../src/data/french-transcripts.fr.json';
 
 test('French data covers the exact 22 MP3s and immutable supplied reference', () => {
   assert.deepEqual(Object.keys(FRENCH_TRANSCRIPTS).sort(), STOPS.map((stop) => stop.id).sort());
@@ -54,6 +55,30 @@ test('all 77 previously accepted station 01 bounds are preserved exactly', () =>
   for (const word of original) {
     assert.ok(current.some((candidate) => candidate.startSeconds === word.startSeconds && candidate.endSeconds === word.endSeconds && candidate.text.toLocaleLowerCase('fr') === word.text.toLocaleLowerCase('fr')), word.text);
   }
+});
+
+test('station 01 seventh block restores the short à without shifting any existing word', () => {
+  const transcript = FRENCH_TRANSCRIPTS['01'];
+  const segment = transcript.segments[6];
+  const accepted = getTimedTokens(segment.text, segment.wordTimings ?? [], segment.startSeconds, transcript.segments[7].startSeconds);
+  assert.equal(tokenizeTranscript(segment.text).length, 36);
+  assert.equal(accepted.length, 36);
+  const word = accepted.find((candidate) => candidate.tokenIndex === 10)!;
+  assert.deepEqual(word, { text: 'à', tokenIndex: 10, startSeconds: 45.533, endSeconds: 45.573 });
+  assert.equal(getWordState(45.532, word), 'upcoming');
+  assert.equal(getWordState(45.553, word), 'current');
+  assert.equal(getWordState(45.574, word), 'read');
+  assert.equal(accepted.filter((candidate) => getWordState(45.553, candidate) === 'current').length, 1);
+  assert.equal(transcript.timedWords, transcript.totalWords);
+  assert.deepEqual(transcript.unresolvedWords, []);
+
+  // Snapshot of every pre-existing bound before this single-word repair.
+  // This guards all 22 stations without relying on a Git checkout at test time.
+  const preserved = Object.fromEntries(Object.entries(transcriptSource.stations).map(([id, record]) => [
+    id,
+    record.segments.map((item, segmentIndex) => item.timings.filter(([tokenIndex]) => !(id === '01' && segmentIndex === 6 && tokenIndex === 10))),
+  ]));
+  assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), '302bb83e8bbd06ce65364c4628688f6e9402d64fa753d326a2ff1a6c2f4046af');
 });
 
 test('recovered French narration replaces snippets and leaves absent document passages separate', () => {
