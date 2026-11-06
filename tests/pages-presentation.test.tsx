@@ -6,6 +6,13 @@ import { STOPS } from '../src/data/stops';
 import { StopDetailPage } from '../src/pages/StopDetailPage';
 import { ParcoursPage } from '../src/pages/ParcoursPage';
 import { WelcomePage } from '../src/pages/WelcomePage';
+import { visitorStore } from '../src/visit/visitorStore';
+import { getMediaResource } from '../src/data/mediaCatalog';
+import { formatTime } from '../src/audio/formatTime';
+import { PlayerPage } from '../src/pages/PlayerPage';
+import { audioPlayer } from '../src/audio/audioStore';
+import { LANGUAGES } from '../src/i18n/translations';
+import { experienceText } from '../src/i18n/experienceLabels';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -25,29 +32,24 @@ test('all 22 piece pages expose one launch action and keep narrative, photos, pl
   }
 });
 
-test('tour shows one visited-piece counter with rounded percentage, ignoring duplicate and unknown IDs', () => {
-  const previousWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
-  const renderWithStoredVisits = (stored: string) => {
-    Object.defineProperty(globalThis, 'window', {
-      configurable: true,
-      value: { localStorage: { getItem: () => stored } },
-    });
-    return renderToStaticMarkup(<ParcoursPage onSelectStopDetail={noop} onOpenPlayer={noop} currentLang="fr" />);
-  };
-  try {
-    const html = renderWithStoredVisits(JSON.stringify(['01', '02', '03', '04', '05', '05', '99', 5]));
-    assert.match(html, /5 \/ 22 pièces visitées · 23 %/);
-    assert.equal((html.match(/role="progressbar"/g) ?? []).length, 1);
-    assert.match(html, /aria-valuenow="5"/);
-    assert.match(html, /aria-valuemax="22"/);
-    assert.match(html, /Rechercher une station/);
-    assert.equal((html.match(/<h2/g) ?? []).length, 22);
-    const empty = renderWithStoredVisits('not JSON');
-    assert.match(empty, /0 \/ 22 pièces visitées · 0 %/);
-  } finally {
-    if (previousWindow) Object.defineProperty(globalThis, 'window', previousWindow);
-    else Reflect.deleteProperty(globalThis, 'window');
+test('tour counts discoveries from the shared visitor state, never consultations or catalogue demo statuses', () => {
+  const render = () => renderToStaticMarkup(<ParcoursPage onSelectStopDetail={noop} onOpenPlayer={noop} currentLang="fr" />);
+  visitorStore.recordConsulted('02');
+  assert.match(render(), /0 \/ 22 pièces découvertes · 0 %/);
+  visitorStore.markDiscovered('02');
+  const html = render();
+  assert.match(html, /1 \/ 22 pièces découvertes · 5 %/);
+  assert.equal((html.match(/role="progressbar"/g) ?? []).length, 1);
+  assert.match(html, /aria-valuenow="1"/);
+  assert.match(html, /aria-valuemax="22"/);
+  assert.match(html, /Rechercher une station/);
+  assert.equal((html.match(/<h2/g) ?? []).length, 22);
+  for (const stop of STOPS) {
+    assert.ok(html.includes(`href="/stop/${stop.id}"`), stop.id);
+    const media = getMediaResource(stop.id, 'fr');
+    if (media.status === 'ready') assert.ok(html.includes(formatTime(media.durationSeconds)), stop.id);
   }
+  assert.doesNotMatch(html, /material-symbols|animate-ping|>lock</);
 });
 
 test('home keeps its welcome, seven languages and tour action without the redundant tools block', () => {
@@ -58,4 +60,32 @@ test('home keeps its welcome, seven languages and tour action without the redund
     assert.ok(html.includes(name), name);
   }
   assert.doesNotMatch(html, /PARCOURS DU MUSÉE|Visite Intérieure|Agrandir le texte/);
+});
+
+test('unavailable recordings expose full French text with disabled audio; other languages never reuse French word timings', () => {
+  audioPlayer.setLanguage('fr');
+  audioPlayer.setStop('22', false);
+  const missing = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
+  assert.match(missing, /Cette vitrine est dédiée/);
+  assert.match(missing, /pas encore disponible/);
+  assert.match(missing, /class="player-play-button" disabled=""/);
+  assert.doesNotMatch(missing, /class="transcript-word"/);
+  audioPlayer.setStop('01', false);
+  audioPlayer.setLanguage('en');
+  const english = renderToStaticMarkup(<PlayerPage currentLang="en" onSelectStopDetail={noop} />);
+  assert.match(english, /spoken language.*still need review/);
+  assert.match(english, /French reference text/);
+  assert.match(english, /lang="fr"/);
+  assert.doesNotMatch(english, /class="transcript-word"/);
+  audioPlayer.setLanguage('fr');
+});
+
+test('new visitor instructions provide explicit nonempty interface text in all seven languages', () => {
+  for (const {code} of LANGUAGES) {
+    for (const key of ['resumeAudio', 'progress', 'helpOffline', 'unavailable', 'frenchReference', 'installHelp'] as const) {
+      const text = experienceText(key, code, {number: '01', time:'00:12', count:1, total:22, percent:5});
+      assert.ok(text.length > 5, `${code}/${key}`);
+      assert.doesNotMatch(text, /\{(?:number|time|count|total|percent)\}/);
+    }
+  }
 });

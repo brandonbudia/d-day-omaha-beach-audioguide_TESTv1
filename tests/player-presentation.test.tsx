@@ -54,6 +54,20 @@ test('rendered read/current/upcoming states follow backward seeks and a paused c
   assert.equal((gap.match(/data-word-state="current"/g) ?? []).length, 0);
 });
 
+test('each timed phrase exposes one word to Tab while retaining every clickable word and its replay button', () => {
+  const html = renderTranscript(0.7);
+  const words = html.match(/<button[^>]+class="transcript-word"[^>]*>/g) ?? [];
+  assert.equal(words.length, 5);
+  assert.equal(words.filter((word) => word.includes('tabindex="0"')).length, 2);
+  assert.equal(words.filter((word) => word.includes('tabindex="-1"')).length, 3);
+  assert.equal((html.match(/class="transcript-phrase-replay"/g) ?? []).length, 2);
+  assert.match(html, /flèches gauche et droite/);
+  assert.match(html, /Entrée ou Espace/);
+  // The active word does not silently move the keyboard entry point during playback.
+  const later = renderTranscript(2.7).match(/<button[^>]+class="transcript-word"[^>]*>/g) ?? [];
+  assert.deepEqual(later.map((word) => /tabindex="(-?\d+)"/.exec(word)?.[1]), words.map((word) => /tabindex="(-?\d+)"/.exec(word)?.[1]));
+});
+
 test('audio position uses a labelled native range with exact fractional time and no unrelated caption', () => {
   const html = renderToStaticMarkup(<Scrubber currentTime={12.34} duration={60} onSeek={() => {}} />);
   assert.match(html, /type="range"/);

@@ -8,6 +8,8 @@ import { SyncedTranscript } from '../components/SyncedTranscript';
 import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
 import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
 import { useReadingPreferences } from '../hooks/useReadingPreferences';
+import { getMediaResource } from '../data/mediaCatalog';
+import { experienceText as x } from '../i18n/experienceLabels';
 
 interface PlayerPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -17,7 +19,10 @@ interface PlayerPageProps {
 export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, currentLang }) => {
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(true);
-  const [transcriptTextSize, setTranscriptTextSize] = useState(20);
+  const [transcriptTextSize, setTranscriptTextSize] = useState(() => {
+    try { const size = Number(localStorage.getItem('dday-transcript-text-size')); return size >= 16 && size <= 30 ? size : 20; }
+    catch { return 20; }
+  });
   const [settingsOpen, setSettingsOpen] = useState(false);
   const { preferences, toggle } = useReadingPreferences();
   const [shellHeights, setShellHeights] = useState({ header: 81, navigation: 81 });
@@ -25,11 +30,12 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => audioPlayer.subscribe(setAudioState), []);
+  useEffect(() => { try { localStorage.setItem('dday-transcript-text-size', String(transcriptTextSize)); } catch { /* Reading remains available without storage. */ } }, [transcriptTextSize]);
 
   // Include wrapped accessibility controls and safe-area insets in the available space.
   useEffect(() => {
     const header = document.querySelector('header');
-    const navigation = document.querySelector('[aria-label="Navigation principale"]');
+    const navigation = document.querySelector('.museum-bottom-nav');
     const measure = () => setShellHeights({
       header: header?.getBoundingClientRect().bottom ?? 81,
       navigation: navigation?.getBoundingClientRect().height ?? 81,
@@ -56,6 +62,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const currentIndex = STOPS.findIndex((stop) => stop.id === currentStop.id);
   const nextStop = STOPS[currentIndex + 1];
   const frenchTranscript = audioState.language === 'fr' ? FRENCH_TRANSCRIPTS[currentStop.id] : undefined;
+  const reference = FRENCH_TRANSCRIPTS[currentStop.id];
+  const resource = getMediaResource(currentStop.id, audioState.language);
   const selectTime = (seconds: number) => {
     audioPlayer.seek(seconds);
     if (!audioState.isPlaying) void audioPlayer.play();
@@ -70,8 +78,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         <img className="player-cover" src={currentStop.imageUrl} alt={currentStop.title} />
         <div className="player-station-copy">
           <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
-          <h2>{currentStop.playerTitle}</h2>
-          <p className="player-speakers">{currentStop.speakers}</p>
+          <h2 lang="fr">{currentStop.playerTitle}</h2>
+          <p lang="fr" className="player-speakers">{currentStop.speakers}</p>
           <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
             <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
           </button>
@@ -96,6 +104,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
           </div>
         </div>
         <div id="player-transcript" className="player-transcript-content" data-wide-spacing={preferences.wideSpacing} data-color-assistance={preferences.colorAssistance} data-dyslexic-font={preferences.dyslexicFont} hidden={!isTranscriptOpen}>
+          {resource.status !== 'ready' && <p className="player-resource-notice" role="note">{x(resource.status === 'unavailable' ? 'unavailable' : 'unverified', currentLang)}</p>}
           {frenchTranscript?.segments.length ? (
             <SyncedTranscript
               key={`${currentStop.id}-${audioState.language}`}
@@ -108,9 +117,11 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             />
           ) : (
             <div className="player-static-transcript" tabIndex={0} style={{ fontSize: `${transcriptTextSize}px` }}>
-              {frenchTranscript ? <FrenchTranscriptNotice transcript={frenchTranscript} /> : currentStop.transcript.map((item, index) => (
-                <div key={index}><p className="player-eyebrow">{item.timeRange} · {item.title}</p><p>{item.text}</p></div>
-              ))}
+              {!frenchTranscript && <p className="player-eyebrow" lang={currentLang}>{x('frenchReference', currentLang)}</p>}
+              <div lang="fr">{reference ? <>
+                {reference.segments.map((segment, index) => <p key={`s-${index}`}>{segment.text}</p>)}
+                {reference.referenceOnlyParagraphs.map((text, index) => <p key={`r-${index}`}>{text}</p>)}
+              </> : currentStop.transcript.map((item, index) => <p key={index}>{item.text}</p>)}</div>
             </div>
           )}
         </div>
@@ -118,16 +129,16 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
       </section>
 
       <section className="player-transport" aria-label="Commandes de lecture">
-        {audioState.error && <p role="alert" className="player-error">{t('audio_error', currentLang)}</p>}
-        <Scrubber currentTime={audioState.currentTime} duration={audioState.duration} onSeek={(seconds) => audioPlayer.seek(seconds)} />
+        {audioState.error && resource.status !== 'unavailable' && <p role="alert" className="player-error">{t('audio_error', currentLang)}</p>}
+        <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} onSeek={(seconds) => audioPlayer.seek(seconds)} />
         <div className="player-transport-buttons">
           <button type="button" className="player-track-button" onClick={() => audioPlayer.prevStop()} disabled={currentIndex === 0} aria-label={t('btn_prev', currentLang)}><ChevronLeft size={26} aria-hidden="true" /><span>{t('btn_prev', currentLang)}</span></button>
-          <button type="button" className="player-skip-button" onClick={() => audioPlayer.rewind(15)} aria-label={t('rewind_15', currentLang)}><RotateCcw size={21} aria-hidden="true" /><span>15 s</span></button>
-          <button type="button" className="player-play-button" onClick={() => audioPlayer.togglePlayPause()} aria-label={audioState.isPlaying ? t('pause', currentLang) : t('play', currentLang)}>
+          <button type="button" className="player-skip-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.rewind(15)} aria-label={t('rewind_15', currentLang)}><RotateCcw size={21} aria-hidden="true" /><span>15 s</span></button>
+          <button type="button" className="player-play-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.togglePlayPause()} aria-label={audioState.isPlaying ? t('pause', currentLang) : t('play', currentLang)}>
             {audioState.isPlaying ? <Pause size={27} fill="currentColor" aria-hidden="true" /> : <Play size={27} fill="currentColor" aria-hidden="true" />}
             <span>{audioState.isPlaying ? 'Pause' : ({ fr: 'Écouter', en: 'Play', de: 'Start', it: 'Ascolta', pl: 'Odtwórz', nl: 'Afspelen', es: 'Escuchar' }[currentLang])}</span>
           </button>
-          <button type="button" className="player-skip-button" onClick={() => audioPlayer.forward(15)} aria-label={t('forward_15', currentLang)}><RotateCw size={21} aria-hidden="true" /><span>15 s</span></button>
+          <button type="button" className="player-skip-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.forward(15)} aria-label={t('forward_15', currentLang)}><RotateCw size={21} aria-hidden="true" /><span>15 s</span></button>
           <button type="button" className="player-track-button" onClick={() => audioPlayer.nextStop()} aria-label={t('btn_next', currentLang)}><ChevronRight size={26} aria-hidden="true" /><span>{t('btn_next', currentLang)}</span></button>
         </div>
       </section>

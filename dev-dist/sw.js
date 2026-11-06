@@ -67,10 +67,14 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-afac4cd2'], (function (workbox) { 'use strict';
+define(['./workbox-59300674'], (function (workbox) { 'use strict';
 
-  self.skipWaiting();
-  workbox.clientsClaim();
+  self.addEventListener('message', event => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      self.skipWaiting();
+    }
+  });
+
   /**
    * The precacheAndRoute() method efficiently caches and responds to
    * requests for URLs in the manifest.
@@ -81,7 +85,7 @@ define(['./workbox-afac4cd2'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.77c8nn2nhvo"
+    "revision": "0.pga3oidb0s8"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
@@ -105,13 +109,12 @@ define(['./workbox-afac4cd2'], (function (workbox) { 'use strict';
       statuses: [0, 200]
     })]
   }), 'GET');
-  workbox.registerRoute(/\/audio\/.*\.mp3$/i, new workbox.CacheFirst({
-    "cacheName": "audio-guide-cache",
-    plugins: [new workbox.ExpirationPlugin({
-      maxEntries: 100,
-      maxAgeSeconds: 2592000
-    }), new workbox.CacheableResponsePlugin({
-      statuses: [0, 200]
+  workbox.registerRoute(({
+    url
+  }) => url.origin === self.location.origin && url.pathname.startsWith("/audio/") && url.pathname.endsWith(".mp3") && !url.searchParams.has("__dday_download"), new workbox.CacheFirst({
+    "cacheName": "dday-verified-media-v1",
+    plugins: [new workbox.RangeRequestsPlugin(), new workbox.CacheableResponsePlugin({
+      statuses: [200]
     })]
   }), 'GET');
 

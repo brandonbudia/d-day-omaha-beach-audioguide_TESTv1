@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import {fileURLToPath} from 'node:url';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
 
@@ -10,48 +11,24 @@ export default defineConfig(() => {
       react(),
       tailwindcss(),
       VitePWA({
-        registerType: 'autoUpdate',
+        // An update waits for a later visit instead of refreshing an active narration.
+        registerType: 'prompt',
         includeAssets: [
           'manifest.json',
-          'icons/icon.svg',
-          'icons/apple-touch-icon.png',
-          'icons/icon-192x192.png',
-          'icons/icon-512x512.png',
+          'icons/audioguide.svg',
+          'icons/audioguide-apple-touch.png',
+          'icons/audioguide-192.png',
+          'icons/audioguide-512.png',
+          'icons/audioguide-maskable-512.png',
         ],
-        manifest: {
-          id: '/',
-          name: 'D-Day Omaha',
-          short_name: 'D-Day Omaha',
-          description: 'Audioguide officiel et immersif pour Omaha Beach et le secteur fortifié WN 62.',
-          theme_color: '#4a3728',
-          background_color: '#10141a',
-          display: 'standalone',
-          start_url: '/',
-          scope: '/',
-          icons: [
-            {
-              src: '/icons/icon-192x192.png',
-              sizes: '192x192',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/icons/icon-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any',
-            },
-            {
-              src: '/icons/icon-maskable-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'maskable',
-            },
-          ],
-        },
+        // public/manifest.json is the one canonical manifest linked by index.html.
+        manifest: false,
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2,webp,jpg,jpeg}'],
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+          skipWaiting: false,
+          clientsClaim: false,
+          cleanupOutdatedCaches: false,
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -82,16 +59,13 @@ export default defineConfig(() => {
               },
             },
             {
-              urlPattern: /\/audio\/.*\.mp3$/i,
+              urlPattern: ({url}) => url.origin === self.location.origin && url.pathname.startsWith('/audio/') && url.pathname.endsWith('.mp3') && !url.searchParams.has('__dday_download'),
               handler: 'CacheFirst',
               options: {
-                cacheName: 'audio-guide-cache',
-                expiration: {
-                  maxEntries: 100,
-                  maxAgeSeconds: 60 * 60 * 24 * 30,
-                },
+                cacheName: 'dday-verified-media-v1',
+                rangeRequests: true,
                 cacheableResponse: {
-                  statuses: [0, 200],
+                  statuses: [200],
                 },
               },
             },
@@ -105,7 +79,7 @@ export default defineConfig(() => {
     ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(fileURLToPath(new URL('.', import.meta.url))),
       },
     },
     server: {

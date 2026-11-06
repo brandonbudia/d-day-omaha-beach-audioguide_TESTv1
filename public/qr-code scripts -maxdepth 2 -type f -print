@@ -1,0 +1,191 @@
+warning: in the working copy of 'src/components/SyncedTranscript.tsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/App.tsx b/src/App.tsx[m
+[1mindex f9cb18e..c8f40e3 100644[m
+[1m--- a/src/App.tsx[m
+[1m+++ b/src/App.tsx[m
+[36m@@ -39,9 +39,12 @@[m [mexport default function App() {[m
+         setActiveTab('parcours');[m
+       } else if (path.startsWith('/stop/')) {[m
+         const id = path.replace('/stop/', '').replace(/\/$/, '');[m
+[31m-        if (id) {[m
+[32m+[m[32m        if (STOPS.some((stop) => stop.id === id)) {[m
+           setSelectedStopId(id);[m
+           setActiveTab('arret');[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m          // An invalid or stale QR deep link should not masquerade as stop 01.[m
+[32m+[m[32m          setActiveTab('accueil');[m
+         }[m
+       } else if (path.startsWith('/player') || path.startsWith('/lecteur')) {[m
+         setActiveTab('lecteur');[m
+[1mdiff --git a/src/audio/audioStore.ts b/src/audio/audioStore.ts[m
+[1mindex f231279..ad84f32 100644[m
+[1m--- a/src/audio/audioStore.ts[m
+[1m+++ b/src/audio/audioStore.ts[m
+[36m@@ -17,6 +17,8 @@[m [mclass GlobalAudioPlayer {[m
+   private state: AudioState;[m
+   private listeners: Set<AudioListener> = new Set();[m
+   private audioElement: HTMLAudioElement | null = null;[m
+[32m+[m[32m  private playbackFrame: number | null = null;[m
+[32m+[m[32m  private lastFrameNotification = 0;[m
+   private audioCtx: AudioContext | null = null;[m
+   private sourceNode: MediaElementAudioSourceNode | null = null;[m
+   private voiceFilterNode: BiquadFilterNode | null = null;[m
+[36m@@ -60,6 +62,16 @@[m [mclass GlobalAudioPlayer {[m
+       }[m
+     });[m
+ [m
+[32m+[m[32m    this.audioElement.addEventListener('seeking', () => {[m
+[32m+[m[32m      if (this.audioElement && !this.isSynthesizing) {[m
+[32m+[m[32m        this.state.currentTime = this.audioElement.currentTime;[m
+[32m+[m[32m        this.notify();[m
+[32m+[m[32m      }[m
+[32m+[m[32m    });[m
+[32m+[m
+[32m+[m[32m    this.audioElement.addEventListener('play', () => this.startPlaybackClock());[m
+[32m+[m[32m    this.audioElement.addEventListener('pause', () => this.stopPlaybackClock());[m
+[32m+[m
+     this.audioElement.addEventListener('ended', () => {[m
+       this.handleTrackEnded();[m
+     });[m
+[36m@@ -79,6 +91,36 @@[m [mclass GlobalAudioPlayer {[m
+     this.audioElement.playbackRate = this.state.playbackRate;[m
+   }[m
+ [m
+[32m+[m[32m  private startPlaybackClock() {[m
+[32m+[m[32m    if (this.playbackFrame !== null || typeof window === 'undefined') return;[m
+[32m+[m
+[32m+[m[32m    const tick = (now: number) => {[m
+[32m+[m[32m      this.playbackFrame = null;[m
+[32m+[m[32m      if (!this.audioElement || this.audioElement.paused || this.isSynthesizing) return;[m
+[32m+[m
+[32m+[m[32m      // Keep the UI responsive for word highlighting without notifying React on every display frame.[m
+[32m+[m[32m      if (now - this.lastFrameNotification >= 33) {[m
+[32m+[m[32m        this.state.currentTime = this.audioElement.currentTime;[m
+[32m+[m[32m        this.lastFrameNotification = now;[m
+[32m+[m[32m        this.notify();[m
+[32m+[m[32m      }[m
+[32m+[m[32m      this.playbackFrame = window.requestAnimationFrame(tick);[m
+[32m+[m[32m    };[m
+[32m+[m
+[32m+[m[32m    this.playbackFrame = window.requestAnimationFrame(tick);[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  private stopPlaybackClock() {[m
+[32m+[m[32m    if (this.playbackFrame !== null && typeof window !== 'undefined') {[m
+[32m+[m[32m      window.cancelAnimationFrame(this.playbackFrame);[m
+[32m+[m[32m      this.playbackFrame = null;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    if (this.audioElement && !this.isSynthesizing) {[m
+[32m+[m[32m      this.state.currentTime = this.audioElement.currentTime;[m
+[32m+[m[32m      this.notify();[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+   private initWebAudio() {[m
+     if (this.audioCtx || typeof window === 'undefined') return;[m
+     try {[m
+[1mdiff --git a/src/components/SyncedTranscript.tsx b/src/components/SyncedTranscript.tsx[m
+[1mindex 0f796dc..7398ede 100644[m
+[1m--- a/src/components/SyncedTranscript.tsx[m
+[1m+++ b/src/components/SyncedTranscript.tsx[m
+[36m@@ -1,5 +1,43 @@[m
+ import React, { useEffect, useMemo, useRef, useState } from 'react';[m
+[31m-import { TimedTranscriptSegment } from '../data/stops';[m
+[32m+[m[32mimport { TimedTranscriptSegment, TimedTranscriptWord } from '../data/stops';[m
+[32m+[m
+[32m+[m[32mconst normalizeWord = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, '');[m
+[32m+[m
+[32m+[m[32mfunction renderTimedWords(text: string, words: TimedTranscriptWord[], currentTime: number) {[m
+[32m+[m[32m  const tokens = [...text.matchAll(/\S+/gu)];[m
+[32m+[m[32m  // Refuse to apply timings when the aligned text does not match this transcript.[m
+[32m+[m[32m  if ([m
+[32m+[m[32m    tokens.length !== words.length ||[m
+[32m+[m[32m    tokens.some((token, index) => normalizeWord(token[0]) !== normalizeWord(words[index].text)) ||[m
+[32m+[m[32m    words.some((word) => !Number.isFinite(word.startSeconds) || !Number.isFinite(word.endSeconds) || word.startSeconds < 0 || word.endSeconds <= word.startSeconds)[m
+[32m+[m[32m  ) {[m
+[32m+[m[32m    return text;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  let cursor = 0;[m
+[32m+[m[32m  const rendered: React.ReactNode[] = [];[m
+[32m+[m[32m  tokens.forEach((token, index) => {[m
+[32m+[m[32m    const start = token.index ?? cursor;[m
+[32m+[m[32m    const end = start + token[0].length;[m
+[32m+[m[32m    const before = text.slice(cursor, start);[m
+[32m+[m[32m    cursor = end;[m
+[32m+[m[32m    const word = words[index];[m
+[32m+[m[32m    const isActive = currentTime >= word.startSeconds && currentTime < word.endSeconds;[m
+[32m+[m[32m    rendered.push([m
+[32m+[m[32m      <React.Fragment key={`${word.startSeconds}-${index}`}>[m
+[32m+[m[32m        {before}[m
+[32m+[m[32m        <span[m
+[32m+[m[32m          className={isActive ? 'rounded-sm bg-[#f2ca50] text-[#171717] shadow-[0_0_0_2px_#f2ca50]' : undefined}[m
+[32m+[m[32m          aria-current={isActive ? 'true' : undefined}[m
+[32m+[m[32m        >[m
+[32m+[m[32m          {token[0]}[m
+[32m+[m[32m        </span>[m
+[32m+[m[32m      </React.Fragment>[m
+[32m+[m[32m    );[m
+[32m+[m[32m  });[m
+[32m+[m[32m  rendered.push(text.slice(cursor));[m
+[32m+[m[32m  return rendered;[m
+[32m+[m[32m}[m
+ [m
+ interface SyncedTranscriptProps {[m
+   segments: TimedTranscriptSegment[];[m
+[36m@@ -103,7 +141,9 @@[m [mexport const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({[m
+                   }`}[m
+                   style={{ fontSize: `${textSize}px` }}[m
+                 >[m
+[31m-                  {segment.text}[m
+[32m+[m[32m                  {segment.wordTimings?.length[m
+[32m+[m[32m                    ? renderTimedWords(segment.text, segment.wordTimings, currentTime)[m
+[32m+[m[32m                    : segment.text}[m
+                 </button>[m
+               </li>[m
+             );[m
+[1mdiff --git a/src/data/stops.ts b/src/data/stops.ts[m
+[1mindex 77f93ea..b2d5be3 100644[m
+[1m--- a/src/data/stops.ts[m
+[1m+++ b/src/data/stops.ts[m
+[36m@@ -52,6 +52,14 @@[m [mexport interface StopData {[m
+ export interface TimedTranscriptSegment {[m
+   startSeconds: number;[m
+   text: string;[m
+[32m+[m[32m  /** Word boundaries from a forced aligner; omitted until verified timings are available. */[m
+[32m+[m[32m  wordTimings?: TimedTranscriptWord[];[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mexport interface TimedTranscriptWord {[m
+[32m+[m[32m  text: string;[m
+[32m+[m[32m  startSeconds: number;[m
+[32m+[m[32m  endSeconds: number;[m
+ }[m
+ [m
+ export const STOPS: StopData[] = [[m
+[1mdiff --git a/src/pages/PlayerPage.tsx b/src/pages/PlayerPage.tsx[m
+[1mindex e1c0c92..6082526 100644[m
+[1m--- a/src/pages/PlayerPage.tsx[m
+[1m+++ b/src/pages/PlayerPage.tsx[m
+[36m@@ -321,9 +321,10 @@[m [mexport const PlayerPage: React.FC<PlayerPageProps> = ({[m
+ [m
+       {/* Next Museum Exhibit Suggestion */}[m
+       {nextStop && ([m
+[31m-        <aside[m
+[32m+[m[32m        <button[m
+[32m+[m[32m          type="button"[m
+           onClick={() => onSelectStopDetail(nextStop.id)}[m
+[31m-          className="flex items-center gap-3 p-3.5 rounded-xl bg-[#181c22] border border-[#262a31] shadow-sm cursor-pointer hover:bg-[#1c2026] transition-colors"[m
+[32m+[m[32m          className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-[#181c22] border border-[#262a31] shadow-sm text-left cursor-pointer hover:bg-[#1c2026] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"[m
+         >[m
+           <div className="w-12 h-12 rounded-lg bg-[#262a31] border border-[#31353c] flex-shrink-0 flex items-center justify-center text-[#f2ca50]">[m
+             <span className="material-symbols-outlined text-[24px]">museum</span>[m
+[36m@@ -337,7 +338,7 @@[m [mexport const PlayerPage: React.FC<PlayerPageProps> = ({[m
+             </p>[m
+           </div>[m
+           <span className="material-symbols-outlined text-[#d0c5af] text-[20px]">chevron_right</span>[m
+[31m-        </aside>[m
+[32m+[m[32m        </button>[m
+       )}[m
+     </div>[m
+   );[m

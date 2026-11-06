@@ -6,6 +6,7 @@ import { getTimedTokens, getWordState, tokenizeTranscript } from '../src/audio/t
 import { STOPS } from '../src/data/stops';
 import { LANGUAGES } from '../src/i18n/translations';
 import { STOP01_ALIGNMENT_EVIDENCE } from '../src/data/stop01-word-timings.fr';
+import { getMediaResource } from '../src/data/mediaCatalog';
 
 test('station 01 timings refer to the exact MP3 that was aligned', () => {
   assert.equal(createHash('sha256').update(readFileSync(`public${STOP01_ALIGNMENT_EVIDENCE.audioPath}`)).digest('hex'), STOP01_ALIGNMENT_EVIDENCE.audioSha256);
@@ -102,7 +103,7 @@ test('the shared player follows media events, preserves pause/seek and never sim
   audioPlayer.setStop('02', false);
   assert.equal(audioPlayer.getState().currentStopId, '02');
   assert.equal(audioPlayer.getState().currentTime, 0);
-  assert.equal(media.src, '/audio/fr/stop-02.mp3');
+  assert.equal(media.src, getMediaResource('02', 'fr').url);
   media.readyState = 0;
   audioPlayer.seek(8);
   media.duration = 4;

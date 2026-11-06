@@ -1,148 +1,70 @@
 import React from 'react';
+import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { audioPlayer, AudioState } from '../audio/audioStore';
 import { STOPS } from '../data/stops';
 import { t } from '../i18n/translations';
+import { visualLabel } from '../i18n/visualLabels';
+import { getMediaResource } from '../data/mediaCatalog';
+import { experienceText as x } from '../i18n/experienceLabels';
 
 interface PersistentPlayerBarProps {
   onOpenFullPlayer: () => void;
 }
 
+const formatTime = (seconds: number) => {
+  const safeSeconds = Math.max(0, Number.isFinite(seconds) ? seconds : 0);
+  return `${Math.floor(safeSeconds / 60).toString().padStart(2, '0')}:${Math.floor(safeSeconds % 60).toString().padStart(2, '0')}`;
+};
+
 export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpenFullPlayer }) => {
   const [state, setState] = React.useState<AudioState>(audioPlayer.getState());
-
-  React.useEffect(() => {
-    return audioPlayer.subscribe((next) => setState(next));
-  }, []);
-
-  const currentStop = STOPS.find((s) => s.id === state.currentStopId) || STOPS[0];
-  const progressPercent = state.duration > 0 ? (state.currentTime / state.duration) * 100 : 0;
-
-  const handleScrub = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const ratio = Math.max(0, Math.min(1, clickX / rect.width));
-    audioPlayer.seek(ratio * state.duration);
-  };
-
-  const formatTime = (secs: number) => {
-    const m = Math.floor(secs / 60);
-    const s = Math.floor(secs % 60);
-    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
+  React.useEffect(() => audioPlayer.subscribe(setState), []);
+  const currentStop = STOPS.find((stop) => stop.id === state.currentStopId) || STOPS[0];
+  const unavailable = getMediaResource(currentStop.id, state.language).status === 'unavailable';
+  const duration = !unavailable && Number.isFinite(state.duration) ? Math.max(0, state.duration) : 0;
+  const progress = duration > 0 ? Math.max(0, Math.min(100, state.currentTime / duration * 100)) : 0;
 
   return (
-    <aside
-      aria-label="Lecteur audio persistant"
-      className="fixed bottom-20 inset-x-0 z-40 bg-[#181c22]/95 backdrop-blur-xl border-t border-[#d4af37]/40 shadow-2xl"
-    >
-      {state.error && <p role="alert" className="mx-auto max-w-md px-3 py-2 text-sm text-[#dfe2eb]">{t('audio_error', state.language)}</p>}
-      {/* Scrubable mini-progress bar at top of docked player */}
-      <div
-        onClick={handleScrub}
-        className="w-full h-2 bg-[#262a31] cursor-pointer relative group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-        role="slider"
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowRight') { event.preventDefault(); audioPlayer.seek(state.currentTime + 5); }
-          if (event.key === 'ArrowLeft') { event.preventDefault(); audioPlayer.seek(state.currentTime - 5); }
-          if (event.key === 'Home') { event.preventDefault(); audioPlayer.seek(0); }
-          if (event.key === 'End') { event.preventDefault(); audioPlayer.seek(state.duration); }
-        }}
-        aria-valuenow={Math.round(state.currentTime)}
-        aria-valuemin={0}
-        aria-valuemax={Math.round(state.duration)}
-        aria-valuetext={formatTime(state.currentTime) + ' sur ' + formatTime(state.duration)}
-        aria-label="Progression audio"
-      >
-        <div
-          className="h-full bg-[#f2ca50] transition-all duration-150"
-          style={{ width: `${progressPercent}%` }}
-        />
-        <div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#f2ca50] shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
-          style={{ left: `${progressPercent}%` }}
-        />
-      </div>
-
-      <div className="h-16 px-3 flex items-center justify-between max-w-md mx-auto">
-        {/* Click to open full player */}
-        <div
-          onClick={onOpenFullPlayer}
+    <aside aria-label={visualLabel(state.language, 'persistentPlayer')} className="museum-mini-player fixed inset-x-0 z-40">
+      {state.error && !unavailable && <p role="alert" className="museum-mini-player-error">{t('audio_error', state.language)}</p>}
+      <div className="museum-mini-player-inner">
+        <input
+          type="range"
+          className="museum-mini-player-range"
+          min={0}
+          max={duration || 1}
+          step={0.1}
+          value={Math.min(duration, Math.max(0, state.currentTime))}
+          disabled={duration <= 0}
+          onChange={(event) => audioPlayer.seek(Number(event.currentTarget.value))}
           onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
               event.preventDefault();
-              onOpenFullPlayer();
+              audioPlayer.seek(Math.max(0, Math.min(duration, state.currentTime + (event.key === 'ArrowRight' ? 5 : -5))));
             }
           }}
-          role="button"
-          tabIndex={0}
-          aria-label="Ouvrir le lecteur audio complet"
-          className="flex items-center gap-2.5 min-w-0 flex-1 cursor-pointer pr-2 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f2ca50]"
-        >
-          <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-[#d4af37]/40">
-            <img
-              src={currentStop.imageUrl}
-              alt={currentStop.title}
-              className="w-full h-full object-cover filter contrast-125"
-            />
-            {state.isPlaying && (
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <span className="w-2 h-2 rounded-full bg-[#f2ca50] animate-ping" />
-              </div>
-            )}
-          </div>
-
-          <div className="flex flex-col min-w-0">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] font-bold text-[#f2ca50] uppercase tracking-wider">
-                Station {currentStop.number}
-              </span>
-              <span className="text-[10px] text-[#d0c5af] tabular-nums">
-                {formatTime(state.currentTime)} / {formatTime(state.duration)}
-              </span>
-            </div>
-            <span className="text-[13px] font-bold text-[#dfe2eb] truncate font-heading">
-              {currentStop.title}
+          style={{ '--audio-progress': `${progress}%` } as React.CSSProperties}
+          aria-label={visualLabel(state.language, 'audioProgress')}
+          aria-valuetext={`${formatTime(state.currentTime)} ${visualLabel(state.language, 'audioTime')} ${formatTime(duration)}`}
+        />
+        <div className="museum-mini-player-row">
+          <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-label={`${visualLabel(state.language, 'openPlayer')} — ${currentStop.title}`}>
+            <img src={currentStop.imageUrl} alt="" width="44" height="44" />
+            <span className="museum-mini-player-copy">
+              <span className="museum-mini-player-meta">{t('nav_stop', state.language)} {currentStop.number}<span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span></span>
+              <strong>{currentStop.title}</strong>
             </span>
-          </div>
-        </div>
-
-        {/* Transport controls */}
-        <div className="flex items-center gap-1 shrink-0">
-          <button
-            onClick={() => audioPlayer.prevStop()}
-            aria-label="Arrêt précédent"
-            className="w-10 h-10 flex items-center justify-center rounded-full text-[#d0c5af] hover:text-[#dfe2eb] hover:bg-[#262a31] transition-colors active:scale-90"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[20px]">skip_previous</span>
           </button>
-
-          <button
-            onClick={() => {
+          <div className="museum-mini-player-controls">
+            <button type="button" onClick={() => audioPlayer.prevStop()} aria-label={visualLabel(state.language, 'previous')} className="museum-icon-button"><SkipBack size={21} aria-hidden="true" /></button>
+            <button type="button" disabled={unavailable} onClick={() => {
               audioPlayer.togglePlayPause();
               if (!state.isPlaying) onOpenFullPlayer();
-            }}
-            aria-label={state.isPlaying ? 'Mettre en pause' : 'Lancer la lecture'}
-            className="w-11 h-11 rounded-full bg-[#f2ca50] text-[#3c2f00] flex items-center justify-center shadow-lg hover:brightness-105 transition-all active:scale-90"
-            type="button"
-          >
-            <span
-              className="material-symbols-outlined text-[26px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              {state.isPlaying ? 'pause' : 'play_arrow'}
-            </span>
-          </button>
-
-          <button
-            onClick={() => audioPlayer.nextStop()}
-            aria-label="Arrêt suivant"
-            className="w-10 h-10 flex items-center justify-center rounded-full text-[#d0c5af] hover:text-[#dfe2eb] hover:bg-[#262a31] transition-colors active:scale-90"
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[20px]">skip_next</span>
-          </button>
+            }} aria-label={t(state.isPlaying ? 'pause' : 'play', state.language)} className="museum-mini-player-play">
+              {state.isPlaying ? <Pause size={23} fill="currentColor" aria-hidden="true" /> : <Play size={23} fill="currentColor" aria-hidden="true" />}
+            </button>
+            <button type="button" onClick={() => audioPlayer.nextStop()} aria-label={visualLabel(state.language, 'next')} className="museum-icon-button"><SkipForward size={21} aria-hidden="true" /></button>
+          </div>
         </div>
       </div>
     </aside>

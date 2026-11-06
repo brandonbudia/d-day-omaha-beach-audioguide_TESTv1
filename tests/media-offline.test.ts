@@ -1,0 +1,180 @@
+import assert from 'node:assert/strict';
+import { createHash, webcrypto } from 'node:crypto';
+import { readFile, stat } from 'node:fs/promises';
+import { test } from 'node:test';
+import { setImmediate as nextTurn } from 'node:timers/promises';
+import { MEDIA_CATALOG, getMediaResource, getDownloadableAudio, SHARED_OFFLINE_RESOURCES, type OfflineResource } from '../src/data/mediaCatalog';
+import { LANGUAGES, type SupportedLanguage } from '../src/i18n/translations';
+import french from '../src/data/french-transcripts.fr.json';
+import { VERIFIED_MEDIA_CACHE, createOfflineStore, getOfflineResources, verifyCompleteResponse, type OfflineDependencies } from '../src/offline/offlineStore';
+
+const subtle = webcrypto.subtle as SubtleCrypto;
+const hash = (body: string | Uint8Array) => createHash('sha256').update(body).digest('hex');
+const body = 'complete audio bytes';
+const resource: OfflineResource = { url: '/audio/fr/stop-01.mp3?v=verified', bytes: Buffer.byteLength(body), sha256: hash(body) };
+
+class MemoryCache {
+  entries = new Map<string, Response>();
+  async match(url: string) { return this.entries.get(url)?.clone(); }
+  async put(url: string, response: Response) { this.entries.set(url, response.clone()); }
+}
+
+function fixture(overrides: Partial<OfflineDependencies> = {}) {
+  const cache = new MemoryCache();
+  const names: string[] = [];
+  const requests: { url: string; options?: RequestInit }[] = [];
+  const dependencies: OfflineDependencies = {
+    caches: { open: async (name: string) => { names.push(name); return cache; } },
+    fetch: (async (url: string | URL | Request, options?: RequestInit) => { requests.push({ url: String(url), options }); return new Response(body); }) as typeof fetch,
+    subtle, origin: 'https://guide.example', resources: () => [resource],
+    shellAvailable: async () => true, estimateStorage: async () => ({ usage: 1234, quota: 100000 }),
+    ...overrides,
+  };
+  return { cache, names, requests, dependencies, store: createOfflineStore(dependencies) };
+}
+
+test('catalogue reflects all 154 actual audio files without certifying English or placeholders', async () => {
+  const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
+  assert.equal(LANGUAGES.length, 7);
+  for (const { code } of LANGUAGES) {
+    assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
+    for (const record of Object.values(MEDIA_CATALOG[code])) {
+      const file = new URL(`../public/audio/${code}/stop-${record.id}.mp3`, import.meta.url);
+      assert.equal((await stat(file)).size, record.bytes, `${code}-${record.id} bytes`);
+      assert.equal(hash(await readFile(file)), record.sha256, `${code}-${record.id} hash`);
+      assert.ok(record.durationSeconds > 0);
+      assert.ok(record.url.endsWith(`?v=${record.sha256}`));
+      if (code === 'fr' && record.id !== '22') {
+        const transcript = french.stations[record.id as keyof typeof french.stations];
+        assert.equal(record.status, 'ready');
+        assert.equal(record.sha256, transcript.audioSha256);
+        assert.ok(Math.abs(record.durationSeconds - transcript.durationSeconds) < 0.1);
+      } else if (code === 'en') {
+        assert.equal(record.status, 'unverified');
+        assert.equal(record.reason, 'language-review-required');
+        assert.notEqual(record.sha256, placeholder);
+      } else {
+        assert.equal(record.status, 'unavailable');
+        assert.equal(record.sha256, placeholder);
+      }
+    }
+  }
+  assert.equal(getDownloadableAudio('fr').length, 21);
+  assert.equal(getDownloadableAudio('en').length, 22);
+  for (const language of ['de', 'it', 'pl', 'nl', 'es'] as const) assert.deepEqual(getOfflineResources(language), []);
+  assert.equal(getMediaResource('99', 'fr').status, 'unavailable');
+});
+
+test('offline packs include the exact local photographs and both reading fonts', async () => {
+  assert.equal(SHARED_OFFLINE_RESOURCES.length, 25);
+  assert.equal(SHARED_OFFLINE_RESOURCES.filter((item) => item.url.endsWith('.woff2')).length, 2);
+  for (const record of SHARED_OFFLINE_RESOURCES) {
+    const actual = await readFile(new URL(`../public${record.url}`, import.meta.url));
+    assert.equal(actual.byteLength, record.bytes);
+    assert.equal(hash(actual), record.sha256);
+  }
+  assert.equal(getOfflineResources('fr').length, 46);
+  assert.equal(getOfflineResources('en').length, 47);
+});
+
+test('full-file verification requires HTTP 200, actual byte length and exact SHA256', async () => {
+  assert.equal(Buffer.from(await verifyCompleteResponse(resource, new Response(body), subtle)).toString(), body);
+  for (const [response, code] of [
+    [new Response(body, { status: 206 }), 'partial-response'],
+    [new Response(body, { headers: { 'content-range': 'bytes 0-19/20' } }), 'partial-response'],
+    [new Response('not found', { status: 404 }), 'http'],
+    [new Response(body.slice(1)), 'size-mismatch'],
+    [new Response(body.replace('audio', 'other')), 'hash-mismatch'],
+  ] as const) await assert.rejects(verifyCompleteResponse(resource, response, subtle), { code });
+});
+
+test('download saves only verified full files and recovers readiness from actual CacheStorage', async () => {
+  const { cache, names, requests, dependencies, store } = fixture();
+  assert.equal(store.getSnapshot(), store.getSnapshot(), 'stable external-store snapshot');
+  await store.download('fr');
+  const state = store.getSnapshot().packs.fr;
+  assert.equal(state.status, 'ready');
+  assert.equal(state.cachedAudioCount, 1);
+  assert.equal(state.verifiedBytes, resource.bytes);
+  assert.equal(state.shellReady, true);
+  assert.equal(state.storageQuotaBytes, 100000);
+  assert.deepEqual(names, [VERIFIED_MEDIA_CACHE]);
+  assert.equal(requests.length, 1);
+  assert.equal(new URL(requests[0].url).searchParams.get('__dday_download'), '1');
+  assert.equal(requests[0].options?.cache, 'no-store');
+  assert.equal(await (await cache.match(`https://guide.example${resource.url}`))?.text(), body);
+  const reloaded = createOfflineStore(dependencies);
+  await reloaded.inspect('fr');
+  assert.equal(reloaded.getSnapshot().packs.fr.status, 'ready');
+  await reloaded.download('fr');
+  assert.equal(requests.length, 1, 'valid cached files are not downloaded again');
+});
+
+test('corrupt cache entries are repaired from the network, never counted as verified', async () => {
+  const { cache, requests, store } = fixture();
+  await cache.put(`https://guide.example${resource.url}`, new Response('bad cache entry'));
+  await store.inspect('fr');
+  assert.equal(store.getSnapshot().packs.fr.verifiedCount, 0);
+  assert.equal(store.getSnapshot().packs.fr.status, 'partial');
+  await store.download('fr');
+  assert.equal(requests.length, 1);
+  assert.equal(store.getSnapshot().packs.fr.status, 'ready');
+});
+
+test('a successful request with partial or corrupt bytes never creates a ready pack', async () => {
+  for (const response of [new Response(body, { status: 206 }), new Response('bad')]) {
+    const { cache, store } = fixture({ fetch: (async () => response) as typeof fetch });
+    await store.download('fr');
+    assert.equal(store.getSnapshot().packs.fr.status, 'error');
+    assert.equal(store.getSnapshot().packs.fr.verifiedCount, 0);
+    assert.equal(cache.entries.size, 0);
+    assert.equal(store.getSnapshot().activeLanguage, null);
+  }
+});
+
+test('storage refusal is distinct from network failure and cannot claim downloaded bytes', async () => {
+  const { store } = fixture({ caches: { open: async () => { throw new DOMException('Denied', 'SecurityError'); } } });
+  await store.download('fr');
+  assert.equal(store.getSnapshot().packs.fr.error, 'storage');
+  assert.equal(store.getSnapshot().packs.fr.verifiedBytes, 0);
+  assert.equal(store.getSnapshot().packs.fr.status, 'error');
+});
+
+test('one language downloads at a time and cancellation preserves prior cached resources', async () => {
+  let calls = 0;
+  const { store, cache } = fixture({ fetch: ((_url: unknown, options: RequestInit) => {
+    calls += 1;
+    return new Promise<Response>((_resolve, reject) => options.signal?.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError')), { once: true }));
+  }) as typeof fetch });
+  const saved = 'https://guide.example/older-user-resource';
+  await cache.put(saved, new Response('preserved'));
+  const active = store.download('fr');
+  await nextTurn();
+  assert.equal(store.getSnapshot().activeLanguage, 'fr');
+  await store.download('en');
+  assert.equal(calls, 1);
+  store.cancelDownload();
+  await active;
+  assert.equal(store.getSnapshot().packs.fr.status, 'partial');
+  assert.equal(store.getSnapshot().packs.fr.error, 'cancelled');
+  assert.equal(store.getSnapshot().activeLanguage, null);
+  assert.equal(await (await cache.match(saved))?.text(), 'preserved');
+});
+
+test('downloaded files and an installed application shell are separate guarantees', async () => {
+  const { store } = fixture({ shellAvailable: async () => false });
+  await store.download('fr');
+  assert.equal(store.getSnapshot().packs.fr.status, 'ready');
+  assert.equal(store.getSnapshot().packs.fr.shellReady, false);
+});
+
+test('unavailable languages and inaccessible browser storage do not start downloads', async () => {
+  const { store, requests } = fixture({ resources: (language: SupportedLanguage) => language === 'fr' ? [] : [resource] });
+  await store.download('fr');
+  assert.equal(store.getSnapshot().packs.fr.status, 'unavailable');
+  assert.equal(requests.length, 0);
+  const unsupported = createOfflineStore({ resources: () => [resource] });
+  assert.equal(unsupported.getSnapshot().packs.fr.status, 'unsupported');
+  await unsupported.download('fr');
+  assert.equal(unsupported.getSnapshot().packs.fr.status, 'unsupported');
+});

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { TimedTranscriptSegment, TimedTranscriptWord } from '../data/stops';
 import { getTimedTokens, getWordState, tokenizeTranscript } from '../audio/transcriptTiming';
 
-function renderTimedWords(text: string, words: TimedTranscriptWord[], currentTime: number, onSelect: (seconds: number) => void) {
+function renderTimedWords(text: string, words: TimedTranscriptWord[], currentTime: number, onSelect: (seconds: number) => void, focusToken: number, onFocusToken: (index: number) => void) {
   const tokens = tokenizeTranscript(text);
   const timings = new Map(words.map((word, index) => [word.tokenIndex ?? index, word]));
   let cursor = 0;
@@ -22,6 +22,9 @@ function renderTimedWords(text: string, words: TimedTranscriptWord[], currentTim
             type="button"
             className="transcript-word"
             data-word-state={state}
+            data-timed-token-index={index}
+            tabIndex={index === focusToken ? 0 : -1}
+            onFocus={() => onFocusToken(index)}
             aria-current={state === 'current' ? 'true' : undefined}
             onClick={() => onSelect(word.startSeconds)}
           >{token[0]}</button>
@@ -39,7 +42,30 @@ const TimedWords = React.memo(function TimedWords({ text, words, currentTime, on
   currentTime: number;
   onSelect: (seconds: number) => void;
 }) {
-  return <>{renderTimedWords(text, words, currentTime, onSelect)}</>;
+  const wordGroupRef = useRef<HTMLSpanElement>(null);
+  const [focusedToken, setFocusedToken] = useState(words[0]?.tokenIndex ?? 0);
+  const tokenIndices = words.map((word, index) => word.tokenIndex ?? index);
+  const focusToken = tokenIndices.includes(focusedToken) ? focusedToken : tokenIndices[0];
+  return (
+    <span
+      ref={wordGroupRef}
+      role="group"
+      aria-label="Mots de la phrase"
+      aria-describedby="synced-transcript-help"
+      onKeyDown={(event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        if (!(event.target instanceof HTMLButtonElement) || !event.target.matches('.transcript-word')) return;
+        event.preventDefault();
+        const index = tokenIndices.indexOf(Number(event.target.dataset.timedTokenIndex));
+        const next = Math.max(0, Math.min(tokenIndices.length - 1, index + (event.key === 'ArrowRight' ? 1 : -1)));
+        const token = tokenIndices[next];
+        setFocusedToken(token);
+        wordGroupRef.current?.querySelector<HTMLButtonElement>(`[data-timed-token-index="${token}"]`)?.focus();
+      }}
+    >
+      {renderTimedWords(text, words, currentTime, onSelect, focusToken, setFocusedToken)}
+    </span>
+  );
 });
 
 interface SyncedTranscriptProps {
@@ -88,7 +114,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
 
     const viewportRect = viewport.getBoundingClientRect();
     const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 0;
-    const navigationTop = document.querySelector('[aria-label="Navigation principale"]')?.getBoundingClientRect().top ?? window.innerHeight;
+    const navigationTop = document.querySelector('.museum-bottom-nav')?.getBoundingClientRect().top ?? window.innerHeight;
     const transportRect = document.querySelector('.player-transport')?.getBoundingClientRect();
     // In landscape the controls sit beside the text, rather than underneath it.
     const transportTop = transportRect && transportRect.left < viewportRect.right && transportRect.right > viewportRect.left
@@ -171,10 +197,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   };
 
   return (
-    <div className="synced-transcript">
+    <div className="synced-transcript" lang="fr">
       <div className="transcript-follow-bar">
         <p id="synced-transcript-help">
           Touchez un mot pour l’écouter.
+          <span className="sr-only"> Au clavier, Tab rejoint un mot par phrase. Les flèches gauche et droite parcourent ses mots disponibles. Entrée ou Espace lance la lecture du mot choisi.</span>
         </p>
         {!isFollowing && (
           <button

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { setImmediate as nextTurn } from 'node:timers/promises';
+import { getMediaResource } from '../src/data/mediaCatalog';
 
 function deferred() {
   let resolve!: () => void;
@@ -14,6 +15,7 @@ class MediaMock extends EventTarget {
   duration = 114.169;
   playbackRate = 1;
   preload = '';
+  crossOrigin = '';
   readyState = 1;
   paused = true;
   ended = false;
@@ -25,6 +27,10 @@ class MediaMock extends EventTarget {
   private source = '';
   private tasks: { type: string; action?: () => void }[] = [];
   private pendingPlays: ReturnType<typeof deferred>[] = [];
+  playedRanges: [number, number][] = [];
+  get played() {
+    return { length: this.playedRanges.length, start: (index: number) => this.playedRanges[index][0], end: (index: number) => this.playedRanges[index][1] };
+  }
 
   get src() { return this.source; }
   set src(value: string) {
@@ -32,6 +38,7 @@ class MediaMock extends EventTarget {
     this.currentTime = 0;
     this.paused = true;
     this.ended = false;
+    this.playedRanges = [];
   }
 
   play() {
@@ -89,7 +96,18 @@ class NodeMock {
   disconnect() {}
 }
 
-async function fixture(name: string) {
+const storedValues = new Map<string, string>();
+let storageWrites = 0;
+const storageMock = {
+  getItem: (key: string) => storedValues.get(key) ?? null,
+  setItem: (key: string, value: string) => { storedValues.set(key, value); storageWrites += 1; },
+};
+
+async function fixture(name: string, seed: Record<string, string> = {}) {
+  storedValues.clear();
+  storedValues.set('dday_lang', 'fr');
+  Object.entries(seed).forEach(([key, value]) => storedValues.set(key, value));
+  storageWrites = 0;
   const media = new MediaMock();
   const frames = new Map<number, FrameRequestCallback>();
   let frameId = 0;
@@ -115,9 +133,12 @@ async function fixture(name: string) {
       requestAnimationFrame: (callback: FrameRequestCallback) => { frames.set(++frameId, callback); return frameId; },
       cancelAnimationFrame: (id: number) => frames.delete(id),
       AudioContext: class { constructor() { return context; } },
+      localStorage: storageMock,
     } },
-    localStorage: { configurable: true, value: { getItem: () => 'fr', setItem: () => {} } },
+    localStorage: { configurable: true, value: storageMock },
   });
+  const { visitorStore } = await import('../src/visit/visitorStore');
+  visitorStore.reloadFromStorage();
   const url = new URL('../src/audio/audioStore.ts', import.meta.url);
   url.searchParams.set('lifecycle', name);
   const { audioPlayer: player } = await import(url.href) as typeof import('../src/audio/audioStore');
@@ -127,7 +148,7 @@ async function fixture(name: string) {
     media.flush();
     await pending;
   };
-  return { media, player, frames, context, start, instances: () => instances };
+  return { media, player, frames, context, start, visitorStore, writes: () => storageWrites, instances: () => instances };
 }
 
 test('pause captures the precise media time and cancels its frame before delayed native events', async () => {
@@ -295,7 +316,7 @@ test('a queued old end event after a station switch cannot start another station
   media.flushOne('ended');
   assert.equal(player.getState().currentStopId, '02');
   assert.equal(player.getState().isPlaying, false);
-  assert.equal(media.src, '/audio/fr/stop-02.mp3');
+  assert.equal(media.src, getMediaResource('02', 'fr').url);
   assert.equal(media.paused, true);
   media.flush();
 });
@@ -338,4 +359,164 @@ test('resume keeps the exact position, skips, speed, shared media and legitimate
   assert.equal(instances(), 1);
   player.pause();
   media.flush();
+});
+
+test('played checkpoints are throttled independently of animation frames and pause flushes the precise time', async (t) => {
+  let now = 10000;
+  t.mock.method(Date, 'now', () => now);
+  const { media, player, frames, start, visitorStore, writes } = await fixture('checkpoint-throttle');
+  await start();
+  assert.equal(media.crossOrigin, 'anonymous');
+  assert.equal(writes(), 0, 'merely pressing Play must not invent a heard interval');
+  for (let index = 1; index <= 60; index += 1) {
+    now = 10000 + index * 50;
+    media.currentTime = index / 20;
+    media.playedRanges = [[0, media.currentTime]];
+    const [id, callback] = frames.entries().next().value!;
+    frames.delete(id);
+    callback(index * 50);
+    media.dispatchEvent(new Event('timeupdate'));
+  }
+  assert.equal(writes(), 0, 'frame notifications and frequent timeupdate events cannot cause storage writes');
+  now = 15001;
+  media.currentTime = 12;
+  media.playedRanges = [[0, 12]];
+  media.dispatchEvent(new Event('timeupdate'));
+  assert.equal(writes(), 1);
+  media.currentTime = 13.123;
+  media.playedRanges = [[0, 13.123]];
+  player.pause();
+  assert.equal(writes(), 2);
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 13.123);
+  assert.deepEqual(visitorStore.getSnapshot().pieces['01'].listening.fr?.heardRanges, [[0, 13.123]]);
+  media.flush();
+  player.flushCheckpoint();
+  assert.equal(writes(), 2, 'delayed pause and identical flushes are deduplicated');
+});
+
+test('restoring an exact audio checkpoint stays paused and cannot replace active playback', async () => {
+  const resource = getMediaResource('02', 'fr');
+  const seed = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '02', language: 'fr', audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 24.123, updatedAt: 100 } });
+  const { media, player, visitorStore, writes, start } = await fixture('checkpoint-restore', { dday_visitor_state_v2: seed });
+  assert.equal(player.getState().currentStopId, '02');
+  assert.equal(player.getState().currentTime, 24.123);
+  assert.equal(media.playCalls, 0);
+  assert.equal(writes(), 0, 'initialization is read-only');
+  media.dispatchEvent(new Event('loadedmetadata'));
+  assert.equal(media.currentTime, 24.123);
+  player.setStop('01', false);
+  assert.equal(player.restoreLastPlayback(), true);
+  assert.equal(player.getState().currentStopId, '02');
+  assert.equal(media.currentTime, 24.123);
+  assert.equal(media.playCalls, 0);
+  await start();
+  visitorStore.capturePlayback({ id: '03', language: 'fr', positionSeconds: 8, durationSeconds: 100, audioIdentity: getMediaResource('03', 'fr').sha256, playedRanges: [[0, 8]] });
+  assert.equal(player.restoreLastPlayback(), false);
+  assert.equal(player.getState().currentStopId, '02');
+  player.pause();
+  media.flush();
+});
+
+test('a changed audio hash cannot restore a stale position and unavailable recordings cannot start', async () => {
+  const seed = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '02', language: 'fr', audioIdentity: 'old-sha', durationSeconds: 100, positionSeconds: 55, updatedAt: 100 } });
+  const { media, player } = await fixture('checkpoint-hash-and-unavailable', { dday_visitor_state_v2: seed });
+  assert.equal(player.getState().currentStopId, '01');
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(player.restoreLastPlayback(), false);
+  player.setStop('22', false);
+  await player.play();
+  assert.equal(media.playCalls, 0);
+  assert.equal(player.getState().error, 'unavailable');
+  player.setStop('01', false);
+  player.setLanguage('de');
+  await player.play();
+  assert.equal(media.playCalls, 0);
+  assert.equal(player.getState().error, 'unavailable');
+});
+
+test('a seek directly to the end cannot complete even an otherwise fully heard recording', async () => {
+  const { media, player, visitorStore, start } = await fixture('seek-end-with-old-ranges');
+  await start();
+  media.duration = getMediaResource('01', 'fr').durationSeconds;
+  media.playedRanges = [[0, media.duration]];
+  media.currentTime = media.duration - 1;
+  media.dispatchEvent(new Event('timeupdate'));
+  player.seek(media.duration);
+  media.paused = true;
+  media.ended = true;
+  media.queue('pause');
+  media.queue('ended');
+  media.flush();
+  assert.equal(visitorStore.getSnapshot().pieces['01'].listening.fr?.completedAt, undefined);
+  await nextTurn();
+  media.flush();
+  player.pause();
+  media.flush();
+});
+
+test('playback speed and voice boost survive reload without autoplay or loss of unknown preferences', async () => {
+  const preferenceKey = 'dday-audio-preferences-v1';
+  const { player, media, writes } = await fixture('preferences-save', { [preferenceKey]: JSON.stringify({ version: 1, authorAddition: { preserve: true } }) });
+  assert.equal(writes(), 0);
+  player.cyclePlaybackRate();
+  player.toggleVoiceBoost();
+  const saved = storedValues.get(preferenceKey)!;
+  assert.deepEqual(JSON.parse(saved), { version: 1, authorAddition: { preserve: true }, playbackRate: 1.25, isVoiceBoostActive: false });
+  assert.equal(media.playCalls, 0);
+  const reloaded = await fixture('preferences-reload', { [preferenceKey]: saved });
+  assert.equal(reloaded.player.getState().playbackRate, 1.25);
+  assert.equal(reloaded.player.getState().isVoiceBoostActive, false);
+  assert.equal(reloaded.media.playbackRate, 1.25);
+  assert.equal(reloaded.media.playCalls, 0);
+  assert.equal(reloaded.writes(), 0, 'reading preferences must never overwrite them');
+  await reloaded.start();
+  assert.equal(reloaded.context.gains[0].gain.value, 1, 'restoring voice settings preserves the output gate');
+  reloaded.player.pause();
+  reloaded.media.flush();
+});
+
+test('audio preferences validate their values and protect unreadable or future formats', async () => {
+  const preferenceKey = 'dday-audio-preferences-v1';
+  const invalid = await fixture('preferences-invalid-values', { [preferenceKey]: JSON.stringify({ version: 1, playbackRate: 100, isVoiceBoostActive: 'false', addition: 'keep' }) });
+  assert.equal(invalid.player.getState().playbackRate, 1);
+  assert.equal(invalid.player.getState().isVoiceBoostActive, true);
+  invalid.player.cyclePlaybackRate();
+  assert.equal(JSON.parse(storedValues.get(preferenceKey)!).addition, 'keep');
+  for (const [index, raw] of ['broken JSON', JSON.stringify({ version: 2, future: true })].entries()) {
+    const protectedPreferences = await fixture(`preferences-protected-${index}`, { [preferenceKey]: raw });
+    protectedPreferences.player.cyclePlaybackRate();
+    protectedPreferences.player.toggleVoiceBoost();
+    assert.equal(storedValues.get(preferenceKey), raw);
+    assert.equal(protectedPreferences.player.getState().playbackRate, 1.25);
+    assert.equal(protectedPreferences.player.getState().isVoiceBoostActive, false);
+  }
+});
+
+test('a paused seek after restoration saves only position and never creates listening for an unheard station', async () => {
+  const resource = getMediaResource('02', 'fr');
+  const record = { audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 24.123, heardRanges: [[0, 24.123]], updatedAt: 100 };
+  const seed = JSON.stringify({ version: 2, pieces: { '02': { consulted: false, listening: { fr: record } } }, lastListenedId: '02', lastPlayback: { id: '02', language: 'fr', ...record } });
+  const { media, player, visitorStore, writes } = await fixture('paused-restored-seek', { dday_visitor_state_v2: seed });
+  media.dispatchEvent(new Event('loadedmetadata'));
+  assert.equal(writes(), 0, 'restoration alone is read-only');
+  assert.equal(media.currentTime, 24.123);
+  player.seek(38.567);
+  player.flushCheckpoint();
+  const saved = visitorStore.getSnapshot();
+  assert.equal(saved.lastPlayback?.positionSeconds, 38.567);
+  assert.equal(saved.lastListenedId, '02');
+  assert.deepEqual(saved.pieces['02'].listening.fr?.heardRanges, record.heardRanges);
+  assert.equal(saved.pieces['02'].listening.fr?.completedAt, undefined);
+  assert.equal(media.playCalls, 0);
+  const disk = storedValues.get('dday_visitor_state_v2')!;
+  const reloaded = await fixture('paused-restored-seek-reload', { dday_visitor_state_v2: disk });
+  reloaded.media.dispatchEvent(new Event('loadedmetadata'));
+  assert.equal(reloaded.media.currentTime, 38.567);
+  assert.equal(reloaded.writes(), 0);
+  reloaded.player.setStop('03', false);
+  reloaded.player.seek(20);
+  reloaded.player.flushCheckpoint();
+  assert.equal(reloaded.visitorStore.getSnapshot().lastPlayback?.id, '02');
+  assert.equal(reloaded.visitorStore.getSnapshot().lastListenedId, '02');
+  assert.equal(reloaded.visitorStore.getSnapshot().pieces['03'], undefined);
 });

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { Search, Bookmark, Landmark } from 'lucide-react';
 import { STOPS } from '../data/stops';
 import { StopCard } from '../components/StopCard';
-import { t, SupportedLanguage } from '../i18n/translations';
-import { audioPlayer, AudioState } from '../audio/audioStore';
+import { t, type SupportedLanguage } from '../i18n/translations';
+import { experienceText as x } from '../i18n/experienceLabels';
+import { audioPlayer } from '../audio/audioStore';
+import { useAudioSelector } from '../audio/useAudioSelector';
+import { useVisitorState } from '../visit/useVisitorState';
+import { isDiscovered } from '../visit/visitorStore';
+import { getMediaResource } from '../data/mediaCatalog';
 
 interface ParcoursPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -10,202 +16,51 @@ interface ParcoursPageProps {
   currentLang: SupportedLanguage;
 }
 
-export const ParcoursPage: React.FC<ParcoursPageProps> = ({
-  onSelectStopDetail,
-  onOpenPlayer,
-  currentLang,
-}) => {
+export function ParcoursPage({ onSelectStopDetail, onOpenPlayer, currentLang }: ParcoursPageProps) {
   const [filter, setFilter] = useState<'all' | 'remaining' | 'favorites'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sectorFilter, setSectorFilter] = useState('all');
-  const [visitedStopIds, setVisitedStopIds] = useState<string[]>(() => {
-    try {
-      const stored = JSON.parse(window.localStorage.getItem('dday_visited_stops') || '[]');
-      return Array.isArray(stored) ? stored.filter((id): id is string => typeof id === 'string') : [];
-    } catch {
-      return [];
-    }
-  });
-  const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
-
-  React.useEffect(() => {
-    return audioPlayer.subscribe((next) => setAudioState(next));
-  }, []);
-
-  React.useEffect(() => {
-    const refreshVisited = () => {
-      try {
-        const stored = JSON.parse(window.localStorage.getItem('dday_visited_stops') || '[]');
-        setVisitedStopIds(Array.isArray(stored) ? stored.filter((id): id is string => typeof id === 'string') : []);
-      } catch {
-        setVisitedStopIds([]);
-      }
-    };
-    window.addEventListener('dday-visited-stops-updated', refreshVisited);
-    window.addEventListener('storage', refreshVisited);
-    return () => {
-      window.removeEventListener('dday-visited-stops-updated', refreshVisited);
-      window.removeEventListener('storage', refreshVisited);
-    };
-  }, []);
-
-  const totalCount = STOPS.length; // 22 stops
-  const completedCount = STOPS.filter((s) => s.status === 'completed').length;
-  const remainingCount = totalCount - completedCount;
-  const visitedCount = new Set(visitedStopIds.filter((id) => STOPS.some((stop) => stop.id === id))).size;
-  const visitedPercent = Math.round((visitedCount / totalCount) * 100);
+  const visit = useVisitorState();
+  const audioId = useAudioSelector((state) => state.currentStopId);
+  const playing = useAudioSelector((state) => state.isPlaying);
+  const total = STOPS.length;
+  const count = STOPS.filter((stop) => isDiscovered(visit.pieces[stop.id])).length;
+  const percent = Math.round(count / total * 100);
+  const progressLabel = x('progress', currentLang, { count, total, percent });
   const sectors = Array.from(new Set(STOPS.map((stop) => stop.sector).filter(Boolean)));
-  const normalizedQuery = searchQuery.trim().toLocaleLowerCase(currentLang);
-
+  const query = searchQuery.trim().toLocaleLowerCase(currentLang);
   const filteredStops = STOPS.filter((stop) => {
-    const matchesStatus = filter === 'remaining'
-      ? stop.status !== 'completed'
-      : filter === 'favorites' ? stop.isFavorite : true;
-    const searchableText = `${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag}`.toLocaleLowerCase(currentLang);
-    const matchesQuery = !normalizedQuery || searchableText.includes(normalizedQuery);
-    const matchesSector = sectorFilter === 'all' || stop.sector === sectorFilter;
-    return matchesStatus && matchesQuery && matchesSector;
+    const status = filter === 'remaining' ? !isDiscovered(visit.pieces[stop.id]) : filter === 'favorites' ? Boolean(visit.pieces[stop.id]?.favorite) : true;
+    const text = `${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag}`.toLocaleLowerCase(currentLang);
+    return status && (!query || text.includes(query)) && (sectorFilter === 'all' || stop.sector === sectorFilter);
   });
-
-  const handlePlayStop = (stopId: string) => {
-    if (audioState.currentStopId === stopId && audioState.isPlaying) {
-      audioPlayer.pause();
-    } else {
-      audioPlayer.setStop(stopId, true);
-      onOpenPlayer();
-    }
+  const play = (id: string) => {
+    if (audioId === id && playing) { audioPlayer.pause(); return; }
+    const available = getMediaResource(id, currentLang).status !== 'unavailable';
+    if (audioId !== id) audioPlayer.setStop(id, available);
+    else if (available) void audioPlayer.play();
+    onOpenPlayer();
   };
-
-  return (
-    <div className="flex flex-col w-full pb-32">
-      {/* Progress Overview Card */}
-      <div className="w-full bg-[#1c2026] border border-[#31353c]/60 rounded-xl p-4 shadow-md mb-6">
-        <p className="mb-3 text-[20px] font-bold leading-snug text-[#dfe2eb] font-heading">
-          {t('visited_pieces_progress', currentLang, { visited: visitedCount, total: totalCount, percent: visitedPercent })}
-        </p>
-        <div
-          className="mb-4 h-2 w-full overflow-hidden rounded-full bg-[#262a31]"
-          role="progressbar"
-          aria-label={t('visited_pieces', currentLang)}
-          aria-valuemin={0}
-          aria-valuemax={totalCount}
-          aria-valuenow={visitedCount}
-          aria-valuetext={t('visited_pieces_progress', currentLang, { visited: visitedCount, total: totalCount, percent: visitedPercent })}
-        >
-          <div className="h-full rounded-full bg-[#c3cc8c] transition-all duration-300" style={{ width: `${visitedPercent}%` }} />
-        </div>
-
-        {/* Search and sector filters */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
-          <label className="relative block">
-            <span className="sr-only">{t('search_stations', currentLang)}</span>
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#99907c] text-[20px] pointer-events-none">search</span>
-            <input
-              type="search"
-              value={searchQuery}
-              onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder={t('search_stations', currentLang)}
-              className="w-full min-h-11 rounded-xl bg-[#181c22] border border-[#31353c] pl-10 pr-3 text-sm text-[#dfe2eb] placeholder:text-[#99907c] outline-none focus-visible:ring-2 focus-visible:ring-[#f2ca50] focus-visible:border-[#f2ca50]"
-            />
-          </label>
-          <label className="block">
-            <span className="sr-only">{t('all_sectors', currentLang)}</span>
-            <select
-              value={sectorFilter}
-              onChange={(event) => setSectorFilter(event.target.value)}
-              className="w-full min-h-11 rounded-xl bg-[#181c22] border border-[#31353c] px-3 text-sm text-[#dfe2eb] outline-none focus-visible:ring-2 focus-visible:ring-[#f2ca50] focus-visible:border-[#f2ca50]"
-            >
-              <option value="all">{t('all_sectors', currentLang)}</option>
-              {sectors.map((sector) => <option key={sector} value={sector}>{sector}</option>)}
-            </select>
-          </label>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex items-center gap-1.5 bg-[#0a0e14] p-1 rounded-lg border border-[#262a31]">
-          <button
-            onClick={() => setFilter('all')}
-            className={`flex-1 min-h-[44px] flex items-center justify-center rounded-md font-semibold text-[13px] transition-all active:scale-95 ${
-              filter === 'all'
-                ? 'bg-[#262a31] text-[#f2ca50] shadow-sm border border-[#d4af37]/30'
-                : 'text-[#d0c5af] hover:text-[#dfe2eb]'
-            }`}
-            type="button"
-          >
-            {t('filter_all', currentLang, { count: totalCount })}
-          </button>
-          <button
-            onClick={() => setFilter('remaining')}
-            className={`flex-1 min-h-[44px] flex items-center justify-center rounded-md font-semibold text-[13px] transition-all active:scale-95 ${
-              filter === 'remaining'
-                ? 'bg-[#262a31] text-[#f2ca50] shadow-sm border border-[#d4af37]/30'
-                : 'text-[#d0c5af] hover:text-[#dfe2eb]'
-            }`}
-            type="button"
-          >
-            {t('filter_remaining', currentLang, { count: remainingCount })}
-          </button>
-          <button
-            onClick={() => setFilter('favorites')}
-            className={`flex-1 min-h-[44px] flex items-center justify-center rounded-md font-semibold text-[13px] transition-all active:scale-95 ${
-              filter === 'favorites'
-                ? 'bg-[#262a31] text-[#f2ca50] shadow-sm border border-[#d4af37]/30'
-                : 'text-[#d0c5af] hover:text-[#dfe2eb]'
-            }`}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[16px] mr-1">bookmark</span>
-            {t('filter_favorites', currentLang)}
-          </button>
-        </div>
+  return <div className="w-full">
+    <section className="museum-card p-5 mb-6" aria-label={progressLabel}>
+      <p className="text-xl font-bold font-heading mb-3">{progressLabel}</p>
+      <div className="h-2 w-full rounded-full overflow-hidden bg-[var(--museum-line)]" role="progressbar" aria-label={x('discovered', currentLang)} aria-valuemin={0} aria-valuemax={total} aria-valuenow={count} aria-valuetext={progressLabel}><div className="h-full bg-[var(--museum-action)]" style={{width: `${percent}%`}} /></div>
+      <p className="museum-muted text-sm leading-relaxed mt-3">{x('progressHelp', currentLang)}</p>
+      {visit.legacyConsultedIds.length > 0 && <p className="museum-muted text-sm mt-2">{x('legacy', currentLang)}</p>}
+      {visit.persistence !== 'local' && <p role="status" className="text-sm mt-2">{x('storage', currentLang)}</p>}
+      <div className="grid sm:grid-cols-2 gap-3 mt-5">
+        <label className="relative"><span className="sr-only">{t('search_stations', currentLang)}</span><Search size={19} aria-hidden="true" className="absolute left-3 top-4 museum-muted" /><input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder={t('search_stations', currentLang)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] pl-10 pr-3 bg-[var(--museum-bg)]" /></label>
+        <label><span className="sr-only">{t('all_sectors', currentLang)}</span><select value={sectorFilter} onChange={(e) => setSectorFilter(e.target.value)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] px-3 bg-[var(--museum-bg)]"><option value="all">{t('all_sectors', currentLang)}</option>{sectors.map((sector) => <option key={sector}>{sector}</option>)}</select></label>
       </div>
-
-      {/* Timeline Section */}
-      <div className="relative w-full" aria-live="polite">
-        {filteredStops.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-[#99907c]/50 bg-[#1c2026]/60 px-5 py-8 text-center">
-            <span className="material-symbols-outlined text-3xl text-[#c3cc8c]">search_off</span>
-            <p className="mt-2 text-sm font-semibold text-[#dfe2eb]">{t('no_stations_found', currentLang)}</p>
-            <p className="mt-1 text-xs text-[#d0c5af]">{t('adjust_search_filters', currentLang)}</p>
-            <button
-              type="button"
-              onClick={() => { setSearchQuery(''); setSectorFilter('all'); setFilter('all'); }}
-              className="mt-3 min-h-11 rounded-full border border-[#d4af37]/40 px-4 text-sm font-semibold text-[#f2ca50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f2ca50]"
-            >
-              {t('reset_filters', currentLang)}
-            </button>
-          </div>
-        )}
-        {/* Continuous Vertical Backbone Guide */}
-        <div className="absolute left-[27px] top-4 bottom-8 w-0.5 bg-[#262a31] -z-0" />
-
-        {filteredStops.map((stop) => {
-          const isActive = audioState.currentStopId === stop.id;
-          const isPlaying = isActive && audioState.isPlaying;
-
-          return (
-            <StopCard
-              key={stop.id}
-              stop={stop}
-              isActive={isActive}
-              isPlaying={isPlaying}
-              onPlay={handlePlayStop}
-              onSelectDetail={onSelectStopDetail}
-            />
-          );
-        })}
+      <div className="grid grid-cols-3 gap-2 mt-3" aria-label={t('filter_all', currentLang, {count: total})}>
+        {(['all', 'remaining', 'favorites'] as const).map((value) => <button key={value} type="button" aria-pressed={filter === value} className={`${filter === value ? 'museum-button' : 'museum-button-secondary'} px-2 text-sm`} onClick={() => setFilter(value)}>{value === 'favorites' && <Bookmark size={16} aria-hidden="true" />}{t(value === 'all' ? 'filter_all' : value === 'remaining' ? 'filter_remaining' : 'filter_favorites', currentLang, { count: value === 'all' ? total : total - count })}</button>)}
       </div>
+    </section>
+    <p className="sr-only" role="status">{filteredStops.length} / {total}</p>
+    {filteredStops.length === 0 && <section className="museum-card p-6 text-center"><p className="font-bold">{t('no_stations_found', currentLang)}</p><p className="museum-muted my-3">{t('adjust_search_filters', currentLang)}</p><button className="museum-button-secondary px-4" onClick={() => {setFilter('all'); setSearchQuery(''); setSectorFilter('all');}}>{t('reset_filters', currentLang)}</button></section>}
+    {filteredStops.map((stop) => <StopCard key={stop.id} stop={stop} isActive={audioId === stop.id} isPlaying={audioId === stop.id && playing} currentLang={currentLang} onPlay={play} onSelectDetail={onSelectStopDetail} />)}
+    <aside className="museum-card p-5 text-center mt-6"><Landmark size={24} aria-hidden="true" className="mx-auto mb-2" /><p className="font-semibold">{t('additional_steps_title', currentLang)}</p><p className="museum-muted text-sm mt-2">{t('additional_steps_desc', currentLang)}</p></aside>
+  </div>;
+}
 
-      {/* End of Museum Sequence Footer Note */}
-      <div className="w-full mt-6 p-4 rounded-xl bg-[#0a0e14] border border-[#262a31] text-center shadow-md">
-        <span className="material-symbols-outlined text-[#f2ca50] text-[28px] mb-1">museum</span>
-        <p className="text-[13px] font-bold text-[#dfe2eb] uppercase tracking-wider">
-          {t('additional_steps_title', currentLang)}
-        </p>
-        <p className="text-[12px] text-[#d0c5af] mt-1 leading-relaxed">
-          {t('additional_steps_desc', currentLang)}
-        </p>
-      </div>
-    </div>
-  );
-};
+
