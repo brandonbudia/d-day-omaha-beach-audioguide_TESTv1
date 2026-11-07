@@ -599,14 +599,1974 @@
       "unresolvedWords": []
     },
     "22": {
-      "audioSha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-      "durationSeconds": 14.9943125,
-      "verification": "audio-unavailable",
-      "issues": ["Le fichier de 15 secondes est factice et ne correspond pas aux 326 mots du document. Aucun minutage n’est créé."],
-      "referenceOnlyParagraphs": ["Cette vitrine est dédiée à une époque de courage : celle de la Résistance française pendant la Seconde Guerre mondiale. Chacun des objets ici présents raconte l’histoire de ceux qui, dans l’ombre, ont combattu pour la liberté et la dignité.", "À droite, vous pouvez voir différents éléments de piégeage : ces dispositifs explosifs ingénieusement conçus, employés pour perturber l’avancée des forces occupantes… Les voies ferrées, par exemple, subirent de nombreux dégâts du fait de ces actions.", "Les couteaux, outils silencieux mais redoutables dans le combat rapproché, constituaient soit une dernière défense, soit un moyen de frappe furtive. Ils appartenaient à des hommes et des femmes prêts à tout sacrifier.", "Les tracts que vous pouvez observer ici servaient à éveiller les consciences, à rallier les esprits libres. Distribués au péril de leur vie, ces papiers étaient de véritables cris de révolte contre l’oppression, des appels à se lever pour une patrie meilleure.", "Le béret vert des commandos KIEFFER symbolise l’unité et le courage des 177 soldats français qui répondirent à l’appel du 18 juin, luttant côte à côte avec leurs alliés pour libérer un pays réduit au silence.", "Les détonateurs, les creva-pneus et cette arme Mauser modifiée témoignent de l’inventivité des résistants. Et puis, il y a les faux tampons, instruments indispensables pour la création de fausses identités : de véritables clés de survie, permettant à de nombreux résistants d’échapper aux griffes de l’ennemi et de poursuivre leur combat dans l’ombre.", "Face à des moyens limités, ils transformèrent leur environnement, se servant de chaque pièce, de chaque outil, pour nourrir leur lutte sans fin.", "Nous avons eu la chance de connaître plusieurs résistants de leur vivant. À travers leurs récits, ils nous ont transmis les objets qu’ils conservaient dans un coin de leur maison. Nous perpétuons leur mémoire au travers de cette vitrine, car c’est un véritable souvenir d’enfance d’avoir côtoyé ces personnes, qui ne portaient pas d’uniforme — en apparence de simples citoyens… Mais quelle audace ! Quelle audace d’avoir résisté !"],
-      "segments": [
+      "audioSha256": "7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346",
+      "durationSeconds": 142.0623,
+      "verification": "public-source-restored-acoustic-crosscheck-human-review-pending",
+      "source": {
+        "url": "https://d-day-omaha.api.wivi.app/files/34fc9514a56e9f7d4b8bca7334d0f781075c1e16.mp3",
+        "page": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=fr",
+        "permission": "User confirmed museum/rightsholder authorization for TESTv1 on 2026-11-07",
+        "bytes": 5682600,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitRate": 320000,
+        "humanListeningReviewed": false
+      },
+      "issues": [
+        "Authentic published recording restored; source/reference compared using cached small and targeted medium recognition, CTC and attention/DTW. Human listening review still required.",
+        "Reference document remains immutable. The 24-word closing sentence is present in both Wivi text and the actual recognized recording.",
+        "Source creva-pneus spelling and several short/homophonic words require editorial/listening review; uncertain words receive no timing.",
+        "Original stereo 44.1 kHz/320 kbps file retained without lossy re-encoding; FR01–21 remain 48 kHz/128 kbps."
       ],
-      "unresolvedWords": [{"referenceParagraphIndex": 0, "tokenIndex": 0, "text": "Cette", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 1, "text": "vitrine", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 2, "text": "est", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 3, "text": "dédiée", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 4, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 5, "text": "une", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 6, "text": "époque", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 7, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 8, "text": "courage", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 9, "text": "celle", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 10, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 11, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 12, "text": "Résistance", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 13, "text": "française", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 14, "text": "pendant", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 15, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 16, "text": "Seconde", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 17, "text": "Guerre", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 18, "text": "mondiale", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 19, "text": "Chacun", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 20, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 21, "text": "objets", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 22, "text": "ici", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 23, "text": "présents", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 24, "text": "raconte", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 25, "text": "l’histoire", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 26, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 27, "text": "ceux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 28, "text": "qui", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 29, "text": "dans", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 30, "text": "l’ombre", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 31, "text": "ont", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 32, "text": "combattu", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 33, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 34, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 35, "text": "liberté", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 36, "text": "et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 37, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 0, "tokenIndex": 38, "text": "dignité", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 0, "text": "À", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 1, "text": "droite", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 2, "text": "vous", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 3, "text": "pouvez", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 4, "text": "voir", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 5, "text": "différents", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 6, "text": "éléments", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 7, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 8, "text": "piégeage", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 9, "text": "ces", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 10, "text": "dispositifs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 11, "text": "explosifs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 12, "text": "ingénieusement", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 13, "text": "conçus", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 14, "text": "employés", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 15, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 16, "text": "perturber", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 17, "text": "l’avancée", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 18, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 19, "text": "forces", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 20, "text": "occupantes", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 21, "text": "Les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 22, "text": "voies", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 23, "text": "ferrées", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 24, "text": "par", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 25, "text": "exemple", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 26, "text": "subirent", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 27, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 28, "text": "nombreux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 29, "text": "dégâts", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 30, "text": "du", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 31, "text": "fait", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 32, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 33, "text": "ces", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 1, "tokenIndex": 34, "text": "actions", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 0, "text": "Les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 1, "text": "couteaux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 2, "text": "outils", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 3, "text": "silencieux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 4, "text": "mais", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 5, "text": "redoutables", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 6, "text": "dans", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 7, "text": "le", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 8, "text": "combat", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 9, "text": "rapproché", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 10, "text": "constituaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 11, "text": "soit", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 12, "text": "une", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 13, "text": "dernière", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 14, "text": "défense", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 15, "text": "soit", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 16, "text": "un", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 17, "text": "moyen", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 18, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 19, "text": "frappe", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 20, "text": "furtive", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 21, "text": "Ils", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 22, "text": "appartenaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 23, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 24, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 25, "text": "hommes", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 26, "text": "et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 27, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 28, "text": "femmes", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 29, "text": "prêts", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 30, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 31, "text": "tout", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 2, "tokenIndex": 32, "text": "sacrifier", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 0, "text": "Les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 1, "text": "tracts", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 2, "text": "que", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 3, "text": "vous", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 4, "text": "pouvez", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 5, "text": "observer", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 6, "text": "ici", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 7, "text": "servaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 8, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 9, "text": "éveiller", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 10, "text": "les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 11, "text": "consciences", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 12, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 13, "text": "rallier", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 14, "text": "les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 15, "text": "esprits", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 16, "text": "libres", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 17, "text": "Distribués", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 18, "text": "au", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 19, "text": "péril", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 20, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 21, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 22, "text": "vie", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 23, "text": "ces", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 24, "text": "papiers", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 25, "text": "étaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 26, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 27, "text": "véritables", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 28, "text": "cris", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 29, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 30, "text": "révolte", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 31, "text": "contre", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 32, "text": "l’oppression", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 33, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 34, "text": "appels", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 35, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 36, "text": "se", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 37, "text": "lever", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 38, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 39, "text": "une", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 40, "text": "patrie", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 3, "tokenIndex": 41, "text": "meilleure", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 0, "text": "Le", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 1, "text": "béret", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 2, "text": "vert", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 3, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 4, "text": "commandos", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 5, "text": "KIEFFER", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 6, "text": "symbolise", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 7, "text": "l’unité", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 8, "text": "et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 9, "text": "le", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 10, "text": "courage", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 11, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 12, "text": "177", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 13, "text": "soldats", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 14, "text": "français", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 15, "text": "qui", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 16, "text": "répondirent", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 17, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 18, "text": "l’appel", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 19, "text": "du", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 20, "text": "18", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 21, "text": "juin", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 22, "text": "luttant", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 23, "text": "côte", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 24, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 25, "text": "côte", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 26, "text": "avec", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 27, "text": "leurs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 28, "text": "alliés", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 29, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 30, "text": "libérer", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 31, "text": "un", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 32, "text": "pays", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 33, "text": "réduit", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 34, "text": "au", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 4, "tokenIndex": 35, "text": "silence", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 0, "text": "Les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 1, "text": "détonateurs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 2, "text": "les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 3, "text": "creva-pneus", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 4, "text": "et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 5, "text": "cette", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 6, "text": "arme", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 7, "text": "Mauser", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 8, "text": "modifiée", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 9, "text": "témoignent", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 10, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 11, "text": "l’inventivité", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 12, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 13, "text": "résistants", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 14, "text": "Et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 15, "text": "puis", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 16, "text": "il", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 17, "text": "y", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 18, "text": "a", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 19, "text": "les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 20, "text": "faux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 21, "text": "tampons", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 22, "text": "instruments", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 23, "text": "indispensables", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 24, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 25, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 26, "text": "création", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 27, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 28, "text": "fausses", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 29, "text": "identités", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 30, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 31, "text": "véritables", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 32, "text": "clés", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 33, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 34, "text": "survie", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 35, "text": "permettant", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 36, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 37, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 38, "text": "nombreux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 39, "text": "résistants", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 40, "text": "d’échapper", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 41, "text": "aux", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 42, "text": "griffes", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 43, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 44, "text": "l’ennemi", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 45, "text": "et", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 46, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 47, "text": "poursuivre", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 48, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 49, "text": "combat", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 50, "text": "dans", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 5, "tokenIndex": 51, "text": "l’ombre", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 0, "text": "Face", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 1, "text": "à", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 2, "text": "des", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 3, "text": "moyens", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 4, "text": "limités", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 5, "text": "ils", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 6, "text": "transformèrent", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 7, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 8, "text": "environnement", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 9, "text": "se", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 10, "text": "servant", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 11, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 12, "text": "chaque", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 13, "text": "pièce", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 14, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 15, "text": "chaque", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 16, "text": "outil", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 17, "text": "pour", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 18, "text": "nourrir", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 19, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 20, "text": "lutte", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 21, "text": "sans", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 6, "tokenIndex": 22, "text": "fin", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 0, "text": "Nous", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 1, "text": "avons", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 2, "text": "eu", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 3, "text": "la", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 4, "text": "chance", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 5, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 6, "text": "connaître", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 7, "text": "plusieurs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 8, "text": "résistants", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 9, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 10, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 11, "text": "vivant", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 12, "text": "À", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 13, "text": "travers", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 14, "text": "leurs", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 15, "text": "récits", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 16, "text": "ils", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 17, "text": "nous", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 18, "text": "ont", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 19, "text": "transmis", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 20, "text": "les", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 21, "text": "objets", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 22, "text": "qu’ils", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 23, "text": "conservaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 24, "text": "dans", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 25, "text": "un", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 26, "text": "coin", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 27, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 28, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 29, "text": "maison", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 30, "text": "Nous", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 31, "text": "perpétuons", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 32, "text": "leur", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 33, "text": "mémoire", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 34, "text": "au", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 35, "text": "travers", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 36, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 37, "text": "cette", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 38, "text": "vitrine", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 39, "text": "car", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 40, "text": "c’est", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 41, "text": "un", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 42, "text": "véritable", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 43, "text": "souvenir", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 44, "text": "d’enfance", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 45, "text": "d’avoir", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 46, "text": "côtoyé", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 47, "text": "ces", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 48, "text": "personnes", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 49, "text": "qui", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 50, "text": "ne", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 51, "text": "portaient", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 52, "text": "pas", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 53, "text": "d’uniforme", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 54, "text": "en", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 55, "text": "apparence", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 56, "text": "de", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 57, "text": "simples", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 58, "text": "citoyens", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 59, "text": "Mais", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 60, "text": "quelle", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 61, "text": "audace", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 62, "text": "Quelle", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 63, "text": "audace", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 64, "text": "d’avoir", "reason": "placeholder audio; no corresponding narration"}, {"referenceParagraphIndex": 7, "tokenIndex": 65, "text": "résisté", "reason": "placeholder audio; no corresponding narration"}]
+      "referenceOnlyParagraphs": [],
+      "segments": [
+        {
+          "startSeconds": 0.98,
+          "text": "Cette vitrine est dédiée à une époque de courage : celle de la Résistance française pendant la Seconde Guerre mondiale.",
+          "timings": [
+            [
+              0,
+              1.821,
+              2.021
+            ],
+            [
+              2,
+              2.4,
+              3.02
+            ],
+            [
+              3,
+              3.02,
+              3.34
+            ],
+            [
+              4,
+              3.34,
+              3.42
+            ],
+            [
+              5,
+              3.42,
+              3.5
+            ],
+            [
+              6,
+              3.5,
+              3.82
+            ],
+            [
+              7,
+              3.82,
+              3.96
+            ],
+            [
+              8,
+              3.96,
+              4.22
+            ],
+            [
+              9,
+              5.18,
+              5.28
+            ],
+            [
+              10,
+              5.28,
+              5.44
+            ],
+            [
+              11,
+              5.44,
+              5.54
+            ],
+            [
+              12,
+              5.54,
+              5.98
+            ],
+            [
+              13,
+              5.98,
+              6.48
+            ],
+            [
+              14,
+              6.908,
+              7.148
+            ],
+            [
+              15,
+              7.208,
+              7.268
+            ],
+            [
+              16,
+              7.329,
+              7.569
+            ],
+            [
+              17,
+              7.58,
+              7.72
+            ],
+            [
+              18,
+              7.72,
+              8.08
+            ]
+          ]
+        },
+        {
+          "startSeconds": 8.66,
+          "text": "Chacun des objets ici présents raconte l’histoire de ceux qui, dans l’ombre, ont combattu pour la liberté et la dignité.",
+          "timings": [
+            [
+              0,
+              9.421,
+              9.721
+            ],
+            [
+              1,
+              9.781,
+              9.882
+            ],
+            [
+              2,
+              9.922,
+              10.202
+            ],
+            [
+              3,
+              10.242,
+              10.522
+            ],
+            [
+              4,
+              10.562,
+              11.484
+            ],
+            [
+              5,
+              11.524,
+              11.904
+            ],
+            [
+              6,
+              11.944,
+              12.365
+            ],
+            [
+              7,
+              12.405,
+              12.505
+            ],
+            [
+              9,
+              12.66,
+              12.88
+            ],
+            [
+              10,
+              13.44,
+              13.56
+            ],
+            [
+              11,
+              13.56,
+              13.98
+            ],
+            [
+              12,
+              14.5,
+              14.56
+            ],
+            [
+              13,
+              14.56,
+              15.02
+            ],
+            [
+              14,
+              15.02,
+              15.18
+            ],
+            [
+              15,
+              15.18,
+              15.3
+            ],
+            [
+              16,
+              15.3,
+              15.48
+            ],
+            [
+              17,
+              15.48,
+              15.8
+            ],
+            [
+              18,
+              15.8,
+              15.88
+            ],
+            [
+              19,
+              15.88,
+              16.3
+            ]
+          ]
+        },
+        {
+          "startSeconds": 16.76,
+          "text": "À droite, vous pouvez voir différents éléments de piégeage : ces dispositifs explosifs ingénieusement conçus,",
+          "timings": [
+            [
+              1,
+              17.7,
+              17.86
+            ],
+            [
+              2,
+              18.84,
+              19.0
+            ],
+            [
+              3,
+              19.0,
+              19.26
+            ],
+            [
+              4,
+              19.26,
+              19.5
+            ],
+            [
+              5,
+              19.664,
+              20.024
+            ],
+            [
+              6,
+              20.064,
+              20.284
+            ],
+            [
+              7,
+              20.34,
+              20.44
+            ],
+            [
+              8,
+              20.44,
+              21.26
+            ],
+            [
+              9,
+              21.486,
+              21.666
+            ],
+            [
+              10,
+              21.706,
+              22.407
+            ],
+            [
+              11,
+              22.447,
+              23.308
+            ],
+            [
+              12,
+              23.44,
+              23.9
+            ],
+            [
+              13,
+              23.9,
+              24.72
+            ]
+          ]
+        },
+        {
+          "startSeconds": 24.84,
+          "text": "employés pour perturber l’avancée des forces occupantes…",
+          "timings": [
+            [
+              0,
+              24.84,
+              25.28
+            ],
+            [
+              1,
+              25.28,
+              25.46
+            ],
+            [
+              2,
+              25.46,
+              26.06
+            ],
+            [
+              3,
+              26.26,
+              26.68
+            ],
+            [
+              4,
+              26.68,
+              26.82
+            ],
+            [
+              5,
+              26.82,
+              27.1
+            ],
+            [
+              6,
+              27.1,
+              27.8
+            ]
+          ]
+        },
+        {
+          "startSeconds": 28.52,
+          "text": "Les voies ferrées, par exemple, subirent de nombreux dégâts du fait de ces actions.",
+          "timings": [
+            [
+              0,
+              28.52,
+              28.66
+            ],
+            [
+              1,
+              28.66,
+              28.88
+            ],
+            [
+              2,
+              28.88,
+              29.1
+            ],
+            [
+              3,
+              29.1,
+              29.26
+            ],
+            [
+              4,
+              29.26,
+              29.84
+            ],
+            [
+              5,
+              29.96,
+              30.32
+            ],
+            [
+              6,
+              30.386,
+              30.546
+            ],
+            [
+              7,
+              30.587,
+              30.927
+            ],
+            [
+              8,
+              30.94,
+              31.26
+            ],
+            [
+              9,
+              31.288,
+              31.348
+            ],
+            [
+              10,
+              31.38,
+              31.46
+            ],
+            [
+              11,
+              31.46,
+              31.58
+            ],
+            [
+              12,
+              31.7,
+              31.82
+            ],
+            [
+              13,
+              31.82,
+              32.2
+            ]
+          ]
+        },
+        {
+          "startSeconds": 32.62,
+          "text": "Les couteaux, outils silencieux mais redoutables dans le combat rapproché, constituaient",
+          "timings": [
+            [
+              0,
+              32.92,
+              33.2
+            ],
+            [
+              1,
+              33.2,
+              33.52
+            ],
+            [
+              2,
+              34.04,
+              34.4
+            ],
+            [
+              3,
+              34.4,
+              35.08
+            ],
+            [
+              4,
+              35.18,
+              35.38
+            ],
+            [
+              5,
+              35.38,
+              35.94
+            ],
+            [
+              6,
+              35.967,
+              36.068
+            ],
+            [
+              7,
+              36.1,
+              36.24
+            ],
+            [
+              8,
+              36.24,
+              36.38
+            ],
+            [
+              9,
+              36.38,
+              37.02
+            ],
+            [
+              10,
+              37.64,
+              38.38
+            ]
+          ]
+        },
+        {
+          "startSeconds": 38.383,
+          "text": "soit une dernière défense, soit un moyen de frappe furtive.",
+          "timings": [
+            [
+              0,
+              38.383,
+              38.603
+            ],
+            [
+              1,
+              38.663,
+              38.743
+            ],
+            [
+              2,
+              38.76,
+              39.06
+            ],
+            [
+              3,
+              39.06,
+              39.72
+            ],
+            [
+              4,
+              39.78,
+              40.1
+            ],
+            [
+              5,
+              40.247,
+              40.307
+            ],
+            [
+              6,
+              40.347,
+              40.548
+            ],
+            [
+              7,
+              40.588,
+              40.648
+            ],
+            [
+              8,
+              40.76,
+              40.92
+            ],
+            [
+              9,
+              40.92,
+              41.48
+            ]
+          ]
+        },
+        {
+          "startSeconds": 41.7,
+          "text": "Ils appartenaient à des hommes et des femmes prêts à tout sacrifier.",
+          "timings": [
+            [
+              0,
+              42.0,
+              42.3
+            ],
+            [
+              1,
+              42.3,
+              42.88
+            ],
+            [
+              2,
+              42.88,
+              42.98
+            ],
+            [
+              3,
+              42.98,
+              43.16
+            ],
+            [
+              4,
+              43.16,
+              43.4
+            ],
+            [
+              5,
+              43.4,
+              43.5
+            ],
+            [
+              6,
+              43.5,
+              43.64
+            ],
+            [
+              7,
+              43.686,
+              43.906
+            ],
+            [
+              9,
+              44.247,
+              44.267
+            ],
+            [
+              10,
+              44.32,
+              44.44
+            ],
+            [
+              11,
+              44.44,
+              44.9
+            ]
+          ]
+        },
+        {
+          "startSeconds": 45.3,
+          "text": "Les tracts que vous pouvez observer ici servaient à éveiller les consciences,",
+          "timings": [
+            [
+              0,
+              45.6,
+              45.8
+            ],
+            [
+              1,
+              45.921,
+              46.242
+            ],
+            [
+              2,
+              46.262,
+              46.383
+            ],
+            [
+              3,
+              46.403,
+              46.503
+            ],
+            [
+              4,
+              46.543,
+              46.743
+            ],
+            [
+              5,
+              46.784,
+              47.124
+            ],
+            [
+              6,
+              47.184,
+              47.826
+            ],
+            [
+              8,
+              48.1,
+              48.24
+            ],
+            [
+              9,
+              48.24,
+              48.52
+            ],
+            [
+              10,
+              48.52,
+              48.66
+            ],
+            [
+              11,
+              48.66,
+              49.18
+            ]
+          ]
+        },
+        {
+          "startSeconds": 49.44,
+          "text": "à rallier les esprits libres. Distribués au péril de leur vie,",
+          "timings": [
+            [
+              0,
+              49.44,
+              49.5
+            ],
+            [
+              1,
+              49.5,
+              49.72
+            ],
+            [
+              2,
+              49.72,
+              49.86
+            ],
+            [
+              3,
+              49.86,
+              50.2
+            ],
+            [
+              4,
+              50.2,
+              50.54
+            ],
+            [
+              5,
+              51.446,
+              51.887
+            ],
+            [
+              6,
+              51.927,
+              51.987
+            ],
+            [
+              7,
+              52.007,
+              52.268
+            ],
+            [
+              8,
+              52.288,
+              52.348
+            ],
+            [
+              9,
+              52.388,
+              52.529
+            ],
+            [
+              10,
+              52.549,
+              52.649
+            ]
+          ]
+        },
+        {
+          "startSeconds": 52.82,
+          "text": "ces papiers étaient de véritables cris de révolte contre l’oppression,",
+          "timings": [
+            [
+              1,
+              53.26,
+              53.54
+            ],
+            [
+              2,
+              53.54,
+              53.72
+            ],
+            [
+              3,
+              53.72,
+              53.88
+            ],
+            [
+              4,
+              53.88,
+              54.44
+            ],
+            [
+              5,
+              54.44,
+              54.62
+            ],
+            [
+              6,
+              54.62,
+              54.76
+            ],
+            [
+              7,
+              54.76,
+              55.06
+            ],
+            [
+              8,
+              55.06,
+              55.32
+            ],
+            [
+              9,
+              55.32,
+              55.76
+            ]
+          ]
+        },
+        {
+          "startSeconds": 56.663,
+          "text": "des appels à se lever pour une patrie meilleure.",
+          "timings": [
+            [
+              0,
+              56.663,
+              56.904
+            ],
+            [
+              1,
+              56.964,
+              57.305
+            ],
+            [
+              2,
+              57.345,
+              57.385
+            ],
+            [
+              3,
+              57.425,
+              57.506
+            ],
+            [
+              4,
+              57.546,
+              57.786
+            ],
+            [
+              6,
+              57.9,
+              58.0
+            ],
+            [
+              7,
+              58.0,
+              58.28
+            ],
+            [
+              8,
+              58.28,
+              58.72
+            ]
+          ]
+        },
+        {
+          "startSeconds": 59.36,
+          "text": "Le béret vert des commandos KIEFFER symbolise l’unité et le courage des 177 soldats français",
+          "timings": [
+            [
+              0,
+              60.221,
+              60.301
+            ],
+            [
+              2,
+              60.52,
+              60.7
+            ],
+            [
+              3,
+              60.76,
+              60.94
+            ],
+            [
+              6,
+              61.58,
+              62.42
+            ],
+            [
+              7,
+              62.42,
+              62.98
+            ],
+            [
+              8,
+              62.98,
+              63.3
+            ],
+            [
+              9,
+              63.3,
+              63.4
+            ],
+            [
+              10,
+              63.4,
+              63.68
+            ],
+            [
+              11,
+              63.68,
+              63.88
+            ],
+            [
+              12,
+              63.88,
+              64.84
+            ],
+            [
+              13,
+              64.84,
+              65.26
+            ],
+            [
+              14,
+              65.409,
+              65.65
+            ]
+          ]
+        },
+        {
+          "startSeconds": 66.304,
+          "text": "qui répondirent à l’appel du 18 juin, luttant",
+          "timings": [
+            [
+              0,
+              66.304,
+              66.464
+            ],
+            [
+              1,
+              66.5,
+              66.98
+            ],
+            [
+              2,
+              66.98,
+              67.04
+            ],
+            [
+              3,
+              67.04,
+              67.28
+            ],
+            [
+              4,
+              67.28,
+              67.44
+            ],
+            [
+              5,
+              67.44,
+              67.74
+            ],
+            [
+              6,
+              67.74,
+              68.04
+            ],
+            [
+              7,
+              68.72,
+              69.08
+            ]
+          ]
+        },
+        {
+          "startSeconds": 69.08,
+          "text": "côte à côte avec leurs alliés pour libérer un pays réduit au silence.",
+          "timings": [
+            [
+              0,
+              69.08,
+              69.38
+            ],
+            [
+              1,
+              69.38,
+              69.44
+            ],
+            [
+              2,
+              69.44,
+              69.88
+            ],
+            [
+              3,
+              69.88,
+              70.2
+            ],
+            [
+              4,
+              70.2,
+              70.44
+            ],
+            [
+              5,
+              70.44,
+              70.72
+            ],
+            [
+              6,
+              70.72,
+              70.88
+            ],
+            [
+              7,
+              70.88,
+              71.2
+            ],
+            [
+              8,
+              71.2,
+              71.4
+            ],
+            [
+              9,
+              71.4,
+              71.62
+            ],
+            [
+              10,
+              71.62,
+              72.08
+            ],
+            [
+              11,
+              72.08,
+              72.26
+            ],
+            [
+              12,
+              72.26,
+              72.76
+            ]
+          ]
+        },
+        {
+          "startSeconds": 73.28,
+          "text": "Les détonateurs, les creva-pneus et cette arme Mauser modifiée",
+          "timings": [
+            [
+              0,
+              73.58,
+              73.8
+            ],
+            [
+              1,
+              73.8,
+              74.3
+            ],
+            [
+              2,
+              74.76,
+              74.8
+            ],
+            [
+              4,
+              75.38,
+              75.72
+            ],
+            [
+              6,
+              76.007,
+              76.248
+            ],
+            [
+              8,
+              76.64,
+              77.78
+            ]
+          ]
+        },
+        {
+          "startSeconds": 77.78,
+          "text": "témoignent de l’inventivité des résistants.",
+          "timings": [
+            [
+              0,
+              77.78,
+              78.3
+            ],
+            [
+              1,
+              78.344,
+              78.484
+            ],
+            [
+              2,
+              78.524,
+              79.227
+            ],
+            [
+              3,
+              79.28,
+              79.44
+            ],
+            [
+              4,
+              79.44,
+              79.8
+            ]
+          ]
+        },
+        {
+          "startSeconds": 80.18,
+          "text": "Et puis, il y a les faux tampons,",
+          "timings": [
+            [
+              0,
+              80.882,
+              80.963
+            ],
+            [
+              1,
+              81.08,
+              81.52
+            ],
+            [
+              2,
+              81.88,
+              82.0
+            ],
+            [
+              3,
+              82.026,
+              82.046
+            ],
+            [
+              4,
+              82.087,
+              82.127
+            ],
+            [
+              5,
+              82.167,
+              82.247
+            ],
+            [
+              6,
+              82.3,
+              82.44
+            ],
+            [
+              7,
+              82.44,
+              83.14
+            ]
+          ]
+        },
+        {
+          "startSeconds": 83.62,
+          "text": "instruments indispensables pour la création de fausses identités :",
+          "timings": [
+            [
+              1,
+              83.62,
+              84.82
+            ],
+            [
+              2,
+              84.82,
+              85.0
+            ],
+            [
+              3,
+              85.0,
+              85.12
+            ],
+            [
+              4,
+              85.12,
+              85.54
+            ],
+            [
+              5,
+              85.54,
+              85.72
+            ],
+            [
+              6,
+              85.72,
+              85.98
+            ],
+            [
+              7,
+              85.98,
+              86.52
+            ]
+          ]
+        },
+        {
+          "startSeconds": 86.7,
+          "text": "de véritables clés de survie, permettant à de nombreux résistants",
+          "timings": [
+            [
+              0,
+              87.0,
+              87.36
+            ],
+            [
+              1,
+              87.36,
+              88.0
+            ],
+            [
+              2,
+              88.0,
+              88.24
+            ],
+            [
+              3,
+              88.24,
+              88.38
+            ],
+            [
+              4,
+              88.38,
+              88.72
+            ],
+            [
+              5,
+              89.14,
+              89.6
+            ],
+            [
+              6,
+              89.6,
+              89.74
+            ],
+            [
+              7,
+              89.74,
+              89.94
+            ],
+            [
+              8,
+              89.94,
+              90.18
+            ],
+            [
+              9,
+              90.18,
+              91.08
+            ]
+          ]
+        },
+        {
+          "startSeconds": 91.322,
+          "text": "d’échapper aux griffes de l’ennemi et de poursuivre leur combat dans l’ombre.",
+          "timings": [
+            [
+              0,
+              91.322,
+              91.743
+            ],
+            [
+              1,
+              91.783,
+              91.863
+            ],
+            [
+              2,
+              91.92,
+              92.14
+            ],
+            [
+              3,
+              92.14,
+              92.24
+            ],
+            [
+              4,
+              92.24,
+              92.62
+            ],
+            [
+              5,
+              92.62,
+              93.04
+            ],
+            [
+              6,
+              93.04,
+              93.22
+            ],
+            [
+              7,
+              93.22,
+              93.56
+            ],
+            [
+              8,
+              93.56,
+              93.68
+            ],
+            [
+              9,
+              93.68,
+              93.9
+            ],
+            [
+              10,
+              93.928,
+              94.028
+            ],
+            [
+              11,
+              94.06,
+              94.4
+            ]
+          ]
+        },
+        {
+          "startSeconds": 95.22,
+          "text": "Face à des moyens limités, ils transformèrent leur environnement,",
+          "timings": [
+            [
+              0,
+              96.022,
+              96.202
+            ],
+            [
+              1,
+              96.243,
+              96.263
+            ],
+            [
+              2,
+              96.303,
+              96.383
+            ],
+            [
+              3,
+              96.44,
+              96.64
+            ],
+            [
+              4,
+              96.684,
+              97.606
+            ],
+            [
+              5,
+              97.66,
+              97.9
+            ],
+            [
+              6,
+              97.9,
+              98.38
+            ],
+            [
+              7,
+              98.38,
+              98.52
+            ],
+            [
+              8,
+              98.52,
+              99.14
+            ]
+          ]
+        },
+        {
+          "startSeconds": 99.22,
+          "text": "se servant de chaque pièce, de chaque outil, pour nourrir leur lutte sans fin.",
+          "timings": [
+            [
+              0,
+              99.22,
+              99.4
+            ],
+            [
+              1,
+              99.58,
+              99.78
+            ],
+            [
+              2,
+              99.842,
+              99.962
+            ],
+            [
+              3,
+              100.06,
+              100.24
+            ],
+            [
+              4,
+              100.24,
+              100.82
+            ],
+            [
+              6,
+              100.92,
+              101.2
+            ],
+            [
+              7,
+              101.2,
+              101.54
+            ],
+            [
+              8,
+              102.02,
+              102.2
+            ],
+            [
+              9,
+              102.2,
+              102.6
+            ],
+            [
+              10,
+              102.768,
+              102.928
+            ],
+            [
+              11,
+              102.94,
+              103.22
+            ],
+            [
+              12,
+              103.22,
+              103.48
+            ],
+            [
+              13,
+              103.48,
+              103.74
+            ]
+          ]
+        },
+        {
+          "startSeconds": 104.72,
+          "text": "Nous avons eu la chance de connaître plusieurs résistants de leur vivant.",
+          "timings": [
+            [
+              0,
+              105.54,
+              105.7
+            ],
+            [
+              1,
+              105.7,
+              105.92
+            ],
+            [
+              2,
+              105.92,
+              106.04
+            ],
+            [
+              3,
+              106.083,
+              106.143
+            ],
+            [
+              4,
+              106.24,
+              106.4
+            ],
+            [
+              5,
+              106.464,
+              106.524
+            ],
+            [
+              6,
+              106.564,
+              107.206
+            ],
+            [
+              7,
+              107.246,
+              107.587
+            ],
+            [
+              8,
+              107.627,
+              108.028
+            ],
+            [
+              9,
+              108.048,
+              108.108
+            ],
+            [
+              10,
+              108.148,
+              108.269
+            ],
+            [
+              11,
+              108.289,
+              108.489
+            ]
+          ]
+        },
+        {
+          "startSeconds": 109.48,
+          "text": "À travers leurs récits, ils nous ont transmis les objets qu’ils conservaient dans un coin de leur maison.",
+          "timings": [
+            [
+              1,
+              109.48,
+              109.72
+            ],
+            [
+              3,
+              109.96,
+              110.64
+            ],
+            [
+              4,
+              110.92,
+              111.08
+            ],
+            [
+              5,
+              111.08,
+              111.18
+            ],
+            [
+              6,
+              111.18,
+              111.46
+            ],
+            [
+              7,
+              111.46,
+              111.78
+            ],
+            [
+              8,
+              111.846,
+              112.026
+            ],
+            [
+              9,
+              112.086,
+              112.307
+            ],
+            [
+              10,
+              112.32,
+              112.6
+            ],
+            [
+              11,
+              112.6,
+              113.08
+            ],
+            [
+              12,
+              113.148,
+              113.288
+            ],
+            [
+              13,
+              113.328,
+              113.408
+            ],
+            [
+              14,
+              113.54,
+              113.64
+            ],
+            [
+              15,
+              113.689,
+              113.749
+            ],
+            [
+              16,
+              113.82,
+              113.92
+            ],
+            [
+              17,
+              113.949,
+              114.129
+            ]
+          ]
+        },
+        {
+          "startSeconds": 114.62,
+          "text": "Nous perpétuons leur mémoire au travers de cette vitrine, car c’est un véritable souvenir d’enfance d’avoir côtoyé ces personnes, qui ne portaient pas d’uniforme —",
+          "timings": [
+            [
+              0,
+              114.92,
+              115.26
+            ],
+            [
+              1,
+              115.36,
+              115.88
+            ],
+            [
+              2,
+              115.881,
+              116.001
+            ],
+            [
+              3,
+              116.042,
+              116.362
+            ],
+            [
+              4,
+              116.402,
+              116.462
+            ],
+            [
+              5,
+              116.56,
+              116.74
+            ],
+            [
+              6,
+              116.782,
+              116.842
+            ],
+            [
+              7,
+              116.882,
+              117.043
+            ],
+            [
+              8,
+              117.08,
+              117.56
+            ],
+            [
+              9,
+              118.204,
+              118.404
+            ],
+            [
+              10,
+              118.42,
+              118.66
+            ],
+            [
+              11,
+              118.66,
+              118.76
+            ],
+            [
+              12,
+              118.76,
+              119.28
+            ],
+            [
+              13,
+              119.28,
+              119.8
+            ],
+            [
+              14,
+              119.8,
+              120.26
+            ],
+            [
+              15,
+              120.26,
+              120.68
+            ],
+            [
+              16,
+              120.68,
+              121.12
+            ],
+            [
+              17,
+              121.12,
+              121.3
+            ],
+            [
+              18,
+              121.3,
+              121.72
+            ],
+            [
+              19,
+              121.72,
+              122.14
+            ],
+            [
+              20,
+              122.148,
+              122.228
+            ],
+            [
+              21,
+              122.32,
+              122.52
+            ],
+            [
+              22,
+              122.52,
+              122.7
+            ],
+            [
+              23,
+              122.7,
+              123.72
+            ]
+          ]
+        },
+        {
+          "startSeconds": 123.74,
+          "text": "en apparence de simples citoyens… Mais quelle audace ! Quelle audace d’avoir résisté !",
+          "timings": [
+            [
+              0,
+              123.74,
+              124.06
+            ],
+            [
+              1,
+              124.06,
+              124.66
+            ],
+            [
+              2,
+              124.66,
+              124.98
+            ],
+            [
+              3,
+              124.98,
+              125.42
+            ],
+            [
+              4,
+              125.42,
+              126.04
+            ],
+            [
+              5,
+              126.38,
+              126.68
+            ],
+            [
+              6,
+              126.82,
+              126.9
+            ],
+            [
+              7,
+              126.9,
+              127.76
+            ],
+            [
+              8,
+              128.08,
+              128.2
+            ],
+            [
+              9,
+              128.2,
+              128.56
+            ],
+            [
+              10,
+              128.56,
+              128.78
+            ],
+            [
+              11,
+              128.869,
+              129.189
+            ]
+          ]
+        },
+        {
+          "startSeconds": 130.3,
+          "text": "Leur bravoure et leur détermination continuent d’inspirer, rappelant que,",
+          "timings": [
+            [
+              1,
+              130.3,
+              130.9
+            ],
+            [
+              2,
+              130.9,
+              131.04
+            ],
+            [
+              3,
+              131.04,
+              131.14
+            ],
+            [
+              4,
+              131.14,
+              131.98
+            ],
+            [
+              5,
+              131.98,
+              132.62
+            ],
+            [
+              6,
+              132.62,
+              133.2
+            ],
+            [
+              7,
+              133.888,
+              134.569
+            ],
+            [
+              8,
+              134.609,
+              134.689
+            ]
+          ]
+        },
+        {
+          "startSeconds": 134.88,
+          "text": "même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais.",
+          "timings": [
+            [
+              1,
+              134.88,
+              135.06
+            ],
+            [
+              2,
+              135.06,
+              135.2
+            ],
+            [
+              3,
+              135.2,
+              135.38
+            ],
+            [
+              4,
+              135.38,
+              135.48
+            ],
+            [
+              5,
+              135.48,
+              135.62
+            ],
+            [
+              6,
+              135.62,
+              136.0
+            ],
+            [
+              7,
+              136.744,
+              136.844
+            ],
+            [
+              8,
+              136.884,
+              137.265
+            ],
+            [
+              9,
+              137.305,
+              137.385
+            ],
+            [
+              10,
+              137.425,
+              137.525
+            ],
+            [
+              12,
+              138.02,
+              138.64
+            ],
+            [
+              13,
+              138.64,
+              139.06
+            ],
+            [
+              14,
+              139.789,
+              140.03
+            ]
+          ]
+        }
+      ],
+      "unresolvedWords": [
+        {
+          "segmentIndex": 0,
+          "tokenIndex": 1,
+          "text": "vitrine",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 1,
+          "tokenIndex": 8,
+          "text": "ceux",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 2,
+          "tokenIndex": 0,
+          "text": "À",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 7,
+          "tokenIndex": 8,
+          "text": "prêts",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 8,
+          "tokenIndex": 7,
+          "text": "servaient",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 10,
+          "tokenIndex": 0,
+          "text": "ces",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 5,
+          "text": "pour",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 12,
+          "tokenIndex": 1,
+          "text": "béret",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 12,
+          "tokenIndex": 4,
+          "text": "commandos",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 12,
+          "tokenIndex": 5,
+          "text": "KIEFFER",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 15,
+          "tokenIndex": 3,
+          "text": "creva-pneus",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 15,
+          "tokenIndex": 5,
+          "text": "cette",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 15,
+          "tokenIndex": 7,
+          "text": "Mauser",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 18,
+          "tokenIndex": 0,
+          "text": "instruments",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 22,
+          "tokenIndex": 5,
+          "text": "de",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 24,
+          "tokenIndex": 0,
+          "text": "À",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 24,
+          "tokenIndex": 2,
+          "text": "leurs",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 27,
+          "tokenIndex": 0,
+          "text": "Leur",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 28,
+          "tokenIndex": 0,
+          "text": "même",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        },
+        {
+          "segmentIndex": 28,
+          "tokenIndex": 11,
+          "text": "résistance",
+          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
+        }
+      ]
     }
   }
 }

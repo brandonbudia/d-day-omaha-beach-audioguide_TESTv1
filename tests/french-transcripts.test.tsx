@@ -76,7 +76,7 @@ test('station 01 seventh block restores the short à without shifting any existi
   // This guards all 22 stations without relying on a Git checkout at test time.
   const preserved = Object.fromEntries(Object.entries(transcriptSource.stations).map(([id, record]) => [
     id,
-    record.segments.map((item, segmentIndex) => item.timings.filter(([tokenIndex]) => !(id === '01' && segmentIndex === 6 && tokenIndex === 10))),
+    id === '22' ? [] : record.segments.map((item, segmentIndex) => item.timings.filter(([tokenIndex]) => !(id === '01' && segmentIndex === 6 && tokenIndex === 10))),
   ]));
   assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), '302bb83e8bbd06ce65364c4628688f6e9402d64fa753d326a2ff1a6c2f4046af');
 });
@@ -90,13 +90,21 @@ test('recovered French narration replaces snippets and leaves absent document pa
   assert.match(FRENCH_TRANSCRIPTS['18'].segments.map((s) => s.text).join(' '), /La mer était alors entre deux marées/);
   assert.match(FRENCH_TRANSCRIPTS['19'].segments.map((s) => s.text).join(' '), /proposèrent de vendre une machine Enigma/);
   assert.ok(FRENCH_TRANSCRIPTS['02'].referenceOnlyParagraphs.length > 0);
-  const placeholder = FRENCH_TRANSCRIPTS['22'];
-  assert.equal(placeholder.verification, 'audio-unavailable');
-  assert.equal(placeholder.totalWords, 326);
-  assert.equal(placeholder.timedWords, 0);
-  assert.deepEqual(placeholder.segments, []);
+  const restored = FRENCH_TRANSCRIPTS['22'];
+  assert.equal(restored.verification, 'public-source-restored-acoustic-crosscheck-human-review-pending');
+  assert.equal(restored.audioSha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');
+  assert.equal(restored.durationSeconds, 142.0623);
+  assert.equal(restored.totalWords, 350);
+  assert.equal(restored.timedWords, 330);
+  assert.equal(restored.unresolvedWords.length, 20);
+  assert.match(restored.segments.at(-1)!.text, /la lumière de la résistance ne s’éteint jamais/);
   const eighteen = FRENCH_TRANSCRIPTS['18'];
   assert.ok(eighteen.segments.every((segment) => !/Amara\.org|merde de drogue/.test(segment.text)));
+});
+
+test('restoring FR22 preserves every complete FR01–21 record, including all word bounds', () => {
+  const preserved = Object.fromEntries(Object.entries(transcriptSource.stations).filter(([id]) => id !== '22'));
+  assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), '9921b3e8f2588f0167ef94cf4f61536bd9f44116cb9a3454e9d1a593ababf049');
 });
 
 test('every accepted word is selected alone at its acoustic position, including backwards seeks', () => {

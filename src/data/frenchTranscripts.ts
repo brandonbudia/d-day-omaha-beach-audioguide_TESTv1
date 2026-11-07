@@ -11,6 +11,7 @@ interface UnresolvedTranscriptWord {
 }
 
 interface FrenchTranscriptRecord {
+  source?: { url: string; page: string; humanListeningReviewed: boolean };
   audioSha256: string;
   durationSeconds: number;
   verification: string;
@@ -26,6 +27,7 @@ interface FrenchTranscriptRecord {
 }
 
 export interface FrenchTranscript {
+  source?: { url: string; page: string; humanListeningReviewed: boolean };
   audioSha256: string;
   durationSeconds: number;
   verification: string;

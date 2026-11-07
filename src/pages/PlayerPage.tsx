@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { BookOpen, ChevronLeft, ChevronRight, FileText, Pause, Play, RotateCcw, RotateCw, Settings2, X } from 'lucide-react';
 import { audioPlayer, AudioState } from '../audio/audioStore';
 import { STOPS } from '../data/stops';
 import { LANGUAGES, t, SupportedLanguage } from '../i18n/translations';
 import { Scrubber } from '../components/Scrubber';
 import { SyncedTranscript } from '../components/SyncedTranscript';
-import { FRENCH_TRANSCRIPTS } from '../data/frenchTranscripts';
-import { FrenchTranscriptNotice } from '../components/FrenchTranscriptNotice';
+import { resolveTranscript } from '../data/transcripts';
+import { TranscriptNotice } from '../components/TranscriptNotice';
 import { useReadingPreferences } from '../hooks/useReadingPreferences';
 import { getMediaResource } from '../data/mediaCatalog';
 import { experienceText as x } from '../i18n/experienceLabels';
@@ -61,9 +61,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const currentStop = STOPS.find((stop) => stop.id === audioState.currentStopId) ?? STOPS[0];
   const currentIndex = STOPS.findIndex((stop) => stop.id === currentStop.id);
   const nextStop = STOPS[currentIndex + 1];
-  const frenchTranscript = audioState.language === 'fr' ? FRENCH_TRANSCRIPTS[currentStop.id] : undefined;
-  const reference = FRENCH_TRANSCRIPTS[currentStop.id];
   const resource = getMediaResource(currentStop.id, audioState.language);
+  const transcript = useMemo(() => resolveTranscript(currentStop.id, audioState.language, resource), [currentStop.id, audioState.language, resource]);
   const selectTime = (seconds: number) => {
     audioPlayer.seek(seconds);
     if (!audioState.isPlaying) void audioPlayer.play();
@@ -105,10 +104,13 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         </div>
         <div id="player-transcript" className="player-transcript-content" data-wide-spacing={preferences.wideSpacing} data-color-assistance={preferences.colorAssistance} data-dyslexic-font={preferences.dyslexicFont} hidden={!isTranscriptOpen}>
           {resource.status !== 'ready' && <p className="player-resource-notice" role="note">{x(resource.status === 'unavailable' ? 'unavailable' : 'unverified', currentLang)}</p>}
-          {frenchTranscript?.segments.length ? (
+          {resource.status === 'ready' && <TranscriptNotice transcript={transcript} language={currentLang} compact />}
+          {transcript.mode === 'synchronized' ? (
             <SyncedTranscript
               key={`${currentStop.id}-${audioState.language}`}
-              segments={frenchTranscript.segments}
+              segments={transcript.segments}
+              language={transcript.contentLanguage ?? audioState.language}
+              uiLanguage={currentLang}
               currentTime={audioState.currentTime}
               textSize={transcriptTextSize}
               isPlaying={audioState.isPlaying}
@@ -117,10 +119,10 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             />
           ) : (
             <div className="player-static-transcript" tabIndex={0} style={{ fontSize: `${transcriptTextSize}px` }}>
-              {!frenchTranscript && <p className="player-eyebrow" lang={currentLang}>{x('frenchReference', currentLang)}</p>}
-              <div lang="fr">{reference ? <>
-                {reference.segments.map((segment, index) => <p key={`s-${index}`}>{segment.text}</p>)}
-                {reference.referenceOnlyParagraphs.map((text, index) => <p key={`r-${index}`}>{text}</p>)}
+              {transcript.mode === 'french-fallback' && <p className="player-eyebrow" lang={currentLang}>{x('frenchReference', currentLang)}</p>}
+              <div lang={transcript.contentLanguage ?? 'fr'}>{transcript.mode !== 'missing' ? <>
+                {transcript.paragraphs.map((paragraph, index) => <p key={`s-${index}`}>{paragraph}</p>)}
+                {!transcript.paragraphs.length && transcript.referenceOnlyParagraphs.map((paragraph, index) => <p key={`r-${index}`}>{paragraph}</p>)}
               </> : currentStop.transcript.map((item, index) => <p key={index}>{item.text}</p>)}</div>
             </div>
           )}
@@ -130,13 +132,13 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
 
       <section className="player-transport" aria-label={x('audioControls', currentLang)}>
         {audioState.error && resource.status !== 'unavailable' && <p role="alert" className="player-error">{t('audio_error', currentLang)}</p>}
-        <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} onSeek={(seconds) => audioPlayer.seek(seconds)} />
+        <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} language={currentLang} onSeek={(seconds) => audioPlayer.seek(seconds)} />
         <div className="player-transport-buttons">
           <button type="button" className="player-track-button" onClick={() => audioPlayer.prevStop()} disabled={currentIndex === 0} aria-label={t('btn_prev', currentLang)}><ChevronLeft size={26} aria-hidden="true" /><span>{t('btn_prev', currentLang)}</span></button>
           <button type="button" className="player-skip-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.rewind(15)} aria-label={t('rewind_15', currentLang)}><RotateCcw size={21} aria-hidden="true" /><span>15 s</span></button>
           <button type="button" className="player-play-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.togglePlayPause()} aria-label={audioState.isPlaying ? t('pause', currentLang) : t('play', currentLang)}>
             {audioState.isPlaying ? <Pause size={27} fill="currentColor" aria-hidden="true" /> : <Play size={27} fill="currentColor" aria-hidden="true" />}
-            <span>{audioState.isPlaying ? 'Pause' : ({ fr: 'Écouter', en: 'Play', de: 'Start', it: 'Ascolta', pl: 'Odtwórz', nl: 'Afspelen', es: 'Escuchar' }[currentLang])}</span>
+            <span>{audioState.isPlaying ? ({ fr: 'Pause', en: 'Pause', de: 'Pause', it: 'Pausa', pl: 'Pauza', nl: 'Pauze', es: 'Pausa' }[currentLang]) : ({ fr: 'Écouter', en: 'Play', de: 'Start', it: 'Ascolta', pl: 'Odtwórz', nl: 'Afspelen', es: 'Escuchar' }[currentLang])}</span>
           </button>
           <button type="button" className="player-skip-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.forward(15)} aria-label={t('forward_15', currentLang)}><RotateCw size={21} aria-hidden="true" /><span>15 s</span></button>
           <button type="button" className="player-track-button" onClick={() => audioPlayer.nextStop()} aria-label={t('btn_next', currentLang)}><ChevronRight size={26} aria-hidden="true" /><span>{t('btn_next', currentLang)}</span></button>
@@ -156,7 +158,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
           <input type="checkbox" checked={preferences[key]} onChange={() => toggle(key)} />
         </label>)}
         <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{t(audioState.isVoiceBoostActive ? 'reading_on' : 'reading_off', currentLang)}</button></div>
-        <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p>{frenchTranscript && <FrenchTranscriptNotice transcript={frenchTranscript} />}</details>
+        <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p><TranscriptNotice transcript={transcript} language={currentLang} /></details>
         {nextStop && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong>{nextStop.title}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
       </dialog>
     </div>

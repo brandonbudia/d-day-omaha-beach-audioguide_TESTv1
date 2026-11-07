@@ -424,6 +424,7 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   assert.equal(player.getState().currentTime, 0);
   assert.equal(player.restoreLastPlayback(), false);
   player.setStop('22', false);
+  player.setLanguage('de');
   await player.play();
   assert.equal(media.playCalls, 0);
   assert.equal(player.getState().error, 'unavailable');
@@ -432,6 +433,27 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   await player.play();
   assert.equal(media.playCalls, 0);
   assert.equal(player.getState().error, 'unavailable');
+});
+
+test('restored French 22 uses the shared player with its new audio identity and real duration', async () => {
+  const { media, player, start, instances } = await fixture('restored-french-22');
+  player.setStop('21', false);
+  player.setStop('22', false);
+  const restored = getMediaResource('22', 'fr');
+  assert.equal(restored.status, 'ready');
+  assert.equal(media.src, restored.url);
+  media.duration = restored.durationSeconds;
+  media.dispatchEvent(new Event('loadedmetadata'));
+  assert.equal(player.getState().duration, 142.0623);
+  await start();
+  assert.equal(player.getState().isPlaying, true);
+  player.seek(131.25);
+  assert.equal(media.currentTime, 131.25);
+  player.pause();
+  media.flush();
+  player.setStop('21', false);
+  assert.equal(media.src, getMediaResource('21', 'fr').url);
+  assert.equal(instances(), 1, 'station navigation preserves the shared audio element');
 });
 
 test('a seek directly to the end cannot complete even an otherwise fully heard recording', async () => {

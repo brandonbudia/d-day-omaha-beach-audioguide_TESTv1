@@ -3,7 +3,7 @@ import { createHash, webcrypto } from 'node:crypto';
 import { readFile, stat } from 'node:fs/promises';
 import { test } from 'node:test';
 import { setImmediate as nextTurn } from 'node:timers/promises';
-import { MEDIA_CATALOG, getMediaResource, getDownloadableAudio, SHARED_OFFLINE_RESOURCES, type OfflineResource } from '../src/data/mediaCatalog';
+import { MEDIA_CATALOG, getMediaResource, getDownloadableAudio, getLanguageResourceSummary, SHARED_OFFLINE_RESOURCES, type OfflineResource } from '../src/data/mediaCatalog';
 import { LANGUAGES, type SupportedLanguage } from '../src/i18n/translations';
 import french from '../src/data/french-transcripts.fr.json';
 import { VERIFIED_MEDIA_CACHE, createOfflineStore, getOfflineResources, hasMatchingCachedShell, verifyCompleteResponse, type OfflineDependencies } from '../src/offline/offlineStore';
@@ -39,7 +39,7 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
   return { cache, names, requests, dependencies, store: createOfflineStore(dependencies) };
 }
 
-test('catalogue reflects all 154 actual audio files without certifying English or placeholders', async () => {
+test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
@@ -50,14 +50,14 @@ test('catalogue reflects all 154 actual audio files without certifying English o
       assert.equal(hash(await readFile(file)), record.sha256, `${code}-${record.id} hash`);
       assert.ok(record.durationSeconds > 0);
       assert.ok(record.url.endsWith(`?v=${record.sha256}`));
-      if (code === 'fr' && record.id !== '22') {
+      if (code === 'fr') {
         const transcript = french.stations[record.id as keyof typeof french.stations];
         assert.equal(record.status, 'ready');
         assert.equal(record.sha256, transcript.audioSha256);
         assert.ok(Math.abs(record.durationSeconds - transcript.durationSeconds) < 0.1);
       } else if (code === 'en') {
-        assert.equal(record.status, 'unverified');
-        assert.equal(record.reason, 'language-review-required');
+        assert.equal(record.status, 'ready');
+        assert.equal(record.reason, 'language-detected-editorial-review-pending');
         assert.notEqual(record.sha256, placeholder);
       } else {
         assert.equal(record.status, 'unavailable');
@@ -65,10 +65,20 @@ test('catalogue reflects all 154 actual audio files without certifying English o
       }
     }
   }
-  assert.equal(getDownloadableAudio('fr').length, 21);
+  assert.equal(getDownloadableAudio('fr').length, 22);
   assert.equal(getDownloadableAudio('en').length, 22);
   for (const language of ['de', 'it', 'pl', 'nl', 'es'] as const) assert.deepEqual(getOfflineResources(language), []);
   assert.equal(getMediaResource('99', 'fr').status, 'unavailable');
+  assert.equal(getLanguageResourceSummary('fr').unavailable, 0);
+  assert.equal(getLanguageResourceSummary('en').ready, 22);
+  assert.equal(getLanguageResourceSummary('en').editorialReviewRequired, 22);
+  assert.equal(getLanguageResourceSummary('de').unavailable, 22);
+  const restored = getMediaResource('22', 'fr');
+  assert.equal(restored.reason, 'public-source-restored');
+  assert.equal(restored.sha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');
+  assert.equal(restored.durationSeconds, 142.0623);
+  assert.ok(getOfflineResources('fr').some((resource) => resource.url === restored.url));
+  assert.ok(!getOfflineResources('fr').some((resource) => resource.sha256 === placeholder));
 });
 
 test('offline packs include the exact local photographs and both reading fonts', async () => {
@@ -79,7 +89,7 @@ test('offline packs include the exact local photographs and both reading fonts',
     assert.equal(actual.byteLength, record.bytes);
     assert.equal(hash(actual), record.sha256);
   }
-  assert.equal(getOfflineResources('fr').length, 46);
+  assert.equal(getOfflineResources('fr').length, 47);
   assert.equal(getOfflineResources('en').length, 47);
 });
 

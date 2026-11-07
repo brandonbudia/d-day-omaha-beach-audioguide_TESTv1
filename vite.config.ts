@@ -82,6 +82,15 @@ export default defineConfig(() => {
         '@': path.resolve(fileURLToPath(new URL('.', import.meta.url))),
       },
     },
+    build: {
+      rolldownOptions: {
+        output: {
+          codeSplitting: {
+            groups: [{ name: 'transcripts-en', test: /[\\/]src[\\/]data[\\/]english-transcripts\.en\.json$/ }],
+          },
+        },
+      },
+    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.

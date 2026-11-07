@@ -1,6 +1,19 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TimedTranscriptSegment, TimedTranscriptWord } from '../data/stops';
 import { getTimedTokens, getWordState, tokenizeTranscript } from '../audio/transcriptTiming';
+import { SupportedLanguage, t } from '../i18n/translations';
+
+const languageOrder: SupportedLanguage[] = ['fr', 'en', 'de', 'it', 'pl', 'nl', 'es'];
+const labels = {
+  words: ['Mots de la phrase', 'Words in this phrase', 'Wörter dieses Satzes', 'Parole della frase', 'Słowa zdania', 'Woorden in deze zin', 'Palabras de la frase'],
+  keyboard: ['Au clavier, Tab rejoint un mot par phrase. Les flèches gauche et droite parcourent ses mots disponibles. Entrée ou Espace lance la lecture du mot choisi.', 'Press Tab to reach one word per phrase. Left and right arrows move between available words. Enter or Space plays from the chosen word.', 'Tab erreicht ein Wort pro Satz. Links und rechts wechseln zwischen verfügbaren Wörtern. Eingabe oder Leertaste startet am gewählten Wort.', 'Tab raggiunge una parola per frase. Le frecce sinistra e destra passano tra le parole disponibili. Invio o Spazio avvia dalla parola scelta.', 'Tab przechodzi do jednego słowa w zdaniu. Strzałki w lewo i w prawo wybierają dostępne słowa. Enter lub Spacja uruchamia wybrane słowo.', 'Tab gaat naar één woord per zin. Links en rechts doorlopen beschikbare woorden. Enter of Spatie speelt vanaf het gekozen woord.', 'Tab llega a una palabra por frase. Las flechas izquierda y derecha recorren las palabras disponibles. Intro o Espacio reproduce desde la palabra elegida.'],
+  resume: ['Reprendre le suivi', 'Resume following', 'Verfolgung fortsetzen', 'Riprendi il seguito', 'Wznów śledzenie', 'Volgen hervatten', 'Reanudar el seguimiento'],
+  region: ['Transcription synchronisée', 'Synchronized transcript', 'Synchronisierte Transkription', 'Trascrizione sincronizzata', 'Zsynchronizowana transkrypcja', 'Gesynchroniseerd transcript', 'Transcripción sincronizada'],
+  phrase: ['Lire cette phrase', 'Play this phrase', 'Diesen Satz abspielen', 'Ascolta questa frase', 'Odtwórz to zdanie', 'Deze zin afspelen', 'Reproducir esta frase'],
+} as const;
+function label(key: keyof typeof labels, language: SupportedLanguage) {
+  return labels[key][Math.max(0, languageOrder.indexOf(language))];
+}
 
 function renderTimedWords(text: string, words: TimedTranscriptWord[], currentTime: number, onSelect: (seconds: number) => void, focusToken: number, onFocusToken: (index: number) => void) {
   const tokens = tokenizeTranscript(text);
@@ -36,11 +49,12 @@ function renderTimedWords(text: string, words: TimedTranscriptWord[], currentTim
   return rendered;
 }
 
-const TimedWords = React.memo(function TimedWords({ text, words, currentTime, onSelect }: {
+const TimedWords = React.memo(function TimedWords({ text, words, currentTime, onSelect, uiLanguage }: {
   text: string;
   words: TimedTranscriptWord[];
   currentTime: number;
   onSelect: (seconds: number) => void;
+  uiLanguage: SupportedLanguage;
 }) {
   const wordGroupRef = useRef<HTMLSpanElement>(null);
   const [focusedToken, setFocusedToken] = useState(words[0]?.tokenIndex ?? 0);
@@ -50,7 +64,7 @@ const TimedWords = React.memo(function TimedWords({ text, words, currentTime, on
     <span
       ref={wordGroupRef}
       role="group"
-      aria-label="Mots de la phrase"
+      aria-label={label('words', uiLanguage)}
       aria-describedby="synced-transcript-help"
       onKeyDown={(event) => {
         if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
@@ -74,6 +88,9 @@ interface SyncedTranscriptProps {
   textSize: number;
   isPlaying?: boolean;
   reducedMotion?: boolean;
+  /** Spoken text and interface controls can use different languages. */
+  language?: SupportedLanguage;
+  uiLanguage?: SupportedLanguage;
   onSelectPhrase: (seconds: number) => void;
 }
 
@@ -83,6 +100,8 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   textSize,
   isPlaying = false,
   reducedMotion = false,
+  language = 'fr',
+  uiLanguage = 'fr',
   onSelectPhrase,
 }) => {
   const [isFollowing, setIsFollowing] = useState(true);
@@ -197,11 +216,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   };
 
   return (
-    <div className="synced-transcript" lang="fr">
-      <div className="transcript-follow-bar">
+    <div className="synced-transcript" lang={language}>
+      <div className="transcript-follow-bar" lang={uiLanguage}>
         <p id="synced-transcript-help">
-          Touchez un mot pour l’écouter.
-          <span className="sr-only"> Au clavier, Tab rejoint un mot par phrase. Les flèches gauche et droite parcourent ses mots disponibles. Entrée ou Espace lance la lecture du mot choisi.</span>
+          {t('reading_help_tap', uiLanguage)}
+          <span className="sr-only"> {label('keyboard', uiLanguage)}</span>
         </p>
         {!isFollowing && (
           <button
@@ -209,7 +228,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
             onClick={resumeFollowing}
             className="transcript-resume"
           >
-            Reprendre le suivi
+            {label('resume', uiLanguage)}
           </button>
         )}
       </div>
@@ -236,7 +255,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
         }}
         tabIndex={0}
         role="region"
-        aria-label="Transcription synchronisée"
+        aria-label={label('region', uiLanguage)}
         aria-describedby="synced-transcript-help"
       >
         <ol>
@@ -253,8 +272,8 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
                 >
                   {timedWords[index].length ? (
                     <>
-                      <TimedWords text={segment.text} words={timedWords[index]} currentTime={isActive ? currentTime : index < activeIndex ? Infinity : -Infinity} onSelect={selectTime} />
-                      <button type="button" className="transcript-phrase-replay" onClick={() => selectTime(segment.startSeconds)} aria-label={`Lire cette phrase : ${segment.text}`}>Lire cette phrase</button>
+                      <TimedWords text={segment.text} words={timedWords[index]} currentTime={isActive ? currentTime : index < activeIndex ? Infinity : -Infinity} onSelect={selectTime} uiLanguage={uiLanguage} />
+                      <button type="button" className="transcript-phrase-replay" lang={uiLanguage} onClick={() => selectTime(segment.startSeconds)} aria-label={`${label('phrase', uiLanguage)} : ${segment.text}`}>{label('phrase', uiLanguage)}</button>
                     </>
                   ) : <button type="button" className="transcript-phrase-button" onClick={() => selectTime(segment.startSeconds)}>{segment.text}</button>}
                 </div>

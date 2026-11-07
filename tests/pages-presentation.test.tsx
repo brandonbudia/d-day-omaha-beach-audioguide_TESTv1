@@ -62,21 +62,29 @@ test('home keeps its welcome, seven languages and tour action without the redund
   assert.doesNotMatch(html, /PARCOURS DU MUSÉE|Visite Intérieure|Agrandir le texte/);
 });
 
-test('unavailable recordings expose full French text with disabled audio; other languages never reuse French word timings', () => {
-  audioPlayer.setLanguage('fr');
-  audioPlayer.setStop('22', false);
+test('unavailable languages expose French reference text with disabled audio; restored FR22 and real English use their own synchronized text', () => {
+  audioPlayer.setLanguage('de');
+  audioPlayer.setStop('01', false);
   const missing = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
-  assert.match(missing, /Cette vitrine est dédiée/);
+  assert.match(missing, /Texte de référence en français/);
   assert.match(missing, /pas encore disponible/);
   assert.match(missing, /class="player-play-button" disabled=""/);
   assert.doesNotMatch(missing, /class="transcript-word"/);
+  audioPlayer.setLanguage('fr');
+  audioPlayer.setStop('22', false);
+  const french22 = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
+  assert.match(french22, /class="synced-transcript" lang="fr"/);
+  assert.match(french22, /class="transcript-word"/);
+  assert.match(french22, /en attente de vérification humaine/);
+  assert.doesNotMatch(french22, /class="player-play-button" disabled=""/);
   audioPlayer.setStop('01', false);
   audioPlayer.setLanguage('en');
   const english = renderToStaticMarkup(<PlayerPage currentLang="en" onSelectStopDetail={noop} />);
-  assert.match(english, /spoken language.*still need review/);
-  assert.match(english, /French reference text/);
-  assert.match(english, /lang="fr"/);
-  assert.doesNotMatch(english, /class="transcript-word"/);
+  assert.match(english, /human review is pending/);
+  assert.match(english, /class="synced-transcript" lang="en"/);
+  assert.match(english, /class="transcript-word"/);
+  assert.match(english, /aria-label="Audio position"/);
+  assert.doesNotMatch(english, /French reference text|Synchronized text is available only in French/);
   audioPlayer.setLanguage('fr');
 });
 

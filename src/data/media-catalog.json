@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verification": "Existing decoded metadata reused after SHA-256 and byte-for-byte size verification; no new ASR, alignment or audio replacement. French 01-21 compared with narration; English recordings require editorial language/script review; known 15-second placeholder explicitly unavailable.",
+  "verification": "Existing decoded metadata retained for French 01-21 and all English files. French 22 restored from the authorized published Wivi recording after SHA-256, decoded-format and narration comparison. All 22 English recordings detected as English and compared with published English references; editorial human review remains pending. The other five languages contain known 15-second placeholders and remain unavailable.",
   "audio": {
     "fr": {
       "10": {
@@ -88,11 +88,11 @@
         "reason": "french-narration-compared"
       },
       "22": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346",
+        "bytes": 5682600,
+        "durationSeconds": 142.0623,
+        "status": "ready",
+        "reason": "public-source-restored"
       },
       "01": {
         "sha256": "e8f15e8d5a952ba152be7d525acca45ad3914222002e044bbef5132800bf9405",
@@ -163,155 +163,155 @@
         "sha256": "cea4f3f0e6d0eef6121fe2a8da557e2a49a4cf9e18af1bd98fd8aa82870d19d3",
         "bytes": 4746975,
         "durationSeconds": 146.31183673469388,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "11": {
         "sha256": "8835d60c8cc5a6403926247922b16e141f60cc2486695328a4e65c117b044595",
         "bytes": 3588178,
         "durationSeconds": 110.7330612244898,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "12": {
         "sha256": "341c891d4097a9c8f618ecff75ff9fcae50e8c65a8652684a5842d688ce6e224",
         "bytes": 6474577,
         "durationSeconds": 200.6987755102041,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "13": {
         "sha256": "aa5f9edff7991d2a282d0326b570840cfc1785748c3d7c77a9142df108d8929b",
         "bytes": 4720025,
         "durationSeconds": 146.02448979591836,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "14": {
         "sha256": "152032b8df21a763994e7c6e922c96e8202a689722d3dbcfeda5889c01c1fe49",
         "bytes": 6533350,
         "durationSeconds": 199.54938775510203,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "15": {
         "sha256": "74055d772f187f8e811f552e1e244e766b1239bd119fcbfc5e413c704cf98a29",
         "bytes": 4956590,
         "durationSeconds": 152.08489795918368,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "16": {
         "sha256": "e97c0c163f711bd2d4a1e62d2812fceca3f940b02b502c26ce42b918762fb9fc",
         "bytes": 5127289,
         "durationSeconds": 158.9551020408163,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "17": {
         "sha256": "3762aee74a1d95dc4841c0eeea44a7bf243d70eaa4079f5706b49dbe3103f98d",
         "bytes": 4393162,
         "durationSeconds": 134.7657142857143,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "18": {
         "sha256": "7187b7d626aedec84530b44d65309cf35b953320bdf668d421c16ec3965db31d",
         "bytes": 6867887,
         "durationSeconds": 212.34938775510204,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "19": {
         "sha256": "bc1ebb9b1322ed19c33351c6174275607451f9a836b5a738303f1d8bddf4fcb6",
         "bytes": 7843251,
         "durationSeconds": 240.6661224489796,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "20": {
         "sha256": "dbde86220f9be3659eed45e61d117485f7133957e6a4815b190cf5a053bcd199",
         "bytes": 5275339,
         "durationSeconds": 162.37714285714284,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "21": {
         "sha256": "97557c10fc88b3f8b855d1db4cd667341b21eb137bd63159d9e57fd3a473cf00",
         "bytes": 6787753,
         "durationSeconds": 209.16244897959183,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "22": {
         "sha256": "ebc69c45330dbb566e8497b2347b48b36555cf6a76c9792cc8324708b9d3c071",
         "bytes": 5163652,
         "durationSeconds": 159.0334693877551,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "01": {
         "sha256": "6284e5501b82caed64c43a9cdb462778ae941c34d03d504e1f2b0c027dca710d",
         "bytes": 3800689,
         "durationSeconds": 117.28979591836735,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "02": {
         "sha256": "2eacd7b8a68db04cb011e4893eb6ecb0eeb488e9220d00e6071fdb963a04e66f",
         "bytes": 4675629,
         "durationSeconds": 142.86367346938775,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "03": {
         "sha256": "da3538c420e66cdca775f71ac00da46a207374c3c203ccfc57a3b73480a4a863",
         "bytes": 3608230,
         "durationSeconds": 111.0465306122449,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "04": {
         "sha256": "8c0b9e9986c0373714d80a7f00147dadec5511404cbb96da85806aeb045bc15a",
         "bytes": 3288615,
         "durationSeconds": 101.53795918367346,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "05": {
         "sha256": "51de7f720ed18a87c22f67bf8502b61456bb76f6fbff4c55a79c555becd49d71",
         "bytes": 4348276,
         "durationSeconds": 133.4857142857143,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "06": {
         "sha256": "6b1f76bcb2a550adb9797e46c83de2f59590b2b063abd0b52d40121f0b7d8b02",
         "bytes": 5857767,
         "durationSeconds": 180.1926530612245,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "07": {
         "sha256": "2ce598dafa73dbd8fe79d6b170cc7ef1d3292cb3032d4edb5ab26c9948198737",
         "bytes": 3559581,
         "durationSeconds": 109.79265306122448,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "08": {
         "sha256": "76f1acdc4585f29fa4646324113f86eef6f8e26f90f3659f119b57f8cbf52f65",
         "bytes": 3716366,
         "durationSeconds": 114.33795918367348,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       },
       "09": {
         "sha256": "d7b81fab3ccb2d16a11b83d46460212ce028d45167bfdd6aabaf2d578e466fdc",
         "bytes": 2233154,
         "durationSeconds": 69.06775510204082,
-        "status": "unverified",
-        "reason": "language-review-required"
+        "status": "ready",
+        "reason": "language-detected-editorial-review-pending"
       }
     },
     "de": {

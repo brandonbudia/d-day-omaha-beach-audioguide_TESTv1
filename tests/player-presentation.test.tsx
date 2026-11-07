@@ -7,6 +7,8 @@ import { SyncedTranscript } from '../src/components/SyncedTranscript';
 import type { TimedTranscriptSegment } from '../src/data/stops';
 import { normalizeReadingPreferences } from '../src/hooks/useReadingPreferences';
 import { translations, LANGUAGES, t } from '../src/i18n/translations';
+import { TranscriptNotice } from '../src/components/TranscriptNotice';
+import type { TranscriptResolution } from '../src/data/transcripts';
 
 const segments: TimedTranscriptSegment[] = [
   {
@@ -92,4 +94,37 @@ test('reading settings and visited-piece progress are available in all seven int
     for (const key of newKeys) assert.ok((translations[language.code] as Record<string, string>)[key], `${language.code}/${key}`);
   }
   assert.equal(t('visited_pieces_progress', 'fr', { visited: 5, total: 22, percent: 23 }), '5 / 22 pièces visitées · 23 %');
+});
+
+test('transcript and scrubber controls follow the interface language without changing the spoken-text language', () => {
+  for (const { code } of LANGUAGES) {
+    const html = renderToStaticMarkup(<SyncedTranscript segments={segments} currentTime={0.7} textSize={26} language="en" uiLanguage={code} onSelectPhrase={() => {}} />);
+    assert.match(html, /class="synced-transcript" lang="en"/);
+    assert.ok(html.includes(`class="transcript-follow-bar" lang="${code}"`), code);
+    assert.equal((html.match(/data-word-state="current"/g) ?? []).length, 1, code);
+    assert.equal((html.match(/class="transcript-phrase-replay"/g) ?? []).length, 2, code);
+    const scrubber = renderToStaticMarkup(<Scrubber currentTime={12.3} duration={60} language={code} onSeek={() => {}} />);
+    assert.doesNotMatch(scrubber, /undefined/);
+    if (code === 'en') {
+      assert.match(html, /Left and right arrows/);
+      assert.match(scrubber, /aria-valuetext="00:12 of 01:00"/);
+    }
+  }
+});
+
+test('editorial notice never presents automatically aligned words as human-reviewed and separates unspoken passages', () => {
+  const transcript: TranscriptResolution = {
+    mode: 'synchronized', requestedLanguage: 'en', contentLanguage: 'en', segments,
+    paragraphs: segments.map((segment) => segment.text), referenceOnlyParagraphs: ['A document-only passage.'],
+    provenance: { source: 'test', verification: 'automatic', humanListeningReviewed: false, issues: [] }, reason: 'matched',
+  };
+  const compact = renderToStaticMarkup(<TranscriptNotice transcript={transcript} language="en" compact />);
+  assert.match(compact, /human review is pending/);
+  assert.doesNotMatch(compact, /document-only/);
+  const full = renderToStaticMarkup(<TranscriptNotice transcript={transcript} language="en" />);
+  assert.match(full, /Document passages not found in this recording/);
+  assert.match(full, /lang="en"><p>A document-only passage/);
+  const mismatch = renderToStaticMarkup(<TranscriptNotice transcript={{ ...transcript, mode: 'static', reason: 'audio-hash-mismatch', segments: [] }} language="en" compact />);
+  assert.match(mismatch, /not available for this recording/);
+  assert.doesNotMatch(mismatch, /human review is pending/);
 });

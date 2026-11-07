@@ -32,7 +32,7 @@ export function getMediaResource(id: string, language: SupportedLanguage): Media
 export const SHARED_OFFLINE_RESOURCES: readonly OfflineResource[] = inventory.shared;
 
 export function getDownloadableAudio(language: SupportedLanguage): readonly MediaResource[] {
-  // English files remain usable with an explicit editorial-review notice. Placeholders never enter a pack.
+  // File readiness does not certify the narration or transcription. Placeholders never enter a pack.
   return Object.values(MEDIA_CATALOG[language]).filter((resource) => resource.status !== 'unavailable');
 }
 
@@ -43,7 +43,7 @@ export function getLanguageResourceSummary(language: SupportedLanguage) {
     ready: files.filter((resource) => resource.status === 'ready').length,
     unverified: files.filter((resource) => resource.status === 'unverified').length,
     unavailable: files.filter((resource) => resource.status === 'unavailable').length,
+    editorialReviewRequired: files.filter((resource) => resource.reason === 'language-detected-editorial-review-pending').length,
     bytes: getDownloadableAudio(language).reduce((sum, resource) => sum + resource.bytes, 0),
-    synchronizedTranscript: language === 'fr',
   };
 }

@@ -1,4 +1,10 @@
 import React from 'react';
+import type { SupportedLanguage } from '../i18n/translations';
+
+const positionLabels: Record<SupportedLanguage, [string, string]> = {
+  fr: ['Position audio', 'sur'], en: ['Audio position', 'of'], de: ['Audioposition', 'von'],
+  it: ['Posizione audio', 'di'], pl: ['Pozycja nagrania', 'z'], nl: ['Audiopositie', 'van'], es: ['Posición del audio', 'de'],
+};
 
 interface ScrubberProps {
   currentTime: number;
@@ -6,6 +12,7 @@ interface ScrubberProps {
   onSeek: (seconds: number) => void;
   subTextLeft?: string;
   subTextRight?: string;
+  language?: SupportedLanguage;
 }
 
 export const Scrubber: React.FC<ScrubberProps> = ({
@@ -14,6 +21,7 @@ export const Scrubber: React.FC<ScrubberProps> = ({
   onSeek,
   subTextLeft,
   subTextRight,
+  language = 'fr',
 }) => {
   const safeDuration = Number.isFinite(duration) ? Math.max(0, duration) : 0;
   const displayTime = Number.isFinite(currentTime) ? Math.max(0, Math.min(currentTime, safeDuration)) : 0;
@@ -43,8 +51,8 @@ export const Scrubber: React.FC<ScrubberProps> = ({
             onSeek(Math.max(0, Math.min(safeDuration, displayTime + direction * 5)));
           }
         }}
-        aria-label="Position audio"
-        aria-valuetext={`${formatTime(displayTime)} sur ${formatTime(safeDuration)}`}
+        aria-label={positionLabels[language][0]}
+        aria-valuetext={`${formatTime(displayTime)} ${positionLabels[language][1]} ${formatTime(safeDuration)}`}
         style={{ '--audio-progress': `${progressPercent}%`, minHeight: 44 } as React.CSSProperties}
       />
       <div className="player-times">
