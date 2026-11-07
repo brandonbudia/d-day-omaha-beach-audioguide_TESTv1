@@ -59,6 +59,33 @@ export async function verifyCompleteResponse(resource: OfflineResource, response
   return bytes;
 }
 
+interface ShellCacheStorage {
+  keys(): Promise<string[]>;
+  open(name: string): Promise<{ match(url: string, options?: CacheQueryOptions): Promise<Response | undefined> }>;
+}
+
+/** Keep the index and its current local entry files together; never combine different app versions. */
+export async function hasMatchingCachedShell(cacheStorage: ShellCacheStorage, origin: string, entryUrls: readonly string[]): Promise<boolean> {
+  if (!entryUrls.length) return false;
+  const entries = entryUrls.map((value) => new URL(value, origin));
+  if (entries.some((url) => url.origin !== origin)) return false;
+  for (const name of await cacheStorage.keys()) {
+    const cache = await cacheStorage.open(name);
+    const index = await cache.match(new URL('/index.html', origin).href, { ignoreSearch: true });
+    if (index?.status !== 200) continue;
+    const html = await index.text();
+    let complete = true;
+    for (const url of entries) {
+      if (!html.includes(url.pathname + url.search) || (await cache.match(url.href, { ignoreSearch: true }))?.status !== 200) {
+        complete = false;
+        break;
+      }
+    }
+    if (complete) return true;
+  }
+  return false;
+}
+
 function browserDependencies(): OfflineDependencies {
   let cacheStorage: CacheStorage | undefined;
   try { cacheStorage = globalThis.caches; } catch { /* Private browsing can refuse storage access. */ }
@@ -70,16 +97,12 @@ function browserDependencies(): OfflineDependencies {
     shellAvailable: async () => {
       if (typeof navigator === 'undefined' || !('serviceWorker' in navigator) || !cacheStorage) return false;
       const registration = await navigator.serviceWorker.getRegistration();
-      const index = await cacheStorage.match(new URL('/index.html', location.origin).href, { ignoreSearch: true });
-      if (!navigator.serviceWorker.controller || registration?.active?.state !== 'activated' || !index || typeof document === 'undefined') return false;
-      const html = await index.text();
-      const entryPoints = [...document.querySelectorAll<HTMLScriptElement>('script[type="module"][src]')];
-      if (!entryPoints.length) return false;
-      for (const script of entryPoints) {
-        const url = new URL(script.src, location.origin);
-        if (url.origin !== location.origin || !html.includes(url.pathname) || !await cacheStorage.match(url.href, { ignoreSearch: true })) return false;
-      }
-      return true;
+      if (!navigator.serviceWorker.controller || registration?.active?.state !== 'activated' || typeof document === 'undefined') return false;
+      const scripts = [...document.querySelectorAll<HTMLScriptElement>('script[type="module"][src]')];
+      if (!scripts.length) return false;
+      const styles = [...document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"][href]')]
+        .map((link) => link.href).filter((url) => new URL(url, location.origin).origin === location.origin);
+      return hasMatchingCachedShell(cacheStorage, location.origin, [...scripts.map((script) => script.src), ...styles]);
     },
     estimateStorage: async () => typeof navigator !== 'undefined' && navigator.storage?.estimate ? navigator.storage.estimate() : {},
   };

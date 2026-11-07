@@ -3,6 +3,7 @@ import { Headphones, Home, MapPin, Route } from 'lucide-react';
 import { t } from '../i18n/translations';
 import { visualLabel } from '../i18n/visualLabels';
 import { audioPlayer } from '../audio/audioStore';
+import { experienceText as x } from '../i18n/experienceLabels';
 
 export type ActiveTab = 'accueil' | 'parcours' | 'arret' | 'lecteur';
 
@@ -26,7 +27,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ currentTab, onSelectTab })
         {tabs.map(({ id, labelKey, Icon }) => (
           <button key={id} onClick={() => onSelectTab(id)} aria-label={t(labelKey, currentLang)} aria-current={currentTab === id ? 'page' : undefined} className="museum-nav-button" type="button">
             <span className="museum-nav-icon"><Icon size={23} strokeWidth={currentTab === id ? 2.25 : 1.75} aria-hidden="true" /></span>
-            <span>{t(labelKey, currentLang)}</span>
+            <span>{id === 'parcours' ? x('tourShort', currentLang) : t(labelKey, currentLang)}</span>
           </button>
         ))}
       </div>

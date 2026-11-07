@@ -12,8 +12,8 @@ export function useOfflineState(language: SupportedLanguage, enabled = true) {
     const inspectOnReturn = () => { if (document.visibilityState === 'visible') void offlineStore.inspect(language); };
     window.addEventListener('focus', inspectOnReturn);
     document.addEventListener('visibilitychange', inspectOnReturn);
-    return () => { window.removeEventListener('focus', inspectOnReturn); document.removeEventListener('visibilitychange', inspectOnReturn); };
     void offlineStore.inspect(language);
+    return () => { window.removeEventListener('focus', inspectOnReturn); document.removeEventListener('visibilitychange', inspectOnReturn); };
   }, [enabled, language]);
   return { ...snapshot.packs[language], activeLanguage: snapshot.activeLanguage };
 }

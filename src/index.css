@@ -159,6 +159,11 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .museum-nav-button[aria-current="page"] { color: var(--museum-action); }
 .museum-nav-button[aria-current="page"] .museum-nav-icon { background: var(--museum-soft); }
 .museum-nav-button:focus-visible { outline-offset: -3px; }
+.museum-nav-button > span:last-child { max-width: 100%; overflow-wrap: anywhere; padding-inline: .15rem; }
+.tour-filters { grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); }
+.tour-filters button { min-width: 0; overflow-wrap: anywhere; padding-inline: .5rem; }
+@media (max-width: 639px) { .tour-filters button:last-child { grid-column: 1 / -1; } }
+@media (min-width: 640px) { .tour-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .museum-welcome { display: flex; flex-direction: column; gap: 1.1rem; width: 100%; padding-bottom: 1rem; }
 .museum-welcome-hero { overflow: hidden; border-radius: 1.15rem; background: var(--museum-card); border: 1px solid var(--museum-line); }

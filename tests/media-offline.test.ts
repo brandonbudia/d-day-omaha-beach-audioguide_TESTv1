@@ -6,7 +6,7 @@ import { setImmediate as nextTurn } from 'node:timers/promises';
 import { MEDIA_CATALOG, getMediaResource, getDownloadableAudio, SHARED_OFFLINE_RESOURCES, type OfflineResource } from '../src/data/mediaCatalog';
 import { LANGUAGES, type SupportedLanguage } from '../src/i18n/translations';
 import french from '../src/data/french-transcripts.fr.json';
-import { VERIFIED_MEDIA_CACHE, createOfflineStore, getOfflineResources, verifyCompleteResponse, type OfflineDependencies } from '../src/offline/offlineStore';
+import { VERIFIED_MEDIA_CACHE, createOfflineStore, getOfflineResources, hasMatchingCachedShell, verifyCompleteResponse, type OfflineDependencies } from '../src/offline/offlineStore';
 
 const subtle = webcrypto.subtle as SubtleCrypto;
 const hash = (body: string | Uint8Array) => createHash('sha256').update(body).digest('hex');
@@ -15,7 +15,13 @@ const resource: OfflineResource = { url: '/audio/fr/stop-01.mp3?v=verified', byt
 
 class MemoryCache {
   entries = new Map<string, Response>();
-  async match(url: string) { return this.entries.get(url)?.clone(); }
+  async match(url: string, options?: CacheQueryOptions) {
+    const key = options?.ignoreSearch ? [...this.entries.keys()].find((candidate) => {
+      const cached = new URL(candidate), requested = new URL(url);
+      return cached.origin === requested.origin && cached.pathname === requested.pathname;
+    }) : url;
+    return this.entries.get(key ?? '')?.clone();
+  }
   async put(url: string, response: Response) { this.entries.set(url, response.clone()); }
 }
 
@@ -166,6 +172,30 @@ test('downloaded files and an installed application shell are separate guarantee
   await store.download('fr');
   assert.equal(store.getSnapshot().packs.fr.status, 'ready');
   assert.equal(store.getSnapshot().packs.fr.shellReady, false);
+});
+
+test('shell verification finds the current index after an old cache and requires its entries in that same cache', async () => {
+  const origin = 'https://guide.example';
+  const old = new MemoryCache(), current = new MemoryCache(), separate = new MemoryCache();
+  const caches = new Map([['old-precache', old], ['current-precache', current], ['separate-cache', separate]]);
+  const storage = { keys: async () => [...caches.keys()], open: async (name: string) => caches.get(name)! };
+  const entryUrls = [`${origin}/assets/current.js`, `${origin}/assets/current.css`];
+  const currentIndex = '<script type="module" src="/assets/current.js"></script><link rel="stylesheet" href="/assets/current.css">';
+  await old.put(`${origin}/index.html?__WB_REVISION__=old`, new Response('<script src="/assets/old.js"></script>'));
+  await old.put(`${origin}/assets/old.js`, new Response('old app'));
+  assert.equal(await hasMatchingCachedShell(storage, origin, entryUrls), false, 'an old app cannot certify the current app');
+  await current.put(`${origin}/index.html?__WB_REVISION__=new`, new Response(currentIndex));
+  await current.put(entryUrls[0], new Response('current app'));
+  await current.put(entryUrls[1], new Response('current styles'));
+  assert.equal(await hasMatchingCachedShell(storage, origin, entryUrls), true, 'a later matching cache is found');
+  current.entries.delete(entryUrls[1]);
+  assert.equal(await hasMatchingCachedShell(storage, origin, entryUrls), false, 'a missing entry prevents readiness');
+  await separate.put(entryUrls[1], new Response('current styles'));
+  assert.equal(await hasMatchingCachedShell(storage, origin, entryUrls), false, 'files from different caches cannot be combined');
+  await current.put(entryUrls[1], new Response('current styles'));
+  await current.put(`${origin}/index.html?__WB_REVISION__=new`, new Response('<script src="/assets/old.js"></script>'));
+  assert.equal(await hasMatchingCachedShell(storage, origin, entryUrls), false, 'cached files alone do not certify an unrelated index');
+  assert.deepEqual([...caches.keys()], ['old-precache', 'current-precache', 'separate-cache'], 'no existing cache is removed');
 });
 
 test('unavailable languages and inaccessible browser storage do not start downloads', async () => {

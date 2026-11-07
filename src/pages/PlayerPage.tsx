@@ -128,7 +128,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         {!isTranscriptOpen && <div className="player-resting-cover"><img src={currentStop.imageUrl} alt="" /><p>{currentStop.witnessBadge}</p><button type="button" className="player-secondary-button" onClick={() => setIsTranscriptOpen(true)}>{t('text_transcript', currentLang)}</button></div>}
       </section>
 
-      <section className="player-transport" aria-label="Commandes de lecture">
+      <section className="player-transport" aria-label={x('audioControls', currentLang)}>
         {audioState.error && resource.status !== 'unavailable' && <p role="alert" className="player-error">{t('audio_error', currentLang)}</p>}
         <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} onSeek={(seconds) => audioPlayer.seek(seconds)} />
         <div className="player-transport-buttons">

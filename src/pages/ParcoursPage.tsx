@@ -52,7 +52,7 @@ export function ParcoursPage({ onSelectStopDetail, onOpenPlayer, currentLang }: 
         <label className="relative"><span className="sr-only">{t('search_stations', currentLang)}</span><Search size={19} aria-hidden="true" className="absolute left-3 top-4 museum-muted" /><input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder={t('search_stations', currentLang)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] pl-10 pr-3 bg-[var(--museum-bg)]" /></label>
         <label><span className="sr-only">{t('all_sectors', currentLang)}</span><select value={sectorFilter} onChange={(e) => setSectorFilter(e.target.value)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] px-3 bg-[var(--museum-bg)]"><option value="all">{t('all_sectors', currentLang)}</option>{sectors.map((sector) => <option key={sector}>{sector}</option>)}</select></label>
       </div>
-      <div className="grid grid-cols-3 gap-2 mt-3" aria-label={t('filter_all', currentLang, {count: total})}>
+      <div className="tour-filters grid gap-2 mt-3" aria-label={t('filter_all', currentLang, {count: total})}>
         {(['all', 'remaining', 'favorites'] as const).map((value) => <button key={value} type="button" aria-pressed={filter === value} className={`${filter === value ? 'museum-button' : 'museum-button-secondary'} px-2 text-sm`} onClick={() => setFilter(value)}>{value === 'favorites' && <Bookmark size={16} aria-hidden="true" />}{t(value === 'all' ? 'filter_all' : value === 'remaining' ? 'filter_remaining' : 'filter_favorites', currentLang, { count: value === 'all' ? total : total - count })}</button>)}
       </div>
     </section>

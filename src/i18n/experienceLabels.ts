@@ -2,6 +2,8 @@ import type { SupportedLanguage } from './translations';
 
 // Interface copy only. Narrative translations require museum validation.
 const labels = {
+  audioControls: ['Commandes de lecture', 'Playback controls', 'Wiedergabesteuerung', 'Comandi di riproduzione', 'Sterowanie odtwarzaniem', 'Afspeelbediening', 'Controles de reproducción'],
+  tourShort: ['Visite', 'Tour', 'Rundgang', 'Visita', 'Muzeum', 'Bezoek', 'Visita'],
   resumeAudio: ['Continuer l’écoute — pièce {number} · {time}', 'Continue listening — piece {number} · {time}', 'Weiterhören — Objekt {number} · {time}', 'Continua l’ascolto — oggetto {number} · {time}', 'Kontynuuj słuchanie — obiekt {number} · {time}', 'Verder luisteren — object {number} · {time}', 'Continuar escuchando — pieza {number} · {time}'],
   resumePiece: ['Revenir à la pièce {number}', 'Return to piece {number}', 'Zurück zu Objekt {number}', 'Torna all’oggetto {number}', 'Wróć do obiektu {number}', 'Terug naar object {number}', 'Volver a la pieza {number}'],
   networkOffline: ['Sans réseau : seuls les contenus téléchargés sont disponibles.', 'Offline: only downloaded content is available.', 'Offline: Nur heruntergeladene Inhalte sind verfügbar.', 'Offline: sono disponibili solo i contenuti scaricati.', 'Offline: dostępne są tylko pobrane materiały.', 'Offline: alleen gedownloade inhoud is beschikbaar.', 'Sin conexión: solo están disponibles los contenidos descargados.'],
