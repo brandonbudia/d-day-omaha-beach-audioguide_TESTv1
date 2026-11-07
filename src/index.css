@@ -194,6 +194,8 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .museum-language-flag { font-size: 1.1rem; line-height: 1; }
 .museum-language-check { position: absolute; top: 2px; right: 2px; }
 .museum-language-name { font-size: .875rem; color: var(--museum-muted); margin-top: .6rem; }
+.museum-language-audio { margin-top: .5rem; color: var(--museum-muted); font-size: .875rem; line-height: 1.5; }
+.museum-language-audio span { display: block; }
 .museum-visit-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem; }
 .museum-visit-info > div { display: flex; align-items: flex-start; gap: .6rem; min-width: 0; }
 .museum-visit-info svg { color: var(--museum-action); flex-shrink: 0; margin-top: .15rem; }
@@ -546,8 +548,8 @@ html.light-mode input.player-range { background: transparent !important; border:
 .player-reading-option strong { font-weight: 600; }
 .player-reading-option small { display: block; font-size: .8rem; color: var(--player-muted); line-height: 1.5; margin-top: .2rem; }
 .player-reading-option input { width: 44px; height: 44px; min-width: 44px; margin: 0; accent-color: var(--player-accent); }
-.player-transcript-content[data-wide-spacing="true"] { letter-spacing: .06em; word-spacing: .16em; }
-.player-transcript-content[data-dyslexic-font="true"] { font-family: OpenDyslexic, 'Source Sans 3', sans-serif; }
+.player-transcript-content[data-wide-spacing="true"] :is(.transcript-viewport, .player-static-transcript) { letter-spacing: .06em; word-spacing: .16em; }
+.player-transcript-content[data-dyslexic-font="true"] :is(.transcript-viewport, .player-static-transcript) { font-family: OpenDyslexic, 'Source Sans 3', sans-serif; }
 .player-transcript-content[data-color-assistance="true"] { --player-spoken: #a3d4ff; }
 html.light-mode .player-transcript-content[data-color-assistance="true"] { --player-spoken: #164d78; }
 .player-transcript-content[data-color-assistance="true"] .transcript-word:is([data-word-state="read"], [data-word-state="current"]) { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .2em; }

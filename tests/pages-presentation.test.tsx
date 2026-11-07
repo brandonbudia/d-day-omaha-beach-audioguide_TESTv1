@@ -13,6 +13,7 @@ import { PlayerPage } from '../src/pages/PlayerPage';
 import { audioPlayer } from '../src/audio/audioStore';
 import { LANGUAGES } from '../src/i18n/translations';
 import { experienceText } from '../src/i18n/experienceLabels';
+import { LanguageSelector } from '../src/components/LanguageSelector';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -60,6 +61,20 @@ test('home keeps its welcome, seven languages and tour action without the redund
     assert.ok(html.includes(name), name);
   }
   assert.doesNotMatch(html, /PARCOURS DU MUSÉE|Visite Intérieure|Agrandir le texte/);
+});
+
+test('language selection distinguishes seven interface translations from the two real narration languages', () => {
+  for (const { code } of LANGUAGES) {
+    const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
+    assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
+    assert.match(html, /FR · EN/);
+    assert.match(html, /aria-describedby="language-audio-status"/);
+    assert.match(html, /role="status"/);
+    assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);
+    assert.ok(html.includes(escapeText(experienceText(code === 'fr' || code === 'en' ? 'audioCount' : 'interfaceOnly', code, { count: 22, total: 22 }))));
+    if (code === 'fr' || code === 'en') assert.match(html, /22\/22/);
+    else assert.doesNotMatch(html, /22\/22/);
+  }
 });
 
 test('unavailable languages expose French reference text with disabled audio; restored FR22 and real English use their own synchronized text', () => {

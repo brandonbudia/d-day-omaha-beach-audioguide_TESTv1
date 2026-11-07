@@ -456,6 +456,86 @@ test('restored French 22 uses the shared player with its new audio identity and 
   assert.equal(instances(), 1, 'station navigation preserves the shared audio element');
 });
 
+test('changing a playing narration language starts its own clock at zero and preserves the previous listening record', async () => {
+  const { media, player, visitorStore, start, instances } = await fixture('language-independent-clock');
+  player.setStop('21', false);
+  const french = getMediaResource('21', 'fr');
+  const english = getMediaResource('21', 'en');
+  assert.notEqual(french.durationSeconds, english.durationSeconds);
+  media.duration = french.durationSeconds;
+  media.dispatchEvent(new Event('loadedmetadata'));
+  await start();
+  media.currentTime = 90.375;
+  media.playedRanges = [[0, 90.375]];
+  media.dispatchEvent(new Event('timeupdate'));
+
+  player.setLanguage('en');
+  assert.equal(player.getState().currentStopId, '21');
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(media.currentTime, 0);
+  assert.equal(media.src, english.url);
+  assert.equal(player.getState().duration, english.durationSeconds);
+  assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.fr?.heardRanges, [[0, 90.375]]);
+  assert.equal(visitorStore.getSnapshot().pieces['21'].listening.fr?.positionSeconds, 90.375);
+  assert.equal(visitorStore.getSnapshot().pieces['21'].listening.en, undefined, 'switching cannot invent English listening');
+
+  media.duration = english.durationSeconds;
+  media.dispatchEvent(new Event('loadedmetadata'));
+  await nextTurn();
+  media.flush();
+  assert.equal(player.getState().isPlaying, true, 'an explicitly changed language preserves active playback');
+  assert.equal(media.currentTime, 0);
+  media.currentTime = 6.25;
+  media.playedRanges = [[0, 6.25]];
+  player.pause();
+  media.flush();
+  assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.en?.heardRanges, [[0, 6.25]]);
+  assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.fr?.heardRanges, [[0, 90.375]]);
+  assert.equal(instances(), 1);
+});
+
+test('changing a paused language stays paused and does not seek the new narration to the old position', async () => {
+  const { media, player, visitorStore } = await fixture('language-paused');
+  player.setStop('21', false);
+  player.seek(170.125);
+  player.setLanguage('en');
+  assert.equal(player.getState().currentStopId, '21');
+  assert.equal(player.getState().language, 'en');
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(media.currentTime, 0);
+  assert.equal(player.getState().isPlaying, false);
+  assert.equal(media.playCalls, 0);
+  assert.deepEqual(visitorStore.getSnapshot().pieces, {}, 'a paused seek or language change cannot create listening');
+  assert.equal(storedValues.get('dday_lang'), 'en');
+});
+
+test('switching a playing narration to an unavailable language resets the clock and cannot autoplay its placeholder', async () => {
+  const { media, player, visitorStore, start } = await fixture('language-unavailable');
+  player.setStop('21', false);
+  media.duration = getMediaResource('21', 'fr').durationSeconds;
+  media.dispatchEvent(new Event('loadedmetadata'));
+  await start();
+  media.currentTime = 170.125;
+  media.playedRanges = [[0, 170.125]];
+  media.dispatchEvent(new Event('timeupdate'));
+  const calls = media.playCalls;
+  player.setLanguage('de');
+  media.flush();
+  await nextTurn();
+  assert.equal(player.getState().currentStopId, '21');
+  assert.equal(player.getState().language, 'de');
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(media.currentTime, 0);
+  assert.equal(player.getState().isPlaying, false);
+  assert.equal(media.paused, true);
+  assert.equal(media.playCalls, calls);
+  assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.fr?.heardRanges, [[0, 170.125]]);
+  assert.equal(visitorStore.getSnapshot().pieces['21'].listening.de, undefined);
+  await player.play();
+  assert.equal(media.playCalls, calls, 'the explicit play guard also remains active');
+  assert.equal(player.getState().error, 'unavailable');
+});
+
 test('a seek directly to the end cannot complete even an otherwise fully heard recording', async () => {
   const { media, player, visitorStore, start } = await fixture('seek-end-with-old-ranges');
   await start();

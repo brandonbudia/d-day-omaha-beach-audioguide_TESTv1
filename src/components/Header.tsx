@@ -4,6 +4,7 @@ import { t } from '../i18n/translations';
 import { visualLabel } from '../i18n/visualLabels';
 import { audioPlayer } from '../audio/audioStore';
 import { usePWAInstall } from '../hooks/usePWAInstall';
+import { useInterfacePreferences } from '../hooks/useInterfacePreferences';
 import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
@@ -15,7 +16,9 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoHome, onOpenProfile }) => {
-  const [isHighContrast, setIsHighContrast] = React.useState(() => document.documentElement.classList.contains('high-contrast') || document.documentElement.classList.contains('sun-mode'));
+  const { preferences, toggle } = useInterfacePreferences();
+  const isHighContrast = preferences.highContrast;
+  const isLargeText = preferences.largeText;
   const [isLightMode, setIsLightMode] = React.useState(() => {
     try {
       const savedTheme = window.localStorage.getItem('dday-theme');
@@ -25,16 +28,14 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoH
     }
     return document.documentElement.classList.contains('light-mode');
   });
-  const [isLargeText, setIsLargeText] = React.useState(() => document.documentElement.classList.contains('large-text'));
   const { isInstallable, isIOS, install } = usePWAInstall();
   const currentLang = audioPlayer.getState().language;
 
-  const toggleContrast = () => {
-    const next = !isHighContrast;
-    setIsHighContrast(next);
-    document.documentElement.classList.toggle('high-contrast', next);
-    document.documentElement.classList.toggle('sun-mode', next);
-  };
+  React.useEffect(() => {
+    document.documentElement.classList.toggle('high-contrast', isHighContrast);
+    document.documentElement.classList.toggle('sun-mode', isHighContrast);
+    document.documentElement.classList.toggle('large-text', isLargeText);
+  }, [isHighContrast, isLargeText]);
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('light-mode', isLightMode);
@@ -49,12 +50,6 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoH
     try { window.localStorage.setItem('dday-theme', next ? 'light' : 'dark'); } catch {
       // Theme changes remain available for this session.
     }
-  };
-
-  const toggleFontSize = () => {
-    const next = !isLargeText;
-    setIsLargeText(next);
-    document.documentElement.classList.toggle('large-text', next);
   };
 
   return (
@@ -78,10 +73,10 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoH
           <button type="button" onClick={toggleTheme} className="museum-icon-button" aria-label={t(isLightMode ? 'theme_switch_to_dark' : 'theme_switch_to_light', currentLang)} title={t(isLightMode ? 'theme_switch_to_dark' : 'theme_switch_to_light', currentLang)} aria-pressed={isLightMode}>
             {isLightMode ? <Sun size={21} aria-hidden="true" /> : <Moon size={21} aria-hidden="true" />}
           </button>
-          <button type="button" onClick={toggleContrast} className="museum-icon-button" aria-label={t('contrast_mode', currentLang)} title={t('contrast_mode', currentLang)} aria-pressed={isHighContrast}>
+          <button type="button" onClick={() => toggle('highContrast')} className="museum-icon-button" aria-label={t('contrast_mode', currentLang)} title={t('contrast_mode', currentLang)} aria-pressed={isHighContrast}>
             <Contrast size={21} aria-hidden="true" />
           </button>
-          <button type="button" onClick={toggleFontSize} className="museum-icon-button" aria-label={t('font_size', currentLang)} title={t('font_size', currentLang)} aria-pressed={isLargeText}>
+          <button type="button" onClick={() => toggle('largeText')} className="museum-icon-button" aria-label={t('font_size', currentLang)} title={t('font_size', currentLang)} aria-pressed={isLargeText}>
             <Type size={21} aria-hidden="true" />
           </button>
           {(isInstallable || isIOS) ? (

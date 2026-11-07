@@ -361,12 +361,13 @@ class GlobalAudioPlayer {
       localStorage.setItem('dday_lang', lang);
     } catch { /* Keep the language choice for this session. */ }
     const wasPlaying = this.state.isPlaying;
-    const prevTime = this.state.currentTime;
 
     this.updateAudioSource();
-    this.seek(prevTime);
-    if (wasPlaying) {
-      this.play();
+    // A different narration has its own wording and duration. Its seconds do
+    // not correspond to the old language's position; keep that checkpoint only.
+    this.seek(0);
+    if (wasPlaying && getMediaResource(this.state.currentStopId, lang).status !== 'unavailable') {
+      void this.play();
     }
     this.notify();
   }
