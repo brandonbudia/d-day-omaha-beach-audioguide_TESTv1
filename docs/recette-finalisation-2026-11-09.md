@@ -92,3 +92,26 @@ Recette de production sur origine isolée 127.0.0.1:4199 :
 Capture : unique-20261109-titre-en-mobile.jpg. Logs : unique-20261109-labels-tests.txt et unique-20261109-labels-build-final.txt, hors dépôt. Le test hors connexion de ce deuxième lot n'a pas été rejoué : audio, cache et transcriptions sont inchangés ; la preuve sans serveur du premier lot garde sa portée, sans devenir un nouveau test de ces titres.
 
 Limite explicite : ce lot localise les titres ; les contextes, citations, légendes et autres contenus historiques des fiches restent FR. Le récit EN propre à chaque piste existe déjà dans le registre ; sa lecture directement dans la fiche est la prochaine tâche, avec séparation des passages documentaires non confirmés (08/09/12) et conservation des contenus FR.
+
+## Troisième lot — récit anglais dans les fiches
+
+Base : 8a94d7c632a1298ff3c92709b0b0cfaf8a93066d. Le code interrompu a été conservé, relu puis retesté, sans réécriture ni traitement audio supplémentaire.
+
+- Les 22 fiches EN affichent les paragraphes du registre de transcription existant. Le chargement du registre reste dynamique ; aucun second lecteur ni démarrage automatique ajouté.
+- L'avertissement de relecture humaine et la couverture partielle sont conservés. Pour 08/09/12, les passages documentaires non retrouvés dans l'enregistrement restent séparés du corps du récit.
+- Les blocs français hérités restent accessibles dans un détail identifié : fermé par défaut en EN, ouvert pour les cinq autres interfaces. Le rendu FR conserve les blocs précédents sans ce conteneur. Contextes, citations, légendes et faits français ne sont pas présentés comme traduits.
+- Le résultat asynchrone est associé à la station ; les résolutions périmées sont ignorées. Un repli lisible est prévu sur échec d'import. Ces gardes sont relues dans le code ; les erreurs d'import et courses de chargement n'ont pas été provoquées dans le navigateur.
+
+Contrôles relancés lors de la reprise manuelle : 100 tests applicatifs réussis, aucun échec/ignoré ; 14 tests Python purs réussis ; npm run lint (tsc --noEmit) et npm run build réussis. Codes de sortie : 0 pour chacun. Le test generate-audio.test.ts est explicitement exclu. Aucun générateur ni installation exécuté.
+
+Build identique à celui testé avant interruption : index-BG5z3exo.js ; CSS 59,29 kB, entrée 473,93 kB / 146,75 kB gzip ; registre partagé chargé à la demande 226,05 kB ; données EN 382,97 kB ; PWA 53 entrées / 3782,02 KiB. Les diagnostics de durée des callbacks PWA ne constituent pas un échec.
+
+Recette navigateur conservée avant interruption : première ouverture du récit EN22 après arrêt du serveur, rechargement de la fiche, 18 paragraphes ; référence FR ouvrable ; 08/09/12 avec respectivement 1/3/1 paragraphes documentaires séparés ; FR inchangé et repli DE identifié avec audio désactivé. Aucun changement de piste ou second lecteur provoqué par le récit.
+
+Recette effectivement rejouée à la reprise : netstat confirme zéro écoute sur 127.0.0.1:4198 ; nouvel onglet /stop/22?hl=en, shell index-BG5z3exo.js et import du récit servis depuis le cache ; 18 paragraphes, langue en, couverture 320/341, référence française fermée puis ouverte. À 390 px de viewport demandé, clientWidth et scrollWidth valent 380 px, sans débordement horizontal. Aucune erreur/warn de console. Viewport rétabli et onglet fermé ensuite.
+
+Cette preuve hors serveur ne représente pas une coupure complète du réseau Windows ; les images distantes restent hors de cette garantie. Les recettes antérieures de lecture et de pack conservent leur portée : les 44 pistes n'ont pas été réécoutées lors de cette reprise.
+
+Preuves externes : resume-20261109-narrative-tests.txt, resume-20261109-python-tests.txt, resume-20261109-typescript.txt, resume-20261109-narrative-build.txt et resume-20261109-recit-en-mobile.jpg. Les empreintes des deux JSON de transcription, de la référence française et de dev-dist/sw.js sont inchangées. Aucun MP3/minutage modifié ; dev-dist/sw.js reste exclu du commit.
+
+Exclusivité observée avant écritures : seul ce chat actif sur ce checkout ; assistants terminés puis deux revues expressément en lecture seule. Inspection locale des processus en lecture seule : les processus TESTv1 identifiés appartiennent au runtime de ce chat, aucun autre codex exec de travail ni superviseur détecté. Ce constat ponctuel n'est pas une exclusion native de la planification. Le heartbeat existant cible ce chat et reste soumis à son préalable de lecture seule ; aucune planification créée ou modifiée.

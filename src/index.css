@@ -258,6 +258,9 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .museum-piece-context h3 { font: 700 1.25rem/1.3 var(--font-serif); margin-block: .2rem .6rem; }
 .museum-piece-context > p:not(.museum-eyebrow) { color: var(--museum-muted); font-size: 1rem; line-height: 1.7; }
 .museum-piece-context > p + p { margin-top: .75rem; }
+.museum-narrative-text p { color: var(--museum-muted); font-size: 1rem; line-height: 1.7; margin-top: .75rem; }
+.museum-piece-reference > summary { min-height: 44px; cursor: pointer; font-weight: 600; }
+.museum-piece-reference > :not(summary) { margin-top: 1rem; }
 .museum-piece-observe { display: flex; align-items: flex-start; gap: .75rem; padding: 1rem; background: var(--museum-soft); }
 .museum-piece-observe > svg { color: var(--museum-action); flex-shrink: 0; margin-top: .1rem; }
 .museum-piece-observe h3 { font: 650 1rem/1.4 var(--font-sans); margin-bottom: .35rem; }

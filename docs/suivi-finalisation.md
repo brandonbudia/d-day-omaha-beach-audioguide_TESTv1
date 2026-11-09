@@ -1,7 +1,7 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 6 ; phase titres EN vérifiés, récit EN de fiche à intégrer.
-Aucune récurrence. Un seul écrivain ; assistants limités à la lecture.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 8 ; phase récit EN vérifié, publication ciblée en préparation.
+Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
 Origin autorisé fetch/push : https://github.com/brandonbudia/d-day-omaha-beach-audioguide_TESTv1.git
@@ -51,7 +51,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EN-01 | P1 | pending | 429 autres mots EN par phrases après EN22 |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
-| EDIT-EN | P1 | in_progress | Sources autorisées pour localiser les fiches, propositions/replis identifiés |
+| EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
+| EDIT-EN | P1 | blocked-human | Récits et titres EN intégrés ; autres faits/citations/légendes FR conservés. Rouvrir avec sources/traductions validées |
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
@@ -62,12 +63,11 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
 | DEL-01 | P1 | in_progress | Tests complets, diff, commit ciblé et push des seuls lots vérifiés |
 
-## Tâche active : EDIT-EN
+## Tâche active : DEL-01, publication du troisième lot
 
-Prochaine action : exploiter seulement les titres EN déjà publiés du cache Wivi (22 objets title/paragraphs/url), sans inventer de traduction ou remplacer les champs FR. Cache SHA256 cd01fe1b935c7f668684f375127bd14968a1340b690a425b1136011162da6809, concordant avec la provenance EN.
-Examiner un petit adaptateur localisé avec repli FR identifié ; pour le récit, réutiliser resolveTranscript(...).paragraphs et préserver referenceOnlyParagraphs/TranscriptNotice, notamment 08/09/12. Ne pas réinjecter aveuglément les 157 paragraphes comme paroles vérifiées.
-Chemins possibles du prochain lot : adaptateur de contenus EN sourcés, usages des titres/fiches et tests ; fixer le périmètre après lecture. Titres EN sourcés intégrés dans un adaptateur séparé ; cartes/fiche/lecteur/mini-lecteur/navigation/recherche raccordés. Tests de provenance et replis ajoutés. Lot titres EN vérifié : 97 tests, contrôle final ciblé13/13, TypeScript/build et navigateur. Le reste de la localisation EDIT-EN est toujours en cours.
-
+Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
+Prochaine action immédiate : examiner le diff indexé des seuls six fichiers utiles (avec suivi et recette), créer un commit ciblé puis pousser vers TESTv1/branche autorisée et vérifier le SHA distant. Exclure dev-dist/sw.js.
+Après publication : FR22-01 puis FR-01, rapprocher uniquement les 44 mots FR sans repère des caches existants ; aucun nouvel ASR si une preuve est déjà disponible. Les exports anciens ne sont pas la vérité courante : partir du JSON applicatif actuel et conserver les bornes validées.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -134,3 +134,25 @@ Résultats du lot titres : voir recette-finalisation-2026-11-09.md, deuxième lo
 - Lot titres version testée : docs/recette-finalisation-2026-11-09.md ; SHA travail 00930E83D9F99B5C4EB4D244B97B3635261D336F21F2325BEC45091366FFF47B ; index avant commit 100644 e3065e989b1ee960ca34e2e0221f6622340af5da 0	docs/recette-finalisation-2026-11-09.md
 
 Publication du checkpoint : 2026-11-09T10:05:00.7249802+01:00
+
+## Checkpoint 7 — récit EN, lot en cours
+Lot titres commité/poussé : 8a94d7c632a1298ff3c92709b0b0cfaf8a93066d ; SHA distant confirmé. Base actuelle du travail.
+Fichiers en cours : src/components/EnglishNarrative.tsx (chargement dynamique du registre, garde stopId/langue, repli sur erreur), src/pages/StopDetailPage.tsx (récit EN et disclosure French reference), src/index.css (paragraphes/gap/cible44px), tests/english-narrative.test.tsx. Aucune donnée ou borne modifiée.
+Prochaine action immédiate : tests, TypeScript et build ; puis navigateur pour récit EN02/08/09/12/22, référence FR conservée, changement rapide de station et hors connexion avec pack existant. Ne pas annoncer ce lot validé avant ces preuves.
+
+Publication du checkpoint : 2026-11-09T10:11:49.9200616+01:00
+
+## Checkpoint 8 — reprise humaine et recette du récit anglais
+Base locale et distante confirmée : 8a94d7c632a1298ff3c92709b0b0cfaf8a93066d. L’état réel contient cinq fichiers utiles non publiés et dev-dist/sw.js préexistant, pas 19 fichiers supplémentaires. Aucun fichier restauré ou perte de modification.
+Exclusivité actuelle vérifiée par chats, agents et inspection des processus locaux : seul ce chat identifié comme écrivain sur TESTv1. Les assistants de revue restent en lecture seule. Cette observation ne constitue pas une garantie de non-chevauchement future ; les écritures récurrentes restent bloquées par le prompt définitif. Aucune configuration de planification modifiée.
+Tests réellement relancés : 100/100 applicatifs, 14/14 Python, npm run lint/TypeScript et build ; tous codes 0. Logs resume-20261109-* dans le dossier d’artefacts déjà autorisé. Build index-BG5z3exo.js identique à la recette avant interruption.
+Nouvel essai navigateur sans serveur (netstat : 0 écoute 4198) : fiche EN22, 18 paragraphes, avertissement 320/341, référence FR fermée puis ouverte, langue en, pas de débordement à 390 px demandé ; console error/warn vide. Capture resume-20261109-recit-en-mobile.jpg. Onglet fermé, viewport rétabli. Limites : réseau Windows non coupé, pas d’essai physique/écoute humaine, erreurs d’import et course asynchrone relues sans injection de panne.
+Empreintes des deux JSON de transcription, de la référence FR et du sw préexistant inchangées. Aucun MP3, minutage ou dépendance modifié.
+- src/components/EnglishNarrative.tsx ; SHA travail F1A4BB6995FA732B1133202209D544FD09DF09802078E401E5DD5FF66C2D0FDD ; non suivi avant préparation.
+- tests/english-narrative.test.tsx ; SHA travail FF7F4DB5328778C65E022EB66FE92E33342FC6D6F36B720F0399075D19D03BB1 ; non suivi avant préparation.
+- src/pages/StopDetailPage.tsx ; SHA travail 1770486FD64F5100C041642B9D074598AFDAFBBB78993AA3C93F8F31D0F38603 ; index avant préparation e2498ff69fe9efbdf25b7f062cfc3db6fce04901.
+- src/index.css ; SHA travail 3EE27D0C0F73C3E53DF639A8F253A3987E941674361C90DD2E7225B6D0ED1501 ; index avant préparation a14cb6dee227bc5a57587371f7dfb88b3f8b7e10.
+Quota : disponible selon le message humain de reprise ; télémétrie du goal encore usageLimited, date de retour quota-unknown. Aucun reset ou contournement.
+Voir recette-finalisation-2026-11-09.md, troisième lot, pour la portée exacte des preuves. Les 494 mots sans borne et validations humaines restent ouverts ; aucun taux complet artificiel.
+
+Publication du checkpoint : 2026-11-09T21:09:48.7324924+01:00

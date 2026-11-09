@@ -11,6 +11,7 @@ import { isDiscovered, visitorStore } from '../visit/visitorStore';
 import { useVisitorState } from '../visit/useVisitorState';
 import { PhotoViewer, type ViewerPhoto } from '../components/PhotoViewer';
 import { experienceText as x } from '../i18n/experienceLabels';
+import { EnglishNarrative } from '../components/EnglishNarrative';
 
 interface StopDetailPageProps {
   stopId: string;
@@ -21,6 +22,14 @@ interface StopDetailPageProps {
 
 type PieceTab = 'recit' | 'photos' | 'carte';
 const existingPlanUrl = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6fqNmD_maIFqJmkncUGKHEiOIAfggBsccvt7zBxZNQPX_LOOPglwYHlqyDWlYNOkWhxp3P5GJYUVJOhsTL_DKcXMk62EzgHY4i2MGAYl_wZ792gdt_QEXJCpwGMp_D144-rz2d4wheNX1-OHx_WO2CvI6M4OLUcX8AKMqynv4cwi1XcK3OwQcjHvlzWleZmgdeQMu50N21L0ntzZdSAAAmuGgJO1Pm1OpPdDvFnw5TiJL3nqvO0sMlg';
+
+function FrenchReference({ language, children }: { language: SupportedLanguage; children: React.ReactNode }) {
+  if (language === 'fr') return <>{children}</>;
+  return <details className="museum-piece-reference" open={language !== 'en'}>
+    <summary>{x('frenchReference', language)}</summary>
+    {children}
+  </details>;
+}
 
 export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNavigateStop, onOpenPlayer, currentLang }) => {
   const [activeTab, setActiveTab] = React.useState<PieceTab>('recit');
@@ -108,6 +117,8 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
 
       <section className="museum-piece-panel" role="tabpanel" id={`${tabPrefix}-panel-recit`} aria-labelledby={`${tabPrefix}-tab-recit`} hidden={activeTab !== 'recit'} tabIndex={0}>
         {activeTab === 'recit' && <>
+          {currentLang === 'en' && <EnglishNarrative stopId={stop.id} />}
+          <FrenchReference language={currentLang}>
           {observedKey && <div className="museum-piece-observe museum-card"><Eye size={23} aria-hidden="true" /><div><h3>{detailLabel(currentLang, 'observe')}</h3><p>{detailLabel(currentLang, observedKey)}</p></div></div>}
           <div className="museum-piece-context museum-card">
             <p className="museum-eyebrow">{detailLabel(currentLang, 'deeper')}</p>
@@ -130,6 +141,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
             </div>
           </section>
           <details className="museum-piece-editorial"><summary><BadgeInfo size={18} aria-hidden="true" />{detailLabel(currentLang, 'existingLocation')}</summary><p>{detailLabel(currentLang, 'editorial')}</p><p lang="fr"><MapPin size={16} aria-hidden="true" />{stop.sector} · {stop.altitude}</p><p lang="fr">{stop.spotTag} · {stop.coordinates}</p></details>
+          </FrenchReference>
         </>}
       </section>
 
