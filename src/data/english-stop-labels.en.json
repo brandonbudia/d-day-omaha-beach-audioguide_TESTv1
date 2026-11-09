@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "evidence": {
+    "source": "Published Wivi English station titles; source spelling retained, surrounding whitespace removed only",
+    "sourceReferenceSha256": "cd01fe1b935c7f668684f375127bd14968a1340b690a425b1136011162da6809",
+    "humanEditorialReviewed": false
+  },
+  "stations": {
+    "01": {
+      "title": "Here begins",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "02": {
+      "title": "FOCKE-WULF ENGINE",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/0d527c76-01c1-4b91-becf-c0095ebf1eb9?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "03": {
+      "title": "PAK40",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/01c06e1a-5227-47ce-bedb-3f31d16671fb?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "04": {
+      "title": "FLAK VIERLING",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/72a22281-e529-4082-9587-062ba1a49e74?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "05": {
+      "title": "German camouflage",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/e380d61d-2b12-47d0-a291-86963a56b159?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "06": {
+      "title": "Kettenkrad",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/f6b7a0ca-4923-4301-837c-f165bc4a770e?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "07": {
+      "title": "German chaplain",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/98342c97-e5b9-4b02-8860-b2c1824ad395?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "08": {
+      "title": "RUPERT",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/cca5c151-6f2e-4420-be90-fa58a453eb89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "09": {
+      "title": "MG42",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/7f2d0041-18f6-4050-8b91-741d664c856c?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "10": {
+      "title": "GOLIATH",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/9ef4b797-5c3c-4896-ba1a-baeb88d60d33?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "11": {
+      "title": "PTRS 41",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/7cc86ceb-9921-4ba7-9f05-254edda0d754?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "12": {
+      "title": "DIVISIONAL INSIGNIA BUST",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/189b52a3-b56c-4a71-a826-2493a06cefc7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "13": {
+      "title": "MARINE MINES",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/9361f95f-8238-411c-9d32-e133e9d8c022?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "14": {
+      "title": "SOE mannequin",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/af38999f-39d5-4b73-98af-329590948c77?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "15": {
+      "title": "WELBIKE",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/34de99d4-ae6b-4d5b-9354-802d35fff0c5?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "16": {
+      "title": "GENERAL US SCENE",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/62a0a9ce-16c7-4e1d-a07c-7c4af6907a89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "17": {
+      "title": "US infirmary",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/1e4f43a7-82d4-43dc-a73d-4da043db6ae7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "18": {
+      "title": "OMAHA MODEL",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/eec8f080-383f-486f-b75f-1a1748bbac22?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "19": {
+      "title": "The Enigma Machine and the Geniuses Who Cracked It",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/9ec903cf-4ec0-4fa7-87a0-801924a37ee7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "20": {
+      "title": "British showcase",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/7d903007-924c-4055-beb5-6493e0fc9f99?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "21": {
+      "title": "FG42",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/76a873b3-d22f-454d-819f-9a8a7f11e607?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    },
+    "22": {
+      "title": "Resistance showcase",
+      "sourceUrl": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en"
+    }
+  }
+}

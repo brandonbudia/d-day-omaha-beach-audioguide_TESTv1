@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, BadgeInfo, Bookmark, BookOpen, CheckCircle2, Clock3, Eye, Images, Map, MapPin, Play, Quote, ZoomIn } from 'lucide-react';
 import { STOPS } from '../data/stops';
+import { getStopLabel } from '../data/stopLabels';
 import { t, SupportedLanguage } from '../i18n/translations';
 import { detailLabel, visualLabel } from '../i18n/visualLabels';
 import { audioPlayer } from '../audio/audioStore';
@@ -29,6 +30,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
   const tabPrefix = React.useId();
   const visitor = useVisitorState();
   const stop = STOPS.find((item) => item.id === stopId) || STOPS[0];
+  const title = getStopLabel(stop, currentLang);
   const currentIndex = STOPS.findIndex((item) => item.id === stop.id);
   const previous = STOPS[currentIndex - 1];
   const next = STOPS[currentIndex + 1];
@@ -72,7 +74,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
 
       <header className="museum-piece-heading">
         <p className="museum-eyebrow">{t('station_badge', currentLang, { num: stop.number, total: STOPS.length })}</p>
-        <h2 id={`${tabPrefix}-title`} lang="fr">{stop.title}</h2>
+        <h2 id={`${tabPrefix}-title`} lang={title.language}>{title.text}</h2>
         <span className="museum-piece-duration"><Clock3 size={17} aria-hidden="true" />{detailLabel(currentLang, 'duration')} · {resource.status === 'unavailable' ? '—' : formatTime(resource.durationSeconds)}</span>
       </header>
 
@@ -150,15 +152,15 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
           <p className="museum-piece-resource-note">{detailLabel(currentLang, 'plan')}</p>
           <div className="museum-piece-plan museum-card">
             <img src={existingPlanUrl} alt={t('tab_map', currentLang)} loading="lazy" decoding="async" />
-            <p lang="fr">{stop.title} · {stop.coordinates}</p>
+            <p lang={title.language}>{title.text} · <span lang="fr">{stop.coordinates}</span></p>
           </div>
           <div className="museum-piece-context museum-card"><h3>{t('tactical_instructions', currentLang)}</h3><p><span lang="fr">{stop.sector}</span> — {t('tactical_guide_text', currentLang)}</p><p className="museum-muted">{detailLabel(currentLang, 'existingLocation')}</p></div>
         </>}
       </section>
 
       <nav className="museum-piece-navigation" aria-label={detailLabel(currentLang, 'pieceNavigation')}>
-        {previous ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(previous.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${previous.number}`}><ArrowLeft size={22} aria-hidden="true" /><span><small>{t('btn_prev', currentLang)}</small><strong lang="fr">{previous.number} · {previous.shortTitle}</strong></span></button> : <span />}
-        {next ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(next.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${next.number}`}><span><small>{t('btn_next', currentLang)}</small><strong lang="fr">{next.number} · {next.shortTitle}</strong></span><ArrowRight size={22} aria-hidden="true" /></button> : <span />}
+        {previous ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(previous.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${previous.number}`}><ArrowLeft size={22} aria-hidden="true" /><span><small>{t('btn_prev', currentLang)}</small><strong lang={getStopLabel(previous, currentLang, 'shortTitle').language}>{previous.number} · {getStopLabel(previous, currentLang, 'shortTitle').text}</strong></span></button> : <span />}
+        {next ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(next.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${next.number}`}><span><small>{t('btn_next', currentLang)}</small><strong lang={getStopLabel(next, currentLang, 'shortTitle').language}>{next.number} · {getStopLabel(next, currentLang, 'shortTitle').text}</strong></span><ArrowRight size={22} aria-hidden="true" /></button> : <span />}
       </nav>
       {expandedPhoto && <PhotoViewer photo={expandedPhoto} language={currentLang} onClose={() => setExpandedPhoto(null)} />}
     </article>

@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 4 ; phase premier lot vérifié, préparation EDIT-EN.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 6 ; phase titres EN vérifiés, récit EN de fiche à intégrer.
 Aucune récurrence. Un seul écrivain ; assistants limités à la lecture.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -50,6 +50,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | FR-01 | P1 | pending | 24 incertitudes FR par passages, sans piste complète retraitée |
 | EN-01 | P1 | pending | 429 autres mots EN par phrases après EN22 |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
+| EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN | P1 | in_progress | Sources autorisées pour localiser les fiches, propositions/replis identifiés |
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
@@ -65,7 +66,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 
 Prochaine action : exploiter seulement les titres EN déjà publiés du cache Wivi (22 objets title/paragraphs/url), sans inventer de traduction ou remplacer les champs FR. Cache SHA256 cd01fe1b935c7f668684f375127bd14968a1340b690a425b1136011162da6809, concordant avec la provenance EN.
 Examiner un petit adaptateur localisé avec repli FR identifié ; pour le récit, réutiliser resolveTranscript(...).paragraphs et préserver referenceOnlyParagraphs/TranscriptNotice, notamment 08/09/12. Ne pas réinjecter aveuglément les 157 paragraphes comme paroles vérifiées.
-Chemins possibles du prochain lot : adaptateur de contenus EN sourcés, usages des titres/fiches et tests ; fixer le périmètre après lecture. Aucun de ces changements EDIT-EN n'est encore effectué.
+Chemins possibles du prochain lot : adaptateur de contenus EN sourcés, usages des titres/fiches et tests ; fixer le périmètre après lecture. Titres EN sourcés intégrés dans un adaptateur séparé ; cartes/fiche/lecteur/mini-lecteur/navigation/recherche raccordés. Tests de provenance et replis ajoutés. Lot titres EN vérifié : 97 tests, contrôle final ciblé13/13, TypeScript/build et navigateur. Le reste de la localisation EDIT-EN est toujours en cours.
 
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
@@ -110,3 +111,26 @@ Blocage rouvert seulement après changement de prérequis. Quota à relire au be
 - docs/recette-finalisation-2026-11-09.md ; SHA travail 286EE5379BDC413B137F7745DF9F887AEAFC60440CE104DB27F6EBC514BEBBAD ; index préparé 100644 e3065e989b1ee960ca34e2e0221f6622340af5da 0	docs/recette-finalisation-2026-11-09.md
 
 Publication du checkpoint : 2026-11-09T09:45:03.0482534+01:00
+
+## Checkpoint 5 — reprise du lot titres EN
+Premier lot commité/poussé : c6406e0187d13b2d3bc0e970eea3e99ca9c507d2 ; git ls-remote a confirmé exactement ce SHA sur origin/codex/overnight-audio-highlight. Seul dev-dist/sw.js restait sale avant ce nouveau lot.
+Lot actuel : src/data/english-stop-labels.en.json (projection exacte title/url du cache SHA vérifié), src/data/stopLabels.ts ; usages dans les six composants/pages et tests/pages-presentation.test.tsx, tests/stop-labels.test.ts. STOPS, les JSON de transcription, MP3 et minutages restent intacts. Pas de récit de fiche EN ajouté pour le moment.
+Prochaine action réelle : tests ciblés titres/replis/recherche et TypeScript ; corriger toute régression puis vérifier titres EN02/EN14/EN19/EN22 et repli DE dans le navigateur. Ne pas recommencer EN22 ASR ni audit npm.
+
+Publication du checkpoint : 2026-11-09T09:51:02.4890874+01:00
+
+## Checkpoint 6 — prochaine action après le lot titres
+Prochaine action réelle : afficher dans la fiche EN les paragraphes du registre existant, avec avertissement de revue, références non confirmées 08/09/12 séparées et blocs FR conservés/identifiés. Préserver le chargement à la demande du gros registre EN et prévoir un repli lisible si le chargement échoue. Aucun second lecteur ou nouveau minutage.
+Résultats du lot titres : voir recette-finalisation-2026-11-09.md, deuxième lot. Nouvelle provenance vérifiée ; STOPS, MP3 et deux JSON de transcription inchangés. Fichiers à publier uniquement dans TESTv1 ; dev-dist/sw.js exclu, SHA inchangé.
+- Lot titres version testée : src/data/english-stop-labels.en.json ; SHA travail C1107105EE12422E92A7121E083617263F40E366B8CE27F9298773017E38BF7A ; index avant commit non suivi
+- Lot titres version testée : src/data/stopLabels.ts ; SHA travail A5D98A0CDE3C8C943988D8F1D8E9ADC77D3E8D98CF8F1AC7E5E58D54C0D2D2F9 ; index avant commit non suivi
+- Lot titres version testée : src/components/PersistentPlayerBar.tsx ; SHA travail 931C324E0F12C0747E905E8E529864CBB108A9B759AD4161503B79C0682ED04B ; index avant commit 100644 f6fc5f2889b31881708956ec37d17c48c1890e78 0	src/components/PersistentPlayerBar.tsx
+- Lot titres version testée : src/components/StopCard.tsx ; SHA travail F61AEEAE9507D7B0D05E548368141188A548C5391CA4FA640ED153934A3CB549 ; index avant commit 100644 21bf92727072d88835326be1d45c9f2da0014117 0	src/components/StopCard.tsx
+- Lot titres version testée : src/pages/ParcoursPage.tsx ; SHA travail 1E47287D75711010FE91172D3C6134193E92AE336021D853DA9A81C311CF5A8B ; index avant commit 100644 260d2f033abc65dda4929d73d8cd00c090a5e395 0	src/pages/ParcoursPage.tsx
+- Lot titres version testée : src/pages/PlayerPage.tsx ; SHA travail 6FAE7C05A67CED31C34BD1FF654B90B8FF8AE42BA89518D01F0B6FDCC448C2AD ; index avant commit 100644 e74bf4141aad6fd04465adda8db49cc8de58aa7d 0	src/pages/PlayerPage.tsx
+- Lot titres version testée : src/pages/StopDetailPage.tsx ; SHA travail 249965ECB3B48E1F3C4AA1A9797B375A629568776806621DF47C8CBAE8CDF0AF ; index avant commit 100644 36356d2708a91b7cf065f403fb147bf28e48d35b 0	src/pages/StopDetailPage.tsx
+- Lot titres version testée : tests/pages-presentation.test.tsx ; SHA travail 0C51964A541E4F9572DFBD6230959F90215DC061295699CF8D7479E7C20D8E83 ; index avant commit 100644 ade2eb85cee30e562e42ecd7bba7c893119d9121 0	tests/pages-presentation.test.tsx
+- Lot titres version testée : tests/stop-labels.test.ts ; SHA travail 96275C98B623AE37D152FD6A575EE8B1B6A1BFDFD5D606083D384253E59EF2EE ; index avant commit non suivi
+- Lot titres version testée : docs/recette-finalisation-2026-11-09.md ; SHA travail 00930E83D9F99B5C4EB4D244B97B3635261D336F21F2325BEC45091366FFF47B ; index avant commit 100644 e3065e989b1ee960ca34e2e0221f6622340af5da 0	docs/recette-finalisation-2026-11-09.md
+
+Publication du checkpoint : 2026-11-09T10:05:00.7249802+01:00

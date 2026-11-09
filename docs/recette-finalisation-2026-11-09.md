@@ -71,3 +71,24 @@ Le correctif automatique proposé implique un changement majeur/déclassement de
 Les contenus historiques des fiches restent majoritairement FR ; prochaine tâche autonome = réutiliser les titres/paragraphes EN déjà sourcés dans le cache Wivi, sans inventer de traduction ni remplacer le FR.
 Les 494 mots sans borne, droits/associations photo et musique, validations historiques/linguistiques, vrais appareils et QR final restent suivis explicitement dans le registre et la liste humaine existante.
 Aucune narration DE/IT/PL/NL/ES nouvelle ni validation humaine fabriquée.
+
+## Deuxième lot — titres anglais publiés
+
+Base de ce lot : c6406e0187d13b2d3bc0e970eea3e99ca9c507d2, premier lot poussé et confirmé par git ls-remote sur TESTv1.
+
+- Les 22 titres EN sont repris exactement du cache Wivi autorisé déjà utilisé pour les transcriptions, après retrait des seuls espaces périphériques. Empreinte de la référence : cd01fe1b935c7f668684f375127bd14968a1340b690a425b1136011162da6809 ; les 22 URL correspondent aux sources des narrations. Aucune traduction inventée ni nouvelle récupération nécessaire.
+- Données séparées dans english-stop-labels.en.json (4 655 octets) et résolveur stopLabels.ts. STOPS reste intact ; titres FR, titres courts et titres du lecteur préservés. Les cinq autres interfaces conservent un repli FR correctement balisé et leurs audios indisponibles.
+- Cartes, fiches, lecteur, mini-lecteur, navigation et recherche utilisent la même résolution. EN14 porte le titre publié SOE mannequin, sans traduction automatique du nom historique non confirmé. Les repères du plan restent français même lorsque le titre est anglais.
+- Le gros fichier de transcriptions EN n'est pas importé dans le résolveur de titres : chunk narratif inchangé à 382,97 kB. Entrée finale 467,82 kB / 144,71 kB gzip ; PWA52 entrées / 3780,00 KiB.
+
+Contrôles : suite applicative 97/97, code 0 ; après la dernière correction de langue du repère de plan, tests ciblés 13/13 et TypeScript code 0 ; build final code 0. Les 14 tests Python déjà réussis dans cette exécution n'ont pas été répétés pour ce lot exclusivement React/données de titres.
+
+Recette de production sur origine isolée 127.0.0.1:4199 :
+- En EN, engine retourne 02 et 12, dont 02. FOCKE-WULF ENGINE ; ouverture de la fiche 02, titre du plan EN et repère FR ; lecture EN02 native à 0,32 s, pause ensuite.
+- Recherche Enigma → 19 uniquement ; titre publié long lisible sans débordement à 390 puis 320 px. Fiche19 et navigation de18 vers19 conservent le titre et son balisage EN.
+- Passage DE : langue document de, titre du mini-lecteur FR conservé/balisé, message de narration absente et lecture désactivée ; aucune ressource factice lancée.
+- Progression à 0/22 après ces essais ; aucune erreur/warn console ; viewport rétabli, onglet de test fermé et serveur arrêté volontairement (code1).
+
+Capture : unique-20261109-titre-en-mobile.jpg. Logs : unique-20261109-labels-tests.txt et unique-20261109-labels-build-final.txt, hors dépôt. Le test hors connexion de ce deuxième lot n'a pas été rejoué : audio, cache et transcriptions sont inchangés ; la preuve sans serveur du premier lot garde sa portée, sans devenir un nouveau test de ces titres.
+
+Limite explicite : ce lot localise les titres ; les contextes, citations, légendes et autres contenus historiques des fiches restent FR. Le récit EN propre à chaque piste existe déjà dans le registre ; sa lecture directement dans la fiche est la prochaine tâche, avec séparation des passages documentaires non confirmés (08/09/12) et conservation des contenus FR.

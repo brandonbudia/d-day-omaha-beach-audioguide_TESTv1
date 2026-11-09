@@ -6,6 +6,7 @@ import { t } from '../i18n/translations';
 import { visualLabel } from '../i18n/visualLabels';
 import { getMediaResource } from '../data/mediaCatalog';
 import { experienceText as x } from '../i18n/experienceLabels';
+import { getStopLabel } from '../data/stopLabels';
 
 interface PersistentPlayerBarProps {
   onOpenFullPlayer: () => void;
@@ -22,6 +23,7 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
   const titleId = React.useId();
   React.useEffect(() => audioPlayer.subscribe(setState), []);
   const currentStop = STOPS.find((stop) => stop.id === state.currentStopId) || STOPS[0];
+  const title = getStopLabel(currentStop, state.language);
   const unavailable = getMediaResource(currentStop.id, state.language).status === 'unavailable';
   const duration = !unavailable && Number.isFinite(state.duration) ? Math.max(0, state.duration) : 0;
   const progress = duration > 0 ? Math.max(0, Math.min(100, state.currentTime / duration * 100)) : 0;
@@ -55,7 +57,7 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
             <img src={currentStop.imageUrl} alt="" width="44" height="44" />
             <span className="museum-mini-player-copy">
               <span className="museum-mini-player-meta">{t('nav_stop', state.language)} {currentStop.number}<span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span></span>
-              <strong id={titleId} lang="fr">{currentStop.title}</strong>
+              <strong id={titleId} lang={title.language}>{title.text}</strong>
             </span>
           </button>
           <div className="museum-mini-player-controls">

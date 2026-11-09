@@ -10,6 +10,7 @@ import { TranscriptNotice } from '../components/TranscriptNotice';
 import { useReadingPreferences } from '../hooks/useReadingPreferences';
 import { getMediaResource } from '../data/mediaCatalog';
 import { experienceText as x } from '../i18n/experienceLabels';
+import { getStopLabel } from '../data/stopLabels';
 
 interface PlayerPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -60,6 +61,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   }, [settingsOpen]);
 
   const currentStop = STOPS.find((stop) => stop.id === audioState.currentStopId) ?? STOPS[0];
+  const title = getStopLabel(currentStop, currentLang, 'playerTitle');
+  const imageTitle = getStopLabel(currentStop, currentLang);
   const currentIndex = STOPS.findIndex((stop) => stop.id === currentStop.id);
   const nextStop = STOPS[currentIndex + 1];
   const resource = getMediaResource(currentStop.id, audioState.language);
@@ -75,10 +78,10 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
       '--player-navigation-height': `${shellHeights.navigation}px`,
     } as React.CSSProperties}>
       <section className="player-station" aria-labelledby={stationHeadingId}>
-        <img className="player-cover" src={currentStop.imageUrl} alt={currentStop.title} lang="fr" />
+        <img className="player-cover" src={currentStop.imageUrl} alt={imageTitle.text} lang={imageTitle.language} />
         <div className="player-station-copy">
           <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
-          <h2 id={stationHeadingId} lang="fr">{currentStop.playerTitle}</h2>
+          <h2 id={stationHeadingId} lang={title.language}>{title.text}</h2>
           <p lang="fr" className="player-speakers">{currentStop.speakers}</p>
           <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
             <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}

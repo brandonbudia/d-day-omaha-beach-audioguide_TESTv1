@@ -9,6 +9,7 @@ import { useAudioSelector } from '../audio/useAudioSelector';
 import { useVisitorState } from '../visit/useVisitorState';
 import { isDiscovered } from '../visit/visitorStore';
 import { getMediaResource } from '../data/mediaCatalog';
+import { getStopLabel } from '../data/stopLabels';
 
 interface ParcoursPageProps {
   onSelectStopDetail: (stopId: string) => void;
@@ -20,7 +21,7 @@ interface ParcoursPageProps {
 export function matchesStopSearch(stop: StopData, query: string, language: SupportedLanguage) {
   const normalize = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLocaleLowerCase(language);
   const needle = normalize(query.trim());
-  const text = normalize(`${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag}`);
+  const text = normalize(`${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag} ${getStopLabel(stop, language).text}`);
   return !needle || text.includes(needle);
 }
 

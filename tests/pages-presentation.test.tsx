@@ -17,6 +17,7 @@ import { LanguageSelector } from '../src/components/LanguageSelector';
 import { PhotoViewer } from '../src/components/PhotoViewer';
 import { PersistentPlayerBar } from '../src/components/PersistentPlayerBar';
 import { detailLabel, visualLabel } from '../src/i18n/visualLabels';
+import { getStopLabel } from '../src/data/stopLabels';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -48,19 +49,38 @@ test('photo viewer distinguishes inherited French captions from translated cover
   assert.match(translated, /class="museum-photo-stage" lang="en"/);
 });
 
-test('mini-player accessible name keeps its English action separate from the French station title', () => {
-  audioPlayer.setLanguage('en');
+test('mini-player accessible name uses published English titles and identifies French fallbacks', () => {
   audioPlayer.setStop('19', false);
   try {
-    const html = renderToStaticMarkup(<PersistentPlayerBar onOpenFullPlayer={noop} />);
-    assert.match(html, /class="museum-mini-player-open"[^>]*aria-labelledby="[^"]+ [^"]+"/);
-    assert.ok(html.includes(`class="sr-only" lang="en">${escapeText(visualLabel('en', 'openPlayer'))}</span>`));
-    assert.ok(html.includes(`lang="fr">${escapeText(STOPS.find((stop) => stop.id === '19')!.title)}</strong>`));
-    assert.doesNotMatch(html, /class="museum-mini-player-open"[^>]*aria-label=/);
+    for (const language of ['en', 'de'] as const) {
+      audioPlayer.setLanguage(language);
+      const title = getStopLabel(STOPS.find((stop) => stop.id === '19')!, language);
+      const html = renderToStaticMarkup(<PersistentPlayerBar onOpenFullPlayer={noop} />);
+      assert.match(html, /class="museum-mini-player-open"[^>]*aria-labelledby="[^"]+ [^"]+"/);
+      assert.ok(html.includes(`class="sr-only" lang="${language}">${escapeText(visualLabel(language, 'openPlayer'))}</span>`));
+      assert.ok(html.includes(`lang="${title.language}">${escapeText(title.text)}</strong>`));
+      assert.doesNotMatch(html, /class="museum-mini-player-open"[^>]*aria-label=/);
+    }
   } finally {
     audioPlayer.setLanguage('fr');
     audioPlayer.setStop('01', false);
   }
+});
+
+test('English tour and all 22 detail pages display published titles while other languages retain French labels', () => {
+  const tour = renderToStaticMarkup(<ParcoursPage onSelectStopDetail={noop} onOpenPlayer={noop} currentLang="en" />);
+  const headings = Array.from(tour.matchAll(/<h2\b([^>]*)>(.*?)<\/h2>/g));
+  assert.equal(headings.length, 22);
+  for (const [index, stop] of STOPS.entries()) {
+    const title = getStopLabel(stop, 'en');
+    assert.match(headings[index][1], /lang="en"/);
+    assert.equal(headings[index][2], escapeText(title.text));
+    const detail = renderToStaticMarkup(<StopDetailPage stopId={stop.id} onNavigateStop={noop} onOpenPlayer={noop} currentLang="en" />);
+    assert.ok(detail.includes(`lang="en">${escapeText(title.text)}</h2>`), stop.id);
+  }
+  const stop = STOPS.find((item) => item.id === '14')!;
+  const fallback = renderToStaticMarkup(<StopDetailPage stopId="14" onNavigateStop={noop} onOpenPlayer={noop} currentLang="de" />);
+  assert.ok(fallback.includes(`lang="fr">${escapeText(stop.title)}</h2>`));
 });
 
 test('all 22 piece pages expose one launch action and keep narrative, photos, plan and navigation', () => {

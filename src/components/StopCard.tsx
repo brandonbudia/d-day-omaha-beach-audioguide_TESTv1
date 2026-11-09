@@ -5,6 +5,7 @@ import { t, type SupportedLanguage } from '../i18n/translations';
 import { experienceText as x } from '../i18n/experienceLabels';
 import { getMediaResource } from '../data/mediaCatalog';
 import { formatTime } from '../audio/formatTime';
+import { getStopLabel } from '../data/stopLabels';
 import { useVisitorState } from '../visit/useVisitorState';
 import { visitorStore, hasListened, isDiscovered, isConsulted } from '../visit/visitorStore';
 
@@ -21,6 +22,7 @@ export function StopCard({ stop, isActive, isPlaying, currentLang, onPlay, onSel
   const state = useVisitorState();
   const piece = state.pieces[stop.id];
   const media = getMediaResource(stop.id, currentLang);
+  const title = getStopLabel(stop, currentLang);
   const status = hasListened(piece) ? x('listened', currentLang) : isDiscovered(piece) ? x('discovered', currentLang) : isConsulted(piece) ? x('consulted', currentLang) : '';
   return <article className="museum-card overflow-hidden mb-4" data-playing={isPlaying} data-selected={isActive}>
     <a href={`/stop/${stop.id}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px]" onClick={(event) => {
@@ -28,10 +30,10 @@ export function StopCard({ stop, isActive, isPlaying, currentLang, onPlay, onSel
       event.preventDefault(); onSelectDetail(stop.id);
     }}>
       <div className="flex gap-4 p-4">
-        <img src={stop.imageUrl} alt={stop.title} lang="fr" loading="lazy" decoding="async" width="96" height="104" className="w-24 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0" />
+        <img src={stop.imageUrl} alt={title.text} lang={title.language} loading="lazy" decoding="async" width="96" height="104" className="w-24 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0" />
         <div className="min-w-0 flex-1">
           <p className="museum-eyebrow mb-1">{t('nav_stop', currentLang)} {stop.number}{media.status !== 'unavailable' && ` · ${formatTime(media.durationSeconds)}`}</p>
-          <h2 lang="fr" className="font-heading font-bold text-lg leading-snug">{stop.title}</h2>
+          <h2 lang={title.language} className="font-heading font-bold text-lg leading-snug">{title.text}</h2>
           <p lang="fr" className="museum-muted text-sm mt-2 line-clamp-2">{stop.subtitle}</p>
           {status && <p className="mt-2 text-sm font-semibold flex items-center gap-1">{isDiscovered(piece) && <Check size={15} aria-hidden="true" />}{status}</p>}
         </div>
