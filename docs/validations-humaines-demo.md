@@ -47,15 +47,17 @@ Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-compar
 | ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 | ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
-## Anglais — 450 mots affichés sans repère
+## Anglais — 449 mots affichés sans repère
 
 Source de travail : `src/data/english-transcripts.en.json`. Les 22 MP3 et les 22 références anglaises publiées ont déjà été comparés automatiquement. Les mots listés sont encore provisoires : ne pas affirmer que la langue entière est validée humainement. Le récit anglais est distinct du français.
 
 Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un même passage. Chaque entrée `indice : mot` est à valider séparément. Motifs conservés : **P** = confiance de reconnaissance insuffisante ; **L** = mot source non reconnu exactement ; **B** = borne invalide/conflit ; **A** = autre motif à consulter dans le JSON. Ces motifs sont des raisons de prudence, pas la preuve d’une erreur.
 
+Mise à jour du 9 novembre : seul « history » d'EN01 a reçu un repère supplémentaire, automatiquement corroboré et toujours en attente de relecture humaine. EN01 compte maintenant 239/254 mots minutés et 15 sans repère ; total EN 6573/7022. Les autres stations anglaises conservent leurs données. Les 449 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
+
 | Station | Mots affichés à vérifier | Passages documentaires séparés |
 |---|---:|---:|
-| 01 | 16 | 0 |
+| 01 | 15 | 0 |
 | 02 | 14 | 0 |
 | 03 | 24 | 0 |
 | 04 | 16 | 0 |
@@ -82,6 +84,12 @@ Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un
 
 Audio : `public/audio/en/stop-01.mp3`. Référence publiée : [page anglaise Wivi](https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en).
 
+Revue automatique complémentaire terminée pour les 16 omissions initiales : cinq fenêtres medium locales sans texte imposé (0–13 / 26–34 / 41–67 / 80–96 / 108–114 s), soit 69 s au total, en deux petits lots. Les autres passages n'ont pas été retraités. Caches `en01-targeted-20261109`, hors dépôt ; ne pas relancer ces fenêtres inchangées.
+
+- ☐ Relire « history », phrase17/mot2 : intervalle medium entier **111,10–111,52 s**, corroboré lexicalement par small **110,94–111,36 s** ; aucun autre repère déplacé. Provenance supplémentaire explicitement identifiée dans le JSON et vérifiée par les tests, sans attribution au mauvais cache. Ce mot n'est plus dans les 15 omissions ci-dessous.
+- « stories », « Second », « which » (phrase11) et « Fabien » restent incertains malgré le second modèle. En particulier, small reconnaît « Fabia » ; medium propose « Fabien » avec confiance0,698. Ne pas forcer le nom ni modifier le texte publié.
+- Les autres omissions conservent des divergences ou conflits avec les voisins. Exemples : and5,50–5,66 contre sometimes dès5,44 ; which10,82–11,02 contre testifies dès10,80 ; With82,92–83,02 contre the dès82,92. Corriger ces chaînes demanderait une preuve spécifique des voisins ; aucun intervalle n'a été tronqué pour les faire rentrer.
+
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
 | ☐ | 1 | 0:01.54 | 0 : stories (P) ; 9 : and (P) | stories of women and men, anecdotes of historical facts, and sometimes dramas. |
@@ -93,7 +101,6 @@ Audio : `public/audio/en/stop-01.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 11 | 1:01.88 | 6 : which (P) ; 7 : over (P) | It had become a permanent madness which, over the years, destroyed our family and himself. |
 | ☐ | 13 | 1:22.92 | 0 : With (P) ; 6 : father (P) ; 11 : the (P) | With the sudden departure of our father and our different paths, the future and the soul of this place found themselves compromised. |
 | ☐ | 14 | 1:31.98 | 0 : It (P) | It was an elusive instinct that convinced my brother and me to continue our adventure through the search for historical objects, and to present them to you with their history. |
-| ☐ | 17 | 1:49.58 | 2 : history (P) | Welcome to history." |
 
 ### EN02 — 02. Moteur Focke-Wulf & Pilotes Luftwaffe
 

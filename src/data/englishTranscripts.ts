@@ -10,6 +10,14 @@ interface EnglishTranscriptSource {
   referenceSha256: string;
   recognitionCacheKey: string;
   recognitionCacheSha256: string;
+  supplementaryRecognitionCaches?: {
+    id: number;
+    path: string;
+    sha256: string;
+    cacheKey: string;
+    modelRevision: string;
+    windowSeconds: number[];
+  }[];
   languageProbability: number;
   totalWords: number;
   timedWords: number;
@@ -17,7 +25,8 @@ interface EnglishTranscriptSource {
   referenceOnlyParagraphs: string[];
   unresolvedWords: { segmentIndex: number; tokenIndex: number; text: string; reason: string; referenceOnly?: boolean }[];
   excludedBackgroundDialogue: { startSeconds: number; endSeconds: number; reason: string }[];
-  // Display token index, unchanged native ASR start/end, confidence, native word index.
+  // Display token index, unchanged native ASR start/end, confidence, native word index,
+  // optional supplementary cache ID (absent/0 means the original recognition cache).
   segments: { startSeconds: number; text: string; timings: number[][] }[];
 }
 

@@ -138,3 +138,19 @@ Recette navigateur réelle :
 - Serveurs4198/4200 arrêtés (codes1 intentionnels), zéro écoute vérifié ; onglets de test fermés, viewport rétabli. Réseau Windows non coupé ; aucune écoute humaine, mesure sur téléphone physique ou garantie des images distantes revendiquée.
 
 Journaux externes : resume-20261109-fr22-targeted.txt, resume-20261109-fr22-comparison.txt, resume-20261109-fr22-app-tests.txt, resume-20261109-fr22-typescript.txt, resume-20261109-fr22-build.txt, resume-20261109-fr22-final-targeted.txt. Les trois caches de clips et leurs identités vérifiables restent dans fr22-targeted-20261109, hors dépôt. Anciennes sélections FR non rejouées ; « à » FR01 déjà réparé conservé.
+
+## Cinquième lot — revue EN01 et ajout de history
+
+Base : correctif FR22 482f36c262d14e35dad235b8a3a4a648822be984, poussé et SHA distant confirmé. Les seize omissions initiales EN01 ont été comparées au small existant par cinq clips medium sans texte imposé : 0–13 / 26–34 / 41–67 / 80–96 / 108–114 s, soit 69 s. Deux commandes, codes 0 ; les clips du premier lot ne sont pas rejoués dans le second. Modèle local inchangé, aucun téléchargement/installation, MP3 SHA 6284e5501b82caed64c43a9cdb462778ae941c34d03d504e1f2b0c027dca710d inchangé.
+
+Seul history, phrase17/mot2, reçoit l'intervalle medium entier 111,10–111,52 s (p=0,9745679497718811), corroboré lexicalement par small 110,94–111,36 s. Tous les repères antérieurs sont conservés. Les quinze autres mots restent sans borne : confiance insuffisante ou conflit de voisinage. Fabien/Fabia n'est pas forcé. Le tableau humain garde les passages à relire et distingue le mot désormais minuté.
+
+La provenance supplémentaire est explicite : manifeste par station (SHA du cache, clé, révision du modèle, fenêtre) et sixième champ optionnel du tuple natif. Les tuples historiques à cinq champs restent associés au small original ; le lecteur utilise toujours les trois premiers champs. Aucun poids/modèle ou outil Python ajouté à React. Tests : chaque nombre, confiance et mot est comparé au bon cache natif ; garde portable du manifeste/tuple et snapshot du registre entier avant l'unique ajout.
+
+État : EN01 239/254 mots minutés, 15 sans borne ; EN total 6573/7022, 449 sans borne. FR inchangé à 7233/7276 ; total 492 omissions FR+EN. Les données restent automatiques, non certifiées par écoute humaine.
+
+Contrôles : **102/102 tests applicatifs**, aucun échec ni ignoré, dont vérification native des caches réellement exécutée ; TypeScript et build codes 0. Les 14 tests Python purs déjà réussis dans cette reprise restent applicables, scripts du projet inchangés. Build index-BU13OQ71.js ; registre EN383,32 kB/149,23 kB gzip ; PWA53 entrées/3782,98 KiB.
+
+Navigateur : nouvelle visite pour activer normalement le service worker, aucune suppression de cache. Player01 en EN et 239 mots identifiés ; clic sur history dans Welcome to history. : horloge native111,23 s, current=history, pause111,32 s. À390×844, phrase et commandes lisibles, capture resume-20261109-en01-history-mobile.jpg. Serveur arrêté volontairement (code1), netstat0 sur4198, page rechargée depuis le cache : nouveau shell, Player01, 239 mots, clic history111,30 s et coloration courante, pause ensuite ; aucune alerte ni console error/warn. Pack anglais existant réutilisé, pas retéléchargé. Réseau Windows non coupé, aucune écoute humaine prétendue. Viewport rétabli, onglet fermé et aucun serveur laissé actif.
+
+Journaux externes : resume-20261109-en01-targeted.txt, resume-20261109-en01-remaining.txt, resume-20261109-en01-app-tests.txt, resume-20261109-en01-typescript.txt, resume-20261109-en01-build.txt. Caches dans en01-targeted-20261109. La prochaine revue concerne EN02–21 ; les mots EN01/EN22 déjà examinés ne doivent pas subir un calcul identique sans changement de preuve.

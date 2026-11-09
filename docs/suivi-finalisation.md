@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 11 ; phase correction FR22 vérifiée, publication en préparation.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 15 ; phase EN01 vérifié, publication ciblée en préparation.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -48,7 +48,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EN22-02 | P1 | blocked-human | Musée : identité et droits de la fin sonore ; conserver MP3 intégral ; rouvrir sur réponse |
 | FR22-01 | P1 | blocked-human | 331/350 ; même ajouté et six voisins corrigés avec preuvesCTC/medium ; 19omissions et sept repères à relire |
 | FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
-| EN-01 | P1 | pending | 429 autres mots EN par phrases après EN22 |
+| EN01-REVIEW | P1 | blocked-human | Seize omissions initiales comparées ; history ajouté, quinze restent sans borne. Pas de nouveau calcul identique |
+| EN-01 | P1 | pending | Stations02–21 : 413 mots sans borne ; établir le prochain petit lot depuis les caches, sans retraiter EN01/EN22 |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
@@ -63,11 +64,11 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
 | DEL-01 | P1 | in_progress | Tests complets, diff, commit ciblé et push des seuls lots vérifiés |
 
-## Tâche active : DEL-01, publication du correctif FR22
+## Tâche active : DEL-01, vérification et publication EN01
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Prochaine action : contrôle du diff et index ciblé des cinq fichiers du correctif FR22, commit/push TESTv1 puis vérification du SHA distant. Après publication, EN-01 : petit complément medium réellement neuf sur les mots EN01 manquants, en conservant les caches et tous les repères existants sauf défaut démontré. Ne pas relancer FR01–21 ou les clips FR22 inchangés.
+EN01 vérifié : seul history est ajouté, intervalle medium entier 111,10–111,52 s, aucun ancien repère déplacé. Quinze omissions restent en attente humaine, sans calcul identique à relancer. Prochaine action : examiner le diff indexé des six fichiers utiles, commit/push ciblés et SHA distant. Ensuite EN02–21, 413 mots : contrôler les caches disponibles avant tout complément ciblé. Si une reprise constate ce lot déjà publié avec ces empreintes et ses preuves, passer directement à EN02 sans rejouer la recette.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -190,3 +191,44 @@ Serveurs 4198 et 4200 arrêtés volontairement, codes 1 ; netstat 0/0. Onglets c
 Publication du checkpoint : 2026-11-09T21:29:04.5550500+01:00
 
 Publication du checkpoint : 2026-11-09T21:29:37.1768113+01:00
+
+## Checkpoint 12 — FR22 publié, petit lot EN01 neuf
+482f36c262d14e35dad235b8a3a4a648822be984 publié sur TESTv1/branche autorisée et confirmé par git ls-remote, codes0. Aucun autre fichier sale que dev-dist/sw.js avant ce checkpoint.
+Source EN01 : audio SHA6284e5501b82caed64c43a9cdb462778ae941c34d03d504e1f2b0c027dca710d ; durée117,29s. Seul cache acoustique existant identifié : audio-language-audit-20261107/en-01-16ee0282445765de614173d21550448c733fb8952479abc987addc5d8dbb738c.json, SHA54d57d509a98e93cc3cbd3325a722b4dedb080201eb956e1699011b78c05f952. Concordance au registre confirmée en lecture seule.
+Aucun medium/CTC EN01 déjà identifié. Deux fenêtres neuves0–13 et108–114s pour stories(1/0),and(1/9),which(2/8),history(17/2),soit19s ; pas de reprise small ou piste entière. Fabien/Fabia reste hors de ces fenêtres et doit rester sans borne.
+Outil externe en01-targeted-20261109.py, même garde SHA/configuration/modèle local et cache par échantillons que les clips déjà vérifiés. Le script ne modifie pas les données applicatives ; acceptedWords=0 tant que la comparaison n’est pas faite. Aucun téléchargement ni nouvelle dépendance. Prochaine étape : rapprocher les quatre candidats et leurs voisins, préserver tous les repères sauf défaut démontré puis consigner les décisions.
+
+Publication du checkpoint : 2026-11-09T21:31:06.9440525+01:00
+
+## Checkpoint 13 — EN01 premier complément et lot partiel
+Deux clips traités, code0 : 0–13 et108–114s,19s audio, temps de reconnaissance8,516+6,609s. Caches1f954c2d648368c89762437ba0673b6133fee06970b5aaff200763a883818b87 et2372982ffdcacca51a65094105037d74467d54edc5af98849985aa013727338d. SHA MP3 inchangé.
+stories : medium1,48–1,74,p0,752 et chevauchement ; and medium5,50–5,66 heurte sometimes5,44 ; which medium10,82–11,02 heurte testifies10,80. Ces trois mots restent sans repère, aucun voisin déplacé.
+history : medium111,10–111,52,p0,9745679497718811,indexnatif6, contre small110,94–111,36,p0,683. Mot exact corroboré, intervalle entier medium sans chevauchement ; ajout dans phrase17/token2, tous les anciens intervalles inchangés. Source supplémentaire explicite dans le JSON (id1, SHA/clé/révision/fenêtre) et sixième champ optionnel du tuple. Les cinq champs historiques restent compatibles, aucun repère présenté comme issu du mauvais modèle. Adaptateur runtime utilise toujours les trois premiers champs. État partiel EN01239/254,15sansborne ; totalEN6573/7022 et492omissionsFR+EN attendus.
+Cinq tests anglais ciblés et TypeScript réussis, codes0, contrôle des caches natifs non ignoré. Snapshot de tous les anciens enregistrements inchangé après retrait du seul delta history. Pas encore de build/recette ni de commit de ce lot.
+Prochaine reconnaissance réellement neuve : fenêtres26–34 /41–67 /80–96s (50s), portant les douze autres mots EN01 ; aucun nouveau passage FR ou EN22. Même modèle local/offline et script externe, création/cache par échantillons, aucun texte fourni. Ensuite décider et vérifier le lot avant publication ; aucune nouvelle borne sur un simple nom approchant.
+
+Publication du checkpoint : 2026-11-09T21:38:28.5337868+01:00
+
+## Checkpoint 14 — décisions EN01 complètes, contrôles finaux en attente
+Les trois fenêtres nouvelles26–34 /41–67 /80–96s ont terminé, code0,50s audio ; reconnaissance8,250+12,750+9,187s. Aucune fenêtre du premier lot rejouée. Cinq clips et69s au total pour les16omissions initiales, modèle local inchangé et SHA MP3 conservé.
+Douze autres décisions : Fabien(pmedium0,698) et Second(p0,777) restent sous confiance ; which phrase11 p0,456. But27,82–28,02 heurte let27,96 ; and48,24–48,54 heurte I48,30 ; But54,96–55,20 heurte at55,12 ; by60,36–60,58 heurte this60,46 ; over64,84–65,14 heurte the65,00 ; With82,92–83,02 heurte the82,92 ; father84,54–84,90 heurte and84,70 ; the87,16–87,26 heurte future87,10 ; It91,74–92,08 heurte was91,98. Aucun voisin déplacé pour insérer ces candidats.
+Décision unique retenue : history111,10–111,52s, p0,9745679497718811, intervalle medium natif entier et source publiée inchangée ; pas de synchronisation artificielle. EN01239/254,15sansborne ; EN6573/7022,449sansborne. FR7233/7276 inchangé ;492omissionsFR+EN.
+Le sixième champ optionnel des tuples désigne un cache supplémentaire ; absent/0 reste le small d’origine,1 désigne le clip medium identifié par SHA/clé/révision/fenêtre. Les tests comparent aussi chaque nouveau nombre et mot au cache natif et protègent tous les anciens enregistrements. Aucun modèle ajouté à React et aucune dépendance installée.
+Revue en lecture seule sans défaut bloquant ; garde portable du tuple complet et manifeste history ajoutée après les cinq tests ciblés/TypeScript. Tests complets, build et navigateur encore à effectuer sur cette version. Liste humaine mise à jour sans cocher de validation. Les413omissionsEN02–21 restent en file ; pas d’analyse globale à recommencer.
+
+Publication du checkpoint : 2026-11-09T21:44:37.4381128+01:00
+
+## Checkpoint 15 — EN01 vérifié
+Base HEAD : 482f36c262d14e35dad235b8a3a4a648822be984. Lot à publier : src/data/english-transcripts.en.json, src/data/englishTranscripts.ts, tests/english-transcripts.test.ts et les trois documents de suivi/recette/validation. Aucun MP3, contenu textuel, ancien repère ou autre station modifié ; dev-dist/sw.js reste préexistant et exclu.
+102/102 tests applicatifs, aucun échec ou ignoré ; vérification des caches natifs exécutée et garde portable du tuple/manifeste ajoutée. TypeScript et build codes 0. Python 14/14 réussi au début de cette reprise, scripts du projet inchangés.
+Build index-BU13OQ71.js, registre EN 383,32 kB / 149,23 kB gzip, PWA 53 entrées / 3782,98 KiB. Navigateur Player01 explicitement en EN : 239 mots, clic history vers 111,23 s, current=history, pause 111,32 s. Mobile 390×844 lisible ; capture resume-20261109-en01-history-mobile.jpg.
+Après arrêt du serveur, netstat zéro écoute sur4198, rechargement de la page et nouveau shell depuis le cache : clic history vers111,30 s, coloration courante et pause ; aucune alerte ni console error/warn. Pack EN existant réutilisé, aucune garantie ajoutée sur les images distantes ou un vrai appareil. Viewport restauré, onglet fermé, serveur arrêté volontairement (code1).
+État courant : EN01 239/254, quinze omissions soumises à écoute ; EN6573/7022, FR7233/7276, 492 omissions FR+EN. Aucun taux complet ou validation humaine inventé. Recette détaillée : recette-finalisation-2026-11-09.md, cinquième lot.
+Prochaine tâche après publication : vérifier les caches medium/CTC EN02–21 et examiner seulement les413 omissions restantes de ces stations ; ne pas refaire EN01, EN22, FR01–21 ou les clips FR22 déjà contrôlés.
+- Version contrôlée : src/data/english-transcripts.en.json ; SHA travail 671B51AC5E727F35A98B99D42F1A582C7DFCAAE317D56240E5E18168D62205B3 ; index avant préparation 100644 50fc4debe160fa774c64f8ffaee93da9548843fc 0	src/data/english-transcripts.en.json
+- Version contrôlée : src/data/englishTranscripts.ts ; SHA travail 1B40114607880FE9B706E3E35945C1EC113A7EF96B79CD381C26079067B407B1 ; index avant préparation 100644 0c4f135d30b90a4a24e738b70f4c21e0f6af045b 0	src/data/englishTranscripts.ts
+- Version contrôlée : tests/english-transcripts.test.ts ; SHA travail E9F5709AE15D6F7BDE48E4CDAAE4C0F7187E108648100D1E848A966D76FEA394 ; index avant préparation 100644 16bf8967782a33697414819eac06b68398e52b8c 0	tests/english-transcripts.test.ts
+- Version contrôlée : docs/validations-humaines-demo.md ; SHA travail FD2DB122A2171D27D0721A19B51F7A74D1F4965D29424E2F098F82D57F9044BF ; index avant préparation 100644 8f8c4da2b783885c4cd9e9fdc52dee523e41b7b3 0	docs/validations-humaines-demo.md
+- Version contrôlée : docs/recette-finalisation-2026-11-09.md ; SHA travail E84A0478C645F6616ECE8FAD84FE0881AAC89B894984A19593D7A0FD29381CE8 ; index avant préparation 100644 566a40ca3729a9987b9d33da4543e09ef9d286e5 0	docs/recette-finalisation-2026-11-09.md
+
+Publication du checkpoint : 2026-11-09T21:48:55.2041150+01:00

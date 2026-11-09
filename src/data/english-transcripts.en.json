@@ -7972,9 +7972,10 @@
       "referenceSha256": "7b62e33d57e9941f937760523b7f0d5da4c5698973909f012970d177f456ccd6",
       "recognitionCacheKey": "16ee0282445765de614173d21550448c733fb8952479abc987addc5d8dbb738c",
       "recognitionCacheSha256": "54d57d509a98e93cc3cbd3325a722b4dedb080201eb956e1699011b78c05f952",
+      "supplementaryRecognitionCaches": [{"id": 1, "path": "en01-targeted-20261109/en01-medium-window-2372982ffdcacca51a65094105037d74467d54edc5af98849985aa013727338d.json", "sha256": "1bf9c957170f94bf41b184b292b6ec783a894cfffde518679778a747577e827d", "cacheKey": "2372982ffdcacca51a65094105037d74467d54edc5af98849985aa013727338d", "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f", "windowSeconds": [108, 114]}],
       "languageProbability": 0.9949498176574707,
       "totalWords": 254,
-      "timedWords": 238,
+      "timedWords": 239,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -8069,12 +8070,6 @@
           "segmentIndex": 14,
           "tokenIndex": 0,
           "text": "It",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 17,
-          "tokenIndex": 2,
-          "text": "history",
           "reason": "low-recognition-probability"
         }
       ],
@@ -8423,7 +8418,8 @@
           "text": "Welcome to history.\"",
           "timings": [
             [0,109.58,110.5,0.822880208492279,251],
-            [1,110.5,110.94,0.9814656972885132,252]
+            [1,110.5,110.94,0.9814656972885132,252],
+            [2,111.1,111.52,0.9745679497718811,6,1]
           ]
         }
       ]
