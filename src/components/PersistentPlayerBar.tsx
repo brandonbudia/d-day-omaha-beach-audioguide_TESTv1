@@ -18,6 +18,8 @@ const formatTime = (seconds: number) => {
 
 export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpenFullPlayer }) => {
   const [state, setState] = React.useState<AudioState>(audioPlayer.getState());
+  const openLabelId = React.useId();
+  const titleId = React.useId();
   React.useEffect(() => audioPlayer.subscribe(setState), []);
   const currentStop = STOPS.find((stop) => stop.id === state.currentStopId) || STOPS[0];
   const unavailable = getMediaResource(currentStop.id, state.language).status === 'unavailable';
@@ -48,11 +50,12 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
           aria-valuetext={`${formatTime(state.currentTime)} ${visualLabel(state.language, 'audioTime')} ${formatTime(duration)}`}
         />
         <div className="museum-mini-player-row">
-          <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-label={`${visualLabel(state.language, 'openPlayer')} — ${currentStop.title}`}>
+          <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-labelledby={`${openLabelId} ${titleId}`}>
+            <span id={openLabelId} className="sr-only" lang={state.language}>{visualLabel(state.language, 'openPlayer')}</span>
             <img src={currentStop.imageUrl} alt="" width="44" height="44" />
             <span className="museum-mini-player-copy">
               <span className="museum-mini-player-meta">{t('nav_stop', state.language)} {currentStop.number}<span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span></span>
-              <strong>{currentStop.title}</strong>
+              <strong id={titleId} lang="fr">{currentStop.title}</strong>
             </span>
           </button>
           <div className="museum-mini-player-controls">

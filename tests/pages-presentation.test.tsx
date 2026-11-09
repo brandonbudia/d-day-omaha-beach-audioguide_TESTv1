@@ -4,7 +4,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { STOPS } from '../src/data/stops';
 import { StopDetailPage } from '../src/pages/StopDetailPage';
-import { ParcoursPage } from '../src/pages/ParcoursPage';
+import { ParcoursPage, matchesStopSearch } from '../src/pages/ParcoursPage';
 import { WelcomePage } from '../src/pages/WelcomePage';
 import { visitorStore } from '../src/visit/visitorStore';
 import { getMediaResource } from '../src/data/mediaCatalog';
@@ -14,9 +14,54 @@ import { audioPlayer } from '../src/audio/audioStore';
 import { LANGUAGES } from '../src/i18n/translations';
 import { experienceText } from '../src/i18n/experienceLabels';
 import { LanguageSelector } from '../src/components/LanguageSelector';
+import { PhotoViewer } from '../src/components/PhotoViewer';
+import { PersistentPlayerBar } from '../src/components/PersistentPlayerBar';
+import { detailLabel, visualLabel } from '../src/i18n/visualLabels';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+
+test('station search finds Resistance with or without accents and preserves existing identifiers', () => {
+  for (const { code } of LANGUAGES) {
+    for (const query of ['resistance', ' RÉSISTANCE ', 'Re\u0301sistance']) {
+      assert.deepEqual(STOPS.filter((stop) => matchesStopSearch(stop, query, code)).map((stop) => stop.id), ['14', '22'], `${code}/${query}`);
+    }
+    assert.equal(STOPS.filter((stop) => matchesStopSearch(stop, '  ', code)).length, 22);
+    assert.deepEqual(STOPS.filter((stop) => matchesStopSearch(stop, 'Enigma', code)).map((stop) => stop.id), ['19']);
+    assert.equal(STOPS.filter((stop) => matchesStopSearch(stop, 'zzzz-no-piece', code)).length, 0);
+    assert.equal(matchesStopSearch(STOPS.find((stop) => stop.id === '19')!, '19', code), true);
+  }
+});
+
+test('photo viewer distinguishes inherited French captions from translated cover captions', () => {
+  const photo = STOPS[0].photos[0];
+  const french = renderToStaticMarkup(<PhotoViewer photo={photo} language="en" onClose={noop} />);
+  assert.match(french, /class="museum-photo-stage" lang="fr"/);
+  assert.ok(french.includes(`lang="fr">${escapeText(photo.caption)}</h2>`));
+  assert.ok(french.includes(`<p lang="fr">${escapeText(photo.source)}</p>`));
+  assert.ok(french.includes(`aria-label="${escapeText(detailLabel('en', 'zoomIn'))}"`));
+  assert.ok(french.includes(escapeText(detailLabel('en', 'credits'))));
+  const translated = renderToStaticMarkup(<PhotoViewer photo={{ ...photo, caption: 'Collection photo', source: 'Association pending', contentLanguage: 'en' }} language="en" onClose={noop} />);
+  assert.match(translated, /lang="en">Collection photo<\/h2>/);
+  assert.match(translated, /<p lang="en">Association pending<\/p>/);
+  assert.match(translated, /alt="Collection photo" lang="en"/);
+  assert.match(translated, /class="museum-photo-stage" lang="en"/);
+});
+
+test('mini-player accessible name keeps its English action separate from the French station title', () => {
+  audioPlayer.setLanguage('en');
+  audioPlayer.setStop('19', false);
+  try {
+    const html = renderToStaticMarkup(<PersistentPlayerBar onOpenFullPlayer={noop} />);
+    assert.match(html, /class="museum-mini-player-open"[^>]*aria-labelledby="[^"]+ [^"]+"/);
+    assert.ok(html.includes(`class="sr-only" lang="en">${escapeText(visualLabel('en', 'openPlayer'))}</span>`));
+    assert.ok(html.includes(`lang="fr">${escapeText(STOPS.find((stop) => stop.id === '19')!.title)}</strong>`));
+    assert.doesNotMatch(html, /class="museum-mini-player-open"[^>]*aria-label=/);
+  } finally {
+    audioPlayer.setLanguage('fr');
+    audioPlayer.setStop('01', false);
+  }
+});
 
 test('all 22 piece pages expose one launch action and keep narrative, photos, plan and navigation', () => {
   for (const [index, stop] of STOPS.entries()) {

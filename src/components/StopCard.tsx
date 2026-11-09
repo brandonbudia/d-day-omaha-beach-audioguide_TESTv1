@@ -28,7 +28,7 @@ export function StopCard({ stop, isActive, isPlaying, currentLang, onPlay, onSel
       event.preventDefault(); onSelectDetail(stop.id);
     }}>
       <div className="flex gap-4 p-4">
-        <img src={stop.imageUrl} alt={stop.title} loading="lazy" decoding="async" width="96" height="104" className="w-24 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0" />
+        <img src={stop.imageUrl} alt={stop.title} lang="fr" loading="lazy" decoding="async" width="96" height="104" className="w-24 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0" />
         <div className="min-w-0 flex-1">
           <p className="museum-eyebrow mb-1">{t('nav_stop', currentLang)} {stop.number}{media.status !== 'unavailable' && ` · ${formatTime(media.durationSeconds)}`}</p>
           <h2 lang="fr" className="font-heading font-bold text-lg leading-snug">{stop.title}</h2>

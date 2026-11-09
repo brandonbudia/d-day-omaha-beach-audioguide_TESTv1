@@ -28,6 +28,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const [shellHeights, setShellHeights] = useState({ header: 81, navigation: 81 });
   const settingsRef = useRef<HTMLDialogElement>(null);
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
+  const stationHeadingId = React.useId();
 
   useEffect(() => audioPlayer.subscribe(setAudioState), []);
   useEffect(() => { try { localStorage.setItem('dday-transcript-text-size', String(transcriptTextSize)); } catch { /* Reading remains available without storage. */ } }, [transcriptTextSize]);
@@ -73,11 +74,11 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
       '--player-header-height': `${shellHeights.header}px`,
       '--player-navigation-height': `${shellHeights.navigation}px`,
     } as React.CSSProperties}>
-      <section className="player-station" aria-label={currentStop.title}>
-        <img className="player-cover" src={currentStop.imageUrl} alt={currentStop.title} />
+      <section className="player-station" aria-labelledby={stationHeadingId}>
+        <img className="player-cover" src={currentStop.imageUrl} alt={currentStop.title} lang="fr" />
         <div className="player-station-copy">
           <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
-          <h2 lang="fr">{currentStop.playerTitle}</h2>
+          <h2 id={stationHeadingId} lang="fr">{currentStop.playerTitle}</h2>
           <p lang="fr" className="player-speakers">{currentStop.speakers}</p>
           <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
             <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
@@ -127,7 +128,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             </div>
           )}
         </div>
-        {!isTranscriptOpen && <div className="player-resting-cover"><img src={currentStop.imageUrl} alt="" /><p>{currentStop.witnessBadge}</p><button type="button" className="player-secondary-button" onClick={() => setIsTranscriptOpen(true)}>{t('text_transcript', currentLang)}</button></div>}
+        {!isTranscriptOpen && <div className="player-resting-cover"><img src={currentStop.imageUrl} alt="" /><p lang="fr">{currentStop.witnessBadge}</p><button type="button" className="player-secondary-button" onClick={() => setIsTranscriptOpen(true)}>{t('text_transcript', currentLang)}</button></div>}
       </section>
 
       <section className="player-transport" aria-label={x('audioControls', currentLang)}>

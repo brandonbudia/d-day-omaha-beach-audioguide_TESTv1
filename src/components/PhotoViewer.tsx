@@ -3,7 +3,7 @@ import { RotateCcw, X, ZoomIn, ZoomOut } from 'lucide-react';
 import { t, type SupportedLanguage } from '../i18n/translations';
 import { detailLabel } from '../i18n/visualLabels';
 
-export interface ViewerPhoto { url: string; caption: string; source: string; }
+export interface ViewerPhoto { url: string; caption: string; source: string; contentLanguage?: SupportedLanguage; }
 interface PhotoViewerProps { photo: ViewerPhoto; language: SupportedLanguage; onClose: () => void; }
 
 /** Native modal dialog provides focus containment and Escape without global key handlers. */
@@ -15,6 +15,7 @@ export const PhotoViewer: React.FC<PhotoViewerProps> = ({ photo, language, onClo
   const [failed, setFailed] = React.useState(false);
   const captionId = React.useId();
   const descriptionId = React.useId();
+  const contentLanguage = photo.contentLanguage ?? 'fr';
 
   React.useEffect(() => {
     const dialog = dialogRef.current;
@@ -56,14 +57,14 @@ export const PhotoViewer: React.FC<PhotoViewerProps> = ({ photo, language, onClo
         </div>
         <button ref={closeRef} type="button" className="museum-icon-button" onClick={onClose} aria-label={t('close', language)}><X size={25} aria-hidden="true" /></button>
       </div>
-      <div className="museum-photo-stage" tabIndex={zoom > 1 ? 0 : undefined} aria-label={zoom > 1 ? photo.caption : undefined}>
-        {failed ? <p role="status">{detailLabel(language, 'unavailableImage')}</p> : (
-          <img src={photo.url} alt={photo.caption} onError={() => setFailed(true)} style={zoom === 1 ? undefined : { width: `${zoom * 100}%`, maxWidth: 'none', maxHeight: 'none' }} />
+      <div className="museum-photo-stage" lang={contentLanguage} tabIndex={zoom > 1 ? 0 : undefined} aria-label={zoom > 1 ? photo.caption : undefined}>
+        {failed ? <p role="status" lang={language}>{detailLabel(language, 'unavailableImage')}</p> : (
+          <img src={photo.url} alt={photo.caption} lang={contentLanguage} onError={() => setFailed(true)} style={zoom === 1 ? undefined : { width: `${zoom * 100}%`, maxWidth: 'none', maxHeight: 'none' }} />
         )}
       </div>
       <div className="museum-photo-caption">
-        <h2 id={captionId}>{photo.caption}</h2>
-        <p>{photo.source}</p>
+        <h2 id={captionId} lang={contentLanguage}>{photo.caption}</h2>
+        <p lang={contentLanguage}>{photo.source}</p>
         <p id={descriptionId}>{detailLabel(language, 'credits')}</p>
       </div>
     </dialog>

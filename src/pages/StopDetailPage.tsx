@@ -60,7 +60,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
   return (
     <article className="museum-piece">
       <div className="museum-piece-cover museum-card">
-        <button type="button" className="museum-piece-cover-open" onClick={() => setExpandedPhoto({ url: stop.imageUrl, caption: `${visualLabel(currentLang, 'collectionPhoto')} — ${stop.number}`, source: detailLabel(currentLang, 'photoAssociation') })} aria-label={t('enlarge_photo', currentLang)}>
+        <button type="button" className="museum-piece-cover-open" onClick={() => setExpandedPhoto({ url: stop.imageUrl, caption: `${visualLabel(currentLang, 'collectionPhoto')} — ${stop.number}`, source: detailLabel(currentLang, 'photoAssociation'), contentLanguage: currentLang })} aria-label={t('enlarge_photo', currentLang)}>
           {imageFailed ? <span className="museum-image-unavailable">{detailLabel(currentLang, 'unavailableImage')}</span> : <img src={stop.imageUrl} alt="" decoding="async" onError={() => setImageFailed(true)} />}
           <span className="museum-piece-zoom"><ZoomIn size={19} aria-hidden="true" />{t('enlarge_photo', currentLang)}</span>
         </button>
@@ -72,7 +72,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
 
       <header className="museum-piece-heading">
         <p className="museum-eyebrow">{t('station_badge', currentLang, { num: stop.number, total: STOPS.length })}</p>
-        <h2 lang="fr">{stop.title}</h2>
+        <h2 id={`${tabPrefix}-title`} lang="fr">{stop.title}</h2>
         <span className="museum-piece-duration"><Clock3 size={17} aria-hidden="true" />{detailLabel(currentLang, 'duration')} · {resource.status === 'unavailable' ? '—' : formatTime(resource.durationSeconds)}</span>
       </header>
 
@@ -90,7 +90,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
         <CheckCircle2 size={21} aria-hidden="true" />{detailLabel(currentLang, discovered ? 'discovered' : 'markDiscovered')}
       </button>
 
-      <div className="museum-piece-tabs" role="tablist" aria-label={stop.title}>
+      <div className="museum-piece-tabs" role="tablist" aria-labelledby={`${tabPrefix}-title`}>
         {tabs.map(({ id, label, Icon }, index) => (
           <button key={id} ref={(element) => { tabRefs.current[index] = element; }} type="button" role="tab" id={`${tabPrefix}-tab-${id}`} aria-selected={activeTab === id} aria-controls={`${tabPrefix}-panel-${id}`} tabIndex={activeTab === id ? 0 : -1} onClick={() => setActiveTab(id)} onKeyDown={(event) => {
             const target = event.key === 'ArrowRight' ? (index + 1) % tabs.length : event.key === 'ArrowLeft' ? (index + tabs.length - 1) % tabs.length : event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : null;
@@ -127,7 +127,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
               <div className="museum-card"><BadgeInfo size={23} aria-hidden="true" /><strong>{stop.facts.stat}</strong><p>{stop.facts.statLabel}</p></div>
             </div>
           </section>
-          <details className="museum-piece-editorial"><summary><BadgeInfo size={18} aria-hidden="true" />{detailLabel(currentLang, 'existingLocation')}</summary><p>{detailLabel(currentLang, 'editorial')}</p><p><MapPin size={16} aria-hidden="true" />{stop.sector} · {stop.altitude}</p><p>{stop.spotTag} · {stop.coordinates}</p></details>
+          <details className="museum-piece-editorial"><summary><BadgeInfo size={18} aria-hidden="true" />{detailLabel(currentLang, 'existingLocation')}</summary><p>{detailLabel(currentLang, 'editorial')}</p><p lang="fr"><MapPin size={16} aria-hidden="true" />{stop.sector} · {stop.altitude}</p><p lang="fr">{stop.spotTag} · {stop.coordinates}</p></details>
         </>}
       </section>
 
@@ -136,9 +136,9 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
           <p className="museum-piece-resource-note">{detailLabel(currentLang, 'credits')}</p>
           <div className="museum-piece-gallery">
             {stop.photos.map((photo, index) => <article key={index} className="museum-card">
-              <button type="button" onClick={() => setExpandedPhoto(photo)} aria-label={`${t('enlarge_photo', currentLang)} — ${photo.caption}`}>
+              <button type="button" onClick={() => setExpandedPhoto(photo)} aria-labelledby={`${tabPrefix}-photo-${index}-action ${tabPrefix}-photo-${index}-caption`}>
                 <img src={photo.url} alt="" loading="lazy" decoding="async" />
-                <span className="museum-piece-photo-copy"><strong>{photo.caption}</strong><small>{photo.source}</small><span><ZoomIn size={18} aria-hidden="true" />{t('enlarge_photo', currentLang)}</span></span>
+                <span className="museum-piece-photo-copy"><strong id={`${tabPrefix}-photo-${index}-caption`} lang="fr">{photo.caption}</strong><small lang="fr">{photo.source}</small><span id={`${tabPrefix}-photo-${index}-action`}><ZoomIn size={18} aria-hidden="true" />{t('enlarge_photo', currentLang)}</span></span>
               </button>
             </article>)}
           </div>
@@ -150,15 +150,15 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
           <p className="museum-piece-resource-note">{detailLabel(currentLang, 'plan')}</p>
           <div className="museum-piece-plan museum-card">
             <img src={existingPlanUrl} alt={t('tab_map', currentLang)} loading="lazy" decoding="async" />
-            <p>{stop.title} · {stop.coordinates}</p>
+            <p lang="fr">{stop.title} · {stop.coordinates}</p>
           </div>
-          <div className="museum-piece-context museum-card"><h3>{t('tactical_instructions', currentLang)}</h3><p>{stop.sector} — {t('tactical_guide_text', currentLang)}</p><p className="museum-muted">{detailLabel(currentLang, 'existingLocation')}</p></div>
+          <div className="museum-piece-context museum-card"><h3>{t('tactical_instructions', currentLang)}</h3><p><span lang="fr">{stop.sector}</span> — {t('tactical_guide_text', currentLang)}</p><p className="museum-muted">{detailLabel(currentLang, 'existingLocation')}</p></div>
         </>}
       </section>
 
       <nav className="museum-piece-navigation" aria-label={detailLabel(currentLang, 'pieceNavigation')}>
-        {previous ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(previous.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${previous.number}`}><ArrowLeft size={22} aria-hidden="true" /><span><small>{t('btn_prev', currentLang)}</small><strong>{previous.number} · {previous.shortTitle}</strong></span></button> : <span />}
-        {next ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(next.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${next.number}`}><span><small>{t('btn_next', currentLang)}</small><strong>{next.number} · {next.shortTitle}</strong></span><ArrowRight size={22} aria-hidden="true" /></button> : <span />}
+        {previous ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(previous.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${previous.number}`}><ArrowLeft size={22} aria-hidden="true" /><span><small>{t('btn_prev', currentLang)}</small><strong lang="fr">{previous.number} · {previous.shortTitle}</strong></span></button> : <span />}
+        {next ? <button type="button" className="museum-button-secondary" onClick={() => onNavigateStop(next.id)} aria-label={`${detailLabel(currentLang, 'goToPiece')} ${next.number}`}><span><small>{t('btn_next', currentLang)}</small><strong lang="fr">{next.number} · {next.shortTitle}</strong></span><ArrowRight size={22} aria-hidden="true" /></button> : <span />}
       </nav>
       {expandedPhoto && <PhotoViewer photo={expandedPhoto} language={currentLang} onClose={() => setExpandedPhoto(null)} />}
     </article>

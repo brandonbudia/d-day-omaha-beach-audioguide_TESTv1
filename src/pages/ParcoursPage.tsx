@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Bookmark, Landmark } from 'lucide-react';
-import { STOPS } from '../data/stops';
+import { STOPS, type StopData } from '../data/stops';
 import { StopCard } from '../components/StopCard';
 import { t, type SupportedLanguage } from '../i18n/translations';
 import { experienceText as x } from '../i18n/experienceLabels';
@@ -16,6 +16,14 @@ interface ParcoursPageProps {
   currentLang: SupportedLanguage;
 }
 
+/** Search inherited labels without requiring the visitor to type their accents. */
+export function matchesStopSearch(stop: StopData, query: string, language: SupportedLanguage) {
+  const normalize = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLocaleLowerCase(language);
+  const needle = normalize(query.trim());
+  const text = normalize(`${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag}`);
+  return !needle || text.includes(needle);
+}
+
 export function ParcoursPage({ onSelectStopDetail, onOpenPlayer, currentLang }: ParcoursPageProps) {
   const [filter, setFilter] = useState<'all' | 'remaining' | 'favorites'>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,11 +36,9 @@ export function ParcoursPage({ onSelectStopDetail, onOpenPlayer, currentLang }: 
   const percent = Math.round(count / total * 100);
   const progressLabel = x('progress', currentLang, { count, total, percent });
   const sectors = Array.from(new Set(STOPS.map((stop) => stop.sector).filter(Boolean)));
-  const query = searchQuery.trim().toLocaleLowerCase(currentLang);
   const filteredStops = STOPS.filter((stop) => {
     const status = filter === 'remaining' ? !isDiscovered(visit.pieces[stop.id]) : filter === 'favorites' ? Boolean(visit.pieces[stop.id]?.favorite) : true;
-    const text = `${stop.id} ${stop.number} ${stop.title} ${stop.shortTitle} ${stop.sector} ${stop.spotTag}`.toLocaleLowerCase(currentLang);
-    return status && (!query || text.includes(query)) && (sectorFilter === 'all' || stop.sector === sectorFilter);
+    return status && matchesStopSearch(stop, searchQuery, currentLang) && (sectorFilter === 'all' || stop.sector === sectorFilter);
   });
   const play = (id: string) => {
     if (audioId === id && playing) { audioPlayer.pause(); return; }
@@ -50,7 +56,7 @@ export function ParcoursPage({ onSelectStopDetail, onOpenPlayer, currentLang }: 
       {visit.persistence !== 'local' && <p role="status" className="text-sm mt-2">{x('storage', currentLang)}</p>}
       <div className="grid sm:grid-cols-2 gap-3 mt-5">
         <label className="relative"><span className="sr-only">{t('search_stations', currentLang)}</span><Search size={19} aria-hidden="true" className="absolute left-3 top-4 museum-muted" /><input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder={t('search_stations', currentLang)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] pl-10 pr-3 bg-[var(--museum-bg)]" /></label>
-        <label><span className="sr-only">{t('all_sectors', currentLang)}</span><select value={sectorFilter} onChange={(e) => setSectorFilter(e.target.value)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] px-3 bg-[var(--museum-bg)]"><option value="all">{t('all_sectors', currentLang)}</option>{sectors.map((sector) => <option key={sector}>{sector}</option>)}</select></label>
+        <label><span className="sr-only">{t('all_sectors', currentLang)}</span><select value={sectorFilter} onChange={(e) => setSectorFilter(e.target.value)} className="w-full min-h-12 rounded-lg border border-[var(--museum-line)] px-3 bg-[var(--museum-bg)]"><option value="all">{t('all_sectors', currentLang)}</option>{sectors.map((sector) => <option key={sector} lang="fr">{sector}</option>)}</select></label>
       </div>
       <div className="tour-filters grid gap-2 mt-3" aria-label={t('filter_all', currentLang, {count: total})}>
         {(['all', 'remaining', 'favorites'] as const).map((value) => <button key={value} type="button" aria-pressed={filter === value} className={`${filter === value ? 'museum-button' : 'museum-button-secondary'} px-2 text-sm`} onClick={() => setFilter(value)}>{value === 'favorites' && <Bookmark size={16} aria-hidden="true" />}{t(value === 'all' ? 'filter_all' : value === 'remaining' ? 'filter_remaining' : 'filter_favorites', currentLang, { count: value === 'all' ? total : total - count })}</button>)}
