@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 8 ; phase récit EN vérifié, publication ciblée en préparation.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 11 ; phase correction FR22 vérifiée, publication en préparation.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -46,8 +46,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | AUT-01 | P0 | validated | Créer ce suivi, tester publication/remplacement atomiques, garder dernier état valide hors dépôt |
 | EN22-01 | P1 | blocked-human | Revoir 21 mots/deux débuts de phrase ; candidats existants et fenêtres seulement ; conserver 320 bornes sans défaut prouvé |
 | EN22-02 | P1 | blocked-human | Musée : identité et droits de la fin sonore ; conserver MP3 intégral ; rouvrir sur réponse |
-| FR22-01 | P1 | pending | 20 mots : preuves acoustiques, aucun temps inventé |
-| FR-01 | P1 | pending | 24 incertitudes FR par passages, sans piste complète retraitée |
+| FR22-01 | P1 | blocked-human | 331/350 ; même ajouté et six voisins corrigés avec preuvesCTC/medium ; 19omissions et sept repères à relire |
+| FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
 | EN-01 | P1 | pending | 429 autres mots EN par phrases après EN22 |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
@@ -63,11 +63,11 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
 | DEL-01 | P1 | in_progress | Tests complets, diff, commit ciblé et push des seuls lots vérifiés |
 
-## Tâche active : DEL-01, publication du troisième lot
+## Tâche active : DEL-01, publication du correctif FR22
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
-Prochaine action immédiate : examiner le diff indexé des seuls six fichiers utiles (avec suivi et recette), créer un commit ciblé puis pousser vers TESTv1/branche autorisée et vérifier le SHA distant. Exclure dev-dist/sw.js.
-Après publication : FR22-01 puis FR-01, rapprocher uniquement les 44 mots FR sans repère des caches existants ; aucun nouvel ASR si une preuve est déjà disponible. Les exports anciens ne sont pas la vérité courante : partir du JSON applicatif actuel et conserver les bornes validées.
+Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
+Prochaine action : contrôle du diff et index ciblé des cinq fichiers du correctif FR22, commit/push TESTv1 puis vérification du SHA distant. Après publication, EN-01 : petit complément medium réellement neuf sur les mots EN01 manquants, en conservant les caches et tous les repères existants sauf défaut démontré. Ne pas relancer FR01–21 ou les clips FR22 inchangés.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -156,3 +156,37 @@ Quota : disponible selon le message humain de reprise ; télémétrie du goal en
 Voir recette-finalisation-2026-11-09.md, troisième lot, pour la portée exacte des preuves. Les 494 mots sans borne et validations humaines restent ouverts ; aucun taux complet artificiel.
 
 Publication du checkpoint : 2026-11-09T21:09:48.7324924+01:00
+
+## Checkpoint 9 — récit publié, reprise ciblée du français
+Commit 6b4d560c0d08e6d2978f443916dc6f544c617cda poussé vers origin/codex/overnight-audio-highlight, SHA distant identique confirmé, codes 0. Six fichiers pertinents uniquement ; dev-dist/sw.js reste sale et intact.
+Revue en lecture seule des caches : FR01–21 applicatif = 6902/6926, 24 mots encore absents, déjà comparés CTC, attention small/medium et medium ponctué ; pas de nouveau calcul identique justifié. Les anciens caches selected/inventory annoncent 25 omissions/6901 bornes : ils sont périmés. Le mot à de FR01 global114 est déjà conservé à 45,533–45,573 s (6/10) ; ne pas le perdre en réexportant les caches.
+FR22 : 330/350 conservés. Small, CTC, attention29phrases et medium existent ; medium couvre déjà 16,5–45,3 / 59,2–94,7 / 94,9–128,9 s. Douze mots incertains ont donc déjà cette comparaison.
+Complément réellement neuf proposé pour huit mots : vitrine, ceux, servaient, ces, pour, Leur, même, résistance. Trois fenêtres absentes du cache medium, 43,5 s au total, sans reprendre les douze autres. Script et caches nouveaux hors dépôt, clé par SHA MP3/modèle/configuration/échantillons, création exclusive et validation avant réutilisation. HF offline et local_files_only=True ; Python existant inchangé. Aucun repère automatique accepté sur la seule confiance ; vérifier aussi les voisins sans les découper pour faire rentrer un mot.
+Entrée FR22 SHA 7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346 ; texte et 330 bornes applicatifs inchangés. Le calcul et sa décision restent à consigner au checkpoint suivant.
+
+Publication du checkpoint : 2026-11-09T21:11:42.9925262+01:00
+
+## Checkpoint 10 — décision ciblée FR22, contrôles en attente
+Trois fenêtres medium nouvelles traitées, code0, 43,5 s audio ; temps de reconnaissance 10,109 + 10,594 + 8,500 s, hors chargement du modèle. Révision locale08e178d48790749d25932bbc082711ddcfdfbc4f, CPUint8/4threads, HF offline/local_files_only, aucun texte fourni. SHA audio avant/après inchangé. Trois clés : 55413b53227abcb8b6d90d1a3e76ba63d995c5eb7add0612f2a4d17adad04986 ; c011c7c201055006458b01c13fc9b167ac0c94e493616fd124f5ef85bf2edd81 ; c7051f317d4faed3494f5bd05f4d0af2d1e14cc3f3c18d067630fd6cc9aed42a.
+Comparaison initiale fr22-candidate-comparison.json créée et scellée, aucun temps exporté par le script. Une revue du contexte28 met ensuite en évidence une chaîne locale small trop précoce. Medium indépendant corrobore les sept mots CTC, débuts proches de2–38ms, fins des six premiers à2–78ms. La fin de sombres diverge de224ms ; relecture humaine maintenue.
+Changement applicatif autorisé strictement limité : phrase28 start134.801 ; mêmes intervalles CTC entiers tokens0..6 = [134.801,135.001], [135.021,135.141], [135.161,135.221], [135.262,135.422], [135.442,135.522], [135.542,135.682], [135.742,136.704]. Aucun mélange, découpage, interpolation ou modification de texte. Précédent que finit134.689 ; la suivant136.744–136.844 reste inchangé.
+Bilan partiel : même ajouté, six anciennes bornes FR22 corrigées, 324 préservées ; 331/350,19sansborne attendus. FR01–21 :6902/6926 inchangés. EN inchangé. Total attenduFR7233/7276 et493mots sansborneFR+EN. Ces données restent automatiquement corroborées, pas certifiées humainement.
+Neuf tests français ciblés réussis, code0, dont snapshotFR01–21, préservation des autres données FR22, bornes/seeks avant/arrière. Contrôles complets et navigateur restent à effectuer. Liste humaine mise à jour sans cocher de validation.
+
+Publication du checkpoint : 2026-11-09T21:19:18.0777948+01:00
+
+## Checkpoint 11 — correctif FR22 vérifié
+Tests : 101/101 applicatifs, TypeScript et build codes 0 ; 9/9 français ciblés après renforcement de la conservation exacte des 19 omissions. Python 14/14 déjà relancé dans cette reprise, source Python du projet inchangée. Build index-CrVhpf7q.js, PWA 53 entrées / 3782,64 KiB.
+Navigateur : FR22 explicitement identifiée, 331 mots ; clic même vers 134,98 s, current=même ; pause 135,04 s, reprise 135,24 s. Mobile 390×844 lisible. Correction des sept bornes seulement, automatique et en attente humaine.
+Le premier essai hors serveur sans pack FR a affiché son erreur ; état du pack 0/22 constaté. Téléchargement explicite et vérification ensuite : Prêt hors connexion, 22/22, 50,4 MB. Après arrêt du serveur et netstat zéro écoute sur 4198, navigation directe Lecteur 22, nouveau shell, même à 134,96 s, current et pause à 135,03 s ; aucune alerte ni console error/warn sur cet essai. Réseau système non coupé.
+Historique 4198 conservé avec FR22 Écouté ; aucune déduction arbitraire sur un état cumulé. Origine 4200 vierge : saut depuis 0 vers même, fin native et avance FR01, pause : 0/22, aucun Écouté, toujours 0/22 après rechargement. Aucun faux achèvement reproduit. Les attentes de route/numéro ont été explicitées pour ne pas confondre même de FR01 avec FR22 après avance automatique.
+Serveurs 4198 et 4200 arrêtés volontairement, codes 1 ; netstat 0/0. Onglets créés fermés, viewport restauré. Détails et preuves : recette-finalisation-2026-11-09.md, quatrième lot. Aucune écoute humaine certifiée.
+État courant : FR 7233/7276, dont FR22 331/350 ; EN 6572/7022 inchangé ; 493 mots FR+EN sans borne. Réserve sur la fin de sombres (224 ms) conservée dans validations-humaines-demo.md. Aucun autre média, texte ou minutage changé.
+- Version contrôlée : src/data/french-transcripts.fr.json ; SHA travail 00954A2E5C62293F2E6F67CA9BB186ED16EA5F02BF23362EC48532AF7266F8E7 ; index avant préparation 100644 484f8f75db2fb50b2c996ab49bb30489b9e0b2ee 0	src/data/french-transcripts.fr.json
+- Version contrôlée : tests/french-transcripts.test.tsx ; SHA travail 0C137FA950BFBCE7BC1C2BD71C0E10AB12C4E51800AF6153BE94051E198CD5AC ; index avant préparation 100644 326c57e01f3a04510bbf752674c9627d7410ad33 0	tests/french-transcripts.test.tsx
+- Version contrôlée : docs/validations-humaines-demo.md ; SHA travail 668A7E59D3D7A645128E53587BDF1B20569DFDD2246B08990BC8531E0D460F29 ; index avant préparation 100644 650c275ebb74880e48a96c2124d4679d684ec46f 0	docs/validations-humaines-demo.md
+- Version contrôlée : docs/recette-finalisation-2026-11-09.md ; SHA travail 201FE7DFC86EA1AF814F28D67982C2523F8309C346B4D5423C86BE0A71DC8169 ; index avant préparation 100644 cbe033f1db1601f9b74c47714044bfe196cfdef3 0	docs/recette-finalisation-2026-11-09.md
+
+Publication du checkpoint : 2026-11-09T21:29:04.5550500+01:00
+
+Publication du checkpoint : 2026-11-09T21:29:37.1768113+01:00

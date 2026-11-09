@@ -1,5 +1,6 @@
 {
   "evidence": {
+    "targetedFr22BoundaryCorrections": [{"segmentIndex": 28, "tokenIndices": [0, 1, 2, 3, 4, 5, 6], "source": "Whole existing WhisperX CTC intervals corroborated by independent local faster-whisper-medium recognition, window 128.9-142.0 s, without supplied text. Audio SHA 7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346; medium cache key c7051f317d4faed3494f5bd05f4d0af2d1e14cc3f3c18d067630fd6cc9aed42a. Added meme; replaced only six preceding small-derived word bounds in this phrase. No interpolation, trimming or hybrid boundaries. All other bounds preserved.", "verification": "automatic-corroboration-human-listening-pending", "remainingUncertainty": "sombres CTC ending 136.704 versus medium 136.480; human review required", "humanListeningReviewed": false}],
     "targetedWordCorrections": [{"station": "01", "segmentIndex": 6, "tokenIndex": 10, "text": "à", "startSeconds": 45.533, "endSeconds": 45.573, "source": "Existing WhisperX CTC candidate, corroborated by cached contextual CTC bounds 45.534-45.574 and earlier CTC bounds 45.545-45.585; free CTC recognition includes the word. Attention timings included the preceding pause and were rejected. No neighboring timing changed; no interpolation or new audio processing.", "humanListeningReviewed": false}],
     "referencePath": "docs/reference-transcription-fr.md.md", "referenceSha256": "a0d9e5d6eb83fc2ea7f0c98fad471fbff4882b71a0dbdcea4b710eb3cdc1db34", "aligner": "WhisperX 3.8.6 / VOXPOPULI_ASR_BASE_10K_FR, CPU", "recognizer": "Systran/faster-whisper-small, CPU int8, French; cached results + disputed passages only", "interpolation": "none", "validation": "CTC word/character evidence and independent ASR/attention boundary agreement. Lower CTC likelihood requires corroborating acoustic estimates. Reject invalid bounds, unresolved overlaps and words longer than 2.5 s. Estimates remain subject to human listening review.", "pronunciationNormalization": "Spoken French numbers, acronym letters, oe-ligature support, and French homophones; display text unchanged.", "preservedStop01Words": 77, "humanListeningReviewed": false, "scope": "French narration only; background English extracts and unspoken reference-only text excluded.", "complementaryAligner": "Whisper small and medium attention/DTW, with original punctuation on disputed passages; Silero VAD for verified silence boundaries. No model dependency in the application.", "boundaryCorrections": [{"station": "01", "word": "père", "oldStartSeconds": 82.961, "oldEndSeconds": 83.362, "startSeconds": 82.961, "endSeconds": 83.282, "followingWord": "et", "followingOnset": 83.282, "originalVerifiedTiming": false}, {"station": "03", "word": "progression", "oldStartSeconds": 57.044, "oldEndSeconds": 58.085, "startSeconds": 57.044, "endSeconds": 58.005, "followingWord": "et", "followingOnset": 58.005, "originalVerifiedTiming": false}, {"station": "08", "word": "confusion", "oldStartSeconds": 59.627, "oldEndSeconds": 60.248, "startSeconds": 59.627, "endSeconds": 60.127, "followingWord": "et", "followingOnset": 60.127, "originalVerifiedTiming": false}, {"station": "14", "word": "combinaison", "oldStartSeconds": 47.313, "oldEndSeconds": 48.394, "startSeconds": 47.313, "endSeconds": 48.326, "followingWord": "et", "followingOnset": 48.326, "originalVerifiedTiming": false}, {"station": "15", "word": "résistance", "oldStartSeconds": 114.259, "oldEndSeconds": 115.12, "startSeconds": 114.259, "endSeconds": 114.98, "followingWord": "et", "followingOnset": 114.98, "originalVerifiedTiming": false}, {"station": "19", "word": "présentèrent", "oldStartSeconds": 163.068, "oldEndSeconds": 163.889, "startSeconds": 163.068, "endSeconds": 163.799, "followingWord": "et", "followingOnset": 163.799, "originalVerifiedTiming": false}, {"station": "21", "word": "robinet", "oldStartSeconds": 32.457, "oldEndSeconds": 33.438, "startSeconds": 32.457, "endSeconds": 33.371, "followingWord": "et", "followingOnset": 33.371, "originalVerifiedTiming": false}]},
   "stations": {
@@ -2374,38 +2375,43 @@
           ]
         },
         {
-          "startSeconds": 134.88,
+          "startSeconds": 134.801,
           "text": "même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais.",
           "timings": [
             [
+              0,
+              134.801,
+              135.001
+            ],
+            [
               1,
-              134.88,
-              135.06
+              135.021,
+              135.141
             ],
             [
               2,
-              135.06,
-              135.2
+              135.161,
+              135.221
             ],
             [
               3,
-              135.2,
-              135.38
+              135.262,
+              135.422
             ],
             [
               4,
-              135.38,
-              135.48
+              135.442,
+              135.522
             ],
             [
               5,
-              135.48,
-              135.62
+              135.542,
+              135.682
             ],
             [
               6,
-              135.62,
-              136.0
+              135.742,
+              136.704
             ],
             [
               7,
@@ -2552,12 +2558,6 @@
           "segmentIndex": 27,
           "tokenIndex": 0,
           "text": "Leur",
-          "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
-        },
-        {
-          "segmentIndex": 28,
-          "tokenIndex": 0,
-          "text": "même",
           "reason": "No non-overlapping corroborated acoustic bounds; source text retained, no interpolation."
         },
         {

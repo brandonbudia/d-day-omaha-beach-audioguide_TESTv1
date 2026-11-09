@@ -95,8 +95,8 @@ test('recovered French narration replaces snippets and leaves absent document pa
   assert.equal(restored.audioSha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');
   assert.equal(restored.durationSeconds, 142.0623);
   assert.equal(restored.totalWords, 350);
-  assert.equal(restored.timedWords, 330);
-  assert.equal(restored.unresolvedWords.length, 20);
+  assert.equal(restored.timedWords, 331);
+  assert.equal(restored.unresolvedWords.length, 19);
   assert.match(restored.segments.at(-1)!.text, /la lumière de la résistance ne s’éteint jamais/);
   const eighteen = FRENCH_TRANSCRIPTS['18'];
   assert.ok(eighteen.segments.every((segment) => !/Amara\.org|merde de drogue/.test(segment.text)));
@@ -105,6 +105,32 @@ test('recovered French narration replaces snippets and leaves absent document pa
 test('restoring FR22 preserves every complete FR01–21 record, including all word bounds', () => {
   const preserved = Object.fromEntries(Object.entries(transcriptSource.stations).filter(([id]) => id !== '22'));
   assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), '9921b3e8f2588f0167ef94cf4f61536bd9f44116cb9a3454e9d1a593ababf049');
+});
+
+test('FR22 final phrase restores meme with whole acoustic intervals while preserving all other data', () => {
+  const transcript = FRENCH_TRANSCRIPTS['22'];
+  const segment = transcript.segments[28];
+  assert.equal(segment.startSeconds, 134.801);
+  const words = getTimedTokens(segment.text, segment.wordTimings ?? [], segment.startSeconds, transcript.durationSeconds);
+  assert.equal(words.length, 14); // resistance remains unresolved
+  const expectedCurrent = [[134.90, 'même'], [135.10, 'dans'], [135.18, 'les'], [135.30, 'heures']] as const;
+  for (const [time, expected] of [...expectedCurrent, ...expectedCurrent.toReversed()]) {
+    assert.deepEqual(words.filter((word) => getWordState(time, word) === 'current').map((word) => word.text), [expected]);
+  }
+  assert.ok(!transcript.unresolvedWords.some((word) => word.segmentIndex === 28 && word.tokenIndex === 0));
+  assert.ok(transcript.unresolvedWords.some((word) => word.segmentIndex === 28 && word.tokenIndex === 11));
+  assert.equal(FRENCH_TRANSCRIPT_EVIDENCE.targetedFr22BoundaryCorrections[0].humanListeningReviewed, false);
+
+  // Snapshot before this repair: every other field, sentence and accepted bound
+  // in FR22 survives. The separate FR01–21 snapshot above remains unchanged.
+  const { unresolvedWords, ...preserved } = transcriptSource.stations['22'];
+  assert.equal(createHash('sha256').update(JSON.stringify(unresolvedWords)).digest('hex'), 'ec2698d958c0569edce6599c2f0d19f0eebfce85ba7341d39d3fffc514e11a46');
+  preserved.segments = preserved.segments.map((item, index) => index === 28
+    ? { ...item, startSeconds: 0, timings: item.timings.filter(([tokenIndex]) => tokenIndex > 6) }
+    : item);
+  const fingerprint = { ...preserved, segments: preserved.segments.map((item, index) => index === 28
+    ? { text: item.text, timings: item.timings } : item) };
+  assert.equal(createHash('sha256').update(JSON.stringify(fingerprint)).digest('hex'), 'cf0bd8a5b3fb525a810576c35788f6a646f307803eace746c5c1556d5cb33207');
 });
 
 test('every accepted word is selected alone at its acoustic position, including backwards seeks', () => {

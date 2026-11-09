@@ -10,11 +10,19 @@
 - Pour chaque mot : confirmer sa présence, sa graphie/prononciation et son contexte, puis noter début/fin réellement entendus, nom du réviseur, date et décision. Si le mot est absent/divergent, le signaler et le laisser sans repère plutôt que le forcer dans l’audio.
 - Ne pas corriger automatiquement les autres mots d’une phrase ; préserver leurs bornes. La reconnaissance et la comparaison de sources ne remplacent pas une écoute humaine intégrale.
 
-## FR22 — 20 mots sans repère
+## FR22 — 19 mots sans repère ; sept repères à relire
 
 Fichier `public/audio/fr/stop-22.mp3` ; durée native 142,0623 s ; SHA-256 `7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346`. L’autorisation pour TESTv1 a été confirmée par l’utilisateur. Détails et source publique : [compte rendu FR22](fr22-et-langues-2026-11-07.md).
 
 Le texte affiché reste celui actuellement intégré. En particulier, vérifier **creva-pneus**, **KIEFFER**, **Mauser**, les mots courts/homophones et le deuxième « de » de « de chaque pièce, de chaque outil ». La liste n’affirme pas qu’ils sont tous effectivement prononcés.
+
+Mise à jour technique du 9 novembre : **331/350 mots minutés**, sans nouvelle validation humaine. Une reconnaissance medium locale, indépendante du texte, a complété seulement les fenêtres 0–16,5 / 45,3–59,2 / 128,9–142,0 s, absentes du cache medium antérieur. Aucun nouvel ASR sur FR01–21.
+
+Elle corrobore les sept intervalles CTC entiers de « même dans les heures les plus sombres » (phrase 28, mots 0–6). « même » est maintenant minuté ; les six voisins ont été corrigés, les 324 autres bornes FR22 et tous les FR01–21 sont inchangés. Relire **les sept mots**, notamment la fin de « sombres » : CTC 136,704 s, medium 136,480 s. La correction reste automatique/provisoire ; `humanListeningReviewed` reste faux.
+
+Les sept autres mots du complément (`vitrine`, `ceux`, `servaient`, `ces`, `pour`, `Leur`, `résistance`) restent sans repère : les estimations sont en désaccord ou heurtent les voisins. Ne pas tronquer leurs intervalles pour les insérer. Les douze autres omissions FR22 conservent leurs preuves antérieures ; le deuxième « de » n'est toujours pas confirmé. Les 24 incertitudes des autres stations françaises ont déjà plusieurs comparaisons CTC/small/medium ; une écoute ciblée est maintenant nécessaire, pas un retraitement identique.
+
+Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-comparison.json` (comparaison initiale avant correction locale), trois caches `fr22-medium-window-*.json` et journal `resume-20261109-fr22-targeted.txt`. Provenance de la correction et clé du cache dans `evidence.targetedFr22BoundaryCorrections` du JSON applicatif. Le tableau garde « même » pour la relecture humaine ; ce mot ne fait plus partie des 19 omissions.
 
 | À valider | Phrase / mot | Mot conservé | Début de phrase existant | Contexte affiché |
 |---|---|---|---|---|
@@ -36,8 +44,8 @@ Le texte affiché reste celui actuellement intégré. En particulier, vérifier 
 | ☐ | 24 / 0 | À | 1:49.48 | À travers leurs récits, ils nous ont transmis les objets qu’ils conservaient dans un coin de leur maison. |
 | ☐ | 24 / 2 | leurs | 1:49.48 | À travers leurs récits, ils nous ont transmis les objets qu’ils conservaient dans un coin de leur maison. |
 | ☐ | 27 / 0 | Leur | 2:10.30 | Leur bravoure et leur détermination continuent d’inspirer, rappelant que, |
-| ☐ | 28 / 0 | même | 2:14.88 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
-| ☐ | 28 / 11 | résistance | 2:14.88 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
+| ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
+| ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
 ## Anglais — 450 mots affichés sans repère
 
