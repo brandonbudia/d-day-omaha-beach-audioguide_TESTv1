@@ -47,13 +47,13 @@ Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-compar
 | ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 | ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
-## Anglais — 430 mots affichés sans repère
+## Anglais — 425 mots affichés sans repère
 
 Source de travail : `src/data/english-transcripts.en.json`. Les 22 MP3 et les 22 références anglaises publiées ont déjà été comparés automatiquement. Les mots listés sont encore provisoires : ne pas affirmer que la langue entière est validée humainement. Le récit anglais est distinct du français.
 
 Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un même passage. Chaque entrée `indice : mot` est à valider séparément. Motifs conservés : **P** = confiance de reconnaissance insuffisante ; **L** = mot source non reconnu exactement ; **B** = borne invalide/conflit ; **A** = autre motif à consulter dans le JSON. Ces motifs sont des raisons de prudence, pas la preuve d’une erreur.
 
-Mise à jour du 10 novembre : après history (EN01), 19 mots supplémentaires de 12 stations ont reçu leurs bornes medium natives entières, corroborées par un alignement CTC indépendant. Cinq repères voisins ont été corrigés seulement pour permettre les chaînes réellement reconnues, sans chevauchement. Total EN **6592/7022**, donc **430 sans repère** ; EN01 reste 239/254 et EN22 reste 320/341. Aucune écoute humaine intégrale n’est acquise. Les 24 repères de ce lot restent à relire dans le tableau ci-dessous ; les 430 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
+Mise à jour du 10 novembre : après history (EN01), 24 mots supplémentaires de 14 stations ont reçu leurs bornes medium natives entières, corroborées par un alignement CTC indépendant. Neuf repères voisins ont été corrigés seulement pour permettre les chaînes réellement reconnues, sans chevauchement. Total EN **6597/7022**, donc **425 sans repère** ; EN01 reste 239/254 et EN22 compte 321/341. Aucune écoute humaine intégrale n’est acquise. Les 33 repères de ces deux lots restent à relire dans le tableau ci-dessous ; les 425 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
 
 | Station | Mots affichés à vérifier | Passages documentaires séparés |
 |---|---:|---:|
@@ -62,11 +62,11 @@ Mise à jour du 10 novembre : après history (EN01), 19 mots supplémentaires de
 | 03 | 24 | 0 |
 | 04 | 16 | 0 |
 | 05 | 12 | 0 |
-| 06 | 21 | 0 |
+| 06 | 19 | 0 |
 | 07 | 8 | 0 |
 | 08 | 9 | 1 |
-| 09 | 13 | 3 |
-| 10 | 29 | 0 |
+| 09 | 12 | 3 |
+| 10 | 28 | 0 |
 | 11 | 16 | 0 |
 | 12 | 54 | 1 |
 | 13 | 13 | 0 |
@@ -78,7 +78,7 @@ Mise à jour du 10 novembre : après history (EN01), 19 mots supplémentaires de
 | 19 | 23 | 0 |
 | 20 | 26 | 0 |
 | 21 | 32 | 0 |
-| 22 | 21 | 0 |
+| 22 | 20 | 0 |
 
 ### Repères ajoutés ou corrigés le 10 novembre — relecture humaine en attente
 
@@ -103,6 +103,19 @@ Intervalles conservés : mots natifs medium (probabilité ≥0,9). Le CTC sert u
 - ☐ Quatre groupes rejetés restent sans nouvel alignement : EN15 the 6/10, The 16/0, chaîne Designed/by/the 3/0–2 ; EN21 by 29/3. Un écart absolu acceptable ne suffisait pas pour ces mots courts. Les anciens voisins de la chaîne rejetée restent intacts.
 - Les 413 omissions EN02–21 ont été examinées en 116 fenêtres medium ; 136 candidats clairement reconnus ont ensuite fait l’objet de 81 fenêtres CTC. Deux mots EN16 étaient explicitement hors de la limite de fenêtre :1944 (0/33) et Each (1/0). Ne pas relancer les mêmes traitements inchangés.
 
+### Complément du 10 novembre — réparations limitées aux voisins nécessaires
+
+Une seconde revue a identifié une sur-extension des chaînes dans l’outil externe de comparaison : un conflit préexistant entre un autre mot non minuté et son voisin ne doit pas bloquer une correction indépendante. Les caches existants ont été recomparés sans nouveau calcul audio ni baisse des seuils. Cinq mots supplémentaires et quatre voisins ont ainsi été retenus ; aucun ancien lot n’a été écrasé. Ces neuf intervalles restent à écouter humainement.
+
+| À valider | Station | Phrase / mot : texte — intervalle natif en secondes |
+|---|---|---|
+| ☐ | 06 | 26/6 : because — 161.640–161.840 (ajouté) ; 19/20 : meters — 115.920–116.340 (ajouté) ; 19/21 : by — 116.340–116.660 (corrigé) |
+| ☐ | 09 | 9/0 : He — 51.400–51.700 (ajouté) ; 9/1 : claims — 51.700–52.080 (corrigé) |
+| ☐ | 10 | 14/18 : prized — 104.360–104.800 (ajouté) |
+| ☐ | 22 | 11/5 : transformed — 104.280–104.800 (ajouté) ; 11/6 : their — 104.800–105.060 (corrigé) ; 11/7 : environment — 105.060–105.600 (corrigé) |
+
+EN22 using, each et to restent inchangés ; la correction transformed/their/environment ne déplace pas ce conflit séparé. EN06 because a un écart initial medium/CTC de 176 ms : garder cette réserve à l’écoute, comme Crafted et in. Aucun statut humain n’est passé à vrai.
+
 ### EN01 — 01. Ici commence… L’histoire du musée
 
 Audio : `public/audio/en/stop-01.mp3`. Référence publiée : [page anglaise Wivi](https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en).
@@ -110,6 +123,9 @@ Audio : `public/audio/en/stop-01.mp3`. Référence publiée : [page anglaise Wiv
 Revue automatique complémentaire terminée pour les 16 omissions initiales : cinq fenêtres medium locales sans texte imposé (0–13 / 26–34 / 41–67 / 80–96 / 108–114 s), soit 69 s au total, en deux petits lots. Les autres passages n'ont pas été retraités. Caches `en01-targeted-20261109`, hors dépôt ; ne pas relancer ces fenêtres inchangées.
 
 - ☐ Relire « history », phrase17/mot2 : intervalle medium entier **111,10–111,52 s**, corroboré lexicalement par small **110,94–111,36 s** ; aucun autre repère déplacé. Provenance supplémentaire explicitement identifiée dans le JSON et vérifiée par les tests, sans attribution au mauvais cache. Ce mot n'est plus dans les 15 omissions ci-dessous.
+
+Complément CTC du 10 novembre : les quatre fenêtres medium précédentes contenant onze candidats P de confiance≥0,9 ont été réutilisées, sans nouvel ASR et sans retraiter history. **Aucun ajout retenu**. Certains mots ont un score CTC insuffisant (With, It, and7/12, over, But4/0) ; and1/9 est disjoint, which2/8 ne recouvre que 37ms du CTC. Les mots But8/0, by10/0 et father13/6 ne permettent pas une réparation complète fiable de leurs voisins : at8/1, this10/1 et and13/7 bloquent respectivement ces chaînes. Le the13/11 est disjoint. Conserver les quinze omissions et tous les repères actuels. Les résultats sont externes dans en-01-22-ctc-targeted-20261110 ; ne pas relancer ces contextes inchangés. Aucune écoute humaine acquise.
+
 - « stories », « Second », « which » (phrase11) et « Fabien » restent incertains malgré le second modèle. En particulier, small reconnaît « Fabia » ; medium propose « Fabien » avec confiance0,698. Ne pas forcer le nom ni modifier le texte publié.
 - Les autres omissions conservent des divergences ou conflits avec les voisins. Exemples : and5,50–5,66 contre sometimes dès5,44 ; which10,82–11,02 contre testifies dès10,80 ; With82,92–83,02 contre the dès82,92. Corriger ces chaînes demanderait une preuve spécifique des voisins ; aucun intervalle n'a été tronqué pour les faire rentrer.
 
@@ -201,10 +217,10 @@ Audio : `public/audio/en/stop-06.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 11 | 1:04.00 | 6 : and (P) ; 10 : which (P) | We are obsessed by this noise and by the shape which becomes clearer as the shovel hits. |
 | ☐ | 12 | 1:10.30 | 6 : trying (P) | Our heads tilt over this hole trying to understand the silhouette of what is buried in the earth. |
 | ☐ | 16 | 1:33.12 | 7 : earth (P) | Suddenly, after clearing a huge block of earth on the side, we see a piece of caterpillar—but not as I imagined at that age. |
-| ☐ | 19 | 1:49.06 | 9 : and (P) ; 19 : three (L) ; 20 : meters (P) ; 22 : two (L) | My father understood very well what it was about, and decided to dig a square around it, measuring about three meters by two meters. |
+| ☐ | 19 | 1:49.06 | 9 : and (P) ; 19 : three (L) ; 22 : two (L) | My father understood very well what it was about, and decided to dig a square around it, measuring about three meters by two meters. |
 | ☐ | 22 | 2:09.26 | 6 : nothing (P) | My brother and I understood absolutely nothing about what was taking shape in front of us: caterpillars, motorcycle handlebars, a box with seats… We were lost. |
 | ☐ | 23 | 2:20.98 | 15 : Kettenkrad (P) | My father knew very well what we had just found: a German motorcycle caterpillar, or Kettenkrad, a German reconnaissance vehicle used during the Second World War. |
-| ☐ | 26 | 2:38.50 | 6 : because (P) ; 7 : as (P) ; 12 : there (P) | the farmer's story was indeed true, because, as we can still see, there is a piece of fabric camouflaged in the caterpillars. |
+| ☐ | 26 | 2:38.50 | 7 : as (P) ; 12 : there (P) | the farmer's story was indeed true, because, as we can still see, there is a piece of fabric camouflaged in the caterpillars. |
 | ☐ | 27 | 2:46.92 | 10 : which (P) | It is none other than a piece of American parachute, which undoubtedly allowed this soldier to hide the caterpillar motorcycle under his own parachute canopy. |
 
 ### EN07 — 07. Tenue d’aumônier militaire
@@ -250,7 +266,7 @@ Audio : `public/audio/en/stop-09.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 6 | 0:16.86 | 16 : MG42 (L) | This gives you an idea of ​​the rate of fire of this German machine gun, the MG42. |
 | ☐ | 7 | 0:23.18 | 4 : 6 (L) ; 7 : allied (P) ; 21 : MG42 (P) | You imagine, on June 6, American and allied soldiers landing under enemy fire, and this fire also bore the name of MG42... |
 | ☐ | 8 | 0:33.84 | 10 : the (P) ; 11 : Beast (P) ; 15 : Severloh (L) ; 17 : on (P) ; 22 : 6 (L) ; 23 : 44 (P) | History will unfortunately remember the one who has been called “the Beast of Omaha”: Heinrich Severloh, who, on the day of June 6, 44, held his position behind his MG42 from one of the strategic bunkers of Omaha. |
-| ☐ | 9 | 0:51.52 | 0 : He (P) ; 2 : in (P) | He claims, in his stories, to have fired around 12,500 cartridges. |
+| ☐ | 9 | 0:51.40 | 2 : in (P) | He claims, in his stories, to have fired around 12,500 cartridges. |
 
 Passages conservés séparément du récit synchronisé — confirmer présence/absence, sans les forcer dans l’audio :
 
@@ -273,7 +289,7 @@ Audio : `public/audio/en/stop-10.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 8 | 0:57.62 | 1 : parquet (P) ; 7 : labeled (P) ; 9 : dating (P) ; 25 : army (P) | creaking parquet floors, old cabinets full of labeled fossils, dating from an even older era, and in this darkness, various small objects from the German army. |
 | ☐ | 11 | 1:22.32 | 1 : when (P) | Disconcerting when you don't know what it is. |
 | ☐ | 13 | 1:31.26 | 1 : wire-guided (L) ; 2 : mini-tank (L) | A wire-guided mini-tank which carried an explosive charge to be projected against buildings or enemy vehicles. |
-| ☐ | 14 | 1:38.26 | 10 : special (P) ; 18 : prized (P) ; 19 : piece (P) | This Goliath was part of what is known as “Hitler’s special weapons”; it is a very rare and prized piece in the world of collecting. |
+| ☐ | 14 | 1:38.26 | 10 : special (P) ; 19 : piece (P) | This Goliath was part of what is known as “Hitler’s special weapons”; it is a very rare and prized piece in the world of collecting. |
 | ☐ | 15 | 1:47.00 | 20 : obviously (P) | Here in front of you is the gasoline engine version, and the entire interior is complete (without the explosive charge, obviously). |
 | ☐ | 18 | 2:04.30 | 3 : in (P) ; 6 : Beach (P) ; 9 : Allies (P) | During the landing, in the Utah Beach sector, the Allies found small caves on the beaches, and inside these were stored Goliaths... |
 | ☐ | 19 | 2:13.64 | 0 : Not (P) | Not knowing what they were, thinking of ""toys"", some soldiers threw a grenade there... |
@@ -493,6 +509,9 @@ Audio : `public/audio/en/stop-21.mp3`. Référence publiée : [page anglaise Wiv
 
 Audio : `public/audio/en/stop-22.mp3`. Référence publiée : [page anglaise Wivi](https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en).
 
+
+Complément CTC du 10 novembre : deux contextes medium existants, 23,7–32,0 et 101,3–115,3 s, ont été réutilisés sans nouvel ASR. Après correction de la sur-extension des chaînes dans la comparaison, **transformed11/5 est ajouté et their11/6/environment11/7 sont corrigés**, avec intervalles medium entiers corroborés par CTC. Les 318 autres bornes restent intactes : **321/341 mots minutés, 20 sans repère**. The3/0 ne recouvre que 26 ms du CTC ; to11/13 est disjoint ; using11/8 reste bloqué par each11/9, sans forcer ce voisin. We12/0, de durée medium nulle, reste non minuté. Voir [la revue ciblée](revue-en22-2026-11-09.md). Aucune écoute humaine acquise.
+
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
 | ☐ | 3 | 0:26.24 | 0 : The (P) | The railways, for example, suffered a lot of damage as a result of these actions. |
@@ -503,13 +522,13 @@ Audio : `public/audio/en/stop-22.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 8 | 1:02.06 | 1 : green (P) ; 5 : KIEFFER (L) ; 6 : commandos (P) ; 17 : who (P) ; 24 : 18 (L) ; 27 : by (P) | The green beret of the KIEFFER commandos symbolizes the unity and courage of the 177 French soldiers who responded to the call of June 18, fighting side by side with their allies to liberate a country reduced to silence. |
 | ☐ | 9 | 1:18.52 | 8 : weapon (P) ; 9 : testify (P) ; 15 : resistance (P) | The detonators, tire slashes and this modified Mauser weapon testify to the inventiveness of the resistance fighters. |
 | ☐ | 10 | 1:26.80 | 2 : there (P) | And then, there are the fake stamps, essential instruments for creating false identities: real keys to survival, allowing many resistance fighters to escape the clutches of the enemy and continue their fight in the shadows. |
-| ☐ | 11 | 1:41.84 | 5 : transformed (P) ; 8 : using (P) ; 13 : to (P) | Faced with limited resources, they transformed their environment, using each piece, each tool, to fuel their endless struggle. |
+| ☐ | 11 | 1:41.84 | 8 : using (P) ; 13 : to (P) | Faced with limited resources, they transformed their environment, using each piece, each tool, to fuel their endless struggle. |
 | ☐ | 12 | 1:50.98 | 0 : We (P) | We were fortunate to know several resistance fighters during their lifetime. |
 | ☐ | 14 | 2:01.22 | 19 : who (P) | We perpetuate their memory through this window, because it is a real childhood memory of having met these people, who did not wear a uniform—apparently simple citizens... |
 
 ### Vigilances anglaises particulières
 
-- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 450 mots affichés sans repère.
+- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 425 mots affichés sans repère.
 - EN12, EN16 et EN18 : distinguer les dialogues d’ambiance de la narration principale. Leur exclusion du suivi n’est pas une traduction ni une réécriture du récit.
 - Noms/termes et divergences à écouter avec une personne anglophone : Fabien/Fabian, Focke-Wulf, PAK 40, Flakvierling, Severloh, Lehr, Vierville-sur-Mer, ORIN, Welbike, Mauser/KIEFFER et EN13 offensive/defensive. Seules les occurrences réellement présentes dans les textes sont concernées ; cette vigilance ne propose aucun remplacement automatique.
 

@@ -41,6 +41,17 @@
             55.96,
             85.36
           ]
+        },
+        {
+          "id": 3,
+          "path": "en-missing-targeted-20261109/en-10-medium-window-609b503019f48815322a5f7621af2bf32b1da74f55ac709b62fb73d7d49e4252.json",
+          "sha256": "0a7408c08696a0f7b3aa389b2d865f2ac8588f6d78c30fa3d9a05f9837f4c63e",
+          "cacheKey": "609b503019f48815322a5f7621af2bf32b1da74f55ac709b62fb73d7d49e4252",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            89.38,
+            117.6
+          ]
         }
       ],
       "alignmentEvidenceCaches": [
@@ -65,6 +76,14 @@
           "path": "en-ctc-targeted-20261110/en-10-ctc-f00f0588887ea5df9cdf0108afd833bf5dab5043c057a150fc1066e9ed687655.json",
           "sha256": "217a46d0cc79658eee2ebcf1e9273b9c2ed4b9d4840f5308b83fd25f60529c10",
           "cacheKey": "f00f0588887ea5df9cdf0108afd833bf5dab5043c057a150fc1066e9ed687655",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 4,
+          "path": "en-ctc-targeted-20261110/en-10-ctc-d5fbb9c390ec8c675656d307fbf24e1280863dc22c4c5e047330c0c68e101010.json",
+          "sha256": "c7b66b8777b5d08327e19502a07ec2b58d2df50c0acca61f1c9a0f9cbd888efd",
+          "cacheKey": "d5fbb9c390ec8c675656d307fbf24e1280863dc22c4c5e047330c0c68e101010",
           "kind": "targeted",
           "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
         }
@@ -105,6 +124,15 @@
           "startSeconds": 79.336,
           "endSeconds": 79.516,
           "score": 0.899
+        },
+        {
+          "segmentIndex": 14,
+          "tokenIndex": 18,
+          "alignmentCacheId": 4,
+          "nativeIndex": 38,
+          "startSeconds": 104.291,
+          "endSeconds": 104.711,
+          "score": 0.865
         }
       ],
       "boundaryCorrections": [
@@ -122,7 +150,7 @@
       ],
       "languageProbability": 0.9891202449798584,
       "totalWords": 354,
-      "timedWords": 325,
+      "timedWords": 326,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -247,12 +275,6 @@
           "segmentIndex": 14,
           "tokenIndex": 10,
           "text": "special",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 14,
-          "tokenIndex": 18,
-          "text": "prized",
           "reason": "low-recognition-probability"
         },
         {
@@ -630,6 +652,7 @@
             [15,103.12,103.42,0.9985871315002441,255],
             [16,103.42,103.8,0.9997362494468689,256],
             [17,103.8,104.16,0.9813381433486938,257],
+            [18,104.36,104.8,0.996612012386322,40,3],
             [20,104.96,105.3,0.9914957284927368,260],
             [21,105.3,105.4,0.9965357780456543,261],
             [22,105.4,105.66,0.9884710311889648,262],
@@ -7814,9 +7837,85 @@
       "referenceSha256": "251536d661cc063c7abc99fc18a2234f50274d0a96f6f576bf634b589988fc14",
       "recognitionCacheKey": "96e07c77a42e2bccdc28c6438f6dc8215447326004667e89cf351c45bda97a82",
       "recognitionCacheSha256": "4207eb19851b6739f9d66ebbfc0151faae294bf724ec2ec32ed859ca12dd70d7",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en22-targeted-20261109/en22-medium-window-39037538c55ebd2f55d7371fac69a5942c426d8f11ed089f5ff721229181347c.json",
+          "sha256": "c7449e02cc71d08363b1dbee9ce77e5ba1f447f093bdccb766e54cf566ea189b",
+          "cacheKey": "39037538c55ebd2f55d7371fac69a5942c426d8f11ed089f5ff721229181347c",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            101.3,
+            115.3
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-01-22-ctc-targeted-20261110/en-22-ctc-96aed064e41dac4a2413552b8f4fe7a9a46c1638f59fadebd4a92909e219a264.json",
+          "sha256": "fc24e73db1cc564512fe58fc55c2cff28b7dce66f17ac32ddfa9186df5475871",
+          "cacheKey": "96aed064e41dac4a2413552b8f4fe7a9a46c1638f59fadebd4a92909e219a264",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 5,
+          "alignmentCacheId": 1,
+          "nativeIndex": 5,
+          "startSeconds": 104.164,
+          "endSeconds": 104.785,
+          "score": 0.844
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 6,
+          "alignmentCacheId": 1,
+          "nativeIndex": 6,
+          "startSeconds": 104.825,
+          "endSeconds": 104.945,
+          "score": 0.913
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 7,
+          "alignmentCacheId": 1,
+          "nativeIndex": 7,
+          "startSeconds": 104.985,
+          "endSeconds": 105.546,
+          "score": 0.845
+        }
+      ],
+      "boundaryCorrections": [
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 6,
+          "previousTiming": [
+            6,
+            104.58,
+            104.92,
+            0.9966288208961487,
+            242
+          ]
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 7,
+          "previousTiming": [
+            7,
+            104.92,
+            105.46,
+            0.9981770515441895,
+            243
+          ]
+        }
+      ],
       "languageProbability": 0.9951995611190796,
       "totalWords": 341,
-      "timedWords": 320,
+      "timedWords": 321,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -7917,12 +8016,6 @@
           "segmentIndex": 10,
           "tokenIndex": 2,
           "text": "there",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 11,
-          "tokenIndex": 5,
-          "text": "transformed",
           "reason": "low-recognition-probability"
         },
         {
@@ -8247,8 +8340,9 @@
             [2,102.4,102.78,0.9985785484313965,238],
             [3,102.78,103.48,0.9988659620285034,239],
             [4,103.94,104.02,0.9985657334327698,240],
-            [6,104.58,104.92,0.9966288208961487,242],
-            [7,104.92,105.46,0.9981770515441895,243],
+            [5,104.28,104.8,0.9680752158164978,5,1],
+            [6,104.8,105.06,0.9976027607917786,6,1],
+            [7,105.06,105.6,0.9953235983848572,7,1],
             [9,106.2,106.64,0.9963611960411072,245],
             [10,106.64,106.96,0.9944051504135132,246],
             [11,107.38,107.64,0.9989017248153687,247],
@@ -10742,9 +10836,93 @@
       "referenceSha256": "adfc38978bf09c251cb8cb51a7786c9cdefc45a58f05665f52062964f53d488c",
       "recognitionCacheKey": "33473b5827d171235ae139fec2055bd5ff861e04b2fe9e5d60f7c8539ce9e98f",
       "recognitionCacheSha256": "317d310394dd19f08583451c7ccce8e973e514706d4b9e0ab6b57db07ea4abbc",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-06-medium-window-135036e4c46ec931bda8bd5f585e88fec19ecaeac85a77a7cf024bcc64a9dac1.json",
+          "sha256": "21f7883ba2895e301e07b7a72548895f846feb33d62f98e4d49da12aed4a797b",
+          "cacheKey": "135036e4c46ec931bda8bd5f585e88fec19ecaeac85a77a7cf024bcc64a9dac1",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            109.88,
+            118.8
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-06-medium-window-2c6e84937d1418f0e331ecb7e23ececd9351749439cb5b5367d833f01ada6c90.json",
+          "sha256": "51ddf3354a78b79b0af84a6b1373ff8fd584815100372fd5c57e5ae67ab27131",
+          "cacheKey": "2c6e84937d1418f0e331ecb7e23ececd9351749439cb5b5367d833f01ada6c90",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            158.9,
+            172.74
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-06-ctc-98268f0dcef6f85fa73f5ca7e1b986dcdabbce7e95331dcf085f9a968dd4e52a.json",
+          "sha256": "d4309c2cf2419f5ea9a11b668149e19bb46bcd3b03e800d6a8626afb608c79e8",
+          "cacheKey": "98268f0dcef6f85fa73f5ca7e1b986dcdabbce7e95331dcf085f9a968dd4e52a",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-06-ctc-7842a7f095735ccef0b06f26502f6d644b3e84c714e34e31bd69151d70e44a2b.json",
+          "sha256": "4cedce5b1dbf83b643ab6826c8e1e38ade621fa2b67981e076f35bf5136b7a37",
+          "cacheKey": "7842a7f095735ccef0b06f26502f6d644b3e84c714e34e31bd69151d70e44a2b",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 19,
+          "tokenIndex": 20,
+          "alignmentCacheId": 1,
+          "nativeIndex": 17,
+          "startSeconds": 115.914,
+          "endSeconds": 116.294,
+          "score": 0.811
+        },
+        {
+          "segmentIndex": 19,
+          "tokenIndex": 21,
+          "alignmentCacheId": 1,
+          "nativeIndex": 18,
+          "startSeconds": 116.435,
+          "endSeconds": 116.595,
+          "score": 0.833
+        },
+        {
+          "segmentIndex": 26,
+          "tokenIndex": 6,
+          "alignmentCacheId": 2,
+          "nativeIndex": 4,
+          "startSeconds": 161.464,
+          "endSeconds": 161.804,
+          "score": 0.875
+        }
+      ],
+      "boundaryCorrections": [
+        {
+          "segmentIndex": 19,
+          "tokenIndex": 21,
+          "previousTiming": [
+            21,
+            116.12,
+            116.54,
+            0.9617798328399658,
+            294
+          ]
+        }
+      ],
       "languageProbability": 0.998141884803772,
       "totalWords": 440,
-      "timedWords": 419,
+      "timedWords": 421,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -10831,12 +11009,6 @@
         },
         {
           "segmentIndex": 19,
-          "tokenIndex": 20,
-          "text": "meters",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 19,
           "tokenIndex": 22,
           "text": "two",
           "reason": "not-exactly-recognized-source-word"
@@ -10851,12 +11023,6 @@
           "segmentIndex": 23,
           "tokenIndex": 15,
           "text": "Kettenkrad",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 26,
-          "tokenIndex": 6,
-          "text": "because",
           "reason": "low-recognition-probability"
         },
         {
@@ -11276,7 +11442,8 @@
             [16,114.24,114.54,0.9973993301391602,289],
             [17,114.78,115.18,0.9979068040847778,290],
             [18,115.18,115.48,0.9960516095161438,291],
-            [21,116.12,116.54,0.9617798328399658,294],
+            [20,115.92,116.33999999999999,0.9458547830581665,17,1],
+            [21,116.33999999999999,116.66,0.9954730868339539,18,1],
             [23,116.8,117.08,0.9754562973976135,296]
           ]
         },
@@ -11422,6 +11589,7 @@
             [3,159.68,159.98,0.9987168312072754,398],
             [4,159.98,160.4,0.9846059083938599,399],
             [5,160.4,160.9,0.9976564645767212,400],
+            [6,161.64000000000001,161.84,0.9934815168380737,5,2],
             [8,162.06,162.26,0.9993952512741089,403],
             [9,162.26,162.42,0.9984675049781799,404],
             [10,162.42,162.7,0.9969058632850647,405],
@@ -12313,6 +12481,17 @@
             19.54,
             46.62
           ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-09-medium-window-e96377ab5466c6c53518f8c68eafb472a4abc2b42c0398caea92b318f08edc53.json",
+          "sha256": "2da6af5cea0a9f2a022c9e3c47eff46999bedcd27a4a5f3a465bf125bf85e79e",
+          "cacheKey": "e96377ab5466c6c53518f8c68eafb472a4abc2b42c0398caea92b318f08edc53",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            48.48,
+            54.34
+          ]
         }
       ],
       "alignmentEvidenceCaches": [
@@ -12321,6 +12500,14 @@
           "path": "en-ctc-targeted-20261110/en-09-ctc-e6e525f8c2dd76453886a34e5f3d5b329aecfbb39aaef576faa15054851e1802.json",
           "sha256": "6f1fbc2018f496d94e4b9f64b7e9174b420b2c39e20e652da40e11fb02295d85",
           "cacheKey": "e6e525f8c2dd76453886a34e5f3d5b329aecfbb39aaef576faa15054851e1802",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-09-ctc-6d050c994d97e6d138008000698d12ab7cb9efdbf08297141084d5472a2e337f.json",
+          "sha256": "a0ae00200edcea4ac1cdebac546568b2092bbb3a805ada790a8cbd552362f8e4",
+          "cacheKey": "6d050c994d97e6d138008000698d12ab7cb9efdbf08297141084d5472a2e337f",
           "kind": "targeted",
           "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
         }
@@ -12343,6 +12530,24 @@
           "startSeconds": 23.343,
           "endSeconds": 23.863,
           "score": 0.801
+        },
+        {
+          "segmentIndex": 9,
+          "tokenIndex": 0,
+          "alignmentCacheId": 2,
+          "nativeIndex": 5,
+          "startSeconds": 51.45,
+          "endSeconds": 51.571,
+          "score": 0.826
+        },
+        {
+          "segmentIndex": 9,
+          "tokenIndex": 1,
+          "alignmentCacheId": 2,
+          "nativeIndex": 6,
+          "startSeconds": 51.631,
+          "endSeconds": 52.052,
+          "score": 0.801
         }
       ],
       "boundaryCorrections": [
@@ -12356,11 +12561,22 @@
             0.9201981425285339,
             48
           ]
+        },
+        {
+          "segmentIndex": 9,
+          "tokenIndex": 1,
+          "previousTiming": [
+            1,
+            51.52,
+            51.96,
+            0.9866278767585754,
+            108
+          ]
         }
       ],
       "languageProbability": 0.9815623760223389,
       "totalWords": 134,
-      "timedWords": 121,
+      "timedWords": 122,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated.",
@@ -12457,12 +12673,6 @@
           "segmentIndex": 8,
           "tokenIndex": 23,
           "text": "44",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
-          "tokenIndex": 0,
-          "text": "He",
           "reason": "low-recognition-probability"
         },
         {
@@ -12621,10 +12831,11 @@
           ]
         },
         {
-          "startSeconds": 51.52,
+          "startSeconds": 51.4,
           "text": "He claims, in his stories, to have fired around 12,500 cartridges.",
           "timings": [
-            [1,51.52,51.96,0.9866278767585754,108],
+            [0,51.4,51.699999999999996,0.9894310235977173,6,2],
+            [1,51.699999999999996,52.08,0.9928086996078491,7,2],
             [3,52.34,52.5,0.9973323345184326,110],
             [4,52.5,52.96,0.9943371415138245,111],
             [5,52.96,53.52,0.9573362469673157,112],

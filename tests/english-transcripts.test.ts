@@ -131,6 +131,7 @@ const addedAddresses = [
   '10/6/5', '10/6/6', '10/10/21', '13/1/14', '13/11/0', '14/15/10',
   '15/0/15', '15/9/6', '19/6/38', '19/8/20', '20/14/2', '20/14/3',
   '21/12/3', '21/31/12',
+  '06/19/20', '06/26/6', '09/9/0', '10/14/18', '22/11/5',
 ];
 const previousBounds = [
   { id: '09', segmentIndex: 7, tokenIndex: 1, previousTiming: [1, 23.24, 23.6, 0.9201981425285339, 48] },
@@ -138,9 +139,13 @@ const previousBounds = [
   { id: '13', segmentIndex: 1, tokenIndex: 15, previousTiming: [15, 23.92, 24.22, 0.9774091243743896, 39] },
   { id: '13', segmentIndex: 11, tokenIndex: 1, previousTiming: [1, 133.2, 133.72, 0.9948849081993103, 271] },
   { id: '13', segmentIndex: 11, tokenIndex: 2, previousTiming: [2, 133.72, 133.96, 0.9961200952529907, 272] },
+  { id: '06', segmentIndex: 19, tokenIndex: 21, previousTiming: [21, 116.12, 116.54, 0.9617798328399658, 294] },
+  { id: '09', segmentIndex: 9, tokenIndex: 1, previousTiming: [1, 51.52, 51.96, 0.9866278767585754, 108] },
+  { id: '22', segmentIndex: 11, tokenIndex: 6, previousTiming: [6, 104.58, 104.92, 0.9966288208961487, 242] },
+  { id: '22', segmentIndex: 11, tokenIndex: 7, previousTiming: [7, 104.92, 105.46, 0.9981770515441895, 243] },
 ];
 
-test('only 20 evidenced additions, five necessary repairs and three phrase starts differ from the original English dataset', () => {
+test('only 25 evidenced additions, nine necessary repairs and four phrase starts differ from the original English dataset', () => {
   const preserved = structuredClone(ENGLISH_TRANSCRIPT_SOURCES);
   const actualAdded: string[] = [];
   const actualRepairs: typeof previousBounds = [];
@@ -166,13 +171,14 @@ test('only 20 evidenced additions, five necessary repairs and three phrase start
   const byAddress = (a: typeof previousBounds[number], b: typeof previousBounds[number]) => a.id.localeCompare(b.id) || a.segmentIndex - b.segmentIndex || a.tokenIndex - b.tokenIndex;
   assert.deepEqual(actualRepairs.sort(byAddress), previousBounds.toSorted(byAddress));
   assert.deepEqual(actualAdded.sort(), addedAddresses.toSorted());
-  // Restore only the three explicitly permitted phrase-start changes.
+  // Restore only the four explicitly permitted phrase-start changes.
   preserved['05'].segments[4].startSeconds = 30.12;
   preserved['09'].segments[7].startSeconds = 23.24;
   preserved['13'].segments[11].startSeconds = 133.2;
+  preserved['09'].segments[9].startSeconds = 51.52;
   assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), 'b1b3e28dfe57a1b0cf16d01010150dde286a13ae7a2a23d5916b96ea06374b87');
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6592);
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 430);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6597);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 425);
 });
 
 test('new English bounds require both clear recognition and overlapping independent alignment, including short words', () => {
@@ -187,7 +193,7 @@ test('new English bounds require both clear recognition and overlapping independ
       const cache = caches.find(cache => cache.id === proof.alignmentCacheId);
       assert.ok(cache);
       assert.equal(cache.modelWeightsSha256, '488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d');
-      assert.match(cache.path, /^en-ctc-(targeted|pilot)-20261110\/en-\d\d-ctc-[a-f0-9]{64}\.json$/);
+      assert.match(cache.path, /^en-(?:01-22-)?ctc-(targeted|pilot)-20261110\/en-\d\d-ctc-[a-f0-9]{64}\.json$/);
       const row = raw.segments[proof.segmentIndex].timings.find(row => row[0] === proof.tokenIndex);
       assert.ok(row && row[5] > 0 && row[3] >= .9);
       assert.ok(Number.isInteger(proof.nativeIndex) && proof.nativeIndex >= 0);
@@ -244,4 +250,16 @@ test('EN10 repaired phrase follows real playback in both seek directions without
   for (const [time, expected] of [[53.1, 'gentleman'], [53.3, 'in'], [53.7, 'question'], [53.3, 'in'], [53.1, 'gentleman']] as const) {
     assert.deepEqual(words.filter(word => getWordState(time, word) === 'current').map(word => word.text), [expected]);
   }
+});
+
+test('EN22 transformed and its necessary neighbors work without forcing the separate using conflict', () => {
+  const record = ENGLISH_TRANSCRIPTS['22'];
+  const raw = ENGLISH_TRANSCRIPT_SOURCES['22'];
+  const segment = record.segments[11];
+  const words = getTimedTokens(segment.text, segment.wordTimings!, segment.startSeconds, record.segments[12].startSeconds);
+  for (const [time, expected] of [[104.5, 'transformed'], [104.9, 'their'], [105.3, 'environment'], [104.5, 'transformed']] as const) {
+    assert.deepEqual(words.filter(word => getWordState(time, word) === 'current').map(word => word.text), [expected]);
+  }
+  assert.ok(raw.unresolvedWords.some(word => word.segmentIndex === 11 && word.tokenIndex === 8 && word.text === 'using'));
+  assert.deepEqual(raw.segments[11].timings.find(row => row[0] === 9), [9, 106.2, 106.64, 0.9963611960411072, 245]);
 });

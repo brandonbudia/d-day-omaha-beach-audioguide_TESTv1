@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 21 ; phase lot anglais vérifié, publication ciblée à effectuer.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 25 ; phase dernier complément vérifié, publication ciblée finale.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -44,13 +44,13 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | ID | Priorité | Statut | Critère et prochaine action |
 |---|---|---|---|
 | AUT-01 | P0 | validated | Créer ce suivi, tester publication/remplacement atomiques, garder dernier état valide hors dépôt |
-| EN22-01 | P1 | blocked-human | Revoir 21 mots/deux débuts de phrase ; candidats existants et fenêtres seulement ; conserver 320 bornes sans défaut prouvé |
+| EN22-01 | P1 | blocked-human | 321/341,20 omissions ; transformed et deux voisins corroborés/testés dans navigateur et hors serveur. Relecture ciblée nécessaire |
 | EN22-02 | P1 | blocked-human | Musée : identité et droits de la fin sonore ; conserver MP3 intégral ; rouvrir sur réponse |
 | FR22-01 | P1 | blocked-human | 331/350 ; même ajouté et six voisins corrigés avec preuvesCTC/medium ; 19omissions et sept repères à relire |
 | FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
-| EN01-REVIEW | P1 | blocked-human | Seize omissions initiales comparées ; history ajouté, quinze restent sans borne. Pas de nouveau calcul identique |
-| EN-01 | P1 | blocked-human | Revue ciblée terminée ; 19 ajouts et cinq réparations testés. EN total6592/7022,430omissions ; ne pas recalculer les116+81fenêtres inchangées |
-| CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes et81fenêtres terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
+| EN01-REVIEW | P1 | blocked-human | History conservé ; onze candidats encore comparés au nouveau CTC sans chaîne fiable. Quinze omissions, écoute humaine nécessaire |
+| EN-01 | P1 | blocked-human | EN6597/7022,425 omissions ;19+5 compléments avec preuves ;107 tests et recettes réussis. Ne pas relancer les caches inchangés |
+| CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes,81fenêtres puis six contextes EN01/EN22 terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
@@ -59,17 +59,20 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 106tests app,14Python,TypeScript/build0 ; recette native/mobile390 et hors serveur réussie. Essais physiques restent humains |
+| QA-01 | P1 | validated | 107tests app,14Python,TypeScript/build0 ; recette native/mobile390 et hors serveur réussie. Essais physiques restent humains |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | in_progress | Tests complets, diff, commit ciblé et push des seuls lots vérifiés |
+| DEL-01 | P1 | in_progress | Dernier complément entièrement vérifié ; réconcilier commit Add remaining independently corroborated English timings et reçu final, publier seulement si absent |
 
-## Tâche active : EN-01, comparaison ciblée EN02–21
+## Reprise : réconcilier la publication, puis validations externes
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base publiée avant ce lot : 80267160f0173fc587b27c250e7b59640e33a1ec. Les calculs sont terminés, ne pas relancer medium/CTC. Lot courant intégré et vérifié :19 nouveaux mots,5 réparations nécessaires,3 débuts de phrase. JSON EN SHA f0518215bc9263c6546067b80f34a25a9d296153717f1045ba34725a2ac1e552. 6592/7022 mots minutés ;430 omissions EN et43FR. Prochaine action immédiate : revue finale du diff, git diff --check, commit explicite des six fichiers de ce lot et push uniquement TESTv1/branche autorisée, puis comparaison HEAD/git ls-remote. dev-dist/sw.js exclu. La reprise doit d’abord réconcilier Git et les reçus externes, pour ne pas refaire une publication déjà réussie.
+Dernier lot publié avant ce complément : a810dc99aa341b4b7b51cf80cd6a2c6b07924cf5, SHA distant confirmé. Ce checkpoint accompagne le lot Add remaining independently corroborated English timings : cinq ajouts, quatre réparations nécessaires, un début de phrase, documentation et test. À la reprise, identifier ce commit via git log puis comparer HEAD avec origin ; reçu externe attendu resume-20261110-final-publication.json. Ne pas refaire un commit ou un calcul déjà terminé.
+État vérifié : JSON EN SHA727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84,6597/7022 minutés,425 omissions ; FR SHA00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7,7233/7276,43 omissions. EN22=321/341 et20 omissions ; EN01=239/254 et15 omissions. Le zéro v2 sur transformed était provisoire et remplacé avant publication par la comparaison v3 corrigée ; aucun ASR répété.
+Validation :107tests app,14Python,TypeScript/build0 ; données comparées aux bons caches ; snapshot historique conservé ; EN22 et nouveau début EN09 testés dans le navigateur ; EN22 rechargée/lue depuis cache après arrêt serveur. Aucun téléphone physique ni écoute humaine certifiés. dev-dist/sw.js préexistant reste intact et exclu.
+Après réconciliation de la publication, prochaines actions réellement utiles : décisions d’écoute sur docs/validations-humaines-demo.md (425 omissions EN,43 FR, repères automatiques à relire), droits et associations photo/plan, sources historiques/linguistiques, vrais MP3 des cinq langues, QR/hébergement cible et essais physiques. Les dépendances nécessitent l’accord prévu. Ne pas relancer les audits ni les mêmes caches pour remplir une exécution. La planification conserve son préalable d’exclusivité ; aucun second écrivain autorisé.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -299,3 +302,36 @@ PERF-01 : six GET locaux200/code0 et compression EN vérifiée, sans prétention
 Exclusivité recontrôlée via liste des chats : seul ce chat actif dans TESTv1 ; assistants strictement lecture seule. Aucun second écrivain lancé. Ce constat n’est toujours pas une garantie native de non-chevauchement planifié.
 La prochaine revue peut exploiter le nouveau modèle CTC sur les anciens caches seulement si une nouvelle preuve utile est disponible ; ne pas rouvrir automatiquement les mêmes traitements. À défaut de candidat fiable, demander la relecture humaine de la liste précise, sans invention ni retraitement identique.
 Publication du checkpoint : 2026-11-10T04:11:09.0201331+01:00
+
+## Checkpoint 22 — publication et prochaine preuve non redondante
+
+Commit a810dc99aa341b4b7b51cf80cd6a2c6b07924cf5 publié, code push0 ; comparaison SHA distant/local réussie. Six fichiers ciblés seulement ; dev-dist/sw.js préexistant reste intact et seul changement applicatif hors lot. Aucun autre écrivain lancé.
+La revue EN01/EN22 n’est rouverte que parce que le nouveau modèle CTC change les preuves disponibles. Réutiliser tous les caches medium et le pilote history ; les six contextes nouveaux ne doivent produire aucune nouvelle reconnaissance ASR. Si le CTC ne corrobore pas correctement mots et voisins, conserver les bornes actuelles et la liste humaine. Ne pas déclarer une validation humaine.
+Publication du checkpoint : 2026-11-10T04:13:21.7006582+01:00
+
+## Checkpoint 23 — conclusion préliminaire v2, remplacée par la revue du checkpoint24
+
+Plan nouveau SHA98d81bc8108fca546e24ff9390b2cb839d5a729c769754fdf89738834e98cf0c ; six fenêtres85,3s,15 cibles. Alignements CTC code0, six propriétés mots/caractères préservées. Caches medium existants seulement ; aucun nouveau ASR ni téléchargement. Proposition finale zéro ajout/réparation,14 chaînes sans corroboration CTC complète et une bloquée par probabilité medium d’un voisin. Les mots isolés qui passent ne justifient pas de déplacer leurs voisins non corroborés.
+EN01 : But8/0 bloqué sur at8/1 ; by10/0 sur this10/1 ; father13/6 sur and13/7. EN22 : transformed11/5 et using11/8 bloqués sur each11/9 ; The3/0 seulement26ms d’intersection, to11/13 disjoint. Autres scores/bornes insuffisants ; We12/0 de durée medium nulle reste exclu. Aucun texte réécrit ni borne tronquée.
+Preuves externes : en-01-22-ctc-targeted-20261110/proposed-corrections-v2.json, target-comparison-v2.json, six caches CTC et resume-20261110-en-01-22-ctc.txt. La première table dérivée target-comparison.json utilisait une surcharge entière Math.Max PowerShell pour l’intersection : elle est remplacée par v2 recalculée en flottants et n’a joué aucun rôle dans les critères Python ni dans les données du site.
+Seuls fichiers de ce dernier lot : docs/suivi-finalisation.md, docs/validations-humaines-demo.md, docs/revue-en22-2026-11-09.md, docs/recette-finalisation-2026-11-09.md. Sources applicatives inchangées depuis a810dc9 :106tests app/14Python/TypeScript/build réussis conservent leur portée, sans prétendre les avoir répétés pour des notes. Dernier contrôle git diff --check et examen du diff avant commit/push documentaire sur TESTv1 uniquement.
+Les tâches restantes sont explicitement bloquées par écoute/droits/ressources/appareils/accord dépendances ; aucun élément historique ou audio n’a été inventé pour les terminer. dev-dist/sw.js préexistant intact/exclu. Aucun serveur ou traitement laissé actif ; pas de deuxième écrivain.
+Publication du checkpoint : 2026-11-10T04:19:47.9378880+01:00
+
+## Checkpoint 24 — sur-extension détectée avant publication et complément conservateur
+
+Le reviewer a confirmé que la v2 imposait une réparation de using/each qui n’était pas causée par transformed : environment finit105,60 avant using106,18. Les conditions d’extension ont été corrigées dans l’outil externe pour ne suivre que les mots réellement empiétés par la chaîne proposée, tout en conservant les contrôles des voisins minutés, scores, limites et preuves de caractères. Aucun seuil abaissé.
+Recomparaison des mêmes81 caches plus six nouveaux contextes, sans aucun calcul audio : v3 retient cinq mots supplémentaires et quatre voisins nécessaires. EN06 meters19/20 + by19/21, because26/6 ; EN09 He9/0 + claims9/1 ; EN10 prized14/18 ; EN22 transformed11/5 + their11/6/environment11/7. Un début de phrase supplémentaire : EN09/9=51,4s. Candidats déjà publiés a810dc9 reconnus et conservés, jamais réexportés aveuglément.
+Export candidat SHA727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84 ; rollback simulé des seuls deltas reproduit le JSON f051 précédent. Revue indépendante des neuf affectations : empreintes, mots natifs et propriétaires exacts, aucun autre mot non minuté empiété ; frontières extérieures préservées.
+Tests applicatifs107/107, zéro ignoré/échec après correction d’une valeur attendue mal recopiée dans le nouveau test each (la donnée n’a pas été changée). TypeScript et build0. Snapshot historique complet constant après seuls25 ajouts (history inclus), neuf réparations et quatre débuts explicitement autorisés. Les33 preuves CTC sont réellement contrôlées sur leurs caches locaux.
+Les conclusions de blocage du checkpoint23 sur transformed sont remplacées par ce résultat v3 ; les archives v2 restent hors dépôt pour traçabilité. Aucun humain n’a encore validé ces intervalles. Prochaine étape : navigateur, documents finaux cohérents, commit/push ciblés. Seul ce chat actif dans TESTv1 lors de la reprise, aucun écrivain supplémentaire ; l’erreur de quota d’un assistant ne prouve pas que le parent est bloqué, les commandes ci-dessus ont réellement réussi.
+Publication du checkpoint : 2026-11-10T08:00:07.2748622+01:00
+
+## Checkpoint 25 — complément final testé, prêt pour commit/push
+
+Lot : src/data/english-transcripts.en.json ; tests/english-transcripts.test.ts ; docs/validations-humaines-demo.md ; docs/revue-en22-2026-11-09.md ; docs/recette-finalisation-2026-11-09.md ; docs/suivi-finalisation.md. Les trois premiers lots de cette reprise restent publiés6b4d560/482f36c/8026716, puis a810dc9 pour les19 ajouts anglais précédents. Aucun retour arrière.
+Validation finale réelle107/107 applicatifs (zéro ignoré),14/14 Python,TypeScript/build0 ; correspondance exacte des425 omissions avec la liste humaine. Snapshot source historique inchangé après les seuls25 ajouts cumulés, neuf réparations et quatre débuts autorisés. Revue indépendante des neuf dernières affectations sans autre mot empiété.
+Navigateur : EN22transformed104,41/current, their104,97/current, environment105,27/current, retour104,49/current ; using reste non cliquable. EN09He51,61/current ; pause après chaque essai.390×844 sans débordement. Serveur arrêté/code1,netstat0 puis rechargement EN22 et transformed104,48/current depuis cache ; aucune alerte/consoleerror. Onglet fermé, viewport restauré. Capture externe resume-20261110-en22-transformed-offline.jpg. Pas d’écoute humaine, de téléphone physique ni de réseau Windows coupé revendiqués.
+Build index-CamKvE4t.js, EN405,92kB/156,80gzip ; PWA53/3805,07KiB. FR, référence immuable et modification préexistante dev-dist/sw.js : empreintes précédentes inchangées. Aucun générateur, installation, nouveau poids ou traitement audio relancé dans ce complément.
+La dernière étape est la publication ciblée après revue/diff--check ; son SHA sera dans git log et le reçu externe resume-20261110-final-publication.json. Au réveil suivant, lire ces preuves avant de considérer DEL encore in_progress. Toutes les tâches fonctionnelles restantes recensées nécessitent des prérequis externes/humains ; les erreurs de quota anciennes ne justifient ni arrêt aveugle ni audits répétés.
+Publication du checkpoint : 2026-11-10T08:04:53.0842418+01:00
