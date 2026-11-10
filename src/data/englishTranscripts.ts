@@ -27,8 +27,8 @@ interface EnglishTranscriptSource {
     modelRevision: string;
     windowSeconds: number[];
   }[];
-  // CTC scores remain separate from ASR probabilities. A listening-confirmed
-  // word can use a native CTC interval through ctcWordTimings, with provenance.
+  // CTC scores remain separate from ASR probabilities. Native CTC intervals
+  // keep their listening confirmation or independent ASR corroboration explicit.
   alignmentEvidenceCaches?: {
     id: number;
     kind: 'targeted' | 'pilot';
@@ -51,6 +51,23 @@ interface EnglishTranscriptSource {
     tokenIndex: number;
     previousTiming: number[];
   }[];
+  automaticCtcAdditions?: {
+    method: string;
+    humanListeningReviewed: boolean;
+    previousRecordSha256: string;
+    previousRecognitionCacheIds: number[];
+    previousAlignmentCacheIds: number[];
+    words: {
+      segmentIndex: number;
+      tokenIndex: number;
+      text: string;
+      previousStartSeconds: number;
+      previousUnresolvedWord: EnglishTranscriptSource['unresolvedWords'][number];
+      recognition: { cacheId: number; nativeIndex: number; startSeconds: number; endSeconds: number; probability: number };
+      originalRecognitionNativeIndex: number;
+      minimumCharacterScore: number;
+    }[];
+  };
   listeningConfirmedAlignment?: {
     applicationBeforeSha256: string;
     previousRecordSha256: string;
@@ -114,9 +131,10 @@ export const ENGLISH_TRANSCRIPTS: Record<string, TranscriptRecord> = Object.from
       verification: record.verification,
       humanListeningReviewed: false,
       issues: [
-        ...record.issues.map(issue => record.listeningConfirmedAlignment && issue.startsWith('Only exact, context-supported recognized tokens')
-          ? `Historical ASR selection rule (before the separately documented listening-confirmed CTC additions): ${issue}` : issue),
+        ...record.issues.map(issue => (record.listeningConfirmedAlignment || record.automaticCtcAdditions) && issue.startsWith('Only exact, context-supported recognized tokens')
+          ? `Historical ASR selection rule (before the separately documented CTC additions): ${issue}` : issue),
         ...(record.listeningConfirmedAlignment ? ['The listener confirmed 16 word occurrences, not their exact boundaries. Native CTC bounds and the documented lexical exceptions supplement the original ASR selection; all boundaries still require human review.'] : []),
+        ...(record.automaticCtcAdditions ? [`${record.automaticCtcAdditions.words.length} additional native CTC interval is corroborated by independent recognition. This automatic addition has no human listening certification.`] : []),
         `${record.timedWords}/${record.totalWords} displayed words have retained native bounds; ${record.totalWords - record.timedWords} remain untimed.`,
       ],
       referenceSha256: record.referenceSha256,

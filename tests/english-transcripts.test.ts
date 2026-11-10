@@ -153,6 +153,22 @@ const previousBounds = [
 
 function restoreBeforeListeningConfirmation(sources: typeof ENGLISH_TRANSCRIPT_SOURCES) {
   for (const raw of Object.values(sources)) {
+    const automatic = raw.automaticCtcAdditions;
+    if (automatic) {
+      for (const addition of automatic.words) {
+        const segment = raw.segments[addition.segmentIndex];
+        segment.ctcWordTimings = segment.ctcWordTimings?.filter(word => word.tokenIndex !== addition.tokenIndex);
+        if (!segment.ctcWordTimings?.length) delete segment.ctcWordTimings;
+        segment.startSeconds = addition.previousStartSeconds;
+        raw.unresolvedWords.push(addition.previousUnresolvedWord);
+        raw.timedWords--;
+      }
+      raw.unresolvedWords.sort((a, b) => a.segmentIndex - b.segmentIndex || a.tokenIndex - b.tokenIndex);
+      raw.supplementaryRecognitionCaches = raw.supplementaryRecognitionCaches?.filter(cache => automatic.previousRecognitionCacheIds.includes(cache.id));
+      raw.alignmentEvidenceCaches = raw.alignmentEvidenceCaches?.filter(cache => automatic.previousAlignmentCacheIds.includes(cache.id));
+      delete raw.automaticCtcAdditions;
+      assert.equal(createHash('sha256').update(JSON.stringify(raw)).digest('hex'), automatic.previousRecordSha256, 'all old EN15 fields and bounds remain exact');
+    }
     const review = raw.listeningConfirmedAlignment;
     if (!review) continue;
     for (const change of review.changes) {
@@ -205,8 +221,8 @@ test('only 25 evidenced additions, nine necessary repairs and four phrase starts
   preserved['13'].segments[11].startSeconds = 133.2;
   preserved['09'].segments[9].startSeconds = 51.52;
   assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), 'b1b3e28dfe57a1b0cf16d01010150dde286a13ae7a2a23d5916b96ea06374b87');
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6613);
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 409);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6614);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 408);
 });
 
 test('new English bounds require both clear recognition and overlapping independent alignment, including short words', () => {
@@ -421,4 +437,68 @@ test('EN22 primary CTC intervals and lexical exceptions retain exact cached owne
       assert.ok(change.reviewFlags.includes('explicit-spoken-ordinal-display-unchanged'));
     }
   }
+});
+
+test('EN15 Designed uses a real CTC interval without changing either neighbor or claiming human confirmation', () => {
+  const raw = ENGLISH_TRANSCRIPT_SOURCES['15'];
+  const segment = ENGLISH_TRANSCRIPTS['15'].segments[3];
+  assert.equal(raw.timedWords, 314);
+  assert.equal(raw.unresolvedWords.length, 18);
+  assert.equal(raw.automaticCtcAdditions!.humanListeningReviewed, false);
+  assert.equal(raw.listeningConfirmedAlignment, undefined);
+  assert.equal(ENGLISH_TRANSCRIPTS['15'].provenance.humanListeningReviewed, false);
+  assert.ok(ENGLISH_TRANSCRIPTS['15'].provenance.issues.some(issue => issue.includes('automatic addition has no human listening certification')));
+  assert.equal(raw.automaticCtcAdditions!.words.length, 1);
+  assert.deepEqual(raw.automaticCtcAdditions!.words[0].previousUnresolvedWord, { segmentIndex: 3, tokenIndex: 0, text: 'Designed', reason: 'low-recognition-probability' });
+  assert.equal(segment.startSeconds, 28.687);
+  assert.deepEqual(raw.segments[3].ctcWordTimings, [{ tokenIndex: 0, startSeconds: 28.687, endSeconds: 29.168, score: .91, alignmentCacheId: 3, nativeIndex: 9 }]);
+  assert.equal(raw.segments[2].timings.at(-1)![2], 28.02);
+  assert.deepEqual(raw.segments[3].timings.slice(0, 2), [[1, 29.2, 29.32, 0.9946228265762329, 65], [2, 29.32, 29.46, 0.987414538860321, 66]]);
+  for (const [time, expected] of [[28.8, 'Designed'], [29.25, 'by'], [29.4, 'the'], [28.8, 'Designed']] as const) {
+    assert.deepEqual(segment.wordTimings!.filter(word => getWordState(time, word) === 'current').map(word => word.text), [expected]);
+  }
+});
+
+test('EN15 automatic CTC primary matches the sealed independent evidence and exact source characters', { skip: !existsSync(cacheRoot) }, () => {
+  const raw = ENGLISH_TRANSCRIPT_SOURCES['15'];
+  const addition = raw.automaticCtcAdditions!.words[0];
+  const primary = raw.segments[3].ctcWordTimings![0];
+  const meta = raw.alignmentEvidenceCaches!.find(cache => cache.id === primary.alignmentCacheId)!;
+  const bytes = readFileSync(join(cacheRoot, '..', meta.path));
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), meta.sha256);
+  const cache = JSON.parse(bytes.toString('utf8'));
+  assert.equal(cache.cacheKey, meta.cacheKey);
+  assert.equal(cache.inputIdentity.audioSha256, raw.audioSha256);
+  assert.equal(cache.inputIdentity.model.weightsSha256, meta.modelWeightsSha256);
+  assert.equal(cache.inputIdentity.configuration.interpolation, 'ignore');
+  const native = cache.result.word_segments[primary.nativeIndex];
+  const owned = cache.words.find((word: { nativeIndex: number }) => word.nativeIndex === primary.nativeIndex);
+  assert.deepEqual(owned.raw, native);
+  assert.deepEqual([owned.segmentIndex, owned.tokenIndex, owned.text], [3, 0, 'Designed']);
+  assert.ok(owned.fullAlphanumericCharacterEvidence);
+  assert.deepEqual(owned.unsupportedCharacters, []);
+  assert.equal(owned.minimumCharacterScore, addition.minimumCharacterScore);
+  assert.ok(addition.minimumCharacterScore >= .2);
+  assert.deepEqual([primary.startSeconds, primary.endSeconds, primary.score], [native.start, native.end, native.score]);
+  assert.ok(primary.score >= .9);
+  const witness = addition.recognition;
+  const asrMeta = raw.supplementaryRecognitionCaches!.find(cache => cache.id === witness.cacheId)!;
+  const asrBytes = readFileSync(join(cacheRoot, '..', asrMeta.path));
+  assert.equal(createHash('sha256').update(asrBytes).digest('hex'), asrMeta.sha256);
+  const asr = JSON.parse(asrBytes.toString('utf8'));
+  assert.equal(asr.source.sha256, raw.audioSha256);
+  assert.equal(asr.inputIdentity.configuration.suppliedText, false);
+  const recognized = asr.segments.flatMap((s: { words: object[] }) => s.words)[witness.nativeIndex];
+  assert.equal(recognized.word.trim(), 'Designed');
+  assert.deepEqual([witness.startSeconds, witness.endSeconds, witness.probability], [recognized.start, recognized.end, recognized.probability]);
+  assert.ok(witness.probability >= .9);
+  assert.ok(Math.abs(witness.startSeconds - primary.startSeconds) <= .2 && Math.abs(witness.endSeconds - primary.endSeconds) <= .2);
+  const overlap = Math.min(witness.endSeconds, primary.endSeconds) - Math.max(witness.startSeconds, primary.startSeconds);
+  assert.ok(overlap / Math.min(witness.endSeconds - witness.startSeconds, primary.endSeconds - primary.startSeconds) >= .5);
+  assert.ok(witness.endSeconds > raw.segments[3].timings[0][1], 'the old primary ASR would really overlap by');
+  const smallBytes = readFileSync(join(cacheRoot, `en-15-${raw.recognitionCacheKey}.json`));
+  assert.equal(createHash('sha256').update(smallBytes).digest('hex'), raw.recognitionCacheSha256);
+  const small = JSON.parse(smallBytes.toString('utf8')).segments.flatMap((s: { words: object[] }) => s.words)[addition.originalRecognitionNativeIndex];
+  assert.equal(small.word.trim(), 'Designed');
+  assert.ok(small.probability < .8, 'the old weak recognizer is lexical support, not a new high-confidence primary');
 });

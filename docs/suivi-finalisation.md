@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 29 ; phase marges des réglages corrigées et testées, publication à réconcilier.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 30 ; phase complément EN15 testé, publication à réconcilier.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -49,8 +49,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | FR22-01 | P1 | blocked-human | 331/350 ; même ajouté et six voisins corrigés avec preuvesCTC/medium ; 19omissions et sept repères à relire |
 | FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
 | EN01-REVIEW | P1 | blocked-human | History conservé ; onze candidats encore comparés au nouveau CTC sans chaîne fiable. Quinze omissions, écoute humaine nécessaire |
-| EN-01 | P1 | blocked-human | EN6613/7022,409 omissions ;16 EN22 ajoutés avec provenance distincte,110 tests/recette cache réussis. Rouvrir sur preuve nouvelle, pas de recalcul identique |
-| CTC-EN-SUP | P1 | in_progress | Primaire CTC distinct maintenant disponible ; Designed EN15 sans voisin à retimer, vérifier provenance automatique distincte avant import ; aucun calcul à relancer |
+| EN-01 | P1 | blocked-human | EN6614/7022,408 omissions ; EN22 reste337/341. Frontières automatiques à relire ; ne pas recalculer les mêmes caches |
+| CTC-EN-SUP | P1 | validated | Designed EN15 ajouté CTCprimaire/ASRfort,314/332,aucun voisin changé. Deux autres chaînes écartées pour preuve faible ; aucun traitement audio répété |
 | CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes,81fenêtres puis six contextes EN01/EN22 terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
 | UI-01 | P1 | validated | Titres/langues conservés ; clic interne réglages reproduit/corrigé, fond extérieur/croix/Échap/focus et cache testés |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
@@ -60,19 +60,20 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 110app/14Python/TypeScript/build0 ;16 mots EN22/retours, suivi manuel, taille et cache390 vérifiés. Appareils physiques restent humains |
+| QA-01 | P1 | validated | 112app/TypeScript/build0 ;14Python EN22 inchangés ; Designed/by/the/retour/cache390 vérifiés, réglages corrigés. Appareils physiques restent humains |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | in_progress | 9ef35ab publié/SHA distant confirmé ; correctif des marges validé, retrouver commit Keep player settings open for clicks inside the dialog et reçu settings-padding-publication |
+| DEL-01 | P1 | in_progress | daae6d4 publié/SHA distant confirmé ; complément Designed prêt, retrouver commit Add independently corroborated CTC timing for EN15 Designed et reçu designed-publication |
 
 ## Reprise : réconcilier la publication, puis validations externes
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base publiée actuelle :9ef35ab70f69e1a511bb6330d5f829dbe9ea5e4a ; reçu resume-20261110-en22-listening-publication.json, SHA distant confirmé. Les16 mots EN22 sont déjà publiés : ne pas refaire ce lot. Données EN48bf16b2eafe9e5038a4a47cb079ec5e0c1cbca1258abeb7412523d3edd1e06d /6613sur7022 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 /7233sur7276. Quatre omissions EN22,409 EN au total ; frontières toujours provisoires.
-Lot courant : correction minimale du clic dans les marges internes du dialogue. Défaut reproduit à1280×495 ; après correction, intérieur conserve le panneau, fond extérieur/croix/Échap ferment avec restitution du focus. Réglages testés390×844 et après arrêt du serveur/netstat0.110tests app,TypeScript/build0 ; aucun contenu/minutage/audio modifié. Voir recette dixième lot et resume-20261110-settings-browser-results.json. Avant reprise, réconcilier git log et reçu resume-20261110-settings-padding-publication.json pour ne pas republier le lot s’il est déjà distant.
-Prochaine tâche techniquement disponible :EN15 Designed3/0, CTC28,687–29,168 dans l’intervalle libre born28,02→by29,20, aucune réparation ancienne. Medium exact p0,9966 et CTC0,910/minchar0,561 ; small exact mais faible0,575, pas de confirmation humaine. Le nouveau primaire CTC lève ici le conflit d’ancienne primaire medium, pas les réserves humaines globales. Intégrer seulement avec provenance automatique séparée et snapshot/tests/navigateur. Aucun modèle/audio à relancer ; les autres tâches restent soumises aux ressources/droits/écoutes/appareils identifiés.
+Base publiée actuelle :daae6d4837dd56db90ca0470eb7a3166ef8ad3ff, correctif des réglages publié et SHA distant confirmé dans resume-20261110-settings-padding-publication.json. EN22 précédent9ef35ab déjà publié,337/341 ; aucun de ces lots à refaire. Modification préexistante dev-dist/sw.js intacte/exclue.
+Lot courant validé :Designed EN15, CTC natif28,687–29,168 corroboré par medium indépendant fort ; aucune confirmation humaine ni variante lexicale, aucun ancien voisin retimé. EN15 :314/332. Données EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 /6614sur7022,408 omissions ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 /7233sur7276 inchangé. Total451 omissions.
+112tests app/TypeScript/build0 ; snapshots EN15/EN22/global conservés et caches réels vérifiés. Recette Designed/by/the/retour,314mots,390px sans débordement et hors serveur4198 réussie, aucun nouveau calcul audio. Voir recette onzième lot et resume-20261110-designed-browser-results.json. Prochaine action :revue/commit/push ciblés si non déjà publiés ; lire git log et resume-20261110-designed-publication.json avant toute nouvelle écriture.
+Les deux pistes radio EN12/and EN14 sont écartées à partir des caches existants pour voisins trop faibles/conflits. Ne pas répéter ces calculs. Les seules suites actuellement recensées nécessitent écoute humaine des frontières/omissions, droits/associations musée, sources éditoriales, vrais médias des cinq langues, appareils physiques et hébergement/QR. Les tests disponibles ne constituent pas ces validations. Ne pas consommer de quota en réauditant des résultats inchangés.
 
 ## EN22-01 : décision historique du9novembre, remplacée pour16 mots au checkpoint28
 
@@ -369,3 +370,12 @@ Défaut concret de clic interne du dialogue reproduit et corrigé dans quatre li
 Lot à publier :PlayerPage,recette,suivi. Prochaine tâche distincte :Designed EN15, preuve acoustique existante nouvelle exploitable grâce au primaire CTC ; aucun ancien repère à modifier. Ne pas inventer confirmation humaine ni relancer les caches. Lire le reçu settings-padding-publication avant reprise du commit.
 
 Publication du checkpoint : 2026-11-10T18:10:50.9937042+01:00
+
+
+## Checkpoint30 — complément EN15 techniquement terminé
+
+Correctif réglages daae6d4 publié/vérifié distant ; aucune ancienne étape à reprendre. Un seul ajout supplémentaire exploitable depuis les caches :Designed3/0 EN15, intervalle CTC natif entier avec medium indépendant fort,small exact faible,aucun voisin modifié,aucune présence humaine prétendue. Provenance automatique séparée du bloc utilisateur EN22 et probabilités ASR distinctes des scores CTC. Snapshot EN15 restauré exactement,21 autres registres inchangés.
+112tests applicatifs,zéro ignoré/échec,TypeScript/build0 ;14Python du lot EN22 conservés sans prétendre un nouveau lancement. Navigateur314mots,Designed/by/the/retour puis pauses ;390×844 sans débordement,cache après arrêt serveur/netstat0,currentDesigned28,72. Onglet fermé/viewport restauré ; aucun processus modèle ou serveur actif. Voir recette onzième lot.
+Six fichiers à publier :données EN,adaptateur,test EN,liste humaine,recette,suivi. EN6614/7022,408 omissions ; FR43 inchangées,total451. Pas d’autre correction audio justifiée par les candidats examinés ;radioEN12/andEN14 gardent leurs motifs précis. Après publication, réconcilier le reçu designed-publication et n’avancer que sur un prérequis réellement nouveau. Préserver dev-dist/sw.js et toutes ressources authentiques.
+
+Publication du checkpoint : 2026-11-10T18:19:11.3831356+01:00

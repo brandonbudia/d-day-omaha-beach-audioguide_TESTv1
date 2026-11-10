@@ -47,13 +47,13 @@ Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-compar
 | ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 | ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
-## Anglais — 409 mots affichés sans repère
+## Anglais — 408 mots affichés sans repère
 
 Source de travail : `src/data/english-transcripts.en.json`. Les 22 MP3 et les 22 références anglaises publiées ont déjà été comparés automatiquement. Les mots listés sont encore provisoires : ne pas affirmer que la langue entière est validée humainement. Le récit anglais est distinct du français.
 
 Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un même passage. Chaque entrée `indice : mot` est à valider séparément. Motifs conservés : **P** = confiance de reconnaissance insuffisante ; **L** = mot source non reconnu exactement ; **B** = borne invalide/conflit ; **A** = autre motif à consulter dans le JSON. Ces motifs sont des raisons de prudence, pas la preuve d’une erreur.
 
-Mise à jour du 10 novembre : les25 ajouts et neuf réparations anglais antérieurs restent conservés. Après confirmation utilisateur de16 occurrences EN22, celles-ci reçoivent des bornes acoustiques natives ;63 voisins nécessaires sont corrigés avec provenance séparée ASR/CTC. Total EN **6613/7022**, donc **409 sans repère** ; EN01 reste239/254 et EN22 compte337/341. Aucune écoute humaine intégrale ni certification des frontières n’est acquise. Les33 repères des lots antérieurs, les16 nouveaux mots et leurs63 voisins restent à relire ; les409 omissions ne désignent pas tous les mots nécessitant une écoute humaine.
+Mise à jour du 10 novembre : les25 ajouts et neuf réparations anglais antérieurs restent conservés. Après confirmation utilisateur de16 occurrences EN22, celles-ci reçoivent des bornes acoustiques natives ;63 voisins nécessaires sont corrigés avec provenance séparée ASR/CTC. Le complément automatique Designed EN15 ajoute ensuite un mot, sans modifier ses voisins. Total EN **6614/7022**, donc **408 sans repère** ; EN01 reste239/254 et EN22 compte337/341. Aucune écoute humaine intégrale ni certification des frontières n’est acquise. Les33 repères des lots antérieurs, les16 mots EN22, leurs63 voisins et Designed restent à relire ; les408 omissions ne désignent pas tous les mots nécessitant une écoute humaine.
 
 | Station | Mots affichés à vérifier | Passages documentaires séparés |
 |---|---:|---:|
@@ -71,7 +71,7 @@ Mise à jour du 10 novembre : les25 ajouts et neuf réparations anglais antérie
 | 12 | 54 | 1 |
 | 13 | 13 | 0 |
 | 14 | 21 | 0 |
-| 15 | 19 | 0 |
+| 15 | 18 | 0 |
 | 16 | 12 | 0 |
 | 17 | 15 | 0 |
 | 18 | 18 | 0 |
@@ -114,7 +114,13 @@ Une seconde revue a identifié une sur-extension des chaînes dans l’outil ext
 | ☐ | 10 | 14/18 : prized — 104.360–104.800 (ajouté) |
 | ☐ | 22 | 11/5 : transformed — 104.280–104.800 (ajouté) ; 11/6 : their — 104.800–105.060 (corrigé) ; 11/7 : environment — 105.060–105.600 (corrigé) |
 
-EN22 using, each et to restent inchangés ; la correction transformed/their/environment ne déplace pas ce conflit séparé. EN06 because a un écart initial medium/CTC de 176 ms : garder cette réserve à l’écoute, comme Crafted et in. Aucun statut humain n’est passé à vrai.
+État de ce lot antérieur : EN22 using, each et to étaient inchangés ; la correction transformed/their/environment ne déplaçait pas ce conflit séparé. Le complément EN22 décrit plus bas a ensuite ajouté using et corrigé each ; to reste sans repère. EN06 because a un écart initial medium/CTC de176ms : garder cette réserve à l’écoute, comme Crafted et in. Aucun statut humain global n’est passé à vrai.
+
+### Complément CTC automatique — EN15 Designed, frontière à relire
+
+Un nouveau repère réutilise les résultats acoustiques existants, sans nouveau traitement :EN15 phrase3/mot0 Designed, **28,687–29,168s CTC natifs**, score0,910/caractère minimum0,561. Reconnaissance medium indépendante exacte p0,9966,28,840–29,240s ; small exact mais faible p0,575. L’ajout est automatique, **sans confirmation humaine** et sans remplacement du texte.
+
+La nouvelle borne finit avant by29,200s et commence après born28,020s. Aucun ancien voisin modifié ; seul le début de phrase devient28,687s. L’ancienne primaire medium débordait de40ms sur by et ne permettait pas cet ajout. Relire Designed et son raccord à by ; le JSON garde le mot omis/début de phrase précédents et les références des deux sources. EN15 :314/332,18 omissions. Ce mot ne figure plus parmi les omissions, mais reste à valider humainement.
 
 ### EN01 — 01. Ici commence… L’histoire du musée
 
@@ -388,7 +394,7 @@ Audio : `public/audio/en/stop-15.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 0 | 0:00.00 | 16 : Welbike (L) | "I now invite you to discover one of the most fascinating pieces in our collection: the Welbike, a small British motorcycle with an exceptional destiny. |
 | ☐ | 1 | 0:10.84 | 8 : II (P) ; 9 : in (P) | Imagine yourself in the heart of World War II, in the 1940s: Allied forces are seeking to develop innovative ways to carry out military operations, often behind enemy lines. |
 | ☐ | 2 | 0:24.84 | 7 : Welbike (L) | It is in this context that the Welbike was born. |
-| ☐ | 3 | 0:29.20 | 0 : Designed (P) ; 3 : Station (P) ; 4 : IX (L) ; 5 : unit (P) ; 12 : Welbike (L) | Designed by the Station IX unit of the British Secret Service, the Welbike is a motorcycle of disarming simplicity, but formidably effective. |
+| ☐ | 3 | 0:28.69 | 3 : Station (P) ; 4 : IX (L) ; 5 : unit (P) ; 12 : Welbike (L) | Designed by the Station IX unit of the British Secret Service, the Welbike is a motorcycle of disarming simplicity, but formidably effective. |
 | ☐ | 5 | 0:44.86 | 4 : to (P) | The idea is ingenious: to create a vehicle that is light, compact and easily transportable by air. |
 | ☐ | 6 | 0:52.80 | 10 : the (P) ; 11 : Welbike (L) | As soon as the whistle blows and the mission begins, the Welbike unleashes all its magic. |
 | ☐ | 9 | 1:12.48 | 11 : 32kg (L) ; 19 : kilometers (P) ; 23 : two-stroke (L) | Its designers have imagined a motorcycle which, in its compactness (only 32kg), still has a range of nearly 145 kilometers, thanks to its two-stroke gasoline engine. |
@@ -523,7 +529,7 @@ Le tableau suivant contient uniquement les **quatre omissions** ; les mots déso
 
 ### Vigilances anglaises particulières
 
-- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 409 mots affichés sans repère.
+- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 408 mots affichés sans repère.
 - EN12, EN16 et EN18 : distinguer les dialogues d’ambiance de la narration principale. Leur exclusion du suivi n’est pas une traduction ni une réécriture du récit.
 - Noms/termes et divergences à écouter avec une personne anglophone : Fabien/Fabian, Focke-Wulf, PAK 40, Flakvierling, Severloh, Lehr, Vierville-sur-Mer, ORIN, Welbike, Mauser/KIEFFER et EN13 offensive/defensive. Seules les occurrences réellement présentes dans les textes sont concernées ; cette vigilance ne propose aucun remplacement automatique.
 

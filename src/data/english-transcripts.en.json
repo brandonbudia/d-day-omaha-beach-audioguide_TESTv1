@@ -3399,6 +3399,42 @@
       "referenceSha256": "b733f95e7bf59ab01545ae9b1d0fa6cdbc0862f0cfc4c6a0d83607fad06a71f8",
       "recognitionCacheKey": "269c577b0ed28fbeec008453f06305b7b53b8f453f29c6c50658222dc4ae615c",
       "recognitionCacheSha256": "b1b41f5f0220a6601e2533fa4bf671d81961de5d0a4984db612ed472867989e2",
+      "automaticCtcAdditions": {
+        "method": "native-CTC-primary-corroborated-by-independent-ASR",
+        "humanListeningReviewed": false,
+        "previousRecordSha256": "5fd100b94cd097dca709222e5881b6f3e81f17fde1abb099a4b15bafbaf4a7c4",
+        "previousRecognitionCacheIds": [
+          1,
+          2
+        ],
+        "previousAlignmentCacheIds": [
+          1,
+          2
+        ],
+        "words": [
+          {
+            "segmentIndex": 3,
+            "tokenIndex": 0,
+            "text": "Designed",
+            "previousStartSeconds": 29.2,
+            "previousUnresolvedWord": {
+              "segmentIndex": 3,
+              "tokenIndex": 0,
+              "text": "Designed",
+              "reason": "low-recognition-probability"
+            },
+            "recognition": {
+              "cacheId": 3,
+              "nativeIndex": 10,
+              "startSeconds": 28.839999999999996,
+              "endSeconds": 29.24,
+              "probability": 0.9965851902961731
+            },
+            "originalRecognitionNativeIndex": 64,
+            "minimumCharacterScore": 0.561
+          }
+        ]
+      },
       "supplementaryRecognitionCaches": [
         {
           "id": 1,
@@ -3421,6 +3457,17 @@
             72.5,
             96.36
           ]
+        },
+        {
+          "id": 3,
+          "path": "en-missing-targeted-20261109/en-15-medium-window-ed9b4599336d403b3f74a74b5f137688520d918de41f63c31aa340a19edc8b24.json",
+          "sha256": "b3d1a41e6bc79dd5059440fdf9162a243125d664fd38bd241a10ed962c8502f4",
+          "cacheKey": "ed9b4599336d403b3f74a74b5f137688520d918de41f63c31aa340a19edc8b24",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            24.74,
+            35.5
+          ]
         }
       ],
       "alignmentEvidenceCaches": [
@@ -3437,6 +3484,14 @@
           "path": "en-ctc-targeted-20261110/en-15-ctc-08bfaa30730242cae12fb04081587c958fd927a66096c50cdbc02a6657ac099e.json",
           "sha256": "5ebb2299e7355dd1d7774a08c671464f3a4dc3a641cf0a586acd90aac03e84bb",
           "cacheKey": "08bfaa30730242cae12fb04081587c958fd927a66096c50cdbc02a6657ac099e",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 3,
+          "path": "en-ctc-targeted-20261110/en-15-ctc-fb8ade7ab551983e647dacc7135a5ef694948bc100e5b440863ca2377a823d8b.json",
+          "sha256": "a1409749c6d717d7f549bd94abca5ec025cce6fb468c64a6840a87f16b193ce6",
+          "cacheKey": "fb8ade7ab551983e647dacc7135a5ef694948bc100e5b440863ca2377a823d8b",
           "kind": "targeted",
           "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
         }
@@ -3463,7 +3518,7 @@
       ],
       "languageProbability": 0.9989587068557739,
       "totalWords": 332,
-      "timedWords": 313,
+      "timedWords": 314,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -3493,12 +3548,6 @@
           "tokenIndex": 7,
           "text": "Welbike",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 3,
-          "tokenIndex": 0,
-          "text": "Designed",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 3,
@@ -3666,7 +3715,7 @@
           ]
         },
         {
-          "startSeconds": 29.2,
+          "startSeconds": 28.687,
           "text": "Designed by the Station IX unit of the British Secret Service, the Welbike is a motorcycle of disarming simplicity, but formidably effective.",
           "timings": [
             [1,29.2,29.32,0.9946228265762329,65],
@@ -3686,6 +3735,16 @@
             [19,36.66,36.78,0.9961406588554382,83],
             [20,36.78,37.62,0.8970802028973898,84],
             [21,37.62,38.12,0.9837973713874817,85]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 0,
+              "startSeconds": 28.687,
+              "endSeconds": 29.168,
+              "score": 0.91,
+              "alignmentCacheId": 3,
+              "nativeIndex": 9
+            }
           ]
         },
         {
