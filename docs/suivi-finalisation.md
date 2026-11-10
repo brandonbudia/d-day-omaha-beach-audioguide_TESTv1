@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 15 ; phase EN01 vérifié, publication ciblée en préparation.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 21 ; phase lot anglais vérifié, publication ciblée à effectuer.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -49,7 +49,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | FR22-01 | P1 | blocked-human | 331/350 ; même ajouté et six voisins corrigés avec preuvesCTC/medium ; 19omissions et sept repères à relire |
 | FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
 | EN01-REVIEW | P1 | blocked-human | Seize omissions initiales comparées ; history ajouté, quinze restent sans borne. Pas de nouveau calcul identique |
-| EN-01 | P1 | pending | Stations02–21 : 413 mots sans borne ; établir le prochain petit lot depuis les caches, sans retraiter EN01/EN22 |
+| EN-01 | P1 | blocked-human | Revue ciblée terminée ; 19 ajouts et cinq réparations testés. EN total6592/7022,430omissions ; ne pas recalculer les116+81fenêtres inchangées |
+| CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes et81fenêtres terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
 | UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
@@ -58,17 +59,17 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | in_progress | Régressions des lots, vrai parcours, offline ; essais physiques distincts des viewports |
+| QA-01 | P1 | validated | 106tests app,14Python,TypeScript/build0 ; recette native/mobile390 et hors serveur réussie. Essais physiques restent humains |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
-| PERF-01 | P2 | pending | Mesure représentative avant optimisation |
+| PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
 | DEL-01 | P1 | in_progress | Tests complets, diff, commit ciblé et push des seuls lots vérifiés |
 
-## Tâche active : DEL-01, vérification et publication EN01
+## Tâche active : EN-01, comparaison ciblée EN02–21
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-EN01 vérifié : seul history est ajouté, intervalle medium entier 111,10–111,52 s, aucun ancien repère déplacé. Quinze omissions restent en attente humaine, sans calcul identique à relancer. Prochaine action : examiner le diff indexé des six fichiers utiles, commit/push ciblés et SHA distant. Ensuite EN02–21, 413 mots : contrôler les caches disponibles avant tout complément ciblé. Si une reprise constate ce lot déjà publié avec ces empreintes et ses preuves, passer directement à EN02 sans rejouer la recette.
+Base publiée avant ce lot : 80267160f0173fc587b27c250e7b59640e33a1ec. Les calculs sont terminés, ne pas relancer medium/CTC. Lot courant intégré et vérifié :19 nouveaux mots,5 réparations nécessaires,3 débuts de phrase. JSON EN SHA f0518215bc9263c6546067b80f34a25a9d296153717f1045ba34725a2ac1e552. 6592/7022 mots minutés ;430 omissions EN et43FR. Prochaine action immédiate : revue finale du diff, git diff --check, commit explicite des six fichiers de ce lot et push uniquement TESTv1/branche autorisée, puis comparaison HEAD/git ls-remote. dev-dist/sw.js exclu. La reprise doit d’abord réconcilier Git et les reçus externes, pour ne pas refaire une publication déjà réussie.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -232,3 +233,69 @@ Prochaine tâche après publication : vérifier les caches medium/CTC EN02–21 
 - Version contrôlée : docs/recette-finalisation-2026-11-09.md ; SHA travail E84A0478C645F6616ECE8FAD84FE0881AAC89B894984A19593D7A0FD29381CE8 ; index avant préparation 100644 566a40ca3729a9987b9d33da4543e09ef9d286e5 0	docs/recette-finalisation-2026-11-09.md
 
 Publication du checkpoint : 2026-11-09T21:48:55.2041150+01:00
+
+## Checkpoint 16 — EN01 publié et lot acoustique EN02–21 préparé
+Commit 80267160f0173fc587b27c250e7b59640e33a1ec poussé et SHA distant identique confirmé, codes0. Lot de six fichiers seulement ; dev-dist/sw.js reste préexistant et exclu. Aucune autre modification applicative en attente avant cette mise à jour.
+Inventaire en lecture seule : EN02–21 possèdent chacun leur small natif, modèle/révision/langue/empreintes concordants au registre. Aucun résultat medium ou CTC réutilisable identifié pour ces vingt pistes. EN01, EN22 et toutes les pistes françaises sont exclus du nouveau traitement.
+Plan externe : en-missing-targeted-20261109/plan-context.json, SHA e84923c63ee902dacfc38175c020aa152e6ce76fe2c467a171671b711b4d63e8. Source applicative SHA671b51ac5e727f35a98b99d42f1a582c7dfcaae317d56240e5e18168d62205b3. Script externe en-missing-targeted-20261109.py, SHA2810cda43074aa15f879523f011c8d181d960901f5d81d472e26d49ac5bde99d.
+Portée :413 omissions,116 fenêtres,1680,569s contre3036,003s des pistes entières. Fenêtres depuis les voisins observés avec2s de contexte, regroupement jusqu’à30s et8s maximum entre groupes proches. Le plan initial à204 microfenêtres/1349,789s est conservé comme trace d’optimisation ; aucun audio n’a encore été reconnu dans l’un ou l’autre plan. Le regroupement réduit88 appels et conserve davantage de contexte.
+Deux cibles laissées explicitement hors calcul : EN16 phrase0/mot33,1944 ; phrase1/mot0,Each. L’intervalle entre voisins dépasse le contexte sûr de30s ; aucune position du mot ne sera déduite artificiellement.
+Préparation initiale : un diagnostic a échoué code1 sur la clé de métadonnées model, absente de configuration ; corrigé vers cache.model.name/révision. Les deux plans préparés ensuite réussissent code0. Aucun modèle chargé ni résultat ASR créé pendant ces préparations ; journal d’échec conservé. Aucun problème d’installation ni modification d’environnement.
+Exécution prévue : Python isolé existant, un seul medium local CPU/int8 à4threads pour le lot ; HF offline/local_files_only, aucune installation ni dépendance React. Sources et caches small contrôlés par SHA ; chaque nouveau cache est créé exclusivement, scellé par identité audio/modèle/configuration/échantillons et réutilisé seulement s’il est complet et compatible. Les données applicatives et tous les anciens caches restent intacts. Une interruption conserve les clips achevés ; un cache incomplet/incompatible doit provoquer un arrêt, jamais un écrasement.
+Stockage libre observé surC :37,7Go ; aucun téléchargement de poids. Prochaine étape : revue en lecture seule du script/plan, lancement unique avec --run, suivi des sorties puis décisions mot par mot. Ne jamais assimiler acceptedWords=0 des caches à une intégration validée ou une écoute humaine.
+
+Publication du checkpoint : 2026-11-09T21:55:23.8951455+01:00
+
+## Checkpoint 17 — traitement externe actif et comparaison protégée
+Revue indépendante en lecture seule avant lancement : vingt SHA audio et vingt caches small concordants,413 cibles uniques,411 couvertes par116 fenêtres et2 exclusions EN16 explicitement conservées. Plan/contextes valides, aucun cache existant à écraser.
+Commande en cours : Python isolé -B en-missing-targeted-20261109.py --run ; session exec86102. Lancement unique depuis ce chat, sorties dans resume-20261109-en-batch-run.txt. Aucun code de sortie final encore observé ; ne pas annoncer le lot terminé. Un seul modèle medium local pour toutes les fenêtres. Après interruption, consulter ce processus/journal avant toute reprise et ne jamais lancer un doublon.
+Comparateur externe en-compare-targeted-20261109.py : correspondance monotone par contexte et indices, graphie interne stricte (apostrophes/traits d’union préservés, we'll différent de well). Les rapports comparison-v2 sont les seuls rapports courants ; les premiers rapports v1 de quatre stations restent archivés sans faire foi.
+Critères de simple éligibilité : omission P initiale, mot unique exactement reconnu par small et medium, confiance medium>=0,9, débuts/fins concordants à0,2s maximum, intervalle medium entier entre voisins conservés, aucune intersection avec les dialogues exclus, aucun mot de bord de clip tronqué, aucune ambiguïté ou chevauchement entre nouveaux candidats. Les cas L/noms divergents ne sont pas acceptés automatiquement. Ces preuves restent automatiques, pas une écoute humaine.
+Après revue, deux gardes renforcées sans nouvel ASR : identité complète du medium attendu (révision/SHA poids/config/tokenizer/version) et différence réelle de poids avec small ; réutilisation des rapports conditionnée aussi au SHA courant du plan et des caches référencés, avec revalidation des identités natives. La comparaison protégée a réussi code0.
+Premières décisions v2 : stations02–06,88 mots examinés,0 candidat éligible. Revue indépendante02/03 confirme les rejets (armored heurte le suivant ; where reste sous confiance). Sur02–11,169 mots,quatre candidats seulement sont ensuite devenus éligibles (07,08,10), aucun encore intégré. Aucun seuil abaissé pour obtenir un ajout. Application et tous anciens repères inchangés ; acceptedWords=0 dans les caches et rapports.
+CTC anglais : WAV2VEC2_ASR_BASE_960H absent des caches habituels et d’artefacts consultés. La branche Torchaudio de WhisperX peut télécharger implicitement, donc aucun appel de chargement tenté. Demande humaine asynchrone envoyée : autoriser le seul poids officiel (environ360Mo) hors projet, sans pip install ni dépendance React. Réponse requise avant tout téléchargement ; le présent batch medium reste indépendant de cette réponse. Documentation officielle : https://docs.pytorch.org/audio/2.8/tutorials/speech_recognition_pipeline_tutorial.html . Un HEAD seul a échoué par DNS ; aucun poids téléchargé.
+État observé à ce checkpoint : 66 fenêtres achevées ; stations terminées 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13.
+SHA comparateur v2 renforcé : 3702407FA5DE62F56ACB79B95D562612D71C0B2A127CD5D2FB1552085ADEB4EC.
+
+Publication du checkpoint : 2026-11-09T22:09:54.4353647+01:00
+
+## Checkpoint 18 — batch terminé et autorisation CTC reçue
+La reprise reste celle du travail unique manuel : le heartbeat a rejoint ce chat, aucune autre session écrivante lancée. Inventaire actuel : seul ce chat actif sur TESTv1, trois autres chats non chargés, agents en lecture seule. Branche/origin/HEAD inchangés et conformes. Git ne montre que suivi-finalisation.md et dev-dist/sw.js préexistant. Aucune planification ou protection de sécurité modifiée.
+Batch medium EN02–21 terminé : session exec86102 sortie0,116 fenêtres et vingt stations complètes, cache conservé. Aucun ASR relancé. Comparateur v3 code0 :413 omissions examinées (dont deux contextes signalés), huit éligibles, zéro accepté/importé. Modèle/plan/SHA des caches sont revalidés ; les rapports v3 font désormais foi.
+Correction de décision après revue : EN10 gentleman reste sans borne. Son candidat medium finit53,18, mais in est reconnu53,18–53,50 alors que question conservé commence53,20 ; le seul test des voisins déjà minutés masquait ce conflit. La règle v3 rejette aussi les chaînes de mots source non minutés qui exigeraient de déplacer un voisin. Aucun intervalle voisin tronqué ou modifié.
+Candidats v3 à revoir : EN07 comfort ; EN08 stratagems ; EN10 room ; EN14 cunning ; EN15 the ; EN19 Enigma ; EN21 lock et row. Ce sont des estimations automatiques, jamais une validation humaine.
+Autorisation humaine explicite reçue le10novembre en réponse à la question du seul modèle anglais : « fait le meilleur et le plus logique si ce n'est pas deja fait je te fais confiance ». Portée appliquée : téléchargement unique WAV2VEC2_ASR_BASE_960H depuis le domaine officiel, cache externe, aucun pip install ni modification de dépendance ou environnement Python.
+HEAD officiel réussi :200,377664473octets. Téléchargement terminé, session exec41653 sortie0. Fichier audio-audit-20261105/models/wav2vec2_fairseq_base_ls960_asr_ls960.pth ; SHA488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d. Taille réelle conforme ; reçu externe wav2vec2-english-download-20261110.json. Aucun fichier existant écrasé ; temporaire nouveau renommé dans le seul cache autorisé. Le chargement des poids n’est pas encore testé.
+Pilote prévu : EN01 textes existants des phrases16/17, fenêtre106,8–113,0s ; EN10 phrase6, fenêtre50,8–55,9s. WhisperX installé3.8.6/Torch et Torchaudio2.8.0+cpu, CPU4threads ; poids précontrôlé et model_dir explicite, cache anglais NLTK local à vérifier, HF offline et tout téléchargement implicite bloqué dans le seul processus. interpolate_method=ignore, pas de répartition artificielle. Le CTC forcé ne prouve pas la présence des mots : conserver reconnaissance indépendante et revue humaine en attente.
+
+Publication du checkpoint : 2026-11-10T03:01:08.5481331+01:00
+
+## Checkpoint 19 — pilotes CTC réussis et corroboration ciblée préparée
+Session pilote exec12655 sortie0, aucun téléchargement implicite ni installation. Poids officiel SHA488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d chargé par le bundle Torchaudio avec weights_only=True. CPU4threads, NLTK anglais déjà local, téléchargements Torch/NLTK bloqués dans le processus, interpolation ignore.
+EN01 : cache pilote b115719cd9a28a02a7d48e05b8f237f6297773b7182db26c63fde155563ae47c, history111,034–111,495,score0,914. Corrobore le repère medium publié111,10–111,52 ; aucune nécessité de modifier cette borne existante. EN10 : cache b002446275de70b018d69331a188c8c30995bd7adde0d66aa119daa5cb5e6825, gentleman52,768–53,169(.825),in53,250–53,330(.822),question53,390–53,852(.815). Temps outil1,735/1,438s par fenêtre, après chargement.
+Revue indépendante EN10 : proposition locale justifiée, toujours provisoire : ajouter gentleman/in et remplacer SEUL question par les trois intervalles medium entiers et leurs probabilités/indices natifs, CTC en corroboration. Ancien question53,20–53,66 heurte réellement in53,18–53,50. the précédent finit52,68 et and suivant commence54,22 ; aucune autre cascade. Garder les flottants natifs exacts52.879999999999995 et53.879999999999995, pas les arrondis présentés. Rien encore écrit dans les données applicatives.
+Prochaine corroboration strictement limitée aux cas utiles :136 omissions P avec mot unique exact dans small et medium, medium>=0,9 et durée native valide. Les autres omissions ne sont pas forcées par le CTC. Pas de nouvel ASR, pas d’expansion numérique inventée ; tokens source inchangés, ponctuation seulement séparée dans l’entrée de l’outil. Les caractères non couverts, nombres, dialogues exclus et désaccords restent explicitement non acceptés.
+Plan externe en-ctc-targeted-20261110/plan.json :81 fenêtres existantes,136 cibles,1400,053s de contexte, aucune intersection avec les dialogues exclus dans ce sous-ensemble. SHA fb0f5b36b03361ab852911a4da151396e2511f9b30ef0bcd93a56eab9bb482c5, préparation code0 sans modèle chargé pour ce plan. Une fenêtre plus large recouvrant une partie du pilote ne sera utilisée que parce qu’elle contient d’autres cibles nouvelles ; les pilotes restent conservés comme corroboration et ne sont pas relancés.
+Script externe en-ctc-targeted-20261110.py : aucun accès d’écriture au projet, application/audio/modèle contrôlés par SHA ; cache par texte/tokens/propriétaires/fenêtre/modèle/configuration, création exclusive et réutilisation vérifiée. Un seul modèle pour le lot, interpolation ignore, caractères et mots doivent conserver une propriété exacte ; sinon résultat diagnostic sans intégration. Poids/NLTK déjà locaux, tout téléchargement implicite interdit.
+Après ce plan, ne pas importer automatiquement : exiger reconnaissance indépendante, intervalles entiers et validation des chaînes incluant les mots encore non minutés. Toute modification d’un ancien mot doit être nécessaire, localisée et corroborée ; conserver tous les autres. Préparer comparaison avant/après et tests de préservation avant recette navigateur et publication TESTv1.
+SHA script CTC ciblé : 2BC12818CC74DBA7569AA1052A8B4F29FF8F3B27C1FE3E1028CB8A61E9043CB4.
+
+Publication du checkpoint : 2026-11-10T03:24:26.1993700+01:00
+
+## Checkpoint 20 — calculs terminés, candidat relu avant intégration
+
+Batch medium : 116 fenêtres / 413 omissions EN02–21 ; deux mots EN16 explicitement hors fenêtre. CTC anglais : modèle officiel téléchargé une seule fois avec accord, 377664473 octets, SHA488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d ; aucune installation ni dépendance application. Deux pilotes puis 81 fenêtres, code 0 ; tous les caches sont externes et réutilisables.
+Trois assistants ont relu sans écrire. Quatre groupes exclus : EN15 the6/10, The16/0, Designed/by/the3/0–2, EN21 by29/3. Le critère absolu de 200ms est complété par une intersection d’au moins50% du plus court intervalle CTC/medium. Aucune borne raccourcie, moyennée ou interpolée.
+Candidat externe : english-transcripts.en-reviewed-v2-20261110.json ; SHA f0518215bc9263c6546067b80f34a25a9d296153717f1045ba34725a2ac1e552. 19 nouveaux mots / 12 stations, cinq voisins anciens remplacés avec leurs valeurs natives medium entières, trois débuts de phrase ajustés. Restauration simulée des seuls deltas reproduit exactement le JSON précédent. Données projet pas encore intégrées à ce checkpoint.
+Propositions et preuves : en-ctc-targeted-20261110/proposed-corrections-v2.json, en-reviewed-export-v2-20261110.json. EN10 in et EN05 Crafted gardent une priorité de relecture humaine (écarts de161/196ms). Tous les statuts humains restent faux.
+Publication du checkpoint : 2026-11-10T04:00:11.7459264+01:00
+
+## Checkpoint 21 — sixième lot intégré et testé
+
+Fichiers du lot : src/data/english-transcripts.en.json ; src/data/englishTranscripts.ts ; tests/english-transcripts.test.ts ; docs/validations-humaines-demo.md ; docs/recette-finalisation-2026-11-09.md ; docs/suivi-finalisation.md. Aucun fichier audio/image/générateur/dépendance modifié. dev-dist/sw.js demeure préexistant, SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f, exclu du commit.
+Suite applicative106/106, zéro ignoré/échec ; Python14/14 ; TypeScript et build0. Chaque tuple supplémentaire vérifié sur le bon cache ASR ; chaque preuve CTC vérifiée sur son cache et sa propriété de caractères ; snapshot d’origine conservé. Revue indépendante sans bug supplémentaire. Les24 intervalles restent provisoires pour écoute humaine ; priorité Crafted et in, sans prétention d’accord bilatéral50% de durée.
+Navigateur : EN10 gentleman/in/question et retour arrière corrects ; EN05 Crafted nouveau premier mot correct.390×844 sans débordement. Serveur arrêté, puis navigation/rechargement EN10 et lecture53,08s/currentgentleman depuis le cache, aucune alerte/erreur. Pack existant réutilisé. Onglets fermés, viewport restauré. Ni écoute humaine, ni téléphone réel, ni réseau Windows coupé revendiqués.
+PERF-01 : six GET locaux200/code0 et compression EN vérifiée, sans prétention de temps visiteur mobile. Documentation de recette détaillée et logs externes. Build index-u9RN-hKb.js, PWA53/3799,79KiB. Les vrais appareils, droits, sources éditoriales, ressources des cinq langues et destination QR restent des prérequis externes.
+Exclusivité recontrôlée via liste des chats : seul ce chat actif dans TESTv1 ; assistants strictement lecture seule. Aucun second écrivain lancé. Ce constat n’est toujours pas une garantie native de non-chevauchement planifié.
+La prochaine revue peut exploiter le nouveau modèle CTC sur les anciens caches seulement si une nouvelle preuve utile est disponible ; ne pas rouvrir automatiquement les mêmes traitements. À défaut de candidat fiable, demander la relecture humaine de la liste précise, sans invention ni retraitement identique.
+Publication du checkpoint : 2026-11-10T04:11:09.0201331+01:00

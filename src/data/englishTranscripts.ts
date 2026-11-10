@@ -18,6 +18,30 @@ interface EnglishTranscriptSource {
     modelRevision: string;
     windowSeconds: number[];
   }[];
+  // Independent forced alignment corroborates recognition; its score is not
+  // an ASR probability and its bounds are never substituted in the player.
+  alignmentEvidenceCaches?: {
+    id: number;
+    kind: 'targeted' | 'pilot';
+    path: string;
+    sha256: string;
+    cacheKey: string;
+    modelWeightsSha256: string;
+  }[];
+  wordCorroborations?: {
+    segmentIndex: number;
+    tokenIndex: number;
+    alignmentCacheId: number;
+    nativeIndex: number;
+    startSeconds: number;
+    endSeconds: number;
+    score: number;
+  }[];
+  boundaryCorrections?: {
+    segmentIndex: number;
+    tokenIndex: number;
+    previousTiming: number[];
+  }[];
   languageProbability: number;
   totalWords: number;
   timedWords: number;

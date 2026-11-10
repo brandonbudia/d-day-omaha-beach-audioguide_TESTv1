@@ -47,38 +47,61 @@ Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-compar
 | ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 | ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
-## Anglais — 449 mots affichés sans repère
+## Anglais — 430 mots affichés sans repère
 
 Source de travail : `src/data/english-transcripts.en.json`. Les 22 MP3 et les 22 références anglaises publiées ont déjà été comparés automatiquement. Les mots listés sont encore provisoires : ne pas affirmer que la langue entière est validée humainement. Le récit anglais est distinct du français.
 
 Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un même passage. Chaque entrée `indice : mot` est à valider séparément. Motifs conservés : **P** = confiance de reconnaissance insuffisante ; **L** = mot source non reconnu exactement ; **B** = borne invalide/conflit ; **A** = autre motif à consulter dans le JSON. Ces motifs sont des raisons de prudence, pas la preuve d’une erreur.
 
-Mise à jour du 9 novembre : seul « history » d'EN01 a reçu un repère supplémentaire, automatiquement corroboré et toujours en attente de relecture humaine. EN01 compte maintenant 239/254 mots minutés et 15 sans repère ; total EN 6573/7022. Les autres stations anglaises conservent leurs données. Les 449 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
+Mise à jour du 10 novembre : après history (EN01), 19 mots supplémentaires de 12 stations ont reçu leurs bornes medium natives entières, corroborées par un alignement CTC indépendant. Cinq repères voisins ont été corrigés seulement pour permettre les chaînes réellement reconnues, sans chevauchement. Total EN **6592/7022**, donc **430 sans repère** ; EN01 reste 239/254 et EN22 reste 320/341. Aucune écoute humaine intégrale n’est acquise. Les 24 repères de ce lot restent à relire dans le tableau ci-dessous ; les 430 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
 
 | Station | Mots affichés à vérifier | Passages documentaires séparés |
 |---|---:|---:|
 | 01 | 15 | 0 |
-| 02 | 14 | 0 |
+| 02 | 13 | 0 |
 | 03 | 24 | 0 |
 | 04 | 16 | 0 |
-| 05 | 13 | 0 |
+| 05 | 12 | 0 |
 | 06 | 21 | 0 |
-| 07 | 9 | 0 |
-| 08 | 10 | 1 |
-| 09 | 14 | 3 |
-| 10 | 32 | 0 |
+| 07 | 8 | 0 |
+| 08 | 9 | 1 |
+| 09 | 13 | 3 |
+| 10 | 29 | 0 |
 | 11 | 16 | 0 |
 | 12 | 54 | 1 |
-| 13 | 15 | 0 |
-| 14 | 22 | 0 |
-| 15 | 21 | 0 |
+| 13 | 13 | 0 |
+| 14 | 21 | 0 |
+| 15 | 19 | 0 |
 | 16 | 12 | 0 |
 | 17 | 15 | 0 |
 | 18 | 18 | 0 |
-| 19 | 25 | 0 |
-| 20 | 28 | 0 |
-| 21 | 34 | 0 |
+| 19 | 23 | 0 |
+| 20 | 26 | 0 |
+| 21 | 32 | 0 |
 | 22 | 21 | 0 |
+
+### Repères ajoutés ou corrigés le 10 novembre — relecture humaine en attente
+
+Intervalles conservés : mots natifs medium (probabilité ≥0,9). Le CTC sert uniquement de corroboration (score ≥0,8, écart des bornes ≤200ms et intersection ≥50% du plus court intervalle). Il ne remplace ni une reconnaissance indépendante ni une écoute. Les chemins, empreintes, indices natifs et anciennes bornes sont dans les métadonnées du JSON ; les caches restent hors du dépôt. Aucun outil Python n’est ajouté au site.
+
+| À valider | Station | Phrase / mot : texte — intervalle natif en secondes |
+|---|---|---|
+| ☐ | 02 | 0/15 : engine — 6.280–6.680 (ajouté) |
+| ☐ | 05 | 4/0 : Crafted — 29.880–30.120 (ajouté) |
+| ☐ | 07 | 4/6 : comfort — 28.780–29.160 (ajouté) |
+| ☐ | 08 | 9/8 : stratagems — 100.820–101.540 (ajouté) |
+| ☐ | 09 | 7/0 : You — 23.180–23.400 (ajouté) ; 7/1 : imagine — 23.400–23.840 (corrigé) |
+| ☐ | 10 | 6/5 : gentleman — 52.880–53.180 (ajouté) ; 6/6 : in — 53.180–53.500 (ajouté) ; 6/7 : question — 53.500–53.880 (corrigé) ; 10/21 : room — 79.280–79.580 (ajouté) |
+| ☐ | 13 | 1/14 : sea — 23.820–24.080 (ajouté) ; 1/15 : lanes — 24.080–24.420 (corrigé) ; 11/0 : By — 133.100–133.360 (ajouté) ; 11/1 : exhibiting — 133.360–133.860 (corrigé) ; 11/2 : them — 133.860–134.120 (corrigé) |
+| ☐ | 14 | 15/10 : cunning — 147.040–147.340 (ajouté) |
+| ☐ | 15 | 9/6 : which — 74.780–75.200 (ajouté) ; 0/15 : the — 5.380–5.580 (ajouté) |
+| ☐ | 19 | 8/20 : computing — 110.200–110.680 (ajouté) ; 6/38 : Enigma — 87.740–88.140 (ajouté) |
+| ☐ | 20 | 14/2 : commando — 135.980–136.520 (ajouté) ; 14/3 : dagger — 136.520–136.980 (ajouté) |
+| ☐ | 21 | 31/12 : row — 185.920–186.120 (ajouté) ; 12/3 : lock — 79.780–80.000 (ajouté) |
+
+- ☐ Priorité : EN10 **in** (6/6), fin medium 53,500 s contre CTC 53,339 s ; EN05 **Crafted** (4/0), début medium 29,880 s contre CTC 29,684 s. Ces écarts restent sous le seuil technique mais demandent une écoute attentive.
+- ☐ Quatre groupes rejetés restent sans nouvel alignement : EN15 the 6/10, The 16/0, chaîne Designed/by/the 3/0–2 ; EN21 by 29/3. Un écart absolu acceptable ne suffisait pas pour ces mots courts. Les anciens voisins de la chaîne rejetée restent intacts.
+- Les 413 omissions EN02–21 ont été examinées en 116 fenêtres medium ; 136 candidats clairement reconnus ont ensuite fait l’objet de 81 fenêtres CTC. Deux mots EN16 étaient explicitement hors de la limite de fenêtre :1944 (0/33) et Each (1/0). Ne pas relancer les mêmes traitements inchangés.
 
 ### EN01 — 01. Ici commence… L’histoire du musée
 
@@ -108,7 +131,7 @@ Audio : `public/audio/en/stop-02.mp3`. Référence publiée : [page anglaise Wiv
 
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
-| ☐ | 0 | 0:00.00 | 14 : Focke-Wulf (L) ; 15 : engine (P) ; 22 : Second (P) | "Here we are in front of a captivating scene rich in history: an impressive Focke-Wulf engine, this formidable German fighter from the Second World War, accompanied by two models of Luftwaffe pilots. |
+| ☐ | 0 | 0:00.00 | 14 : Focke-Wulf (L) ; 22 : Second (P) | "Here we are in front of a captivating scene rich in history: an impressive Focke-Wulf engine, this formidable German fighter from the Second World War, accompanied by two models of Luftwaffe pilots. |
 | ☐ | 3 | 0:29.24 | 0 : The (P) ; 8 : where (P) ; 26 : Focke-Wulf (L) | The story took place in a small village where, during development work in front of the station, an improbable discovery took place: several German aviation engines, Focke-Wulf. |
 | ☐ | 4 | 0:42.36 | 12 : mayor (P) | Driven by audacity and an unwavering passion for history, I contacted the mayor of the town to express my desire to preserve one of these historic pieces in our museum. |
 | ☐ | 6 | 1:02.54 | 1 : among (P) | But, among the four engines initially exhibited, only one was still present. |
@@ -156,7 +179,7 @@ Audio : `public/audio/en/stop-05.mp3`. Référence publiée : [page anglaise Wiv
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
 | ☐ | 1 | 0:12.24 | 1 : I'm (P) | Today I'm going to talk to you about German camouflage used during World War II, a subject that is particularly close to our hearts. |
-| ☐ | 4 | 0:30.12 | 0 : Crafted (P) ; 18 : theaters (P) | Crafted with meticulous attention to detail, they reflect a fascinating blend of functionality, innovation and adaptation to various theaters of war. |
+| ☐ | 4 | 0:29.88 | 18 : theaters (P) | Crafted with meticulous attention to detail, they reflect a fascinating blend of functionality, innovation and adaptation to various theaters of war. |
 | ☐ | 6 | 0:47.56 | 16 : autumn (P) | We find aspects corresponding to all seasons: if you look closely, you will see spring and autumn variations for cold regions, white for winter, and summer colors for our more temperate regions. |
 | ☐ | 7 | 1:01.12 | 5 : dot (P) | There is also the ""polka dot"" motif, introduced later in the conflict. |
 | ☐ | 10 | 1:17.60 | 3 : a (P) ; 17 : Youth (P) ; 18 : who (P) ; 20 : Caen (L) ; 26 : while (P) | In our collection, a jacket bearing this motif was mainly worn by SS members of the Hitler Youth, who held Caen for more than a month, while initial estimates spoke of two days. |
@@ -193,7 +216,6 @@ Audio : `public/audio/en/stop-07.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 0 | 0:01.18 | 0 : Before (P) ; 12 : II (P) | "Before you is the outfit of a German chaplain from World War II. |
 | ☐ | 1 | 0:05.10 | 11 : army (P) | These men of faith occupied a unique place within the German army, responsible for providing spiritual support to soldiers immersed in the harsh reality of war. |
 | ☐ | 2 | 0:15.90 | 15 : the (L) | Chaplains could be Catholic or Protestant, each offering the comfort of their religious tradition to the soldiers of their faith. |
-| ☐ | 4 | 0:26.78 | 6 : comfort (P) | In their role of support and comfort, they wore an outfit marked with symbols evoking a dark and complex period in our history today. |
 | ☐ | 6 | 0:50.84 | 13 : lives (P) | Often working in extremely difficult conditions, German chaplains tried to improve the daily lives of soldiers, offering listening and compassion in the face of moral and emotional trials. |
 | ☐ | 9 | 1:13.52 | 22 : in (P) | As representatives of the two main Christian denominations, they also had the task of promoting a certain moral unity within the troops, in a context where divisions and suffering were omnipresent. |
 | ☐ | 10 | 1:27.50 | 19 : and (P) ; 23 : shaped (P) | In presenting this outfit, it is crucial to recognize all dimensions of history: the personal commitment of the chaplains and the contexts that shaped them, while being aware of the symbols and ideologies they wore. |
@@ -211,7 +233,7 @@ Audio : `public/audio/en/stop-08.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 5 | 0:38.42 | 19 : Ruperts (P) | During Operation TITANIC, a daring mission to deceive Nazi forces before the Normandy landings, hundreds of similar dolls, called “Ruperts,” were dropped from the sky. |
 | ☐ | 6 | 0:51.34 | 14 : and (P) | They were equipped with sound devices and small explosives, mimicking the presence of paratroopers and sowing confusion and disinformation behind enemy lines. |
 | ☐ | 8 | 1:20.54 | 9 : invites (P) | Regardless, this discovery in this attic with my father invites us to think that this doll is truly a tangible illustration of how the most innocent objects can play a crucial role in grand war strategies. |
-| ☐ | 9 | 1:36.78 | 8 : stratagems (P) ; 11 : nights (L) | These stories are those of invisible soldiers, ingenious stratagems and tense nights. |
+| ☐ | 9 | 1:36.78 | 11 : nights (L) | These stories are those of invisible soldiers, ingenious stratagems and tense nights. |
 | ☐ | 10 | 1:43.44 | 14 : cunning (P) | This doll, so frail and innocent, reminds us that, even in the darkest times, cunning always finds a way to shine. |
 
 Passages conservés séparément du récit synchronisé — confirmer présence/absence, sans les forcer dans l’audio :
@@ -226,7 +248,7 @@ Audio : `public/audio/en/stop-09.mp3`. Référence publiée : [page anglaise Wiv
 |---|---:|---|---|---|
 | ☐ | 0 | 0:00.48 | 0 : The (P) | "The story takes place on a shooting range of a French institution… |
 | ☐ | 6 | 0:16.86 | 16 : MG42 (L) | This gives you an idea of ​​the rate of fire of this German machine gun, the MG42. |
-| ☐ | 7 | 0:23.24 | 0 : You (P) ; 4 : 6 (L) ; 7 : allied (P) ; 21 : MG42 (P) | You imagine, on June 6, American and allied soldiers landing under enemy fire, and this fire also bore the name of MG42... |
+| ☐ | 7 | 0:23.18 | 4 : 6 (L) ; 7 : allied (P) ; 21 : MG42 (P) | You imagine, on June 6, American and allied soldiers landing under enemy fire, and this fire also bore the name of MG42... |
 | ☐ | 8 | 0:33.84 | 10 : the (P) ; 11 : Beast (P) ; 15 : Severloh (L) ; 17 : on (P) ; 22 : 6 (L) ; 23 : 44 (P) | History will unfortunately remember the one who has been called “the Beast of Omaha”: Heinrich Severloh, who, on the day of June 6, 44, held his position behind his MG42 from one of the strategic bunkers of Omaha. |
 | ☐ | 9 | 0:51.52 | 0 : He (P) ; 2 : in (P) | He claims, in his stories, to have fired around 12,500 cartridges. |
 
@@ -248,9 +270,7 @@ Audio : `public/audio/en/stop-10.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 3 | 0:31.56 | 1 : it (P) | Obviously, it didn't take much for us to go to this gentleman's house. |
 | ☐ | 4 | 0:36.04 | 1 : isolated (P) | Small isolated road in the woods, majestic gate, endless stone walls… the scene is set. |
 | ☐ | 5 | 0:43.32 | 8 : and (P) ; 11 : another (P) ; 16 : with (P) | We pass in front of the caretaker's house and, opposite it, another building which seems dilapidated, with a false rear. |
-| ☐ | 6 | 0:51.36 | 5 : gentleman (P) ; 6 : in (P) | We are welcomed by the gentleman in question, and the visit begins… |
 | ☐ | 8 | 0:57.62 | 1 : parquet (P) ; 7 : labeled (P) ; 9 : dating (P) ; 25 : army (P) | creaking parquet floors, old cabinets full of labeled fossils, dating from an even older era, and in this darkness, various small objects from the German army. |
-| ☐ | 10 | 1:12.50 | 21 : room (P) | But the most surprising thing is to come, because in the other room, enthroned in the middle of this abandoned living room, there is a sort of small tank. |
 | ☐ | 11 | 1:22.32 | 1 : when (P) | Disconcerting when you don't know what it is. |
 | ☐ | 13 | 1:31.26 | 1 : wire-guided (L) ; 2 : mini-tank (L) | A wire-guided mini-tank which carried an explosive charge to be projected against buildings or enemy vehicles. |
 | ☐ | 14 | 1:38.26 | 10 : special (P) ; 18 : prized (P) ; 19 : piece (P) | This Goliath was part of what is known as “Hitler’s special weapons”; it is a very rare and prized piece in the world of collecting. |
@@ -313,14 +333,13 @@ Audio : `public/audio/en/stop-13.mp3`. Référence publiée : [page anglaise Wiv
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
 | ☐ | 0 | 0:05.28 | 0 : Among (P) ; 10 : ORIN (L) | "Among the powerful artifacts in our collection are the impressive ORIN… type sea mines, tangible witnesses of naval strategies during the Second World War. |
-| ☐ | 1 | 0:16.90 | 14 : sea (P) | These formidable machines, designed to destroy enemy ships, played a crucial role in controlling sea lanes, strongly impacting military operations and resupply efforts. |
 | ☐ | 2 | 0:29.54 | 20 : allied (P) | Found in a famous French port, these mines are a reminder of the constant and invisible threat that weighed on allied and enemy fleets. |
 | ☐ | 3 | 0:39.20 | 3 : water's (L) ; 4 : surface (A) ; 5 : ORIN (L) | Anchored beneath the water's surface, ORIN mines were equipped with sensitive triggers that responded to pressure or sound, detonating when a passing naval vessel passed. |
 | ☐ | 4 | 0:50.74 | 0 : They (P) | They were arranged in dozens, thus protecting a strategic maritime passage. |
 | ☐ | 6 | 1:09.54 | 3 : sea (P) | The impact of sea mines during the war was considerable: they wreaked havoc in the ranks of the naval forces, imposing caution and considerably slowing down maritime movements. |
 | ☐ | 9 | 1:48.78 | 0 : ORIN (L) ; 1 : mines (L) | ORIN mines are not only weapons, but also symbols of psychological warfare waged on the seas, aimed at sowing terror and uncertainty. |
 | ☐ | 10 | 1:59.28 | 24 : offensive (L) | Our presentation invites you to understand the complexity of naval warfare through these artifacts, which bear witness to the technical innovation and defensive and offensive tactics that marked the conflict. |
-| ☐ | 11 | 2:13.20 | 0 : By (P) ; 10 : braved (L) ; 22 : once (P) | By exhibiting them, we honor the memory of those who braved the risks inherent in naval combat, while reflecting on human ingenuity, once again put at the service of war." |
+| ☐ | 11 | 2:13.10 | 10 : braved (L) ; 22 : once (P) | By exhibiting them, we honor the memory of those who braved the risks inherent in naval combat, while reflecting on human ingenuity, once again put at the service of war." |
 
 ### EN14 — 14. Mannequin SOE : L’agente secrète Claire Dumont
 
@@ -338,7 +357,6 @@ Audio : `public/audio/en/stop-14.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 10 | 1:42.96 | 15 : Claire (P) | One night, while she was carrying charges on a crucial railway line for the Germans, Claire was almost captured: her presence had been denounced by one of her collaborators... |
 | ☐ | 11 | 1:55.08 | 23 : resistance (P) | However, she managed to escape at the last minute into the forest and found refuge with a farmer, himself a member of the resistance. |
 | ☐ | 14 | 2:18.08 | 0 : The (P) | The operation was a success, but attracted even more attention to herself. |
-| ☐ | 15 | 2:23.40 | 10 : cunning (P) | The following days were marked by an intense hunt, but cunning, she used her ingenuity to escape the search... |
 | ☐ | 18 | 2:45.74 | 0 : His (P) | His silence and resistance exasperated the Germans. |
 | ☐ | 19 | 2:49.58 | 2 : and (P) | In retaliation, and to make an example, the Nazis decided to summarily execute him. |
 | ☐ | 21 | 2:59.62 | 4 : Claire (P) | Faced with her tormentors, Claire remained dignified and determined. |
@@ -351,13 +369,13 @@ Audio : `public/audio/en/stop-15.mp3`. Référence publiée : [page anglaise Wiv
 
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
-| ☐ | 0 | 0:00.00 | 15 : the (P) ; 16 : Welbike (L) | "I now invite you to discover one of the most fascinating pieces in our collection: the Welbike, a small British motorcycle with an exceptional destiny. |
+| ☐ | 0 | 0:00.00 | 16 : Welbike (L) | "I now invite you to discover one of the most fascinating pieces in our collection: the Welbike, a small British motorcycle with an exceptional destiny. |
 | ☐ | 1 | 0:10.84 | 8 : II (P) ; 9 : in (P) | Imagine yourself in the heart of World War II, in the 1940s: Allied forces are seeking to develop innovative ways to carry out military operations, often behind enemy lines. |
 | ☐ | 2 | 0:24.84 | 7 : Welbike (L) | It is in this context that the Welbike was born. |
 | ☐ | 3 | 0:29.20 | 0 : Designed (P) ; 3 : Station (P) ; 4 : IX (L) ; 5 : unit (P) ; 12 : Welbike (L) | Designed by the Station IX unit of the British Secret Service, the Welbike is a motorcycle of disarming simplicity, but formidably effective. |
 | ☐ | 5 | 0:44.86 | 4 : to (P) | The idea is ingenious: to create a vehicle that is light, compact and easily transportable by air. |
 | ☐ | 6 | 0:52.80 | 10 : the (P) ; 11 : Welbike (L) | As soon as the whistle blows and the mission begins, the Welbike unleashes all its magic. |
-| ☐ | 9 | 1:12.48 | 6 : which (P) ; 11 : 32kg (L) ; 19 : kilometers (P) ; 23 : two-stroke (L) | Its designers have imagined a motorcycle which, in its compactness (only 32kg), still has a range of nearly 145 kilometers, thanks to its two-stroke gasoline engine. |
+| ☐ | 9 | 1:12.48 | 11 : 32kg (L) ; 19 : kilometers (P) ; 23 : two-stroke (L) | Its designers have imagined a motorcycle which, in its compactness (only 32kg), still has a range of nearly 145 kilometers, thanks to its two-stroke gasoline engine. |
 | ☐ | 11 | 1:33.80 | 1 : Welbike (L) | The Welbike was used in various missions, notably during Operation Market Garden in the Netherlands in 1944. |
 | ☐ | 12 | 1:42.64 | 9 : and (P) | Fast and discreet, it allowed soldiers to transport messages and cover long distances to establish strategic positions. |
 | ☐ | 16 | 2:14.82 | 0 : The (P) ; 1 : Welbike (L) | The Welbike remains a vibrant testimony to the spirit of resistance and inventiveness that marked the Second World War. |
@@ -416,9 +434,9 @@ Audio : `public/audio/en/stop-19.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 3 | 0:41.88 | 3 : war (P) ; 11 : thwarting (L) ; 12 : Axis (P) | For the Allied war effort, deciphering these messages was crucial to thwarting Axis plans. |
 | ☐ | 4 | 0:48.94 | 15 : by (P) ; 18 : Alan (P) | The challenge was taken up by a team of brilliant allied mathematicians and engineers, led by the famous Alan Turing. |
 | ☐ | 5 | 0:58.18 | 4 : center (P) | It was in the center of Bletchley Park, England, that ingenious minds like Turing, Gordon Welchman and others devoted countless hours to understanding the mysteries of the Enigma. |
-| ☐ | 6 | 1:10.52 | 7 : who (P) ; 26 : Bombe (L) ; 28 : capable (P) ; 38 : Enigma (P) | With the valuable help of Polish mathematicians, who had already made significant advances on the Enigma before the outbreak of war, the British team built the Bombe machine, capable of quickly testing the many possible configurations of the Enigma. |
+| ☐ | 6 | 1:10.52 | 7 : who (P) ; 26 : Bombe (L) ; 28 : capable (P) | With the valuable help of Polish mathematicians, who had already made significant advances on the Enigma before the outbreak of war, the British team built the Bombe machine, capable of quickly testing the many possible configurations of the Enigma. |
 | ☐ | 7 | 1:28.50 | 17 : high (P) ; 27 : favor (P) | Through their perseverance and ingenuity, the Allies were able to read the encrypted traffic of the German high command, turning the course of the war in their favor. |
-| ☐ | 8 | 1:40.18 | 14 : while (P) ; 20 : computing (P) | Their painstaking and often unrecognized work shortened the conflict and saved millions of lives, while laying the foundations of modern computing. |
+| ☐ | 8 | 1:40.18 | 14 : while (P) | Their painstaking and often unrecognized work shortened the conflict and saved millions of lives, while laying the foundations of modern computing. |
 | ☐ | 10 | 1:56.40 | 17 : which (P) | During yet another flea market that my father was attending, he stopped in front of a stand which, at first glance, appeared to be selling a typewriter. |
 | ☐ | 12 | 2:11.78 | 3 : 50 (P) ; 8 : a (P) ; 10 : and (P) | The latter replied: 50 francs… My father grimaced a little and offered him 45. |
 | ☐ | 16 | 2:39.46 | 15 : ten (P) | The story continues with this robbery which took place in this very museum, more than ten years ago. |
@@ -444,7 +462,7 @@ Audio : `public/audio/en/stop-20.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 11 | 1:38.86 | 7 : PIAT (P) ; 10 : anti-tank (L) | The weapon you see here is a PIAT, a British anti-tank weapon, proof of the power hidden in the determined hands of English soldiers. |
 | ☐ | 12 | 1:50.54 | 0 : Unreliable (P) ; 11 : armored (P) | Unreliable, imprecise, it nevertheless embodied the resistance necessary to repel enemy armored forces. |
 | ☐ | 13 | 1:57.88 | 4 : dress (P) ; 6 : displaying (P) ; 14 : nights (P) ; 17 : black (P) | The typical English battle dress jacket, displaying the insignia of the paratroopers, evokes those nights when the black sky was populated with floating silhouettes: these reckless fighters descending to extend their hand to freedom. |
-| ☐ | 14 | 2:15.16 | 2 : commando (P) ; 3 : dagger (P) ; 5 : Lee-Enfield (L) ; 6 : rifle (P) ; 8 : scuba (P) | The Fairbairn commando dagger, a Lee-Enfield rifle, a scuba diving unit... |
+| ☐ | 14 | 2:15.16 | 5 : Lee-Enfield (L) ; 6 : rifle (P) ; 8 : scuba (P) | The Fairbairn commando dagger, a Lee-Enfield rifle, a scuba diving unit... |
 
 ### EN21 — 21. Le fusil FG 42 & la cache secrète du hangar
 
@@ -458,7 +476,7 @@ Audio : `public/audio/en/stop-21.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 3 | 0:29.22 | 12 : cm (P) | By opening the base, I discovered a slight recess of about 40 cm, a pipe fitted with a tap and a bottom covered with gravel. |
 | ☐ | 6 | 0:51.36 | 0 : What (P) | What was my surprise when I discovered a lock. |
 | ☐ | 9 | 1:02.62 | 9 : among (P) | In the excitement of this discovery, I remembered that, among all the keys to the property, I had come across a particularly strange key. |
-| ☐ | 12 | 1:18.58 | 3 : lock (P) ; 9 : it (P) | Once in the lock, I try maneuvers to articulate it, I look for a direction... |
+| ☐ | 12 | 1:18.58 | 9 : it (P) | Once in the lock, I try maneuvers to articulate it, I look for a direction... |
 | ☐ | 15 | 1:32.00 | 7 : with (P) | A black hole presented itself to me with a ladder. |
 | ☐ | 16 | 1:35.94 | 7 : because (P) | My heart was palpitating; I was amazed because I had known the house since childhood: I had searched and played everywhere. |
 | ☐ | 17 | 1:45.28 | 0 : If (P) ; 13 : Well (P) | If there was anyone who knew the house by heart, it was me… Well, I thought so. |
@@ -468,7 +486,7 @@ Audio : `public/audio/en/stop-21.mp3`. Référence publiée : [page anglaise Wiv
 | ☐ | 28 | 2:34.34 | 8 : someone (P) | For example, one day, after visiting the museum, someone almost offered us €100,000 to leave with this machine gun. |
 | ☐ | 29 | 2:43.74 | 3 : by (P) ; 4 : cross-checking (L) ; 11 : that (P) | I later learned, by cross-checking various testimonies among my father's acquaintances, that this piece aroused a lot of jealousy around him. |
 | ☐ | 30 | 2:53.72 | 7 : cache (P) ; 10 : during (P) ; 14 : making (P) | It is for this reason that this cache was built, during his spare time, making it impossible for the FG to steal. |
-| ☐ | 31 | 3:01.84 | 8 : came (P) ; 11 : death (P) ; 12 : row (P) ; 13 : cliff (P) | I had also learned that this little treasure came from the “death row cliff pocket”. |
+| ☐ | 31 | 3:01.84 | 8 : came (P) ; 11 : death (P) ; 13 : cliff (P) | I had also learned that this little treasure came from the “death row cliff pocket”. |
 | ☐ | 33 | 3:14.40 | 5 : little-known (L) ; 6 : lair (P) ; 33 : to (P) | As I descended into this little-known lair, I felt more than ever the weight of the family heritage and the call to discover what had motivated their determination to create such a space, to hide these precious things. |
 
 ### EN22 — 22. Vitrine de la Résistance Française

@@ -19,9 +19,110 @@
       "referenceSha256": "01fde197beb5fb231ee440aa2e9c0efb9d7de0c31bc937fc82391f80e1297e3d",
       "recognitionCacheKey": "3c0198138065b5cf7f7aa75b6132ffc28f440f8dfcc7ecdfb44bdef83ec90b2f",
       "recognitionCacheSha256": "24275992ef2bd4175bff4396aba543f501cd39a39c91ff87768ae43279f89275",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-10-medium-window-72119bd818198923a0c11f7b9e98feef7197db73acfe3301821b601e41927020.json",
+          "sha256": "54ff55c0b264b1acf98144da6bba6a70f9682e42e955cb3ba5e57ea38a08bcf0",
+          "cacheKey": "72119bd818198923a0c11f7b9e98feef7197db73acfe3301821b601e41927020",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            30.02,
+            55.2
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-10-medium-window-71f3e75bee217f8af98f45dd0b08ede5b162bf328935531abdb03c12ad1d01e0.json",
+          "sha256": "b1c82d3654fb4b1c3396868296c1acbe2bc137cc40bc313344f389523d5ca198",
+          "cacheKey": "71f3e75bee217f8af98f45dd0b08ede5b162bf328935531abdb03c12ad1d01e0",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            55.96,
+            85.36
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-pilot-20261110/en-10-ctc-b002446275de70b018d69331a188c8c30995bd7adde0d66aa119daa5cb5e6825.json",
+          "sha256": "11ea94d77b81e9e96d6d99a731b1d7b0040424241f9d91064aa031c554aabcfc",
+          "cacheKey": "b002446275de70b018d69331a188c8c30995bd7adde0d66aa119daa5cb5e6825",
+          "kind": "pilot",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-10-ctc-d0cf7e89e986e52ae9ece6d607592a35bf87265e7e03d7ca0a6b38617abdfdce.json",
+          "sha256": "de128968d12872d3b2e8e5087243853b9d7b2420e4d7336343088aa871209c7f",
+          "cacheKey": "d0cf7e89e986e52ae9ece6d607592a35bf87265e7e03d7ca0a6b38617abdfdce",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 3,
+          "path": "en-ctc-targeted-20261110/en-10-ctc-f00f0588887ea5df9cdf0108afd833bf5dab5043c057a150fc1066e9ed687655.json",
+          "sha256": "217a46d0cc79658eee2ebcf1e9273b9c2ed4b9d4840f5308b83fd25f60529c10",
+          "cacheKey": "f00f0588887ea5df9cdf0108afd833bf5dab5043c057a150fc1066e9ed687655",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 6,
+          "tokenIndex": 5,
+          "alignmentCacheId": 1,
+          "nativeIndex": 5,
+          "startSeconds": 52.768,
+          "endSeconds": 53.169,
+          "score": 0.825
+        },
+        {
+          "segmentIndex": 6,
+          "tokenIndex": 6,
+          "alignmentCacheId": 2,
+          "nativeIndex": 54,
+          "startSeconds": 53.258,
+          "endSeconds": 53.339,
+          "score": 0.828
+        },
+        {
+          "segmentIndex": 6,
+          "tokenIndex": 7,
+          "alignmentCacheId": 1,
+          "nativeIndex": 7,
+          "startSeconds": 53.39,
+          "endSeconds": 53.852,
+          "score": 0.815
+        },
+        {
+          "segmentIndex": 10,
+          "tokenIndex": 21,
+          "alignmentCacheId": 3,
+          "nativeIndex": 59,
+          "startSeconds": 79.336,
+          "endSeconds": 79.516,
+          "score": 0.899
+        }
+      ],
+      "boundaryCorrections": [
+        {
+          "segmentIndex": 6,
+          "tokenIndex": 7,
+          "previousTiming": [
+            7,
+            53.2,
+            53.66,
+            0.9746642708778381,
+            127
+          ]
+        }
+      ],
       "languageProbability": 0.9891202449798584,
       "totalWords": 354,
-      "timedWords": 322,
+      "timedWords": 325,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -101,18 +202,6 @@
           "reason": "low-recognition-probability"
         },
         {
-          "segmentIndex": 6,
-          "tokenIndex": 5,
-          "text": "gentleman",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 6,
-          "tokenIndex": 6,
-          "text": "in",
-          "reason": "low-recognition-probability"
-        },
-        {
           "segmentIndex": 8,
           "tokenIndex": 1,
           "text": "parquet",
@@ -134,12 +223,6 @@
           "segmentIndex": 8,
           "tokenIndex": 25,
           "text": "army",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 10,
-          "tokenIndex": 21,
-          "text": "room",
           "reason": "low-recognition-probability"
         },
         {
@@ -376,7 +459,9 @@
             [2,51.72,52.16,0.9545813798904419,122],
             [3,52.16,52.52,0.9966024160385132,123],
             [4,52.52,52.68,0.9974794983863831,124],
-            [7,53.2,53.66,0.9746642708778381,127],
+            [5,52.879999999999995,53.18,0.9553845524787903,54,1],
+            [6,53.18,53.5,0.9945658445358276,55,1],
+            [7,53.5,53.879999999999995,0.9987850785255432,56,1],
             [8,54.22,54.34,0.9887712597846985,128],
             [9,54.34,54.48,0.9943637847900391,129],
             [10,54.48,54.8,0.9838062524795532,130],
@@ -461,6 +546,7 @@
             [18,78.16,78.32,0.9985769987106323,189],
             [19,78.32,78.82,0.9979118704795837,190],
             [20,78.82,79.14,0.999219536781311,191],
+            [21,79.28,79.58,0.997006356716156,60,2],
             [22,79.86,80.06,0.9726410508155823,193],
             [23,80.06,80.2,0.9923117756843567,194],
             [24,80.2,80.34,0.9848971366882324,195],
@@ -1962,9 +2048,133 @@
       "referenceSha256": "71524d4b084a42507643ca9f8fcc0ef2799dcdd7b90659c7049f6ca0db80fabb",
       "recognitionCacheKey": "09dea4bd938ae1e7ca8f9794b0d96ea5f5cb4e1de26fc1d69fdff0bc74721156",
       "recognitionCacheSha256": "b30a3529f335cf527f282e4666625acba1efa5b03a503382f93c6709e023d41c",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-13-medium-window-67379f6aa1e435f7901460a9795cd55c3f9d2070204546da3c6d9761fa7da349.json",
+          "sha256": "e59b775a56cfc98c1529709b8f2b30240e1e7670aa1acb81c83a0d63c2fa9d86",
+          "cacheKey": "67379f6aa1e435f7901460a9795cd55c3f9d2070204546da3c6d9761fa7da349",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            21.58,
+            25.92
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-13-medium-window-b78bb5154c172c2587fa9926242921bd4aa526cad61b268ce6835ca71d23b02b.json",
+          "sha256": "6eda3091bac5b1f5d16d8f3db998035137b5713cb9cb2146d1d9eff406cba7da",
+          "cacheKey": "b78bb5154c172c2587fa9926242921bd4aa526cad61b268ce6835ca71d23b02b",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            127.68,
+            144.0
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-13-ctc-237e0a94a6bfd29ae1e94fafb19666078e0e7d3ff6045750e4e00829ca4c78d5.json",
+          "sha256": "7cbc0ff9ab6e5fa7b8876426d920b07f670826b1ecae6dd832f9997cd529e125",
+          "cacheKey": "237e0a94a6bfd29ae1e94fafb19666078e0e7d3ff6045750e4e00829ca4c78d5",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-13-ctc-d0cb86ab5a1cd7a5b537264d62499db9b9a78756753c1ae81085145768dba33e.json",
+          "sha256": "7110ddfe7e438726b1c07f676aeecb1a95c7f6cd93c914ae45da8cd6e3fa1494",
+          "cacheKey": "d0cb86ab5a1cd7a5b537264d62499db9b9a78756753c1ae81085145768dba33e",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 1,
+          "tokenIndex": 14,
+          "alignmentCacheId": 1,
+          "nativeIndex": 4,
+          "startSeconds": 23.77,
+          "endSeconds": 23.951,
+          "score": 0.87
+        },
+        {
+          "segmentIndex": 1,
+          "tokenIndex": 15,
+          "alignmentCacheId": 1,
+          "nativeIndex": 5,
+          "startSeconds": 23.991,
+          "endSeconds": 24.293,
+          "score": 0.862
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 0,
+          "alignmentCacheId": 2,
+          "nativeIndex": 9,
+          "startSeconds": 133.127,
+          "endSeconds": 133.287,
+          "score": 0.833
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 1,
+          "alignmentCacheId": 2,
+          "nativeIndex": 10,
+          "startSeconds": 133.347,
+          "endSeconds": 133.808,
+          "score": 0.9
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 2,
+          "alignmentCacheId": 2,
+          "nativeIndex": 11,
+          "startSeconds": 133.848,
+          "endSeconds": 134.028,
+          "score": 0.854
+        }
+      ],
+      "boundaryCorrections": [
+        {
+          "segmentIndex": 1,
+          "tokenIndex": 15,
+          "previousTiming": [
+            15,
+            23.92,
+            24.22,
+            0.9774091243743896,
+            39
+          ]
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 1,
+          "previousTiming": [
+            1,
+            133.2,
+            133.72,
+            0.9948849081993103,
+            271
+          ]
+        },
+        {
+          "segmentIndex": 11,
+          "tokenIndex": 2,
+          "previousTiming": [
+            2,
+            133.72,
+            133.96,
+            0.9961200952529907,
+            272
+          ]
+        }
+      ],
       "languageProbability": 0.9978358149528503,
       "totalWords": 299,
-      "timedWords": 284,
+      "timedWords": 286,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -1982,12 +2192,6 @@
           "tokenIndex": 10,
           "text": "ORIN",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 1,
-          "tokenIndex": 14,
-          "text": "sea",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 2,
@@ -2042,12 +2246,6 @@
           "tokenIndex": 24,
           "text": "offensive",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 11,
-          "tokenIndex": 0,
-          "text": "By",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 11,
@@ -2110,7 +2308,8 @@
             [11,22.28,22.72,0.9979938268661499,35],
             [12,22.72,23.04,0.9988742470741272,36],
             [13,23.04,23.58,0.9989216327667236,37],
-            [15,23.92,24.22,0.9774091243743896,39],
+            [14,23.82,24.08,0.9192028045654297,6,1],
+            [15,24.08,24.419999999999998,0.9794270992279053,7,1],
             [16,24.76,25.36,0.9840342998504639,40],
             [17,25.36,25.92,0.9968875050544739,41],
             [18,25.92,26.42,0.9978109002113342,42],
@@ -2388,11 +2587,12 @@
           ]
         },
         {
-          "startSeconds": 133.2,
+          "startSeconds": 133.1,
           "text": "By exhibiting them, we honor the memory of those who braved the risks inherent in naval combat, while reflecting on human ingenuity, once again put at the service of war.\"",
           "timings": [
-            [1,133.2,133.72,0.9948849081993103,271],
-            [2,133.72,133.96,0.9961200952529907,272],
+            [0,133.1,133.36,0.9896953105926514,11,2],
+            [1,133.36,133.86,0.9985595345497131,12,2],
+            [2,133.86,134.12,0.9986261129379272,13,2],
             [3,134.4,134.56,0.9970046877861023,273],
             [4,134.56,134.86,0.8103542923927307,274],
             [5,134.86,135.06,0.9986080527305603,275],
@@ -2430,9 +2630,43 @@
       "referenceSha256": "7b69e33ea1ef3adb8632429312ff63177b85fecdecb7339c884e8d72ef9b538b",
       "recognitionCacheKey": "b1569c66bc6a1dcfe7ae8b208503e842412b74d118c4c44095cb43d6d2272132",
       "recognitionCacheSha256": "a8d0c430b2c4ad9696a522755eccd6eb42e46befeee2ee45ea34cca31ba87ce6",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-14-medium-window-67db24b524a297d9fa3100917940ceed9eb70157e03ffe902a9c92d16a706a26.json",
+          "sha256": "c8ab15f33959a2f09de43c75e1422683f95753b3aefb6456948e38f45c749926",
+          "cacheKey": "67db24b524a297d9fa3100917940ceed9eb70157e03ffe902a9c92d16a706a26",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            135.26,
+            149.6
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-14-ctc-911a24a5bc226e0b1b2e9aec891608a6ce39cd91a3b5cc5cc5249974e57d5322.json",
+          "sha256": "b5d8ac92e64c51ac70f3b2f831090f77aa304a38d16f1cce65fe62f6f38850d3",
+          "cacheKey": "911a24a5bc226e0b1b2e9aec891608a6ce39cd91a3b5cc5cc5249974e57d5322",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 15,
+          "tokenIndex": 10,
+          "alignmentCacheId": 1,
+          "nativeIndex": 27,
+          "startSeconds": 146.976,
+          "endSeconds": 147.337,
+          "score": 0.866
+        }
+      ],
       "languageProbability": 0.9983680844306946,
       "totalWords": 435,
-      "timedWords": 413,
+      "timedWords": 414,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -2533,12 +2767,6 @@
           "segmentIndex": 14,
           "tokenIndex": 0,
           "text": "The",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 15,
-          "tokenIndex": 10,
-          "text": "cunning",
           "reason": "low-recognition-probability"
         },
         {
@@ -2975,6 +3203,7 @@
             [7,145.42,145.8,0.9980890154838562,319],
             [8,145.8,146.22,0.9868820309638977,320],
             [9,146.68,146.86,0.9935905933380127,321],
+            [10,147.04,147.34,0.9881983399391174,28,1],
             [11,147.6,147.84,0.9946779012680054,323],
             [12,147.84,148.2,0.9985321760177612,324],
             [13,148.2,148.38,0.9995251893997192,325],
@@ -3147,21 +3376,77 @@
       "referenceSha256": "b733f95e7bf59ab01545ae9b1d0fa6cdbc0862f0cfc4c6a0d83607fad06a71f8",
       "recognitionCacheKey": "269c577b0ed28fbeec008453f06305b7b53b8f453f29c6c50658222dc4ae615c",
       "recognitionCacheSha256": "b1b41f5f0220a6601e2533fa4bf671d81961de5d0a4984db612ed472867989e2",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-15-medium-window-5db6a1d7ef5773fc9de244a6be7f01ee32885bd97fe5b7960c5419ee6c61f6e0.json",
+          "sha256": "2f76df6ffaf25d24d069c4c4495ce081b7bd5ab5f3e75bca10481ec39ef4d15c",
+          "cacheKey": "5db6a1d7ef5773fc9de244a6be7f01ee32885bd97fe5b7960c5419ee6c61f6e0",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            2.66,
+            16.34
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-15-medium-window-a9b7a7a1883d16afb452748003b9ce28c49af62dec6734fdce932ec9f08e7d0a.json",
+          "sha256": "6dd21780790e58daa5aeead91e5b711cfcc017d2d96e347a4a519b556c176587",
+          "cacheKey": "a9b7a7a1883d16afb452748003b9ce28c49af62dec6734fdce932ec9f08e7d0a",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            72.5,
+            96.36
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-15-ctc-615706c181c1e614b99932a7344c557b4a29107e8cd0b08706a2dcc402ed9e79.json",
+          "sha256": "befeb7401cc2e346c3190f9e1fe3b284a1cf71b57666f4cb4b6d05f26b9d256f",
+          "cacheKey": "615706c181c1e614b99932a7344c557b4a29107e8cd0b08706a2dcc402ed9e79",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-15-ctc-08bfaa30730242cae12fb04081587c958fd927a66096c50cdbc02a6657ac099e.json",
+          "sha256": "5ebb2299e7355dd1d7774a08c671464f3a4dc3a641cf0a586acd90aac03e84bb",
+          "cacheKey": "08bfaa30730242cae12fb04081587c958fd927a66096c50cdbc02a6657ac099e",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 0,
+          "tokenIndex": 15,
+          "alignmentCacheId": 1,
+          "nativeIndex": 4,
+          "startSeconds": 5.364,
+          "endSeconds": 5.484,
+          "score": 0.892
+        },
+        {
+          "segmentIndex": 9,
+          "tokenIndex": 6,
+          "alignmentCacheId": 2,
+          "nativeIndex": 4,
+          "startSeconds": 74.902,
+          "endSeconds": 75.122,
+          "score": 0.874
+        }
+      ],
       "languageProbability": 0.9989587068557739,
       "totalWords": 332,
-      "timedWords": 311,
+      "timedWords": 313,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
       ],
       "referenceOnlyParagraphs": [],
       "unresolvedWords": [
-        {
-          "segmentIndex": 0,
-          "tokenIndex": 15,
-          "text": "the",
-          "reason": "low-recognition-probability"
-        },
         {
           "segmentIndex": 0,
           "tokenIndex": 16,
@@ -3236,12 +3521,6 @@
         },
         {
           "segmentIndex": 9,
-          "tokenIndex": 6,
-          "text": "which",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
           "tokenIndex": 11,
           "text": "32kg",
           "reason": "not-exactly-recognized-source-word"
@@ -3304,6 +3583,7 @@
             [12,3.9,4.14,0.9928022027015686,12],
             [13,4.14,4.26,0.9987146854400635,13],
             [14,4.26,4.66,0.8004359602928162,14],
+            [15,5.380000000000001,5.58,0.9636335372924805,5,1],
             [17,6.4,6.56,0.9861327409744263,17],
             [18,6.56,6.94,0.9975038170814514,18],
             [19,6.94,7.42,0.9504364132881165,19],
@@ -3499,6 +3779,7 @@
             [3,73.46,73.92,0.9899284243583679,167],
             [4,73.92,74.1,0.9855734705924988,168],
             [5,74.1,74.5,0.9960466027259827,169],
+            [6,74.78,75.2,0.9301801323890686,6,2],
             [7,75.44,75.52,0.9993228912353516,171],
             [8,75.52,75.68,0.9814460873603821,172],
             [9,75.68,76.52,0.9971616864204407,173],
@@ -5061,9 +5342,71 @@
       "referenceSha256": "c4d15aabeb4ba94b808c07f2959255e5b811791769c7a167a6698c692e274d9f",
       "recognitionCacheKey": "beef3646ff614749e0860aed643330724e32827df41b009ae1a007bb7b417d8d",
       "recognitionCacheSha256": "44b69097884faac5d453aa8ffb8a87e773ec958d9bf368b3fd4ee0f2435e91ed",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-19-medium-window-59800c3abee778af9e1954a6bd7e6233afb9a1e2790872940e507fd7b2e19731.json",
+          "sha256": "f0fd215a0c3b55dbc780e4aa26c7fb7fdde8c24b9827053080009533f9eb5d37",
+          "cacheKey": "59800c3abee778af9e1954a6bd7e6233afb9a1e2790872940e507fd7b2e19731",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            71.68,
+            97.9
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-19-medium-window-68a195a8eb3c45f217958743817ed75e475ddacf21d14c5cf39b315aa6711997.json",
+          "sha256": "c0828cdff5634d98a214f84b513b610cbf531b8bfa849fb8e5dc8f60e4c60e72",
+          "cacheKey": "68a195a8eb3c45f217958743817ed75e475ddacf21d14c5cf39b315aa6711997",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            97.34,
+            124.24
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-19-ctc-e95acbc66a80bc7a27ef88b1e1dd518af15706eef18b94d0b8cccc9bf137bddd.json",
+          "sha256": "c5bf6e863ebb49fce8275fee0850335c552342a88d4b6f2ee3b70a04744651d4",
+          "cacheKey": "e95acbc66a80bc7a27ef88b1e1dd518af15706eef18b94d0b8cccc9bf137bddd",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-19-ctc-d1a768898930061724892414b34030055ca06dcc53032d4293c901873ff8ed58.json",
+          "sha256": "e24ee0243dcd75ef9f819093c494aab32032fe3c0be2f9234c4ace594356df85",
+          "cacheKey": "d1a768898930061724892414b34030055ca06dcc53032d4293c901873ff8ed58",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 6,
+          "tokenIndex": 38,
+          "alignmentCacheId": 1,
+          "nativeIndex": 34,
+          "startSeconds": 87.672,
+          "endSeconds": 88.093,
+          "score": 0.978
+        },
+        {
+          "segmentIndex": 8,
+          "tokenIndex": 20,
+          "alignmentCacheId": 2,
+          "nativeIndex": 28,
+          "startSeconds": 110.19,
+          "endSeconds": 110.69,
+          "score": 0.943
+        }
+      ],
       "languageProbability": 0.998826801776886,
       "totalWords": 520,
-      "timedWords": 495,
+      "timedWords": 497,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -5137,12 +5480,6 @@
           "reason": "low-recognition-probability"
         },
         {
-          "segmentIndex": 6,
-          "tokenIndex": 38,
-          "text": "Enigma",
-          "reason": "low-recognition-probability"
-        },
-        {
           "segmentIndex": 7,
           "tokenIndex": 17,
           "text": "high",
@@ -5158,12 +5495,6 @@
           "segmentIndex": 8,
           "tokenIndex": 14,
           "text": "while",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 20,
-          "text": "computing",
           "reason": "low-recognition-probability"
         },
         {
@@ -5433,7 +5764,8 @@
             [34,85.42,85.96,0.9974467754364014,179],
             [35,85.96,86.64,0.9959949254989624,180],
             [36,86.64,87.44,0.9965559244155884,181],
-            [37,87.44,87.6,0.9957721829414368,182]
+            [37,87.44,87.6,0.9957721829414368,182],
+            [38,87.74000000000001,88.14000000000001,0.9852182269096375,35,1]
           ]
         },
         {
@@ -5490,7 +5822,8 @@
             [16,108.44,108.68,0.9969338178634644,228],
             [17,108.68,109.22,0.9836670160293579,229],
             [18,109.22,109.64,0.9983215928077698,230],
-            [19,109.64,110.06,0.9921233057975769,231]
+            [19,109.64,110.06,0.9921233057975769,231],
+            [20,110.2,110.68,0.9987515211105347,29,2]
           ]
         },
         {
@@ -5896,9 +6229,52 @@
       "referenceSha256": "5a8561814094f4a492c969d9d5c52edbe0189d82c67f12db7934dc1449df237c",
       "recognitionCacheKey": "6c19e2500d0cb6b522251eb0199223a1a3361f2ed2b9cd35426ed0fe33c73aa6",
       "recognitionCacheSha256": "183b0e08d7c9867aaf2db503d5ee25edd0cebe72449836b7fa236536193a8386",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-20-medium-window-f3fd541d518d971d5ec66b51e14ebb4ebdb31134d73ccbd9dc010df4829206bf.json",
+          "sha256": "90b7591c4982c5275122a6c22f32e68d33bf7f53726c1e9fd397f7172b067b7e",
+          "cacheKey": "f3fd541d518d971d5ec66b51e14ebb4ebdb31134d73ccbd9dc010df4829206bf",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            133.88,
+            141.78
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-20-ctc-cf9b6e7ab1a3fb75effe58f07564fdd6900b8c57a8ea3f44d97527120ab1508b.json",
+          "sha256": "9ebff083b1bf5b9645b0eed6fff3ac0a952e59aba0288c26ab9d5a80c7c5e854",
+          "cacheKey": "cf9b6e7ab1a3fb75effe58f07564fdd6900b8c57a8ea3f44d97527120ab1508b",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 14,
+          "tokenIndex": 2,
+          "alignmentCacheId": 1,
+          "nativeIndex": 2,
+          "startSeconds": 135.925,
+          "endSeconds": 136.426,
+          "score": 0.938
+        },
+        {
+          "segmentIndex": 14,
+          "tokenIndex": 3,
+          "alignmentCacheId": 1,
+          "nativeIndex": 3,
+          "startSeconds": 136.467,
+          "endSeconds": 136.868,
+          "score": 0.945
+        }
+      ],
       "languageProbability": 0.9938212633132935,
       "totalWords": 350,
-      "timedWords": 322,
+      "timedWords": 324,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -6041,18 +6417,6 @@
           "segmentIndex": 13,
           "tokenIndex": 17,
           "text": "black",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 14,
-          "tokenIndex": 2,
-          "text": "commando",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 14,
-          "tokenIndex": 3,
-          "text": "dagger",
           "reason": "low-recognition-probability"
         },
         {
@@ -6441,6 +6805,8 @@
           "timings": [
             [0,135.16,135.22,0.9811844229698181,302],
             [1,135.22,135.88,0.860367089509964,303],
+            [2,135.98,136.51999999999998,0.9547340869903564,4,1],
+            [3,136.51999999999998,136.98,0.9643146395683289,5,1],
             [4,137.38,137.54,0.9826835989952087,306],
             [7,139.32,139.42,0.9934501647949219,310],
             [9,139.78,140.14,0.9573660492897034,312],
@@ -6516,9 +6882,71 @@
       "referenceSha256": "272f0ff2677e78941d72fc66485c6c1b72a798285a527de6a71f5829124c0bb6",
       "recognitionCacheKey": "0bed45934b42a246c3e50f0a4c6911d9d7b3c6425e4860e58188b04386983920",
       "recognitionCacheSha256": "2cf56e51bdd6a0e825a04017c2d00976c987cd22132ace33eae8b4c9ab920f1b",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-21-medium-window-5c931d97ce96dbcf79a3c58375280725a016c8491126bee80b278d0725aa7ccc.json",
+          "sha256": "28a88be2d8c76750a34265ec2f7e32beaa737a83260c083d227ebb7f5fda01aa",
+          "cacheKey": "5c931d97ce96dbcf79a3c58375280725a016c8491126bee80b278d0725aa7ccc",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            77.62,
+            107.28
+          ]
+        },
+        {
+          "id": 2,
+          "path": "en-missing-targeted-20261109/en-21-medium-window-f4b4f1d4731ff2cbef301ebda98534fa5e32cf4c285b24dc29909ee468c4fac9.json",
+          "sha256": "3160690722359d7f3bcc57b56e6228c328cff2fe5d00a9fc74810c53413e09fc",
+          "cacheKey": "f4b4f1d4731ff2cbef301ebda98534fa5e32cf4c285b24dc29909ee468c4fac9",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            182.52,
+            208.9125
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-21-ctc-6bd6fcd0b85f08c3ecd9f44cca3089416ad68b7a21ffb61f1328d26cfa9f65d1.json",
+          "sha256": "ccc5571caf97b71f75365a909e2c97ebaaec8947d2aee100f6ca80fbc8f3dc8e",
+          "cacheKey": "6bd6fcd0b85f08c3ecd9f44cca3089416ad68b7a21ffb61f1328d26cfa9f65d1",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en-ctc-targeted-20261110/en-21-ctc-6035ee6d624862c16f984fe7bdc7a5050a75275d681163107a43ad721a144b95.json",
+          "sha256": "250b0f53084627a4e0de2f61999a82512f7ebfbb4c534355fd6b6c16dc26f1ac",
+          "cacheKey": "6035ee6d624862c16f984fe7bdc7a5050a75275d681163107a43ad721a144b95",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 12,
+          "tokenIndex": 3,
+          "alignmentCacheId": 1,
+          "nativeIndex": 6,
+          "startSeconds": 79.661,
+          "endSeconds": 79.942,
+          "score": 0.821
+        },
+        {
+          "segmentIndex": 31,
+          "tokenIndex": 12,
+          "alignmentCacheId": 2,
+          "nativeIndex": 9,
+          "startSeconds": 185.842,
+          "endSeconds": 186.062,
+          "score": 0.94
+        }
+      ],
       "languageProbability": 0.9963739514350891,
       "totalWords": 484,
-      "timedWords": 450,
+      "timedWords": 452,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -6571,12 +6999,6 @@
           "segmentIndex": 9,
           "tokenIndex": 9,
           "text": "among",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 12,
-          "tokenIndex": 3,
-          "text": "lock",
           "reason": "low-recognition-probability"
         },
         {
@@ -6697,12 +7119,6 @@
           "segmentIndex": 31,
           "tokenIndex": 11,
           "text": "death",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 31,
-          "tokenIndex": 12,
-          "text": "row",
           "reason": "low-recognition-probability"
         },
         {
@@ -6985,6 +7401,7 @@
             [0,78.58,79.32,0.870959460735321,183],
             [1,79.32,79.52,0.9905257225036621,184],
             [2,79.52,79.62,0.9897262454032898,185],
+            [3,79.78,80.0,0.9748069643974304,8,1],
             [4,80.24,80.44,0.9946135878562927,187],
             [5,80.44,80.7,0.9226269125938416,188],
             [6,80.7,81.28,0.9245871305465698,189],
@@ -7318,6 +7735,7 @@
             [7,184.14,184.52,0.9985390901565552,425],
             [9,184.94,185.28,0.9983081817626953,427],
             [10,185.28,185.42,0.9917929768562317,428],
+            [12,185.92000000000002,186.12,0.9624627828598022,11,2],
             [14,186.32,186.82,0.9904476404190063,432]
           ]
         },
@@ -8432,9 +8850,43 @@
       "referenceSha256": "009f5691b7bc6cb75c178d355569450b479da11e66608cd231d72737d353e199",
       "recognitionCacheKey": "de1026cea7652dfdad4ee5446efc4c9c5705d0ea2c55b49601a84a226846f915",
       "recognitionCacheSha256": "29927bc8e778082b52b84039481125ccf896e4a4173e571bcac9d8be075de62f",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-02-medium-window-4e0bb2789eb8927980717b31db1e8c2fe06fd69c1285aed9ec9ef0beede763cc.json",
+          "sha256": "a2ecfff9835c138068717cfe84b7508a7bc6cc9513106d106c5a5bd2a663e6a4",
+          "cacheKey": "4e0bb2789eb8927980717b31db1e8c2fe06fd69c1285aed9ec9ef0beede763cc",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            3.12,
+            11.66
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-02-ctc-45abed3cb374a5547a9b8aab5db631f725eef4a95204ae0fd151c918d2e51cd1.json",
+          "sha256": "cfb0f637463a89136c034563b17897bf9ac9198f416d45bbfcaa70e5d8e221bb",
+          "cacheKey": "45abed3cb374a5547a9b8aab5db631f725eef4a95204ae0fd151c918d2e51cd1",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 0,
+          "tokenIndex": 15,
+          "alignmentCacheId": 1,
+          "nativeIndex": 4,
+          "startSeconds": 6.267,
+          "endSeconds": 6.588,
+          "score": 0.836
+        }
+      ],
       "languageProbability": 0.9971418976783752,
       "totalWords": 305,
-      "timedWords": 291,
+      "timedWords": 292,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -8446,12 +8898,6 @@
           "tokenIndex": 14,
           "text": "Focke-Wulf",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 0,
-          "tokenIndex": 15,
-          "text": "engine",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 0,
@@ -8546,6 +8992,7 @@
             [11,3.4,3.82,0.9976465106010437,11],
             [12,4.4,4.58,0.9791101217269897,12],
             [13,4.58,5.12,0.9981195330619812,13],
+            [15,6.28,6.68,0.9217098951339722,6,1],
             [16,7.18,7.36,0.9923444390296936,17],
             [17,7.36,7.92,0.9987626075744629,18],
             [18,7.92,8.4,0.9888404011726379,19],
@@ -9753,9 +10200,43 @@
       "referenceSha256": "818b63b2af51963865c6c064745e860ece6a4cf283ec024cce0e7714b3ff7963",
       "recognitionCacheKey": "3ef4a9205029734ab814a13328cec80e8f3f0ce2403aa6a9ce8b90e5d9349c1b",
       "recognitionCacheSha256": "a895535550fd1b81a000768331f3e78bac68ad170c1618878b7a654cf42a6e42",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-05-medium-window-fdda7f40624410b976ac65d92f8eed95c4341de30da315eb4187a88b993b112a.json",
+          "sha256": "28fa2ab53584cec224adf1106906e22ec3bf0571e9d27f5f78215f643c1bdc2b",
+          "cacheKey": "fdda7f40624410b976ac65d92f8eed95c4341de30da315eb4187a88b993b112a",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            26.8,
+            40.54
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-05-ctc-bab44efd4cd629a1f26234c10314baae2a7d0a7dd2d61940760595bb10305ff4.json",
+          "sha256": "3ece77ebb60121685f49777feff3a40d631a7365eb49aaa1f26067aaca899dc1",
+          "cacheKey": "bab44efd4cd629a1f26234c10314baae2a7d0a7dd2d61940760595bb10305ff4",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 4,
+          "tokenIndex": 0,
+          "alignmentCacheId": 1,
+          "nativeIndex": 4,
+          "startSeconds": 29.684,
+          "endSeconds": 30.125,
+          "score": 0.841
+        }
+      ],
       "languageProbability": 0.9911177754402161,
       "totalWords": 312,
-      "timedWords": 299,
+      "timedWords": 300,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -9766,12 +10247,6 @@
           "segmentIndex": 1,
           "tokenIndex": 1,
           "text": "I'm",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 4,
-          "tokenIndex": 0,
-          "text": "Crafted",
           "reason": "low-recognition-probability"
         },
         {
@@ -9938,9 +10413,10 @@
           ]
         },
         {
-          "startSeconds": 30.12,
+          "startSeconds": 29.880000000000003,
           "text": "Crafted with meticulous attention to detail, they reflect a fascinating blend of functionality, innovation and adaptation to various theaters of war.",
           "timings": [
+            [0,29.880000000000003,30.12,0.9866286516189575,6,1],
             [1,30.12,30.28,0.9946216344833374,72],
             [2,30.28,30.98,0.9989536702632904,73],
             [3,30.98,31.5,0.9977746605873108,74],
@@ -11001,9 +11477,43 @@
       "referenceSha256": "b93460cacbf3d5772158a90ecb3159796338151dd4fcdd7b7df2b2cfa54a04f2",
       "recognitionCacheKey": "5e2903bbb7b3728f5b4ecc946a2e7ed9dae35d0174bbaa0641a69dd697d2e707",
       "recognitionCacheSha256": "81ac58dbb420bf8084f439162674636ac0d25e67daf6e171317d29ab44850229",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-07-medium-window-e6f6c9e418fe59899b86b2ade35609b3017eebf382a0a592276e43014990da65.json",
+          "sha256": "db73ede26650a0234d580bc5d56268b191b5c139d40399a9a7697a84e62485b7",
+          "cacheKey": "e6f6c9e418fe59899b86b2ade35609b3017eebf382a0a592276e43014990da65",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            19.82,
+            31.58
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-07-ctc-57016ef24ea2cc02e3ed16aef0960a08ffc2dbd048fcc9af552100e19c1fea6f.json",
+          "sha256": "a8a39ffc397eebeb8992bac615adbe86829d375672cdca36804ccfa0c7e6f095",
+          "cacheKey": "57016ef24ea2cc02e3ed16aef0960a08ffc2dbd048fcc9af552100e19c1fea6f",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 4,
+          "tokenIndex": 6,
+          "alignmentCacheId": 1,
+          "nativeIndex": 21,
+          "startSeconds": 28.695,
+          "endSeconds": 29.156,
+          "score": 0.951
+        }
+      ],
       "languageProbability": 0.9860434532165527,
       "totalWords": 244,
-      "timedWords": 235,
+      "timedWords": 236,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -11033,12 +11543,6 @@
           "tokenIndex": 15,
           "text": "the",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 4,
-          "tokenIndex": 6,
-          "text": "comfort",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 6,
@@ -11162,6 +11666,7 @@
             [3,27.48,27.66,0.9940871000289917,67],
             [4,27.66,28.08,0.9968370199203491,68],
             [5,28.08,28.54,0.993965208530426,69],
+            [6,28.78,29.16,0.999407172203064,21,1],
             [7,29.58,29.78,0.9893724322319031,72],
             [8,29.78,30.06,0.9962825179100037,73],
             [9,30.06,30.28,0.9463328719139099,74],
@@ -11384,9 +11889,43 @@
       "referenceSha256": "06500f29a40eb9126c89415fc729a9b825478e19d1fd8e7cb7a3c5f88ff5bef2",
       "recognitionCacheKey": "a7a8ab939d55764fa6a47009cdb620b8a9703503badaecb9f096f3b0d521fb62",
       "recognitionCacheSha256": "ff4efb5313d7fd9726236e1c9d5d790a3fc4facb9bb14d5b17dad1ff68f8082b",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-08-medium-window-ef0543e523f7456390d92d020434e2b7a949b38d33d8754b7195849026113298.json",
+          "sha256": "37d6254893b7eaf4d42bcdaef7ea516173a75c8222d388a36bc0a98014cabaee",
+          "cacheKey": "ef0543e523f7456390d92d020434e2b7a949b38d33d8754b7195849026113298",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            98.64,
+            112.26
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-08-ctc-0618e607e4f1e8681723c11da5eca6fffeb7cc0bcbbd0f65e21050d2598c14cd.json",
+          "sha256": "c34de43557b01c1209e013ddf0db16dfd84050e8d8889fb2d06f5712cb89187d",
+          "cacheKey": "0618e607e4f1e8681723c11da5eca6fffeb7cc0bcbbd0f65e21050d2598c14cd",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 9,
+          "tokenIndex": 8,
+          "alignmentCacheId": 1,
+          "nativeIndex": 2,
+          "startSeconds": 100.763,
+          "endSeconds": 101.404,
+          "score": 0.872
+        }
+      ],
       "languageProbability": 0.9978262782096863,
       "totalWords": 243,
-      "timedWords": 233,
+      "timedWords": 234,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated.",
@@ -11436,12 +11975,6 @@
           "segmentIndex": 8,
           "tokenIndex": 9,
           "text": "invites",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
-          "tokenIndex": 8,
-          "text": "stratagems",
           "reason": "low-recognition-probability"
         },
         {
@@ -11728,6 +12261,7 @@
             [5,98.58,99.02,0.9840222001075745,217],
             [6,99.02,99.58,0.9920434355735779,218],
             [7,100.02,100.64,0.9954931139945984,219],
+            [8,100.82000000000001,101.54,0.9042191306749979,3,1],
             [9,101.8,101.92,0.9977184534072876,221],
             [10,101.92,102.38,0.9906898736953735,222]
           ]
@@ -11768,9 +12302,65 @@
       "referenceSha256": "b0b61468317b045f63239d114ea57e23a1ad7f3dccaefd076f5d72f490042a12",
       "recognitionCacheKey": "a7c4b37e6f99a4c10f905b5d2b995c93cc0313cf9c8f19a5d06ecce347323c77",
       "recognitionCacheSha256": "90a91f99479b7a681baaa01c31ba22ded8f141ee66d84a5b9d31dc726ea1606c",
+      "supplementaryRecognitionCaches": [
+        {
+          "id": 1,
+          "path": "en-missing-targeted-20261109/en-09-medium-window-72b5a2cd0eaf672a2daeb3906b57e2640f10a974af88d4dd53f57f952ca344ef.json",
+          "sha256": "522d6318816c72b72eefc2d830b2fed8fb02208dff46d5885ca768b5d3f1c9cf",
+          "cacheKey": "72b5a2cd0eaf672a2daeb3906b57e2640f10a974af88d4dd53f57f952ca344ef",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            19.54,
+            46.62
+          ]
+        }
+      ],
+      "alignmentEvidenceCaches": [
+        {
+          "id": 1,
+          "path": "en-ctc-targeted-20261110/en-09-ctc-e6e525f8c2dd76453886a34e5f3d5b329aecfbb39aaef576faa15054851e1802.json",
+          "sha256": "6f1fbc2018f496d94e4b9f64b7e9174b420b2c39e20e652da40e11fb02295d85",
+          "cacheKey": "e6e525f8c2dd76453886a34e5f3d5b329aecfbb39aaef576faa15054851e1802",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        }
+      ],
+      "wordCorroborations": [
+        {
+          "segmentIndex": 7,
+          "tokenIndex": 0,
+          "alignmentCacheId": 1,
+          "nativeIndex": 5,
+          "startSeconds": 23.143,
+          "endSeconds": 23.303,
+          "score": 0.931
+        },
+        {
+          "segmentIndex": 7,
+          "tokenIndex": 1,
+          "alignmentCacheId": 1,
+          "nativeIndex": 6,
+          "startSeconds": 23.343,
+          "endSeconds": 23.863,
+          "score": 0.801
+        }
+      ],
+      "boundaryCorrections": [
+        {
+          "segmentIndex": 7,
+          "tokenIndex": 1,
+          "previousTiming": [
+            1,
+            23.24,
+            23.6,
+            0.9201981425285339,
+            48
+          ]
+        }
+      ],
       "languageProbability": 0.9815623760223389,
       "totalWords": 134,
-      "timedWords": 120,
+      "timedWords": 121,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated.",
@@ -11814,12 +12404,6 @@
           "tokenIndex": 16,
           "text": "MG42",
           "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 7,
-          "tokenIndex": 0,
-          "text": "You",
-          "reason": "low-recognition-probability"
         },
         {
           "segmentIndex": 7,
@@ -11974,10 +12558,11 @@
           ]
         },
         {
-          "startSeconds": 23.24,
+          "startSeconds": 23.18,
           "text": "You imagine, on June 6, American and allied soldiers landing under enemy fire, and this fire also bore the name of MG42...",
           "timings": [
-            [1,23.24,23.6,0.9201981425285339,48],
+            [0,23.18,23.4,0.9836139678955078,7,1],
+            [1,23.4,23.84,0.9901801347732544,8,1],
             [2,24.04,24.24,0.9863064289093018,49],
             [3,24.24,24.54,0.9955778121948242,50],
             [5,25.46,25.98,0.9831651449203491,52],
