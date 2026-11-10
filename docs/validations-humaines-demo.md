@@ -47,13 +47,13 @@ Preuves conservées hors dépôt : `fr22-targeted-20261109/fr22-candidate-compar
 | ☐ | 28 / 0 | même — désormais minuté, à relire avec les six voisins | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 | ☐ | 28 / 11 | résistance | 2:14.80 | même dans les heures les plus sombres, la lumière de la résistance ne s’éteint jamais. |
 
-## Anglais — 425 mots affichés sans repère
+## Anglais — 409 mots affichés sans repère
 
 Source de travail : `src/data/english-transcripts.en.json`. Les 22 MP3 et les 22 références anglaises publiées ont déjà été comparés automatiquement. Les mots listés sont encore provisoires : ne pas affirmer que la langue entière est validée humainement. Le récit anglais est distinct du français.
 
 Les lignes sont regroupées par phrase pour éviter de rejouer plusieurs fois un même passage. Chaque entrée `indice : mot` est à valider séparément. Motifs conservés : **P** = confiance de reconnaissance insuffisante ; **L** = mot source non reconnu exactement ; **B** = borne invalide/conflit ; **A** = autre motif à consulter dans le JSON. Ces motifs sont des raisons de prudence, pas la preuve d’une erreur.
 
-Mise à jour du 10 novembre : après history (EN01), 24 mots supplémentaires de 14 stations ont reçu leurs bornes medium natives entières, corroborées par un alignement CTC indépendant. Neuf repères voisins ont été corrigés seulement pour permettre les chaînes réellement reconnues, sans chevauchement. Total EN **6597/7022**, donc **425 sans repère** ; EN01 reste 239/254 et EN22 compte 321/341. Aucune écoute humaine intégrale n’est acquise. Les 33 repères de ces deux lots restent à relire dans le tableau ci-dessous ; les 425 omissions ne désignent pas tous les mots qui nécessitent une écoute humaine.
+Mise à jour du 10 novembre : les25 ajouts et neuf réparations anglais antérieurs restent conservés. Après confirmation utilisateur de16 occurrences EN22, celles-ci reçoivent des bornes acoustiques natives ;63 voisins nécessaires sont corrigés avec provenance séparée ASR/CTC. Total EN **6613/7022**, donc **409 sans repère** ; EN01 reste239/254 et EN22 compte337/341. Aucune écoute humaine intégrale ni certification des frontières n’est acquise. Les33 repères des lots antérieurs, les16 nouveaux mots et leurs63 voisins restent à relire ; les409 omissions ne désignent pas tous les mots nécessitant une écoute humaine.
 
 | Station | Mots affichés à vérifier | Passages documentaires séparés |
 |---|---:|---:|
@@ -78,7 +78,7 @@ Mise à jour du 10 novembre : après history (EN01), 24 mots supplémentaires de
 | 19 | 23 | 0 |
 | 20 | 26 | 0 |
 | 21 | 32 | 0 |
-| 22 | 20 | 0 |
+| 22 | 4 | 0 |
 
 ### Repères ajoutés ou corrigés le 10 novembre — relecture humaine en attente
 
@@ -510,25 +510,20 @@ Audio : `public/audio/en/stop-21.mp3`. Référence publiée : [page anglaise Wiv
 Audio : `public/audio/en/stop-22.mp3`. Référence publiée : [page anglaise Wivi](https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=en).
 
 
-Complément CTC du 10 novembre : deux contextes medium existants, 23,7–32,0 et 101,3–115,3 s, ont été réutilisés sans nouvel ASR. Après correction de la sur-extension des chaînes dans la comparaison, **transformed11/5 est ajouté et their11/6/environment11/7 sont corrigés**, avec intervalles medium entiers corroborés par CTC. Les 318 autres bornes restent intactes : **321/341 mots minutés, 20 sans repère**. The3/0 ne recouvre que 26 ms du CTC ; to11/13 est disjoint ; using11/8 reste bloqué par each11/9, sans forcer ce voisin. We12/0, de durée medium nulle, reste non minuté. Voir [la revue ciblée](revue-en22-2026-11-09.md). Aucune écoute humaine acquise.
+État actuel : **337/341 mots suivis, quatre sans repère**. L’utilisateur a confirmé16 occurrences entendues ; les frontières restent automatiques/provisoires. Les321 anciens mots sont conservés,63 voisins seulement corrigés pour éviter les chevauchements. Transformed/their/environment restent identiques. [La revue ciblée](revue-en22-2026-11-09.md) donne les16 nouvelles bornes, les63 voisins et toutes les réserves lexicales. Relire aussi ces79 mots, notamment served, KIEFFER, 18, constituted et We. Aucune écoute humaine intégrale acquise.
+
+Le tableau suivant contient uniquement les **quatre omissions** ; les mots désormais suivis figurent dans le tableau de frontières à relire de la revue, pas parmi les omissions.
 
 | À valider | Phrase | Début de phrase existant | Mots et indices à vérifier | Contexte affiché |
 |---|---:|---|---|---|
 | ☐ | 3 | 0:26.24 | 0 : The (P) | The railways, for example, suffered a lot of damage as a result of these actions. |
-| ☐ | 4 | 0:31.98 | 2 : but (P) ; 8 : constituted (P) | Knives, silent but formidable tools in close combat, constituted either a last defense or a means of furtive strike. |
+| ☐ | 4 | 0:31.98 | 2 : but (P) | Knives, silent but formidable tools in close combat, constituted either a last defense or a means of furtive strike. |
 | ☐ | 5 | 0:42.10 | 1 : belonged (L) | They belonged to men and women ready to sacrifice everything. |
-| ☐ | 6 | 0:46.46 | 7 : served (L) | The leaflets that you can see here served to raise awareness and rally free spirits. |
-| ☐ | 7 | 0:52.00 | 7 : these (P) | Distributed at the risk of their lives, these papers were real cries of revolt against oppression, calls to stand up for a better homeland. |
-| ☐ | 8 | 1:02.06 | 1 : green (P) ; 5 : KIEFFER (L) ; 6 : commandos (P) ; 17 : who (P) ; 24 : 18 (L) ; 27 : by (P) | The green beret of the KIEFFER commandos symbolizes the unity and courage of the 177 French soldiers who responded to the call of June 18, fighting side by side with their allies to liberate a country reduced to silence. |
-| ☐ | 9 | 1:18.52 | 8 : weapon (P) ; 9 : testify (P) ; 15 : resistance (P) | The detonators, tire slashes and this modified Mauser weapon testify to the inventiveness of the resistance fighters. |
-| ☐ | 10 | 1:26.80 | 2 : there (P) | And then, there are the fake stamps, essential instruments for creating false identities: real keys to survival, allowing many resistance fighters to escape the clutches of the enemy and continue their fight in the shadows. |
-| ☐ | 11 | 1:41.84 | 8 : using (P) ; 13 : to (P) | Faced with limited resources, they transformed their environment, using each piece, each tool, to fuel their endless struggle. |
-| ☐ | 12 | 1:50.98 | 0 : We (P) | We were fortunate to know several resistance fighters during their lifetime. |
-| ☐ | 14 | 2:01.22 | 19 : who (P) | We perpetuate their memory through this window, because it is a real childhood memory of having met these people, who did not wear a uniform—apparently simple citizens... |
+| ☐ | 11 | 1:41.84 | 13 : to (P) | Faced with limited resources, they transformed their environment, using each piece, each tool, to fuel their endless struggle. |
 
 ### Vigilances anglaises particulières
 
-- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 425 mots affichés sans repère.
+- EN08 : conclusion publiée absente de la reconnaissance ; EN12 : fragment interrompu conservé séparément, ne pas compléter artificiellement la narration. EN09 : trois mots/phrases documentaires sans borne sûre sont séparés et ne sont **pas** comptés parmi les 409 mots affichés sans repère.
 - EN12, EN16 et EN18 : distinguer les dialogues d’ambiance de la narration principale. Leur exclusion du suivi n’est pas une traduction ni une réécriture du récit.
 - Noms/termes et divergences à écouter avec une personne anglophone : Fabien/Fabian, Focke-Wulf, PAK 40, Flakvierling, Severloh, Lehr, Vierville-sur-Mer, ORIN, Welbike, Mauser/KIEFFER et EN13 offensive/defensive. Seules les occurrences réellement présentes dans les textes sont concernées ; cette vigilance ne propose aucun remplacement automatique.
 

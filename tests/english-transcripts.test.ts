@@ -96,7 +96,13 @@ test('retained times and probabilities are exactly the original native recogniti
         assert.equal(end, native.end);
         assert.equal(probability, native.probability);
         assert.ok(probability >= .8);
-        assert.equal(normalize(tokens[tokenIndex][0]), normalize(native.word));
+        if (id === '22' && segment === record.segments[6] && tokenIndex === 7) {
+          // The listener confirmed served; both recognizers returned serve.
+          // This is a documented lexical exception, not a global stemming rule.
+          assert.equal(tokens[tokenIndex][0], 'served');
+          assert.equal(normalize(native.word), 'serve');
+          assert.ok(record.listeningConfirmedAlignment?.presenceConfirmation.words.some(word => word.segmentIndex === 6 && word.tokenIndex === 7 && word.text === 'served'));
+        } else assert.equal(normalize(tokens[tokenIndex][0]), normalize(native.word));
       }
     }
   }
@@ -145,8 +151,30 @@ const previousBounds = [
   { id: '22', segmentIndex: 11, tokenIndex: 7, previousTiming: [7, 104.92, 105.46, 0.9981770515441895, 243] },
 ];
 
+function restoreBeforeListeningConfirmation(sources: typeof ENGLISH_TRANSCRIPT_SOURCES) {
+  for (const raw of Object.values(sources)) {
+    const review = raw.listeningConfirmedAlignment;
+    if (!review) continue;
+    for (const change of review.changes) {
+      const segment = raw.segments[change.segmentIndex];
+      segment.timings = segment.timings.filter(row => row[0] !== change.tokenIndex);
+      if (change.previousTiming) segment.timings.push(change.previousTiming);
+      segment.timings.sort((a, b) => a[0] - b[0]);
+    }
+    for (const segment of raw.segments) delete segment.ctcWordTimings;
+    for (const old of review.previousSegmentStarts) raw.segments[old.segmentIndex].startSeconds = old.previousStartSeconds;
+    raw.timedWords = review.previousTimedWords;
+    raw.unresolvedWords = review.previousUnresolvedWords;
+    raw.supplementaryRecognitionCaches = raw.supplementaryRecognitionCaches?.filter(cache => review.previousRecognitionCacheIds.includes(cache.id));
+    raw.alignmentEvidenceCaches = raw.alignmentEvidenceCaches?.filter(cache => review.previousAlignmentCacheIds.includes(cache.id));
+    delete raw.listeningConfirmedAlignment;
+    assert.equal(createHash('sha256').update(JSON.stringify(raw)).digest('hex'), review.previousRecordSha256, 'all original EN22 fields and timings survive the new delta');
+  }
+}
+
 test('only 25 evidenced additions, nine necessary repairs and four phrase starts differ from the original English dataset', () => {
   const preserved = structuredClone(ENGLISH_TRANSCRIPT_SOURCES);
+  restoreBeforeListeningConfirmation(preserved);
   const actualAdded: string[] = [];
   const actualRepairs: typeof previousBounds = [];
   for (const [id, raw] of Object.entries(preserved)) {
@@ -177,8 +205,8 @@ test('only 25 evidenced additions, nine necessary repairs and four phrase starts
   preserved['13'].segments[11].startSeconds = 133.2;
   preserved['09'].segments[9].startSeconds = 51.52;
   assert.equal(createHash('sha256').update(JSON.stringify(preserved)).digest('hex'), 'b1b3e28dfe57a1b0cf16d01010150dde286a13ae7a2a23d5916b96ea06374b87');
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6597);
-  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 425);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.timedWords, 0), 6613);
+  assert.equal(Object.values(ENGLISH_TRANSCRIPT_SOURCES).reduce((sum, raw) => sum + raw.totalWords - raw.timedWords, 0), 409);
 });
 
 test('new English bounds require both clear recognition and overlapping independent alignment, including short words', () => {
@@ -252,7 +280,7 @@ test('EN10 repaired phrase follows real playback in both seek directions without
   }
 });
 
-test('EN22 transformed and its necessary neighbors work without forcing the separate using conflict', () => {
+test('EN22 transformed retains its published bounds while the separately reviewed using chain is explicit', () => {
   const record = ENGLISH_TRANSCRIPTS['22'];
   const raw = ENGLISH_TRANSCRIPT_SOURCES['22'];
   const segment = record.segments[11];
@@ -260,6 +288,137 @@ test('EN22 transformed and its necessary neighbors work without forcing the sepa
   for (const [time, expected] of [[104.5, 'transformed'], [104.9, 'their'], [105.3, 'environment'], [104.5, 'transformed']] as const) {
     assert.deepEqual(words.filter(word => getWordState(time, word) === 'current').map(word => word.text), [expected]);
   }
-  assert.ok(raw.unresolvedWords.some(word => word.segmentIndex === 11 && word.tokenIndex === 8 && word.text === 'using'));
-  assert.deepEqual(raw.segments[11].timings.find(row => row[0] === 9), [9, 106.2, 106.64, 0.9963611960411072, 245]);
+  assert.deepEqual(raw.segments[11].timings.filter(row => [5, 6, 7].includes(row[0])), [
+    [5, 104.28, 104.8, 0.9680752158164978, 5, 1],
+    [6, 104.8, 105.06, 0.9976027607917786, 6, 1],
+    [7, 105.06, 105.6, 0.9953235983848572, 7, 1],
+  ]);
+  assert.deepEqual(raw.listeningConfirmedAlignment!.changes.find(change => change.segmentIndex === 11 && change.tokenIndex === 9)!.previousTiming, [9, 106.2, 106.64, 0.9963611960411072, 245]);
+});
+
+const confirmedEn22Words = [
+  [4, 8, 'constituted'], [6, 7, 'served'], [7, 7, 'these'], [8, 1, 'green'],
+  [8, 5, 'KIEFFER'], [8, 6, 'commandos'], [8, 24, '18'], [8, 17, 'who'], [8, 27, 'by'],
+  [9, 8, 'weapon'], [9, 9, 'testify'], [9, 15, 'resistance'], [10, 2, 'there'],
+  [11, 8, 'using'], [12, 0, 'We'], [14, 19, 'who'],
+] as const;
+
+test('EN22 listener-confirmed words follow native intervals in either seek direction, without hiding old words', () => {
+  const raw = ENGLISH_TRANSCRIPT_SOURCES['22'];
+  const record = ENGLISH_TRANSCRIPTS['22'];
+  const review = raw.listeningConfirmedAlignment!;
+  assert.equal(review.applicationBeforeSha256, '727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84');
+  assert.equal(review.audioSha256, raw.audioSha256);
+  assert.equal(review.presenceConfirmation.audioSha256, raw.audioSha256);
+  assert.deepEqual(review.presenceConfirmation.words.map(word => [word.segmentIndex, word.tokenIndex, word.text]), confirmedEn22Words);
+  assert.equal(review.wordBoundaryReviewComplete, false);
+  assert.equal(review.presenceConfirmation.wordBoundaryReviewComplete, false);
+  assert.equal(record.provenance.humanListeningReviewed, false);
+  assert.ok(record.provenance.issues.some(issue => issue.startsWith('Historical ASR selection rule')));
+  assert.ok(record.provenance.issues.some(issue => issue.includes('confirmed 16 word occurrences, not their exact boundaries')));
+  assert.ok(!record.provenance.issues.some(issue => issue.startsWith('Only exact, context-supported recognized tokens')));
+  assert.equal(raw.timedWords, 337);
+  assert.deepEqual(raw.unresolvedWords.map(word => [word.segmentIndex, word.tokenIndex, word.text]), [[3, 0, 'The'], [4, 2, 'but'], [5, 1, 'belonged'], [11, 13, 'to']]);
+  assert.equal(review.changes.length, 79);
+  assert.equal(review.changes.filter(change => change.previousTiming).length, 63);
+  assert.equal(new Set(review.changes.map(change => `${change.segmentIndex}/${change.tokenIndex}`)).size, 79);
+  assert.deepEqual(review.previousSegmentStarts, [{ segmentIndex: 12, previousStartSeconds: 110.98 }]);
+  const all = record.segments.flatMap(segment => segment.wordTimings!);
+  for (const [si, ti, text] of [...confirmedEn22Words, ...confirmedEn22Words.toReversed()]) {
+    const word = record.segments[si].wordTimings!.find(word => word.tokenIndex === ti)!;
+    assert.equal(word.text, text);
+    for (const time of [word.startSeconds, (word.startSeconds + word.endSeconds) / 2]) {
+      assert.deepEqual(all.filter(candidate => getWordState(time, candidate) === 'current'), [word]);
+    }
+    assert.equal(getWordState(word.startSeconds - .001, word), 'upcoming');
+    assert.equal(getWordState(word.endSeconds, word), 'read');
+  }
+  // A single old bound put back would collide with the newly supported chain.
+  for (const change of review.changes.filter(change => change.previousTiming)) {
+    const old = change.previousTiming!;
+    const neighbors = all.filter(word => !(record.segments[change.segmentIndex].wordTimings!.includes(word) && word.tokenIndex === change.tokenIndex));
+    assert.ok(neighbors.some(word => old[1] < word.endSeconds && word.startSeconds < old[2]), `${change.segmentIndex}/${change.tokenIndex}: repair really necessary`);
+  }
+});
+
+test('EN22 primary CTC intervals and lexical exceptions retain exact cached ownership and distinct confidence types', { skip: !existsSync(cacheRoot) }, () => {
+  const raw = ENGLISH_TRANSCRIPT_SOURCES['22'];
+  const review = raw.listeningConfirmedAlignment!;
+  const normalize = (text: string) => text.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+  const recognitionCaches = new Map<number, { word: string; start: number; end: number; probability: number }[]>();
+  const original = JSON.parse(readFileSync(join(cacheRoot, `en-22-${raw.recognitionCacheKey}.json`), 'utf8'));
+  recognitionCaches.set(0, original.segments.flatMap((s: { words: object[] }) => s.words));
+  for (const meta of raw.supplementaryRecognitionCaches!) {
+    const bytes = readFileSync(join(cacheRoot, '..', meta.path));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), meta.sha256);
+    const cached = JSON.parse(bytes.toString('utf8'));
+    recognitionCaches.set(meta.id, cached.segments.flatMap((s: { words: object[] }) => s.words));
+  }
+  for (const change of review.changes) {
+    const segment = raw.segments[change.segmentIndex];
+    assert.equal(tokenizeTranscript(segment.text)[change.tokenIndex][0], change.text);
+    assert.ok(change.recognition.length > 0);
+    for (const witness of change.recognition) {
+      const native = recognitionCaches.get(witness.cacheId)![witness.nativeIndex];
+      assert.deepEqual([witness.word, witness.startSeconds, witness.endSeconds, witness.probability], [native.word, native.start, native.end, native.probability]);
+      const alias = change.text === 'served' ? 'serve' : change.text === 'KIEFFER' ? 'Kiefer' : change.text === '18' ? '18th' : change.text;
+      assert.equal(normalize(witness.word), normalize(alias));
+    }
+    const asr = segment.timings.find(row => row[0] === change.tokenIndex);
+    const ctc = segment.ctcWordTimings?.find(row => row.tokenIndex === change.tokenIndex);
+    assert.equal(Boolean(asr), change.primary === 'asr');
+    assert.equal(Boolean(ctc), change.primary === 'ctc');
+    if (asr) {
+      const native = recognitionCaches.get(asr[5])![asr[4]];
+      assert.deepEqual(asr.slice(1, 4), [native.start, native.end, native.probability]);
+      assert.ok(native.probability >= .8);
+    }
+    const proof = change.alignment;
+    if (!proof) {
+      assert.ok(change.previousTiming && asr && change.reviewFlags.includes('necessary-neighbor-two-ASR-native-agreement'));
+      assert.ok(Math.abs(asr[1] - change.previousTiming[1]) <= .25 && Math.abs(asr[2] - change.previousTiming[2]) <= .25);
+      assert.ok(asr[1] < change.previousTiming[2] && change.previousTiming[1] < asr[2]);
+      continue;
+    }
+    const meta = raw.alignmentEvidenceCaches!.find(meta => meta.id === proof.alignmentCacheId)!;
+    assert.match(meta.path, /^en(?:22-human|-01-22)-ctc-(?:targeted-)?20261110\/en-22-ctc-[a-f0-9]{64}\.json$/);
+    const bytes = readFileSync(join(cacheRoot, '..', meta.path));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), meta.sha256);
+    const cache = JSON.parse(bytes.toString('utf8'));
+    assert.equal(cache.cacheKey, meta.cacheKey);
+    assert.equal(cache.inputIdentity.audioSha256, raw.audioSha256);
+    assert.equal(cache.inputIdentity.model.weightsSha256, meta.modelWeightsSha256);
+    assert.equal(cache.inputIdentity.configuration.interpolation, 'ignore');
+    const owner = cache.words.find((word: { nativeIndex: number }) => word.nativeIndex === proof.nativeIndex);
+    const native = cache.result.word_segments[proof.nativeIndex];
+    assert.deepEqual(owner.raw, native);
+    assert.deepEqual([owner.segmentIndex, owner.tokenIndex, owner.displayText ?? owner.text], [change.segmentIndex, change.tokenIndex, change.text]);
+    assert.equal(owner.text, proof.spokenText);
+    assert.ok(owner.fullAlphanumericCharacterEvidence);
+    assert.deepEqual(owner.unsupportedCharacters, []);
+    assert.deepEqual([proof.startSeconds, proof.endSeconds, proof.score, proof.minimumCharacterScore], [native.start, native.end, native.score, owner.minimumCharacterScore]);
+    if (ctc) assert.deepEqual([ctc.startSeconds, ctc.endSeconds, ctc.score, ctc.alignmentCacheId, ctc.nativeIndex], [proof.startSeconds, proof.endSeconds, proof.score, proof.alignmentCacheId, proof.nativeIndex]);
+    if (change.text === 'KIEFFER') {
+      assert.deepEqual([change.segmentIndex, change.tokenIndex], [8, 5]);
+      assert.ok(proof.score >= .5 && proof.minimumCharacterScore >= .05);
+      assert.ok(change.recognition.length >= 2 && change.reviewFlags.includes('proper-name-spelling-requires-boundary-review'));
+      for (const witness of change.recognition) assert.ok(Math.abs(witness.startSeconds - proof.startSeconds) <= .15 && Math.abs(witness.endSeconds - proof.endSeconds) <= .15);
+    } else if (change.text === 'served') {
+      assert.deepEqual([change.segmentIndex, change.tokenIndex], [6, 7]);
+      assert.ok(asr && asr[3] >= .9);
+      assert.equal(proof.minimumCharacterScore, .001, 'the final consonant is not certified');
+      assert.ok(change.reviewFlags.includes('CTC-final-consonant-not-established-min-character-score-0.001'));
+    } else if (!change.previousTiming) {
+      assert.ok(proof.score >= .8 && proof.minimumCharacterScore >= .1);
+    } else if (proof.score < .6) {
+      assert.equal(change.text.toLowerCase(), 'a');
+      assert.ok(proof.minimumCharacterScore >= .2 && change.recognition.length >= 2);
+      for (const witness of change.recognition) assert.ok(witness.probability >= .95 && witness.startSeconds < proof.endSeconds && proof.startSeconds < witness.endSeconds);
+    } else assert.ok(proof.score >= .6 && proof.minimumCharacterScore >= .2);
+    if (change.text === '18') {
+      assert.equal(proof.spokenText, 'eighteenth');
+      assert.ok(new Set(change.recognition.map(witness => witness.cacheId)).size >= 2);
+      assert.ok(change.reviewFlags.includes('explicit-spoken-ordinal-display-unchanged'));
+    }
+  }
 });

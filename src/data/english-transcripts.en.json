@@ -7837,6 +7837,3189 @@
       "referenceSha256": "251536d661cc063c7abc99fc18a2234f50274d0a96f6f576bf634b589988fc14",
       "recognitionCacheKey": "96e07c77a42e2bccdc28c6438f6dc8215447326004667e89cf351c45bda97a82",
       "recognitionCacheSha256": "4207eb19851b6739f9d66ebbfc0151faae294bf724ec2ec32ed859ca12dd70d7",
+      "listeningConfirmedAlignment": {
+        "applicationBeforeSha256": "727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84",
+        "previousRecordSha256": "fe5c35709c11c6d1c8b31bbfdf4eeddc5f64510aac248ad06b816f89fedff201",
+        "audioSha256": "ebc69c45330dbb566e8497b2347b48b36555cf6a76c9792cc8324708b9d3c071",
+        "presenceConfirmation": {
+          "source": "User listening confirmation in this chat on 2026-11-10",
+          "audioSha256": "ebc69c45330dbb566e8497b2347b48b36555cf6a76c9792cc8324708b9d3c071",
+          "words": [
+            {
+              "segmentIndex": 4,
+              "tokenIndex": 8,
+              "text": "constituted",
+              "globalIndex": 85
+            },
+            {
+              "segmentIndex": 6,
+              "tokenIndex": 7,
+              "text": "served",
+              "globalIndex": 113
+            },
+            {
+              "segmentIndex": 7,
+              "tokenIndex": 7,
+              "text": "these",
+              "globalIndex": 128
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 1,
+              "text": "green",
+              "globalIndex": 146
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 5,
+              "text": "KIEFFER",
+              "globalIndex": 150
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 6,
+              "text": "commandos",
+              "globalIndex": 151
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 24,
+              "text": "18",
+              "globalIndex": 169
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 17,
+              "text": "who",
+              "globalIndex": 162
+            },
+            {
+              "segmentIndex": 8,
+              "tokenIndex": 27,
+              "text": "by",
+              "globalIndex": 172
+            },
+            {
+              "segmentIndex": 9,
+              "tokenIndex": 8,
+              "text": "weapon",
+              "globalIndex": 192
+            },
+            {
+              "segmentIndex": 9,
+              "tokenIndex": 9,
+              "text": "testify",
+              "globalIndex": 193
+            },
+            {
+              "segmentIndex": 9,
+              "tokenIndex": 15,
+              "text": "resistance",
+              "globalIndex": 199
+            },
+            {
+              "segmentIndex": 10,
+              "tokenIndex": 2,
+              "text": "there",
+              "globalIndex": 203
+            },
+            {
+              "segmentIndex": 11,
+              "tokenIndex": 8,
+              "text": "using",
+              "globalIndex": 244
+            },
+            {
+              "segmentIndex": 12,
+              "tokenIndex": 0,
+              "text": "We",
+              "globalIndex": 254
+            },
+            {
+              "segmentIndex": 14,
+              "tokenIndex": 19,
+              "text": "who",
+              "globalIndex": 302
+            }
+          ],
+          "wordBoundaryReviewComplete": false
+        },
+        "wordBoundaryReviewComplete": false,
+        "method": "whole-native-acoustic-intervals-no-interpolation",
+        "previousTimedWords": 321,
+        "previousUnresolvedWords": [
+          {
+            "segmentIndex": 3,
+            "tokenIndex": 0,
+            "text": "The",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 2,
+            "text": "but",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 8,
+            "text": "constituted",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 5,
+            "tokenIndex": 1,
+            "text": "belonged",
+            "reason": "not-exactly-recognized-source-word"
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 7,
+            "text": "served",
+            "reason": "not-exactly-recognized-source-word"
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 7,
+            "text": "these",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 1,
+            "text": "green",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 5,
+            "text": "KIEFFER",
+            "reason": "not-exactly-recognized-source-word"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 6,
+            "text": "commandos",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 17,
+            "text": "who",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 24,
+            "text": "18",
+            "reason": "not-exactly-recognized-source-word"
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 27,
+            "text": "by",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 8,
+            "text": "weapon",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 9,
+            "text": "testify",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 15,
+            "text": "resistance",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 2,
+            "text": "there",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 11,
+            "tokenIndex": 8,
+            "text": "using",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 11,
+            "tokenIndex": 13,
+            "text": "to",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 0,
+            "text": "We",
+            "reason": "low-recognition-probability"
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 19,
+            "text": "who",
+            "reason": "low-recognition-probability"
+          }
+        ],
+        "previousRecognitionCacheIds": [
+          1
+        ],
+        "previousAlignmentCacheIds": [
+          1
+        ],
+        "previousSegmentStarts": [
+          {
+            "segmentIndex": 12,
+            "previousStartSeconds": 110.98
+          }
+        ],
+        "changes": [
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 8,
+            "text": "constituted",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 85,
+                "word": " constituted",
+                "startSeconds": 36.5,
+                "endSeconds": 37.78,
+                "probability": 0.7584705650806427
+              },
+              {
+                "cacheId": 2,
+                "nativeIndex": 8,
+                "word": " constituted",
+                "startSeconds": 37.48,
+                "endSeconds": 37.96,
+                "probability": 0.9866540729999542
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 2,
+              "nativeIndex": 8,
+              "spokenText": "constituted",
+              "startSeconds": 37.171,
+              "endSeconds": 37.853,
+              "score": 0.866,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": [
+              "ASR-starts-disagree-CTC-whole-character-interval-retained"
+            ]
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 9,
+            "text": "either",
+            "primary": "ctc",
+            "previousTiming": [
+              9,
+              37.78,
+              38.16,
+              0.9890517592430115,
+              86
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 9,
+                "word": " either",
+                "startSeconds": 37.96,
+                "endSeconds": 38.379999999999995,
+                "probability": 0.9924713373184204
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 2,
+              "nativeIndex": 9,
+              "spokenText": "either",
+              "startSeconds": 38.033,
+              "endSeconds": 38.233,
+              "score": 0.868,
+              "minimumCharacterScore": 0.537
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 10,
+            "text": "a",
+            "primary": "asr",
+            "previousTiming": [
+              10,
+              38.16,
+              38.46,
+              0.996441662311554,
+              87
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 10,
+                "word": " a",
+                "startSeconds": 38.379999999999995,
+                "endSeconds": 38.64,
+                "probability": 0.9780915379524231
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 11,
+            "text": "last",
+            "primary": "asr",
+            "previousTiming": [
+              11,
+              38.46,
+              38.76,
+              0.9749460220336914,
+              88
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 11,
+                "word": " last",
+                "startSeconds": 38.64,
+                "endSeconds": 38.86,
+                "probability": 0.9928120970726013
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 2,
+              "nativeIndex": 11,
+              "spokenText": "last",
+              "startSeconds": 38.514,
+              "endSeconds": 38.814,
+              "score": 0.901,
+              "minimumCharacterScore": 0.671
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 12,
+            "text": "defense",
+            "primary": "asr",
+            "previousTiming": [
+              12,
+              38.76,
+              39.14,
+              0.8101913928985596,
+              89
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 12,
+                "word": " defense",
+                "startSeconds": 38.86,
+                "endSeconds": 39.339999999999996,
+                "probability": 0.8096255660057068
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 2,
+              "nativeIndex": 12,
+              "spokenText": "defense",
+              "startSeconds": 38.855,
+              "endSeconds": 39.315,
+              "score": 0.826,
+              "minimumCharacterScore": 0.297
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 13,
+            "text": "or",
+            "primary": "asr",
+            "previousTiming": [
+              13,
+              39.14,
+              39.8,
+              0.9490426778793335,
+              90
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 13,
+                "word": " or",
+                "startSeconds": 39.339999999999996,
+                "endSeconds": 39.94,
+                "probability": 0.8231210708618164
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 14,
+            "text": "a",
+            "primary": "asr",
+            "previousTiming": [
+              14,
+              39.8,
+              39.96,
+              0.9809417724609375,
+              91
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 14,
+                "word": " a",
+                "startSeconds": 39.94,
+                "endSeconds": 40.08,
+                "probability": 0.9839757680892944
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 15,
+            "text": "means",
+            "primary": "asr",
+            "previousTiming": [
+              15,
+              39.96,
+              40.2,
+              0.9977849125862122,
+              92
+            ],
+            "recognition": [
+              {
+                "cacheId": 2,
+                "nativeIndex": 15,
+                "word": " means",
+                "startSeconds": 40.08,
+                "endSeconds": 40.36,
+                "probability": 0.9984096884727478
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 4,
+            "tokenIndex": 16,
+            "text": "of",
+            "primary": "ctc",
+            "previousTiming": [
+              16,
+              40.2,
+              40.48,
+              0.9955658316612244,
+              93
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 93,
+                "word": " of",
+                "startSeconds": 40.2,
+                "endSeconds": 40.48,
+                "probability": 0.9955658316612244
+              },
+              {
+                "cacheId": 2,
+                "nativeIndex": 16,
+                "word": " of",
+                "startSeconds": 40.36,
+                "endSeconds": 40.72,
+                "probability": 0.9831715226173401
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 2,
+              "nativeIndex": 16,
+              "spokenText": "of",
+              "startSeconds": 40.418,
+              "endSeconds": 40.478,
+              "score": 0.798,
+              "minimumCharacterScore": 0.598
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 7,
+            "text": "served",
+            "primary": "asr",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 3,
+                "nativeIndex": 17,
+                "word": " serve",
+                "startSeconds": 48.519999999999996,
+                "endSeconds": 48.96,
+                "probability": 0.9095561504364014
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 17,
+              "spokenText": "served",
+              "startSeconds": 48.674,
+              "endSeconds": 48.974,
+              "score": 0.749,
+              "minimumCharacterScore": 0.001
+            },
+            "reviewFlags": [
+              "listener-confirms-served-ASR-recognizes-serve-boundaries-still-provisional",
+              "CTC-final-consonant-not-established-min-character-score-0.001"
+            ]
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 8,
+            "text": "to",
+            "primary": "ctc",
+            "previousTiming": [
+              8,
+              48.84,
+              49.1,
+              0.998826801776886,
+              114
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 114,
+                "word": " to",
+                "startSeconds": 48.84,
+                "endSeconds": 49.1,
+                "probability": 0.998826801776886
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 18,
+                "word": " to",
+                "startSeconds": 48.96,
+                "endSeconds": 49.34,
+                "probability": 0.9986868500709534
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 18,
+              "spokenText": "to",
+              "startSeconds": 49.014,
+              "endSeconds": 49.115,
+              "score": 0.946,
+              "minimumCharacterScore": 0.895
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 9,
+            "text": "raise",
+            "primary": "ctc",
+            "previousTiming": [
+              9,
+              49.1,
+              49.32,
+              0.9990543723106384,
+              115
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 115,
+                "word": " raise",
+                "startSeconds": 49.1,
+                "endSeconds": 49.32,
+                "probability": 0.9990543723106384
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 19,
+                "word": " raise",
+                "startSeconds": 49.34,
+                "endSeconds": 49.480000000000004,
+                "probability": 0.9987529516220093
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 19,
+              "spokenText": "raise",
+              "startSeconds": 49.195,
+              "endSeconds": 49.455,
+              "score": 0.903,
+              "minimumCharacterScore": 0.556
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 10,
+            "text": "awareness",
+            "primary": "ctc",
+            "previousTiming": [
+              10,
+              49.32,
+              49.82,
+              0.999798595905304,
+              116
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 116,
+                "word": " awareness",
+                "startSeconds": 49.32,
+                "endSeconds": 49.82,
+                "probability": 0.999798595905304
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 20,
+                "word": " awareness",
+                "startSeconds": 49.480000000000004,
+                "endSeconds": 49.96,
+                "probability": 0.9995039701461792
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 20,
+              "spokenText": "awareness",
+              "startSeconds": 49.515,
+              "endSeconds": 49.976,
+              "score": 0.82,
+              "minimumCharacterScore": 0.504
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 11,
+            "text": "and",
+            "primary": "ctc",
+            "previousTiming": [
+              11,
+              49.82,
+              50.24,
+              0.990192174911499,
+              117
+            ],
+            "recognition": [
+              {
+                "cacheId": 3,
+                "nativeIndex": 21,
+                "word": " and",
+                "startSeconds": 49.96,
+                "endSeconds": 50.38,
+                "probability": 0.9846791625022888
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 21,
+              "spokenText": "and",
+              "startSeconds": 50.177,
+              "endSeconds": 50.277,
+              "score": 0.731,
+              "minimumCharacterScore": 0.56
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 12,
+            "text": "rally",
+            "primary": "ctc",
+            "previousTiming": [
+              12,
+              50.24,
+              50.56,
+              0.9984377026557922,
+              118
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 118,
+                "word": " rally",
+                "startSeconds": 50.24,
+                "endSeconds": 50.56,
+                "probability": 0.9984377026557922
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 22,
+                "word": " rally",
+                "startSeconds": 50.38,
+                "endSeconds": 50.74,
+                "probability": 0.9968683123588562
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 22,
+              "spokenText": "rally",
+              "startSeconds": 50.357,
+              "endSeconds": 50.698,
+              "score": 0.915,
+              "minimumCharacterScore": 0.619
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 13,
+            "text": "free",
+            "primary": "ctc",
+            "previousTiming": [
+              13,
+              50.56,
+              50.9,
+              0.9965477585792542,
+              119
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 119,
+                "word": " free",
+                "startSeconds": 50.56,
+                "endSeconds": 50.9,
+                "probability": 0.9965477585792542
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 23,
+                "word": " free",
+                "startSeconds": 50.74,
+                "endSeconds": 51.04,
+                "probability": 0.994784414768219
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 23,
+              "spokenText": "free",
+              "startSeconds": 50.758,
+              "endSeconds": 50.978,
+              "score": 0.912,
+              "minimumCharacterScore": 0.75
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 6,
+            "tokenIndex": 14,
+            "text": "spirits",
+            "primary": "ctc",
+            "previousTiming": [
+              14,
+              50.9,
+              51.4,
+              0.9893664717674255,
+              120
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 120,
+                "word": " spirits.",
+                "startSeconds": 50.9,
+                "endSeconds": 51.4,
+                "probability": 0.9893664717674255
+              },
+              {
+                "cacheId": 3,
+                "nativeIndex": 24,
+                "word": " spirits.",
+                "startSeconds": 51.04,
+                "endSeconds": 51.46,
+                "probability": 0.9842236638069153
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 3,
+              "nativeIndex": 24,
+              "spokenText": "spirits",
+              "startSeconds": 51.038,
+              "endSeconds": 51.419,
+              "score": 0.838,
+              "minimumCharacterScore": 0.509
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 7,
+            "text": "these",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 128,
+                "word": " These",
+                "startSeconds": 54.24,
+                "endSeconds": 54.96,
+                "probability": 0.5636230707168579
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 7,
+                "word": " these",
+                "startSeconds": 54.98,
+                "endSeconds": 55.16,
+                "probability": 0.988471508026123
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 7,
+              "spokenText": "these",
+              "startSeconds": 54.826,
+              "endSeconds": 55.047,
+              "score": 0.883,
+              "minimumCharacterScore": 0.648
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 8,
+            "text": "papers",
+            "primary": "ctc",
+            "previousTiming": [
+              8,
+              54.96,
+              55.44,
+              0.9952720999717712,
+              129
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 129,
+                "word": " papers",
+                "startSeconds": 54.96,
+                "endSeconds": 55.44,
+                "probability": 0.9952720999717712
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 8,
+                "word": " papers",
+                "startSeconds": 55.16,
+                "endSeconds": 55.559999999999995,
+                "probability": 0.9982581734657288
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 8,
+              "spokenText": "papers",
+              "startSeconds": 55.127,
+              "endSeconds": 55.548,
+              "score": 0.923,
+              "minimumCharacterScore": 0.673
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 9,
+            "text": "were",
+            "primary": "ctc",
+            "previousTiming": [
+              9,
+              55.44,
+              55.76,
+              0.9948467016220093,
+              130
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 130,
+                "word": " were",
+                "startSeconds": 55.44,
+                "endSeconds": 55.76,
+                "probability": 0.9948467016220093
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 9,
+                "word": " were",
+                "startSeconds": 55.559999999999995,
+                "endSeconds": 55.94,
+                "probability": 0.9954860806465149
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 9,
+              "spokenText": "were",
+              "startSeconds": 55.628,
+              "endSeconds": 55.808,
+              "score": 0.759,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 10,
+            "text": "real",
+            "primary": "ctc",
+            "previousTiming": [
+              10,
+              55.76,
+              56.12,
+              0.9703401327133179,
+              131
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 131,
+                "word": " real",
+                "startSeconds": 55.76,
+                "endSeconds": 56.12,
+                "probability": 0.9703401327133179
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 10,
+                "word": " real",
+                "startSeconds": 55.94,
+                "endSeconds": 56.3,
+                "probability": 0.9934218525886536
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 10,
+              "spokenText": "real",
+              "startSeconds": 55.909,
+              "endSeconds": 56.169,
+              "score": 0.741,
+              "minimumCharacterScore": 0.502
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 11,
+            "text": "cries",
+            "primary": "ctc",
+            "previousTiming": [
+              11,
+              56.12,
+              56.48,
+              0.9953616261482239,
+              132
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 132,
+                "word": " cries",
+                "startSeconds": 56.12,
+                "endSeconds": 56.48,
+                "probability": 0.9953616261482239
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 11,
+                "word": " cries",
+                "startSeconds": 56.3,
+                "endSeconds": 56.559999999999995,
+                "probability": 0.9949407577514648
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 11,
+              "spokenText": "cries",
+              "startSeconds": 56.249,
+              "endSeconds": 56.55,
+              "score": 0.845,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 7,
+            "tokenIndex": 12,
+            "text": "of",
+            "primary": "ctc",
+            "previousTiming": [
+              12,
+              56.48,
+              56.68,
+              0.9974035620689392,
+              133
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 133,
+                "word": " of",
+                "startSeconds": 56.48,
+                "endSeconds": 56.68,
+                "probability": 0.9974035620689392
+              },
+              {
+                "cacheId": 4,
+                "nativeIndex": 12,
+                "word": " of",
+                "startSeconds": 56.559999999999995,
+                "endSeconds": 56.839999999999996,
+                "probability": 0.9995391368865967
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 4,
+              "nativeIndex": 12,
+              "spokenText": "of",
+              "startSeconds": 56.61,
+              "endSeconds": 56.67,
+              "score": 0.828,
+              "minimumCharacterScore": 0.656
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 1,
+            "text": "green",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 146,
+                "word": " green",
+                "startSeconds": 62.3,
+                "endSeconds": 62.64,
+                "probability": 0.4755169153213501
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 1,
+                "word": " green",
+                "startSeconds": 62.32,
+                "endSeconds": 62.76,
+                "probability": 0.8478001952171326
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 1,
+              "spokenText": "green",
+              "startSeconds": 62.363,
+              "endSeconds": 62.705,
+              "score": 0.889,
+              "minimumCharacterScore": 0.667
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 2,
+            "text": "beret",
+            "primary": "ctc",
+            "previousTiming": [
+              2,
+              62.64,
+              63.04,
+              0.9578123986721039,
+              147
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 147,
+                "word": " beret",
+                "startSeconds": 62.64,
+                "endSeconds": 63.04,
+                "probability": 0.9578123986721039
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 2,
+                "word": " beret",
+                "startSeconds": 62.76,
+                "endSeconds": 63.14,
+                "probability": 0.9809485673904419
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 2,
+              "spokenText": "beret",
+              "startSeconds": 62.745,
+              "endSeconds": 63.127,
+              "score": 0.844,
+              "minimumCharacterScore": 0.702
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 3,
+            "text": "of",
+            "primary": "ctc",
+            "previousTiming": [
+              3,
+              63.04,
+              63.28,
+              0.989031970500946,
+              148
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 148,
+                "word": " of",
+                "startSeconds": 63.04,
+                "endSeconds": 63.28,
+                "probability": 0.989031970500946
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 3,
+                "word": " of",
+                "startSeconds": 63.14,
+                "endSeconds": 63.4,
+                "probability": 0.9942502975463867
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 3,
+              "spokenText": "of",
+              "startSeconds": 63.207,
+              "endSeconds": 63.287,
+              "score": 0.833,
+              "minimumCharacterScore": 0.666
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 4,
+            "text": "the",
+            "primary": "ctc",
+            "previousTiming": [
+              4,
+              63.28,
+              63.42,
+              0.9798378348350525,
+              149
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 149,
+                "word": " the",
+                "startSeconds": 63.28,
+                "endSeconds": 63.42,
+                "probability": 0.9798378348350525
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 4,
+              "spokenText": "the",
+              "startSeconds": 63.328,
+              "endSeconds": 63.408,
+              "score": 0.798,
+              "minimumCharacterScore": 0.407
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 5,
+            "text": "KIEFFER",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 150,
+                "word": " Kiefer",
+                "startSeconds": 63.42,
+                "endSeconds": 63.78,
+                "probability": 0.7183763384819031
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 5,
+                "word": " Kiefer",
+                "startSeconds": 63.6,
+                "endSeconds": 63.92,
+                "probability": 0.760532796382904
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 5,
+              "spokenText": "KIEFFER",
+              "startSeconds": 63.488,
+              "endSeconds": 63.85,
+              "score": 0.583,
+              "minimumCharacterScore": 0.091
+            },
+            "reviewFlags": [
+              "proper-name-spelling-requires-boundary-review"
+            ]
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 6,
+            "text": "commandos",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 151,
+                "word": " Commandos",
+                "startSeconds": 63.78,
+                "endSeconds": 64.54,
+                "probability": 0.7152645885944366
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 6,
+                "word": " commandos",
+                "startSeconds": 63.92,
+                "endSeconds": 64.92,
+                "probability": 0.7945915162563324
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 5,
+              "nativeIndex": 6,
+              "spokenText": "commandos",
+              "startSeconds": 63.89,
+              "endSeconds": 64.493,
+              "score": 0.875,
+              "minimumCharacterScore": 0.629
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 17,
+            "text": "who",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 162,
+                "word": " who",
+                "startSeconds": 69.64,
+                "endSeconds": 70.28,
+                "probability": 0.7108744382858276
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 17,
+                "word": " who",
+                "startSeconds": 69.84,
+                "endSeconds": 70.42,
+                "probability": 0.7700832486152649
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 1,
+              "spokenText": "who",
+              "startSeconds": 70.203,
+              "endSeconds": 70.323,
+              "score": 0.998,
+              "minimumCharacterScore": 0.995
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 18,
+            "text": "responded",
+            "primary": "ctc",
+            "previousTiming": [
+              18,
+              70.28,
+              70.8,
+              0.9979898929595947,
+              163
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 163,
+                "word": " responded",
+                "startSeconds": 70.28,
+                "endSeconds": 70.8,
+                "probability": 0.9979898929595947
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 18,
+                "word": " responded",
+                "startSeconds": 70.42,
+                "endSeconds": 70.9,
+                "probability": 0.9981928467750549
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 2,
+              "spokenText": "responded",
+              "startSeconds": 70.363,
+              "endSeconds": 70.924,
+              "score": 0.816,
+              "minimumCharacterScore": 0.513
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 19,
+            "text": "to",
+            "primary": "ctc",
+            "previousTiming": [
+              19,
+              70.8,
+              71.02,
+              0.9991452693939209,
+              164
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 164,
+                "word": " to",
+                "startSeconds": 70.8,
+                "endSeconds": 71.02,
+                "probability": 0.9991452693939209
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 19,
+                "word": " to",
+                "startSeconds": 70.9,
+                "endSeconds": 71.12,
+                "probability": 0.9987431168556213
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 3,
+              "spokenText": "to",
+              "startSeconds": 70.964,
+              "endSeconds": 71.044,
+              "score": 0.75,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 20,
+            "text": "the",
+            "primary": "ctc",
+            "previousTiming": [
+              20,
+              71.02,
+              71.14,
+              0.997103750705719,
+              165
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 165,
+                "word": " the",
+                "startSeconds": 71.02,
+                "endSeconds": 71.14,
+                "probability": 0.997103750705719
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 4,
+              "spokenText": "the",
+              "startSeconds": 71.064,
+              "endSeconds": 71.145,
+              "score": 0.986,
+              "minimumCharacterScore": 0.958
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 21,
+            "text": "call",
+            "primary": "ctc",
+            "previousTiming": [
+              21,
+              71.14,
+              71.38,
+              0.9838817119598389,
+              166
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 166,
+                "word": " call",
+                "startSeconds": 71.14,
+                "endSeconds": 71.38,
+                "probability": 0.9838817119598389
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 21,
+                "word": " call",
+                "startSeconds": 71.32,
+                "endSeconds": 71.5,
+                "probability": 0.9924532771110535
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 5,
+              "spokenText": "call",
+              "startSeconds": 71.185,
+              "endSeconds": 71.485,
+              "score": 0.869,
+              "minimumCharacterScore": 0.726
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 22,
+            "text": "of",
+            "primary": "ctc",
+            "previousTiming": [
+              22,
+              71.38,
+              71.58,
+              0.9927914142608643,
+              167
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 167,
+                "word": " of",
+                "startSeconds": 71.38,
+                "endSeconds": 71.58,
+                "probability": 0.9927914142608643
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 22,
+                "word": " of",
+                "startSeconds": 71.5,
+                "endSeconds": 71.75999999999999,
+                "probability": 0.974437415599823
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 6,
+              "spokenText": "of",
+              "startSeconds": 71.525,
+              "endSeconds": 71.585,
+              "score": 0.75,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 23,
+            "text": "June",
+            "primary": "ctc",
+            "previousTiming": [
+              23,
+              71.58,
+              71.84,
+              0.9854350090026855,
+              168
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 168,
+                "word": " June",
+                "startSeconds": 71.58,
+                "endSeconds": 71.84,
+                "probability": 0.9854350090026855
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 23,
+                "word": " June",
+                "startSeconds": 71.75999999999999,
+                "endSeconds": 71.96,
+                "probability": 0.9917694330215454
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 7,
+              "spokenText": "June",
+              "startSeconds": 71.666,
+              "endSeconds": 71.926,
+              "score": 0.91,
+              "minimumCharacterScore": 0.642
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 24,
+            "text": "18",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 169,
+                "word": " 18th,",
+                "startSeconds": 71.84,
+                "endSeconds": 72.24000000000001,
+                "probability": 0.9465427398681641
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 24,
+                "word": " 18th,",
+                "startSeconds": 71.96,
+                "endSeconds": 73.1,
+                "probability": 0.8383706212043762
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 6,
+              "nativeIndex": 8,
+              "spokenText": "eighteenth",
+              "startSeconds": 72.006,
+              "endSeconds": 72.467,
+              "score": 0.889,
+              "minimumCharacterScore": 0.51
+            },
+            "reviewFlags": [
+              "explicit-spoken-ordinal-display-unchanged"
+            ]
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 27,
+            "text": "by",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 172,
+                "word": " by",
+                "startSeconds": 73.74,
+                "endSeconds": 73.9,
+                "probability": 0.7128235697746277
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 27,
+                "word": " by",
+                "startSeconds": 73.84,
+                "endSeconds": 74.1,
+                "probability": 0.7318307757377625
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 2,
+              "spokenText": "by",
+              "startSeconds": 73.822,
+              "endSeconds": 73.942,
+              "score": 0.898,
+              "minimumCharacterScore": 0.796
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 28,
+            "text": "side",
+            "primary": "ctc",
+            "previousTiming": [
+              28,
+              73.9,
+              74.26,
+              0.9992844462394714,
+              173
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 173,
+                "word": " side",
+                "startSeconds": 73.9,
+                "endSeconds": 74.26,
+                "probability": 0.9992844462394714
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 28,
+                "word": " side",
+                "startSeconds": 74.1,
+                "endSeconds": 74.32,
+                "probability": 0.9990874528884888
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 3,
+              "spokenText": "side",
+              "startSeconds": 74.022,
+              "endSeconds": 74.283,
+              "score": 0.617,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 29,
+            "text": "with",
+            "primary": "ctc",
+            "previousTiming": [
+              29,
+              74.26,
+              74.42,
+              0.9985654950141907,
+              174
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 174,
+                "word": " with",
+                "startSeconds": 74.26,
+                "endSeconds": 74.42,
+                "probability": 0.9985654950141907
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 29,
+                "word": " with",
+                "startSeconds": 74.32,
+                "endSeconds": 74.52,
+                "probability": 0.9987592697143555
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 4,
+              "spokenText": "with",
+              "startSeconds": 74.323,
+              "endSeconds": 74.443,
+              "score": 0.768,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 30,
+            "text": "their",
+            "primary": "ctc",
+            "previousTiming": [
+              30,
+              74.42,
+              74.58,
+              0.9994416832923889,
+              175
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 175,
+                "word": " their",
+                "startSeconds": 74.42,
+                "endSeconds": 74.58,
+                "probability": 0.9994416832923889
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 30,
+                "word": " their",
+                "startSeconds": 74.52,
+                "endSeconds": 74.78,
+                "probability": 0.9978432655334473
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 5,
+              "spokenText": "their",
+              "startSeconds": 74.483,
+              "endSeconds": 74.623,
+              "score": 0.867,
+              "minimumCharacterScore": 0.541
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 31,
+            "text": "allies",
+            "primary": "ctc",
+            "previousTiming": [
+              31,
+              74.58,
+              75,
+              0.988661527633667,
+              176
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 176,
+                "word": " allies",
+                "startSeconds": 74.58,
+                "endSeconds": 75.0,
+                "probability": 0.988661527633667
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 31,
+                "word": " allies",
+                "startSeconds": 74.78,
+                "endSeconds": 75.12,
+                "probability": 0.9496979713439941
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 6,
+              "spokenText": "allies",
+              "startSeconds": 74.723,
+              "endSeconds": 75.064,
+              "score": 0.772,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 32,
+            "text": "to",
+            "primary": "asr",
+            "previousTiming": [
+              32,
+              75,
+              75.5,
+              0.9340837001800537,
+              177
+            ],
+            "recognition": [
+              {
+                "cacheId": 5,
+                "nativeIndex": 32,
+                "word": " to",
+                "startSeconds": 75.12,
+                "endSeconds": 75.67999999999999,
+                "probability": 0.9229263663291931
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 33,
+            "text": "liberate",
+            "primary": "asr",
+            "previousTiming": [
+              33,
+              75.5,
+              76.08,
+              0.9926278591156006,
+              178
+            ],
+            "recognition": [
+              {
+                "cacheId": 5,
+                "nativeIndex": 33,
+                "word": " liberate",
+                "startSeconds": 75.67999999999999,
+                "endSeconds": 76.2,
+                "probability": 0.9933574199676514
+              }
+            ],
+            "alignment": null,
+            "reviewFlags": [
+              "necessary-neighbor-two-ASR-native-agreement"
+            ]
+          },
+          {
+            "segmentIndex": 8,
+            "tokenIndex": 34,
+            "text": "a",
+            "primary": "ctc",
+            "previousTiming": [
+              34,
+              76.08,
+              76.26,
+              0.9981575608253479,
+              179
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 179,
+                "word": " a",
+                "startSeconds": 76.08,
+                "endSeconds": 76.26,
+                "probability": 0.9981575608253479
+              },
+              {
+                "cacheId": 5,
+                "nativeIndex": 34,
+                "word": " a",
+                "startSeconds": 76.2,
+                "endSeconds": 76.44,
+                "probability": 0.9979992508888245
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 7,
+              "nativeIndex": 9,
+              "spokenText": "a",
+              "startSeconds": 76.206,
+              "endSeconds": 76.246,
+              "score": 0.564,
+              "minimumCharacterScore": 0.564
+            },
+            "reviewFlags": [
+              "necessary-single-letter-neighbor-two-independent-ASR-confirmations"
+            ]
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 8,
+            "text": "weapon",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 192,
+                "word": " weapon",
+                "startSeconds": 82.36,
+                "endSeconds": 82.72,
+                "probability": 0.7402881979942322
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 8,
+                "word": " weapon",
+                "startSeconds": 82.44,
+                "endSeconds": 83.02000000000001,
+                "probability": 0.954142153263092
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 8,
+              "spokenText": "weapon",
+              "startSeconds": 82.491,
+              "endSeconds": 82.771,
+              "score": 0.926,
+              "minimumCharacterScore": 0.656
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 9,
+            "text": "testify",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 193,
+                "word": " Testify",
+                "startSeconds": 82.72,
+                "endSeconds": 83.66,
+                "probability": 0.5440860539674759
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 9,
+                "word": " testify",
+                "startSeconds": 83.02000000000001,
+                "endSeconds": 83.7,
+                "probability": 0.6943884491920471
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 9,
+              "spokenText": "testify",
+              "startSeconds": 83.192,
+              "endSeconds": 83.774,
+              "score": 0.823,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 10,
+            "text": "to",
+            "primary": "ctc",
+            "previousTiming": [
+              10,
+              83.66,
+              83.88,
+              0.9865617156028748,
+              194
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 194,
+                "word": " to",
+                "startSeconds": 83.66,
+                "endSeconds": 83.88,
+                "probability": 0.9865617156028748
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 10,
+                "word": " to",
+                "startSeconds": 83.7,
+                "endSeconds": 84.0,
+                "probability": 0.9962835907936096
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 10,
+              "spokenText": "to",
+              "startSeconds": 83.834,
+              "endSeconds": 83.914,
+              "score": 0.828,
+              "minimumCharacterScore": 0.663
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 11,
+            "text": "the",
+            "primary": "ctc",
+            "previousTiming": [
+              11,
+              83.88,
+              84,
+              0.9940586090087891,
+              195
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 195,
+                "word": " the",
+                "startSeconds": 83.88,
+                "endSeconds": 84.0,
+                "probability": 0.9940586090087891
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 11,
+              "spokenText": "the",
+              "startSeconds": 83.934,
+              "endSeconds": 84.034,
+              "score": 0.664,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 12,
+            "text": "inventiveness",
+            "primary": "ctc",
+            "previousTiming": [
+              12,
+              84,
+              84.68,
+              0.9938854277133942,
+              196
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 196,
+                "word": " inventiveness",
+                "startSeconds": 84.0,
+                "endSeconds": 84.68,
+                "probability": 0.9938854277133942
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 12,
+              "spokenText": "inventiveness",
+              "startSeconds": 84.074,
+              "endSeconds": 84.796,
+              "score": 0.842,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 13,
+            "text": "of",
+            "primary": "ctc",
+            "previousTiming": [
+              13,
+              84.68,
+              85.02,
+              0.998059093952179,
+              197
+            ],
+            "recognition": [
+              {
+                "cacheId": 6,
+                "nativeIndex": 13,
+                "word": " of",
+                "startSeconds": 84.78,
+                "endSeconds": 85.12,
+                "probability": 0.9965116381645203
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 13,
+              "spokenText": "of",
+              "startSeconds": 84.977,
+              "endSeconds": 85.057,
+              "score": 0.832,
+              "minimumCharacterScore": 0.663
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 14,
+            "text": "the",
+            "primary": "ctc",
+            "previousTiming": [
+              14,
+              85.02,
+              85.16,
+              0.9882180094718933,
+              198
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 198,
+                "word": " the",
+                "startSeconds": 85.02,
+                "endSeconds": 85.16,
+                "probability": 0.9882180094718933
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 14,
+                "word": " the",
+                "startSeconds": 85.12,
+                "endSeconds": 85.32000000000001,
+                "probability": 0.9938462376594543
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 14,
+              "spokenText": "the",
+              "startSeconds": 85.097,
+              "endSeconds": 85.157,
+              "score": 0.994,
+              "minimumCharacterScore": 0.994
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 15,
+            "text": "resistance",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 199,
+                "word": " resistance",
+                "startSeconds": 85.16,
+                "endSeconds": 85.52,
+                "probability": 0.7207413911819458
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 15,
+                "word": " resistance",
+                "startSeconds": 85.32000000000001,
+                "endSeconds": 85.76,
+                "probability": 0.8285273909568787
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 15,
+              "spokenText": "resistance",
+              "startSeconds": 85.217,
+              "endSeconds": 85.698,
+              "score": 0.921,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 9,
+            "tokenIndex": 16,
+            "text": "fighters",
+            "primary": "ctc",
+            "previousTiming": [
+              16,
+              85.52,
+              85.96,
+              0.9957572817802429,
+              200
+            ],
+            "recognition": [
+              {
+                "cacheId": 6,
+                "nativeIndex": 16,
+                "word": " fighters.",
+                "startSeconds": 85.76,
+                "endSeconds": 86.2,
+                "probability": 0.9979835748672485
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 8,
+              "nativeIndex": 16,
+              "spokenText": "fighters",
+              "startSeconds": 85.779,
+              "endSeconds": 86.099,
+              "score": 0.938,
+              "minimumCharacterScore": 0.552
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 2,
+            "text": "there",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 203,
+                "word": " there",
+                "startSeconds": 87.32,
+                "endSeconds": 87.8,
+                "probability": 0.5926631093025208
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 19,
+                "word": " there",
+                "startSeconds": 87.48,
+                "endSeconds": 87.88,
+                "probability": 0.5471418499946594
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 9,
+              "nativeIndex": 2,
+              "spokenText": "there",
+              "startSeconds": 87.69,
+              "endSeconds": 87.871,
+              "score": 0.852,
+              "minimumCharacterScore": 0.513
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 3,
+            "text": "are",
+            "primary": "ctc",
+            "previousTiming": [
+              3,
+              87.8,
+              87.96,
+              0.9982126951217651,
+              204
+            ],
+            "recognition": [
+              {
+                "cacheId": 6,
+                "nativeIndex": 20,
+                "word": " are",
+                "startSeconds": 87.88,
+                "endSeconds": 88.10000000000001,
+                "probability": 0.997798502445221
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 9,
+              "nativeIndex": 3,
+              "spokenText": "are",
+              "startSeconds": 87.931,
+              "endSeconds": 88.032,
+              "score": 0.667,
+              "minimumCharacterScore": 0.494
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 4,
+            "text": "the",
+            "primary": "ctc",
+            "previousTiming": [
+              4,
+              87.96,
+              88.1,
+              0.9795515537261963,
+              205
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 205,
+                "word": " the",
+                "startSeconds": 87.96,
+                "endSeconds": 88.1,
+                "probability": 0.9795515537261963
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 9,
+              "nativeIndex": 4,
+              "spokenText": "the",
+              "startSeconds": 88.052,
+              "endSeconds": 88.133,
+              "score": 0.83,
+              "minimumCharacterScore": 0.498
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 5,
+            "text": "fake",
+            "primary": "ctc",
+            "previousTiming": [
+              5,
+              88.1,
+              88.36,
+              0.8829894065856934,
+              206
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 206,
+                "word": " fake",
+                "startSeconds": 88.1,
+                "endSeconds": 88.36,
+                "probability": 0.8829894065856934
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 22,
+                "word": " fake",
+                "startSeconds": 88.32000000000001,
+                "endSeconds": 88.54,
+                "probability": 0.9893754720687866
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 9,
+              "nativeIndex": 5,
+              "spokenText": "fake",
+              "startSeconds": 88.213,
+              "endSeconds": 88.515,
+              "score": 0.815,
+              "minimumCharacterScore": 0.502
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 10,
+            "tokenIndex": 6,
+            "text": "stamps",
+            "primary": "ctc",
+            "previousTiming": [
+              6,
+              88.36,
+              88.88,
+              0.977238655090332,
+              207
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 207,
+                "word": " stamps,",
+                "startSeconds": 88.36,
+                "endSeconds": 88.88,
+                "probability": 0.977238655090332
+              },
+              {
+                "cacheId": 6,
+                "nativeIndex": 23,
+                "word": " stamps.",
+                "startSeconds": 88.54,
+                "endSeconds": 88.94,
+                "probability": 0.9744018316268921
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 9,
+              "nativeIndex": 6,
+              "spokenText": "stamps",
+              "startSeconds": 88.535,
+              "endSeconds": 88.918,
+              "score": 0.988,
+              "minimumCharacterScore": 0.961
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 11,
+            "tokenIndex": 8,
+            "text": "using",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 244,
+                "word": " using",
+                "startSeconds": 105.46,
+                "endSeconds": 106.2,
+                "probability": 0.494738906621933
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 8,
+                "word": " using",
+                "startSeconds": 106.17999999999999,
+                "endSeconds": 106.38,
+                "probability": 0.9907587766647339
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 10,
+              "nativeIndex": 0,
+              "spokenText": "using",
+              "startSeconds": 106.094,
+              "endSeconds": 106.317,
+              "score": 0.87,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 11,
+            "tokenIndex": 9,
+            "text": "each",
+            "primary": "ctc",
+            "previousTiming": [
+              9,
+              106.2,
+              106.64,
+              0.9963611960411072,
+              245
+            ],
+            "recognition": [
+              {
+                "cacheId": 1,
+                "nativeIndex": 9,
+                "word": " each",
+                "startSeconds": 106.38,
+                "endSeconds": 106.78,
+                "probability": 0.9986145496368408
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 10,
+              "nativeIndex": 1,
+              "spokenText": "each",
+              "startSeconds": 106.52,
+              "endSeconds": 106.661,
+              "score": 0.792,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 11,
+            "tokenIndex": 10,
+            "text": "piece",
+            "primary": "ctc",
+            "previousTiming": [
+              10,
+              106.64,
+              106.96,
+              0.9944051504135132,
+              246
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 246,
+                "word": " piece,",
+                "startSeconds": 106.64,
+                "endSeconds": 106.96,
+                "probability": 0.9944051504135132
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 10,
+                "word": " piece,",
+                "startSeconds": 106.78,
+                "endSeconds": 107.14,
+                "probability": 0.9985491633415222
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 10,
+              "nativeIndex": 2,
+              "spokenText": "piece",
+              "startSeconds": 106.783,
+              "endSeconds": 107.046,
+              "score": 0.902,
+              "minimumCharacterScore": 0.511
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 0,
+            "text": "We",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 254,
+                "word": " We",
+                "startSeconds": 109.96,
+                "endSeconds": 110.98,
+                "probability": 0.7829970717430115
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 1,
+              "nativeIndex": 18,
+              "spokenText": "We",
+              "startSeconds": 110.914,
+              "endSeconds": 110.994,
+              "score": 0.991,
+              "minimumCharacterScore": 0.982
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 1,
+            "text": "were",
+            "primary": "ctc",
+            "previousTiming": [
+              1,
+              110.98,
+              111.14,
+              0.9910825490951538,
+              255
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 255,
+                "word": " were",
+                "startSeconds": 110.98,
+                "endSeconds": 111.14,
+                "probability": 0.9910825490951538
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 19,
+                "word": " were",
+                "startSeconds": 111.02,
+                "endSeconds": 111.3,
+                "probability": 0.9978353381156921
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 1,
+              "spokenText": "were",
+              "startSeconds": 111.021,
+              "endSeconds": 111.161,
+              "score": 0.872,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 2,
+            "text": "fortunate",
+            "primary": "ctc",
+            "previousTiming": [
+              2,
+              111.14,
+              111.56,
+              0.9979845285415649,
+              256
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 256,
+                "word": " fortunate",
+                "startSeconds": 111.14,
+                "endSeconds": 111.56,
+                "probability": 0.9979845285415649
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 20,
+                "word": " fortunate",
+                "startSeconds": 111.3,
+                "endSeconds": 111.7,
+                "probability": 0.9986139535903931
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 2,
+              "spokenText": "fortunate",
+              "startSeconds": 111.241,
+              "endSeconds": 111.703,
+              "score": 0.879,
+              "minimumCharacterScore": 0.587
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 3,
+            "text": "to",
+            "primary": "ctc",
+            "previousTiming": [
+              3,
+              111.56,
+              111.84,
+              0.9986781477928162,
+              257
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 257,
+                "word": " to",
+                "startSeconds": 111.56,
+                "endSeconds": 111.84,
+                "probability": 0.9986781477928162
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 21,
+                "word": " to",
+                "startSeconds": 111.7,
+                "endSeconds": 111.96,
+                "probability": 0.9974598288536072
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 3,
+              "spokenText": "to",
+              "startSeconds": 111.763,
+              "endSeconds": 111.843,
+              "score": 0.993,
+              "minimumCharacterScore": 0.986
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 4,
+            "text": "know",
+            "primary": "ctc",
+            "previousTiming": [
+              4,
+              111.84,
+              112.04,
+              0.9991021156311035,
+              258
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 258,
+                "word": " know",
+                "startSeconds": 111.84,
+                "endSeconds": 112.04,
+                "probability": 0.9991021156311035
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 22,
+                "word": " know",
+                "startSeconds": 111.96,
+                "endSeconds": 112.14,
+                "probability": 0.9986070990562439
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 1,
+              "nativeIndex": 22,
+              "spokenText": "know",
+              "startSeconds": 111.915,
+              "endSeconds": 112.095,
+              "score": 0.801,
+              "minimumCharacterScore": 0.672
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 5,
+            "text": "several",
+            "primary": "ctc",
+            "previousTiming": [
+              5,
+              112.04,
+              112.48,
+              0.9958592057228088,
+              259
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 259,
+                "word": " several",
+                "startSeconds": 112.04,
+                "endSeconds": 112.48,
+                "probability": 0.9958592057228088
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 23,
+                "word": " several",
+                "startSeconds": 112.14,
+                "endSeconds": 112.62,
+                "probability": 0.9987579584121704
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 5,
+              "spokenText": "several",
+              "startSeconds": 112.204,
+              "endSeconds": 112.565,
+              "score": 0.837,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 6,
+            "text": "resistance",
+            "primary": "ctc",
+            "previousTiming": [
+              6,
+              112.48,
+              112.94,
+              0.9639291763305664,
+              260
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 260,
+                "word": " resistance",
+                "startSeconds": 112.48,
+                "endSeconds": 112.94,
+                "probability": 0.9639291763305664
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 6,
+              "spokenText": "resistance",
+              "startSeconds": 112.625,
+              "endSeconds": 113.126,
+              "score": 0.911,
+              "minimumCharacterScore": 0.501
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 7,
+            "text": "fighters",
+            "primary": "ctc",
+            "previousTiming": [
+              7,
+              112.94,
+              113.38,
+              0.9968172311782837,
+              261
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 261,
+                "word": " fighters",
+                "startSeconds": 112.94,
+                "endSeconds": 113.38,
+                "probability": 0.9968172311782837
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 25,
+                "word": " fighters",
+                "startSeconds": 113.17999999999999,
+                "endSeconds": 113.56,
+                "probability": 0.99886155128479
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 1,
+              "nativeIndex": 25,
+              "spokenText": "fighters",
+              "startSeconds": 113.177,
+              "endSeconds": 113.537,
+              "score": 0.876,
+              "minimumCharacterScore": 0.503
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 8,
+            "text": "during",
+            "primary": "ctc",
+            "previousTiming": [
+              8,
+              113.38,
+              113.84,
+              0.9859768152236938,
+              262
+            ],
+            "recognition": [
+              {
+                "cacheId": 1,
+                "nativeIndex": 26,
+                "word": " during",
+                "startSeconds": 113.56,
+                "endSeconds": 113.96,
+                "probability": 0.9935007691383362
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 1,
+              "nativeIndex": 26,
+              "spokenText": "during",
+              "startSeconds": 113.658,
+              "endSeconds": 113.938,
+              "score": 0.829,
+              "minimumCharacterScore": 0.5
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 9,
+            "text": "their",
+            "primary": "ctc",
+            "previousTiming": [
+              9,
+              113.84,
+              114.06,
+              0.9976736903190613,
+              263
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 263,
+                "word": " their",
+                "startSeconds": 113.84,
+                "endSeconds": 114.06,
+                "probability": 0.9976736903190613
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 27,
+                "word": " their",
+                "startSeconds": 113.96,
+                "endSeconds": 114.24,
+                "probability": 0.9994068145751953
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 9,
+              "spokenText": "their",
+              "startSeconds": 113.968,
+              "endSeconds": 114.108,
+              "score": 0.973,
+              "minimumCharacterScore": 0.93
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 12,
+            "tokenIndex": 10,
+            "text": "lifetime",
+            "primary": "ctc",
+            "previousTiming": [
+              10,
+              114.06,
+              114.52,
+              0.9838309288024902,
+              264
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 264,
+                "word": " lifetime.",
+                "startSeconds": 114.06,
+                "endSeconds": 114.52,
+                "probability": 0.9838309288024902
+              },
+              {
+                "cacheId": 1,
+                "nativeIndex": 28,
+                "word": " lifetime.",
+                "startSeconds": 114.24,
+                "endSeconds": 114.6,
+                "probability": 0.9879322648048401
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 11,
+              "nativeIndex": 10,
+              "spokenText": "lifetime",
+              "startSeconds": 114.148,
+              "endSeconds": 114.629,
+              "score": 0.787,
+              "minimumCharacterScore": 0.349
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 19,
+            "text": "who",
+            "primary": "ctc",
+            "previousTiming": null,
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 302,
+                "word": " who",
+                "startSeconds": 128.0,
+                "endSeconds": 128.52,
+                "probability": 0.6960965394973755
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 5,
+                "word": " who",
+                "startSeconds": 128.18,
+                "endSeconds": 128.6,
+                "probability": 0.6326051354408264
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 4,
+              "spokenText": "who",
+              "startSeconds": 128.446,
+              "endSeconds": 128.546,
+              "score": 0.926,
+              "minimumCharacterScore": 0.781
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 20,
+            "text": "did",
+            "primary": "ctc",
+            "previousTiming": [
+              20,
+              128.52,
+              128.66,
+              0.9963032007217407,
+              303
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 303,
+                "word": " did",
+                "startSeconds": 128.52,
+                "endSeconds": 128.66,
+                "probability": 0.9963032007217407
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 6,
+                "word": " did",
+                "startSeconds": 128.6,
+                "endSeconds": 128.78,
+                "probability": 0.9910637140274048
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 5,
+              "spokenText": "did",
+              "startSeconds": 128.586,
+              "endSeconds": 128.726,
+              "score": 0.861,
+              "minimumCharacterScore": 0.643
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 21,
+            "text": "not",
+            "primary": "ctc",
+            "previousTiming": [
+              21,
+              128.66,
+              128.86,
+              0.9995235204696655,
+              304
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 304,
+                "word": " not",
+                "startSeconds": 128.66,
+                "endSeconds": 128.86,
+                "probability": 0.9995235204696655
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 7,
+                "word": " not",
+                "startSeconds": 128.78,
+                "endSeconds": 129.02,
+                "probability": 0.9970705509185791
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 6,
+              "spokenText": "not",
+              "startSeconds": 128.766,
+              "endSeconds": 128.927,
+              "score": 0.937,
+              "minimumCharacterScore": 0.863
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 22,
+            "text": "wear",
+            "primary": "ctc",
+            "previousTiming": [
+              22,
+              128.86,
+              129.1,
+              0.9986969828605652,
+              305
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 305,
+                "word": " wear",
+                "startSeconds": 128.86,
+                "endSeconds": 129.1,
+                "probability": 0.9986969828605652
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 8,
+                "word": " wear",
+                "startSeconds": 129.02,
+                "endSeconds": 129.24,
+                "probability": 0.9979356527328491
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 7,
+              "spokenText": "wear",
+              "startSeconds": 128.967,
+              "endSeconds": 129.188,
+              "score": 0.87,
+              "minimumCharacterScore": 0.689
+            },
+            "reviewFlags": []
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 23,
+            "text": "a",
+            "primary": "ctc",
+            "previousTiming": [
+              23,
+              129.1,
+              129.24,
+              0.9969387054443359,
+              306
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 306,
+                "word": " a",
+                "startSeconds": 129.1,
+                "endSeconds": 129.24,
+                "probability": 0.9969387054443359
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 9,
+                "word": " a",
+                "startSeconds": 129.24,
+                "endSeconds": 129.46,
+                "probability": 0.990440845489502
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 8,
+              "spokenText": "a",
+              "startSeconds": 129.228,
+              "endSeconds": 129.268,
+              "score": 0.475,
+              "minimumCharacterScore": 0.475
+            },
+            "reviewFlags": [
+              "necessary-single-letter-neighbor-two-independent-ASR-confirmations"
+            ]
+          },
+          {
+            "segmentIndex": 14,
+            "tokenIndex": 24,
+            "text": "uniform",
+            "primary": "ctc",
+            "previousTiming": [
+              24,
+              129.24,
+              129.66,
+              0.9994170665740967,
+              307
+            ],
+            "recognition": [
+              {
+                "cacheId": 0,
+                "nativeIndex": 307,
+                "word": " uniform,",
+                "startSeconds": 129.24,
+                "endSeconds": 129.66,
+                "probability": 0.9994170665740967
+              },
+              {
+                "cacheId": 7,
+                "nativeIndex": 10,
+                "word": " uniform.",
+                "startSeconds": 129.46,
+                "endSeconds": 129.74,
+                "probability": 0.9982798099517822
+              }
+            ],
+            "alignment": {
+              "alignmentCacheId": 12,
+              "nativeIndex": 9,
+              "spokenText": "uniform",
+              "startSeconds": 129.348,
+              "endSeconds": 129.729,
+              "score": 0.92,
+              "minimumCharacterScore": 0.669
+            },
+            "reviewFlags": []
+          }
+        ]
+      },
       "supplementaryRecognitionCaches": [
         {
           "id": 1,
@@ -7848,6 +11031,72 @@
             101.3,
             115.3
           ]
+        },
+        {
+          "id": 2,
+          "path": "en22-targeted-20261109/en22-medium-window-8c91dee3d6b03e1a8003898b1911544d59e5ca52456a1d4f9e6a40dd42b922bd.json",
+          "sha256": "5621c0dc3636f046d6a989be820f1bc7f9dec5b0accc0a13b5d12a6b6b90979b",
+          "cacheKey": "8c91dee3d6b03e1a8003898b1911544d59e5ca52456a1d4f9e6a40dd42b922bd",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            31.7,
+            41.4
+          ]
+        },
+        {
+          "id": 3,
+          "path": "en22-targeted-20261109/en22-medium-window-a72a0b787fffd230503aff745f7ebde2392e61430a33408f7a6bfa9ed7438cc8.json",
+          "sha256": "ec6d989086c42b0000f7ac48ce246eef71b9974dcbbc399e63c90b7483c348fa",
+          "cacheKey": "a72a0b787fffd230503aff745f7ebde2392e61430a33408f7a6bfa9ed7438cc8",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            41.5,
+            52.0
+          ]
+        },
+        {
+          "id": 4,
+          "path": "en22-targeted-20261109/en22-medium-window-3aae1d34340747b4c0430afdce0f8f35d9b57fcd3d7a9ce2c398ff50c0dad569.json",
+          "sha256": "3028405b61438cc6a0b4ccb92118fd3e6d5493f716f4d4fa11fbebd0e28c5b1f",
+          "cacheKey": "3aae1d34340747b4c0430afdce0f8f35d9b57fcd3d7a9ce2c398ff50c0dad569",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            51.8,
+            61.4
+          ]
+        },
+        {
+          "id": 5,
+          "path": "en22-targeted-20261109/en22-medium-window-845f8ab637dc6ea944468ddb218c64d40163ed7229632d943c20d2c84b4979ac.json",
+          "sha256": "3a5b113da50aa7ba8cc29a09b7925f7c8efb4afa12948771821a6ff00fd66dc4",
+          "cacheKey": "845f8ab637dc6ea944468ddb218c64d40163ed7229632d943c20d2c84b4979ac",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            61.4,
+            78.2
+          ]
+        },
+        {
+          "id": 6,
+          "path": "en22-targeted-20261109/en22-medium-window-f42713eb4f98f780012edecfb8ced5c9b3591d4881290b7cdedc3cd06f9b7969.json",
+          "sha256": "223727a6f50f390e1fd648c3cda027dec419786b0bc8ba1beb4b3aaba048d9d4",
+          "cacheKey": "f42713eb4f98f780012edecfb8ced5c9b3591d4881290b7cdedc3cd06f9b7969",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            78.2,
+            89.2
+          ]
+        },
+        {
+          "id": 7,
+          "path": "en22-targeted-20261109/en22-medium-window-b746e25f4112bc9dd397a8e662f1bbbfb7e96ccd4ab03bef8d3f128b364eac17.json",
+          "sha256": "55e95e0cfe9940ff69a2f232c97116e6d80d8134febe0029f925721725f1158f",
+          "cacheKey": "b746e25f4112bc9dd397a8e662f1bbbfb7e96ccd4ab03bef8d3f128b364eac17",
+          "modelRevision": "08e178d48790749d25932bbc082711ddcfdfbc4f",
+          "windowSeconds": [
+            126.5,
+            130.0
+          ]
         }
       ],
       "alignmentEvidenceCaches": [
@@ -7856,6 +11105,94 @@
           "path": "en-01-22-ctc-targeted-20261110/en-22-ctc-96aed064e41dac4a2413552b8f4fe7a9a46c1638f59fadebd4a92909e219a264.json",
           "sha256": "fc24e73db1cc564512fe58fc55c2cff28b7dce66f17ac32ddfa9186df5475871",
           "cacheKey": "96aed064e41dac4a2413552b8f4fe7a9a46c1638f59fadebd4a92909e219a264",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 2,
+          "path": "en22-human-ctc-20261110/en-22-ctc-d570e46228a632118a4d1c9df04a6c21a39c69d7705fede1e2fbade7d3ee58c1.json",
+          "sha256": "5536b929d5567894401a0c3abe006a4049fd88d1a2dea65f7743d8240d07d9ff",
+          "cacheKey": "d570e46228a632118a4d1c9df04a6c21a39c69d7705fede1e2fbade7d3ee58c1",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 3,
+          "path": "en22-human-ctc-20261110/en-22-ctc-4b7858f27c1d1956de36c01ce9afe9a517a15a02a6a435675a1f57dc012409aa.json",
+          "sha256": "f0cd2db02a37baa7b300576edae613b8ddb9a3515197792549e40c3e6af79d43",
+          "cacheKey": "4b7858f27c1d1956de36c01ce9afe9a517a15a02a6a435675a1f57dc012409aa",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 4,
+          "path": "en22-human-ctc-20261110/en-22-ctc-7b36a19729f49fc59e10eb953ce8e1b50d09d0fcd48b1b0350f032a9cd97a612.json",
+          "sha256": "a259eab6480dbf5b78e80b6758e614d2565d4021dd46548b6d52c703052172bd",
+          "cacheKey": "7b36a19729f49fc59e10eb953ce8e1b50d09d0fcd48b1b0350f032a9cd97a612",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 5,
+          "path": "en22-human-ctc-20261110/en-22-ctc-63d517777335c37854ca84ed933f333b278da624215f92ae57c0c01e035fa1c7.json",
+          "sha256": "0590bd7376c15d7857825b3a95ad37fe7e6012e25659604950f5fe247b5e9025",
+          "cacheKey": "63d517777335c37854ca84ed933f333b278da624215f92ae57c0c01e035fa1c7",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 6,
+          "path": "en22-human-ctc-20261110/en-22-ctc-77de406bdb0f430e41a526b2710495c63c9e8d99b757578f7acf5a6cb7018de7.json",
+          "sha256": "92be6253878d58ac39095c1024ba198e730f8a0d0d6e238752433aef19eb4dd4",
+          "cacheKey": "77de406bdb0f430e41a526b2710495c63c9e8d99b757578f7acf5a6cb7018de7",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 7,
+          "path": "en22-human-ctc-20261110/en-22-ctc-4d54758ab226c23abce227eda64a7226cf39eac4031e993a6ac6beb0db8da6e2.json",
+          "sha256": "eb9a9165600b33f08b312de538ccf1de40d427b12aef7d04990ab1cca6684c47",
+          "cacheKey": "4d54758ab226c23abce227eda64a7226cf39eac4031e993a6ac6beb0db8da6e2",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 8,
+          "path": "en22-human-ctc-20261110/en-22-ctc-af6bc4cb63c6fcb8568a51dda5910afcebd7eb301574f452f35fb58e039c6287.json",
+          "sha256": "068bfb74cb97d6252bef1d57bd83c9a0b8a6d868368a9c6f6dd67d61768a7849",
+          "cacheKey": "af6bc4cb63c6fcb8568a51dda5910afcebd7eb301574f452f35fb58e039c6287",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 9,
+          "path": "en22-human-ctc-20261110/en-22-ctc-6c01c03210186d56a65f1ef73e926bb66ab5ae27b4b15970af1e42be77ee62e9.json",
+          "sha256": "4cd2385f42614bd0d4e15c57a52b6733f5603a53665b22c99b0ceaa4380ed622",
+          "cacheKey": "6c01c03210186d56a65f1ef73e926bb66ab5ae27b4b15970af1e42be77ee62e9",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 10,
+          "path": "en22-human-ctc-20261110/en-22-ctc-dd185f05dc4ce4f2e11cefe928179609765b44058ca08b93a05392916d838c37.json",
+          "sha256": "67a070c0213834126778e0bf8dcdff4deb110e1999b9ca868ef23f4cdacaf521",
+          "cacheKey": "dd185f05dc4ce4f2e11cefe928179609765b44058ca08b93a05392916d838c37",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 11,
+          "path": "en22-human-ctc-20261110/en-22-ctc-3e51ec53a7332cf2d4f6fbfc0b05aac84d3b40be66a68c83904d59f384d80136.json",
+          "sha256": "62d959ea20366be20614e620a99613b925a37d2f51e64ea06d61c1608affebda",
+          "cacheKey": "3e51ec53a7332cf2d4f6fbfc0b05aac84d3b40be66a68c83904d59f384d80136",
+          "kind": "targeted",
+          "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
+        },
+        {
+          "id": 12,
+          "path": "en22-human-ctc-20261110/en-22-ctc-d296933c60dbcbba1d4d2864e2e86ce57aafa69dba7e71ca00ea7f65a694a56f.json",
+          "sha256": "15f6bf96bd7b3f2518969514307101504cbc0a73b7914c87e3fa7dbcec06a004",
+          "cacheKey": "d296933c60dbcbba1d4d2864e2e86ce57aafa69dba7e71ca00ea7f65a694a56f",
           "kind": "targeted",
           "modelWeightsSha256": "488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d"
         }
@@ -7915,7 +11252,7 @@
       ],
       "languageProbability": 0.9951995611190796,
       "totalWords": 341,
-      "timedWords": 321,
+      "timedWords": 337,
       "issues": [
         "Automatic English recognition compared with the published English reference; full human listening review remains pending.",
         "Only exact, context-supported recognized tokens with probability >= 0.8 have native acoustic word bounds. Missing bounds are not interpolated."
@@ -7935,111 +11272,15 @@
           "reason": "low-recognition-probability"
         },
         {
-          "segmentIndex": 4,
-          "tokenIndex": 8,
-          "text": "constituted",
-          "reason": "low-recognition-probability"
-        },
-        {
           "segmentIndex": 5,
           "tokenIndex": 1,
           "text": "belonged",
           "reason": "not-exactly-recognized-source-word"
         },
         {
-          "segmentIndex": 6,
-          "tokenIndex": 7,
-          "text": "served",
-          "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 7,
-          "tokenIndex": 7,
-          "text": "these",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 1,
-          "text": "green",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 5,
-          "text": "KIEFFER",
-          "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 6,
-          "text": "commandos",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 17,
-          "text": "who",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 24,
-          "text": "18",
-          "reason": "not-exactly-recognized-source-word"
-        },
-        {
-          "segmentIndex": 8,
-          "tokenIndex": 27,
-          "text": "by",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
-          "tokenIndex": 8,
-          "text": "weapon",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
-          "tokenIndex": 9,
-          "text": "testify",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 9,
-          "tokenIndex": 15,
-          "text": "resistance",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 10,
-          "tokenIndex": 2,
-          "text": "there",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 11,
-          "tokenIndex": 8,
-          "text": "using",
-          "reason": "low-recognition-probability"
-        },
-        {
           "segmentIndex": 11,
           "tokenIndex": 13,
           "text": "to",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 12,
-          "tokenIndex": 0,
-          "text": "We",
-          "reason": "low-recognition-probability"
-        },
-        {
-          "segmentIndex": 14,
-          "tokenIndex": 19,
-          "text": "who",
           "reason": "low-recognition-probability"
         }
       ],
@@ -8156,16 +11397,40 @@
             [5,35.3,35.68,0.9961273074150085,82],
             [6,35.68,36,0.9946284890174866,83],
             [7,36,36.5,0.9986065030097961,84],
-            [9,37.78,38.16,0.9890517592430115,86],
-            [10,38.16,38.46,0.996441662311554,87],
-            [11,38.46,38.76,0.9749460220336914,88],
-            [12,38.76,39.14,0.8101913928985596,89],
-            [13,39.14,39.8,0.9490426778793335,90],
-            [14,39.8,39.96,0.9809417724609375,91],
-            [15,39.96,40.2,0.9977849125862122,92],
-            [16,40.2,40.48,0.9955658316612244,93],
+            [10,38.379999999999995,38.64,0.9780915379524231,10,2],
+            [11,38.64,38.86,0.9928120970726013,11,2],
+            [12,38.86,39.339999999999996,0.8096255660057068,12,2],
+            [13,39.339999999999996,39.94,0.8231210708618164,13,2],
+            [14,39.94,40.08,0.9839757680892944,14,2],
+            [15,40.08,40.36,0.9984096884727478,15,2],
             [17,40.48,40.88,0.9567004243532816,94],
             [18,40.88,41.26,0.9985748529434204,95]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 8,
+              "startSeconds": 37.171,
+              "endSeconds": 37.853,
+              "score": 0.866,
+              "alignmentCacheId": 2,
+              "nativeIndex": 8
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 38.033,
+              "endSeconds": 38.233,
+              "score": 0.868,
+              "alignmentCacheId": 2,
+              "nativeIndex": 9
+            },
+            {
+              "tokenIndex": 16,
+              "startSeconds": 40.418,
+              "endSeconds": 40.478,
+              "score": 0.798,
+              "alignmentCacheId": 2,
+              "nativeIndex": 16
+            }
           ]
         },
         {
@@ -8194,13 +11459,65 @@
             [4,47.46,47.64,0.9949475526809692,110],
             [5,47.64,47.88,0.9986410737037659,111],
             [6,47.88,48.26,0.9983516931533813,112],
-            [8,48.84,49.1,0.998826801776886,114],
-            [9,49.1,49.32,0.9990543723106384,115],
-            [10,49.32,49.82,0.999798595905304,116],
-            [11,49.82,50.24,0.990192174911499,117],
-            [12,50.24,50.56,0.9984377026557922,118],
-            [13,50.56,50.9,0.9965477585792542,119],
-            [14,50.9,51.4,0.9893664717674255,120]
+            [7,48.519999999999996,48.96,0.9095561504364014,17,3]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 8,
+              "startSeconds": 49.014,
+              "endSeconds": 49.115,
+              "score": 0.946,
+              "alignmentCacheId": 3,
+              "nativeIndex": 18
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 49.195,
+              "endSeconds": 49.455,
+              "score": 0.903,
+              "alignmentCacheId": 3,
+              "nativeIndex": 19
+            },
+            {
+              "tokenIndex": 10,
+              "startSeconds": 49.515,
+              "endSeconds": 49.976,
+              "score": 0.82,
+              "alignmentCacheId": 3,
+              "nativeIndex": 20
+            },
+            {
+              "tokenIndex": 11,
+              "startSeconds": 50.177,
+              "endSeconds": 50.277,
+              "score": 0.731,
+              "alignmentCacheId": 3,
+              "nativeIndex": 21
+            },
+            {
+              "tokenIndex": 12,
+              "startSeconds": 50.357,
+              "endSeconds": 50.698,
+              "score": 0.915,
+              "alignmentCacheId": 3,
+              "nativeIndex": 22
+            },
+            {
+              "tokenIndex": 13,
+              "startSeconds": 50.758,
+              "endSeconds": 50.978,
+              "score": 0.912,
+              "alignmentCacheId": 3,
+              "nativeIndex": 23
+            },
+            {
+              "tokenIndex": 14,
+              "startSeconds": 51.038,
+              "endSeconds": 51.419,
+              "score": 0.838,
+              "alignmentCacheId": 3,
+              "nativeIndex": 24
+            }
           ]
         },
         {
@@ -8214,11 +11531,6 @@
             [4,53.44,53.6,0.9995362758636475,125],
             [5,53.6,53.78,0.9993720650672913,126],
             [6,53.78,54.24,0.9991304278373718,127],
-            [8,54.96,55.44,0.9952720999717712,129],
-            [9,55.44,55.76,0.9948467016220093,130],
-            [10,55.76,56.12,0.9703401327133179,131],
-            [11,56.12,56.48,0.9953616261482239,132],
-            [12,56.48,56.68,0.9974035620689392,133],
             [13,56.68,57.02,0.9976406097412109,134],
             [14,57.02,57.6,0.9881905317306519,135],
             [15,57.6,58.16,0.992420494556427,136],
@@ -8230,6 +11542,56 @@
             [21,60.46,60.56,0.992165207862854,142],
             [22,60.56,60.82,0.9968554973602295,143],
             [23,60.82,61.3,0.9749601483345032,144]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 7,
+              "startSeconds": 54.826,
+              "endSeconds": 55.047,
+              "score": 0.883,
+              "alignmentCacheId": 4,
+              "nativeIndex": 7
+            },
+            {
+              "tokenIndex": 8,
+              "startSeconds": 55.127,
+              "endSeconds": 55.548,
+              "score": 0.923,
+              "alignmentCacheId": 4,
+              "nativeIndex": 8
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 55.628,
+              "endSeconds": 55.808,
+              "score": 0.759,
+              "alignmentCacheId": 4,
+              "nativeIndex": 9
+            },
+            {
+              "tokenIndex": 10,
+              "startSeconds": 55.909,
+              "endSeconds": 56.169,
+              "score": 0.741,
+              "alignmentCacheId": 4,
+              "nativeIndex": 10
+            },
+            {
+              "tokenIndex": 11,
+              "startSeconds": 56.249,
+              "endSeconds": 56.55,
+              "score": 0.845,
+              "alignmentCacheId": 4,
+              "nativeIndex": 11
+            },
+            {
+              "tokenIndex": 12,
+              "startSeconds": 56.61,
+              "endSeconds": 56.67,
+              "score": 0.828,
+              "alignmentCacheId": 4,
+              "nativeIndex": 12
+            }
           ]
         },
         {
@@ -8237,9 +11599,6 @@
           "text": "The green beret of the KIEFFER commandos symbolizes the unity and courage of the 177 French soldiers who responded to the call of June 18, fighting side by side with their allies to liberate a country reduced to silence.",
           "timings": [
             [0,62.06,62.3,0.9817712306976318,145],
-            [2,62.64,63.04,0.9578123986721039,147],
-            [3,63.04,63.28,0.989031970500946,148],
-            [4,63.28,63.42,0.9798378348350525,149],
             [7,64.54,65.54,0.9858764708042145,152],
             [8,65.54,65.76,0.9981791973114014,153],
             [9,65.76,66.1,0.9978508949279785,154],
@@ -8250,25 +11609,176 @@
             [14,67.52,68.84,0.9862674176692963,159],
             [15,68.84,69.16,0.984535276889801,160],
             [16,69.16,69.64,0.9832931756973267,161],
-            [18,70.28,70.8,0.9979898929595947,163],
-            [19,70.8,71.02,0.9991452693939209,164],
-            [20,71.02,71.14,0.997103750705719,165],
-            [21,71.14,71.38,0.9838817119598389,166],
-            [22,71.38,71.58,0.9927914142608643,167],
-            [23,71.58,71.84,0.9854350090026855,168],
             [25,72.94,73.28,0.9963460564613342,170],
             [26,73.28,73.74,0.99770587682724,171],
-            [28,73.9,74.26,0.9992844462394714,173],
-            [29,74.26,74.42,0.9985654950141907,174],
-            [30,74.42,74.58,0.9994416832923889,175],
-            [31,74.58,75,0.988661527633667,176],
-            [32,75,75.5,0.9340837001800537,177],
-            [33,75.5,76.08,0.9926278591156006,178],
-            [34,76.08,76.26,0.9981575608253479,179],
+            [32,75.12,75.67999999999999,0.9229263663291931,32,5],
+            [33,75.67999999999999,76.2,0.9933574199676514,33,5],
             [35,76.26,76.6,0.9981587529182434,180],
             [36,76.6,77.02,0.9961510896682739,181],
             [37,77.02,77.32,0.9991507530212402,182],
             [38,77.32,77.7,0.9976085424423218,183]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 1,
+              "startSeconds": 62.363,
+              "endSeconds": 62.705,
+              "score": 0.889,
+              "alignmentCacheId": 5,
+              "nativeIndex": 1
+            },
+            {
+              "tokenIndex": 2,
+              "startSeconds": 62.745,
+              "endSeconds": 63.127,
+              "score": 0.844,
+              "alignmentCacheId": 5,
+              "nativeIndex": 2
+            },
+            {
+              "tokenIndex": 3,
+              "startSeconds": 63.207,
+              "endSeconds": 63.287,
+              "score": 0.833,
+              "alignmentCacheId": 5,
+              "nativeIndex": 3
+            },
+            {
+              "tokenIndex": 4,
+              "startSeconds": 63.328,
+              "endSeconds": 63.408,
+              "score": 0.798,
+              "alignmentCacheId": 5,
+              "nativeIndex": 4
+            },
+            {
+              "tokenIndex": 5,
+              "startSeconds": 63.488,
+              "endSeconds": 63.85,
+              "score": 0.583,
+              "alignmentCacheId": 5,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 6,
+              "startSeconds": 63.89,
+              "endSeconds": 64.493,
+              "score": 0.875,
+              "alignmentCacheId": 5,
+              "nativeIndex": 6
+            },
+            {
+              "tokenIndex": 17,
+              "startSeconds": 70.203,
+              "endSeconds": 70.323,
+              "score": 0.998,
+              "alignmentCacheId": 6,
+              "nativeIndex": 1
+            },
+            {
+              "tokenIndex": 18,
+              "startSeconds": 70.363,
+              "endSeconds": 70.924,
+              "score": 0.816,
+              "alignmentCacheId": 6,
+              "nativeIndex": 2
+            },
+            {
+              "tokenIndex": 19,
+              "startSeconds": 70.964,
+              "endSeconds": 71.044,
+              "score": 0.75,
+              "alignmentCacheId": 6,
+              "nativeIndex": 3
+            },
+            {
+              "tokenIndex": 20,
+              "startSeconds": 71.064,
+              "endSeconds": 71.145,
+              "score": 0.986,
+              "alignmentCacheId": 6,
+              "nativeIndex": 4
+            },
+            {
+              "tokenIndex": 21,
+              "startSeconds": 71.185,
+              "endSeconds": 71.485,
+              "score": 0.869,
+              "alignmentCacheId": 6,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 22,
+              "startSeconds": 71.525,
+              "endSeconds": 71.585,
+              "score": 0.75,
+              "alignmentCacheId": 6,
+              "nativeIndex": 6
+            },
+            {
+              "tokenIndex": 23,
+              "startSeconds": 71.666,
+              "endSeconds": 71.926,
+              "score": 0.91,
+              "alignmentCacheId": 6,
+              "nativeIndex": 7
+            },
+            {
+              "tokenIndex": 24,
+              "startSeconds": 72.006,
+              "endSeconds": 72.467,
+              "score": 0.889,
+              "alignmentCacheId": 6,
+              "nativeIndex": 8
+            },
+            {
+              "tokenIndex": 27,
+              "startSeconds": 73.822,
+              "endSeconds": 73.942,
+              "score": 0.898,
+              "alignmentCacheId": 7,
+              "nativeIndex": 2
+            },
+            {
+              "tokenIndex": 28,
+              "startSeconds": 74.022,
+              "endSeconds": 74.283,
+              "score": 0.617,
+              "alignmentCacheId": 7,
+              "nativeIndex": 3
+            },
+            {
+              "tokenIndex": 29,
+              "startSeconds": 74.323,
+              "endSeconds": 74.443,
+              "score": 0.768,
+              "alignmentCacheId": 7,
+              "nativeIndex": 4
+            },
+            {
+              "tokenIndex": 30,
+              "startSeconds": 74.483,
+              "endSeconds": 74.623,
+              "score": 0.867,
+              "alignmentCacheId": 7,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 31,
+              "startSeconds": 74.723,
+              "endSeconds": 75.064,
+              "score": 0.772,
+              "alignmentCacheId": 7,
+              "nativeIndex": 6
+            },
+            {
+              "tokenIndex": 34,
+              "startSeconds": 76.206,
+              "endSeconds": 76.246,
+              "score": 0.564,
+              "alignmentCacheId": 7,
+              "nativeIndex": 9
+            }
           ]
         },
         {
@@ -8282,13 +11792,81 @@
             [4,81.12,81.2,0.9977130889892578,188],
             [5,81.2,81.38,0.997036337852478,189],
             [6,81.38,81.9,0.9975818395614624,190],
-            [7,81.9,82.36,0.9452756643295288,191],
-            [10,83.66,83.88,0.9865617156028748,194],
-            [11,83.88,84,0.9940586090087891,195],
-            [12,84,84.68,0.9938854277133942,196],
-            [13,84.68,85.02,0.998059093952179,197],
-            [14,85.02,85.16,0.9882180094718933,198],
-            [16,85.52,85.96,0.9957572817802429,200]
+            [7,81.9,82.36,0.9452756643295288,191]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 8,
+              "startSeconds": 82.491,
+              "endSeconds": 82.771,
+              "score": 0.926,
+              "alignmentCacheId": 8,
+              "nativeIndex": 8
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 83.192,
+              "endSeconds": 83.774,
+              "score": 0.823,
+              "alignmentCacheId": 8,
+              "nativeIndex": 9
+            },
+            {
+              "tokenIndex": 10,
+              "startSeconds": 83.834,
+              "endSeconds": 83.914,
+              "score": 0.828,
+              "alignmentCacheId": 8,
+              "nativeIndex": 10
+            },
+            {
+              "tokenIndex": 11,
+              "startSeconds": 83.934,
+              "endSeconds": 84.034,
+              "score": 0.664,
+              "alignmentCacheId": 8,
+              "nativeIndex": 11
+            },
+            {
+              "tokenIndex": 12,
+              "startSeconds": 84.074,
+              "endSeconds": 84.796,
+              "score": 0.842,
+              "alignmentCacheId": 8,
+              "nativeIndex": 12
+            },
+            {
+              "tokenIndex": 13,
+              "startSeconds": 84.977,
+              "endSeconds": 85.057,
+              "score": 0.832,
+              "alignmentCacheId": 8,
+              "nativeIndex": 13
+            },
+            {
+              "tokenIndex": 14,
+              "startSeconds": 85.097,
+              "endSeconds": 85.157,
+              "score": 0.994,
+              "alignmentCacheId": 8,
+              "nativeIndex": 14
+            },
+            {
+              "tokenIndex": 15,
+              "startSeconds": 85.217,
+              "endSeconds": 85.698,
+              "score": 0.921,
+              "alignmentCacheId": 8,
+              "nativeIndex": 15
+            },
+            {
+              "tokenIndex": 16,
+              "startSeconds": 85.779,
+              "endSeconds": 86.099,
+              "score": 0.938,
+              "alignmentCacheId": 8,
+              "nativeIndex": 16
+            }
           ]
         },
         {
@@ -8297,10 +11875,6 @@
           "timings": [
             [0,86.8,87.02,0.9695683121681213,201],
             [1,87.02,87.32,0.9904024600982666,202],
-            [3,87.8,87.96,0.9982126951217651,204],
-            [4,87.96,88.1,0.9795515537261963,205],
-            [5,88.1,88.36,0.8829894065856934,206],
-            [6,88.36,88.88,0.977238655090332,207],
             [7,89.4,89.86,0.9551935195922852,208],
             [8,89.86,90.48,0.9948284029960632,209],
             [9,90.48,90.82,0.9948780536651611,210],
@@ -8329,6 +11903,48 @@
             [32,100.24,100.46,0.9994742274284363,233],
             [33,100.46,100.56,0.9992068409919739,234],
             [34,100.56,100.86,0.9966359734535217,235]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 2,
+              "startSeconds": 87.69,
+              "endSeconds": 87.871,
+              "score": 0.852,
+              "alignmentCacheId": 9,
+              "nativeIndex": 2
+            },
+            {
+              "tokenIndex": 3,
+              "startSeconds": 87.931,
+              "endSeconds": 88.032,
+              "score": 0.667,
+              "alignmentCacheId": 9,
+              "nativeIndex": 3
+            },
+            {
+              "tokenIndex": 4,
+              "startSeconds": 88.052,
+              "endSeconds": 88.133,
+              "score": 0.83,
+              "alignmentCacheId": 9,
+              "nativeIndex": 4
+            },
+            {
+              "tokenIndex": 5,
+              "startSeconds": 88.213,
+              "endSeconds": 88.515,
+              "score": 0.815,
+              "alignmentCacheId": 9,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 6,
+              "startSeconds": 88.535,
+              "endSeconds": 88.918,
+              "score": 0.988,
+              "alignmentCacheId": 9,
+              "nativeIndex": 6
+            }
           ]
         },
         {
@@ -8343,30 +11959,135 @@
             [5,104.28,104.8,0.9680752158164978,5,1],
             [6,104.8,105.06,0.9976027607917786,6,1],
             [7,105.06,105.6,0.9953235983848572,7,1],
-            [9,106.2,106.64,0.9963611960411072,245],
-            [10,106.64,106.96,0.9944051504135132,246],
             [11,107.38,107.64,0.9989017248153687,247],
             [12,107.64,108.02,0.9995782971382141,248],
             [14,108.5,108.82,0.9984257221221924,250],
             [15,108.82,109.08,0.998257577419281,251],
             [16,109.08,109.5,0.995608389377594,252],
             [17,109.5,109.96,0.9971888661384583,253]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 8,
+              "startSeconds": 106.094,
+              "endSeconds": 106.317,
+              "score": 0.87,
+              "alignmentCacheId": 10,
+              "nativeIndex": 0
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 106.52,
+              "endSeconds": 106.661,
+              "score": 0.792,
+              "alignmentCacheId": 10,
+              "nativeIndex": 1
+            },
+            {
+              "tokenIndex": 10,
+              "startSeconds": 106.783,
+              "endSeconds": 107.046,
+              "score": 0.902,
+              "alignmentCacheId": 10,
+              "nativeIndex": 2
+            }
           ]
         },
         {
-          "startSeconds": 110.98,
+          "startSeconds": 110.914,
           "text": "We were fortunate to know several resistance fighters during their lifetime.",
           "timings": [
-            [1,110.98,111.14,0.9910825490951538,255],
-            [2,111.14,111.56,0.9979845285415649,256],
-            [3,111.56,111.84,0.9986781477928162,257],
-            [4,111.84,112.04,0.9991021156311035,258],
-            [5,112.04,112.48,0.9958592057228088,259],
-            [6,112.48,112.94,0.9639291763305664,260],
-            [7,112.94,113.38,0.9968172311782837,261],
-            [8,113.38,113.84,0.9859768152236938,262],
-            [9,113.84,114.06,0.9976736903190613,263],
-            [10,114.06,114.52,0.9838309288024902,264]
+
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 0,
+              "startSeconds": 110.914,
+              "endSeconds": 110.994,
+              "score": 0.991,
+              "alignmentCacheId": 1,
+              "nativeIndex": 18
+            },
+            {
+              "tokenIndex": 1,
+              "startSeconds": 111.021,
+              "endSeconds": 111.161,
+              "score": 0.872,
+              "alignmentCacheId": 11,
+              "nativeIndex": 1
+            },
+            {
+              "tokenIndex": 2,
+              "startSeconds": 111.241,
+              "endSeconds": 111.703,
+              "score": 0.879,
+              "alignmentCacheId": 11,
+              "nativeIndex": 2
+            },
+            {
+              "tokenIndex": 3,
+              "startSeconds": 111.763,
+              "endSeconds": 111.843,
+              "score": 0.993,
+              "alignmentCacheId": 11,
+              "nativeIndex": 3
+            },
+            {
+              "tokenIndex": 4,
+              "startSeconds": 111.915,
+              "endSeconds": 112.095,
+              "score": 0.801,
+              "alignmentCacheId": 1,
+              "nativeIndex": 22
+            },
+            {
+              "tokenIndex": 5,
+              "startSeconds": 112.204,
+              "endSeconds": 112.565,
+              "score": 0.837,
+              "alignmentCacheId": 11,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 6,
+              "startSeconds": 112.625,
+              "endSeconds": 113.126,
+              "score": 0.911,
+              "alignmentCacheId": 11,
+              "nativeIndex": 6
+            },
+            {
+              "tokenIndex": 7,
+              "startSeconds": 113.177,
+              "endSeconds": 113.537,
+              "score": 0.876,
+              "alignmentCacheId": 1,
+              "nativeIndex": 25
+            },
+            {
+              "tokenIndex": 8,
+              "startSeconds": 113.658,
+              "endSeconds": 113.938,
+              "score": 0.829,
+              "alignmentCacheId": 1,
+              "nativeIndex": 26
+            },
+            {
+              "tokenIndex": 9,
+              "startSeconds": 113.968,
+              "endSeconds": 114.108,
+              "score": 0.973,
+              "alignmentCacheId": 11,
+              "nativeIndex": 9
+            },
+            {
+              "tokenIndex": 10,
+              "startSeconds": 114.148,
+              "endSeconds": 114.629,
+              "score": 0.787,
+              "alignmentCacheId": 11,
+              "nativeIndex": 10
+            }
           ]
         },
         {
@@ -8416,14 +12137,59 @@
             [16,127.16,127.4,0.9989088773727417,299],
             [17,127.4,127.62,0.997072696685791,300],
             [18,127.62,128,0.9994266033172607,301],
-            [20,128.52,128.66,0.9963032007217407,303],
-            [21,128.66,128.86,0.9995235204696655,304],
-            [22,128.86,129.1,0.9986969828605652,305],
-            [23,129.1,129.24,0.9969387054443359,306],
-            [24,129.24,129.66,0.9994170665740967,307],
             [25,130.22,130.6,0.9927489161491394,308],
             [26,130.6,131.14,0.9496675133705139,309],
             [27,131.14,131.56,0.9950283169746399,310]
+          ],
+          "ctcWordTimings": [
+            {
+              "tokenIndex": 19,
+              "startSeconds": 128.446,
+              "endSeconds": 128.546,
+              "score": 0.926,
+              "alignmentCacheId": 12,
+              "nativeIndex": 4
+            },
+            {
+              "tokenIndex": 20,
+              "startSeconds": 128.586,
+              "endSeconds": 128.726,
+              "score": 0.861,
+              "alignmentCacheId": 12,
+              "nativeIndex": 5
+            },
+            {
+              "tokenIndex": 21,
+              "startSeconds": 128.766,
+              "endSeconds": 128.927,
+              "score": 0.937,
+              "alignmentCacheId": 12,
+              "nativeIndex": 6
+            },
+            {
+              "tokenIndex": 22,
+              "startSeconds": 128.967,
+              "endSeconds": 129.188,
+              "score": 0.87,
+              "alignmentCacheId": 12,
+              "nativeIndex": 7
+            },
+            {
+              "tokenIndex": 23,
+              "startSeconds": 129.228,
+              "endSeconds": 129.268,
+              "score": 0.475,
+              "alignmentCacheId": 12,
+              "nativeIndex": 8
+            },
+            {
+              "tokenIndex": 24,
+              "startSeconds": 129.348,
+              "endSeconds": 129.729,
+              "score": 0.92,
+              "alignmentCacheId": 12,
+              "nativeIndex": 9
+            }
           ]
         },
         {
