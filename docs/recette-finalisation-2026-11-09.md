@@ -242,3 +242,18 @@ Serveur4198 arrêté volontairement/code1 ; zéro socket en écoute. Rechargemen
 Build : données EN461,15kB/167,50gzip ; lecteur19,05kB ; PWA53entrées/3859,67KiB. Les54,6KiB supplémentaires de précache conservent la traçabilité des anciens/nouveaux repères. Médias, données FR, référence immuable et dev-dist/sw.js préexistant : SHA inchangés ; ce dernier reste exclu.
 
 Preuves externes : resume-20261110-en22-listening-tests-final.txt (110), resume-20261110-en22-listening-python.txt (14), resume-20261110-en22-listening-tsc-final.txt, resume-20261110-en22-listening-build-final.txt ; resume-20261110-en22-browser-results.json et capture resume-20261110-en22-kieffer-offline.jpg. Aucun serveur ou modèle laissé actif. Prochaine action : publication ciblée TESTv1 après diff--check/revue, puis uniquement tâches dont le prérequis est réellement disponible.
+
+
+## Dixième lot — clics dans les marges du panneau de réglages
+
+Base publiée :9ef35ab70f69e1a511bb6330d5f829dbe9ea5e4a, reçu distant réconcilié ; seul dev-dist/sw.js reste préexistant et exclu. Aucun réaudit ni nouveau calcul audio. L’observation du huitième lot a cette fois été reproduite : à1280×495, le dialogue mesure396px et son centre tombe dans l’espace entre l’aide et le réglage d’espacement. elementFromPoint confirme la cible DIALOG. Le clic natif ferme involontairement le panneau et rend le focus au bouton.
+
+Correction limitée au gestionnaire onClick de PlayerPage : une cible DIALOG ne ferme plus le panneau lorsque les coordonnées sont à l’intérieur de son rectangle. Le clic sur le fond extérieur, la croix et Échap gardent leur fonctionnement ; onClose et la restitution du focus restent inchangés. Aucun réglage, contenu ou ressource supprimé.
+
+Recette du nouveau build index-DwnkmXoc.js : le même clic intérieur laisse le panneau ouvert. Le clic sur le fond extérieur a été effectué à la position de l’en-tête, hors rectangle ; le navigateur cible bien DIALOG et le ferme. Croix et Échap ferment également ; retour du focus confirmé après chaque fermeture. À390×844 : largeur document/scroll390 ; espacement Normal→Spacious→Normal, panneau toujours ouvert. Capture resume-20261110-settings-mobile-fixed.jpg. Aucun changement de préférence laissé par ce test.
+
+Serveur4198 arrêté volontairement/code1, zéro socket en écoute ; rechargement depuis cache du nouveau build. Même clic intérieur à1280×495 : panneau conservé, Échap fonctionnel, console sans erreur/warn. Onglet fermé et viewport restauré. Les premières visites encore sur l’ancien service worker n’ont pas été utilisées pour valider le correctif. Pas d’essai sur téléphone physique prétendu.
+
+Contrôles :19/19 tests de présentation ciblés, puis110/110 applicatifs (zéro ignoré/échec), TypeScript et build codes0. Le callback de précache PWA a pris14s, diagnostic informatif ; build terminé/code0,53entrées/3859,80KiB. Les14 Python déjà réussis au lot EN22 restent applicables et ne sont pas prétendus rejoués pour ce seul gestionnaire React. Aucun nouveau test qui ne ferait que recopier la condition ; preuve native avant/après et non-régression existante. Données et médias FR/EN, référence et dev-dist/sw.js inchangés.
+
+Preuves externes :resume-20261110-settings-padding-tests.txt, resume-20261110-settings-browser-results.json, capture ci-dessus. Prochaine action :diff--check et publication ciblée de PlayerPage, recette et suivi uniquement. Nouveau candidat séparé à vérifier ensuite, sans nouveau calcul :EN15 Designed, intervalle CTC natif28,687–29,168, medium fort indépendant et small exact mais faible ; aucun ancien voisin à retimer. Aucune confirmation humaine attribuée à ce candidat.

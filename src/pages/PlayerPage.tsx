@@ -150,7 +150,11 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         </div>
       </section>
 
-      <dialog ref={settingsRef} className="player-settings" aria-labelledby="player-settings-title" onClose={() => { setSettingsOpen(false); settingsButtonRef.current?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
+      <dialog ref={settingsRef} className="player-settings" aria-labelledby="player-settings-title" onClose={() => { setSettingsOpen(false); settingsButtonRef.current?.focus(); }} onClick={(event) => {
+        if (event.target !== event.currentTarget) return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) setSettingsOpen(false);
+      }}>
         <div className="player-settings-heading"><h2 id="player-settings-title">{t('reading_settings', currentLang)}</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label={t('close_reading_settings', currentLang)}><X size={22} aria-hidden="true" /></button></div>
         <aside className="player-reading-help" aria-label={t('reading_help_title', currentLang)}><h3>{t('reading_help_title', currentLang)}</h3><ul><li>{t('reading_help_color', currentLang)}</li><li>{t('reading_help_tap', currentLang)}</li><li>{t('reading_help_scroll', currentLang)}</li></ul></aside>
         <div className="player-setting-row"><span>{t('reading_spacing', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={preferences.wideSpacing} onClick={() => toggle('wideSpacing')}>{t(preferences.wideSpacing ? 'reading_spacing_wide' : 'reading_spacing_normal', currentLang)}</button></div>

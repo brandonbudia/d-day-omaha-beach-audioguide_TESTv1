@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 28 ; phase EN22 intégrée et testée, publication ciblée en attente.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 29 ; phase marges des réglages corrigées et testées, publication à réconcilier.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -50,8 +50,9 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | FR-01 | P1 | blocked-human | 24 omissions actuelles déjà contrôlées CTC/small/medium ; conflits persistants. Rouvrir sur écoute ciblée |
 | EN01-REVIEW | P1 | blocked-human | History conservé ; onze candidats encore comparés au nouveau CTC sans chaîne fiable. Quinze omissions, écoute humaine nécessaire |
 | EN-01 | P1 | blocked-human | EN6613/7022,409 omissions ;16 EN22 ajoutés avec provenance distincte,110 tests/recette cache réussis. Rouvrir sur preuve nouvelle, pas de recalcul identique |
+| CTC-EN-SUP | P1 | in_progress | Primaire CTC distinct maintenant disponible ; Designed EN15 sans voisin à retimer, vérifier provenance automatique distincte avant import ; aucun calcul à relancer |
 | CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes,81fenêtres puis six contextes EN01/EN22 terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
-| UI-01 | P1 | validated | Recherche/langues validées ; lien suivant des réglages maintenant cohérent EN et repli FR balisé, testé sur22×7 et navigateur |
+| UI-01 | P1 | validated | Titres/langues conservés ; clic interne réglages reproduit/corrigé, fond extérieur/croix/Échap/focus et cache testés |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
 | EDIT-EN | P1 | blocked-human | Récits et titres EN intégrés ; autres faits/citations/légendes FR conservés. Rouvrir avec sources/traductions validées |
@@ -63,16 +64,15 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | in_progress | b4d8609 publié ; lot EN22 vérifié, à commiter/pousser avec fichiers ciblés uniquement, reçu distant à confirmer |
+| DEL-01 | P1 | in_progress | 9ef35ab publié/SHA distant confirmé ; correctif des marges validé, retrouver commit Keep player settings open for clicks inside the dialog et reçu settings-padding-publication |
 
 ## Reprise : réconcilier la publication, puis validations externes
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base publiée actuelle : b4d860936f8bb31e696989a3b69a685c01d12f9f ; reçu resume-20261110-next-label-publication.json et SHA distant confirmés. Aucun ancien lot à refaire. Unique modification préexistante exclue : dev-dist/sw.js, SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f.
-Nouveau lot prêt :16 occurrences EN22 confirmées présentes par l’utilisateur,337/341 désormais suivies ;63 voisins nécessaires corrigés sans perdre aucun ancien mot,258 autres bornes intactes. Provenance CTC séparée de l’ASR ; served/KIEFFER/18 et toutes les frontières restent provisoires. Quatre omissions : The3/0,but4/2,belonged5/1,to11/13. Aucun texte/audio modifié, aucune certification humaine globale.
-Traitements nouveaux terminés code0 :11contextes CTC/65s et quatre lacunes medium/33,8s, aucun traitement audio ancien répété. Modèles locaux, zéro installation/téléchargement ; caches externes. Ne pas relancer ces calculs. Données EN SHA48bf16b2eafe9e5038a4a47cb079ec5e0c1cbca1258abeb7412523d3edd1e06d ; FR SHA00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 inchangé.
-Tests110app/14Python,TypeScript/build0, navigateur337boutons/16mots/retours/suivi suspendable/taille et hors serveur390 réussis. Lire la recette neuvième lot et resume-20261110-en22-browser-results.json avant toute reprise. Prochaine action : examiner diff complet, ajouter seulement les sept fichiers de ce lot puis commit/push TESTv1 ; préserver dev-dist/sw.js préexistant. Si déjà publié, réconcilier git log et reçu resume-20261110-en22-listening-publication.json au lieu de répéter.
+Base publiée actuelle :9ef35ab70f69e1a511bb6330d5f829dbe9ea5e4a ; reçu resume-20261110-en22-listening-publication.json, SHA distant confirmé. Les16 mots EN22 sont déjà publiés : ne pas refaire ce lot. Données EN48bf16b2eafe9e5038a4a47cb079ec5e0c1cbca1258abeb7412523d3edd1e06d /6613sur7022 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 /7233sur7276. Quatre omissions EN22,409 EN au total ; frontières toujours provisoires.
+Lot courant : correction minimale du clic dans les marges internes du dialogue. Défaut reproduit à1280×495 ; après correction, intérieur conserve le panneau, fond extérieur/croix/Échap ferment avec restitution du focus. Réglages testés390×844 et après arrêt du serveur/netstat0.110tests app,TypeScript/build0 ; aucun contenu/minutage/audio modifié. Voir recette dixième lot et resume-20261110-settings-browser-results.json. Avant reprise, réconcilier git log et reçu resume-20261110-settings-padding-publication.json pour ne pas republier le lot s’il est déjà distant.
+Prochaine tâche techniquement disponible :EN15 Designed3/0, CTC28,687–29,168 dans l’intervalle libre born28,02→by29,20, aucune réparation ancienne. Medium exact p0,9966 et CTC0,910/minchar0,561 ; small exact mais faible0,575, pas de confirmation humaine. Le nouveau primaire CTC lève ici le conflit d’ancienne primaire medium, pas les réserves humaines globales. Intégrer seulement avec provenance automatique séparée et snapshot/tests/navigateur. Aucun modèle/audio à relancer ; les autres tâches restent soumises aux ressources/droits/écoutes/appareils identifiés.
 
 ## EN22-01 : décision historique du9novembre, remplacée pour16 mots au checkpoint28
 
@@ -360,3 +360,12 @@ Sept fichiers du lot : données EN,adaptateur,test EN,revue EN22,validations hum
 Prochaine action : diff--check,examen complet/contrôle secret,commit ciblé et push TESTv1. SHA de publication à lire dans git log et reçu externe resume-20261110-en22-listening-publication.json. Aucun deuxième écrivain lancé.
 
 Publication du checkpoint : 2026-11-10T10:26:15.6250086+01:00
+
+
+## Checkpoint29 — réglages corrigés et EN15 prêt à étudier
+
+9ef35ab EN22 publié et reçu distant confirmé. Modification préexistante dev-dist/sw.js conservée intacte. Aucune autre session écrivante active parmi les chats disponibles ; assistants RO seulement.
+Défaut concret de clic interne du dialogue reproduit et corrigé dans quatre lignes du gestionnaire. Recette avant/après native, fond extérieur/croix/Échap/focus, espacement restauré et petit écran/cache réussis.110tests app/TypeScript/build0 ;14Python antérieurs inchangés. Aucun serveur laissé actif. Pas de téléphone réel ni réseau Windows coupé prétendus.
+Lot à publier :PlayerPage,recette,suivi. Prochaine tâche distincte :Designed EN15, preuve acoustique existante nouvelle exploitable grâce au primaire CTC ; aucun ancien repère à modifier. Ne pas inventer confirmation humaine ni relancer les caches. Lire le reçu settings-padding-publication avant reprise du commit.
+
+Publication du checkpoint : 2026-11-10T18:10:50.9937042+01:00
