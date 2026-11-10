@@ -137,6 +137,32 @@ test('corrupt cache entries are repaired from the network, never counted as veri
   assert.equal(store.getSnapshot().packs.fr.status, 'ready');
 });
 
+test('a failed download still counts verified audio cached after a missing file', async () => {
+  const cached = { ...resource, url: '/audio/fr/stop-22.mp3?v=verified' };
+  const attempted: string[] = [];
+  const { store, cache } = fixture({
+    resources: () => [resource, cached],
+    fetch: (async (url: string | URL | Request) => {
+      attempted.push(new URL(String(url)).pathname);
+      throw new TypeError('No connection');
+    }) as typeof fetch,
+  });
+  await cache.put(`https://guide.example${cached.url}`, new Response(body));
+  await store.inspect('fr');
+  assert.equal(store.getSnapshot().packs.fr.cachedAudioCount, 1);
+
+  await store.download('fr');
+  const state = store.getSnapshot();
+  assert.equal(state.packs.fr.status, 'error');
+  assert.equal(state.packs.fr.error, 'network');
+  assert.equal(state.packs.fr.cachedAudioCount, 1);
+  assert.equal(state.packs.fr.verifiedCount, 1);
+  assert.equal(state.packs.fr.verifiedBytes, cached.bytes);
+  assert.equal(state.activeLanguage, null);
+  assert.deepEqual(attempted, ['/audio/fr/stop-01.mp3']);
+  assert.equal(cache.entries.size, 1);
+});
+
 test('a successful request with partial or corrupt bytes never creates a ready pack', async () => {
   for (const response of [new Response(body, { status: 206 }), new Response('bad')]) {
     const { cache, store } = fixture({ fetch: (async () => response) as typeof fetch });

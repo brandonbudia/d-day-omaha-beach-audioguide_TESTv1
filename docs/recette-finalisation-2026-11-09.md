@@ -312,3 +312,17 @@ Pour relancer le scénario, ouvrir `/tests/pwa-install-browser.html` sur un serv
 115 tests applicatifs, TypeScript et build réussis. Le build `index-B1LYL0LI.js` a été ouvert dans le navigateur. L’accueil, le parcours anglais et l’ouverture de `/stop/15?hl=en` ont fonctionné sans erreur de console. Le scénario d’installation ne remplace pas une installation réelle sur un téléphone.
 
 Preuves externes `resume-20261110-install-browser.json`, `resume-20261110-install-production-smoke.json`, `resume-20261110-install-tests.txt` et `resume-20261110-install-build.txt`. Les serveurs locaux ont été arrêtés. La vérification du QR physique et les validations des contenus et des droits restent à faire.
+
+## Quatorzième lot — reprise de visite et cache audio
+
+Le lot installation est publié : `6ba87455de1720428d0dc516abc1c48197526165`, SHA confirmé sur la branche TESTv1.
+
+L’accueil vérifie la version de l’enregistrement avant de proposer de continuer l’écoute. Si la version enregistrée ne correspond plus, il propose la dernière fiche consultée si elle existe. La position affichée suit la même règle que le lecteur en fin de piste : la reprise se fait à zéro. Les checkpoints existants sont conservés.
+
+Une langue sans narration ne charge plus de fichier audio factice. Le lecteur libère la source précédente et garde le même élément audio pour revenir à une narration disponible. Lors d’un téléchargement, le cache est vérifié avant les requêtes réseau : un échec au premier fichier manquant ne fait plus disparaître le nombre de fichiers déjà vérifiés. Le test utilise un cache en mémoire et une requête en échec simulé.
+
+Quatre scénarios échouaient avant correction. Après correction, les 48 tests ciblés puis les 118 tests applicatifs passent. TypeScript et le build de production terminent avec le code 0. Aucun générateur audio exécuté. Les tests Python antérieurs restent la référence pour les outils audio inchangés.
+
+Sur le build `index-BvAJF-X0.js`, le retour à la dernière fiche ouvre `/stop/15?hl=en`. En allemand, le lecteur affiche l’indisponibilité et désactive la lecture ; la trace du serveur ne contient que des requêtes FR et EN. En revenant à l’anglais, la piste 01 se lit et se met en pause. L’accueil propose « Continue listening — piece 01 · 00:19 » et le clic reprend à 19,12 secondes. Aucune erreur de console relevée. L’onglet et le serveur de test sont fermés. Il ne s’agit pas d’un nouvel essai hors connexion sur appareil physique.
+
+Preuves externes : `resume-20261111-listening-browser.json`, `resume-20261111-listening-resume.jpg` et `resume-20261111-listening-http.txt`. Aucun audio, récit, minutage ou visuel modifié. Le fichier préexistant `dev-dist/sw.js` est exclu.

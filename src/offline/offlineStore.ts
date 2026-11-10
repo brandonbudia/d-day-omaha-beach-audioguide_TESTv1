@@ -180,30 +180,39 @@ export function createOfflineStore(dependencies: OfflineDependencies = browserDe
     snapshot = { ...snapshot, activeLanguage: language };
     update(language, { status: 'downloading', verifiedCount: 0, verifiedBytes: 0, cachedAudioCount: 0, error: undefined });
     let verifiedCount = 0, verifiedBytes = 0, cachedAudioCount = 0;
+    const countVerified = (resource: OfflineResource) => {
+      verifiedCount += 1; verifiedBytes += resource.bytes;
+      if (isAudio(resource)) cachedAudioCount += 1;
+      update(language, { verifiedCount, verifiedBytes, cachedAudioCount });
+    };
     try {
       let cache: CacheLike;
       try { cache = await dependencies.caches!.open(VERIFIED_MEDIA_CACHE); }
       catch { throw new OfflineIntegrityError('storage'); }
+      // Count existing files before any network failure can interrupt the download.
+      const missing: OfflineResource[] = [];
       for (const resource of resourcesFor(language)) {
         if (signal.aborted) throw new OfflineIntegrityError('cancelled');
         update(language, { currentFile: resource.url.split('?')[0] });
-        if (!(await readVerified(cache, resource))) {
-          const networkUrl = new URL(absolute(resource.url));
-          // Bypass the runtime CacheFirst route when repairing a missing or corrupt entry.
-          networkUrl.searchParams.set('__dday_download', '1');
-          const response = await dependencies.fetch!(networkUrl.href, { signal, cache: 'no-store', credentials: 'same-origin' });
-          const bytes = await verifyCompleteResponse(resource, response, dependencies.subtle!);
-          if (signal.aborted) throw new OfflineIntegrityError('cancelled');
-          const headers = new Headers(response.headers);
-          headers.delete('content-encoding'); headers.delete('transfer-encoding'); headers.delete('vary');
-          headers.set('content-length', String(bytes.byteLength)); headers.set('accept-ranges', 'bytes');
-          headers.set('x-dday-verified-sha256', resource.sha256);
-          try { await cache.put(absolute(resource.url), new Response(bytes, { status: 200, headers })); }
-          catch { throw new OfflineIntegrityError('storage'); }
-        }
-        verifiedCount += 1; verifiedBytes += resource.bytes;
-        if (isAudio(resource)) cachedAudioCount += 1;
-        update(language, { verifiedCount, verifiedBytes, cachedAudioCount });
+        if (await readVerified(cache, resource)) countVerified(resource);
+        else missing.push(resource);
+      }
+      for (const resource of missing) {
+        if (signal.aborted) throw new OfflineIntegrityError('cancelled');
+        update(language, { currentFile: resource.url.split('?')[0] });
+        const networkUrl = new URL(absolute(resource.url));
+        // Bypass the runtime CacheFirst route when repairing a missing or corrupt entry.
+        networkUrl.searchParams.set('__dday_download', '1');
+        const response = await dependencies.fetch!(networkUrl.href, { signal, cache: 'no-store', credentials: 'same-origin' });
+        const bytes = await verifyCompleteResponse(resource, response, dependencies.subtle!);
+        if (signal.aborted) throw new OfflineIntegrityError('cancelled');
+        const headers = new Headers(response.headers);
+        headers.delete('content-encoding'); headers.delete('transfer-encoding'); headers.delete('vary');
+        headers.set('content-length', String(bytes.byteLength)); headers.set('accept-ranges', 'bytes');
+        headers.set('x-dday-verified-sha256', resource.sha256);
+        try { await cache.put(absolute(resource.url), new Response(bytes, { status: 200, headers })); }
+        catch { throw new OfflineIntegrityError('storage'); }
+        countVerified(resource);
       }
       update(language, { status: 'ready', currentFile: undefined, ...await environment() });
     } catch (error) {

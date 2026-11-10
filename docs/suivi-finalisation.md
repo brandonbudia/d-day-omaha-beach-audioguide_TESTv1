@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 33 ; phase installation et navigation vérifiées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 34 ; reprise de visite et cache audio vérifiés.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -63,19 +63,25 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
 | PWA-01 | P1 | validated | Demande native consommée une fois. Refus, rejet et nouvelle demande testés avec événements simulés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 115 tests applicatifs, TypeScript et build réussis. Navigation, cache et demande d’installation simulée vérifiés. Essais physiques à faire |
+| RESUME-01 | P1 | validated | Reprise proposée seulement pour une version audio compatible ; retour à la dernière fiche sinon. Test et recette navigateur réussis |
+| OFF-03 | P1 | validated | Les fichiers déjà vérifiés restent comptés après un échec réseau ; aucune requête pour les pistes factices testées |
+| QA-01 | P1 | validated | 118 tests applicatifs, TypeScript et build réussis. Reprise de l’écoute anglaise à 00:19 vérifiée dans le navigateur. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | validated | Lot parcours et téléchargements publié avec SHA distant fc83b08. Reçu du lot installation à réconcilier lors de la reprise |
+| DEL-01 | P1 | validated | Lots parcours et installation publiés, SHA distants fc83b08 et 6ba8745 confirmés |
 
-## Reprise : réconcilier la publication, puis validations externes
+## Reprise : état du quatorzième lot
 
 Le checkpoint 32 corrige trois défauts observés en navigation et hors connexion. Les liens de fiche conservent la langue. L’arrêt d’un téléchargement reste disponible dans une autre langue. Les refus de lecture du cache sont classés comme erreurs de stockage. Les 115 tests applicatifs, TypeScript et le build ont réussi. La recette du douzième lot décrit la navigation et l’ouverture depuis le cache sur petit écran.
 
 Le checkpoint 32 est publié avec le SHA `fc83b088ea06f22e60dab6813bc8439cf23d8f8d`, confirmé sur TESTv1. Le checkpoint 33 partage la demande d’installation entre l’en-tête et le guide, empêche le double appel et gère le rejet. Le scénario simulé a échoué avant la correction et réussi après. La recette du treizième lot décrit les preuves et leurs limites.
 
-Pour réconcilier la publication du checkpoint 33, vérifier le commit `Consume each PWA install request once` et le reçu `resume-20261110-install-publication.json`. Les tests techniques sont terminés. Les prochaines tâches recensées dépendent des validations ou ressources externes ci-dessous.
+Le checkpoint 33 est publié : `6ba87455de1720428d0dc516abc1c48197526165`, confirmé sur TESTv1 dans `resume-20261110-install-publication.json`.
+
+Le checkpoint 34 corrige trois défauts de la reprise et des audios. Les 48 tests ciblés et les 118 tests applicatifs réussissent. TypeScript, build et contrôle du diff terminent avec le code 0. La [recette du quatorzième lot](recette-finalisation-2026-11-09.md#quatorzième-lot--reprise-de-visite-et-cache-audio) décrit les preuves et leurs limites. Pour réconcilier la publication, vérifier le commit `Fix visit resume and offline media state` et le reçu `resume-20261111-resume-offline-publication.json`.
+
+La trace révèle encore une requête FR01 avant EN01 sur une ouverture directe de l’accueil anglais. Vérifier séparément si la langue de l’URL peut être appliquée avant l’initialisation audio sans dégrader les reprises ni la navigation. Les autres actions restantes dépendent des validations ou ressources externes ci-dessous.
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
@@ -419,3 +425,5 @@ Le lot précédent est publié sur TESTv1 et son SHA distant a été confirmé. 
 Les seules modifications de ce lot concernent l’installation, son scénario de régression et le suivi. Le reçu de publication permet de reprendre sans rejouer les tests. Les contenus, droits et fichiers manquants sont listés dans les validations humaines. Le fichier préexistant `dev-dist/sw.js` est exclu.
 
 Publication du checkpoint : 2026-11-10T23:39:47.7119956+01:00
+
+Publication du checkpoint : 2026-11-11T00:05:59.0053326+01:00

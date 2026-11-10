@@ -1,7 +1,7 @@
 import { STOPS, StopData } from '../data/stops';
 import { LANGUAGES, SupportedLanguage } from '../i18n/translations';
 import { getMediaResource } from '../data/mediaCatalog';
-import { visitorStore, type HeardRange } from '../visit/visitorStore';
+import { visitorStore, type HeardRange, type PlaybackCheckpoint } from '../visit/visitorStore';
 
 export interface AudioState {
   currentStopId: string;
@@ -18,6 +18,13 @@ type AudioListener = (state: AudioState) => void;
 const AUDIO_PREFERENCES_KEY = 'dday-audio-preferences-v1';
 const PLAYBACK_RATES = [1.0, 1.25, 0.8];
 const isAudioPreferences = (value: unknown): value is Record<string, unknown> => Boolean(value && typeof value === 'object' && !Array.isArray(value) && (value as Record<string, unknown>).version === 1);
+
+export function getResumablePlayback(checkpoint?: PlaybackCheckpoint): PlaybackCheckpoint | undefined {
+  if (!checkpoint || !STOPS.some((stop) => stop.id === checkpoint.id)) return;
+  const resource = getMediaResource(checkpoint.id, checkpoint.language);
+  if (resource.status === 'unavailable' || resource.sha256 !== checkpoint.audioIdentity) return;
+  return checkpoint.positionSeconds >= resource.durationSeconds - 0.5 ? { ...checkpoint, positionSeconds: 0 } : checkpoint;
+}
 
 class GlobalAudioPlayer {
   private state: AudioState;
@@ -57,18 +64,17 @@ class GlobalAudioPlayer {
         if (typeof preferences.isVoiceBoostActive === 'boolean') savedVoiceBoost = preferences.isVoiceBoostActive;
       }
     } catch { /* An unreadable or unknown preference format is preserved untouched. */ }
-    const savedPlayback = visitorStore.getSnapshot().lastPlayback;
-    const savedResource = savedPlayback ? getMediaResource(savedPlayback.id, savedPlayback.language) : undefined;
-    const canRestore = savedPlayback && savedPlayback.language === savedLang && savedResource?.sha256 === savedPlayback.audioIdentity && savedResource.status !== 'unavailable';
-    const initialStop = STOPS.find((s) => s.id === (canRestore ? savedPlayback.id : '01')) || STOPS[0];
+    const lastPlayback = visitorStore.getSnapshot().lastPlayback;
+    const savedPlayback = lastPlayback?.language === savedLang ? getResumablePlayback(lastPlayback) : undefined;
+    const initialStop = STOPS.find((stop) => stop.id === savedPlayback?.id) ?? STOPS[0];
     const initialResource = getMediaResource(initialStop.id, savedLang);
-    const initialPosition = canRestore && savedPlayback.positionSeconds < savedResource.durationSeconds - 0.5 ? savedPlayback.positionSeconds : 0;
+    const initialPosition = savedPlayback?.positionSeconds ?? 0;
 
     this.state = {
       currentStopId: initialStop.id,
       isPlaying: false,
       currentTime: initialPosition,
-      duration: initialResource.durationSeconds,
+      duration: initialResource.status === 'unavailable' ? 0 : initialResource.durationSeconds,
       playbackRate: savedRate,
       isVoiceBoostActive: savedVoiceBoost,
       language: savedLang,
@@ -193,9 +199,18 @@ class GlobalAudioPlayer {
     this.state.error = null;
     this.stopPlaybackClock(false);
     const resource = getMediaResource(this.state.currentStopId, this.state.language);
-    this.checkpointSource = { id: this.state.currentStopId, language: this.state.language, audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds };
-    this.state.duration = resource.durationSeconds;
-    this.audioElement.src = resource.url;
+    if (resource.status === 'unavailable') {
+      this.checkpointSource = null;
+      this.state.duration = 0;
+      if (this.audioElement.hasAttribute('src')) {
+        this.audioElement.removeAttribute('src');
+        this.audioElement.load();
+      }
+    } else {
+      this.checkpointSource = { id: this.state.currentStopId, language: this.state.language, audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds };
+      this.state.duration = resource.durationSeconds;
+      this.audioElement.src = resource.url;
+    }
     this.audioElement.playbackRate = this.state.playbackRate;
     void this.syncAudioContext().catch(() => {});
   }
@@ -239,15 +254,13 @@ class GlobalAudioPlayer {
   /** Restores only an exact known audio version, paused, without replacing active playback. */
   public restoreLastPlayback(): boolean {
     if (this.state.isPlaying || this.playbackIntent) return false;
-    const checkpoint = visitorStore.getSnapshot().lastPlayback;
+    const checkpoint = getResumablePlayback(visitorStore.getSnapshot().lastPlayback);
     if (!checkpoint) return false;
-    const resource = getMediaResource(checkpoint.id, checkpoint.language);
-    if (resource.status === 'unavailable' || resource.sha256 !== checkpoint.audioIdentity || !STOPS.some((stop) => stop.id === checkpoint.id)) return false;
     this.pause();
     this.state.language = checkpoint.language;
     try { localStorage.setItem('dday_lang', checkpoint.language); } catch { /* The explicit resume still works for this visit. */ }
     this.setStop(checkpoint.id, false);
-    this.seek(checkpoint.positionSeconds >= resource.durationSeconds - 0.5 ? 0 : checkpoint.positionSeconds);
+    this.seek(checkpoint.positionSeconds);
     return true;
   }
 

@@ -6,7 +6,7 @@ import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 import { WelcomePage } from './pages/WelcomePage';
 import { ParcoursPage } from './pages/ParcoursPage';
 import { StopDetailPage } from './pages/StopDetailPage';
-import { audioPlayer } from './audio/audioStore';
+import { audioPlayer, getResumablePlayback } from './audio/audioStore';
 import { useAudioSelector } from './audio/useAudioSelector';
 import { formatTime } from './audio/formatTime';
 import { LANGUAGES, t } from './i18n/translations';
@@ -100,16 +100,17 @@ export default function App() {
     } else window.location.reload();
   };
 
+  const resumablePlayback = getResumablePlayback(visit.lastPlayback);
   const resume = () => {
     if (audioPlayer.getState().isPlaying) { go('lecteur'); return; }
-    if (visit.lastPlayback && audioPlayer.restoreLastPlayback()) {
+    if (resumablePlayback && audioPlayer.restoreLastPlayback()) {
       go('lecteur');
       void audioPlayer.play(); // Only this explicit visitor action starts playback.
     } else if (visit.lastConsultedId) go('arret', visit.lastConsultedId);
   };
-  const resumeLabel = visit.lastPlayback
-    ? x('resumeAudio', language, { number: visit.lastPlayback.id, time: formatTime(visit.lastPlayback.positionSeconds) })
-    : x('resumePiece', language, { number: visit.lastConsultedId ?? '01' });
+  const resumeLabel = resumablePlayback
+    ? x('resumeAudio', language, { number: resumablePlayback.id, time: formatTime(resumablePlayback.positionSeconds) })
+    : visit.lastConsultedId ? x('resumePiece', language, { number: visit.lastConsultedId }) : undefined;
   const titles = { accueil: t('nav_home', language), parcours: t('nav_tour', language), arret: `${t('nav_stop', language)} ${selectedStopId}`, lecteur: `${t('nav_player', language)} ${audioStopId}` };
 
   return (
@@ -121,7 +122,7 @@ export default function App() {
             audioPlayer.setLanguage(lang);
             const url = new URL(location.href);
             if (url.searchParams.has('hl')) { url.searchParams.set('hl', lang); history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`); }
-          }} onResumeVisit={visit.lastPlayback || visit.lastConsultedId ? resume : undefined} resumeLabel={resumeLabel} />
+          }} onResumeVisit={resumeLabel ? resume : undefined} resumeLabel={resumeLabel} />
           <OfflineManager language={language} />
           <PracticalHelp language={language} />
         </div>}

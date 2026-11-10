@@ -24,6 +24,7 @@ class MediaMock extends EventTarget {
   error: object | null = null;
   playCalls = 0;
   pauseCalls = 0;
+  loadCalls = 0;
   private source = '';
   private tasks: { type: string; action?: () => void }[] = [];
   private pendingPlays: ReturnType<typeof deferred>[] = [];
@@ -39,6 +40,17 @@ class MediaMock extends EventTarget {
     this.paused = true;
     this.ended = false;
     this.playedRanges = [];
+  }
+
+  hasAttribute(name: string) { return name === 'src' && this.source !== ''; }
+  removeAttribute(name: string) {
+    if (name === 'src') this.src = '';
+  }
+  load() {
+    this.loadCalls += 1;
+    this.readyState = 0;
+    this.duration = NaN;
+    this.error = null;
   }
 
   play() {
@@ -529,11 +541,29 @@ test('switching a playing narration to an unavailable language resets the clock 
   assert.equal(player.getState().isPlaying, false);
   assert.equal(media.paused, true);
   assert.equal(media.playCalls, calls);
+  assert.equal(media.src, '');
+  assert.equal(media.loadCalls, 1, 'resetting the media element releases the old recording');
+  assert.equal(player.getState().duration, 0);
   assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.fr?.heardRanges, [[0, 170.125]]);
   assert.equal(visitorStore.getSnapshot().pieces['21'].listening.de, undefined);
   await player.play();
   assert.equal(media.playCalls, calls, 'the explicit play guard also remains active');
   assert.equal(player.getState().error, 'unavailable');
+});
+
+test('an unavailable language at startup has no media source and can switch to a real recording', async () => {
+  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_lang: 'de' });
+  assert.equal(media.src, '');
+  assert.equal(media.loadCalls, 0, 'an empty element needs no reset');
+  assert.equal(player.getState().duration, 0);
+  await player.play();
+  assert.equal(media.playCalls, 0);
+
+  player.setLanguage('fr');
+  assert.equal(media.src, getMediaResource('01', 'fr').url);
+  await start();
+  assert.equal(player.getState().isPlaying, true);
+  assert.equal(instances(), 1);
 });
 
 test('a seek directly to the end cannot complete even an otherwise fully heard recording', async () => {

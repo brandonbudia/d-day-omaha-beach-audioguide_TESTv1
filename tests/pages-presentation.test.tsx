@@ -20,9 +20,42 @@ import { detailLabel, visualLabel } from '../src/i18n/visualLabels';
 import { getStopLabel } from '../src/data/stopLabels';
 import { OfflineManager } from '../src/components/OfflineManager';
 import { offlineStore } from '../src/offline/offlineStore';
+import App from '../src/App';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+
+test('the home page offers only a usable listening or exhibit resume action', (context) => {
+  const oldDocument = Object.getOwnPropertyDescriptor(globalThis, 'document');
+  Object.defineProperty(globalThis, 'document', {
+    configurable: true,
+    value: { documentElement: { classList: { contains: () => false } } },
+  });
+  try {
+    const recording = getMediaResource('02', 'fr');
+    const snapshot = {
+      ...visitorStore.getSnapshot(),
+      lastConsultedId: undefined as string | undefined,
+      lastPlayback: {
+        id: '02', language: 'fr' as const, audioIdentity: 'old-audio-version',
+        positionSeconds: 55, durationSeconds: recording.durationSeconds, updatedAt: 100,
+      },
+    };
+    context.mock.method(visitorStore, 'getSnapshot', () => snapshot);
+
+    assert.equal(renderToStaticMarkup(<App />).includes('museum-resume-card'), false);
+    snapshot.lastConsultedId = '07';
+    assert.match(renderToStaticMarkup(<App />), /Revenir à la pièce 07/);
+
+    snapshot.lastPlayback = { ...snapshot.lastPlayback, audioIdentity: recording.sha256 };
+    assert.match(renderToStaticMarkup(<App />), /Continuer l’écoute — pièce 02 · 00:55/);
+    snapshot.lastPlayback = { ...snapshot.lastPlayback, positionSeconds: recording.durationSeconds - 0.1 };
+    assert.match(renderToStaticMarkup(<App />), /Continuer l’écoute — pièce 02 · 00:00/);
+  } finally {
+    if (oldDocument) Object.defineProperty(globalThis, 'document', oldDocument);
+    else Reflect.deleteProperty(globalThis, 'document');
+  }
+});
 
 test('station search finds Resistance with or without accents and preserves existing identifiers', () => {
   for (const { code } of LANGUAGES) {
