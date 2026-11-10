@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 31 ; phase lots applicatifs publiés, validations externes restantes.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 32 ; phase liens de fiche et téléchargement vérifiés.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -59,8 +59,10 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
+| NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
+| OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 112app/TypeScript/build0 ;14Python EN22 inchangés ; Designed/by/the/retour/cache390 vérifiés, réglages corrigés. Appareils physiques restent humains |
+| QA-01 | P1 | validated | 115 tests applicatifs, TypeScript et build réussis. Liens anglais vérifiés sur petit écran depuis le cache. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
@@ -68,9 +70,13 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 
 ## Reprise : réconcilier la publication, puis validations externes
 
+Le checkpoint 32 corrige trois défauts observés en navigation et hors connexion. Les liens de fiche conservent la langue. L’arrêt d’un téléchargement reste disponible dans une autre langue. Les refus de lecture du cache sont classés comme erreurs de stockage. Les 115 tests applicatifs, TypeScript et le build ont réussi. La recette du douzième lot décrit la navigation et l’ouverture depuis le cache sur petit écran.
+
+Pour la publication du checkpoint 32, vérifier le commit `Preserve exhibit link language and offline download controls` et le reçu `resume-20261110-visitor-links-publication.json` avant toute nouvelle écriture. Le dépôt TESTv1 et la branche `codex/overnight-audio-highlight` sont les seules cibles. Les vérifications éditoriales et les ressources externes manquantes restent identifiées ci-dessous.
+
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base applicative publiée actuelle :ed118fa5e8e98ef4906363d515d9bc5cf4f3176a. Reçus externes resume-20261110-settings-padding-publication.json (daae6d4837dd56db90ca0470eb7a3166ef8ad3ff) et resume-20261110-designed-publication.json :push0 et SHA distants confirmés. EN22 précédent9ef35ab déjà publié. Aucun lot applicatif à commiter/pousser de nouveau ; le présent complément documentaire clôt les anciens états de publication.
+Base applicative publiée actuelle :ed118fa5e8e98ef4906363d515d9bc5cf4f3176a. Reçus externes resume-20261110-settings-padding-publication.json (daae6d4837dd56db90ca0470eb7a3166ef8ad3ff) et resume-20261110-designed-publication.json :push0 et SHA distants confirmés. EN22 précédent9ef35ab déjà publié. Les publications de ces lots antérieurs sont réconciliées.
 Dernier état vérifié :112tests app,TypeScript/build0 ;14Python du lot EN22 inchangés,non relancés pour ces seuls changements React/TypeScript. Réglages intérieur/fond extérieur/croix/Échap/focus/cache ; Designed/by/the/retour/cache390. Aucun serveur/modèle actif, pas d’écoute humaine intégrale ni téléphone physique prétendus. EN15 :314/332,EN22 :337/341,EN6614/7022 (408 omissions),FR7233/7276 (43),total451. Source EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 ; dev-dist/sw.js préexistant SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f intact/exclu.
 Prochaine action utile :exploiter un prérequis réellement nouveau, parmi écoute ciblée des omissions/frontières (liste humaine), validation musée des droits/associations/faits, sources éditoriales, vrais audios/textes des cinq langues, appareils physiques et hébergement/QR. La mise à jour des dépendances reste soumise à l’accord déjà requis. Sans nouvelle preuve/ressource/autorisation, aucun autre correctif justifié n’est identifié dans les tâches recensées ; ne pas recréer des travaux pour consommer le quota. Ce constat n’est pas une ancienne limitation de quota et ne déclare pas les validations humaines accomplies.
 Rejets déjà établis et à réutiliser :butEN22 (26ms seulement de recouvrement),radioEN12 (links CTC0,633/minchar0,045),andEN14 (6ms de conflit puis voisin0,762). Aucun retraitement identique ni interpolation ; ne pas forcer ces mots. Dès réception d’un retour utilisateur/musée exploitable, reprendre la tâche concernée directement et préserver tous les acquis.
@@ -388,3 +394,14 @@ Le seul changement restant hors documentation est dev-dist/sw.js préexistant, c
 Les suites actuellement recensées dépendent des validations/ressources/autorisations externes listées dans la reprise. Ne pas confondre quota disponible et preuve suffisante, ni déclarer les transcriptions certifiées. Dès qu’un prérequis change, poursuivre sans demander de répéter « continue ». Le présent suivi est le point de reprise ; ne pas refaire l’audit.
 
 Publication du checkpoint : 2026-11-10T18:24:01.8783479+01:00
+
+
+## Checkpoint 32 — parcours et téléchargement corrigés
+
+Reprise sur `01085d1`. Trois régressions corrigées et testées. Les liens de fiche portent la langue sélectionnée et les anciennes adresses sont acceptées. Le téléchargement peut être arrêté depuis une autre langue. Un accès refusé en lecture du cache produit une erreur de stockage, libère le téléchargement actif et ne déclenche aucune requête.
+
+25 tests ciblés puis 115 tests applicatifs réussis. TypeScript et build réussis. Le navigateur local a vérifié la carte EN15, la fiche suivante, le retour, les adresses directes FR et EN, l’ancienne adresse et le chargement du nouveau build depuis le cache après arrêt du serveur. Le test de changement de langue pendant un téléchargement et la panne de stockage sont des tests en mémoire. Aucun essai sur QR imprimé ni sur téléphone physique n’a été réalisé pour ce lot.
+
+Vérifier le reçu de publication du checkpoint 32 au prochain passage. Les transcriptions et ressources ne font pas partie de ce lot. Les validations humaines et les ressources manquantes conservent leur statut. `dev-dist/sw.js` reste exclu.
+
+Publication du checkpoint : 2026-11-10T23:30:19.7239487+01:00

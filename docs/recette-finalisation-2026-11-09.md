@@ -286,3 +286,15 @@ Les deux lots applicatifs sont publiés sur TESTv1/codex/overnight-audio-highlig
 - ed118fa5e8e98ef4906363d515d9bc5cf4f3176a :Add independently corroborated CTC timing for EN15 Designed ; reçu externe resume-20261110-designed-publication.json.
 
 Aucun lot applicatif non commité ; seul dev-dist/sw.js reste préexistant/intact/exclu. Le présent complément documentaire réconcilie les tâches de publication déjà terminées et ne nécessite pas de répéter112tests/TypeScript/build ni les recettes inchangées. La liste humaine contient408 omissions EN et43 FR, plus les frontières automatiques à relire. Les étapes restantes du plan exigent une preuve/ressource/autorisation réellement nouvelle ; la disponibilité de quota ne suffit pas à les certifier. Reprendre sans nouvel audit dès réception d’un retour ciblé. Aucun modèle ou serveur laissé actif.
+
+## Douzième lot — liens de fiche et téléchargement hors connexion
+
+Base de reprise `01085d1ea0a54d9f638502b876e9c15eb92f0cf9`. Les liens des cartes et les adresses créées pendant la navigation conservent la langue avec `hl`. Le routeur existant continue d’accepter les anciennes adresses.
+
+Après un changement de langue, le téléchargement en cours reste signalé et peut être arrêté, y compris si la langue affichée ne possède aucun pack. Les actions de téléchargement et de vérification restent bloquées pendant l’opération. Un refus de lecture du cache produit une erreur de stockage et libère le téléchargement actif. Le test vérifie aussi l’absence de requête réseau dans ce cas.
+
+Les trois régressions ont échoué avant la correction. Après correction, les 25 tests ciblés puis les 115 tests applicatifs ont réussi. TypeScript et le build de production ont terminé avec le code 0. Le générateur audio est exclu de la suite. Les tests Python précédents restent la référence pour les outils audio.
+
+Le navigateur a chargé `index-CkYPxnY6.js`. Le clic sur la carte 15 a ouvert `/stop/15?hl=en`. La fiche suivante et le retour ont conservé `hl=en`. Une ouverture française suivie du lien anglais a sélectionné l’anglais. `/stop/15` reste valide. Avec le serveur arrêté et zéro socket en écoute sur le port 4198, le lien anglais a chargé la fiche depuis le cache. La fenêtre de 390 × 844 px présentait une largeur utile et une largeur défilable de 380 px, sans débordement horizontal ni erreur de console. Les refus de cache et le changement de langue pendant un téléchargement sont couverts par les tests automatisés en mémoire.
+
+Les journaux `resume-20261110-visitor-links-tests.txt`, `resume-20261110-visitor-links-build.txt` et `resume-20261110-visitor-links-browser.json` sont conservés hors dépôt avec la capture `resume-20261110-visitor-links-mobile.jpg`. Le fichier préexistant `dev-dist/sw.js` est exclu du lot. La validation du QR physique, les droits des ressources externes et les écoutes humaines restent dans le suivi.

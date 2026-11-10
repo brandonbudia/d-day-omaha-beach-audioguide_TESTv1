@@ -18,6 +18,8 @@ import { PhotoViewer } from '../src/components/PhotoViewer';
 import { PersistentPlayerBar } from '../src/components/PersistentPlayerBar';
 import { detailLabel, visualLabel } from '../src/i18n/visualLabels';
 import { getStopLabel } from '../src/data/stopLabels';
+import { OfflineManager } from '../src/components/OfflineManager';
+import { offlineStore } from '../src/offline/offlineStore';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -32,6 +34,38 @@ test('station search finds Resistance with or without accents and preserves exis
     assert.equal(STOPS.filter((stop) => matchesStopSearch(stop, 'zzzz-no-piece', code)).length, 0);
     assert.equal(matchesStopSearch(STOPS.find((stop) => stop.id === '19')!, '19', code), true);
   }
+});
+
+test('station links retain the selected language when opened directly or shared', () => {
+  for (const { code } of LANGUAGES) {
+    const html = renderToStaticMarkup(<ParcoursPage onSelectStopDetail={noop} onOpenPlayer={noop} currentLang={code} />);
+    const links = Array.from(html.matchAll(/href="(\/stop\/[^"]+)"/g), (match) => match[1]);
+    assert.deepEqual(links, STOPS.map((stop) => `/stop/${stop.id}?hl=${code}`));
+  }
+});
+
+test('a download can be stopped after switching to a different or unavailable language', (context) => {
+  const initial = offlineStore.getSnapshot();
+  const packs = {
+    ...initial.packs,
+    fr: { ...initial.packs.fr, status: 'downloading' as const },
+    en: { ...initial.packs.en, status: 'idle' as const },
+  };
+  let activeLanguage: 'fr' | null = 'fr';
+  context.mock.method(offlineStore, 'getSnapshot', () => ({ activeLanguage, packs }));
+
+  const english = renderToStaticMarkup(<OfflineManager language="en" />);
+  assert.match(english, /A download is already running in another language/);
+  assert.match(english, /Stop download<\/button>/);
+  assert.equal((english.match(/<button[^>]* disabled=""/g) ?? []).length, 2);
+
+  const german = renderToStaticMarkup(<OfflineManager language="de" />);
+  assert.match(german, /Ein Download in einer anderen Sprache läuft bereits/);
+  assert.match(german, /Download stoppen<\/button>/);
+  assert.doesNotMatch(german, /Diese Sprache herunterladen/);
+
+  activeLanguage = null;
+  assert.doesNotMatch(renderToStaticMarkup(<OfflineManager language="en" />), /Stop download/);
 });
 
 test('photo viewer distinguishes inherited French captions from translated cover captions', () => {
@@ -134,7 +168,7 @@ test('tour counts discoveries from the shared visitor state, never consultations
   assert.match(html, /Rechercher une station/);
   assert.equal((html.match(/<h2/g) ?? []).length, 22);
   for (const stop of STOPS) {
-    assert.ok(html.includes(`href="/stop/${stop.id}"`), stop.id);
+    assert.ok(html.includes(`href="/stop/${stop.id}?hl=fr"`), stop.id);
     const media = getMediaResource(stop.id, 'fr');
     if (media.status === 'ready') assert.ok(html.includes(formatTime(media.durationSeconds)), stop.id);
   }

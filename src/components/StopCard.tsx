@@ -25,7 +25,7 @@ export function StopCard({ stop, isActive, isPlaying, currentLang, onPlay, onSel
   const title = getStopLabel(stop, currentLang);
   const status = hasListened(piece) ? x('listened', currentLang) : isDiscovered(piece) ? x('discovered', currentLang) : isConsulted(piece) ? x('consulted', currentLang) : '';
   return <article className="museum-card overflow-hidden mb-4" data-playing={isPlaying} data-selected={isActive}>
-    <a href={`/stop/${stop.id}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px]" onClick={(event) => {
+    <a href={`/stop/${stop.id}?hl=${currentLang}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px]" onClick={(event) => {
       if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault(); onSelectDetail(stop.id);
     }}>

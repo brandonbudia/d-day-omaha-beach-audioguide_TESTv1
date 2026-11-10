@@ -156,6 +156,25 @@ test('storage refusal is distinct from network failure and cannot claim download
   assert.equal(store.getSnapshot().packs.fr.status, 'error');
 });
 
+test('a refused cache read reports storage failure and releases the download slot', async () => {
+  const { store, requests } = fixture({
+    caches: {
+      open: async () => ({
+        match: async () => { throw new DOMException('Denied', 'SecurityError'); },
+        put: async () => assert.fail('must not write after a refused read'),
+      }),
+    },
+  });
+
+  await store.download('fr');
+  const state = store.getSnapshot();
+  assert.equal(state.packs.fr.status, 'error');
+  assert.equal(state.packs.fr.error, 'storage');
+  assert.equal(state.packs.fr.verifiedBytes, 0);
+  assert.equal(state.activeLanguage, null);
+  assert.deepEqual(requests, []);
+});
+
 test('one language downloads at a time and cancellation preserves prior cached resources', async () => {
   let calls = 0;
   const { store, cache } = fixture({ fetch: ((_url: unknown, options: RequestInit) => {

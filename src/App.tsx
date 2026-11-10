@@ -83,7 +83,7 @@ export default function App() {
     if (tab === 'arret') setSelectedStopId(id);
     setActiveTab(tab);
     const state = audioPlayer.getState();
-    const path = tab === 'accueil' ? '/' : tab === 'parcours' ? '/parcours' : tab === 'arret' ? `/stop/${id}` : `/player?stop=${state.currentStopId}&hl=${state.language}`;
+    const path = tab === 'accueil' ? '/' : tab === 'parcours' ? '/parcours' : tab === 'arret' ? `/stop/${id}?hl=${state.language}` : `/player?stop=${state.currentStopId}&hl=${state.language}`;
     if (`${location.pathname}${location.search}` !== path) history.pushState(null, '', path);
     window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   };

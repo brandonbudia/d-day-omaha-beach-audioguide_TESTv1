@@ -82,12 +82,16 @@ export function OfflineManager({ language }: { language: SupportedLanguage }) {
           {state.currentFile && <p className="offline-notice">{currentAudio ? `${copy.commentary} ${currentAudio}` : copy.shared}</p>}
           {state.error && <p role="status" className="offline-notice">{copy.errors[state.error]}</p>}
           {state.status === 'ready' && !state.shellReady && <p className="offline-notice">{copy.shell}</p>}
-          {busy && state.activeLanguage !== language && <p>{copy.busy}</p>}
-          <div className="offline-actions">
+        </>}
+        {busy && state.activeLanguage !== language && <p role="status">{copy.busy}</p>}
+        {(available || busy) && <div className="offline-actions">
+          {available && <>
             <button type="button" disabled={busy || checking} onClick={() => void offlineStore.download(language)}><Download size={19} aria-hidden="true" />{copy.download}</button>
             <button type="button" disabled={busy || checking} onClick={() => void offlineStore.inspect(language)}><RefreshCw size={19} aria-hidden="true" />{copy.check}</button>
-            {state.activeLanguage === language && <button type="button" onClick={offlineStore.cancelDownload}><Square size={18} aria-hidden="true" />{copy.cancel}</button>}
-          </div>
+          </>}
+          {busy && <button type="button" onClick={offlineStore.cancelDownload}><Square size={18} aria-hidden="true" />{copy.cancel}</button>}
+        </div>}
+        {available && <>
           {state.storageQuotaBytes !== undefined && <p className="offline-notice">{copy.storage} : {formatBytes(state.storageUsageBytes ?? 0, language)} · {copy.quota} : {formatBytes(state.storageQuotaBytes, language)}</p>}
           <p className="offline-notice">{copy.limits}</p>
         </>}

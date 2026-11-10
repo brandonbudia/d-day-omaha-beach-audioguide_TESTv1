@@ -139,7 +139,12 @@ export function createOfflineStore(dependencies: OfflineDependencies = browserDe
     return { shellReady, storageUsageBytes: estimate.usage, storageQuotaBytes: estimate.quota };
   };
   const readVerified = async (cache: CacheLike, resource: OfflineResource) => {
-    const response = await cache.match(absolute(resource.url));
+    let response: Response | undefined;
+    try {
+      response = await cache.match(absolute(resource.url));
+    } catch {
+      throw new OfflineIntegrityError('storage');
+    }
     if (!response) return false;
     try { await verifyCompleteResponse(resource, response, dependencies.subtle!); return true; }
     catch { return false; }
