@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 30 ; phase complément EN15 testé, publication à réconcilier.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 31 ; phase lots applicatifs publiés, validations externes restantes.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -64,16 +64,16 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | in_progress | daae6d4 publié/SHA distant confirmé ; complément Designed prêt, retrouver commit Add independently corroborated CTC timing for EN15 Designed et reçu designed-publication |
+| DEL-01 | P1 | validated | daae6d4 réglages et ed118fa Designed publiés/SHA distants confirmés ; reçus externes conservés. Aucun lot applicatif à republier |
 
 ## Reprise : réconcilier la publication, puis validations externes
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base publiée actuelle :daae6d4837dd56db90ca0470eb7a3166ef8ad3ff, correctif des réglages publié et SHA distant confirmé dans resume-20261110-settings-padding-publication.json. EN22 précédent9ef35ab déjà publié,337/341 ; aucun de ces lots à refaire. Modification préexistante dev-dist/sw.js intacte/exclue.
-Lot courant validé :Designed EN15, CTC natif28,687–29,168 corroboré par medium indépendant fort ; aucune confirmation humaine ni variante lexicale, aucun ancien voisin retimé. EN15 :314/332. Données EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 /6614sur7022,408 omissions ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 /7233sur7276 inchangé. Total451 omissions.
-112tests app/TypeScript/build0 ; snapshots EN15/EN22/global conservés et caches réels vérifiés. Recette Designed/by/the/retour,314mots,390px sans débordement et hors serveur4198 réussie, aucun nouveau calcul audio. Voir recette onzième lot et resume-20261110-designed-browser-results.json. Prochaine action :revue/commit/push ciblés si non déjà publiés ; lire git log et resume-20261110-designed-publication.json avant toute nouvelle écriture.
-Les deux pistes radio EN12/and EN14 sont écartées à partir des caches existants pour voisins trop faibles/conflits. Ne pas répéter ces calculs. Les seules suites actuellement recensées nécessitent écoute humaine des frontières/omissions, droits/associations musée, sources éditoriales, vrais médias des cinq langues, appareils physiques et hébergement/QR. Les tests disponibles ne constituent pas ces validations. Ne pas consommer de quota en réauditant des résultats inchangés.
+Base applicative publiée actuelle :ed118fa5e8e98ef4906363d515d9bc5cf4f3176a. Reçus externes resume-20261110-settings-padding-publication.json (daae6d4837dd56db90ca0470eb7a3166ef8ad3ff) et resume-20261110-designed-publication.json :push0 et SHA distants confirmés. EN22 précédent9ef35ab déjà publié. Aucun lot applicatif à commiter/pousser de nouveau ; le présent complément documentaire clôt les anciens états de publication.
+Dernier état vérifié :112tests app,TypeScript/build0 ;14Python du lot EN22 inchangés,non relancés pour ces seuls changements React/TypeScript. Réglages intérieur/fond extérieur/croix/Échap/focus/cache ; Designed/by/the/retour/cache390. Aucun serveur/modèle actif, pas d’écoute humaine intégrale ni téléphone physique prétendus. EN15 :314/332,EN22 :337/341,EN6614/7022 (408 omissions),FR7233/7276 (43),total451. Source EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 ; dev-dist/sw.js préexistant SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f intact/exclu.
+Prochaine action utile :exploiter un prérequis réellement nouveau, parmi écoute ciblée des omissions/frontières (liste humaine), validation musée des droits/associations/faits, sources éditoriales, vrais audios/textes des cinq langues, appareils physiques et hébergement/QR. La mise à jour des dépendances reste soumise à l’accord déjà requis. Sans nouvelle preuve/ressource/autorisation, aucun autre correctif justifié n’est identifié dans les tâches recensées ; ne pas recréer des travaux pour consommer le quota. Ce constat n’est pas une ancienne limitation de quota et ne déclare pas les validations humaines accomplies.
+Rejets déjà établis et à réutiliser :butEN22 (26ms seulement de recouvrement),radioEN12 (links CTC0,633/minchar0,045),andEN14 (6ms de conflit puis voisin0,762). Aucun retraitement identique ni interpolation ; ne pas forcer ces mots. Dès réception d’un retour utilisateur/musée exploitable, reprendre la tâche concernée directement et préserver tous les acquis.
 
 ## EN22-01 : décision historique du9novembre, remplacée pour16 mots au checkpoint28
 
@@ -379,3 +379,12 @@ Correctif réglages daae6d4 publié/vérifié distant ; aucune ancienne étape �
 Six fichiers à publier :données EN,adaptateur,test EN,liste humaine,recette,suivi. EN6614/7022,408 omissions ; FR43 inchangées,total451. Pas d’autre correction audio justifiée par les candidats examinés ;radioEN12/andEN14 gardent leurs motifs précis. Après publication, réconcilier le reçu designed-publication et n’avancer que sur un prérequis réellement nouveau. Préserver dev-dist/sw.js et toutes ressources authentiques.
 
 Publication du checkpoint : 2026-11-10T18:19:11.3831356+01:00
+
+
+## Checkpoint31 — publications réconciliées, aucune correction artificielle
+
+Les commits daae6d4837dd56db90ca0470eb7a3166ef8ad3ff et ed118fa5e8e98ef4906363d515d9bc5cf4f3176a sont réellement publiés/vérifiés sur TESTv1. Statut DEL validé ; les lignes de publication en attente des checkpoints29–30 sont historiques et ne doivent pas déclencher une répétition.
+Le seul changement restant hors documentation est dev-dist/sw.js préexistant, conservé intact. Aucun autre écrivain lancé. Le complément de clôture ne touche pas l’application ; les résultats112tests/TypeScript/build et navigateur restent ceux des lots correspondants, sans répétition prétendue.
+Les suites actuellement recensées dépendent des validations/ressources/autorisations externes listées dans la reprise. Ne pas confondre quota disponible et preuve suffisante, ni déclarer les transcriptions certifiées. Dès qu’un prérequis change, poursuivre sans demander de répéter « continue ». Le présent suivi est le point de reprise ; ne pas refaire l’audit.
+
+Publication du checkpoint : 2026-11-10T18:24:01.8783479+01:00

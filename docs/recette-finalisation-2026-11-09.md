@@ -276,3 +276,13 @@ Build : EN462,64kB/168,20gzip ; PWA53entrées/3861,46KiB. Callback PWA8,7s signa
 Preuves hors dépôt :export-en15-designed-20261110.py,english-transcripts.en-designed-20261110.json (SHA769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920),resume-20261110-designed-tests.txt,resume-20261110-designed-tsc.txt,resume-20261110-designed-build.txt,resume-20261110-designed-browser-results.json. Caches sources :en-ctc-targeted-20261110/en-15-ctc-fb8ade7ab551983e647dacc7135a5ef694948bc100e5b440863ca2377a823d8b.json ;en-missing-targeted-20261109/en-15-medium-window-ed9b4599336d403b3f74a74b5f137688520d918de41f63c31aa340a19edc8b24.json. Les clés/SHA sont également dans le JSON applicatif.
 
 Deux autres pistes existantes écartées sans nouveau calcul :EN12 radio17/24 imposerait links CTC0,633/minchar0,045 ;EN14 and19/2 empiète6ms sur to et impose un voisin CTC0,762. Ne pas tronquer ni déplacer des mots pour effacer ces conflits. Les autres tâches restantes recensées requièrent toujours ressources/droits/écoutes/appareils ; aucune nouvelle extraction identique à relancer. Prochaine action :publication ciblée après revue/diff--check, puis réconcilier le reçu designed-publication à la reprise.
+
+
+## Publication confirmée et reprise après les lots10–11
+
+Les deux lots applicatifs sont publiés sur TESTv1/codex/overnight-audio-highlight et leurs SHA distants sont identiques aux SHA locaux :
+
+- daae6d4837dd56db90ca0470eb7a3166ef8ad3ff :Keep player settings open for clicks inside the dialog ; reçu externe resume-20261110-settings-padding-publication.json.
+- ed118fa5e8e98ef4906363d515d9bc5cf4f3176a :Add independently corroborated CTC timing for EN15 Designed ; reçu externe resume-20261110-designed-publication.json.
+
+Aucun lot applicatif non commité ; seul dev-dist/sw.js reste préexistant/intact/exclu. Le présent complément documentaire réconcilie les tâches de publication déjà terminées et ne nécessite pas de répéter112tests/TypeScript/build ni les recettes inchangées. La liste humaine contient408 omissions EN et43 FR, plus les frontières automatiques à relire. Les étapes restantes du plan exigent une preuve/ressource/autorisation réellement nouvelle ; la disponibilité de quota ne suffit pas à les certifier. Reprendre sans nouvel audit dès réception d’un retour ciblé. Aucun modèle ou serveur laissé actif.

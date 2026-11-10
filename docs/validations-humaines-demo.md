@@ -1,6 +1,8 @@
 # Validations humaines avant présentation et publication — 7 novembre 2026
 
-État de référence : TESTv1, branche `codex/overnight-audio-highlight`, après `a2d80bb2a0a4b898151804933c9b6912e6b46fae`. Liste extraite des données existantes ; aucun audio, texte ou repère modifié pour la produire. Les cases ci-dessous sont à valider par une personne, pas des validations acquises.
+État actuel : TESTv1, branche `codex/overnight-audio-highlight`, après `ed118fa5e8e98ef4906363d515d9bc5cf4f3176a`. EN6614/7022,408 omissions ; FR7233/7276,43 omissions. Les bornes automatiques restent à relire, sans certification humaine globale.
+
+État de référence initial : TESTv1, branche `codex/overnight-audio-highlight`, après `a2d80bb2a0a4b898151804933c9b6912e6b46fae`. Liste extraite des données existantes ; aucun audio, texte ou repère modifié pour la produire. Les cases ci-dessous sont à valider par une personne, pas des validations acquises.
 
 ## Mode de revue
 
