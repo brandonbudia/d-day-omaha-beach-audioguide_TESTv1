@@ -83,6 +83,29 @@ test('English tour and all 22 detail pages display published titles while other 
   assert.ok(fallback.includes(`lang="fr">${escapeText(stop.title)}</h2>`));
 });
 
+test('player settings identify the next exhibit with its published title and actual text language', () => {
+  try {
+    for (const { code } of LANGUAGES) {
+      audioPlayer.setLanguage(code);
+      for (const [index, stop] of STOPS.entries()) {
+        audioPlayer.setStop(stop.id, false);
+        const html = renderToStaticMarkup(<PlayerPage currentLang={code} onSelectStopDetail={noop} />);
+        const action = html.match(/<button[^>]*class="player-next-detail"[^>]*>(.*?)<\/button>/);
+        if (index === STOPS.length - 1) {
+          assert.equal(action, null, 'last station has no next-exhibit link');
+        } else {
+          const next = getStopLabel(STOPS[index + 1], code);
+          assert.ok(action, `${code}/${stop.id}: next exhibit remains accessible`);
+          assert.ok(action[1].includes(`<strong lang="${next.language}">${escapeText(next.text)}</strong>`), `${code}/${stop.id}: title matches the destination and its language`);
+        }
+      }
+    }
+  } finally {
+    audioPlayer.setLanguage('fr');
+    audioPlayer.setStop('01', false);
+  }
+});
+
 test('all 22 piece pages expose one launch action and keep narrative, photos, plan and navigation', () => {
   for (const [index, stop] of STOPS.entries()) {
     const html = renderToStaticMarkup(<StopDetailPage stopId={stop.id} onNavigateStop={noop} onOpenPlayer={noop} currentLang="fr" />);

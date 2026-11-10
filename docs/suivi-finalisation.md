@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 25 ; phase dernier complément vérifié, publication ciblée finale.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 26 ; phase correctif ciblé des réglages validé, publication à réconcilier.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -51,7 +51,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EN01-REVIEW | P1 | blocked-human | History conservé ; onze candidats encore comparés au nouveau CTC sans chaîne fiable. Quinze omissions, écoute humaine nécessaire |
 | EN-01 | P1 | blocked-human | EN6597/7022,425 omissions ;19+5 compléments avec preuves ;107 tests et recettes réussis. Ne pas relancer les caches inchangés |
 | CTC-EN | P1 | validated | Poids officiel autorisé, SHA vérifié ; deux pilotes,81fenêtres puis six contextes EN01/EN22 terminés code0 ; caractères complets, scores/bornes comparés ; aucune installation |
-| UI-01 | P1 | validated | Recherche sans accents et langue des fragments FR ; tests et navigateur, sans traductions inventées |
+| UI-01 | P1 | validated | Recherche/langues validées ; lien suivant des réglages maintenant cohérent EN et repli FR balisé, testé sur22×7 et navigateur |
 | EDIT-EN-TITLES | P1 | validated | 22 titres/URL publiés, résolution/replis/recherche et parcours testés ; pas de traduction inventée |
 | EDIT-EN-NARRATIVE | P1 | validated | 22 récits EN du registre, références documentaires séparées, FR conservé ; 100 tests et recette hors serveur |
 | EDIT-EN | P1 | blocked-human | Récits et titres EN intégrés ; autres faits/citations/légendes FR conservés. Rouvrir avec sources/traductions validées |
@@ -59,20 +59,19 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 107tests app,14Python,TypeScript/build0 ; recette native/mobile390 et hors serveur réussie. Essais physiques restent humains |
+| QA-01 | P1 | validated | 108tests app/TypeScript/build0 ;14Python du lot précédent inchangés ; réglages EN/DE, navigation et cache390 vérifiés. Essais physiques restent humains |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | in_progress | Dernier complément entièrement vérifié ; réconcilier commit Add remaining independently corroborated English timings et reçu final, publier seulement si absent |
+| DEL-01 | P1 | in_progress | efbf1f3 réconcilié/publié ; correctif des réglages à identifier par commit Use localized next-exhibit titles in player settings et reçu next-label-publication ; ne pas republier si déjà distant |
 
 ## Reprise : réconcilier la publication, puis validations externes
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Dernier lot publié avant ce complément : a810dc99aa341b4b7b51cf80cd6a2c6b07924cf5, SHA distant confirmé. Ce checkpoint accompagne le lot Add remaining independently corroborated English timings : cinq ajouts, quatre réparations nécessaires, un début de phrase, documentation et test. À la reprise, identifier ce commit via git log puis comparer HEAD avec origin ; reçu externe attendu resume-20261110-final-publication.json. Ne pas refaire un commit ou un calcul déjà terminé.
-État vérifié : JSON EN SHA727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84,6597/7022 minutés,425 omissions ; FR SHA00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7,7233/7276,43 omissions. EN22=321/341 et20 omissions ; EN01=239/254 et15 omissions. Le zéro v2 sur transformed était provisoire et remplacé avant publication par la comparaison v3 corrigée ; aucun ASR répété.
-Validation :107tests app,14Python,TypeScript/build0 ; données comparées aux bons caches ; snapshot historique conservé ; EN22 et nouveau début EN09 testés dans le navigateur ; EN22 rechargée/lue depuis cache après arrêt serveur. Aucun téléphone physique ni écoute humaine certifiés. dev-dist/sw.js préexistant reste intact et exclu.
-Après réconciliation de la publication, prochaines actions réellement utiles : décisions d’écoute sur docs/validations-humaines-demo.md (425 omissions EN,43 FR, repères automatiques à relire), droits et associations photo/plan, sources historiques/linguistiques, vrais MP3 des cinq langues, QR/hébergement cible et essais physiques. Les dépendances nécessitent l’accord prévu. Ne pas relancer les audits ni les mêmes caches pour remplir une exécution. La planification conserve son préalable d’exclusivité ; aucun second écrivain autorisé.
+Dernier complément audio réconcilié : efbf1f39e39988abd00fb462cf9723ccf1a8dea2 ; reçu resume-20261110-final-publication.json confirmant SHA local/distant identiques. Ne pas reprendre DEL de ce lot comme s’il n’était pas commité. JSON EN727c9e951debc628ea6546890f8222a86fe684efb8354923018109ec48732d84 et FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 inchangés : EN6597/7022,425 omissions ; FR7233/7276,43 omissions.
+Lot actuel Use localized next-exhibit titles in player settings : deux lignes du lecteur, une régression des22 stations×7langues, cette note et la recette. Défaut réel reproduit dans les réglages anglais, corrigé par réutilisation des titres publiés et lang réel ; aucune nouvelle traduction. 108tests,TypeScript/build0, navigation EN et repli DE, fermeture clavier et navigation hors serveur390 vérifiés. Prochaine étape : revue/commit ciblé/push si non déjà effectués ; reçu externe attendu resume-20261110-next-label-publication.json. Préserver dev-dist/sw.js préexistant.
+Les suites utiles restent les validations d’écoute, droits/associations, sources du musée, vraies ressources des cinq langues, hébergement/QR et appareils physiques. Ne pas relancer les audits ou calculs audio identiques. Une piste de clic sur la marge interne des réglages reste une observation de code non reproduite, à examiner lors des essais tactiles. Aucun autre défaut démontré par la revue ciblée des erreurs/hors connexion ; ne pas modifier ces mécanismes sans preuve. Un seul écrivain et toutes les protections restent requis.
 ## EN22-01 : bloquée pour écoute, calcul ciblé terminé
 
 Quatre fenêtres medium externes (49,6 s) ont été reconnues sans texte imposé : 23,7–32,0 ; 41,5–52,0 ; 61,4–78,2 ; 101,3–115,3 s. Deux commandes, codes 0. Aucun repère accepté.
@@ -335,3 +334,11 @@ Navigateur : EN22transformed104,41/current, their104,97/current, environment105,
 Build index-CamKvE4t.js, EN405,92kB/156,80gzip ; PWA53/3805,07KiB. FR, référence immuable et modification préexistante dev-dist/sw.js : empreintes précédentes inchangées. Aucun générateur, installation, nouveau poids ou traitement audio relancé dans ce complément.
 La dernière étape est la publication ciblée après revue/diff--check ; son SHA sera dans git log et le reçu externe resume-20261110-final-publication.json. Au réveil suivant, lire ces preuves avant de considérer DEL encore in_progress. Toutes les tâches fonctionnelles restantes recensées nécessitent des prérequis externes/humains ; les erreurs de quota anciennes ne justifient ni arrêt aveugle ni audits répétés.
 Publication du checkpoint : 2026-11-10T08:04:53.0842418+01:00
+
+## Checkpoint 26 — correction de langue restante dans les réglages
+
+Le dernier lot efbf1f3 est déjà publié, reçu vérifié ; index initial vide, seul dev-dist/sw.js préexistant sale. Aucun autre chat actif dans TESTv1. Nouvelle demande manuelle de poursuivre : revue restreinte de deux zones UI, sans réaudit ni traitement audio. Une incohérence réelle réglages EN→station suivante a été reproduite puis corrigée.
+Fichiers du lot : src/pages/PlayerPage.tsx ; tests/pages-presentation.test.tsx ; docs/recette-finalisation-2026-11-09.md ; docs/suivi-finalisation.md. getStopLabel déjà existant réutilisé, titre et lang cohérents ; même action de navigation. Nouvelle régression22×7, aucun suivant sur22 ;108/108 applicatifs,TypeScript/build0. Les14Python déjà réussis ne sont pas rejoués, aucun code Python/donnée changé.
+Navigateur : ancien titre FR sans lang confirmé ; nouveau titre EN02 avec lang=en, clic vers bonne fiche02. DE garde FR/langfr, Échap restitue le focus. Hors serveur4198 (arrêt code1/netstat0), rechargement puis lien activé au clavier sur390×844 : titre anglais et fiche02/récit anglais depuis cache, aucun débordement/alerte/consoleerror. Onglet fermé et viewport rétabli ; pas d’essai physique ni réseau Windows coupé prétendus. Build index-9OvswWNJ.js/PWA53/3805,10KiB.
+Données FR/EN et dev-dist/sw.js : SHA précédents inchangés ; aucun média/contenu/dépendance modifié. Prochaine reprise : lire git log et resume-20261110-next-label-publication.json pour réconcilier cette publication avant toute nouvelle écriture. Rester sur TESTv1/branche autorisée, pas de deuxième écrivain.
+Publication du checkpoint : 2026-11-10T08:26:19.4354219+01:00

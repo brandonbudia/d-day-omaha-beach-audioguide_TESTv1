@@ -65,6 +65,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const imageTitle = getStopLabel(currentStop, currentLang);
   const currentIndex = STOPS.findIndex((stop) => stop.id === currentStop.id);
   const nextStop = STOPS[currentIndex + 1];
+  const nextTitle = nextStop ? getStopLabel(nextStop, currentLang) : null;
   const resource = getMediaResource(currentStop.id, audioState.language);
   const transcript = useMemo(() => resolveTranscript(currentStop.id, audioState.language, resource), [currentStop.id, audioState.language, resource]);
   const selectTime = (seconds: number) => {
@@ -163,7 +164,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         </label>)}
         <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{t(audioState.isVoiceBoostActive ? 'reading_on' : 'reading_off', currentLang)}</button></div>
         <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p><TranscriptNotice transcript={transcript} language={currentLang} /></details>
-        {nextStop && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong>{nextStop.title}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
+        {nextStop && nextTitle && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong lang={nextTitle.language}>{nextTitle.text}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
       </dialog>
     </div>
   );
