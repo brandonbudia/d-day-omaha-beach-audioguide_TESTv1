@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 34 ; reprise de visite et cache audio vérifiés.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 35 ; langue du lien appliquée avant le chargement audio.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -65,13 +65,14 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
 | RESUME-01 | P1 | validated | Reprise proposée seulement pour une version audio compatible ; retour à la dernière fiche sinon. Test et recette navigateur réussis |
 | OFF-03 | P1 | validated | Les fichiers déjà vérifiés restent comptés après un échec réseau ; aucune requête pour les pistes factices testées |
-| QA-01 | P1 | validated | 118 tests applicatifs, TypeScript et build réussis. Reprise de l’écoute anglaise à 00:19 vérifiée dans le navigateur. Essais physiques à faire |
+| NAV-02 | P2 | validated | La langue du lien est prise en compte avant la première requête audio. Le lien anglais n’a demandé aucun MP3 français |
+| QA-01 | P1 | validated | 119 tests applicatifs, TypeScript et build réussis. Reprise, cache et langue initiale vérifiés. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | validated | Lots parcours et installation publiés, SHA distants fc83b08 et 6ba8745 confirmés |
+| DEL-01 | P1 | validated | Lots parcours, installation et reprise publiés, SHA distants fc83b08, 6ba8745 et abf4c89 confirmés |
 
-## Reprise : état du quatorzième lot
+## Reprise : état du quinzième lot
 
 Le checkpoint 32 corrige trois défauts observés en navigation et hors connexion. Les liens de fiche conservent la langue. L’arrêt d’un téléchargement reste disponible dans une autre langue. Les refus de lecture du cache sont classés comme erreurs de stockage. Les 115 tests applicatifs, TypeScript et le build ont réussi. La recette du douzième lot décrit la navigation et l’ouverture depuis le cache sur petit écran.
 
@@ -79,9 +80,11 @@ Le checkpoint 32 est publié avec le SHA `fc83b088ea06f22e60dab6813bc8439cf23d8f
 
 Le checkpoint 33 est publié : `6ba87455de1720428d0dc516abc1c48197526165`, confirmé sur TESTv1 dans `resume-20261110-install-publication.json`.
 
-Le checkpoint 34 corrige trois défauts de la reprise et des audios. Les 48 tests ciblés et les 118 tests applicatifs réussissent. TypeScript, build et contrôle du diff terminent avec le code 0. La [recette du quatorzième lot](recette-finalisation-2026-11-09.md#quatorzième-lot--reprise-de-visite-et-cache-audio) décrit les preuves et leurs limites. Pour réconcilier la publication, vérifier le commit `Fix visit resume and offline media state` et le reçu `resume-20261111-resume-offline-publication.json`.
+Le checkpoint 34 corrige trois défauts de la reprise et des audios. Les 48 tests ciblés et les 118 tests applicatifs réussissent. TypeScript, build et contrôle du diff terminent avec le code 0. La [recette du quatorzième lot](recette-finalisation-2026-11-09.md#quatorzième-lot--reprise-de-visite-et-cache-audio) décrit les preuves et leurs limites. Le lot est publié : `abf4c898f48994c5c014aabd85b22d8503cd3ec7`, SHA confirmé dans `resume-20261111-resume-offline-publication.json`.
 
-La trace révèle encore une requête FR01 avant EN01 sur une ouverture directe de l’accueil anglais. Vérifier séparément si la langue de l’URL peut être appliquée avant l’initialisation audio sans dégrader les reprises ni la navigation. Les autres actions restantes dépendent des validations ou ressources externes ci-dessous.
+Le checkpoint 35 supprime la requête audio française observée avant le premier chargement anglais. La langue de l’URL est appliquée avant l’initialisation audio ; les checkpoints et le traitement des changements d’adresse restent compatibles. 119 tests applicatifs, TypeScript et build réussis. Les preuves du navigateur et du serveur sont dans la [recette du quinzième lot](recette-finalisation-2026-11-09.md#quinzième-lot--langue-du-lien-et-première-requête-audio). Pour réconcilier la publication, vérifier le commit `Use link language before preloading audio` et le reçu `resume-20261111-initial-language-publication.json`.
+
+Prochaine action : reprendre une validation externe dès réception d’une preuve ou d’une ressource (écoute des omissions, droits, vrais enregistrements des cinq langues, QR ou appareil physique). Les défauts reproduits et corrigeables de cette passe sont traités ; ne pas relancer les mêmes traitements audio ni rejouer les recettes terminées sans changement.
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
@@ -427,3 +430,5 @@ Les seules modifications de ce lot concernent l’installation, son scénario de
 Publication du checkpoint : 2026-11-10T23:39:47.7119956+01:00
 
 Publication du checkpoint : 2026-11-11T00:05:59.0053326+01:00
+
+Publication du checkpoint : 2026-11-11T00:10:36.5375024+01:00

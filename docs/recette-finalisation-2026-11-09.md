@@ -326,3 +326,13 @@ Quatre scénarios échouaient avant correction. Après correction, les 48 tests 
 Sur le build `index-BvAJF-X0.js`, le retour à la dernière fiche ouvre `/stop/15?hl=en`. En allemand, le lecteur affiche l’indisponibilité et désactive la lecture ; la trace du serveur ne contient que des requêtes FR et EN. En revenant à l’anglais, la piste 01 se lit et se met en pause. L’accueil propose « Continue listening — piece 01 · 00:19 » et le clic reprend à 19,12 secondes. Aucune erreur de console relevée. L’onglet et le serveur de test sont fermés. Il ne s’agit pas d’un nouvel essai hors connexion sur appareil physique.
 
 Preuves externes : `resume-20261111-listening-browser.json`, `resume-20261111-listening-resume.jpg` et `resume-20261111-listening-http.txt`. Aucun audio, récit, minutage ou visuel modifié. Le fichier préexistant `dev-dist/sw.js` est exclu.
+
+## Quinzième lot — langue du lien et première requête audio
+
+Le lot reprise et cache est publié : `abf4c898f48994c5c014aabd85b22d8503cd3ec7`, SHA confirmé sur TESTv1.
+
+Sur une première ouverture de `/?hl=en`, le build précédent demandait FR01 avant EN01. Le lecteur applique désormais une langue valide du lien avant d’attribuer sa première source. Si la langue diffère de la préférence enregistrée, la station est conservée et le temps repart à zéro. Le point de reprise de l’ancienne narration reste intact. Une langue invalide est ignorée. Les changements d’adresse après ouverture restent traités par le routeur existant.
+
+Le test ciblé échoue avant correction : la première source est FR02 au lieu d’EN02. Après correction, les 119 tests applicatifs, TypeScript et le build réussissent. Sur l’origine locale fraîche `http://127.0.0.1:4324`, le build `index-CUY2PPDY.js` affiche l’anglais dès l’ouverture. Le parcours propose les liens anglais ; après retour et rechargement de `/`, l’anglais est toujours sélectionné. Trois requêtes audio EN01 et aucune FR01 apparaissent dans la trace de cette séquence. Aucune erreur de console relevée. Cela valide le choix initial de la langue, sans mesure de performance sur téléphone.
+
+Preuves externes : `resume-20261111-initial-language-browser.json` et `resume-20261111-initial-language-http.txt`. Les onglets et les serveurs de recette sont fermés. Les narrations, leurs minutages et les ressources visuelles sont inchangés.

@@ -67,8 +67,14 @@ class GlobalAudioPlayer {
     const lastPlayback = visitorStore.getSnapshot().lastPlayback;
     const savedPlayback = lastPlayback?.language === savedLang ? getResumablePlayback(lastPlayback) : undefined;
     const initialStop = STOPS.find((stop) => stop.id === savedPlayback?.id) ?? STOPS[0];
-    const initialResource = getMediaResource(initialStop.id, savedLang);
-    const initialPosition = savedPlayback?.positionSeconds ?? 0;
+    // A direct link can select a language before the media element starts preloading.
+    const linkLanguage = new URLSearchParams(typeof window === 'undefined' ? undefined : window.location?.search).get('hl');
+    const initialLang = LANGUAGES.find((language) => language.code === linkLanguage)?.code ?? savedLang;
+    const initialResource = getMediaResource(initialStop.id, initialLang);
+    const initialPosition = initialLang === savedLang ? savedPlayback?.positionSeconds ?? 0 : 0;
+    if (initialLang !== savedLang) {
+      try { localStorage.setItem('dday_lang', initialLang); } catch { /* Keep the link's language for this session. */ }
+    }
 
     this.state = {
       currentStopId: initialStop.id,
@@ -77,7 +83,7 @@ class GlobalAudioPlayer {
       duration: initialResource.status === 'unavailable' ? 0 : initialResource.durationSeconds,
       playbackRate: savedRate,
       isVoiceBoostActive: savedVoiceBoost,
-      language: savedLang,
+      language: initialLang,
       error: null,
     };
     this.pendingSeek = initialPosition > 0 ? initialPosition : null;

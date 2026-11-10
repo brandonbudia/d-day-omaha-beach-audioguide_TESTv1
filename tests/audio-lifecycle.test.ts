@@ -25,6 +25,7 @@ class MediaMock extends EventTarget {
   playCalls = 0;
   pauseCalls = 0;
   loadCalls = 0;
+  sourceAssignments: string[] = [];
   private source = '';
   private tasks: { type: string; action?: () => void }[] = [];
   private pendingPlays: ReturnType<typeof deferred>[] = [];
@@ -36,6 +37,7 @@ class MediaMock extends EventTarget {
   get src() { return this.source; }
   set src(value: string) {
     this.source = value;
+    this.sourceAssignments.push(value);
     this.currentTime = 0;
     this.paused = true;
     this.ended = false;
@@ -115,7 +117,7 @@ const storageMock = {
   setItem: (key: string, value: string) => { storedValues.set(key, value); storageWrites += 1; },
 };
 
-async function fixture(name: string, seed: Record<string, string> = {}) {
+async function fixture(name: string, seed: Record<string, string> = {}, search = '') {
   storedValues.clear();
   storedValues.set('dday_lang', 'fr');
   Object.entries(seed).forEach(([key, value]) => storedValues.set(key, value));
@@ -142,6 +144,7 @@ async function fixture(name: string, seed: Record<string, string> = {}) {
   Object.defineProperties(globalThis, {
     Audio: { configurable: true, value: class { constructor() { instances += 1; return media; } } },
     window: { configurable: true, value: {
+      location: { search },
       requestAnimationFrame: (callback: FrameRequestCallback) => { frames.set(++frameId, callback); return frameId; },
       cancelAnimationFrame: (id: number) => frames.delete(id),
       AudioContext: class { constructor() { return context; } },
@@ -409,7 +412,7 @@ test('played checkpoints are throttled independently of animation frames and pau
 test('restoring an exact audio checkpoint stays paused and cannot replace active playback', async () => {
   const resource = getMediaResource('02', 'fr');
   const seed = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '02', language: 'fr', audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 24.123, updatedAt: 100 } });
-  const { media, player, visitorStore, writes, start } = await fixture('checkpoint-restore', { dday_visitor_state_v2: seed });
+  const { media, player, visitorStore, writes, start } = await fixture('checkpoint-restore', { dday_visitor_state_v2: seed }, '?hl=invalid');
   assert.equal(player.getState().currentStopId, '02');
   assert.equal(player.getState().currentTime, 24.123);
   assert.equal(media.playCalls, 0);
@@ -427,6 +430,21 @@ test('restoring an exact audio checkpoint stays paused and cannot replace active
   assert.equal(player.getState().currentStopId, '02');
   player.pause();
   media.flush();
+});
+
+test('a direct language link selects its first audio source without reusing the previous language position', async () => {
+  const resource = getMediaResource('02', 'fr');
+  const seed = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '02', language: 'fr', audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 24.123, updatedAt: 100 } });
+  const { media, player, visitorStore, writes } = await fixture('startup-link-language', { dday_visitor_state_v2: seed }, '?hl=en');
+
+  assert.deepEqual(media.sourceAssignments, [getMediaResource('02', 'en').url]);
+  assert.equal(player.getState().language, 'en');
+  assert.equal(player.getState().currentStopId, '02');
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(media.playCalls, 0);
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 24.123);
+  assert.equal(storedValues.get('dday_lang'), 'en');
+  assert.equal(writes(), 1, 'only the language preference is persisted');
 });
 
 test('a changed audio hash cannot restore a stale position and unavailable recordings cannot start', async () => {
