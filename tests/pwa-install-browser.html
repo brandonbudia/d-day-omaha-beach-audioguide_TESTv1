@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Installation prompt regression</title>
+</head>
+<body>
+  <h1>Installation prompt regression</h1>
+  <p>The browser events are simulated. This test does not install the app.</p>
+  <button id="run" disabled>Run installation checks</button>
+  <pre id="result" role="status">Loading…</pre>
+  <div id="probe"></div>
+  <script type="module">
+    import { act, createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import { usePWAInstall } from '/src/hooks/usePWAInstall.ts';
+
+    globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+    let installation;
+    function Probe() {
+      installation = usePWAInstall();
+      return null;
+    }
+
+    const root = createRoot(document.querySelector('#probe'));
+    await act(() => root.render(createElement(Probe)));
+    const run = document.querySelector('#run');
+    const result = document.querySelector('#result');
+    result.textContent = 'Ready.';
+    run.disabled = false;
+
+    async function offer(outcome, rejectPrompt = false) {
+      let calls = 0;
+      const event = Object.assign(new Event('beforeinstallprompt', { cancelable: true }), {
+        userChoice: Promise.resolve({ outcome, platform: 'test' }),
+        async prompt() {
+          calls++;
+          if (calls > 1 || rejectPrompt) throw new DOMException('Prompt unavailable', 'InvalidStateError');
+        },
+      });
+      await act(() => { window.dispatchEvent(event); });
+      return () => calls;
+    }
+
+    run.addEventListener('click', async () => {
+      run.disabled = true;
+      try {
+        const dismissedCalls = await offer('dismissed');
+        let dismissedResults;
+        await act(async () => {
+          const install = installation.install;
+          dismissedResults = await Promise.allSettled([install(), install()]);
+        });
+        const refused = await offer('dismissed', true);
+        let refusedResult;
+        await act(async () => {
+          [refusedResult] = await Promise.allSettled([installation.install()]);
+        });
+        const hiddenAfterFailure = !installation.isInstallable;
+        const accepted = await offer('accepted');
+        let acceptedResult;
+        await act(async () => { acceptedResult = await installation.install(); });
+        const passed = dismissedCalls() === 1
+          && dismissedResults.every((item) => item.status === 'fulfilled' && item.value === false)
+          && refused() === 1 && refusedResult.status === 'fulfilled' && refusedResult.value === false
+          && hiddenAfterFailure && accepted() === 1 && acceptedResult === true
+          && installation.isInstalled && !installation.isInstallable;
+        result.textContent = [
+          passed ? 'PASS' : 'FAIL',
+          `Dismissed request calls: ${dismissedCalls()}`,
+          `Dismissed request results: ${dismissedResults.map((item) => item.status).join(', ')}`,
+          `Browser rejection handled: ${refusedResult.status === 'fulfilled'}`,
+          `Used request hidden after rejection: ${hiddenAfterFailure}`,
+          `Fresh request accepted: ${acceptedResult === true}`,
+        ].join('\n');
+      } catch (error) {
+        result.textContent = `FAIL: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

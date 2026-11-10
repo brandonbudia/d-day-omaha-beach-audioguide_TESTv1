@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -6,7 +6,8 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 export function usePWAInstall() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const deferredPrompt = useRef<BeforeInstallPromptEvent | null>(null);
+  const [isInstallable, setIsInstallable] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
 
@@ -24,12 +25,14 @@ export function usePWAInstall() {
 
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
+      deferredPrompt.current = e as BeforeInstallPromptEvent;
+      setIsInstallable(true);
     };
 
     const handleAppInstalled = () => {
       setIsInstalled(true);
-      setDeferredPrompt(null);
+      deferredPrompt.current = null;
+      setIsInstallable(false);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -42,21 +45,32 @@ export function usePWAInstall() {
   }, []);
 
   const install = async () => {
-    if (!deferredPrompt) return false;
-    await deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
+    const request = deferredPrompt.current;
+    if (!request) return false;
+
+    // Claim the one-use request before awaiting the browser's response.
+    deferredPrompt.current = null;
+    setIsInstallable(false);
+
+    try {
+      await request.prompt();
+      const { outcome } = await request.userChoice;
+      if (outcome !== 'accepted') return false;
       setIsInstalled(true);
-      setDeferredPrompt(null);
+      deferredPrompt.current = null;
+      setIsInstallable(false);
       return true;
+    } catch {
+      return false;
     }
-    return false;
   };
 
   return {
-    isInstallable: !!deferredPrompt,
+    isInstallable,
     isInstalled,
     isIOS,
     install,
   };
 }
+
+export type PWAInstallation = ReturnType<typeof usePWAInstall>;

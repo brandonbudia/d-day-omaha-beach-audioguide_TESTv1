@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 32 ; phase liens de fiche et téléchargement vérifiés.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 33 ; phase installation et navigation vérifiées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,23 +61,26 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
+| PWA-01 | P1 | validated | Demande native consommée une fois. Refus, rejet et nouvelle demande testés avec événements simulés |
 | OFF-01 | P1 | blocked-human | Périmètre hors connexion des galeries/plans distants ; copies locales bloquées par droits |
-| QA-01 | P1 | validated | 115 tests applicatifs, TypeScript et build réussis. Liens anglais vérifiés sur petit écran depuis le cache. Essais physiques à faire |
+| QA-01 | P1 | validated | 115 tests applicatifs, TypeScript et build réussis. Navigation, cache et demande d’installation simulée vérifiés. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
-| DEL-01 | P1 | validated | daae6d4 réglages et ed118fa Designed publiés/SHA distants confirmés ; reçus externes conservés. Aucun lot applicatif à republier |
+| DEL-01 | P1 | validated | Lot parcours et téléchargements publié avec SHA distant fc83b08. Reçu du lot installation à réconcilier lors de la reprise |
 
 ## Reprise : réconcilier la publication, puis validations externes
 
 Le checkpoint 32 corrige trois défauts observés en navigation et hors connexion. Les liens de fiche conservent la langue. L’arrêt d’un téléchargement reste disponible dans une autre langue. Les refus de lecture du cache sont classés comme erreurs de stockage. Les 115 tests applicatifs, TypeScript et le build ont réussi. La recette du douzième lot décrit la navigation et l’ouverture depuis le cache sur petit écran.
 
-Pour la publication du checkpoint 32, vérifier le commit `Preserve exhibit link language and offline download controls` et le reçu `resume-20261110-visitor-links-publication.json` avant toute nouvelle écriture. Le dépôt TESTv1 et la branche `codex/overnight-audio-highlight` sont les seules cibles. Les vérifications éditoriales et les ressources externes manquantes restent identifiées ci-dessous.
+Le checkpoint 32 est publié avec le SHA `fc83b088ea06f22e60dab6813bc8439cf23d8f8d`, confirmé sur TESTv1. Le checkpoint 33 partage la demande d’installation entre l’en-tête et le guide, empêche le double appel et gère le rejet. Le scénario simulé a échoué avant la correction et réussi après. La recette du treizième lot décrit les preuves et leurs limites.
+
+Pour réconcilier la publication du checkpoint 33, vérifier le commit `Consume each PWA install request once` et le reçu `resume-20261110-install-publication.json`. Les tests techniques sont terminés. Les prochaines tâches recensées dépendent des validations ou ressources externes ci-dessous.
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.
-Base applicative publiée actuelle :ed118fa5e8e98ef4906363d515d9bc5cf4f3176a. Reçus externes resume-20261110-settings-padding-publication.json (daae6d4837dd56db90ca0470eb7a3166ef8ad3ff) et resume-20261110-designed-publication.json :push0 et SHA distants confirmés. EN22 précédent9ef35ab déjà publié. Les publications de ces lots antérieurs sont réconciliées.
-Dernier état vérifié :112tests app,TypeScript/build0 ;14Python du lot EN22 inchangés,non relancés pour ces seuls changements React/TypeScript. Réglages intérieur/fond extérieur/croix/Échap/focus/cache ; Designed/by/the/retour/cache390. Aucun serveur/modèle actif, pas d’écoute humaine intégrale ni téléphone physique prétendus. EN15 :314/332,EN22 :337/341,EN6614/7022 (408 omissions),FR7233/7276 (43),total451. Source EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 ; dev-dist/sw.js préexistant SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f intact/exclu.
+Base applicative du checkpoint 31 : ed118fa5e8e98ef4906363d515d9bc5cf4f3176a. Reçus externes resume-20261110-settings-padding-publication.json (daae6d4837dd56db90ca0470eb7a3166ef8ad3ff) et resume-20261110-designed-publication.json :push0 et SHA distants confirmés. EN22 précédent9ef35ab déjà publié. Les publications de ces lots antérieurs sont réconciliées.
+État au checkpoint 31 : 112 tests app,TypeScript/build0 ;14Python du lot EN22 inchangés,non relancés pour ces seuls changements React/TypeScript. Réglages intérieur/fond extérieur/croix/Échap/focus/cache ; Designed/by/the/retour/cache390. Aucun serveur/modèle actif, pas d’écoute humaine intégrale ni téléphone physique prétendus. EN15 :314/332,EN22 :337/341,EN6614/7022 (408 omissions),FR7233/7276 (43),total451. Source EN769f39674af35474c40ccd2fb6ae914077837b6099eb88e772504cee42761920 ; FR00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7 ; dev-dist/sw.js préexistant SHA61f41ed679fdc49890993c51e45d6ad2b635216f05a63b6a0478e8d8660bbe3f intact/exclu.
 Prochaine action utile :exploiter un prérequis réellement nouveau, parmi écoute ciblée des omissions/frontières (liste humaine), validation musée des droits/associations/faits, sources éditoriales, vrais audios/textes des cinq langues, appareils physiques et hébergement/QR. La mise à jour des dépendances reste soumise à l’accord déjà requis. Sans nouvelle preuve/ressource/autorisation, aucun autre correctif justifié n’est identifié dans les tâches recensées ; ne pas recréer des travaux pour consommer le quota. Ce constat n’est pas une ancienne limitation de quota et ne déclare pas les validations humaines accomplies.
 Rejets déjà établis et à réutiliser :butEN22 (26ms seulement de recouvrement),radioEN12 (links CTC0,633/minchar0,045),andEN14 (6ms de conflit puis voisin0,762). Aucun retraitement identique ni interpolation ; ne pas forcer ces mots. Dès réception d’un retour utilisateur/musée exploitable, reprendre la tâche concernée directement et préserver tous les acquis.
 
@@ -405,3 +408,14 @@ Reprise sur `01085d1`. Trois régressions corrigées et testées. Les liens de f
 Vérifier le reçu de publication du checkpoint 32 au prochain passage. Les transcriptions et ressources ne font pas partie de ce lot. Les validations humaines et les ressources manquantes conservent leur statut. `dev-dist/sw.js` reste exclu.
 
 Publication du checkpoint : 2026-11-10T23:30:19.7239487+01:00
+
+
+## Checkpoint 33 — demande d’installation vérifiée
+
+Le lot précédent est publié sur TESTv1 et son SHA distant a été confirmé. Le navigateur fournit une demande à usage unique. Le site partage cette demande et la consomme au premier déclenchement. Avant correction, le scénario simulé comptait deux appels et un rejet non géré. Après correction, il compte un seul appel, gère le rejet et accepte une nouvelle demande.
+
+115 tests applicatifs, TypeScript et build réussis. L’accueil et le parcours anglais ont été vérifiés sur le build de production. L’essai d’installation utilise des événements simulés. Les essais sur appareils physiques et le QR imprimé restent à faire. Aucun serveur de test actif.
+
+Les seules modifications de ce lot concernent l’installation, son scénario de régression et le suivi. Le reçu de publication permet de reprendre sans rejouer les tests. Les contenus, droits et fichiers manquants sont listés dans les validations humaines. Le fichier préexistant `dev-dist/sw.js` est exclu.
+
+Publication du checkpoint : 2026-11-10T23:39:47.7119956+01:00

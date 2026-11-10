@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Download, Share, PlusSquare, X } from 'lucide-react';
-import { usePWAInstall } from '../hooks/usePWAInstall';
+import type { PWAInstallation } from '../hooks/usePWAInstall';
 import { t } from '../i18n/translations';
 import { experienceText as x } from '../i18n/experienceLabels';
 import { useAudioSelector } from '../audio/useAudioSelector';
 
-export const PWAInstallPrompt: React.FC<{ isOpen?: boolean; onClose?: () => void }> = ({ isOpen = false, onClose }) => {
-  const { isInstallable, isIOS, install } = usePWAInstall();
+export const PWAInstallPrompt: React.FC<{ installation: PWAInstallation; isOpen?: boolean; onClose?: () => void }> = ({ installation, isOpen = false, onClose }) => {
+  const { isInstallable, isIOS, install } = installation;
   const currentLang = useAudioSelector((state) => state.language);
   const dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {

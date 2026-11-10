@@ -298,3 +298,17 @@ Les trois régressions ont échoué avant la correction. Après correction, les 
 Le navigateur a chargé `index-CkYPxnY6.js`. Le clic sur la carte 15 a ouvert `/stop/15?hl=en`. La fiche suivante et le retour ont conservé `hl=en`. Une ouverture française suivie du lien anglais a sélectionné l’anglais. `/stop/15` reste valide. Avec le serveur arrêté et zéro socket en écoute sur le port 4198, le lien anglais a chargé la fiche depuis le cache. La fenêtre de 390 × 844 px présentait une largeur utile et une largeur défilable de 380 px, sans débordement horizontal ni erreur de console. Les refus de cache et le changement de langue pendant un téléchargement sont couverts par les tests automatisés en mémoire.
 
 Les journaux `resume-20261110-visitor-links-tests.txt`, `resume-20261110-visitor-links-build.txt` et `resume-20261110-visitor-links-browser.json` sont conservés hors dépôt avec la capture `resume-20261110-visitor-links-mobile.jpg`. Le fichier préexistant `dev-dist/sw.js` est exclu du lot. La validation du QR physique, les droits des ressources externes et les écoutes humaines restent dans le suivi.
+
+## Treizième lot — demande d’installation à usage unique
+
+Le lot précédent est publié. Le SHA distant de TESTv1 correspond à `fc83b088ea06f22e60dab6813bc8439cf23d8f8d`. Le reçu est conservé dans `resume-20261110-visitor-links-publication.json`.
+
+L’en-tête et le guide partagent une seule demande d’installation. Le premier appel réserve la demande avant de solliciter le navigateur. Une nouvelle demande peut être reçue après un refus. Un rejet du navigateur termine l’action proprement. Le guide iOS reste accessible selon les conditions existantes, et le bouton d’installation est masqué lorsque l’application est installée. [Documentation Chromium](https://web.dev/articles/customize-install)
+
+Le scénario `tests/pwa-install-browser.html` utilise les véritables fonctions React avec des événements simulés. Avant correction, deux appels rapides déclenchaient deux appels natifs simulés et un rejet. Un rejet simulé laissait aussi la demande disponible. Après correction, le scénario signale `PASS`. Il compte un appel, deux réponses résolues après le refus, un rejet géré et l’acceptation d’une demande fraîche. Aucun appareil n’a installé l’application pendant ce test.
+
+Pour relancer le scénario, ouvrir `/tests/pwa-install-browser.html` sur un serveur Vite local lancé avec `configFile: false` et `appType: 'mpa'`. Ce mode évite le service worker de développement. Utiliser un port sans cache de l’application. Appuyer sur « Run installation checks ».
+
+115 tests applicatifs, TypeScript et build réussis. Le build `index-B1LYL0LI.js` a été ouvert dans le navigateur. L’accueil, le parcours anglais et l’ouverture de `/stop/15?hl=en` ont fonctionné sans erreur de console. Le scénario d’installation ne remplace pas une installation réelle sur un téléphone.
+
+Preuves externes `resume-20261110-install-browser.json`, `resume-20261110-install-production-smoke.json`, `resume-20261110-install-tests.txt` et `resume-20261110-install-build.txt`. Les serveurs locaux ont été arrêtés. La vérification du QR physique et les validations des contenus et des droits restent à faire.

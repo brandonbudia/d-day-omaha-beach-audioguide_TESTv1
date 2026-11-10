@@ -11,6 +11,7 @@ import { useAudioSelector } from './audio/useAudioSelector';
 import { formatTime } from './audio/formatTime';
 import { LANGUAGES, t } from './i18n/translations';
 import { useOnlineStatus } from './hooks/useOnlineStatus';
+import { usePWAInstall } from './hooks/usePWAInstall';
 import { STOPS } from './data/stops';
 import { useVisitorState } from './visit/useVisitorState';
 import { OfflineManager } from './components/OfflineManager';
@@ -28,6 +29,7 @@ export default function App() {
   const visit = useVisitorState();
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const isOnline = useOnlineStatus();
+  const installation = usePWAInstall();
 
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   useEffect(() => {
@@ -112,7 +114,7 @@ export default function App() {
 
   return (
     <div className="museum-app min-h-screen flex flex-col">
-      <Header title={titles[activeTab]} onGoHome={goHome} onOpenInstallGuide={() => setIsInstallModalOpen(true)} />
+      <Header title={titles[activeTab]} installation={installation} onGoHome={goHome} onOpenInstallGuide={() => setIsInstallModalOpen(true)} />
       <main id="main-content" tabIndex={-1} aria-label={titles[activeTab]} className="app-main flex-1 relative w-full px-4 max-w-3xl mx-auto" style={{ paddingTop: 'calc(var(--museum-header-height, 81px) + 1rem)', paddingBottom: 'calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px) + 1.5rem)' }}>
         {activeTab === 'accueil' && <div className="space-y-5">
           <WelcomePage key={homeRevision} onStartTour={() => go('parcours')} currentLang={language} onLanguageChange={(lang) => {
@@ -129,7 +131,7 @@ export default function App() {
       </main>
       {activeTab !== 'lecteur' && <PersistentPlayerBar onOpenFullPlayer={() => go('lecteur')} />}
       <BottomNav currentTab={activeTab} onSelectTab={(tab) => go(tab)} />
-      <PWAInstallPrompt isOpen={isInstallModalOpen} onClose={() => setIsInstallModalOpen(false)} />
+      <PWAInstallPrompt installation={installation} isOpen={isInstallModalOpen} onClose={() => setIsInstallModalOpen(false)} />
       {!isOnline && <div className="museum-network-status" role="status">{x('networkOffline', language)}</div>}
     </div>
   );

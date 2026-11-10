@@ -3,19 +3,20 @@ import { Contrast, Download, Moon, Sun, Type, UserRound } from 'lucide-react';
 import { t } from '../i18n/translations';
 import { visualLabel } from '../i18n/visualLabels';
 import { audioPlayer } from '../audio/audioStore';
-import { usePWAInstall } from '../hooks/usePWAInstall';
+import type { PWAInstallation } from '../hooks/usePWAInstall';
 import { useInterfacePreferences } from '../hooks/useInterfacePreferences';
 import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
   title: string;
+  installation: PWAInstallation;
   onOpenSettings?: () => void;
   onOpenInstallGuide?: () => void;
   onGoHome?: () => void;
   onOpenProfile?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoHome, onOpenProfile }) => {
+export const Header: React.FC<HeaderProps> = ({ title, installation, onOpenInstallGuide, onGoHome, onOpenProfile }) => {
   const { preferences, toggle } = useInterfacePreferences();
   const isHighContrast = preferences.highContrast;
   const isLargeText = preferences.largeText;
@@ -28,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoH
     }
     return document.documentElement.classList.contains('light-mode');
   });
-  const { isInstallable, isIOS, install } = usePWAInstall();
+  const { isInstallable, isInstalled, isIOS, install } = installation;
   const currentLang = audioPlayer.getState().language;
 
   React.useEffect(() => {
@@ -79,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ title, onOpenInstallGuide, onGoH
           <button type="button" onClick={() => toggle('largeText')} className="museum-icon-button" aria-label={t('font_size', currentLang)} title={t('font_size', currentLang)} aria-pressed={isLargeText}>
             <Type size={21} aria-hidden="true" />
           </button>
-          {(isInstallable || isIOS) ? (
+          {!isInstalled && (isInstallable || isIOS) ? (
             <button type="button" className="museum-icon-button museum-install-button" title={t('pwa_install_btn', currentLang)} aria-label={t('pwa_install_btn', currentLang)} onClick={() => {
               if (isInstallable) void install();
               else onOpenInstallGuide?.();
