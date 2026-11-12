@@ -70,6 +70,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const transcript = useMemo(() => resolveTranscript(currentStop.id, audioState.language, resource), [currentStop.id, audioState.language, resource]);
   const followsPhrases = transcript.mode === 'phrase-synchronized';
   const showsFollowingHelp = followsPhrases || audioState.language === 'fr' || audioState.language === 'en';
+  const colorAssistanceHint = followsPhrases ? 'reading_phrase_color_assistance_hint'
+    : showsFollowingHelp ? 'reading_color_assistance_hint' : null;
   const selectTime = (seconds: number) => {
     audioPlayer.seek(seconds);
     if (!audioState.isPlaying) void audioPlayer.play();
@@ -169,7 +171,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         </aside>}
         <div className="player-setting-row"><span>{t('reading_spacing', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={preferences.wideSpacing} onClick={() => toggle('wideSpacing')}>{t(preferences.wideSpacing ? 'reading_spacing_wide' : 'reading_spacing_normal', currentLang)}</button></div>
         {([
-          ['colorAssistance', 'reading_color_assistance', 'reading_color_assistance_hint'],
+          ['colorAssistance', 'reading_color_assistance', colorAssistanceHint],
           ['dyslexicFont', 'reading_dyslexic_font', 'reading_dyslexic_hint'],
           ['reducedMotion', 'reading_reduce_motion', null],
         ] as const).map(([key, label, hint]) => <label className="player-setting-row player-reading-option" key={key}>

@@ -6,7 +6,8 @@
   <title>Sentence following browser test</title>
   <style>
     body { max-width: 40rem; margin: 1rem auto; padding: 0 1rem; }
-    #probe .synced-transcript { height: 19rem; }
+    #probe { height: 19rem; }
+    #probe button { transition: none; }
     #result { white-space: pre-wrap; }
   </style>
 </head>
@@ -15,7 +16,7 @@
   <p>Test phrases and a simulated clock. This page uses no museum audio or translation.</p>
   <button id="run" disabled>Run sentence checks</button>
   <pre id="result" role="status">Loading…</pre>
-  <div id="probe"></div>
+  <div id="probe" class="player-transcript-content"></div>
   <script type="module">
     import { act, createElement } from 'react';
     import { createRoot } from 'react-dom/client';
@@ -51,6 +52,7 @@
     run.addEventListener('click', async () => {
       run.disabled = true;
       globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+      probe.dataset.colorAssistance = 'false';
       selected = undefined;
       const checks = [];
       const check = (condition, message) => {
@@ -64,6 +66,13 @@
         check(probe.querySelectorAll('.transcript-phrase-button').length === 12 && !probe.querySelector('.transcript-word'), 'One button per sentence');
         await act(() => setClock(20.5));
         check(current() === 'Testsatz 11.' && viewport().scrollTop > 0, 'The current sentence is highlighted and scrolled into view');
+        const active = probe.querySelector('button[aria-current="true"]');
+        const regularColor = getComputedStyle(active).color;
+        check(getComputedStyle(active).textDecorationLine === 'none', 'The default sentence highlight keeps the text clear');
+        probe.dataset.colorAssistance = 'true';
+        check(getComputedStyle(active).textDecorationLine === 'underline' && getComputedStyle(active).color !== regularColor,
+          'Colour vision support changes the sentence colour and adds an underline');
+        check(getComputedStyle(probe.querySelector('.transcript-phrase-button')).textDecorationLine === 'none', 'The underline is reserved for the current sentence');
         await act(() => viewport().dispatchEvent(new WheelEvent('wheel', { bubbles: true })));
         const before = viewport().scrollTop;
         await act(() => setClock(.5));

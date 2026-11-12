@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 36 ; suivi par phrase prêt pour les futures narrations.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 37 ; suivi par phrase et aide visuelle prêts pour les futures narrations.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -93,7 +93,11 @@ Le [registre de couverture](couverture-synchronisation.md) contient le contrôle
 
 Les 122 tests applicatifs, TypeScript et le build `index-CdUkYu_K.js` ont réussi. `tests/phrase-follow-browser.html` a vérifié le surlignage, les silences, le défilement automatique, son arrêt manuel, la reprise et le clic à la borne exacte avec une horloge simulée. Le build a confirmé le lecteur allemand indisponible et la lecture par clic sur un mot en français et en anglais. Aucune erreur de console lors de la recette finale. Les serveurs sont fermés. Preuve externe `phrase-follow-final-browser.json`.
 
-Pour vérifier la publication du lot, rapprocher le commit `Add sentence following for future narration languages` et le reçu `phrase-follow-publication.json`.
+Le lot est publié sous `46bfd3d12bd5973ebbe0e0af872ad8cfbcb5c038`, SHA distant confirmé dans `phrase-follow-publication.json`.
+
+Le checkpoint 37 applique le réglage d’aide aux couleurs à la phrase active. Avec ce réglage, la phrase change de couleur et est soulignée. La fixture a vérifié les styles dans le navigateur et le maintien du défilement, de sa suspension et du déplacement par clic. Le navigateur n’a signalé aucune erreur. Les 22 tests ciblés, TypeScript et le build `index-CDtyXwcx.js` ont réussi. Le rapport FR/EN concorde encore avec les 44 lignes et les deux totaux de référence. Preuve externe `phrase-color-browser.json`.
+
+Pour vérifier la publication du lot, rapprocher le commit `Apply colour vision support to sentence following` et le reçu `phrase-color-publication.json`.
 
 Prochaine action : reprendre une validation externe dès réception d’une preuve ou d’une ressource (écoute des omissions, droits, vrais enregistrements des cinq langues, QR ou appareil physique). Les défauts reproduits et corrigeables de cette passe sont traités ; ne pas relancer les mêmes traitements audio ni rejouer les recettes terminées sans changement.
 
