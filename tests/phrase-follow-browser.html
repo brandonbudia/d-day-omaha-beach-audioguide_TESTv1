@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentence following browser test</title>
+  <style>
+    body { max-width: 40rem; margin: 1rem auto; padding: 0 1rem; }
+    #probe .synced-transcript { height: 19rem; }
+    #result { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Sentence following browser test</h1>
+  <p>Test phrases and a simulated clock. This page uses no museum audio or translation.</p>
+  <button id="run" disabled>Run sentence checks</button>
+  <pre id="result" role="status">Loading…</pre>
+  <div id="probe"></div>
+  <script type="module">
+    import { act, createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import { SyncedTranscript } from '/src/components/SyncedTranscript.tsx';
+    import { resolveTranscript } from '/src/data/transcripts.ts';
+    import '/src/index.css';
+
+    const audio = { id: '01', language: 'de', sha256: 'a'.repeat(64), status: 'ready', durationSeconds: 24 };
+    const segments = Array.from({ length: 12 }, (_, index) => ({
+      text: `Testsatz ${index + 1}.`, startSeconds: index * 2 + .25, endSeconds: index * 2 + 1.25,
+    }));
+    const record = {
+      id: audio.id, language: audio.language, audioSha256: audio.sha256, durationSeconds: audio.durationSeconds,
+      status: 'aligned', segments, referenceOnlyParagraphs: [],
+      provenance: { source: 'fixture', verification: 'test-only', humanListeningReviewed: false, issues: [] },
+    };
+    const transcript = resolveTranscript(audio.id, audio.language, audio, { de: { '01': record } });
+    const probe = document.querySelector('#probe');
+    const root = createRoot(probe);
+    const result = document.querySelector('#result');
+    const run = document.querySelector('#run');
+    const current = () => probe.querySelector('button[aria-current="true"]')?.textContent ?? null;
+    const viewport = () => probe.querySelector('.transcript-viewport');
+    let selected;
+    const setClock = (currentTime) => root.render(createElement(SyncedTranscript, {
+      segments: transcript.segments, currentTime, textSize: 22, isPlaying: true, reducedMotion: true,
+      language: audio.language, uiLanguage: 'en', phraseOnly: transcript.mode === 'phrase-synchronized',
+      onSelectPhrase(seconds) { selected = seconds; setClock(seconds); },
+    }));
+    run.disabled = false;
+    result.textContent = 'Ready.';
+
+    run.addEventListener('click', async () => {
+      run.disabled = true;
+      globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+      selected = undefined;
+      const checks = [];
+      const check = (condition, message) => {
+        if (!condition) throw new Error(message);
+        checks.push(message);
+      };
+      try {
+        await act(() => setClock(0));
+        check(transcript.mode === 'phrase-synchronized', 'The resolver accepted the test phrases');
+        check(current() === null, 'No highlight before the first sentence');
+        check(probe.querySelectorAll('.transcript-phrase-button').length === 12 && !probe.querySelector('.transcript-word'), 'One button per sentence');
+        await act(() => setClock(20.5));
+        check(current() === 'Testsatz 11.' && viewport().scrollTop > 0, 'The current sentence is highlighted and scrolled into view');
+        await act(() => viewport().dispatchEvent(new WheelEvent('wheel', { bubbles: true })));
+        const before = viewport().scrollTop;
+        await act(() => setClock(.5));
+        check(current() === 'Testsatz 1.' && viewport().scrollTop === before, 'Manual scrolling suspends following without losing the highlight');
+        await act(() => probe.querySelector('.transcript-resume').click());
+        check(viewport().scrollTop < before, 'Resume following brings the current sentence into view');
+        await act(() => probe.querySelectorAll('.transcript-phrase-button')[6].click());
+        check(selected === 12.25 && current() === 'Testsatz 7.', 'Sentence selection seeks to the exact start');
+        await act(() => setClock(13.25));
+        check(current() === null, 'Silence after the sentence clears the highlight');
+        result.textContent = `PASS\n${checks.join('\n')}`;
+      } catch (error) {
+        result.textContent = `FAIL\n${error.message}\n${checks.join('\n')}`;
+      } finally {
+        globalThis.IS_REACT_ACT_ENVIRONMENT = false;
+        run.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

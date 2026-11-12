@@ -459,6 +459,8 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .transcript-word[data-word-state="current"] { text-decoration: none; }
 .player-page .transcript-word:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .2em; }
 .transcript-phrase-button { width: 100%; min-height: 3.5rem; text-align: left; }
+.synced-transcript[data-phrase-follow="true"] .transcript-phrase-button { padding: .25em .4em; border-radius: .5rem; overflow-wrap: anywhere; }
+.synced-transcript[data-phrase-follow="true"] [data-active="true"] .transcript-phrase-button { color: var(--player-accent); background: var(--player-panel); }
 .transcript-phrase-replay { display: block; min-height: 2.75rem; padding: .15rem .25rem; color: var(--player-muted); font-size: .75rem; }
 .player-static-transcript { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 1rem; line-height: 1.8; }
 .player-static-transcript > div + div { margin-top: 1rem; }

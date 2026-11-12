@@ -53,6 +53,8 @@ export interface StopData {
 
 export interface TimedTranscriptSegment {
   startSeconds: number;
+  /** End of the spoken sentence for phrase-level synchronization. */
+  endSeconds?: number;
   text: string;
   /** Word boundaries from a forced aligner; omitted until verified timings are available. */
   wordTimings?: TimedTranscriptWord[];

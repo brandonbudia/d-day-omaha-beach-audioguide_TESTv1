@@ -91,6 +91,7 @@ interface SyncedTranscriptProps {
   /** Spoken text and interface controls can use different languages. */
   language?: SupportedLanguage;
   uiLanguage?: SupportedLanguage;
+  phraseOnly?: boolean;
   onSelectPhrase: (seconds: number) => void;
 }
 
@@ -102,6 +103,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   reducedMotion = false,
   language = 'fr',
   uiLanguage = 'fr',
+  phraseOnly = false,
   onSelectPhrase,
 }) => {
   const [isFollowing, setIsFollowing] = useState(true);
@@ -110,18 +112,22 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   const pointerInteractionRef = useRef(false);
   const onSelectPhraseRef = useRef(onSelectPhrase);
   onSelectPhraseRef.current = onSelectPhrase;
-  const timedWords = useMemo(() => segments.map((segment, index) => getTimedTokens(
+  const timedWords = useMemo(() => phraseOnly ? [] : segments.map((segment, index) => getTimedTokens(
     segment.text, segment.wordTimings ?? [], segment.startSeconds, segments[index + 1]?.startSeconds,
-  )), [segments]);
+  )), [segments, phraseOnly]);
 
   const activeIndex = useMemo(() => {
+    if (phraseOnly) {
+      return segments.findIndex((segment) => segment.endSeconds !== undefined
+        && currentTime >= segment.startSeconds && currentTime < segment.endSeconds);
+    }
     let active = 0;
     for (let index = 0; index < segments.length; index += 1) {
       if (currentTime >= segments[index].startSeconds) active = index;
       else break;
     }
     return active;
-  }, [currentTime, segments]);
+  }, [currentTime, segments, phraseOnly]);
 
   const activeWordIndex = timedWords[activeIndex]?.findIndex((word) => getWordState(currentTime, word) === 'current') ?? -1;
 
@@ -143,7 +149,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
     const visibleHeight = visibleBottom - visibleTop;
     if (visibleHeight < 24) return;
     const activeWord = activePhrase.querySelector<HTMLElement>('.transcript-word[data-word-state="current"]');
-    if (!force && !activeWord) return;
+    if (!force && !activeWord && !phraseOnly) return;
     const targetRect = (activeWord ?? activePhrase).getBoundingClientRect();
     const margin = Math.min(16, Math.max(0, (visibleHeight - targetRect.height) / 2));
     if (!force && targetRect.top >= visibleTop + margin && targetRect.bottom <= visibleBottom - margin) return;
@@ -151,7 +157,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
     const offset = targetRect.top - visibleTop + targetHeight / 2 - visibleHeight / 2;
     const behavior = behaviorOverride ?? (reducedMotion || window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
     viewport.scrollTo({ top: viewport.scrollTop + offset, behavior });
-  }, [reducedMotion]);
+  }, [reducedMotion, phraseOnly]);
 
   useEffect(() => {
     if (isFollowing) {
@@ -216,11 +222,11 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   };
 
   return (
-    <div className="synced-transcript" lang={language}>
+    <div className="synced-transcript" lang={language} data-phrase-follow={phraseOnly || undefined}>
       <div className="transcript-follow-bar" lang={uiLanguage}>
         <p id="synced-transcript-help">
-          {t('reading_help_tap', uiLanguage)}
-          <span className="sr-only"> {label('keyboard', uiLanguage)}</span>
+          {t(phraseOnly ? 'reading_help_phrase_tap' : 'reading_help_tap', uiLanguage)}
+          {!phraseOnly && <span className="sr-only"> {label('keyboard', uiLanguage)}</span>}
         </p>
         {!isFollowing && (
           <button
@@ -267,15 +273,15 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
                   ref={isActive ? activePhraseRef : undefined}
                   className="synced-transcript-phrase"
                   data-active={isActive}
-                  aria-current={isActive ? 'true' : undefined}
+                  aria-current={isActive && !phraseOnly ? 'true' : undefined}
                   style={{ fontSize: `${textSize}px` }}
                 >
-                  {timedWords[index].length ? (
+                  {timedWords[index]?.length ? (
                     <>
                       <TimedWords text={segment.text} words={timedWords[index]} currentTime={isActive ? currentTime : index < activeIndex ? Infinity : -Infinity} onSelect={selectTime} uiLanguage={uiLanguage} />
                       <button type="button" className="transcript-phrase-replay" lang={uiLanguage} onClick={() => selectTime(segment.startSeconds)} aria-label={`${label('phrase', uiLanguage)} : ${segment.text}`}>{label('phrase', uiLanguage)}</button>
                     </>
-                  ) : <button type="button" className="transcript-phrase-button" onClick={() => selectTime(segment.startSeconds)}>{segment.text}</button>}
+                  ) : <button type="button" className="transcript-phrase-button" aria-current={phraseOnly && isActive ? 'true' : undefined} onClick={() => selectTime(segment.startSeconds)}>{segment.text}</button>}
                 </div>
               </li>
             );

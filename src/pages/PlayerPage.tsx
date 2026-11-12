@@ -68,6 +68,8 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const nextTitle = nextStop ? getStopLabel(nextStop, currentLang) : null;
   const resource = getMediaResource(currentStop.id, audioState.language);
   const transcript = useMemo(() => resolveTranscript(currentStop.id, audioState.language, resource), [currentStop.id, audioState.language, resource]);
+  const followsPhrases = transcript.mode === 'phrase-synchronized';
+  const showsFollowingHelp = followsPhrases || audioState.language === 'fr' || audioState.language === 'en';
   const selectTime = (seconds: number) => {
     audioPlayer.seek(seconds);
     if (!audioState.isPlaying) void audioPlayer.play();
@@ -110,12 +112,13 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         <div id="player-transcript" className="player-transcript-content" data-wide-spacing={preferences.wideSpacing} data-color-assistance={preferences.colorAssistance} data-dyslexic-font={preferences.dyslexicFont} hidden={!isTranscriptOpen}>
           {resource.status !== 'ready' && <p className="player-resource-notice" role="note">{x(resource.status === 'unavailable' ? 'unavailable' : 'unverified', currentLang)}</p>}
           {resource.status === 'ready' && <TranscriptNotice transcript={transcript} language={currentLang} compact />}
-          {transcript.mode === 'synchronized' ? (
+          {transcript.mode === 'synchronized' || followsPhrases ? (
             <SyncedTranscript
               key={`${currentStop.id}-${audioState.language}`}
               segments={transcript.segments}
               language={transcript.contentLanguage ?? audioState.language}
               uiLanguage={currentLang}
+              phraseOnly={followsPhrases}
               currentTime={audioState.currentTime}
               textSize={transcriptTextSize}
               isPlaying={audioState.isPlaying}
@@ -156,7 +159,14 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) setSettingsOpen(false);
       }}>
         <div className="player-settings-heading"><h2 id="player-settings-title">{t('reading_settings', currentLang)}</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label={t('close_reading_settings', currentLang)}><X size={22} aria-hidden="true" /></button></div>
-        <aside className="player-reading-help" aria-label={t('reading_help_title', currentLang)}><h3>{t('reading_help_title', currentLang)}</h3><ul><li>{t('reading_help_color', currentLang)}</li><li>{t('reading_help_tap', currentLang)}</li><li>{t('reading_help_scroll', currentLang)}</li></ul></aside>
+        {showsFollowingHelp && <aside className="player-reading-help" aria-label={t('reading_help_title', currentLang)}>
+          <h3>{t('reading_help_title', currentLang)}</h3>
+          <ul>
+            <li>{t(followsPhrases ? 'reading_help_phrase_color' : 'reading_help_color', currentLang)}</li>
+            <li>{t(followsPhrases ? 'reading_help_phrase_tap' : 'reading_help_tap', currentLang)}</li>
+            <li>{t('reading_help_scroll', currentLang)}</li>
+          </ul>
+        </aside>}
         <div className="player-setting-row"><span>{t('reading_spacing', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={preferences.wideSpacing} onClick={() => toggle('wideSpacing')}>{t(preferences.wideSpacing ? 'reading_spacing_wide' : 'reading_spacing_normal', currentLang)}</button></div>
         {([
           ['colorAssistance', 'reading_color_assistance', 'reading_color_assistance_hint'],

@@ -70,6 +70,24 @@ test('each timed phrase exposes one word to Tab while retaining every clickable 
   assert.deepEqual(later.map((word) => /tabindex="(-?\d+)"/.exec(word)?.[1]), words.map((word) => /tabindex="(-?\d+)"/.exec(word)?.[1]));
 });
 
+test('phrase following renders one full sentence button and leaves silence without a current sentence', () => {
+  const phrases = [
+    { startSeconds: .5, endSeconds: 1.5, text: 'Erster Testsatz.' },
+    { startSeconds: 2, endSeconds: 3, text: 'Zweiter Testsatz.' },
+  ];
+  const render = (currentTime: number) => renderToStaticMarkup(
+    <SyncedTranscript segments={phrases} currentTime={currentTime} textSize={24} language="de" uiLanguage="de" phraseOnly onSelectPhrase={() => {}} />,
+  );
+  const first = render(.5);
+  assert.match(first, /Wählen Sie einen Satz aus/);
+  assert.match(first, /transcript-phrase-button" aria-current="true">Erster Testsatz\./);
+  assert.equal((first.match(/class="transcript-phrase-button"/g) ?? []).length, 2);
+  assert.doesNotMatch(first, /transcript-word|transcript-phrase-replay|Leertaste startet am gewählten Wort/);
+  for (const silentTime of [0, 1.5, 1.9, 3]) assert.doesNotMatch(render(silentTime), /aria-current|data-active="true"/);
+  assert.match(render(2), /transcript-phrase-button" aria-current="true">Zweiter Testsatz\./);
+  assert.equal(render(.5), first);
+});
+
 test('audio position uses a labelled native range with exact fractional time and no unrelated caption', () => {
   const html = renderToStaticMarkup(<Scrubber currentTime={12.34} duration={60} onSeek={() => {}} />);
   assert.match(html, /type="range"/);

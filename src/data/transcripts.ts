@@ -30,7 +30,7 @@ export type TranscriptResolutionReason = 'matched' | 'transcript-missing' | 'tra
   | 'audio-identity-mismatch' | 'audio-hash-mismatch' | 'audio-unavailable' | 'audio-unverified'
   | 'transcript-unavailable' | 'transcript-unverified' | 'reference-only' | 'invalid-timings' | 'no-word-timings';
 export interface TranscriptResolution {
-  mode: 'synchronized' | 'static' | 'french-fallback' | 'missing';
+  mode: 'synchronized' | 'phrase-synchronized' | 'static' | 'french-fallback' | 'missing';
   requestedLanguage: SupportedLanguage;
   contentLanguage: SupportedLanguage | null;
   /** Present only when every supplied bound is valid for the selected audio. */
@@ -91,6 +91,23 @@ function validateSegments(record: TranscriptRecord, audio: TranscriptAudioResour
   return segments;
 }
 
+function validatePhraseSegments(record: TranscriptRecord, audio: TranscriptAudioResource): TimedTranscriptSegment[] | null {
+  const { durationSeconds } = record;
+  if (durationSeconds === null || !Number.isFinite(durationSeconds) || durationSeconds <= 0
+    || !Number.isFinite(audio.durationSeconds) || audio.durationSeconds <= 0 || !record.segments.length) return null;
+
+  const duration = Math.min(durationSeconds, audio.durationSeconds);
+  const phrases: TimedTranscriptSegment[] = [];
+  let previousEnd = 0;
+  for (const { text, startSeconds, endSeconds, wordTimings } of record.segments) {
+    if (!text.trim() || wordTimings?.length || !Number.isFinite(startSeconds) || startSeconds < previousEnd
+      || endSeconds === undefined || !Number.isFinite(endSeconds) || endSeconds <= startSeconds || endSeconds > duration) return null;
+    phrases.push({ text, startSeconds, endSeconds });
+    previousEnd = endSeconds;
+  }
+  return phrases;
+}
+
 /** Resolve text independently from UI language; never synchronize a fallback. */
 export function resolveTranscript(
   id: string,
@@ -126,6 +143,11 @@ export function resolveTranscript(
   }
   if (text.status !== 'aligned') return { ...result, reason: text.status === 'unavailable' ? 'transcript-unavailable'
     : text.status === 'unverified' ? 'transcript-unverified' : 'reference-only' };
+  if (language !== 'fr' && language !== 'en') {
+    const phrases = validatePhraseSegments(text, audio);
+    return phrases ? { ...result, mode: 'phrase-synchronized', segments: phrases, reason: 'matched' }
+      : { ...result, reason: 'invalid-timings' };
+  }
   const segments = validateSegments(text, audio);
   if (!segments) return { ...result, reason: 'invalid-timings' };
   if (!segments.some((segment) => segment.wordTimings?.length)) return { ...result, reason: 'no-word-timings' };

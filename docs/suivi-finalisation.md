@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 35 ; langue du lien appliquée avant le chargement audio.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 36 ; suivi par phrase prêt pour les futures narrations.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -23,6 +23,8 @@ Références initiales :
 - EN22 MP3 : SHA256 ebc69c45330dbb566e8497b2347b48b36555cf6a76c9792cc8324708b9d3c071 ; durée native 159,033469 s.
 
 Interdits : générateurs audio, contenu/minutage inventé, installation sans accord, changement de branche, reset/clean/restauration, merge/rebase, élévation ou modification de sécurité. Conserver les 22 stations et toutes ressources authentiques. Publication des seuls lots vérifiés sur TESTv1/branche prévue ; jamais les changements préexistants inconnus.
+
+Pour toute intervention sur les synchronisations, enregistrer le nombre de mots synchronisés, les mots manquants et le taux par station et langue avant et après. Vérifier aussi chaque repère existant. En cas de régression, annuler uniquement les modifications responsables, puis vérifier de nouveau. La référence initiale et la commande de mesure sont dans le [registre de couverture](couverture-synchronisation.md).
 
 ## Acquis et preuves antérieures
 
@@ -59,6 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-de/it/pl/nl/es | P1 | blocked-resource | Recevoir vrais MP3/textes/droits ; ne pas retraiter les 110 fichiers inchangés |
+| PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
 | PWA-01 | P1 | validated | Demande native consommée une fois. Refus, rejet et nouvelle demande testés avec événements simulés |
@@ -66,13 +69,13 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RESUME-01 | P1 | validated | Reprise proposée seulement pour une version audio compatible ; retour à la dernière fiche sinon. Test et recette navigateur réussis |
 | OFF-03 | P1 | validated | Les fichiers déjà vérifiés restent comptés après un échec réseau ; aucune requête pour les pistes factices testées |
 | NAV-02 | P2 | validated | La langue du lien est prise en compte avant la première requête audio. Le lien anglais n’a demandé aucun MP3 français |
-| QA-01 | P1 | validated | 119 tests applicatifs, TypeScript et build réussis. Reprise, cache et langue initiale vérifiés. Essais physiques à faire |
+| QA-01 | P1 | validated | 122 tests applicatifs, TypeScript et build réussis. Recette navigateur du suivi par phrase et des lecteurs FR/EN. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
 | DEL-01 | P1 | validated | Lots parcours, installation et reprise publiés, SHA distants fc83b08, 6ba8745 et abf4c89 confirmés |
 
-## Reprise : état du quinzième lot
+## Reprise : état du seizième lot
 
 Le checkpoint 32 corrige trois défauts observés en navigation et hors connexion. Les liens de fiche conservent la langue. L’arrêt d’un téléchargement reste disponible dans une autre langue. Les refus de lecture du cache sont classés comme erreurs de stockage. Les 115 tests applicatifs, TypeScript et le build ont réussi. La recette du douzième lot décrit la navigation et l’ouverture depuis le cache sur petit écran.
 
@@ -82,7 +85,15 @@ Le checkpoint 33 est publié : `6ba87455de1720428d0dc516abc1c48197526165`, confi
 
 Le checkpoint 34 corrige trois défauts de la reprise et des audios. Les 48 tests ciblés et les 118 tests applicatifs réussissent. TypeScript, build et contrôle du diff terminent avec le code 0. La [recette du quatorzième lot](recette-finalisation-2026-11-09.md#quatorzième-lot--reprise-de-visite-et-cache-audio) décrit les preuves et leurs limites. Le lot est publié : `abf4c898f48994c5c014aabd85b22d8503cd3ec7`, SHA confirmé dans `resume-20261111-resume-offline-publication.json`.
 
-Le checkpoint 35 supprime la requête audio française observée avant le premier chargement anglais. La langue de l’URL est appliquée avant l’initialisation audio ; les checkpoints et le traitement des changements d’adresse restent compatibles. 119 tests applicatifs, TypeScript et build réussis. Les preuves du navigateur et du serveur sont dans la [recette du quinzième lot](recette-finalisation-2026-11-09.md#quinzième-lot--langue-du-lien-et-première-requête-audio). Pour réconcilier la publication, vérifier le commit `Use link language before preloading audio` et le reçu `resume-20261111-initial-language-publication.json`.
+Le checkpoint 35 supprime la requête audio française avant le premier chargement anglais. Il est publié sur TESTv1 sous `8b0949f5f6bc8a4d6ec8963853ebb93062e279f7`. Le reçu `resume-20261111-initial-language-publication.json` confirme le SHA distant. Les preuves sont dans la [recette du quinzième lot](recette-finalisation-2026-11-09.md#quinzième-lot--langue-du-lien-et-première-requête-audio).
+
+Le checkpoint 36 ajoute le suivi par phrase dans le lecteur partagé pour DE/IT/PL/ES/NL. Le résolveur exige une narration prête et le texte correspondant, la même station, la même langue, le même SHA et des intervalles de phrases valides. Les silences restent sans surlignage. La sélection d’une phrase utilise la commande existante de déplacement dans l’audio. Le [guide d’intégration](integration-futures-langues.md) précise le contrat d’activation par station.
+
+Le [registre de couverture](couverture-synchronisation.md) contient le contrôle avant/après. Les 44 lignes FR/EN et les empreintes des 44 résultats du résolveur concordent. FR 7233 mots synchronisés et 43 manquants, EN 6614 et 408. La revue des preuves existantes ne fournit aucun nouveau repère fiable. Aucun traitement audio n’a été relancé.
+
+Les 122 tests applicatifs, TypeScript et le build `index-CdUkYu_K.js` ont réussi. `tests/phrase-follow-browser.html` a vérifié le surlignage, les silences, le défilement automatique, son arrêt manuel, la reprise et le clic à la borne exacte avec une horloge simulée. Le build a confirmé le lecteur allemand indisponible et la lecture par clic sur un mot en français et en anglais. Aucune erreur de console lors de la recette finale. Les serveurs sont fermés. Preuve externe `phrase-follow-final-browser.json`.
+
+Pour vérifier la publication du lot, rapprocher le commit `Add sentence following for future narration languages` et le reçu `phrase-follow-publication.json`.
 
 Prochaine action : reprendre une validation externe dès réception d’une preuve ou d’une ressource (écoute des omissions, droits, vrais enregistrements des cinq langues, QR ou appareil physique). Les défauts reproduits et corrigeables de cette passe sont traités ; ne pas relancer les mêmes traitements audio ni rejouer les recettes terminées sans changement.
 

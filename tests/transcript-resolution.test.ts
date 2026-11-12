@@ -135,6 +135,56 @@ test('a future real language record can be registered without changing the resol
   assert.equal(notAligned.paragraphs[0], 'Hello world.');
 });
 
+test('only the five new narration languages accept exact audio with phrase boundaries alone', () => {
+  const phrases = [
+    { text: 'Test 1.', startSeconds: .5, endSeconds: 1.5 },
+    { text: 'Test 2.', startSeconds: 2.25, endSeconds: 3.75 },
+  ];
+  for (const language of ['de', 'it', 'pl', 'es', 'nl', 'fr', 'en'] as const) {
+    const registry = { [language]: { '01': record({ language, segments: phrases }) } };
+    const resolved = resolveTranscript('01', language, audio({ language }), registry);
+    if (language === 'fr' || language === 'en') {
+      assert.equal(resolved.reason, 'no-word-timings', language);
+      assert.equal(resolved.mode, 'static', language);
+    } else {
+      assert.equal(resolved.mode, 'phrase-synchronized', language);
+      assert.deepEqual(resolved.segments, phrases, language);
+      assert.equal(resolved.contentLanguage, language);
+    }
+  }
+});
+
+test('phrase following requires real matching audio and explicit nonoverlapping intervals', () => {
+  const language = 'de';
+  const first = { text: 'Test 1.', startSeconds: .5, endSeconds: 1.5 };
+  const second = { text: 'Test 2.', startSeconds: 2, endSeconds: 4 };
+  const registry = (segments: TranscriptRecord['segments'] = [first, second]) => ({ de: { '01': record({ language, segments }) } });
+  for (const [resource, reason] of [
+    [audio({ language, status: 'unavailable' }), 'audio-unavailable'],
+    [audio({ language, status: 'unverified' }), 'audio-unverified'],
+    [audio({ language, id: '02' }), 'audio-identity-mismatch'],
+    [audio({ language, sha256: 'b'.repeat(64) }), 'audio-hash-mismatch'],
+    [audio({ language, durationSeconds: 3 }), 'invalid-timings'],
+  ] as const) {
+    const resolved = resolveTranscript('01', language, resource, registry());
+    assert.equal(resolved.mode, 'static', reason);
+    assert.equal(resolved.reason, reason);
+    assert.deepEqual(resolved.segments, []);
+  }
+  for (const change of [
+    { endSeconds: undefined }, { startSeconds: -1 }, { startSeconds: 1 }, { endSeconds: 2 },
+    { endSeconds: Infinity }, { text: ' ' }, { wordTimings: record().segments[0].wordTimings },
+  ]) {
+    const resolved = resolveTranscript('01', language, audio({ language }), registry([first, { ...second, ...change }]));
+    assert.equal(resolved.mode, 'static');
+    assert.equal(resolved.reason, 'invalid-timings');
+  }
+  const actual = resolveTranscript('01', language, getMediaResource('01', language));
+  assert.equal(actual.mode, 'french-fallback');
+  assert.equal(actual.contentLanguage, 'fr');
+  assert.deepEqual(actual.segments, []);
+});
+
 test('a wrong station or language inside a registry is never displayed as matching content', () => {
   for (const invalid of [record({ id: '02' }), record({ language: 'en' })]) {
     const resolved = resolveTranscript('01', 'fr', audio(), { fr: { '01': invalid } });
