@@ -1038,11 +1038,11 @@
         "reason": "wivi-narration-compared"
       },
       "02": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "65a039499630fd21cf24e64ec46d3dfafbbd2809a3954d5e758849a0c7b10b3f",
+        "bytes": 2306733,
+        "durationSeconds": 144.168,
+        "status": "ready",
+        "reason": "wivi-narration-compared"
       },
       "03": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",

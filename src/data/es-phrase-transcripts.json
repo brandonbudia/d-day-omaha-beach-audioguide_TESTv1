@@ -527,5 +527,98 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "02": {
+    "id": "02",
+    "language": "es",
+    "audioSha256": "65a039499630fd21cf24e64ec46d3dfafbbd2809a3954d5e758849a0c7b10b3f",
+    "durationSeconds": 144.168,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/0d527c76-01c1-4b91-becf-c0095ebf1eb9?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Nos encontramos ante un escenario cautivador y rico en historia: un impresionante motor Focke-Wulf, este formidable caza alemán de la Segunda Guerra Mundial, acompañado de dos modelos de pilotos de la Luftwaffe.",
+        "startSeconds": 0.07,
+        "endSeconds": 13.94
+      },
+      {
+        "text": "Este motor, pieza central de la escena, encarna una historia única que me complace compartir hoy con vosotros.",
+        "startSeconds": 14.71,
+        "endSeconds": 22.15
+      },
+      {
+        "text": "Fue mientras hojeaba las páginas de un periódico que mi mirada se detuvo en un artículo fascinante.",
+        "startSeconds": 22.82,
+        "endSeconds": 28.6
+      },
+      {
+        "text": "La historia se desarrolla en un pequeño pueblo donde, durante las obras de remodelación frente a la estación, se produjo un descubrimiento improbable: varios motores de aviación alemanes, Focke-Wulf.",
+        "startSeconds": 29.56,
+        "endSeconds": 42.8
+      },
+      {
+        "text": "Impulsado por la audacia y una pasión inquebrantable por la historia, contacté con el alcalde de la localidad para expresarle mi deseo de conservar una de estas piezas históricas en nuestro museo.",
+        "startSeconds": 43.51,
+        "endSeconds": 56.55
+      },
+      {
+        "text": "Invitado a visitar el lugar de almacenamiento de motores, la siguiente etapa de mi búsqueda finalmente tuvo lugar en una granja.",
+        "startSeconds": 57.79,
+        "endSeconds": 65.15
+      },
+      {
+        "text": "Pero de los cuatro motores expuestos inicialmente sólo uno estaba todavía presente.",
+        "startSeconds": 65.85,
+        "endSeconds": 71.23
+      },
+      {
+        "text": "Los demás habían sido robados, llevándose consigo tantos fragmentos del pasado.",
+        "startSeconds": 71.84,
+        "endSeconds": 77.09
+      },
+      {
+        "text": "Sin embargo, el destino me llevó a ésta: la más bella, preservada en la oscuridad, a salvo de la codicia.",
+        "startSeconds": 77.73,
+        "endSeconds": 85.18
+      },
+      {
+        "text": "Este motor Focke-Wulf es una verdadera obra maestra de la ingeniería.",
+        "startSeconds": 85.9,
+        "endSeconds": 90.21
+      },
+      {
+        "text": "Diseñado para un rendimiento extremo, incorporaba la tecnología más avanzada de su época, permitiendo al avión alcanzar velocidades vertiginosas y una maniobrabilidad excepcional, crucial en los duelos aéreos.",
+        "startSeconds": 90.8,
+        "endSeconds": 104.77
+      },
+      {
+        "text": "Su diseño avanzado y su potencia dan testimonio de las ambiciones y las habilidades técnicas movilizadas en los campos de batalla del aire.",
+        "startSeconds": 105.45,
+        "endSeconds": 114.3
+      },
+      {
+        "text": "Rodeado por dos pilotos de la Luftwaffe, inmóviles y silenciosos, este motor parece resonar con el rugido del aire que ha atravesado.",
+        "startSeconds": 114.99,
+        "endSeconds": 123.73
+      },
+      {
+        "text": "Resume la fuerza y ​​la complejidad de la tecnología aérea de la época y da testimonio de los incansables esfuerzos de la humanidad por alcanzar los cielos, incluso en tiempos de guerra.",
+        "startSeconds": 124.33,
+        "endSeconds": 136.4
+      },
+      {
+        "text": "Frente a este vestigio, afirmamos nuestro compromiso de preservar la historia en toda su autenticidad.\"",
+        "startSeconds": 137.04,
+        "endSeconds": 143.61
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
