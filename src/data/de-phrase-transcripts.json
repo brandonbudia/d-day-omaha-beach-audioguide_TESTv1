@@ -1,0 +1,100 @@
+{
+  "01": {
+    "id": "01",
+    "language": "de",
+    "audioSha256": "e712f0eb33eaa70d861034283d55c078bd675db2fcbb0b7f73b1912f6d398068",
+    "durationSeconds": 120.648,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Hier beginnt ... Geschichten von Frauen und Männern, Anekdoten historischer Fakten und manchmal Dramen.",
+        "startSeconds": 0.0,
+        "endSeconds": 7.2
+      },
+      {
+        "text": "Dieser Ort beherbergt eine Sammlung voller Geschichten, die von der Beziehung des Menschen zu seiner Vergangenheit zeugen.",
+        "startSeconds": 7.56,
+        "endSeconds": 14.8
+      },
+      {
+        "text": "Dieser Ort ist auch deshalb sehr wichtig, weil er das erste Feldlazarett war, das an den Stränden von Omaha nach der Landung der ersten Angriffswellen errichtet wurde, von denen viele ein tragisches Schicksal erlitten.",
+        "startSeconds": 15.58,
+        "endSeconds": 29.1
+      },
+      {
+        "text": "Aber lassen Sie mich uns kurz vorstellen: Wir sind zwei Brüder, Fabien und Antoine.",
+        "startSeconds": 29.1,
+        "endSeconds": 35.2
+      },
+      {
+        "text": "Wir sind mit einem Vater aufgewachsen … etwas ganz Besonderes.",
+        "startSeconds": 35.66,
+        "endSeconds": 39.58
+      },
+      {
+        "text": "Ein echter Geschichtsliebhaber, der den größten Teil seines Lebens der Suche nach Überresten dieser Zeit gewidmet hat.",
+        "startSeconds": 39.94,
+        "endSeconds": 47.5
+      },
+      {
+        "text": "Wir verbrachten unsere Jugend, mein jüngerer Bruder und ich, durch Wälder, Flüsse und alte Scheunen und suchten nach allen Spuren, die die Kriegführenden des Zweiten Weltkriegs hinterlassen hatten.",
+        "startSeconds": 47.96,
+        "endSeconds": 60.8
+      },
+      {
+        "text": "Aber um welchen Preis...",
+        "startSeconds": 61.0,
+        "endSeconds": 62.44
+      },
+      {
+        "text": "Unser Vater war besessen, sogar besessen! durch diese Leidenschaft...",
+        "startSeconds": 62.94,
+        "endSeconds": 67.42
+      },
+      {
+        "text": "Es war zu einem permanenten Wahnsinn geworden, der im Laufe der Jahre unsere Familie und ihn selbst zerstörte.",
+        "startSeconds": 67.84,
+        "endSeconds": 75.38
+      },
+      {
+        "text": "Er starb im Jahr 2012, verzehrt von bestimmten Dämonen, die aus den Lastern der Besessenheit resultierten, verzehrt von Reue, weil er den Werten Familie und Freundschaft den Rücken gekehrt hatte.",
+        "startSeconds": 75.82,
+        "endSeconds": 89.02
+      },
+      {
+        "text": "Durch den plötzlichen Weggang unseres Vaters und unsere unterschiedlichen Wege waren die Zukunft und die Seele dieses Ortes gefährdet.",
+        "startSeconds": 90.88,
+        "endSeconds": 99.32
+      },
+      {
+        "text": "Es war ein schwer fassbarer Instinkt, der meinen Bruder und mich davon überzeugte, unser Abenteuer auf der Suche nach historischen Objekten fortzusetzen und sie Ihnen mit ihrer Geschichte zu präsentieren.",
+        "startSeconds": 99.7,
+        "endSeconds": 112.06
+      },
+      {
+        "text": "Denn glauben Sie mir, Sie werden nicht enttäuscht sein.",
+        "startSeconds": 112.56,
+        "endSeconds": 115.6
+      },
+      {
+        "text": "Willkommen zu unserer Geschichte.",
+        "startSeconds": 116.2,
+        "endSeconds": 117.96
+      },
+      {
+        "text": "Willkommen in der Geschichte.\"",
+        "startSeconds": 118.6,
+        "endSeconds": 120.1
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  }
+}

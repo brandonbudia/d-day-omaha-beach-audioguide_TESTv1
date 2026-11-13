@@ -59,6 +59,10 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
         assert.equal(record.status, 'ready');
         assert.equal(record.reason, 'language-detected-editorial-review-pending');
         assert.notEqual(record.sha256, placeholder);
+      } else if (code === 'de' && record.id === '01') {
+        assert.equal(record.status, 'ready');
+        assert.equal(record.reason, 'wivi-narration-compared');
+        assert.notEqual(record.sha256, placeholder);
       } else {
         assert.equal(record.status, 'unavailable');
         assert.equal(record.sha256, placeholder);
@@ -67,12 +71,14 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
   }
   assert.equal(getDownloadableAudio('fr').length, 22);
   assert.equal(getDownloadableAudio('en').length, 22);
-  for (const language of ['de', 'it', 'pl', 'nl', 'es'] as const) assert.deepEqual(getOfflineResources(language), []);
+  assert.deepEqual(getDownloadableAudio('de').map(({ id }) => id), ['01']);
+  assert.deepEqual(getOfflineResources('de').filter(({ url }) => url.startsWith('/audio/')).map(({ url }) => url), [getMediaResource('01', 'de').url]);
+  for (const language of ['it', 'pl', 'nl', 'es'] as const) assert.deepEqual(getOfflineResources(language), []);
   assert.equal(getMediaResource('99', 'fr').status, 'unavailable');
   assert.equal(getLanguageResourceSummary('fr').unavailable, 0);
   assert.equal(getLanguageResourceSummary('en').ready, 22);
   assert.equal(getLanguageResourceSummary('en').editorialReviewRequired, 22);
-  assert.equal(getLanguageResourceSummary('de').unavailable, 22);
+  assert.equal(getLanguageResourceSummary('de').unavailable, 21);
   const restored = getMediaResource('22', 'fr');
   assert.equal(restored.reason, 'public-source-restored');
   assert.equal(restored.sha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');

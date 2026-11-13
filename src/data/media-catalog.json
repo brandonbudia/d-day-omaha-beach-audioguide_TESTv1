@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verification": "Existing decoded metadata retained for French 01-21 and all English files. French 22 restored from the authorized published Wivi recording after SHA-256, decoded-format and narration comparison. All 22 English recordings detected as English and compared with published English references; editorial human review remains pending. The other five languages contain known 15-second placeholders and remain unavailable.",
+  "verification": "Existing decoded metadata retained for French 01-21 and all English files. French 22 restored from the authorized published Wivi recording after SHA-256, decoded-format and narration comparison. All 22 English recordings detected as English and compared with published English references; editorial human review remains pending. Authorized Wivi DE01 is verified separately. Remaining placeholders are marked unavailable.",
   "audio": {
     "fr": {
       "10": {
@@ -407,11 +407,11 @@
         "reason": "placeholder"
       },
       "01": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "e712f0eb33eaa70d861034283d55c078bd675db2fcbb0b7f73b1912f6d398068",
+        "bytes": 1930413,
+        "durationSeconds": 120.648,
+        "status": "ready",
+        "reason": "wivi-narration-compared"
       },
       "02": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",

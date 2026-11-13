@@ -459,7 +459,7 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   assert.equal(media.playCalls, 0);
   assert.equal(player.getState().error, 'unavailable');
   player.setStop('01', false);
-  player.setLanguage('de');
+  player.setLanguage('it');
   await player.play();
   assert.equal(media.playCalls, 0);
   assert.equal(player.getState().error, 'unavailable');
@@ -570,7 +570,7 @@ test('switching a playing narration to an unavailable language resets the clock 
 });
 
 test('an unavailable language at startup has no media source and can switch to a real recording', async () => {
-  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_lang: 'de' });
+  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_lang: 'it' });
   assert.equal(media.src, '');
   assert.equal(media.loadCalls, 0, 'an empty element needs no reset');
   assert.equal(player.getState().duration, 0);

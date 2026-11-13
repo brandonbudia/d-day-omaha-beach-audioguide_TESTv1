@@ -179,10 +179,21 @@ test('phrase following requires real matching audio and explicit nonoverlapping 
     assert.equal(resolved.mode, 'static');
     assert.equal(resolved.reason, 'invalid-timings');
   }
-  const actual = resolveTranscript('01', language, getMediaResource('01', language));
+  const actual = resolveTranscript('02', language, getMediaResource('02', language));
   assert.equal(actual.mode, 'french-fallback');
   assert.equal(actual.contentLanguage, 'fr');
   assert.deepEqual(actual.segments, []);
+});
+
+test('authorized Wivi DE01 resolves to 16 phrases for its own audio', () => {
+  const resource = getMediaResource('01', 'de');
+  const result = resolveTranscript('01', 'de', resource);
+  assert.equal(result.mode, 'phrase-synchronized');
+  assert.equal(result.segments.length, 16);
+  assert.equal(result.contentLanguage, 'de');
+  assert.equal(result.provenance?.humanListeningReviewed, false);
+  assert.ok(result.segments.every((phrase) => phrase.wordTimings === undefined));
+  assert.equal(resolveTranscript('01', 'de', { ...resource, sha256: '0'.repeat(64) }).mode, 'static');
 });
 
 test('a wrong station or language inside a registry is never displayed as matching content', () => {

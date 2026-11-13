@@ -1,6 +1,8 @@
 # Intégrer progressivement les cinq narrations manquantes
 
-L’interface de TESTv1 comporte sept langues. Les narrations disponibles en français et en anglais conservent le suivi mot par mot. Le suivi par phrase est prêt pour l’allemand, l’italien, le polonais, l’espagnol et le néerlandais. Leurs 110 ressources factices restent `unavailable` dans le catalogue.
+L’interface de TESTv1 comporte sept langues. Les narrations disponibles en français et en anglais conservent le suivi mot par mot. La station 01 en allemand utilise le suivi par phrase. Les 109 autres ressources factices de DE, IT, PL, ES et NL restent `unavailable` tant que leur remplaçant n’est pas vérifié.
+
+Le [guide public Wivi](inventaire-wivi-multilingue.md) fournit 22 couples récit/piste dans chacune des langues DE, IT, NL et ES, ainsi que 17 pistes PL dont les récits restent à établir. L’accord de réutilisation pour TESTv1 a été confirmé le 13 novembre 2026. L’intégration avance selon la vérification des narrations.
 
 ## Architecture déjà disponible
 
@@ -41,4 +43,4 @@ Il n’est pas nécessaire de réécrire le lecteur ou de créer cinq lecteurs d
 
 ## Tant que les ressources manquent
 
-Conserver le comportement actuel : interface traduite, lecture et téléchargement des MP3 factices bloqués, référence française clairement indiquée et non synchronisée avec un audio d’une autre langue. Aucun appel à un service de synthèse, aucune transcription inventée, aucun faux statut de disponibilité. Le travail futur peut avancer station par station sans généralisation risquée.
+Conserver l’interface traduite, la lecture et le téléchargement des MP3 factices bloqués et la référence française clairement indiquée. Pour les cinq pistes polonaises sans original retrouvé, la traduction du récit FR autorisé et la voix de synthèse doivent être signalées à l’écoute. Vérifier le MP3 final et ses bornes avant toute activation.

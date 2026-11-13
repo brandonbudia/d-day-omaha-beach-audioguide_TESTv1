@@ -83,6 +83,7 @@ test('a download can be stopped after switching to a different or unavailable la
     ...initial.packs,
     fr: { ...initial.packs.fr, status: 'downloading' as const },
     en: { ...initial.packs.en, status: 'idle' as const },
+    de: { ...initial.packs.de, status: 'unavailable' as const },
   };
   let activeLanguage: 'fr' | null = 'fr';
   context.mock.method(offlineStore, 'getSnapshot', () => ({ activeLanguage, packs }));
@@ -218,15 +219,16 @@ test('home keeps its welcome, seven languages and tour action without the redund
   assert.doesNotMatch(html, /PARCOURS DU MUSÉE|Visite Intérieure|Agrandir le texte/);
 });
 
-test('language selection distinguishes seven interface translations from the two real narration languages', () => {
+test('language selection distinguishes seven interface translations and reports partial German availability', () => {
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
-    assert.match(html, /FR · EN/);
+    assert.match(html, /FR · EN · DE/);
     assert.match(html, /aria-describedby="language-audio-status"/);
     assert.match(html, /role="status"/);
     assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);
-    assert.ok(html.includes(escapeText(experienceText(code === 'fr' || code === 'en' ? 'audioCount' : 'interfaceOnly', code, { count: 22, total: 22 }))));
+    const available = code === 'de' || code === 'fr' || code === 'en';
+    assert.ok(html.includes(escapeText(experienceText(available ? 'audioCount' : 'interfaceOnly', code, { count: code === 'de' ? 1 : 22, total: 22 }))));
     if (code === 'fr' || code === 'en') assert.match(html, /22\/22/);
     else assert.doesNotMatch(html, /22\/22/);
   }
@@ -234,12 +236,17 @@ test('language selection distinguishes seven interface translations from the two
 
 test('unavailable languages expose French reference text with disabled audio; restored FR22 and real English use their own synchronized text', () => {
   audioPlayer.setLanguage('de');
-  audioPlayer.setStop('01', false);
+  audioPlayer.setStop('02', false);
   const missing = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
   assert.match(missing, /Texte de référence en français/);
   assert.match(missing, /pas encore disponible/);
   assert.match(missing, /class="player-play-button" disabled=""/);
   assert.doesNotMatch(missing, /class="transcript-word"/);
+  audioPlayer.setStop('01', false);
+  const german = renderToStaticMarkup(<PlayerPage currentLang="de" onSelectStopDetail={noop} />);
+  assert.match(german, /lang="de" data-phrase-follow="true"/);
+  assert.match(german, /class="transcript-phrase-button"/);
+  assert.doesNotMatch(german, /class="transcript-word"|class="player-play-button" disabled=""/);
   audioPlayer.setLanguage('fr');
   audioPlayer.setStop('22', false);
   const french22 = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);

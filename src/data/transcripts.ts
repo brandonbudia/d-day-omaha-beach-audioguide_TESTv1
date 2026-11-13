@@ -2,6 +2,7 @@ import { getTimedTokens } from '../audio/transcriptTiming';
 import type { SupportedLanguage } from '../i18n/translations';
 import { FRENCH_TRANSCRIPTS, FRENCH_TRANSCRIPT_EVIDENCE } from './frenchTranscripts';
 import { ENGLISH_TRANSCRIPTS } from './englishTranscripts';
+import german from './de-phrase-transcripts.json';
 import type { MediaResource } from './mediaCatalog';
 import type { TimedTranscriptSegment } from './stops';
 
@@ -63,6 +64,7 @@ export const TRANSCRIPT_REGISTRY: TranscriptRegistry = {
     referenceOnlyParagraphs: transcript.referenceOnlyParagraphs,
   }])),
   en: ENGLISH_TRANSCRIPTS,
+  de: german as Readonly<Record<string, TranscriptRecord>>,
 };
 
 const hasText = (record: TranscriptRecord) => record.segments.some((segment) => segment.text.trim().length > 0)
