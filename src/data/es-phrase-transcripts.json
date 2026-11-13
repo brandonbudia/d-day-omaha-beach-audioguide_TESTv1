@@ -620,5 +620,183 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "16": {
+    "id": "16",
+    "language": "es",
+    "audioSha256": "9a575f6f682048407a8b212ac0fc197dd11a7722b8a39c991c31b40834a90ef3",
+    "durationSeconds": 107.76,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/62a0a9ce-16c7-4e1d-a07c-7c4af6907a89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Spoken variants corroborated by full and targeted ASR; the Wivi exhibit text remains intact.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Al acercarte a esta escena, deja que tu mirada se pose en los maniquíes meticulosamente dispuestos para recrear el conmovedor momento del desembarco de los soldados estadounidenses durante la primera ola de asalto en junio de 1944.",
+        "startSeconds": 0.05,
+        "endSeconds": 16.08
+      },
+      {
+        "text": "Cada rostro congelado en el tiempo encarna el coraje de estos jóvenes que, impulsados ​​por un inquebrantable sentido del deber, pusieron un pie en las playas de Normandía.",
+        "startSeconds": 16.71,
+        "endSeconds": 27.65
+      },
+      {
+        "text": "Observa los detalles: los uniformes auténticos, las armas en mano, listos para el inevitable enfrentamiento.",
+        "startSeconds": 28.0,
+        "endSeconds": 35.37
+      },
+      {
+        "text": "Estos soldados, algunos apenas salidos de la adolescencia, llevaban sobre sus hombros el peso de un mundo en busca de libertad.",
+        "startSeconds": 35.9,
+        "endSeconds": 43.49
+      },
+      {
+        "text": "Omaha fue la playa del desembarco más sangrienta: alrededor de 4.000 muertos, desaparecidos y heridos el 6 de junio de 1944.",
+        "startSeconds": 44.12,
+        "endSeconds": 54.9
+      },
+      {
+        "text": "Estas grandes cruces de acero, también llamadas “erizos checos”, imponentes y amenazantes, salpican la arena, ilustrando los formidables obstáculos que cada soldado tuvo que superar.",
+        "startSeconds": 55.34,
+        "endSeconds": 66.75
+      },
+      {
+        "text": "Estas piezas son símbolos austeros de la resistencia enemiga, que atestiguan la brutalidad de los medios de defensa en esta playa, transformada en un verdadero teatro de guerra.",
+        "startSeconds": 67.4,
+        "endSeconds": 77.81
+      },
+      {
+        "text": "Esta escena rinde homenaje a quienes se enfrentaron con valentía lo desconocido, con miedo en el cuerpo pero esperanza en el corazón.",
+        "startSeconds": 78.36,
+        "endSeconds": 86.53
+      },
+      {
+        "text": "Escribieron, en letras de fuego y sangre, la historia de la liberación, transformando las olas de la angustia en arenas de liberación.",
+        "startSeconds": 86.92,
+        "endSeconds": 94.98
+      },
+      {
+        "text": "Tómate un momento para sentir la emoción que emana de esta pintura viva y piensa en las innumerables historias de valentía asociadas a ella, grabadas para siempre en la memoria colectiva de la humanidad.\"",
+        "startSeconds": 95.79,
+        "endSeconds": 107.68
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "20": {
+    "id": "20",
+    "language": "es",
+    "audioSha256": "8d513d0374bc76cedd856d99089cb93303e096ac961add5f7a856345dcf1ab98",
+    "durationSeconds": 162.552,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7d903007-924c-4055-beb5-6493e0fc9f99?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Spoken variants corroborated by full and targeted ASR; the Wivi exhibit text remains intact.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Esta vitrina está dedicada a algunos objetos del ejército británico, encontrados en varios lugares de los sectores ingleses del Día D.",
+        "startSeconds": 0.06,
+        "endSeconds": 9.01
+      },
+      {
+        "text": "Me recuerda a mi tío que, aún siendo niño, nos contaba sus anécdotas, compartidas con mi padre en el pequeño bar cercano al “Puente Pégasus”, testigos de una época en la que la valentía traspasó fronteras y los cielos.",
+        "startSeconds": 9.96,
+        "endSeconds": 24.55
+      },
+      {
+        "text": "Inglaterra, último bastión libre de una Europa ocupada en la década de 1940, seguirá siendo una línea de falla en el régimen nazi a través de la cual comenzará el camino hacia la liberación.",
+        "startSeconds": 25.25,
+        "endSeconds": 39.46
+      },
+      {
+        "text": "A la derecha, aquí hay una caja de palomas mensajeras.",
+        "startSeconds": 39.99,
+        "endSeconds": 43.2
+      },
+      {
+        "text": "En el aire, estos mensajeros alados llevaban esperanza e información crucial, cruzando las líneas enemigas para asegurar la coordinación de las operaciones aliadas.",
+        "startSeconds": 43.7,
+        "endSeconds": 54.09
+      },
+      {
+        "text": "Eran auténticos soldados del silencio, salvaban vidas con el simple batir de sus alas.",
+        "startSeconds": 54.4,
+        "endSeconds": 60.12
+      },
+      {
+        "text": "El casco de paracaidista inglés, marcado con una unidad médica, se ha vuelto muy raro de encontrar.",
+        "startSeconds": 60.52,
+        "endSeconds": 67.05
+      },
+      {
+        "text": "Este casco cubría las cabezas de quienes, volando por los cielos, se sumergían en territorios hostiles.",
+        "startSeconds": 67.42,
+        "endSeconds": 73.93
+      },
+      {
+        "text": "En los albores del Día D, saltaron a lo desconocido por encima de lugares que se han vuelto míticos, como el Puente Pegaso, llevando consigo un destino más grande que ellos mismos.",
+        "startSeconds": 74.23,
+        "endSeconds": 85.83
+      },
+      {
+        "text": "Estos mapas de seda, tan ligeros y al mismo tiempo tan vitales para navegar en territorio enemigo, fueron diseñados para sobrevivir al mal tiempo, o incluso en caso de un accidente aéreo.",
+        "startSeconds": 86.17,
+        "endSeconds": 98.4
+      },
+      {
+        "text": "Guiaron a nuestros Aliados a través de paisajes inciertos en su misión.",
+        "startSeconds": 98.78,
+        "endSeconds": 103.3
+      },
+      {
+        "text": "El arma que ves aquí es un PIAT, un arma antitanque británica, prueba del poder escondido en las decididas manos de los soldados ingleses.",
+        "startSeconds": 103.6,
+        "endSeconds": 112.13
+      },
+      {
+        "text": "Poco fiable e impreciso, sin embargo encarnaba la resistencia necesaria para repeler las fuerzas blindadas enemigas.",
+        "startSeconds": 112.54,
+        "endSeconds": 120.51
+      },
+      {
+        "text": "La típica chaqueta de batalla inglesa, con las insignias de los paracaidistas, evoca aquellas noches en las que el cielo negro se poblaba de siluetas flotantes: estos temerarios luchadores descendiendo para tender la mano a la libertad.",
+        "startSeconds": 120.9,
+        "endSeconds": 135.68
+      },
+      {
+        "text": "La daga comando Fairbairn, un rifle Lee-Enfield, una unidad de buceo...",
+        "startSeconds": 136.09,
+        "endSeconds": 141.21
+      },
+      {
+        "text": "todos estos objetos han sido encontrados a lo largo de los años, dando lugar a investigaciones, intercambios e inversiones.",
+        "startSeconds": 141.63,
+        "endSeconds": 150.01
+      },
+      {
+        "text": "Personalmente, me sorprende cómo los ingleses fueron auténticos pioneros en muchos ámbitos.",
+        "startSeconds": 150.5,
+        "endSeconds": 156.57
+      },
+      {
+        "text": "Sus innovaciones, tanto tecnológicas como históricas, siguen haciendo historia en la actualidad.\"",
+        "startSeconds": 156.93,
+        "endSeconds": 161.98
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
