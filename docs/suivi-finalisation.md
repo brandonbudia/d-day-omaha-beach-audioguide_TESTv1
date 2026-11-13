@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 56 ; premier original polonais avec suivi partiel.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 57 ; DE16, ES04 et ES08 intégrées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 7 pistes DE, 14 ES, IT07 et NL09 activées. IT07, NL09 et ES06 ont un suivi partiel explicite |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 8 pistes DE, 16 ES, IT07 et NL09 activées. IT07, NL09 et ES06 ont un suivi partiel explicite |
 | LANG-pl | P1 | in_progress | PL01 d’origine avec 14 phrases sur 17 synchronisées. PL09, 10, 15, 20 et 22 de synthèse identifiés. Corroborer les transcriptions et les bornes des 16 autres originaux |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -172,6 +172,10 @@ Le checkpoint 55 active les MP3 Wivi IT07 et ES06. IT07 suit 9 phrases sur 11 du
 Le checkpoint 55 est publié sous `4fe5f70539b186ef6a9dfa357c376963f6daaff3`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 56 intègre PL01, le MP3 Wivi polonais d’origine. Deux reconnaissances, les fenêtres ciblées et les mesures du signal fondent la transcription et 14 repères de phrase. Le toponyme incertain est signalé. Trois phrases restent sans repère. La fiche présente cette transcription et le lien Wivi, et le lecteur indique le suivi partiel. Le navigateur a ouvert la fiche, lancé le lecteur, puis affiché la phrase sélectionnée à 139,38 s. Les 126 tests, TypeScript et le build `index-C2bJzLvp.js` ont réussi.
+
+Le checkpoint 56 est publié sous `a8ee913834c9e30a49c3abc34c70bde1cc43c71e`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 57 ajoute DE16 (11 phrases), ES04 (10) et ES08 (12). Les reconnaissances et le signal séparent les pauses de la parole. Le lecteur DE16 conserve la date en une phrase et emploie la variante orale corroborée « die Pubertät hinter sich gelassen ». La fiche Wivi reste intacte. Le navigateur a confirmé les sauts et le surlignage à 46,36, 69,38 et 106,74 s respectivement. Les 126 tests, TypeScript et le build `index-BlKlE9EA.js` ont réussi.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

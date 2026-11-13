@@ -1424,5 +1424,151 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "04": {
+    "id": "04",
+    "language": "es",
+    "audioSha256": "1fee51e67391bf8871392369f492410b56871bd3ed4c6f65d227c26c852757ca",
+    "durationSeconds": 105.408,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/72a22281-e529-4082-9587-062ba1a49e74?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and acoustic boundaries compared on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ante usted se encuentra el imponente Flakvierling 38, un poderoso testigo del ingenio militar de la Segunda Guerra Mundial.",
+        "startSeconds": 0.05,
+        "endSeconds": 8.23
+      },
+      {
+        "text": "Diseñado por las fuerzas alemanas, este cañón antiaéreo de 20 mm y cuatro cañones atravesó el cielo con una velocidad de disparo vertiginosa, proyectando un muro de fuego contra los aviones aliados.",
+        "startSeconds": 9.01,
+        "endSeconds": 23.34
+      },
+      {
+        "text": "Este monstruo de metal, a veces apodado \"\"el destructor del cielo\"\", fue encontrado en Alemania, símbolo de una época en la que la sombra de los conflictos se extendía por todo el mundo.",
+        "startSeconds": 23.91,
+        "endSeconds": 35.46
+      },
+      {
+        "text": "Su imponente presencia recuerda los momentos en que, con un ruido ensordecedor, partió los cielos para defender el territorio alemán de los incesantes ataques aéreos.",
+        "startSeconds": 36.03,
+        "endSeconds": 46.95
+      },
+      {
+        "text": "Colocadas en un remolque para una movilidad óptima o en vehículos como semiorugas, estas armas podían trasladarse dondequiera que surgiera la necesidad, y su versatilidad transformaba los campos de batalla.",
+        "startSeconds": 47.54,
+        "endSeconds": 61.83
+      },
+      {
+        "text": "El propio suelo vibró con la intensidad de cada salva, redefiniendo las reglas del combate aéreo.",
+        "startSeconds": 62.4,
+        "endSeconds": 68.55
+      },
+      {
+        "text": "Pero el Flakvierling 38 no sólo amenazaba a los pájaros de metal que perforaban las nubes.",
+        "startSeconds": 69.22,
+        "endSeconds": 75.21
+      },
+      {
+        "text": "Su capacidad para atacar objetivos terrestres también lo convirtió en un adversario formidable para las fuerzas avanzadas, que tuvieron que lidiar con ráfagas despiadadas.",
+        "startSeconds": 75.89,
+        "endSeconds": 87.11
+      },
+      {
+        "text": "Hoy nos enfrentamos a la dualidad de la tecnología humana: capaz de lo mejor y de lo peor.",
+        "startSeconds": 88.01,
+        "endSeconds": 93.94
+      },
+      {
+        "text": "Este canon, deliberadamente olvidado por el tiempo, nos recuerda la fragilidad de la paz y el precio pagado por tantas vidas bajo su trueno de fuego.\"",
+        "startSeconds": 94.34,
+        "endSeconds": 105.15
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "08": {
+    "id": "08",
+    "language": "es",
+    "audioSha256": "ba01b946dbcddc3f964582955f51595635d54b0828c3fc8b7af619ac5fdf9f0f",
+    "durationSeconds": 128.568,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/cca5c151-6f2e-4420-be90-fa58a453eb89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and acoustic boundaries compared on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"En una casa de campo enclavada en el sur de Normandía, se descubrió un tesoro inesperado durante una mañana llena de misterio y emoción.",
+        "startSeconds": 0.06,
+        "endSeconds": 8.8
+      },
+      {
+        "text": "Este hallazgo, mucho más que un simple juguete, es un muñeco.",
+        "startSeconds": 9.4,
+        "endSeconds": 13.62
+      },
+      {
+        "text": "Un muñeco “Rupert”, guardián de una historia poco conocida de la Segunda Guerra Mundial.",
+        "startSeconds": 14.16,
+        "endSeconds": 19.57
+      },
+      {
+        "text": "En apariencia, Rupert se parece a cualquier muñeco de la época, con su ropa gastada y sus rasgos faciales casi inexistentes.",
+        "startSeconds": 20.07,
+        "endSeconds": 28.94
+      },
+      {
+        "text": "Sin embargo, lo que hace que este muñeco sea verdaderamente conmovedor es su papel singular en la historia de la resistencia y las operaciones aliadas.",
+        "startSeconds": 29.36,
+        "endSeconds": 38.0
+      },
+      {
+        "text": "Durante la Operación TITANIC, una audaz misión para engañar a las fuerzas nazis antes del desembarco de Normandía, se lanzaron desde el cielo cientos de muñecos similares, llamados \"\"Ruperts\"\".",
+        "startSeconds": 38.47,
+        "endSeconds": 50.49
+      },
+      {
+        "text": "Estaban equipados con dispositivos de sonido y pequeños explosivos, imitando la presencia de paracaidistas y sembrando confusión y desinformación detrás de las líneas enemigas.",
+        "startSeconds": 51.66,
+        "endSeconds": 63.49
+      },
+      {
+        "text": "Al detenerte frente a esta reliquia, no puedo evitar pensar que ciertos soldados de élite acompañaron el lanzamiento en paracaídas de estos muñecos, disparando ametralladoras y emitiendo diversos efectos sonoros para que el desvío fuera lo más cercano posible a la realidad.",
+        "startSeconds": 64.07,
+        "endSeconds": 82.04
+      },
+      {
+        "text": "De todos modos, este descubrimiento en este ático con mi padre nos invita a pensar que este muñeco es realmente una ilustración tangible de cómo los objetos más inocentes pueden jugar un papel crucial en las grandes estrategias de guerra.",
+        "startSeconds": 82.66,
+        "endSeconds": 99.35
+      },
+      {
+        "text": "Estas historias son las de soldados invisibles, estratagemas ingeniosas y noches tensas.",
+        "startSeconds": 99.9,
+        "endSeconds": 106.11
+      },
+      {
+        "text": "Esta muñeca, tan frágil e inocente, nos recuerda que, incluso en los momentos más oscuros, la astucia siempre encuentra la manera de brillar.",
+        "startSeconds": 106.57,
+        "endSeconds": 116.06
+      },
+      {
+        "text": "Te invitamos a profundizar en su fascinante historia, a explorar cómo el tejido mismo de la guerra a veces estaba tejido con hilos tan improbables como los de una simple muñeca.\"",
+        "startSeconds": 116.51,
+        "endSeconds": 128.39
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

@@ -711,5 +711,79 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "16": {
+    "id": "16",
+    "language": "de",
+    "audioSha256": "dc07eb1055a8eb46a97b14a53c16d5bfe1c71bcff3fafe8e1cd3bcbfd531b18a",
+    "durationSeconds": 117.216,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/62a0a9ce-16c7-4e1d-a07c-7c4af6907a89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and acoustic boundaries compared on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken variant « die Pubertät hinter sich gelassen » is supported by both passes. The Wivi exhibit text remains intact.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Wenn Sie sich dieser Szene nähern, lassen Sie Ihren Blick auf den Schaufensterpuppen ruhen, die sorgfältig arrangiert wurden, um den ergreifenden Moment der Landung amerikanischer Soldaten während der ersten Angriffswelle im Juni 1944 nachzubilden.",
+        "startSeconds": 0.06,
+        "endSeconds": 15.82
+      },
+      {
+        "text": "Jedes in der Zeit eingefrorene Gesicht verkörpert den Mut dieser jungen Männer, die, getrieben von einem unerschütterlichen Pflichtbewusstsein, die Strände der Normandie betreten.",
+        "startSeconds": 16.54,
+        "endSeconds": 27.26
+      },
+      {
+        "text": "Beobachten Sie die Details: die authentischen Uniformen, die Waffen in der Hand, bereit für die unvermeidliche Konfrontation.",
+        "startSeconds": 28.06,
+        "endSeconds": 35.33
+      },
+      {
+        "text": "Diese Soldaten, von denen einige gerade erst die Pubertät hinter sich gelassen hatten, trugen auf ihren Schultern die Last einer Welt auf der Suche nach Freiheit.",
+        "startSeconds": 35.9,
+        "endSeconds": 45.47
+      },
+      {
+        "text": "Omaha war der blutigste Landungsstrand: rund 4.000 Tote, Vermisste und Verletzte am 6. Juni 1944.",
+        "startSeconds": 46.23,
+        "endSeconds": 55.8
+      },
+      {
+        "text": "Diese großen Stahlkreuze, auch „tschechische Igel“ genannt, sind imposant und bedrohlich und zeichnen sich durch den Sand aus.",
+        "startSeconds": 56.55,
+        "endSeconds": 64.56
+      },
+      {
+        "text": "Sie veranschaulichen die gewaltigen Hindernisse, die jeder Soldat überwinden musste.",
+        "startSeconds": 65.11,
+        "endSeconds": 70.12
+      },
+      {
+        "text": "Diese Stücke sind strenge Symbole des feindlichen Widerstands und zeugen von der Brutalität der Verteidigungsmaßnahmen an diesem Strand, der in einen wahren Kriegsschauplatz verwandelt wurde.",
+        "startSeconds": 70.71,
+        "endSeconds": 82.41
+      },
+      {
+        "text": "Diese Szene ist eine Hommage an diejenigen, die sich mutig dem Unbekannten gestellt haben, mit Angst im Körper, aber Hoffnung im Herzen.",
+        "startSeconds": 83.2,
+        "endSeconds": 91.62
+      },
+      {
+        "text": "Sie schrieben in Briefen aus Feuer und Blut die Geschichte der Befreiung und verwandelten die Wellen der Qual in Sand der Erlösung.",
+        "startSeconds": 91.94,
+        "endSeconds": 100.28
+      },
+      {
+        "text": "Nehmen Sie sich einen Moment Zeit, um die Emotionen zu spüren, die von diesem lebendigen Gemälde ausgehen, und denken Sie an die unzähligen Geschichten über Tapferkeit, die damit verbunden sind und für immer im kollektiven Gedächtnis der Menschheit verankert sind.\"",
+        "startSeconds": 100.85,
+        "endSeconds": 116.88
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
