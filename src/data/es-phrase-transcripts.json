@@ -96,5 +96,191 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "13": {
+    "id": "13",
+    "language": "es",
+    "audioSha256": "bea037c49159b7be5330cd86aba4080f7957df1f078fb70b253691087f0a2285",
+    "durationSeconds": 159.816,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9361f95f-8238-411c-9d32-e133e9d8c022?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Entre los poderosos artefactos de nuestra colección se encuentran las impresionantes minas marinas tipo ORIN…, testigos tangibles de las estrategias navales durante la Segunda Guerra Mundial.",
+        "startSeconds": 0.06,
+        "endSeconds": 12.59
+      },
+      {
+        "text": "Estas formidables máquinas, diseñadas para destruir barcos enemigos, desempeñaron un papel crucial en el control de las rutas marítimas, lo que tuvo un fuerte impacto en las operaciones militares y los esfuerzos de reabastecimiento.",
+        "startSeconds": 13.49,
+        "endSeconds": 28.85
+      },
+      {
+        "text": "Encontradas en un famoso puerto francés, estas minas son un recordatorio de la amenaza constante e invisible que pesaba sobre las flotas aliadas y enemigas.",
+        "startSeconds": 29.33,
+        "endSeconds": 39.92
+      },
+      {
+        "text": "Ancladas bajo la superficie del agua, las minas ORIN estaban equipadas con gatillos sensibles que respondían a la presión o al sonido, detonando cuando pasaba un buque de guerra.",
+        "startSeconds": 40.47,
+        "endSeconds": 52.9
+      },
+      {
+        "text": "Estaban dispuestos por decenas, protegiendo así un paso marítimo estratégico.",
+        "startSeconds": 53.53,
+        "endSeconds": 59.23
+      },
+      {
+        "text": "Su instalación a lo largo de rutas marítimas vitales tenía como objetivo perturbar el transporte de tropas, armas y suministros, influyendo directamente en el curso de las operaciones y las batallas en las aguas.",
+        "startSeconds": 59.41,
+        "endSeconds": 74.9
+      },
+      {
+        "text": "El impacto de las minas marinas durante la guerra fue considerable: causaron estragos en las filas de las fuerzas navales, imponiendo cautela y ralentizando considerablemente los movimientos marítimos.",
+        "startSeconds": 75.47,
+        "endSeconds": 90.14
+      },
+      {
+        "text": "Las medidas para limpiarlos y navegar con seguridad movilizaron importantes recursos humanos y tecnológicos, lo que refleja la importancia estratégica de estos instrumentos de guerra.",
+        "startSeconds": 90.31,
+        "endSeconds": 102.9
+      },
+      {
+        "text": "Al observar estas reliquias en exhibición, uno solo puede imaginar las historias de los marineros y las tripulaciones que navegaron por estos peligros invisibles, enfrentando peligros submarinos mientras libraban batallas en la superficie.",
+        "startSeconds": 103.65,
+        "endSeconds": 119.42
+      },
+      {
+        "text": "Las minas ORIN no son sólo armas, sino también símbolos de la guerra psicológica librada en los mares, cuyo objetivo es sembrar terror e incertidumbre.",
+        "startSeconds": 120.04,
+        "endSeconds": 130.74
+      },
+      {
+        "text": "Nuestra presentación invita a comprender la complejidad de la guerra naval a través de estos artefactos, que dan testimonio de la innovación técnica y las tácticas defensivas y ofensivas que marcaron el conflicto.",
+        "startSeconds": 131.44,
+        "endSeconds": 145.92
+      },
+      {
+        "text": "Al exhibirlos, honramos la memoria de quienes desafiaron los riesgos inherentes al combate naval, al tiempo que reflexionamos sobre el ingenio humano, una vez más puesto al servicio de la guerra.\"",
+        "startSeconds": 146.59,
+        "endSeconds": 159.6
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "22": {
+    "id": "22",
+    "language": "es",
+    "audioSha256": "b199bb56429e9cf73275e3b58da5185877b7d500a53e105b357e060854bad477",
+    "durationSeconds": 152.712,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Esta ventana está dedicada a una época de valentía: la de la Resistencia francesa durante la Segunda Guerra Mundial.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.01
+      },
+      {
+        "text": "Cada uno de los objetos aquí presentes cuenta la historia de quienes, en las sombras, lucharon por la libertad y la dignidad.",
+        "startSeconds": 7.89,
+        "endSeconds": 15.26
+      },
+      {
+        "text": "A la derecha se pueden ver varios elementos de captura: estos artefactos explosivos ingeniosamente diseñados, utilizados para interrumpir el avance de las fuerzas de ocupación...",
+        "startSeconds": 16.1,
+        "endSeconds": 26.77
+      },
+      {
+        "text": "Los ferrocarriles, por ejemplo, sufrieron muchos daños como resultado de estas acciones.",
+        "startSeconds": 27.51,
+        "endSeconds": 33.19
+      },
+      {
+        "text": "Los cuchillos, herramientas silenciosas pero formidables en el combate cuerpo a cuerpo, constituían o una última defensa o un medio de ataque furtivo.",
+        "startSeconds": 33.66,
+        "endSeconds": 43.55
+      },
+      {
+        "text": "Pertenecían a hombres y mujeres dispuestos a sacrificarlo todo.",
+        "startSeconds": 44.18,
+        "endSeconds": 48.12
+      },
+      {
+        "text": "Los folletos que podéis ver aquí sirvieron para concienciar y movilizar a los espíritus libres.",
+        "startSeconds": 48.77,
+        "endSeconds": 54.52
+      },
+      {
+        "text": "Distribuidos a riesgo de sus vidas, estos periódicos eran verdaderos gritos de rebelión contra la opresión, llamados a defender una patria mejor.",
+        "startSeconds": 55.05,
+        "endSeconds": 64.31
+      },
+      {
+        "text": "La boina verde de los comandos KIEFFER simboliza la unidad y el coraje de los 177 soldados franceses que respondieron al llamado del 18 de junio, luchando codo con codo con sus aliados para liberar a un país reducido al silencio.",
+        "startSeconds": 64.93,
+        "endSeconds": 80.8
+      },
+      {
+        "text": "Los detonadores, los cortes de neumáticos y esta arma Mauser modificada dan testimonio de la inventiva de los combatientes de la resistencia.",
+        "startSeconds": 81.38,
+        "endSeconds": 90.45
+      },
+      {
+        "text": "Y luego están los sellos falsos, instrumentos esenciales para crear identidades falsas: verdaderas claves de supervivencia que permiten a muchos combatientes de la resistencia escapar de las garras del enemigo y continuar su lucha en las sombras.",
+        "startSeconds": 91.08,
+        "endSeconds": 106.57
+      },
+      {
+        "text": "Ante recursos limitados, transformaron su entorno, utilizando cada pieza, cada herramienta, para alimentar su lucha sin fin.",
+        "startSeconds": 107.19,
+        "endSeconds": 115.49
+      },
+      {
+        "text": "Tuvimos la suerte de conocer a varios combatientes de la resistencia durante su vida.",
+        "startSeconds": 116.21,
+        "endSeconds": 120.64
+      },
+      {
+        "text": "A través de sus historias, nos transmitieron los objetos que guardaban en un rincón de su casa.",
+        "startSeconds": 121.25,
+        "endSeconds": 126.51
+      },
+      {
+        "text": "Perpetuamos su memoria a través de esta ventana, porque es un recuerdo real de infancia de haber conocido a estas personas, que no vestían uniforme, aparentemente simples ciudadanos...",
+        "startSeconds": 127.38,
+        "endSeconds": 138.69
+      },
+      {
+        "text": "¡Pero qué audacia!",
+        "startSeconds": 139.35,
+        "endSeconds": 140.36
+      },
+      {
+        "text": "¡Qué audacia haber resistido!",
+        "startSeconds": 140.83,
+        "endSeconds": 142.43
+      },
+      {
+        "text": "Su valentía y determinación siguen inspirando y recordándonos que incluso en los momentos más oscuros, la luz de la resistencia nunca se apaga.\"",
+        "startSeconds": 142.66,
+        "endSeconds": 152.38
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
