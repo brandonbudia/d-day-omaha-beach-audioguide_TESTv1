@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 39 ; pilote DE01 intégré et vérifié hors connexion.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 40 ; récits Wivi intégrés, vérification des pistes en cours.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | Accord confirmé. 88 couples récupérés. DE01 intégré. Vérifier les autres couples avec les résultats de reconnaissance conservés |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. DE01 activé. Vérifier la correspondance et les bornes des 87 autres pistes avec les reconnaissances locales conservées |
 | LANG-pl | P1 | in_progress | Accord confirmé. 17 pistes d’origine récupérées sans texte. Cinq MP3 de synthèse produits en espace de travail et à vérifier avant activation |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -104,6 +104,8 @@ Le lot est publié sous `b87b6217820db4360f2b7520568ff6ce4d7ac3df`, SHA distant 
 Le checkpoint 38 recense les ressources Wivi publiques sans les intégrer. Les 105 MP3 répondent en `206` à une requête de lecture limitée aux en-têtes. Les 22 textes PL et cinq pistes PL manquent dans cette collection publique. Les champs de transcription des pistes consultés sont vides. Voir [l’inventaire par station](inventaire-wivi-multilingue.md).
 
 Le checkpoint 39 intègre la piste DE01 après confirmation des droits de réutilisation le 13 novembre 2026. Le lecteur suit 16 phrases vérifiées par deux passes locales. Le pack partiel a été téléchargé et la lecture a repris sur une phrase après arrêt du serveur de recette. 123 tests, TypeScript et build réussis. Les résultats FR/EN conservent leurs repères et leurs totaux. Preuve hors dépôt `wivi-authorized-2026-11-13/de01-browser.json`.
+
+Le checkpoint 40 rend consultables les 88 récits Wivi allemands, italiens, néerlandais et espagnols, dans l’onglet Récit de chaque fiche, avec leur lien source. Les 88 textes concordent avec les corps récupérés après normalisation des espaces. La recette sur le build `index-GX_m9j9h.js` a vérifié IT02, la navigation vers IT03 et le lien direct NL02. Les pistes de ces fiches restent indisponibles. Les 123 tests applicatifs, TypeScript et le build ont réussi. Le bloc de récits est chargé à la demande et figure dans le précache du build. Les empreintes FR et EN restent identiques. Couverture inchangée dans les 44 lignes du registre : FR 7 233 mots synchronisés et 43 manquants (99,41 %), EN 6 614 et 408 (94,19 %).
 
 Prochaine action : exploiter les sorties de reconnaissance mises en cache dans `wivi-authorized-2026-11-13/recognition`, comparer les candidats et intégrer chaque station dont le texte et les bornes concordent. Le manifeste `download-manifest.json` référence 105 MP3 Wivi et 88 textes. La synthèse PL utilise Piper 1.8.0 isolé et la voix Darkman épinglée. Les brouillons audio et les mesures d’échantillons sont dans `polish-synthetic`.
 

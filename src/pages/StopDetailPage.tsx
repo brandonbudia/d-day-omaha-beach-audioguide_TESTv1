@@ -12,6 +12,7 @@ import { useVisitorState } from '../visit/useVisitorState';
 import { PhotoViewer, type ViewerPhoto } from '../components/PhotoViewer';
 import { experienceText as x } from '../i18n/experienceLabels';
 import { EnglishNarrative } from '../components/EnglishNarrative';
+import { hasWiviNarratives, WiviNarrative } from '../components/WiviNarrative';
 
 interface StopDetailPageProps {
   stopId: string;
@@ -118,6 +119,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
       <section className="museum-piece-panel" role="tabpanel" id={`${tabPrefix}-panel-recit`} aria-labelledby={`${tabPrefix}-tab-recit`} hidden={activeTab !== 'recit'} tabIndex={0}>
         {activeTab === 'recit' && <>
           {currentLang === 'en' && <EnglishNarrative stopId={stop.id} />}
+          {hasWiviNarratives(currentLang) && <WiviNarrative stopId={stop.id} language={currentLang} />}
           <FrenchReference language={currentLang}>
           {observedKey && <div className="museum-piece-observe museum-card"><Eye size={23} aria-hidden="true" /><div><h3>{detailLabel(currentLang, 'observe')}</h3><p>{detailLabel(currentLang, observedKey)}</p></div></div>}
           <div className="museum-piece-context museum-card">
