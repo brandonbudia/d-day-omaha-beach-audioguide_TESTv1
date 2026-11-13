@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 49 ; ES16 et ES20 ajoutées après contrôle des formulations prononcées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 50 ; ES11 et ES21 ajoutées après vérification des passages incertains.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. DE01, 08, 10, 11, 19 et ES01, 02, 07, 09, 13, 16, 17, 20, 22 activés. Première reconnaissance terminée pour les 88 pistes. Corroborer les autres couples. IT07 requiert une transcription distincte du récit Wivi |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. DE01, 08, 10, 11, 19 et ES01, 02, 07, 09, 11, 13, 16, 17, 20, 21, 22 activés. Première reconnaissance terminée pour les 88 pistes. Corroborer les autres couples. IT07 requiert une transcription distincte du récit Wivi |
 | LANG-pl | P1 | in_progress | PL09, 10, 15, 20 et 22 de synthèse activés. Les 17 originaux sans texte ont chacun un premier brouillon de reconnaissance. Comparer à une source ou corroborer la transcription et les bornes avant activation |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -144,6 +144,10 @@ Le checkpoint 48 active ES02 (15 phrases). Une passe ciblée retrouve le passage
 Le checkpoint 48 est publié sous `3514d5e50a9ed5137f0c862eec18a2fab2205a2f`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 49 active ES16 (10 phrases) et ES20 (18 phrases). Les passes ciblées confirment la date et « se enfrentaron » en ES16, puis « Me recuerda » et « traspasó » en ES20. Les récits écrits Wivi restent identiques. Les contrôles de signal complètent les repères autour des fins de phrases. La recette navigateur a joué les phrases sélectionnées à 78,46 s dans ES16 et 10,12 s dans ES20. Les 124 tests applicatifs, TypeScript et le build `index-uH6Hmdaa.js` ont réussi. Les deux pistes exactes et leurs repères sont contrôlés par le catalogue.
+
+Le checkpoint 49 est publié sous `e709f5bd062b9b564710d5cf1ae9ea314409e451`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 50 active ES11 (13 phrases) et ES21 (34 phrases). La passe medium retrouve le passage de la fin ES11 omis par small. La passe ciblée ES21 confirme la lecture du montant en euros. Les pistes originales et les textes Wivi sont conservés. Les 124 tests applicatifs, TypeScript et le build `index-PNzKphbe.js` ont réussi. La recette navigateur a sélectionné et joué les phrases à 104,87 s dans ES11 et 141,45 s dans ES21. Les repères du signal sont dans `es11-boundary-signal.json` et `es21-boundary-signal.json`.
 
 Prochaine action : partir des caches `wivi-authorized-2026-11-13/recognition`, de `wivi-pair-screening.json`, de `phrase-candidates-2026-11-13.json` et des preuves PCM/MP3 dans `polish-revision-2` et `polish-synthetic`. ES07 a des frontières corroborées par le signal. Deux modèles omettent le même « de » et seul medium omet « tiempo ». ES20 présente « traspasó » à la place de « traspasaba » selon les deux modèles. DE07, ES05 et ces deux pistes attendent l’arbitrage des écarts. NL09 confirme la narration globale mais laisse des mots incertains vers 26–34 et 36–50 s. IT07 présente des reformulations substantielles dès l’ouverture. Deux passes et une vérification ciblée laissent « singoli » ou « simboli » vers 30–40 s et « tuppe » ou « truppe » vers 80–93 s. PL01 conserve le toponyme non résolu vers 20–26 s. La vérification ciblée favorise « bo proszę » en fin de piste. Consulter les fichiers `*-targeted-verification.json` avant de reprendre. Poursuivre DE11, DE10, NL21 et PL02 depuis les caches medium disponibles. Le manifeste `download-manifest.json` référence les 105 MP3 et 88 textes récupérés.
 

@@ -42,7 +42,7 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
-  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '08', '10', '11', '19'], es: ['01', '02', '07', '09', '13', '16', '17', '20', '22'], pl: ['09', '10', '15', '20', '22'] };
+  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '08', '10', '11', '19'], es: ['01', '02', '07', '09', '11', '13', '16', '17', '20', '21', '22'], pl: ['09', '10', '15', '20', '22'] };
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);

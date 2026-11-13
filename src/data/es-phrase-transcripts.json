@@ -798,5 +798,276 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "11": {
+    "id": "11",
+    "language": "es",
+    "audioSha256": "c6aee947dcf8d3e0fc349aa4e70bba9896eacb475ef783c25421025b067d05b4",
+    "durationSeconds": 117.912,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7cc86ceb-9921-4ba7-9f05-254edda0d754?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ante vosotros tenéis un imponente souvenir de la Segunda Guerra Mundial, un arma que me recuerda que, cuando yo era más joven, con mi hermano intentábamos (sin suerte, claro) jugar con ella.",
+        "startSeconds": 0.05,
+        "endSeconds": 12.93
+      },
+      {
+        "text": "Esta arma pesa casi 20 kg y su nombre técnico es tan frío como su apariencia: PTRS 41.",
+        "startSeconds": 13.74,
+        "endSeconds": 21.9
+      },
+      {
+        "text": "Un arma del Este, que atestigua la feroz lucha librada por las fuerzas soviéticas contra los invasores.",
+        "startSeconds": 22.53,
+        "endSeconds": 29.48
+      },
+      {
+        "text": "Cuando éramos niños, nos preguntábamos principalmente: \"\"¿Pero quién puede disparar con eso?",
+        "startSeconds": 30.27,
+        "endSeconds": 36.82
+      },
+      {
+        "text": "Es imposible, incluso para un adulto...\"\" Obviamente, era imposible disparar de pie.",
+        "startSeconds": 37.25,
+        "endSeconds": 43.43
+      },
+      {
+        "text": "Era obligatorio disparar boca abajo.",
+        "startSeconds": 44.12,
+        "endSeconds": 46.34
+      },
+      {
+        "text": "Este rifle pesado, a través de su robustez, encarnaba una verdadera fuerza bruta, transmitiendo determinación y el deseo de protección contra los tanques enemigos.",
+        "startSeconds": 47.03,
+        "endSeconds": 58.39
+      },
+      {
+        "text": "¡Es un arma antitanque!",
+        "startSeconds": 58.98,
+        "endSeconds": 60.24
+      },
+      {
+        "text": "Encontrado en lo que se llamó “el corredor de la muerte”, un lugar oscuro y lleno de recuerdos trágicos, este PTRS-41 se utilizó para perforar el blindaje de vehículos blindados.",
+        "startSeconds": 61.02,
+        "endSeconds": 73.93
+      },
+      {
+        "text": "Representaba una respuesta a los titanes metálicos que amenazaban con devastar ciudades y reducir a cenizas la tenacidad de un pueblo.",
+        "startSeconds": 74.8,
+        "endSeconds": 83.3
+      },
+      {
+        "text": "Imagínese a los soldados en el Frente Oriental, luchando en condiciones implacables, donde cada disparo podría ser la única defensa entre la vida y la muerte, entre la libertad y el cautiverio.",
+        "startSeconds": 83.99,
+        "endSeconds": 96.55
+      },
+      {
+        "text": "Anclado en el suelo helado del campo de batalla, este rifle era un rayo de esperanza, frío pero decidido.",
+        "startSeconds": 97.34,
+        "endSeconds": 104.05
+      },
+      {
+        "text": "Irónicamente, el propio ejército alemán adoptó en ocasiones este instrumento de destrucción para sus propios fines, reconociendo el poder contenido en este dispositivo soviético.\"",
+        "startSeconds": 104.7,
+        "endSeconds": 116.95
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "21": {
+    "id": "21",
+    "language": "es",
+    "audioSha256": "816358c6e44aa0f3284db80f48f65e861770b8d9f837c1530523b59ccb786db3",
+    "durationSeconds": 194.208,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/76a873b3-d22f-454d-819f-9a8a7f11e607?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"En la casa familiar, pocos años después de la muerte de nuestro padre, me esperaba un descubrimiento increíble.",
+        "startSeconds": 0.05,
+        "endSeconds": 6.87
+      },
+      {
+        "text": "Enterrado bajo el peso de los años y el silencio de los secretos guardados, fue por una increíble casualidad que, en un día cualquiera, mi mirada se detuvo en una trampilla en el suelo de un hangar.",
+        "startSeconds": 7.58,
+        "endSeconds": 19.81
+      },
+      {
+        "text": "Una trampilla que, a primera vista, parecía bastante normal y corriente.",
+        "startSeconds": 20.44,
+        "endSeconds": 24.32
+      },
+      {
+        "text": "Al abrir la base, descubrí un ligero hueco de unos 40 cm, un tubo provisto de un grifo y un fondo cubierto de grava.",
+        "startSeconds": 25.0,
+        "endSeconds": 33.73
+      },
+      {
+        "text": "Simplemente no entendí la presencia de esta tubería.",
+        "startSeconds": 34.28,
+        "endSeconds": 37.4
+      },
+      {
+        "text": "No me pregunten por qué, pero en un gesto completamente inofensivo, comencé a remover la grava que había en el fondo...",
+        "startSeconds": 38.01,
+        "endSeconds": 45.29
+      },
+      {
+        "text": "Cuál fue mi sorpresa cuando descubrí un candado.",
+        "startSeconds": 45.98,
+        "endSeconds": 48.69
+      },
+      {
+        "text": "Me quedé atónito, tratando de entender.",
+        "startSeconds": 49.19,
+        "endSeconds": 51.71
+      },
+      {
+        "text": "Debió haber abierto un cajón, pero nada se movió.",
+        "startSeconds": 52.13,
+        "endSeconds": 55.13
+      },
+      {
+        "text": "En la emoción de este descubrimiento, recordé que, entre todas las llaves de la propiedad, había encontrado una llave particularmente extraña.",
+        "startSeconds": 55.62,
+        "endSeconds": 64.06
+      },
+      {
+        "text": "Era muy alta, con un anillo enorme.",
+        "startSeconds": 64.54,
+        "endSeconds": 66.97
+      },
+      {
+        "text": "Sin pensarlo dos veces, corro a buscarlo...",
+        "startSeconds": 67.41,
+        "endSeconds": 70.19
+      },
+      {
+        "text": "Una vez en la cerradura, intento maniobras para articularlo, busco una dirección...",
+        "startSeconds": 70.78,
+        "endSeconds": 76.15
+      },
+      {
+        "text": "y de repente, el cajón se desliza pesadamente hacia mí.",
+        "startSeconds": 76.64,
+        "endSeconds": 80.32
+      },
+      {
+        "text": "¡No era un cajón, sino una entrada!",
+        "startSeconds": 80.69,
+        "endSeconds": 82.98
+      },
+      {
+        "text": "Se me presentó un agujero negro con una escalera.",
+        "startSeconds": 83.42,
+        "endSeconds": 86.3
+      },
+      {
+        "text": "Mi corazón palpitaba; Me quedé asombrado porque conocía la casa desde pequeño: había buscado y jugado por todos lados.",
+        "startSeconds": 86.79,
+        "endSeconds": 95.45
+      },
+      {
+        "text": "Si había alguien que conocía la casa de memoria era yo… Bueno, eso pensaba.",
+        "startSeconds": 95.69,
+        "endSeconds": 101.09
+      },
+      {
+        "text": "Todavía no puedo creerlo.",
+        "startSeconds": 101.68,
+        "endSeconds": 103.1
+      },
+      {
+        "text": "Bajo… no vemos nada.",
+        "startSeconds": 103.59,
+        "endSeconds": 105.25
+      },
+      {
+        "text": "Primero los pies, luego las manos.",
+        "startSeconds": 105.85,
+        "endSeconds": 108.05
+      },
+      {
+        "text": "Una vez en esta estrecha escalera, a mi izquierda hay una vieja caja eléctrica: presiono...",
+        "startSeconds": 108.5,
+        "endSeconds": 113.65
+      },
+      {
+        "text": "Y allí...",
+        "startSeconds": 114.13,
+        "endSeconds": 114.6
+      },
+      {
+        "text": "una habitación no muy grande, pero llena de armas de la Segunda Guerra Mundial: ametralladoras, máusers, sin fin.",
+        "startSeconds": 114.96,
+        "endSeconds": 122.44
+      },
+      {
+        "text": "Se almacenaron alrededor de 200 armas.",
+        "startSeconds": 122.84,
+        "endSeconds": 125.6
+      },
+      {
+        "text": "Y en medio de todo, el arma que tienes delante: una FG 42.",
+        "startSeconds": 126.05,
+        "endSeconds": 131.23
+      },
+      {
+        "text": "Una ametralladora paracaidista alemana, producida en sólo 2500 ejemplares.",
+        "startSeconds": 131.82,
+        "endSeconds": 137.17
+      },
+      {
+        "text": "Es un artículo muy codiciado por los coleccionistas.",
+        "startSeconds": 137.64,
+        "endSeconds": 140.73
+      },
+      {
+        "text": "Por ejemplo, un día, después de visitar el museo, alguien casi nos ofrece 100.000€ para irnos con esta ametralladora.",
+        "startSeconds": 141.3,
+        "endSeconds": 149.17
+      },
+      {
+        "text": "Más tarde supe, contrastando varios testimonios entre conocidos de mi padre, que esta pieza despertaba muchos celos en su entorno.",
+        "startSeconds": 149.85,
+        "endSeconds": 158.17
+      },
+      {
+        "text": "Es por esta razón que este caché fue construido, durante su tiempo libre, haciendo imposible que el FG pudiera robar.",
+        "startSeconds": 158.74,
+        "endSeconds": 166.0
+      },
+      {
+        "text": "También aprendí que este pequeño tesoro provenía del “bolsillo del acantilado del corredor de la muerte”.",
+        "startSeconds": 166.6,
+        "endSeconds": 172.44
+      },
+      {
+        "text": "Mi padre y mi tío estuvieron entre los primeros en excavar y recolectar reliquias de la Segunda Guerra Mundial.",
+        "startSeconds": 173.03,
+        "endSeconds": 179.34
+      },
+      {
+        "text": "Al descender a esta guarida poco conocida, sentí más que nunca el peso de la herencia familiar y la llamada a descubrir qué había motivado su determinación de crear tal espacio, de esconder estas cosas preciosas.\"",
+        "startSeconds": 179.87,
+        "endSeconds": 193.55
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
