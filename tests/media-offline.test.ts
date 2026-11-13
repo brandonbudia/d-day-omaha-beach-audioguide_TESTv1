@@ -42,7 +42,7 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
-  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '08', '11'], es: ['01', '13', '17', '22'], pl: ['09', '10', '15', '20', '22'] };
+  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '08', '10', '11'], es: ['01', '07', '13', '17', '22'], pl: ['09', '10', '15', '20', '22'] };
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
@@ -84,7 +84,7 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
   assert.equal(getLanguageResourceSummary('fr').unavailable, 0);
   assert.equal(getLanguageResourceSummary('en').ready, 22);
   assert.equal(getLanguageResourceSummary('en').editorialReviewRequired, 22);
-  assert.equal(getLanguageResourceSummary('de').unavailable, 19);
+  assert.equal(getLanguageResourceSummary('de').unavailable, 18);
   const restored = getMediaResource('22', 'fr');
   assert.equal(restored.reason, 'public-source-restored');
   assert.equal(restored.sha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');

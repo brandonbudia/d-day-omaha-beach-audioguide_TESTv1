@@ -79,3 +79,5 @@ Au checkpoint 42, ES13 et ES22 sont également activées. Leurs 30 phrases conse
 Au checkpoint 43, DE08 et ES17 ajoutent 23 phrases synchronisées. L’audio est disponible pour 2 stations en allemand, 4 en espagnol et 5 en polonais avec une voix de synthèse signalée. Les 99 pistes originales qui restent à intégrer se répartissent entre DE (20), IT (22), PL (17), NL (22) et ES (18). Les 88 récits Wivi restent consultables.
 
 Au checkpoint 44, DE11 ajoute 13 phrases. Les différences lexicales des reconnaissances concernent les graphies et le développement des abréviations. La vérification du signal a notamment précisé le début de la sixième phrase. Le clic a été vérifié dans le navigateur. Le total d’originaux encore à intégrer est de 98 (19 DE, 22 IT, 17 PL, 22 NL, 18 ES).
+
+Au checkpoint 45, DE10 et ES07 ajoutent 30 phrases. Il reste 96 pistes originales à intégrer (18 DE, 22 IT, 17 PL, 22 NL, 17 ES). ES07 conserve la variante écrite sur la fiche et utilise la formulation prononcée confirmée dans le lecteur.

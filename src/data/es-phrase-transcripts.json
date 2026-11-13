@@ -355,5 +355,84 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "07": {
+    "id": "07",
+    "language": "es",
+    "audioSha256": "dcd8d576276d81b230bf36727cfc1f9bb36b2d1b9210a50ea30becf4fed52bb5",
+    "durationSeconds": 117.912,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/98342c97-e5b9-4b02-8860-b2c1824ad395?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The recording says « y la fe ». The Wivi exhibit text retains « y de la fe ». Both models and a targeted pass corroborate the spoken wording.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ante ti está el traje de un capellán alemán de la Segunda Guerra Mundial.",
+        "startSeconds": 0.05,
+        "endSeconds": 4.17
+      },
+      {
+        "text": "Estos hombres de fe ocuparon un lugar único dentro del ejército alemán, responsables de brindar apoyo espiritual a los soldados inmersos en la dura realidad de la guerra.",
+        "startSeconds": 5.25,
+        "endSeconds": 15.76
+      },
+      {
+        "text": "Los capellanes podían ser católicos o protestantes y cada uno ofrecía el consuelo de su tradición religiosa a los soldados de su fe.",
+        "startSeconds": 16.61,
+        "endSeconds": 25.47
+      },
+      {
+        "text": "Los capellanes vivían una paradoja cotidiana.",
+        "startSeconds": 26.14,
+        "endSeconds": 28.75
+      },
+      {
+        "text": "En su papel de apoyo y consuelo, vestían un atuendo marcado con símbolos que evocaban un período oscuro y complejo de nuestra historia actual.",
+        "startSeconds": 29.22,
+        "endSeconds": 39.16
+      },
+      {
+        "text": "Estos símbolos, aunque estaban adheridos a su uniforme, no definían necesariamente las convicciones personales de estos hombres, cuya misión principal era proporcionar refugio espiritual y moral en el caos circundante.",
+        "startSeconds": 39.92,
+        "endSeconds": 55.41
+      },
+      {
+        "text": "Trabajando a menudo en condiciones extremadamente difíciles, los capellanes alemanes intentaron mejorar la vida cotidiana de los soldados, ofreciendo escucha y compasión ante las pruebas morales y emocionales.",
+        "startSeconds": 56.12,
+        "endSeconds": 70.84
+      },
+      {
+        "text": "¿Su desafío diario?",
+        "startSeconds": 71.65,
+        "endSeconds": 72.92
+      },
+      {
+        "text": "Mantener la luz de la humanidad y la fe en un ambiente muchas veces desprovisto de directrices morales.",
+        "startSeconds": 73.51,
+        "endSeconds": 79.86
+      },
+      {
+        "text": "Como representantes de las dos principales confesiones cristianas, tenían también la tarea de promover una cierta unidad moral dentro de las tropas, en un contexto donde las divisiones y el sufrimiento eran omnipresentes.",
+        "startSeconds": 80.7,
+        "endSeconds": 95.66
+      },
+      {
+        "text": "Al presentar este atuendo, es crucial reconocer todas las dimensiones de la historia: el compromiso personal de los capellanes y los contextos que los moldearon, al mismo tiempo que somos conscientes de los símbolos e ideologías que portaban.",
+        "startSeconds": 96.41,
+        "endSeconds": 111.9
+      },
+      {
+        "text": "Nos recuerda la importancia de cuestionar y comprender nuestro pasado.\"",
+        "startSeconds": 112.8,
+        "endSeconds": 117.06
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
