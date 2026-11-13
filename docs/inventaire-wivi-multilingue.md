@@ -75,3 +75,5 @@ Les stations polonaises 09, 10, 15, 20 et 22 disposent chacune d’une traductio
 La première passe locale a reconnu la langue attendue pour les 88 couples DE/IT/NL/ES. Les rapprochements lexicaux avec les récits publiés vont de 93,5 à 98,5 % en allemand, de 68,4 à 84,6 % en italien, de 87,4 à 96,1 % en néerlandais et de 94,1 à 99,8 % en espagnol. Ces scores servent à orienter la suite. Ils ne suffisent pas à établir la correspondance de la narration et du récit phrase par phrase.
 
 Au checkpoint 42, ES13 et ES22 sont également activées. Leurs 30 phrases conservent les mots du récit Wivi. Les bornes corroborées sur les MP3 décodés séparent les silences de la narration. Les autres pistes originales à intégrer restent au nombre de 101 (21 DE, 22 IT, 17 PL, 22 NL, 19 ES).
+
+Au checkpoint 43, DE08 et ES17 ajoutent 23 phrases synchronisées. L’audio est disponible pour 2 stations en allemand, 4 en espagnol et 5 en polonais avec une voix de synthèse signalée. Les 99 pistes originales qui restent à intégrer se répartissent entre DE (20), IT (22), PL (17), NL (22) et ES (18). Les 88 récits Wivi restent consultables.

@@ -96,5 +96,83 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "08": {
+    "id": "08",
+    "language": "de",
+    "audioSha256": "0049af855e283a12c6eef507a7a297ebe8b5a0e2d1baeb03a93de36718d384b8",
+    "durationSeconds": 126.864,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/cca5c151-6f2e-4420-be90-fa58a453eb89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"In einem Landhaus im Süden der Normandie wurde an einem Vormittag voller Geheimnisse und Emotionen ein unerwarteter Schatz entdeckt.",
+        "startSeconds": 0.05,
+        "endSeconds": 8.08
+      },
+      {
+        "text": "Dieser Fund ist viel mehr als ein einfaches Spielzeug, er ist eine Puppe.",
+        "startSeconds": 8.79,
+        "endSeconds": 13.34
+      },
+      {
+        "text": "Eine „Rupert“-Puppe, Hüterin einer wenig bekannten Geschichte aus dem Zweiten Weltkrieg.",
+        "startSeconds": 13.84,
+        "endSeconds": 19.04
+      },
+      {
+        "text": "Vom Aussehen her sieht Rupert mit seiner abgenutzten Kleidung und den fast nicht vorhandenen Gesichtszügen wie jede Puppe seiner Zeit aus.",
+        "startSeconds": 19.75,
+        "endSeconds": 27.77
+      },
+      {
+        "text": "Was diese Puppe jedoch wirklich ergreifend macht, ist ihre einzigartige Rolle in der Geschichte des Widerstands und der alliierten Operationen.",
+        "startSeconds": 27.95,
+        "endSeconds": 36.25
+      },
+      {
+        "text": "Während der Operation TITANIC, einer gewagten Mission zur Täuschung der Nazi-Truppen vor der Landung in der Normandie, wurden Hunderte ähnlicher Puppen, sogenannte „Ruperts“, vom Himmel geworfen.",
+        "startSeconds": 37.0,
+        "endSeconds": 49.42
+      },
+      {
+        "text": "Sie waren mit Schallgeräten und kleinen Sprengsätzen ausgestattet, die die Anwesenheit von Fallschirmjägern vortäuschten und hinter den feindlichen Linien Verwirrung und Desinformation säten.",
+        "startSeconds": 49.95,
+        "endSeconds": 62.03
+      },
+      {
+        "text": "Wenn man vor diesem Relikt stehen bleibt, muss ich daran denken, dass bestimmte Elitesoldaten den Fallschirmsprung dieser Puppen begleitet haben, indem sie Maschinengewehre abgefeuert und verschiedene Soundeffekte gesendet haben, um die Ablenkung so realitätsnah wie möglich zu gestalten.",
+        "startSeconds": 62.87,
+        "endSeconds": 80.52
+      },
+      {
+        "text": "Ungeachtet dessen regt uns diese Entdeckung auf diesem Dachboden bei meinem Vater zu der Annahme an, dass diese Puppe wirklich ein greifbares Beispiel dafür ist, wie die unschuldigsten Objekte eine entscheidende Rolle in großen Kriegsstrategien spielen können.",
+        "startSeconds": 80.75,
+        "endSeconds": 97.48
+      },
+      {
+        "text": "Diese Geschichten handeln von unsichtbaren Soldaten, genialen List und angespannten Nächten.",
+        "startSeconds": 98.07,
+        "endSeconds": 103.82
+      },
+      {
+        "text": "Diese Puppe, so zerbrechlich und unschuldig, erinnert uns daran, dass List auch in den dunkelsten Zeiten immer einen Weg findet, zu glänzen.",
+        "startSeconds": 104.34,
+        "endSeconds": 113.13
+      },
+      {
+        "text": "Wir laden Sie ein, in seine faszinierende Geschichte einzutauchen und zu erkunden, wie das Gewebe des Krieges manchmal aus Fäden gewebt wurde, die so unwahrscheinlich waren wie die einer einfachen Puppe.\"",
+        "startSeconds": 113.7,
+        "endSeconds": 126.24
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

@@ -282,5 +282,78 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "17": {
+    "id": "17",
+    "language": "es",
+    "audioSha256": "1161c6b735e95695647fb40985fb45609f0c17665cbce2cf79579e3e2cadfcee",
+    "durationSeconds": 141.504,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/1e4f43a7-82d4-43dc-a73d-4da043db6ae7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"En el corazón de nuestro museo le espera una pieza de historia médica que evoca los desafíos e innovaciones que marcaron la medicina de guerra.",
+        "startSeconds": 0.06,
+        "endSeconds": 8.66
+      },
+      {
+        "text": "Ante usted se encuentra una tienda de campaña de un hospital de campaña estadounidense, un vestigio en movimiento de operaciones militares que redefinieron las prácticas médicas en medio del caos del frente.",
+        "startSeconds": 9.43,
+        "endSeconds": 21.85
+      },
+      {
+        "text": "Esta tienda, con todos sus utensilios cuidadosamente dispuestos, cuenta la historia de las primeras intervenciones sobre el terreno durante la Segunda Guerra Mundial.",
+        "startSeconds": 22.52,
+        "endSeconds": 32.45
+      },
+      {
+        "text": "La urgente necesidad de una atención rápida y eficaz ha dado lugar a importantes avances en las técnicas médicas; Los hospitales de campaña como este desempeñaron un papel crucial, acercando la atención que salva vidas a las líneas del frente, donde cada segundo contaba.",
+        "startSeconds": 32.96,
+        "endSeconds": 51.1
+      },
+      {
+        "text": "Entre los equipos expuestos se encuentra una de las primeras máquinas de rayos X utilizadas en este campo.",
+        "startSeconds": 51.19,
+        "endSeconds": 57.47
+      },
+      {
+        "text": "Este dispositivo revolucionario refleja el compromiso de los equipos médicos de brindar diagnósticos rápidos y precisos, una innovación que ha transformado el tratamiento de las heridas de guerra.",
+        "startSeconds": 58.15,
+        "endSeconds": 70.19
+      },
+      {
+        "text": "Gracias a estos avances técnicos, los médicos pudieron identificar inmediatamente fracturas y metralla invisibles a simple vista, aumentando considerablemente las posibilidades de supervivencia de los soldados heridos.",
+        "startSeconds": 70.83,
+        "endSeconds": 84.62
+      },
+      {
+        "text": "Mientras explora esta sala, también descubrirá las herramientas y suministros esenciales que componen el arsenal de médicos y enfermeras valientes.",
+        "startSeconds": 85.24,
+        "endSeconds": 94.35
+      },
+      {
+        "text": "Estos objetos, desde la simple jeringa hasta los instrumentos quirúrgicos, son testigos silenciosos de los avances realizados en el campo de la medicina, desde la mejora de las técnicas quirúrgicas hasta el desarrollo de nuevos métodos de desinfección y tratamiento.",
+        "startSeconds": 94.95,
+        "endSeconds": 110.74
+      },
+      {
+        "text": "Las prácticas médicas en los teatros de operaciones han evolucionado considerablemente gracias a estas estructuras de campo.",
+        "startSeconds": 111.38,
+        "endSeconds": 119.39
+      },
+      {
+        "text": "La tienda del hospital de campaña que estás viendo no es sólo un lugar de memoria, sino también un vibrante tributo al ingenio y la resistencia de los profesionales médicos militares; su incansable trabajo, frente a los horrores de la guerra, allanó el camino para innovaciones que continúan influyendo en nuestro mundo actual.\"",
+        "startSeconds": 120.13,
+        "endSeconds": 140.43
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
