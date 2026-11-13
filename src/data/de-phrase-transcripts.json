@@ -785,5 +785,141 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "14": {
+    "id": "14",
+    "language": "de",
+    "audioSha256": "fa87ad7f5d3166ebd20d5afe661bf16cf47b501c027ae666036b7404f52904f4",
+    "durationSeconds": 212.952,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/af38999f-39d5-4b73-98af-329590948c77?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Four untimed phrases preserve the Wivi text while the spoken plural, tense, proper name and pronoun remain subject to review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Hier ist eine Schaufensterpuppe, die aufgrund ihres Aussehens (Sie haben sie sicherlich leicht geöffnet gesehen) auf eine bestimmte Funktion schließen lässt.",
+        "startSeconds": 0.06,
+        "endSeconds": 9.1
+      },
+      {
+        "text": "Sie ist in Wirklichkeit eine Undercover-Agentin, Mitglied der berühmten britischen Special Operations Executive (SOE), bereit, „Europa von innen in Brand zu setzen“, wie Churchill sagte.",
+        "startSeconds": 9.63,
+        "endSeconds": 22.84
+      },
+      {
+        "text": "Der vor Ihnen ausgestellte Overall ist sehr interessant, da die Agenten nach dem Ausziehen Zivilkleidung darunter trugen.",
+        "startSeconds": 43.53,
+        "endSeconds": 50.97
+      },
+      {
+        "text": "Sobald sie am Boden waren, benutzten sie eine kleine Schaufel, um den Anzug zu vergraben und ihn so normal wie möglich in das Leben auf dem Land oder in der Stadt zu integrieren.",
+        "startSeconds": 51.51,
+        "endSeconds": 61.8
+      },
+      {
+        "text": "Diese Agenten wurden von Norwegen bis Nordafrika und über östliche Länder gefunden, wo sie daran arbeiteten, das Nazi-Regime zu destabilisieren.",
+        "startSeconds": 62.45,
+        "endSeconds": 71.98
+      },
+      {
+        "text": "Im Jahr 1943 bestand seine Mission darin, Nazi-Kreise zu infiltrieren und wichtige Informationen nach London zu übermitteln, während er gleichzeitig Sabotageoperationen orchestrierte.",
+        "startSeconds": 90.97,
+        "endSeconds": 104.21
+      },
+      {
+        "text": "Dank ihrer Sprachkenntnisse gelang es ihr, sich als deutsche Sympathisantin auszugeben und so das Vertrauen der Deutschen zu gewinnen.",
+        "startSeconds": 104.97,
+        "endSeconds": 112.72
+      },
+      {
+        "text": "Eines Nachts, als sie Ladungen auf einer für die Deutschen wichtigen Eisenbahnstrecke transportierte, wurde Claire beinahe gefangen genommen: Einer ihrer Mitarbeiter hatte ihre Anwesenheit angezeigt ...",
+        "startSeconds": 113.58,
+        "endSeconds": 125.86
+      },
+      {
+        "text": "Trotz der ständigen Angst vor Entdeckung schickte Claire weiterhin verschlüsselte Nachrichten nach London.",
+        "startSeconds": 134.92,
+        "endSeconds": 140.55
+      },
+      {
+        "text": "Sie zeichnete sich dadurch aus, dass sie einen neuen Sabotageakt organisierte: die Entgleisung eines deutschen Zuges.",
+        "startSeconds": 141.12,
+        "endSeconds": 148.22
+      },
+      {
+        "text": "Die Operation war ein Erfolg, erregte aber noch mehr Aufmerksamkeit.",
+        "startSeconds": 148.78,
+        "endSeconds": 153.15
+      },
+      {
+        "text": "Die folgenden Tage waren von einer intensiven Jagd geprägt, doch geschickt nutzte sie ihren Einfallsreichtum, um der Suche zu entkommen ...",
+        "startSeconds": 153.67,
+        "endSeconds": 162.3
+      },
+      {
+        "text": "Leider wurde sie bei einem Überraschungsangriff gefangen genommen und in einem Gefängnis interniert, das für SOE-Agenten berüchtigt ist.",
+        "startSeconds": 162.84,
+        "endSeconds": 171.32
+      },
+      {
+        "text": "Trotz wochenlanger brutaler Verhöre gab sie keine Auskunft über ihre Netzwerke.",
+        "startSeconds": 171.65,
+        "endSeconds": 176.74
+      },
+      {
+        "text": "Sein Schweigen und sein Widerstand verärgerten die Deutschen.",
+        "startSeconds": 177.32,
+        "endSeconds": 180.66
+      },
+      {
+        "text": "Als Vergeltung und um ein Exempel zu statuieren, beschlossen die Nazis, ihn kurzerhand hinzurichten.",
+        "startSeconds": 181.27,
+        "endSeconds": 187.67
+      },
+      {
+        "text": "Sie wurde am frühen Morgen in den Gefängnishof gebracht.",
+        "startSeconds": 188.29,
+        "endSeconds": 191.31
+      },
+      {
+        "text": "Angesichts ihrer Peiniger blieb Claire würdevoll und entschlossen.",
+        "startSeconds": 191.93,
+        "endSeconds": 196.25
+      },
+      {
+        "text": "Ihre letzten Worte richtete sie an ihre Mitkämpfer im Widerstand: Worte des Mutes und der Ausdauer im Kampf für die Freiheit.",
+        "startSeconds": 196.84,
+        "endSeconds": 205.41
+      },
+      {
+        "text": "Sie wurde kurz vor der Befreiung der Region durch alliierte Streitkräfte erschossen.\"",
+        "startSeconds": 206.03,
+        "endSeconds": 210.75
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Seit seiner Gründung im Jahr 1940 rekrutierte der Special Operations Executive Agenten und schulte sie in subversiver Kriegsführung: Sabotagetechniken, Suche nach Geheimdienstinformationen und Desinformation, Organisation des Widerstands, Infiltration per Fallschirm."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Viele Frauen zeichneten sich innerhalb der SOE aus, und einige erlitten ein tragisches Schicksal."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Dies war der Fall bei „Claire Dumont“, einer jungen Französin, die mit einem außergewöhnlichen Sprachtalent und großer Entschlossenheit über einen Fallschirmsprung zur Loire geflogen war."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Doch im letzten Moment gelang ihr die Flucht in den Wald und sie fand Zuflucht bei einem Bauern, der selbst Mitglied des Widerstands war."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

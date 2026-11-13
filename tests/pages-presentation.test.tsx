@@ -220,7 +220,7 @@ test('home keeps its welcome, seven languages and tour action without the redund
 });
 
 test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
-  const audioCounts = { fr: 22, en: 22, de: 8, es: 16, pl: 6, it: 1, nl: 1 };
+  const audioCounts = { fr: 22, en: 22, de: 9, es: 18, pl: 6, it: 1, nl: 1 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);

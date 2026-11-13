@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 57 ; DE16, ES04 et ES08 intégrées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 58 ; DE14, ES03 et ES10 avec suivi partiel.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 8 pistes DE, 16 ES, IT07 et NL09 activées. IT07, NL09 et ES06 ont un suivi partiel explicite |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 9 pistes DE, 18 ES, IT07 et NL09 activées. Les suivis partiels sont signalés dans le lecteur |
 | LANG-pl | P1 | in_progress | PL01 d’origine avec 14 phrases sur 17 synchronisées. PL09, 10, 15, 20 et 22 de synthèse identifiés. Corroborer les transcriptions et les bornes des 16 autres originaux |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -176,6 +176,10 @@ Le checkpoint 56 intègre PL01, le MP3 Wivi polonais d’origine. Deux reconnais
 Le checkpoint 56 est publié sous `a8ee913834c9e30a49c3abc34c70bde1cc43c71e`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 57 ajoute DE16 (11 phrases), ES04 (10) et ES08 (12). Les reconnaissances et le signal séparent les pauses de la parole. Le lecteur DE16 conserve la date en une phrase et emploie la variante orale corroborée « die Pubertät hinter sich gelassen ». La fiche Wivi reste intacte. Le navigateur a confirmé les sauts et le surlignage à 46,36, 69,38 et 106,74 s respectivement. Les 126 tests, TypeScript et le build `index-BlKlE9EA.js` ont réussi.
+
+Le checkpoint 57 est publié sous `428ce712a77dbc8baea9b9f5193313617594f31c`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 58 active DE14 (20/24), ES03 (9/10) et ES10 (18/20). Les sept phrases non minutées restent lisibles. L’ouverture d’ES03, les variantes autour de la mission de Claire en DE14 et la formulation et la date dans ES10 demandent une relecture. Le signal d’ES03 a été revérifié jusqu’à l’unité « kilómetros ». Le navigateur confirme les sauts à 192,03, 73,54 et 71,32 s. Les 126 tests, TypeScript et le build `index-C8_CnEjd.js` ont réussi. Les caches medium DE02, DE15, DE20, NL18, IT08, ES12 et ES14 sont prêts à être comparés sans relancer leur reconnaissance. Traiter en priorité DE15 (chiffre romain contesté), DE20 (formulation d’ouverture) et IT08 (récit prononcé distinct).
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

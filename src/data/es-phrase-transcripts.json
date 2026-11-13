@@ -1570,5 +1570,192 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "03": {
+    "id": "03",
+    "language": "es",
+    "audioSha256": "acebecc54808cb72a1dda0b945e53fa8e5cb75edcd187266fe1cd3fb976f339b",
+    "durationSeconds": 124.56,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/01c06e1a-5227-47ce-bedb-3f31d16671fb?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Opening wording around « con su » and « de la época » requires review. Both recognitions recover the spoken unit kilómetros; waveform extends the sentence through that unit."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Descubierto por mi padre y por mí a finales de los años 1980, gracias a la memoria y la amabilidad de un granjero local, este PAK 40 es ahora una pieza central de nuestra colección, exhibido para brindar una visión sorprendente de la artillería alemana durante la Batalla de Normandía.",
+        "startSeconds": 19.96,
+        "endSeconds": 39.99
+      },
+      {
+        "text": "El PAK 40 era uno de los cañones antitanque más temidos del arsenal alemán.",
+        "startSeconds": 40.5,
+        "endSeconds": 45.71
+      },
+      {
+        "text": "Diseñado para perforar el grueso blindaje de los tanques aliados, desempeñó un papel clave en la defensa de las fuerzas alemanas contra ataques mecanizados.",
+        "startSeconds": 46.32,
+        "endSeconds": 56.52
+      },
+      {
+        "text": "Su calibre de 75 mm y su capacidad para disparar rápidamente varios tipos de munición le permitieron causar estragos considerables entre las unidades blindadas enemigas, ralentizando su avance e infligiendo pérdidas sustanciales.",
+        "startSeconds": 56.64,
+        "endSeconds": 72.82
+      },
+      {
+        "text": "Su alcance máximo de disparo era de aproximadamente 7 km.",
+        "startSeconds": 73.37,
+        "endSeconds": 78.2
+      },
+      {
+        "text": "Este cañón nos transporta directamente a 1944, al corazón de la campiña normanda, donde las posiciones ocultas o de emboscada lo convertían en un arma mortífera y eficaz.",
+        "startSeconds": 78.7,
+        "endSeconds": 91.9
+      },
+      {
+        "text": "El camuflaje, especialmente diseñado para confundir la artillería con el paisaje, nos recuerda cómo la astucia y el ingenio eran esenciales en el arte de la guerra, haciendo que cada emboscada fuera potencialmente fatal para las fuerzas aliadas.",
+        "startSeconds": 92.42,
+        "endSeconds": 107.8
+      },
+      {
+        "text": "Lamentablemente, no puedo revelar cómo fue encontrado, ni el lugar exacto de su descubrimiento, porque pertenece a otra época...",
+        "startSeconds": 108.47,
+        "endSeconds": 116.7
+      },
+      {
+        "text": "Los ecos de las batallas, que una vez resonaron en este “corredor de la muerte”, guardan celosamente sus secretos.\"",
+        "startSeconds": 116.91,
+        "endSeconds": 124.28
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Escondido entre las reliquias de la historia, en una zona trágicamente apodada “el corredor de la muerte” en Normandía, se encontraba una pieza preciosa de la Segunda Guerra Mundial: un cañón antitanque llamado PAK 40, todavía adornado con su auténtico camuflaje de tres tonos de la época."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "10": {
+    "id": "10",
+    "language": "es",
+    "audioSha256": "e298849a805514fbfee180053e07de75952fe49e5aa02e6cd7d95fcd40c87cee",
+    "durationSeconds": 147.648,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ef4b797-5c3c-4896-ba1a-baeb88d60d33?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The wording of sentences 2 and 3 varies between the recording and the published text; the exact date and wording require review. The rest uses waveform boundaries and normalizes the written designation Goliat."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"En el sur de Normandía, donde vivíamos mi padre y yo, una unidad alemana llamada Lehr panzer había establecido su cuartel general en esta región.",
+        "startSeconds": 0.06,
+        "endSeconds": 8.85
+      },
+      {
+        "text": "Evidentemente no nos costó mucho llegar a la casa de este señor.",
+        "startSeconds": 29.1,
+        "endSeconds": 32.8
+      },
+      {
+        "text": "Un pequeño camino aislado en el bosque, una puerta majestuosa, interminables muros de piedra...",
+        "startSeconds": 33.5,
+        "endSeconds": 39.04
+      },
+      {
+        "text": "el escenario está listo.",
+        "startSeconds": 39.4,
+        "endSeconds": 40.84
+      },
+      {
+        "text": "Pasamos por delante de la casa del conserje y, frente a ella, otra construcción que parece ruinosa, con una falsa trasera.",
+        "startSeconds": 41.26,
+        "endSeconds": 48.85
+      },
+      {
+        "text": "Somos recibidos por el señor en cuestión, y comienza la visita… Qué ambiente...",
+        "startSeconds": 49.3,
+        "endSeconds": 54.4
+      },
+      {
+        "text": "suelos de parqué crujientes, armarios viejos llenos de fósiles etiquetados, que datan de una época aún más antigua, y en esta oscuridad, varios pequeños objetos del ejército alemán.",
+        "startSeconds": 54.78,
+        "endSeconds": 66.21
+      },
+      {
+        "text": "Es verdaderamente un momento que queda grabado en nuestra memoria...",
+        "startSeconds": 66.7,
+        "endSeconds": 70.46
+      },
+      {
+        "text": "Pero lo más sorprendente está por llegar, porque en la otra habitación, entronizada en medio de este salón abandonado, hay una especie de pequeño tanque.",
+        "startSeconds": 71.17,
+        "endSeconds": 80.49
+      },
+      {
+        "text": "Desconcertante cuando no sabes qué es.",
+        "startSeconds": 81.0,
+        "endSeconds": 83.39
+      },
+      {
+        "text": "Una vez más, los alemanes han desarrollado una tecnología de lo más inventiva: se trata de un Goliat.",
+        "startSeconds": 83.8,
+        "endSeconds": 90.81
+      },
+      {
+        "text": "Un minitanque guiado por cables que llevaba una carga explosiva para proyectarla contra edificios o vehículos enemigos.",
+        "startSeconds": 91.3,
+        "endSeconds": 97.98
+      },
+      {
+        "text": "Este Goliat formaba parte de lo que se conoce como “las armas especiales de Hitler”; Se trata de una pieza muy rara y preciada en el mundo del coleccionismo.",
+        "startSeconds": 98.57,
+        "endSeconds": 108.05
+      },
+      {
+        "text": "Aquí frente a ti está la versión con motor de gasolina, y todo el interior está completo (sin la carga explosiva, obviamente).",
+        "startSeconds": 108.53,
+        "endSeconds": 116.55
+      },
+      {
+        "text": "Este Goliat se coloca en su soporte previsto a tal efecto, que podría contener cuatro.",
+        "startSeconds": 117.17,
+        "endSeconds": 122.67
+      },
+      {
+        "text": "Terminaré con una anécdota desafortunada: Durante el desembarco, en el sector de Utah Beach, los aliados encontraron pequeñas cuevas en las playas, y en su interior estaban almacenados Goliats...",
+        "startSeconds": 123.07,
+        "endSeconds": 135.12
+      },
+      {
+        "text": "Sin saber lo que eran, pensando en \"\"juguetes\"\", algunos soldados arrojaron allí una granada...",
+        "startSeconds": 135.81,
+        "endSeconds": 141.49
+      },
+      {
+        "text": "y lamentablemente murieron, porque la explosión se multiplicó por diez por las cargas.\"",
+        "startSeconds": 141.99,
+        "endSeconds": 147.23
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Mi padre había comprendido, desde hacía algún tiempo, que los alemanes, durante la ocupación de Francia, favorecían las hermosas residencias."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Durante una exposición, en el corazón de nuestra ciudad, conoció a una persona que le explicó que su propiedad fue ocupada por los alemanes en los años 1940."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
