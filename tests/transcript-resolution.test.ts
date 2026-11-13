@@ -196,6 +196,22 @@ test('authorized Wivi DE01 resolves to 16 phrases for its own audio', () => {
   assert.equal(resolveTranscript('01', 'de', { ...resource, sha256: '0'.repeat(64) }).mode, 'static');
 });
 
+test('partially synchronized NL09 preserves the complete text with three noninteractive phrases', () => {
+  const resource = getMediaResource('09', 'nl');
+  const result = resolveTranscript('09', 'nl', resource);
+  assert.equal(result.mode, 'phrase-synchronized');
+  assert.equal(result.segments.length, 12);
+  assert.equal(result.untimedPhrases?.length, 3);
+  assert.equal(result.paragraphs.length, 15);
+  assert.equal(result.paragraphs[8], 'Zien?');
+  assert.ok(result.paragraphs[11].includes('Heinrich Severloh'));
+  assert.ok(result.segments.every(({ text }) => text !== 'Zien?' && !text.includes('Heinrich Severloh')));
+  const wrongAudio = resolveTranscript('09', 'nl', { ...resource, sha256: '0'.repeat(64) });
+  assert.equal(wrongAudio.mode, 'static');
+  assert.deepEqual(wrongAudio.paragraphs, result.paragraphs);
+  assert.deepEqual(wrongAudio.segments, []);
+});
+
 test('a wrong station or language inside a registry is never displayed as matching content', () => {
   for (const invalid of [record({ id: '02' }), record({ language: 'en' })]) {
     const resolved = resolveTranscript('01', 'fr', audio(), { fr: { '01': invalid } });

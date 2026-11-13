@@ -1,0 +1,94 @@
+{
+  "09": {
+    "id": "09",
+    "language": "nl",
+    "audioSha256": "da4f63ad435a1a3c61ee319d4e20e59ea6492976d36067212eb9b8d6b6c314d2",
+    "durationSeconds": 62.016,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7f2d0041-18f6-4050-8b91-741d664c856c?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Wivi text compared with two local ASR passes and phrase boundaries checked on the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Three phrases remain untimed pending review of Zie/Zien, droeg and the pronunciation or wording of the name, date and verb bekleedde."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Het verhaal speelt zich af op een schietbaan van een Franse instelling...",
+        "startSeconds": 0.07,
+        "endSeconds": 4.15
+      },
+      {
+        "text": "- Fabian!",
+        "startSeconds": 4.95,
+        "endSeconds": 5.49
+      },
+      {
+        "text": "- Ja ?",
+        "startSeconds": 5.78,
+        "endSeconds": 6.08
+      },
+      {
+        "text": "Kom kijken!",
+        "startSeconds": 6.34,
+        "endSeconds": 6.97
+      },
+      {
+        "text": "- Waar ben je ?",
+        "startSeconds": 7.33,
+        "endSeconds": 7.99
+      },
+      {
+        "text": "Kom deze kant op!",
+        "startSeconds": 8.25,
+        "endSeconds": 9.11
+      },
+      {
+        "text": "- Maar wat ben je aan het doen???",
+        "startSeconds": 9.75,
+        "endSeconds": 10.81
+      },
+      {
+        "text": "Luisteren!!!",
+        "startSeconds": 11.01,
+        "endSeconds": 11.56
+      },
+      {
+        "text": "Hierdoor krijg je een idee van de vuursnelheid van dit Duitse machinegeweer, de MG42.",
+        "startSeconds": 13.07,
+        "endSeconds": 19.7
+      },
+      {
+        "text": "Hij beweert in zijn verhalen ongeveer 12.500 patronen te hebben afgevuurd.",
+        "startSeconds": 48.47,
+        "endSeconds": 53.93
+      },
+      {
+        "text": "Het is eng.",
+        "startSeconds": 54.45,
+        "endSeconds": 55.45
+      },
+      {
+        "text": "Hij zal in zijn memoires vertellen dat hij niet voor zijn plezier schoot, maar om in leven te blijven.\"",
+        "startSeconds": 56.1,
+        "endSeconds": 61.75
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 8,
+        "text": "Zien?"
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Stel je voor dat op 6 juni Amerikaanse en geallieerde soldaten onder vijandelijk vuur landen, en dit vuur droeg ook de naam MG42..."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "De geschiedenis zal zich helaas degene herinneren die “het Beest van Omaha” wordt genoemd: Heinrich Severloh, die op de dag van 6 juni 44 zijn positie achter zijn MG42 bekleedde vanuit een van de strategische bunkers van Omaha."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  }
+}

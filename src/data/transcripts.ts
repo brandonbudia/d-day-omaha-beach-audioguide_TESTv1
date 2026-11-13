@@ -5,6 +5,7 @@ import { ENGLISH_TRANSCRIPTS } from './englishTranscripts';
 import german from './de-phrase-transcripts.json';
 import polish from './pl-phrase-transcripts.json';
 import spanish from './es-phrase-transcripts.json';
+import dutch from './nl-phrase-transcripts.json';
 import type { MediaResource } from './mediaCatalog';
 import type { TimedTranscriptSegment } from './stops';
 
@@ -25,8 +26,11 @@ export interface TranscriptRecord {
   status: TranscriptStatus;
   provenance: TranscriptProvenance;
   segments: readonly TimedTranscriptSegment[];
+  /** Readable phrases whose boundaries or spoken wording still need review. */
+  untimedPhrases?: readonly UntimedPhrase[];
   referenceOnlyParagraphs: readonly string[];
 }
+export interface UntimedPhrase { beforeSegment: number; text: string; }
 export type TranscriptRegistry = Partial<Record<SupportedLanguage, Readonly<Record<string, TranscriptRecord>>>>;
 export type TranscriptAudioResource = Pick<MediaResource, 'id' | 'language' | 'sha256' | 'durationSeconds' | 'status'>;
 export type TranscriptResolutionReason = 'matched' | 'transcript-missing' | 'transcript-identity-mismatch'
@@ -38,6 +42,7 @@ export interface TranscriptResolution {
   contentLanguage: SupportedLanguage | null;
   /** Present only when every supplied bound is valid for the selected audio. */
   segments: TimedTranscriptSegment[];
+  untimedPhrases?: readonly UntimedPhrase[];
   paragraphs: string[];
   /** Unspoken document passages remain separate from the aligned narration. */
   referenceOnlyParagraphs: string[];
@@ -69,6 +74,7 @@ export const TRANSCRIPT_REGISTRY: TranscriptRegistry = {
   de: german as Readonly<Record<string, TranscriptRecord>>,
   pl: polish as Readonly<Record<string, TranscriptRecord>>,
   es: spanish as Readonly<Record<string, TranscriptRecord>>,
+  nl: dutch as Readonly<Record<string, TranscriptRecord>>,
 };
 
 const hasText = (record: TranscriptRecord) => record.segments.some((segment) => segment.text.trim().length > 0)
@@ -132,11 +138,18 @@ export function resolveTranscript(
   const fallback = !selected && language !== 'fr' && sameIdentity(french, id, 'fr') && hasText(french) ? french : undefined;
   const text = selected ?? fallback;
   if (!text) return base;
+  const untimedPhrases = text.language === 'fr' || text.language === 'en' ? [] : text.untimedPhrases ?? [];
+  const ordered = untimedPhrases.every(({ beforeSegment, text: phrase }, index) => Number.isInteger(beforeSegment)
+    && beforeSegment >= (untimedPhrases[index - 1]?.beforeSegment ?? 0)
+    && beforeSegment <= text.segments.length && phrase.trim());
+  const paragraphs = text.segments.map((segment) => segment.text);
+  if (ordered) untimedPhrases.forEach((phrase, index) => paragraphs.splice(phrase.beforeSegment + index, 0, phrase.text));
+  else paragraphs.push(...untimedPhrases.map((phrase) => phrase.text));
   const result: TranscriptResolution = {
     ...base,
     mode: fallback ? 'french-fallback' : 'static',
     contentLanguage: text.language,
-    paragraphs: text.segments.map((segment) => segment.text),
+    paragraphs,
     referenceOnlyParagraphs: [...text.referenceOnlyParagraphs],
     provenance: text.provenance,
   };
@@ -151,7 +164,8 @@ export function resolveTranscript(
     : text.status === 'unverified' ? 'transcript-unverified' : 'reference-only' };
   if (language !== 'fr' && language !== 'en') {
     const phrases = validatePhraseSegments(text, audio);
-    return phrases ? { ...result, mode: 'phrase-synchronized', segments: phrases, reason: 'matched' }
+    return phrases && ordered ? { ...result, mode: 'phrase-synchronized', segments: phrases,
+      ...(untimedPhrases.length ? { untimedPhrases } : {}), reason: 'matched' }
       : { ...result, reason: 'invalid-timings' };
   }
   const segments = validateSegments(text, audio);

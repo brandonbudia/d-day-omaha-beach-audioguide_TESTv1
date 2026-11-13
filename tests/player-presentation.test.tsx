@@ -88,6 +88,16 @@ test('phrase following renders one full sentence button and leaves silence witho
   assert.equal(render(.5), first);
 });
 
+test('partially followed sentences retain the untimed text in reading order', () => {
+  const html = renderToStaticMarkup(<SyncedTranscript
+    segments={[{ text: 'Eerste zin.', startSeconds: .5, endSeconds: 1 }, { text: 'Laatste zin.', startSeconds: 3, endSeconds: 4 }]}
+    untimedPhrases={[{ beforeSegment: 1, text: 'Onzekere zin.' }]}
+    currentTime={2} textSize={24} language="nl" uiLanguage="nl" phraseOnly onSelectPhrase={() => {}}
+  />);
+  assert.match(html, /Eerste zin\.<\/button>.*<p[^>]*>Onzekere zin\.<\/p>.*Laatste zin\.<\/button>/);
+  assert.doesNotMatch(html, /aria-current|data-active="true"/);
+});
+
 test('audio position uses a labelled native range with exact fractional time and no unrelated caption', () => {
   const html = renderToStaticMarkup(<Scrubber currentTime={12.34} duration={60} onSeek={() => {}} />);
   assert.match(html, /type="range"/);

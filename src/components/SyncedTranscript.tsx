@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TimedTranscriptSegment, TimedTranscriptWord } from '../data/stops';
+import type { UntimedPhrase } from '../data/transcripts';
 import { getTimedTokens, getWordState, tokenizeTranscript } from '../audio/transcriptTiming';
 import { SupportedLanguage, t } from '../i18n/translations';
 
@@ -84,6 +85,7 @@ const TimedWords = React.memo(function TimedWords({ text, words, currentTime, on
 
 interface SyncedTranscriptProps {
   segments: TimedTranscriptSegment[];
+  untimedPhrases?: readonly UntimedPhrase[];
   currentTime: number;
   textSize: number;
   isPlaying?: boolean;
@@ -97,6 +99,7 @@ interface SyncedTranscriptProps {
 
 export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   segments,
+  untimedPhrases,
   currentTime,
   textSize,
   isPlaying = false,
@@ -130,6 +133,20 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
   }, [currentTime, segments, phraseOnly]);
 
   const activeWordIndex = timedWords[activeIndex]?.findIndex((word) => getWordState(currentTime, word) === 'current') ?? -1;
+  const untimedByPosition = useMemo(() => {
+    const grouped = new Map<number, string[]>();
+    if (phraseOnly) for (const { beforeSegment, text } of untimedPhrases ?? []) {
+      const group = grouped.get(beforeSegment) ?? [];
+      group.push(text);
+      grouped.set(beforeSegment, group);
+    }
+    return grouped;
+  }, [phraseOnly, untimedPhrases]);
+  const renderUntimed = (position: number) => untimedByPosition.get(position)?.map((text, index) => (
+    <li key={`untimed-${position}-${index}`}>
+      <p className="synced-transcript-phrase" style={{ fontSize: `${textSize}px` }}>{text}</p>
+    </li>
+  ));
 
   const scrollToActivePhrase = useCallback((force = true, behaviorOverride?: ScrollBehavior) => {
     if (pointerInteractionRef.current) return;
@@ -268,7 +285,9 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
           {segments.map((segment, index) => {
             const isActive = index === activeIndex;
             return (
-              <li key={`${segment.startSeconds}-${index}`}>
+              <React.Fragment key={`${segment.startSeconds}-${index}`}>
+              {renderUntimed(index)}
+              <li>
                 <div
                   ref={isActive ? activePhraseRef : undefined}
                   className="synced-transcript-phrase"
@@ -284,8 +303,10 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
                   ) : <button type="button" className="transcript-phrase-button" aria-current={phraseOnly && isActive ? 'true' : undefined} onClick={() => selectTime(segment.startSeconds)}>{segment.text}</button>}
                 </div>
               </li>
+              </React.Fragment>
             );
           })}
+          {renderUntimed(segments.length)}
         </ol>
       </div>
     </div>

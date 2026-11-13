@@ -5,6 +5,7 @@ import type { SupportedLanguage } from '../i18n/translations';
 
 const order: SupportedLanguage[] = ['fr', 'en', 'de', 'it', 'pl', 'nl', 'es'];
 const copy = {
+  partialPhrases: ['Suivi partiel. Les phrases sans repère restent lisibles.', 'Partial highlighting. Sentences without timing remain readable.', 'Teilweise synchronisiert. Sätze ohne Zeitmarke bleiben lesbar.', 'Sincronizzazione parziale. Le frasi senza tempi restano leggibili.', 'Częściowa synchronizacja. Zdania bez znaczników pozostają czytelne.', 'Gedeeltelijke synchronisatie. Zinnen zonder tijdcode blijven leesbaar.', 'Seguimiento parcial. Las frases sin marca de tiempo se pueden leer.'],
   provisionalShort: ['Transcription automatique · vérification humaine en attente.', 'Automatic transcript; human review is pending.', 'Automatisches Transkript · menschliche Prüfung steht aus.', 'Trascrizione automatica · verifica umana in attesa.', 'Transkrypcja automatyczna · oczekuje na sprawdzenie.', 'Automatisch transcript · menselijke controle is nog nodig.', 'Transcripción automática · revisión humana pendiente.'],
   phraseReview: ['Repères des phrases en attente de vérification humaine.', 'Sentence timings are pending human review.', 'Die Zeitmarken der Sätze müssen noch überprüft werden.', 'I tempi delle frasi sono in attesa di verifica.', 'Znaczniki czasu zdań czekają na sprawdzenie.', 'De tijdcodes van de zinnen moeten nog worden gecontroleerd.', 'Los tiempos de las frases están pendientes de revisión.'],
   provisional: ['Transcription assistée par reconnaissance audio, en attente de vérification humaine. Les mots incertains restent lisibles sans suivi.', 'Audio-assisted transcription; human review is pending. Uncertain words remain readable without highlighting.', 'Audiogestützte Transkription; menschliche Prüfung steht aus. Unsichere Wörter bleiben ohne Hervorhebung lesbar.', 'Trascrizione assistita dall’audio; verifica umana in attesa. Le parole incerte restano leggibili senza evidenziazione.', 'Transkrypcja wspomagana rozpoznawaniem mowy; oczekuje na sprawdzenie przez człowieka. Niepewne słowa pozostają czytelne bez wyróżnienia.', 'Transcript op basis van spraakherkenning; menselijke controle is nog nodig. Onzekere woorden blijven leesbaar zonder markering.', 'Transcripción asistida por reconocimiento de audio; pendiente de revisión humana. Las palabras inciertas siguen legibles sin resaltado.'],
@@ -23,7 +24,9 @@ export const TranscriptNotice: React.FC<{ transcript: TranscriptResolution; lang
   const pendingReview = transcript.provenance && !transcript.provenance.humanListeningReviewed;
   const message = synchronized ? pendingReview ? text('provisional', language) : null
     : transcript.mode === 'static' ? text('static', language)
-    : transcript.mode === 'phrase-synchronized' && pendingReview ? text('phraseReview', language) : null;
+    : transcript.mode === 'phrase-synchronized'
+      ? transcript.untimedPhrases?.length ? text('partialPhrases', language) : pendingReview ? text('phraseReview', language) : null
+      : null;
   if (compact) return message ? <p className="player-resource-notice" role="note" lang={language}>{synchronized && pendingReview ? text('provisionalShort', language) : message}</p> : null;
   const timed = transcript.segments.reduce((count, segment) => count + (segment.wordTimings?.length ?? 0), 0);
   const total = transcript.paragraphs.reduce((count, paragraph) => count + tokenizeTranscript(paragraph).length, 0);

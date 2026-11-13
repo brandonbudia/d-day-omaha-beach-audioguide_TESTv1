@@ -120,6 +120,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
             <SyncedTranscript
               key={`${currentStop.id}-${audioState.language}`}
               segments={transcript.segments}
+              untimedPhrases={transcript.untimedPhrases}
               language={transcript.contentLanguage ?? audioState.language}
               uiLanguage={currentLang}
               phraseOnly={followsPhrases}
