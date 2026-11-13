@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 54 ; première piste néerlandaise avec suivi partiel.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 55 ; IT07 et ES06 avec suivi partiel.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 7 pistes DE, 13 ES et NL09 activées. NL09 suit 12 phrases sur 15. Corroborer les autres couples. IT07 requiert une transcription distincte du récit Wivi |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 7 pistes DE, 14 ES, IT07 et NL09 activées. IT07, NL09 et ES06 ont un suivi partiel explicite |
 | LANG-pl | P1 | in_progress | PL09, 10, 15, 20 et 22 de synthèse activés. Les 17 originaux sans texte ont chacun un premier brouillon de reconnaissance. Comparer à une source ou corroborer la transcription et les bornes avant activation |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -164,6 +164,10 @@ Le checkpoint 53 active DE05 (18 phrases). Les deux passes corroborent « hinsch
 Le checkpoint 53 est publié sous `10531a5cde2b83cf6b340f3077f37732578fda17`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 54 intègre NL09 avec le MP3 Wivi d’origine et le récit complet. Douze phrases sont synchronisées grâce à deux reconnaissances et au contrôle du signal. Les trois autres restent dans l’ordre du récit, sans lien temporel. Elles concernent « Zie/Zien », « droeg » et le passage où sont prononcés le nom Severloh, la date et le verbe « bekleedde ». Le lecteur annonce le suivi partiel. La recette navigateur a confirmé les 12 boutons, les trois passages lisibles et la sélection à 48,64 s. Les 126 tests applicatifs, TypeScript et le build `index-ny1aNZ_h.js` ont réussi.
+
+Le checkpoint 54 est publié sous `dd227f3fd8312f8b845d03dbf088f77007023401`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 55 active les MP3 Wivi IT07 et ES06. IT07 suit 9 phrases sur 11 du texte prononcé. Deux mots ambigus sont explicitement signalés dans deux phrases sans repère. Le récit publié reste sur la fiche. ES06 suit 25 phrases sur 27. Les deux phrases qui contiennent « cavar/acabar » et « a esa edad » restent lisibles avec le texte Wivi, sans horodatage. Le contrôle ciblé confirme le début « 1989 ». Le navigateur a joué la phrase sélectionnée à 67,96 s en IT07 et à 0,20 s en ES06. Les 126 tests, TypeScript et le build `index-CkUuA0mD.js` ont réussi.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

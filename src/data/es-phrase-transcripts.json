@@ -1271,5 +1271,158 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "06": {
+    "id": "06",
+    "language": "es",
+    "audioSha256": "07e4ed5a2f53770392733d5d818483099ef9c8ce0993a2790c93277f3b5504bd",
+    "durationSeconds": 177.72,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/f6b7a0ca-4923-4301-837c-f165bc4a770e?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes, targeted speech checks and phrase boundaries verified on decoded MP3 audio.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Two sentences are displayed with the Wivi reference wording and without timings while the spoken wording remains uncertain."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"1989… tengo 9 años.",
+        "startSeconds": 0.05,
+        "endSeconds": 3.32
+      },
+      {
+        "text": "Mi hermano Fabien y yo estamos acurrucados en esta helada tienda, esperando que amanezca en esta tierra normanda.",
+        "startSeconds": 3.58,
+        "endSeconds": 11.1
+      },
+      {
+        "text": "Hoy quizás vamos a hacer un descubrimiento muy relevante.",
+        "startSeconds": 11.61,
+        "endSeconds": 14.88
+      },
+      {
+        "text": "De hecho, mi padre investiga mucho en Normandía, buscando vestigios y huellas de la historia.",
+        "startSeconds": 15.36,
+        "endSeconds": 21.43
+      },
+      {
+        "text": "Precisamente estamos en un lugar donde, según el testimonio de un granjero, un soldado americano robó un extraño vehículo a los alemanes y lo abandonó apresuradamente en un agujero de obús, siendo perseguido por sus atacantes.",
+        "startSeconds": 22.05,
+        "endSeconds": 36.13
+      },
+      {
+        "text": "Somos cinco: mi hermano, yo, mi padre, uno de sus amigos y la persona que maneja la máquina.",
+        "startSeconds": 41.97,
+        "endSeconds": 49.03
+      },
+      {
+        "text": "Min… ¡nada!",
+        "startSeconds": 49.59,
+        "endSeconds": 50.4
+      },
+      {
+        "text": "Min, todavía nada!",
+        "startSeconds": 50.9,
+        "endSeconds": 52.16
+      },
+      {
+        "text": "Pero el sonido del detector es cada vez más fuerte.",
+        "startSeconds": 52.67,
+        "endSeconds": 55.78
+      },
+      {
+        "text": "Después de tres minutos, el primer sonido muy característico de un metal encontrándose con otro metal.",
+        "startSeconds": 56.34,
+        "endSeconds": 62.82
+      },
+      {
+        "text": "Estamos obsesionados por este ruido y por la forma que se vuelve más clara cuando golpea la pala.",
+        "startSeconds": 63.38,
+        "endSeconds": 69.46
+      },
+      {
+        "text": "Nuestras cabezas se inclinan sobre este agujero tratando de entender la silueta de lo que está enterrado en la tierra.",
+        "startSeconds": 70.18,
+        "endSeconds": 77.0
+      },
+      {
+        "text": "El sonido del metal golpeando y raspando con cada maniobra nos excita terriblemente: casi nos olvidamos del frío y la humedad.",
+        "startSeconds": 77.71,
+        "endSeconds": 86.44
+      },
+      {
+        "text": "Estamos ebrios de acción, como si pudiéramos ir más rápido que una pala.",
+        "startSeconds": 86.94,
+        "endSeconds": 91.23
+      },
+      {
+        "text": "Sólo éramos niños...",
+        "startSeconds": 91.74,
+        "endSeconds": 92.96
+      },
+      {
+        "text": "Sabía muy bien cómo era la oruga de un tanque...",
+        "startSeconds": 101.87,
+        "endSeconds": 104.64
+      },
+      {
+        "text": "y ésta era muy pequeña.",
+        "startSeconds": 105.06,
+        "endSeconds": 106.67
+      },
+      {
+        "text": "No entendí.",
+        "startSeconds": 107.16,
+        "endSeconds": 107.88
+      },
+      {
+        "text": "Mi padre entendió muy bien de qué se trataba y decidió cavar un cuadrado a su alrededor, de unos tres metros por dos metros.",
+        "startSeconds": 108.3,
+        "endSeconds": 116.12
+      },
+      {
+        "text": "Una vez hechas estas trincheras, comenzamos a quitar todos los bloques de tierra a mano… y poco a poco se nos fue apareciendo una forma casi sacada de una película de ciencia ficción.",
+        "startSeconds": 116.72,
+        "endSeconds": 128.18
+      },
+      {
+        "text": "Mi hermano y yo no entendíamos absolutamente nada de lo que se gestaba frente a nosotros: orugas, manillares de moto, una caja con asientos… Estábamos perdidos.",
+        "startSeconds": 128.85,
+        "endSeconds": 140.27
+      },
+      {
+        "text": "Mi padre sabía muy bien lo que acabábamos de encontrar: una motocicleta oruga alemana, o Kettenkrad, un vehículo de reconocimiento alemán utilizado durante la Segunda Guerra Mundial.",
+        "startSeconds": 140.78,
+        "endSeconds": 152.31
+      },
+      {
+        "text": "Aquí está la historia de este extraño vehículo ante tus ojos.",
+        "startSeconds": 152.84,
+        "endSeconds": 156.55
+      },
+      {
+        "text": "Y para concluir… la historia del granjero sí que era cierta, pues, como todavía podemos ver, hay un trozo de tela camuflado entre las orugas.",
+        "startSeconds": 157.0,
+        "endSeconds": 166.27
+      },
+      {
+        "text": "Se trata nada menos que de un trozo de paracaídas americano, lo que sin duda permitió a este soldado esconder la moto Caterpillar bajo su propia capota de paracaídas.\"",
+        "startSeconds": 166.84,
+        "endSeconds": 177.27
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 5,
+        "text": "Por fin ha llegado el momento: hay luz suficiente para empezar a cavar."
+      },
+      {
+        "beforeSegment": 15,
+        "text": "De repente, después de limpiar un enorme bloque de tierra al costado, vemos un trozo de oruga, pero no como me imaginaba a esa edad."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

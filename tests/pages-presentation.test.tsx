@@ -220,11 +220,11 @@ test('home keeps its welcome, seven languages and tour action without the redund
 });
 
 test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
-  const audioCounts = { fr: 22, en: 22, de: 7, es: 13, pl: 5, it: 0, nl: 1 };
+  const audioCounts = { fr: 22, en: 22, de: 7, es: 14, pl: 5, it: 1, nl: 1 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
-    assert.match(html, /FR · EN · DE · NL · ES · PL/);
+    assert.match(html, /FR · EN · DE · NL · ES · IT · PL/);
     assert.match(html, /aria-describedby="language-audio-status"/);
     assert.match(html, /role="status"/);
     assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);

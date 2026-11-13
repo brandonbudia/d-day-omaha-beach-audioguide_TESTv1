@@ -6,6 +6,7 @@ import german from './de-phrase-transcripts.json';
 import polish from './pl-phrase-transcripts.json';
 import spanish from './es-phrase-transcripts.json';
 import dutch from './nl-phrase-transcripts.json';
+import italian from './it-phrase-transcripts.json';
 import type { MediaResource } from './mediaCatalog';
 import type { TimedTranscriptSegment } from './stops';
 
@@ -75,6 +76,7 @@ export const TRANSCRIPT_REGISTRY: TranscriptRegistry = {
   pl: polish as Readonly<Record<string, TranscriptRecord>>,
   es: spanish as Readonly<Record<string, TranscriptRecord>>,
   nl: dutch as Readonly<Record<string, TranscriptRecord>>,
+  it: italian as Readonly<Record<string, TranscriptRecord>>,
 };
 
 const hasText = (record: TranscriptRecord) => record.segments.some((segment) => segment.text.trim().length > 0)

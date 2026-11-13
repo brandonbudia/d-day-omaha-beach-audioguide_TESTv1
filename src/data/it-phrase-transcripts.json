@@ -1,0 +1,75 @@
+{
+  "07": {
+    "id": "07",
+    "language": "it",
+    "audioSha256": "8c11b8ecbe64166cbba181a5e7bde1e90d83a553a457164e173047f91d4e80eb",
+    "durationSeconds": 109.92,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/98342c97-e5b9-4b02-8860-b2c1824ad395?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes, targeted speech checks and phrase boundaries verified on decoded MP3 audio.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Provisional transcript of the Italian audio, distinct from the Wivi exhibit text. Two sentences contain unresolved words and have no timings."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Davanti a te c'è l'abito di un cappellano tedesco della Seconda Guerra Mondiale.",
+        "startSeconds": 0.06,
+        "endSeconds": 4.45
+      },
+      {
+        "text": "Questi uomini di fede occupavano un posto unico all'interno dell'esercito tedesco, responsabili di fornire sostegno spirituale ai soldati immersi nella dura realtà della guerra.",
+        "startSeconds": 5.5,
+        "endSeconds": 16.39
+      },
+      {
+        "text": "I cappellani potevano essere cattolici o protestanti, ciascuno offrendo il conforto della propria tradizione religiosa ai soldati della propria fede.",
+        "startSeconds": 17.45,
+        "endSeconds": 26.04
+      },
+      {
+        "text": "I cappellani vivevano un paradosso quotidiano.",
+        "startSeconds": 27.0,
+        "endSeconds": 29.75
+      },
+      {
+        "text": "Questi simboli, sebbene apposti sulle loro uniformi, non definivano necessariamente le convinzioni personali di questi uomini, la cui missione primaria era quella di fornire rifugio spirituale e morale nel caos circostante.",
+        "startSeconds": 40.54,
+        "endSeconds": 54.15
+      },
+      {
+        "text": "Operando spesso in condizioni estremamente difficili, i cappellani tedeschi cercavano di migliorare la vita quotidiana dei soldati, offrendo ascolto e compassione di fronte alle prove morali ed emotive.",
+        "startSeconds": 55.01,
+        "endSeconds": 66.9
+      },
+      {
+        "text": "La loro sfida quotidiana: mantenere la luce dell'umanità e della fede in un ambiente spesso privo di orientamenti morali.",
+        "startSeconds": 67.81,
+        "endSeconds": 75.24
+      },
+      {
+        "text": "Nel presentare questo outfit è fondamentale riconoscere tutte le dimensioni della storia, l'impegno personale dei cappellani e i contesti che li hanno formati, pur essendo consapevoli dei simboli e delle ideologie che indossavano.",
+        "startSeconds": 89.5,
+        "endSeconds": 103.24
+      },
+      {
+        "text": "Ci ricorda l'importanza di mettere in discussione e comprendere il nostro passato.",
+        "startSeconds": 104.16,
+        "endSeconds": 108.66
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 4,
+        "text": "Nel loro ruolo di sostegno e conforto, indossavano un abito contrassegnato da [parola incerta] che evocavano un periodo oscuro e complesso della nostra storia odierna."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "In quanto rappresentanti delle due principali confessioni cristiane, avevano anche il compito di promuovere una certa unità morale all'interno delle [parola incerta], in un contesto in cui divisioni e sofferenze erano onnipresenti."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  }
+}
