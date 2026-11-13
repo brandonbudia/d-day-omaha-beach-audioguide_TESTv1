@@ -602,5 +602,114 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "05": {
+    "id": "05",
+    "language": "de",
+    "audioSha256": "3799748e7bcaef1bdbb2ede57975f1d0ea3844471d5dfe12747f1c757827926b",
+    "durationSeconds": 150.0,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/e380d61d-2b12-47d0-a291-86963a56b159?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Spoken variants « hinschauen » and « war erforderlich » corroborated by both local passes. The exhibit text remains intact.",
+        "The proper name Caen retains its documented spelling. Review its pronunciation and sentence boundaries."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ich freue mich, Ihnen in diesem speziellen Abschnitt unseres Audioguides nicht nur historische Fakten, sondern auch etwas von meiner persönlichen Leidenschaft für das Sammeln von Militäruniformen mitzuteilen.",
+        "startSeconds": 0.06,
+        "endSeconds": 14.07
+      },
+      {
+        "text": "Heute werde ich mit Ihnen über die deutsche Tarnung im Zweiten Weltkrieg sprechen, ein Thema, das uns besonders am Herzen liegt.",
+        "startSeconds": 14.81,
+        "endSeconds": 23.21
+      },
+      {
+        "text": "Als Sammler erzählt jedes Stück, das ich entdecke, eine einzigartige Geschichte.",
+        "startSeconds": 23.96,
+        "endSeconds": 28.9
+      },
+      {
+        "text": "Deutsche Tarnanzüge bilden da keine Ausnahme.",
+        "startSeconds": 29.55,
+        "endSeconds": 32.77
+      },
+      {
+        "text": "Sie wurden mit viel Liebe zum Detail gefertigt und spiegeln eine faszinierende Mischung aus Funktionalität, Innovation und Anpassung an verschiedene Kriegsschauplätze wider.",
+        "startSeconds": 33.37,
+        "endSeconds": 44.65
+      },
+      {
+        "text": "Mit ihren willkürlichen Mustern und erdigen Farben sorgten sie für eine wirksame Tarnung in europäischen Umgebungen.",
+        "startSeconds": 45.24,
+        "endSeconds": 53.05
+      },
+      {
+        "text": "Wir finden Aspekte, die allen Jahreszeiten entsprechen: Wenn Sie genau hinschauen, erkennen Sie Frühlings- und Herbstvarianten für kalte Regionen, Weiß für den Winter und Sommerfarben für unsere gemäßigteren Regionen.",
+        "startSeconds": 53.74,
+        "endSeconds": 69.05
+      },
+      {
+        "text": "Es gibt auch das „Polka Dot“-Motiv, das später im Konflikt eingeführt wurde.",
+        "startSeconds": 69.62,
+        "endSeconds": 74.68
+      },
+      {
+        "text": "Seine Komplexität erinnert an die ständige Entschlossenheit, die Tarnung der Soldaten zu verbessern.",
+        "startSeconds": 75.35,
+        "endSeconds": 81.38
+      },
+      {
+        "text": "Dieses einzigartige Muster zeigt, wie wichtig Innovation in diesen schwierigen Zeiten war.",
+        "startSeconds": 82.1,
+        "endSeconds": 88.08
+      },
+      {
+        "text": "In unserer Sammlung wurde eine Jacke mit diesem Motiv hauptsächlich von SS-Angehörigen der Hitlerjugend getragen, die Caen mehr als einen Monat lang festhielten, während erste Schätzungen von zwei Tagen sprachen.",
+        "startSeconds": 88.84,
+        "endSeconds": 103.31
+      },
+      {
+        "text": "Die Deutschen legten großen Wert auf Tarnung.",
+        "startSeconds": 103.99,
+        "endSeconds": 106.95
+      },
+      {
+        "text": "Die Geschichte zeigt uns, dass auch die Alliierten versuchten, eine ähnliche Tarnung zu verwenden … aber die Ähnlichkeit sorgte leider für Verwirrung.",
+        "startSeconds": 107.6,
+        "endSeconds": 117.25
+      },
+      {
+        "text": "Die Alliierten gaben die Idee daher sehr schnell auf.",
+        "startSeconds": 117.94,
+        "endSeconds": 121.29
+      },
+      {
+        "text": "Es ist faszinierend, sich vorzustellen, wie diese Tarnungen damals wahrgenommen wurden.",
+        "startSeconds": 121.93,
+        "endSeconds": 127.48
+      },
+      {
+        "text": "Für die Soldaten, die sie trugen, war es mehr als nur ein Kleidungsstück: Es war ein wichtiger Teil ihrer Überlebensausrüstung.",
+        "startSeconds": 128.01,
+        "endSeconds": 136.03
+      },
+      {
+        "text": "Damals war es mit technischen Mitteln nicht möglich, wie heute ein Satellit oder eine Drohne, das Verstecken von Personen oder Geräten zu erkennen.",
+        "startSeconds": 136.68,
+        "endSeconds": 146.25
+      },
+      {
+        "text": "Lediglich der Sehsinn war erforderlich.\"",
+        "startSeconds": 146.82,
+        "endSeconds": 149.39
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

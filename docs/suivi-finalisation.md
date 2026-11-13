@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 52 ; ES05 ajoutée avec la formulation prononcée.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 53 ; DE05 ajoutée avec les formulations prononcées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,7 +61,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 6 pistes DE et 13 pistes ES activées. Première reconnaissance terminée pour les 88 pistes. Corroborer les autres couples. IT07 requiert une transcription distincte du récit Wivi |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 7 pistes DE et 13 pistes ES activées. Première reconnaissance terminée pour les 88 pistes. Corroborer les autres couples. IT07 requiert une transcription distincte du récit Wivi |
 | LANG-pl | P1 | in_progress | PL09, 10, 15, 20 et 22 de synthèse activés. Les 17 originaux sans texte ont chacun un premier brouillon de reconnaissance. Comparer à une source ou corroborer la transcription et les bornes avant activation |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
@@ -156,6 +156,10 @@ Le checkpoint 51 active DE07 (12 phrases) et ES18 (14 phrases). Les deux passes 
 Le checkpoint 51 est publié sous `4cc00ed7e2c1b5b0be0e90f9cb7a06c02feab8a8`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 52 active ES05 (19 phrases). Les deux reconnaissances donnent « Sólo se requería » à la fin. Le lecteur utilise cette version et la fiche conserve « Sólo se utilizó ». Les fenêtres de signal corrigent notamment une reprise à 82,30 s. Le navigateur a affiché la dernière phrase active à 139,51 s après clic. Les 124 tests applicatifs, TypeScript et le build `index-BC4rBFzA.js` ont réussi. Le lot ne modifie aucun repère existant.
+
+Le checkpoint 52 est publié sous `be700da1e928013fef4412c3dada95f326768fdb`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 53 active DE05 (18 phrases). Les deux passes corroborent « hinschauen » et « war erforderlich ». Le contrôle ciblé retrouve « bilden » et la phrase finale complète. L’orthographe de Caen est reprise du texte Wivi, sa prononciation reste à vérifier. Le signal établit une fin à 149,39 s. La recette navigateur affiche la dernière phrase active à 146,97 s après clic. Les 124 tests applicatifs, TypeScript et le build `index-CAH1-n8y.js` ont réussi. Le contrôle ciblé DE06 n’a pas levé le doute sur la date d’ouverture. Conserver les caches `de05-targeted-verification.json` et `de06-targeted-verification.json`.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 
