@@ -77,3 +77,5 @@ La première passe locale a reconnu la langue attendue pour les 88 couples DE/IT
 Au checkpoint 42, ES13 et ES22 sont également activées. Leurs 30 phrases conservent les mots du récit Wivi. Les bornes corroborées sur les MP3 décodés séparent les silences de la narration. Les autres pistes originales à intégrer restent au nombre de 101 (21 DE, 22 IT, 17 PL, 22 NL, 19 ES).
 
 Au checkpoint 43, DE08 et ES17 ajoutent 23 phrases synchronisées. L’audio est disponible pour 2 stations en allemand, 4 en espagnol et 5 en polonais avec une voix de synthèse signalée. Les 99 pistes originales qui restent à intégrer se répartissent entre DE (20), IT (22), PL (17), NL (22) et ES (18). Les 88 récits Wivi restent consultables.
+
+Au checkpoint 44, DE11 ajoute 13 phrases. Les différences lexicales des reconnaissances concernent les graphies et le développement des abréviations. La vérification du signal a notamment précisé le début de la sixième phrase. Le clic a été vérifié dans le navigateur. Le total d’originaux encore à intégrer est de 98 (19 DE, 22 IT, 17 PL, 22 NL, 18 ES).

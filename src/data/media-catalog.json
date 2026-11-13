@@ -323,11 +323,11 @@
         "reason": "placeholder"
       },
       "11": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "dd29d1762c7d44adeec1fb6acb4049815e2074b5ed0a8de9759ffe386d4cb0a9",
+        "bytes": 1893165,
+        "durationSeconds": 118.32,
+        "status": "ready",
+        "reason": "wivi-narration-compared"
       },
       "12": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",

@@ -174,5 +174,88 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "11": {
+    "id": "11",
+    "language": "de",
+    "audioSha256": "dd29d1762c7d44adeec1fb6acb4049815e2074b5ed0a8de9759ffe386d4cb0a9",
+    "durationSeconds": 118.32,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7cc86ceb-9921-4ba7-9f05-254edda0d754?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Vor Ihnen liegt ein imposantes Souvenir aus dem Zweiten Weltkrieg, eine Waffe, die mich daran erinnert, dass wir, als ich jünger war, mit meinem Bruder versucht haben – natürlich ohne Erfolg – ​​damit zu spielen.",
+        "startSeconds": 0.07,
+        "endSeconds": 13.72
+      },
+      {
+        "text": "Diese Waffe wiegt fast 20 kg und ihr technischer Name ist so kalt wie ihr Aussehen: PTRS 41.",
+        "startSeconds": 14.4,
+        "endSeconds": 23.42
+      },
+      {
+        "text": "Eine Waffe aus dem Osten, die vom erbitterten Kampf der sowjetischen Streitkräfte gegen die Invasoren zeugt.",
+        "startSeconds": 24.01,
+        "endSeconds": 31.39
+      },
+      {
+        "text": "Als Kinder haben wir uns meistens gefragt: „Aber wer kann damit schießen?",
+        "startSeconds": 32.04,
+        "endSeconds": 37.03
+      },
+      {
+        "text": "Das ist unmöglich, selbst für einen Erwachsenen…“ Offensichtlich war es unmöglich, im Stehen zu fotografieren.",
+        "startSeconds": 37.58,
+        "endSeconds": 44.45
+      },
+      {
+        "text": "Liegendschießen war Pflicht.",
+        "startSeconds": 45.0,
+        "endSeconds": 46.39
+      },
+      {
+        "text": "Dieses schwere Gewehr verkörperte durch seine Robustheit wahre rohe Gewalt und drückte Entschlossenheit und den Wunsch nach Schutz vor feindlichen Panzern aus.",
+        "startSeconds": 46.92,
+        "endSeconds": 56.74
+      },
+      {
+        "text": "Es ist eine Panzerabwehrwaffe!",
+        "startSeconds": 57.27,
+        "endSeconds": 59.23
+      },
+      {
+        "text": "Dieser PTRS-41 wurde im sogenannten „Todestrakt“ gefunden, einem dunklen Ort voller tragischer Erinnerungen, und wurde verwendet, um die Panzerung gepanzerter Fahrzeuge zu durchbohren.",
+        "startSeconds": 59.79,
+        "endSeconds": 73.34
+      },
+      {
+        "text": "Es war eine Reaktion auf die metallischen Titanen, die drohten, Städte zu verwüsten und die Hartnäckigkeit eines Volkes in Schutt und Asche zu legen.",
+        "startSeconds": 73.93,
+        "endSeconds": 83.52
+      },
+      {
+        "text": "Stellen Sie sich die Soldaten an der Ostfront vor, die unter gnadenlosen Bedingungen kämpfen, wo jeder Schuss die einzige Verteidigung zwischen Leben und Tod, zwischen Freiheit und Gefangenschaft sein kann.",
+        "startSeconds": 84.1,
+        "endSeconds": 97.83
+      },
+      {
+        "text": "Dieses im gefrorenen Boden des Schlachtfeldes verankerte Gewehr war ein Leuchtfeuer der Hoffnung, kalt, aber entschlossen.",
+        "startSeconds": 98.14,
+        "endSeconds": 105.95
+      },
+      {
+        "text": "Ironischerweise nutzte die deutsche Armee manchmal selbst dieses Zerstörungsinstrument für ihre eigenen Zwecke und erkannte die Macht, die in diesem sowjetischen Gerät steckte.\"",
+        "startSeconds": 106.6,
+        "endSeconds": 117.86
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
