@@ -81,3 +81,5 @@ Au checkpoint 43, DE08 et ES17 ajoutent 23 phrases synchronisées. L’audio est
 Au checkpoint 44, DE11 ajoute 13 phrases. Les différences lexicales des reconnaissances concernent les graphies et le développement des abréviations. La vérification du signal a notamment précisé le début de la sixième phrase. Le clic a été vérifié dans le navigateur. Le total d’originaux encore à intégrer est de 98 (19 DE, 22 IT, 17 PL, 22 NL, 18 ES).
 
 Au checkpoint 45, DE10 et ES07 ajoutent 30 phrases. Il reste 96 pistes originales à intégrer (18 DE, 22 IT, 17 PL, 22 NL, 17 ES). ES07 conserve la variante écrite sur la fiche et utilise la formulation prononcée confirmée dans le lecteur.
+
+Au checkpoint 46, DE19 ajoute 28 phrases. Il reste 95 pistes originales à intégrer (17 DE, 22 IT, 17 PL, 22 NL, 17 ES). Les cinq narrations synthétiques PL sont disponibles en plus des dix pistes Wivi d’origine intégrées.

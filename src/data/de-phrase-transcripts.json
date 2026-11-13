@@ -365,5 +365,163 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "19": {
+    "id": "19",
+    "language": "de",
+    "audioSha256": "a3f7e9383456a58e60e8d1e240924bc2a7b1b3c42a9c89858dd5b54d840e0cd0",
+    "durationSeconds": 268.32,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ec903cf-4ec0-4fa7-87a0-801924a37ee7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"In den komplexen Wendungen des Zweiten Weltkriegs stand die Enigma-Maschine wie eine uneinnehmbare Festung der Kryptographie da und forderte jeden heraus, ihre sorgfältig gehüteten Geheimnisse zu knacken.",
+        "startSeconds": 0.05,
+        "endSeconds": 14.59
+      },
+      {
+        "text": "Die von deutschen Ingenieuren entworfene Enigma war ein elektromechanisches Verschlüsselungsgerät, das zur Verschlüsselung militärischer Nachrichten verwendet wurde und die feindliche Kommunikation unverständlich und scheinbar nicht hackbar machte.",
+        "startSeconds": 15.52,
+        "endSeconds": 32.42
+      },
+      {
+        "text": "Das Herzstück dieses atemberaubenden Rätsels war, dass jeder Tastendruck jedes Bedieners auf der Tastatur der Enigma die ursprüngliche Nachricht in ein komplexes Gewirr von Buchstaben verwandelte, das sich je nach sorgfältig konfigurierten Einstellungen täglich änderte.",
+        "startSeconds": 32.55,
+        "endSeconds": 51.1
+      },
+      {
+        "text": "Für die Kriegsanstrengungen der Alliierten war die Entschlüsselung dieser Nachrichten von entscheidender Bedeutung, um die Pläne der Achsenmächte zu vereiteln.",
+        "startSeconds": 51.85,
+        "endSeconds": 62.04
+      },
+      {
+        "text": "Die Herausforderung wurde von einem Team brillanter verbündeter Mathematiker und Ingenieure unter der Leitung des berühmten Alan Turing angenommen.",
+        "startSeconds": 62.25,
+        "endSeconds": 72.15
+      },
+      {
+        "text": "Im Zentrum von Bletchley Park in England verbrachten geniale Köpfe wie Turing, Gordon Welchman und andere unzählige Stunden damit, die Geheimnisse der Enigma zu verstehen.",
+        "startSeconds": 72.82,
+        "endSeconds": 85.6
+      },
+      {
+        "text": "Mit der wertvollen Hilfe polnischer Mathematiker, die bereits vor Kriegsausbruch erhebliche Fortschritte bei der Enigma gemacht hatten, baute das britische Team die Bombe-Maschine, mit der die vielen möglichen Konfigurationen der Enigma schnell getestet werden konnten.",
+        "startSeconds": 85.95,
+        "endSeconds": 102.77
+      },
+      {
+        "text": "Durch ihre Beharrlichkeit und ihren Einfallsreichtum gelang es den Alliierten, den verschlüsselten Datenverkehr des deutschen Oberkommandos zu lesen und so den Verlauf des Krieges zu ihren Gunsten zu wenden.",
+        "startSeconds": 103.67,
+        "endSeconds": 117.38
+      },
+      {
+        "text": "Ihre sorgfältige und oft unerkannte Arbeit verkürzte den Konflikt, rettete Millionen von Menschenleben und legte gleichzeitig den Grundstein für die moderne Datenverarbeitung.",
+        "startSeconds": 118.13,
+        "endSeconds": 130.7
+      },
+      {
+        "text": "Lassen Sie mich Ihnen nun von einem der großen Zufälle des Lebens erzählen ...",
+        "startSeconds": 131.4,
+        "endSeconds": 135.88
+      },
+      {
+        "text": "Während eines weiteren Flohmarkts, den mein Vater besuchte, blieb er vor einem Stand stehen, an dem auf den ersten Blick eine Schreibmaschine verkauft zu werden schien.",
+        "startSeconds": 136.61,
+        "endSeconds": 147.25
+      },
+      {
+        "text": "Offensichtlich fragte er den Verkäufer nach dem Preis dieser Schreibmaschine.",
+        "startSeconds": 147.86,
+        "endSeconds": 152.18
+      },
+      {
+        "text": "Dieser antwortete: 50 Franken … Mein Vater verzog das Gesicht und bot ihm 45 an.",
+        "startSeconds": 152.86,
+        "endSeconds": 160.2
+      },
+      {
+        "text": "Nichts zu tun, 50 Franken, letzter Preis.",
+        "startSeconds": 160.7,
+        "endSeconds": 164.39
+      },
+      {
+        "text": "Und so gab mein Vater nach und bot die Summe von 50 Franken für diese „Schreibmaschine“, die nichts anderes als eine „Enigma“ war.",
+        "startSeconds": 164.86,
+        "endSeconds": 173.88
+      },
+      {
+        "text": "Enigma hat echtes historisches Gewicht und stellt für Sammler ein ganz besonderes Interesse dar.",
+        "startSeconds": 174.55,
+        "endSeconds": 181.03
+      },
+      {
+        "text": "Die Geschichte geht weiter mit diesem Raubüberfall, der vor mehr als zehn Jahren genau in diesem Museum stattfand.",
+        "startSeconds": 181.77,
+        "endSeconds": 189.47
+      },
+      {
+        "text": "Noch am Tag der Eröffnung betraten vier Einbrecher das Museum und entführten die Kassiererin.",
+        "startSeconds": 191.9,
+        "endSeconds": 198.06
+      },
+      {
+        "text": "Das Geräusch von Glas, das aus den Fenstern splitterte, während einer der Straftäter die Kassiererin beobachtete und die anderen ein paar Dinge stahlen ...",
+        "startSeconds": 198.72,
+        "endSeconds": 208.05
+      },
+      {
+        "text": "Vor allem aber nahmen sie den Enigma-Automaten mit.",
+        "startSeconds": 208.7,
+        "endSeconds": 212.04
+      },
+      {
+        "text": "Einige Zeit später tauchten bei einem militärischen Überschuss in Paris einige junge Leute auf und boten an, eine Enigma-Maschine zu verkaufen.",
+        "startSeconds": 212.74,
+        "endSeconds": 222.63
+      },
+      {
+        "text": "Der einzige Beweis: ein Foto.",
+        "startSeconds": 223.34,
+        "endSeconds": 226.15
+      },
+      {
+        "text": "Der Leiter des Lokals traute seinen Augen nicht.",
+        "startSeconds": 226.62,
+        "endSeconds": 229.6
+      },
+      {
+        "text": "Er arrangierte ein Treffen mit diesen jungen Leuten mit der Maschine, um ihnen eine sehr schöne Summe anzubieten.",
+        "startSeconds": 230.43,
+        "endSeconds": 237.2
+      },
+      {
+        "text": "Als sie gingen, schien die Situation zu seltsam, um wahr zu sein; Deshalb kontaktierte er die Polizei, um ihnen zu erklären, was er gerade gesehen hatte.",
+        "startSeconds": 238.01,
+        "endSeconds": 248.36
+      },
+      {
+        "text": "Die Behörden teilten ihm offenbar mit, dass kürzlich ein Museum ausgeraubt und eine Enigma-Maschine gestohlen worden sei.",
+        "startSeconds": 249.11,
+        "endSeconds": 256.94
+      },
+      {
+        "text": "Dann wurde ein Hinterhalt organisiert, und die Straftäter tappten dummerweise in die Falle.",
+        "startSeconds": 257.55,
+        "endSeconds": 263.21
+      },
+      {
+        "text": "Die Enigma-Maschine wurde intakt gefunden.\"",
+        "startSeconds": 263.74,
+        "endSeconds": 266.8
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
