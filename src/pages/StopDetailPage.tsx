@@ -122,7 +122,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
       <section className="museum-piece-panel" role="tabpanel" id={`${tabPrefix}-panel-recit`} aria-labelledby={`${tabPrefix}-tab-recit`} hidden={activeTab !== 'recit'} tabIndex={0}>
         {activeTab === 'recit' && <>
           {currentLang === 'en' && <EnglishNarrative stopId={stop.id} />}
-          {(hasWiviNarratives(currentLang) || (currentLang === 'pl' && synthetic)) && <WiviNarrative stopId={stop.id} language={currentLang} />}
+          {(hasWiviNarratives(currentLang) || (currentLang === 'pl' && resource.status === 'ready')) && <WiviNarrative stopId={stop.id} language={currentLang} />}
           <FrenchReference language={currentLang}>
           {observedKey && <div className="museum-piece-observe museum-card"><Eye size={23} aria-hidden="true" /><div><h3>{detailLabel(currentLang, 'observe')}</h3><p>{detailLabel(currentLang, observedKey)}</p></div></div>}
           <div className="museum-piece-context museum-card">

@@ -21,7 +21,7 @@ export function WiviNarrative({ stopId, language }: { stopId: string; language: 
     const load = language === 'pl'
       ? import('../data/pl-phrase-transcripts.json').then(({ default: narratives }) => {
           const record = narratives[stopId as keyof typeof narratives];
-          return record && { paragraphs: record.narrativeParagraphs };
+          return record && { paragraphs: record.narrativeParagraphs, source: record.provenance.source.startsWith('https://') ? record.provenance.source : undefined };
         })
       : import('../data/wivi-narratives.json').then(({ default: narratives }) =>
           narratives[language][stopId as keyof (typeof narratives)[WiviNarrativeLanguage]]);

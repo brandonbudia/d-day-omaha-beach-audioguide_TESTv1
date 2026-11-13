@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 55 ; IT07 et ES06 avec suivi partiel.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 56 ; premier original polonais avec suivi partiel.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -62,7 +62,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
 | LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 7 pistes DE, 14 ES, IT07 et NL09 activées. IT07, NL09 et ES06 ont un suivi partiel explicite |
-| LANG-pl | P1 | in_progress | PL09, 10, 15, 20 et 22 de synthèse activés. Les 17 originaux sans texte ont chacun un premier brouillon de reconnaissance. Comparer à une source ou corroborer la transcription et les bornes avant activation |
+| LANG-pl | P1 | in_progress | PL01 d’origine avec 14 phrases sur 17 synchronisées. PL09, 10, 15, 20 et 22 de synthèse identifiés. Corroborer les transcriptions et les bornes des 16 autres originaux |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
@@ -168,6 +168,10 @@ Le checkpoint 54 intègre NL09 avec le MP3 Wivi d’origine et le récit complet
 Le checkpoint 54 est publié sous `dd227f3fd8312f8b845d03dbf088f77007023401`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 55 active les MP3 Wivi IT07 et ES06. IT07 suit 9 phrases sur 11 du texte prononcé. Deux mots ambigus sont explicitement signalés dans deux phrases sans repère. Le récit publié reste sur la fiche. ES06 suit 25 phrases sur 27. Les deux phrases qui contiennent « cavar/acabar » et « a esa edad » restent lisibles avec le texte Wivi, sans horodatage. Le contrôle ciblé confirme le début « 1989 ». Le navigateur a joué la phrase sélectionnée à 67,96 s en IT07 et à 0,20 s en ES06. Les 126 tests, TypeScript et le build `index-CkUuA0mD.js` ont réussi.
+
+Le checkpoint 55 est publié sous `4fe5f70539b186ef6a9dfa357c376963f6daaff3`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 56 intègre PL01, le MP3 Wivi polonais d’origine. Deux reconnaissances, les fenêtres ciblées et les mesures du signal fondent la transcription et 14 repères de phrase. Le toponyme incertain est signalé. Trois phrases restent sans repère. La fiche présente cette transcription et le lien Wivi, et le lecteur indique le suivi partiel. Le navigateur a ouvert la fiche, lancé le lecteur, puis affiché la phrase sélectionnée à 139,38 s. Les 126 tests, TypeScript et le build `index-C2bJzLvp.js` ont réussi.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

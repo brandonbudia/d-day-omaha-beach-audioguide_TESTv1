@@ -702,5 +702,126 @@
       "Mieliśmy szczęście poznać kilku członków ruchu oporu jeszcze za ich życia. Dzieląc się z nami swoimi opowieściami, przekazali nam przedmioty, które przechowywali w kącie swoich domów. Ta gablota pomaga nam zachować pamięć o nich, bo spotkania z tymi ludźmi są częścią naszych wspomnień z dzieciństwa. Nie nosili mundurów i z pozoru byli zwykłymi obywatelami… Ale cóż za odwaga! Cóż za odwaga, by stawić opór!",
       "Ich odwaga i determinacja wciąż inspirują, przypominając, że nawet w najciemniejszych godzinach światło oporu nigdy nie gaśnie."
     ]
+  },
+  "01": {
+    "id": "01",
+    "language": "pl",
+    "audioSha256": "4cdc5ed8052eb69af7f3b0767e3abb013180c694b0b0c95311993e1606dd68ca",
+    "durationSeconds": 146.708,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/d1d544d8fb41ac277bb79dc6482bcc0e4fbaa11a.mp3",
+      "verification": "Polish original with no published transcript. Two local recognitions, targeted checks and phrase boundaries compared on the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "One uncertain place name is marked. The three phrases with unresolved wording have no timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Tu zaczynają się historie kobiet i mężczyzn, anegdoty, fakty historyczne, a czasem także dramaty.",
+        "startSeconds": 3.4,
+        "endSeconds": 11.3
+      },
+      {
+        "text": "To miejsce mieści kolekcję pełną historii, która świadczy o relacji człowieka z jego przeszłością.",
+        "startSeconds": 12.42,
+        "endSeconds": 19.21
+      },
+      {
+        "text": "Ale pozwólcie, że się przedstawimy.",
+        "startSeconds": 35.91,
+        "endSeconds": 38.29
+      },
+      {
+        "text": "Jesteśmy dwoma braćmi, Fabien i Antoine.",
+        "startSeconds": 39.49,
+        "endSeconds": 43.56
+      },
+      {
+        "text": "Dorastaliśmy z ojcem dość niezwykłym.",
+        "startSeconds": 44.87,
+        "endSeconds": 47.84
+      },
+      {
+        "text": "Mój młodszy brat i ja spędziliśmy młodość przemierzając lasy, rzeki i stare stodoły, przeszukując je i szukając wszelkich śladów pozostawionych przez strony walczące w czasie II wojny światowej.",
+        "startSeconds": 57.92,
+        "endSeconds": 72.98
+      },
+      {
+        "text": "Ale za jaką cenę?",
+        "startSeconds": 75.1,
+        "endSeconds": 76.3
+      },
+      {
+        "text": "Nasz ojciec był pochłonięty wręcz opętany tą pasją.",
+        "startSeconds": 77.67,
+        "endSeconds": 81.71
+      },
+      {
+        "text": "Stała się ona nieustannym szaleństwem, które z biegiem lat zniszczyło naszą rodzinę i jego samego.",
+        "startSeconds": 82.66,
+        "endSeconds": 90.02
+      },
+      {
+        "text": "Zmarł w 2012 roku, wyniszczony przez demony zrodzone z obsesji posiadania pamiątek historii, przytłoczony wyrzutami sumienia, że odwrócił się od wartości rodziny i przyjaźni.",
+        "startSeconds": 91.1,
+        "endSeconds": 106.34
+      },
+      {
+        "text": "Po nagłym odejściu naszego ojca oraz przez nasze odmienne życiowe ścieżki przyszłość i dusza tego miejsca stanęły pod znakiem zapytania.",
+        "startSeconds": 107.8,
+        "endSeconds": 117.41
+      },
+      {
+        "text": "To jakiś nieuchwytny instynkt przekonał mnie i mojego brata, by kontynuować naszą przygodę poprzez poszukiwanie historycznych przedmiotów i prezentowanie ich Państwu wraz z ich historią.",
+        "startSeconds": 119.34,
+        "endSeconds": 132.97
+      },
+      {
+        "text": "Witamy w naszej historii.",
+        "startSeconds": 139.17,
+        "endSeconds": 141.14
+      },
+      {
+        "text": "Witamy w historii.",
+        "startSeconds": 142.28,
+        "endSeconds": 144.52
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Jest ono również bardzo ważne, ponieważ to właśnie tutaj, na plaży [nazwa niepewna], powstał pierwszy szpital polowy po lądowaniu pierwszych rzutów szturmowych, z których wiele spotkał tragiczny los."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Był prawdziwym pasjonatem historii, który poświęcił większą część swojego życia na poszukiwanie śladów tamtego okresu."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Bo proszę mi wierzyć, nie będą Państwo rozczarowani."
+      }
+    ],
+    "narrativeParagraphs": [
+      "Tu zaczynają się historie kobiet i mężczyzn, anegdoty, fakty historyczne, a czasem także dramaty.",
+      "To miejsce mieści kolekcję pełną historii, która świadczy o relacji człowieka z jego przeszłością.",
+      "Jest ono również bardzo ważne, ponieważ to właśnie tutaj, na plaży [nazwa niepewna], powstał pierwszy szpital polowy po lądowaniu pierwszych rzutów szturmowych, z których wiele spotkał tragiczny los.",
+      "Ale pozwólcie, że się przedstawimy.",
+      "Jesteśmy dwoma braćmi, Fabien i Antoine.",
+      "Dorastaliśmy z ojcem dość niezwykłym.",
+      "Był prawdziwym pasjonatem historii, który poświęcił większą część swojego życia na poszukiwanie śladów tamtego okresu.",
+      "Mój młodszy brat i ja spędziliśmy młodość przemierzając lasy, rzeki i stare stodoły, przeszukując je i szukając wszelkich śladów pozostawionych przez strony walczące w czasie II wojny światowej.",
+      "Ale za jaką cenę?",
+      "Nasz ojciec był pochłonięty wręcz opętany tą pasją.",
+      "Stała się ona nieustannym szaleństwem, które z biegiem lat zniszczyło naszą rodzinę i jego samego.",
+      "Zmarł w 2012 roku, wyniszczony przez demony zrodzone z obsesji posiadania pamiątek historii, przytłoczony wyrzutami sumienia, że odwrócił się od wartości rodziny i przyjaźni.",
+      "Po nagłym odejściu naszego ojca oraz przez nasze odmienne życiowe ścieżki przyszłość i dusza tego miejsca stanęły pod znakiem zapytania.",
+      "To jakiś nieuchwytny instynkt przekonał mnie i mojego brata, by kontynuować naszą przygodę poprzez poszukiwanie historycznych przedmiotów i prezentowanie ich Państwu wraz z ich historią.",
+      "Bo proszę mi wierzyć, nie będą Państwo rozczarowani.",
+      "Witamy w naszej historii.",
+      "Witamy w historii."
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

@@ -101,3 +101,5 @@ Au checkpoint 53, DE05 ajoute 18 phrases. Les deux formulations orales corrobor�
 Au checkpoint 54, NL09 est disponible avec un suivi partiel signalé. Le récit Wivi reste lisible en entier et 12 de ses 15 phrases ont des repères. Les trois passages en attente sont indiqués dans le registre. Il reste 84 originaux à intégrer, ainsi que trois phrases à vérifier sur NL09.
 
 Au checkpoint 55, IT07 et ES06 rejoignent NL09 avec un suivi partiel. IT07 dispose de 9 phrases minutées sur 11 dans une transcription du MP3. ES06 dispose de 25 phrases minutées sur 27. Les deux récits publiés restent disponibles sur les fiches. Il reste 82 pistes originales à intégrer (15 DE, 21 IT, 17 PL, 21 NL, 8 ES), et sept phrases non minutées dans les trois pistes partielles.
+
+Au checkpoint 56, PL01 est le premier enregistrement polonais Wivi activé. Sa transcription provisoire provient du MP3, avec 14 phrases minutées et trois phrases sans repère. Le catalogue PL distingue cette piste des cinq synthèses. Il reste 81 originaux à intégrer (15 DE, 21 IT, 16 PL, 21 NL, 8 ES).

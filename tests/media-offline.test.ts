@@ -42,8 +42,8 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
-  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '05', '07', '08', '10', '11', '19'], es: ['01', '02', '05', '06', '07', '09', '11', '13', '16', '17', '18', '20', '21', '22'], pl: ['09', '10', '15', '20', '22'], nl: ['09'], it: ['07'] };
-  const partiallyAligned = new Set(['nl09', 'it07', 'es06']);
+  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '05', '07', '08', '10', '11', '19'], es: ['01', '02', '05', '06', '07', '09', '11', '13', '16', '17', '18', '20', '21', '22'], pl: ['01', '09', '10', '15', '20', '22'], nl: ['09'], it: ['07'] };
+  const partiallyAligned = new Set(['nl09', 'it07', 'es06', 'pl01']);
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
@@ -64,7 +64,7 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
         assert.notEqual(record.sha256, placeholder);
       } else if (phraseStops[code]?.includes(record.id)) {
         assert.equal(record.status, 'ready');
-        assert.equal(record.reason, code === 'pl' ? 'synthetic-narration' : partiallyAligned.has(`${code}${record.id}`) ? 'wivi-narration-partially-aligned' : 'wivi-narration-compared');
+        assert.equal(record.reason, partiallyAligned.has(`${code}${record.id}`) ? 'wivi-narration-partially-aligned' : code === 'pl' ? 'synthetic-narration' : 'wivi-narration-compared');
         assert.notEqual(record.sha256, placeholder);
         assert.equal(resolveTranscript(record.id, code, record).mode, 'phrase-synchronized');
       } else {
