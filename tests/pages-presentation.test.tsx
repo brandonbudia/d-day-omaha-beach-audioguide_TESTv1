@@ -219,16 +219,17 @@ test('home keeps its welcome, seven languages and tour action without the redund
   assert.doesNotMatch(html, /PARCOURS DU MUSÉE|Visite Intérieure|Agrandir le texte/);
 });
 
-test('language selection distinguishes seven interface translations and reports partial German availability', () => {
+test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
+  const audioCounts = { fr: 22, en: 22, de: 1, es: 1, pl: 5, it: 0, nl: 0 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
-    assert.match(html, /FR · EN · DE/);
+    assert.match(html, /FR · EN · DE · ES · PL/);
     assert.match(html, /aria-describedby="language-audio-status"/);
     assert.match(html, /role="status"/);
     assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);
-    const available = code === 'de' || code === 'fr' || code === 'en';
-    assert.ok(html.includes(escapeText(experienceText(available ? 'audioCount' : 'interfaceOnly', code, { count: code === 'de' ? 1 : 22, total: 22 }))));
+    const count = audioCounts[code];
+    assert.ok(html.includes(escapeText(experienceText(count ? 'audioCount' : 'interfaceOnly', code, { count, total: 22 }))));
     if (code === 'fr' || code === 'en') assert.match(html, /22\/22/);
     else assert.doesNotMatch(html, /22\/22/);
   }
@@ -263,6 +264,22 @@ test('unavailable languages expose French reference text with disabled audio; re
   assert.match(english, /aria-label="Audio position"/);
   assert.doesNotMatch(english, /French reference text|Synchronized text is available only in French/);
   audioPlayer.setLanguage('fr');
+});
+
+test('the Polish synthetic narration is identified on the exhibit and player', () => {
+  const label = escapeText(experienceText('syntheticNarration', 'pl'));
+  const detail = renderToStaticMarkup(<StopDetailPage stopId="09" currentLang="pl" onNavigateStop={noop} onOpenPlayer={noop} />);
+  assert.ok(detail.includes(label));
+  audioPlayer.setLanguage('pl');
+  audioPlayer.setStop('09', false);
+  try {
+    const player = renderToStaticMarkup(<PlayerPage currentLang="pl" onSelectStopDetail={noop} />);
+    assert.ok(player.includes(label));
+    assert.match(player, /lang="pl" data-phrase-follow="true"/);
+    assert.doesNotMatch(player, /class="transcript-word"|class="player-play-button" disabled=""/);
+  } finally {
+    audioPlayer.setLanguage('fr');
+  }
 });
 
 test('new visitor instructions provide explicit nonempty interface text in all seven languages', () => {

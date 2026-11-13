@@ -6,6 +6,7 @@ import { setImmediate as nextTurn } from 'node:timers/promises';
 import { MEDIA_CATALOG, getMediaResource, getDownloadableAudio, getLanguageResourceSummary, SHARED_OFFLINE_RESOURCES, type OfflineResource } from '../src/data/mediaCatalog';
 import { LANGUAGES, type SupportedLanguage } from '../src/i18n/translations';
 import french from '../src/data/french-transcripts.fr.json';
+import { resolveTranscript } from '../src/data/transcripts';
 import { VERIFIED_MEDIA_CACHE, createOfflineStore, getOfflineResources, hasMatchingCachedShell, verifyCompleteResponse, type OfflineDependencies } from '../src/offline/offlineStore';
 
 const subtle = webcrypto.subtle as SubtleCrypto;
@@ -41,6 +42,7 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
+  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01'], es: ['01'], pl: ['09', '10', '15', '20', '22'] };
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
@@ -59,10 +61,11 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
         assert.equal(record.status, 'ready');
         assert.equal(record.reason, 'language-detected-editorial-review-pending');
         assert.notEqual(record.sha256, placeholder);
-      } else if (code === 'de' && record.id === '01') {
+      } else if (phraseStops[code]?.includes(record.id)) {
         assert.equal(record.status, 'ready');
-        assert.equal(record.reason, 'wivi-narration-compared');
+        assert.equal(record.reason, code === 'pl' ? 'synthetic-narration' : 'wivi-narration-compared');
         assert.notEqual(record.sha256, placeholder);
+        assert.equal(resolveTranscript(record.id, code, record).mode, 'phrase-synchronized');
       } else {
         assert.equal(record.status, 'unavailable');
         assert.equal(record.sha256, placeholder);
@@ -71,9 +74,12 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
   }
   assert.equal(getDownloadableAudio('fr').length, 22);
   assert.equal(getDownloadableAudio('en').length, 22);
-  assert.deepEqual(getDownloadableAudio('de').map(({ id }) => id), ['01']);
-  assert.deepEqual(getOfflineResources('de').filter(({ url }) => url.startsWith('/audio/')).map(({ url }) => url), [getMediaResource('01', 'de').url]);
-  for (const language of ['it', 'pl', 'nl', 'es'] as const) assert.deepEqual(getOfflineResources(language), []);
+  for (const language of ['de', 'es', 'it', 'nl', 'pl'] as const) {
+    const expected = (phraseStops[language] ?? []).toSorted();
+    assert.deepEqual(getDownloadableAudio(language).map(({ id }) => id).toSorted(), expected);
+    assert.deepEqual(getOfflineResources(language).filter(({ url }) => url.startsWith('/audio/')).map(({ url }) => url).toSorted(),
+      expected.map(id => getMediaResource(id, language).url));
+  }
   assert.equal(getMediaResource('99', 'fr').status, 'unavailable');
   assert.equal(getLanguageResourceSummary('fr').unavailable, 0);
   assert.equal(getLanguageResourceSummary('en').ready, 22);

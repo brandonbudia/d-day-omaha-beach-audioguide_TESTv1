@@ -47,6 +47,9 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
   const isFavorite = visitor.pieces[stop.id]?.favorite === true;
   const discovered = isDiscovered(visitor.pieces[stop.id]);
   const resource = getMediaResource(stop.id, currentLang);
+  const synthetic = resource.reason === 'synthetic-narration';
+  const mediaNotice = synthetic ? x('syntheticNarration', currentLang)
+    : resource.status !== 'ready' ? detailLabel(currentLang, resource.status === 'unavailable' ? 'unavailable' : 'unverified') : null;
   const tabs = [
     { id: 'recit', label: t('tab_narrative', currentLang), Icon: BookOpen },
     { id: 'photos', label: t('tab_photos', currentLang, { count: stop.photos.length }), Icon: Images },
@@ -93,10 +96,10 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
         <p lang="fr">{stop.subtitle}</p>
       </section>
 
-      <button type="button" onClick={handleStartPlayback} disabled={resource.status === 'unavailable'} className="museum-button museum-piece-listen" aria-describedby={resource.status !== 'ready' ? `${tabPrefix}-media-notice` : undefined}>
+      <button type="button" onClick={handleStartPlayback} disabled={resource.status === 'unavailable'} className="museum-button museum-piece-listen" aria-describedby={mediaNotice ? `${tabPrefix}-media-notice` : undefined}>
         <Play size={23} fill="currentColor" aria-hidden="true" />{t('start_playback', currentLang)}
       </button>
-      {resource.status !== 'ready' && <p id={`${tabPrefix}-media-notice`} className="museum-piece-resource-note">{detailLabel(currentLang, resource.status === 'unavailable' ? 'unavailable' : 'unverified')}</p>}
+      {mediaNotice && <p id={`${tabPrefix}-media-notice`} className="museum-piece-resource-note">{mediaNotice}</p>}
       {resource.status === 'unavailable' && <button type="button" className="museum-button-secondary w-full" onClick={() => { audioPlayer.setStop(stop.id, false); onOpenPlayer(); }}><BookOpen size={21} aria-hidden="true" />{x('readText', currentLang)}</button>}
       <button type="button" className="museum-button-secondary museum-piece-discovered" onClick={() => visitorStore.markDiscovered(stop.id)} disabled={discovered} aria-pressed={discovered}>
         <CheckCircle2 size={21} aria-hidden="true" />{detailLabel(currentLang, discovered ? 'discovered' : 'markDiscovered')}
@@ -119,7 +122,7 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
       <section className="museum-piece-panel" role="tabpanel" id={`${tabPrefix}-panel-recit`} aria-labelledby={`${tabPrefix}-tab-recit`} hidden={activeTab !== 'recit'} tabIndex={0}>
         {activeTab === 'recit' && <>
           {currentLang === 'en' && <EnglishNarrative stopId={stop.id} />}
-          {hasWiviNarratives(currentLang) && <WiviNarrative stopId={stop.id} language={currentLang} />}
+          {(hasWiviNarratives(currentLang) || (currentLang === 'pl' && synthetic)) && <WiviNarrative stopId={stop.id} language={currentLang} />}
           <FrenchReference language={currentLang}>
           {observedKey && <div className="museum-piece-observe museum-card"><Eye size={23} aria-hidden="true" /><div><h3>{detailLabel(currentLang, 'observe')}</h3><p>{detailLabel(currentLang, observedKey)}</p></div></div>}
           <div className="museum-piece-context museum-card">

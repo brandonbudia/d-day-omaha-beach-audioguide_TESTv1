@@ -3,6 +3,8 @@ import type { SupportedLanguage } from '../i18n/translations';
 import { FRENCH_TRANSCRIPTS, FRENCH_TRANSCRIPT_EVIDENCE } from './frenchTranscripts';
 import { ENGLISH_TRANSCRIPTS } from './englishTranscripts';
 import german from './de-phrase-transcripts.json';
+import polish from './pl-phrase-transcripts.json';
+import spanish from './es-phrase-transcripts.json';
 import type { MediaResource } from './mediaCatalog';
 import type { TimedTranscriptSegment } from './stops';
 
@@ -65,6 +67,8 @@ export const TRANSCRIPT_REGISTRY: TranscriptRegistry = {
   }])),
   en: ENGLISH_TRANSCRIPTS,
   de: german as Readonly<Record<string, TranscriptRecord>>,
+  pl: polish as Readonly<Record<string, TranscriptRecord>>,
+  es: spanish as Readonly<Record<string, TranscriptRecord>>,
 };
 
 const hasText = (record: TranscriptRecord) => record.segments.some((segment) => segment.text.trim().length > 0)

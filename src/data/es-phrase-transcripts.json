@@ -1,0 +1,100 @@
+{
+  "01": {
+    "id": "01",
+    "language": "es",
+    "audioSha256": "d82782761772001cf5f4a7a08dd31a1384b15a75d1d4327cccb6220ab883689f",
+    "durationSeconds": 113.52,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Aquí comienza... historias de mujeres y hombres, anécdotas de hechos históricos y en ocasiones dramas.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.3
+      },
+      {
+        "text": "Este lugar alberga una colección llena de historias, que dan testimonio de la relación del hombre con su pasado.",
+        "startSeconds": 7.94,
+        "endSeconds": 15.1
+      },
+      {
+        "text": "Este lugar también es muy importante, porque fue el primer hospital de campaña establecido en las playas de Omaha después del desembarco de las primeras oleadas de asalto, muchas de las cuales tuvieron un destino trágico.",
+        "startSeconds": 15.84,
+        "endSeconds": 29.84
+      },
+      {
+        "text": "Pero déjame presentarme: somos dos hermanos, Fabien y Antoine.",
+        "startSeconds": 30.47,
+        "endSeconds": 34.83
+      },
+      {
+        "text": "Crecimos con un papá… bastante especial.",
+        "startSeconds": 35.31,
+        "endSeconds": 38.01
+      },
+      {
+        "text": "Un auténtico aficionado a la historia, que dedicó la mayor parte de su vida a buscar vestigios de esta época.",
+        "startSeconds": 38.29,
+        "endSeconds": 45.5
+      },
+      {
+        "text": "Pasamos nuestra juventud, mi hermano menor y yo, a través de bosques, ríos y viejos graneros, buscando todas las huellas dejadas por los beligerantes de la Segunda Guerra Mundial.",
+        "startSeconds": 46.11,
+        "endSeconds": 57.58
+      },
+      {
+        "text": "Pero a qué precio...",
+        "startSeconds": 58.02,
+        "endSeconds": 59.14
+      },
+      {
+        "text": "¡Nuestro padre estaba obsesionado, incluso obsesionado! por esta pasión...",
+        "startSeconds": 59.57,
+        "endSeconds": 64.6
+      },
+      {
+        "text": "Se había convertido en una locura permanente que, con el paso de los años, destruyó a nuestra familia y a él mismo.",
+        "startSeconds": 64.7,
+        "endSeconds": 72.35
+      },
+      {
+        "text": "Murió en 2012, consumido por ciertos demonios resultantes de los vicios de la posesión, consumido por el remordimiento por haber dado la espalda a los valores de la familia y la amistad.",
+        "startSeconds": 72.8,
+        "endSeconds": 86.0
+      },
+      {
+        "text": "Con la repentina partida de nuestro padre y nuestros diferentes caminos, el futuro y el alma de este lugar se vieron comprometidos.",
+        "startSeconds": 86.79,
+        "endSeconds": 95.74
+      },
+      {
+        "text": "Fue un instinto esquivo el que nos convenció a mi hermano y a mí de continuar nuestra aventura en busca de objetos históricos y presentárselos con su historia.",
+        "startSeconds": 96.26,
+        "endSeconds": 105.92
+      },
+      {
+        "text": "Porque, créeme, no te decepcionarás.",
+        "startSeconds": 106.45,
+        "endSeconds": 108.8
+      },
+      {
+        "text": "Bienvenidos a nuestra historia.",
+        "startSeconds": 109.24,
+        "endSeconds": 111.13
+      },
+      {
+        "text": "Bienvenidos a la historia.\"",
+        "startSeconds": 111.39,
+        "endSeconds": 112.95
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  }
+}

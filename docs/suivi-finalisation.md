@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 40 ; récits Wivi intégrés, vérification des pistes en cours.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 41 ; synthèse polonaise et ES01 vérifiées sur TESTv1.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,8 +61,8 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. DE01 activé. Vérifier la correspondance et les bornes des 87 autres pistes avec les reconnaissances locales conservées |
-| LANG-pl | P1 | in_progress | Accord confirmé. 17 pistes d’origine récupérées sans texte. Cinq MP3 de synthèse produits en espace de travail et à vérifier avant activation |
+| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. DE01 et ES01 activés. Première reconnaissance terminée pour les 88 pistes. Corroborer les meilleurs couples ES/DE. IT et NL demandent de vérifier les différences avec le récit lu |
+| LANG-pl | P1 | in_progress | PL09, 10, 15, 20 et 22 de synthèse activés. Les 17 originaux sans texte ont chacun un premier brouillon de reconnaissance. Comparer à une source ou corroborer la transcription et les bornes avant activation |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
@@ -107,7 +107,13 @@ Le checkpoint 39 intègre la piste DE01 après confirmation des droits de réuti
 
 Le checkpoint 40 rend consultables les 88 récits Wivi allemands, italiens, néerlandais et espagnols, dans l’onglet Récit de chaque fiche, avec leur lien source. Les 88 textes concordent avec les corps récupérés après normalisation des espaces. La recette sur le build `index-GX_m9j9h.js` a vérifié IT02, la navigation vers IT03 et le lien direct NL02. Les pistes de ces fiches restent indisponibles. Les 123 tests applicatifs, TypeScript et le build ont réussi. Le bloc de récits est chargé à la demande et figure dans le précache du build. Les empreintes FR et EN restent identiques. Couverture inchangée dans les 44 lignes du registre : FR 7 233 mots synchronisés et 43 manquants (99,41 %), EN 6 614 et 408 (94,19 %).
 
-Prochaine action : exploiter les sorties de reconnaissance mises en cache dans `wivi-authorized-2026-11-13/recognition`, comparer les candidats et intégrer chaque station dont le texte et les bornes concordent. Le manifeste `download-manifest.json` référence 105 MP3 Wivi et 88 textes. La synthèse PL utilise Piper 1.8.0 isolé et la voix Darkman épinglée. Les brouillons audio et les mesures d’échantillons sont dans `polish-synthetic`.
+Le checkpoint 40 est publié sous `d001f5926bf73046b7fb7015c9b55e77909c9690`. Le SHA distant a été confirmé sur TESTv1.
+
+Le checkpoint 41 active ES01 (16 phrases) et les cinq narrations polonaises autorisées. PL09, PL10, PL15, PL20 et PL22 comptent 17, 27, 22, 24 et 22 phrases. La fiche et le lecteur indiquent la voix de synthèse et la traduction non officielle. Le texte d’entrée a été comparé à la transcription française complète. Chaque intervalle vient des échantillons audibles du rendu, puis sa correspondance a été vérifiée sur le MP3 décodé (corrélation minimale > 0,9997). La reconnaissance confirme la langue et la présence des phrases. Elle laisse des prononciations à relire. ES01 utilise le texte Wivi intact, deux reconnaissances et des fenêtres de signal de 10 ms autour des frontières.
+
+Les 124 tests applicatifs, TypeScript et le build `index-Dr3WF7rH.js` ont réussi. Dans le navigateur, PL09 a lu la phrase « Fabien ? » après sélection, ES01 a joué « Bienvenidos a nuestra historia. » à partir de 109,24 s, le pack PL a vérifié ses 10 426 737 octets et PL22 a joué sa dernière phrase après arrêt du serveur (145,38 puis 145,52 s). Les 44 lignes de couverture FR/EN et leurs empreintes restent identiques (FR 7 233/7 276, EN 6 614/7 022). `dev-dist/sw.js` est préservé et exclu. Ces contrôles ne sont pas une écoute par un locuteur ni un essai sur téléphone physique.
+
+Prochaine action : repartir des caches `wivi-authorized-2026-11-13/recognition`, de `wivi-pair-screening.json`, de `phrase-candidates-2026-11-13.json` et des preuves PCM/MP3 dans `polish-revision-2` et `polish-synthetic`. DE07, DE08 et ES05 ont encore des divergences de texte ou de frontières. Priorité aux couples ES13, ES22, ES17 et ES20 après comparaison des deux modèles et du signal. Pour IT/NL, comparer une seconde reconnaissance aux passages divergents et préparer si nécessaire une transcription de l’enregistrement distincte du récit publié. Le manifeste `download-manifest.json` référence les 105 MP3 et 88 textes déjà récupérés.
 
 Récit anglais vérifié : composant EnglishNarrative, intégration dans StopDetailPage, trois règles CSS et trois tests supplémentaires. Ne pas refaire les titres, les calculs EN22 ou les recettes terminées.
 Lot récit publié : 6b4d560c0d08e6d2978f443916dc6f544c617cda ; SHA distant confirmé par git ls-remote. Seul dev-dist/sw.js reste préexistant et exclu.

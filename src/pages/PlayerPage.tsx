@@ -87,7 +87,9 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         <div className="player-station-copy">
           <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
           <h2 id={stationHeadingId} lang={title.language}>{title.text}</h2>
-          <p lang="fr" className="player-speakers">{currentStop.speakers}</p>
+          {resource.reason === 'synthetic-narration'
+            ? <p className="player-speakers">{x('syntheticNarration', currentLang)}</p>
+            : <p lang="fr" className="player-speakers">{currentStop.speakers}</p>}
           <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
             <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
           </button>

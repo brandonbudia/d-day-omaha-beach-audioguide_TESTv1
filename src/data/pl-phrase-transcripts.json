@@ -1,0 +1,706 @@
+{
+  "09": {
+    "id": "09",
+    "language": "pl",
+    "audioSha256": "043883ec6fcf33b43f84b3c63fe2fd9a904e82f93d3ae2feafdc3bc9bb999907",
+    "durationSeconds": 65.4271201814059,
+    "status": "aligned",
+    "provenance": {
+      "source": "src/data/french-transcripts.fr.json",
+      "referencePath": "src/data/french-transcripts.fr.json",
+      "referenceSha256": "00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7",
+      "verification": "Polish translation of the complete French narration. Piper 1.8.0, Darkman medium. Phrase input mapped to audible PCM samples, correlated with decoded MP3. Local recognition provides an additional pronunciation check.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Synthetic voice; unofficial translation. Polish pronunciation of proper names and terminology remains subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Historia rozgrywa się na strzelnicy pewnej francuskiej instytucji.",
+        "startSeconds": 0.034059,
+        "endSeconds": 3.926621
+      },
+      {
+        "text": "Fabien?",
+        "startSeconds": 4.555147,
+        "endSeconds": 5.230612
+      },
+      {
+        "text": "Tak?",
+        "startSeconds": 5.92839,
+        "endSeconds": 6.327528
+      },
+      {
+        "text": "Chodź zobaczyć.",
+        "startSeconds": 6.976599,
+        "endSeconds": 7.976463
+      },
+      {
+        "text": "Gdzie jesteś?",
+        "startSeconds": 8.75619,
+        "endSeconds": 9.683084
+      },
+      {
+        "text": "Chodź tutaj.",
+        "startSeconds": 10.411882,
+        "endSeconds": 11.256599
+      },
+      {
+        "text": "Ale co ty robisz?",
+        "startSeconds": 11.988526,
+        "endSeconds": 13.04966
+      },
+      {
+        "text": "Posłuchaj.",
+        "startSeconds": 13.8122,
+        "endSeconds": 14.697007
+      },
+      {
+        "text": "Widzisz?",
+        "startSeconds": 15.441905,
+        "endSeconds": 16.137732
+      },
+      {
+        "text": "To daje ci wyobrażenie o szybkostrzelności niemieckiego karabinu maszynowego MG 42.",
+        "startSeconds": 16.802721,
+        "endSeconds": 22.899728
+      },
+      {
+        "text": "Wyobraź sobie żołnierzy amerykańskich i pozostałych żołnierzy alianckich, którzy 6 czerwca lądowali pod ogniem wroga.",
+        "startSeconds": 23.663401,
+        "endSeconds": 31.103628
+      },
+      {
+        "text": "Ten ogień także nosił nazwę MG 42…",
+        "startSeconds": 31.846485,
+        "endSeconds": 35.3322
+      },
+      {
+        "text": "Historia niestety zapamięta Heinricha Severloha, zwanego Bestią z Omaha.",
+        "startSeconds": 35.818231,
+        "endSeconds": 41.161769
+      },
+      {
+        "text": "Szóstego czerwca 1944 roku utrzymał swoją pozycję przy MG 42 w jednym ze strategicznych bunkrów na plaży Omaha.",
+        "startSeconds": 41.837143,
+        "endSeconds": 51.733741
+      },
+      {
+        "text": "W swoich relacjach twierdzi, że wystrzelił około 12 500 nabojów.",
+        "startSeconds": 52.293288,
+        "endSeconds": 57.299365
+      },
+      {
+        "text": "To było przerażające.",
+        "startSeconds": 58.110794,
+        "endSeconds": 59.503084
+      },
+      {
+        "text": "W swoich wspomnieniach opowie, że strzelał, żeby przeżyć, a nie dla przyjemności.",
+        "startSeconds": 60.120363,
+        "endSeconds": 64.91932
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Historia rozgrywa się na strzelnicy pewnej francuskiej instytucji. Fabien? Tak? Chodź zobaczyć. Gdzie jesteś? Chodź tutaj. Ale co ty robisz? Posłuchaj. Widzisz? To daje ci wyobrażenie o szybkostrzelności niemieckiego karabinu maszynowego MG 42. Wyobraź sobie żołnierzy amerykańskich i pozostałych żołnierzy alianckich, którzy 6 czerwca lądowali pod ogniem wroga. Ten ogień także nosił nazwę MG 42…",
+      "Historia niestety zapamięta Heinricha Severloha, zwanego Bestią z Omaha. Szóstego czerwca 1944 roku utrzymał swoją pozycję przy MG 42 w jednym ze strategicznych bunkrów na plaży Omaha. W swoich relacjach twierdzi, że wystrzelił około 12 500 nabojów. To było przerażające.",
+      "W swoich wspomnieniach opowie, że strzelał, żeby przeżyć, a nie dla przyjemności."
+    ]
+  },
+  "10": {
+    "id": "10",
+    "language": "pl",
+    "audioSha256": "776575e852d784be9202b37842f620e696dae667bec0c6e6b94feb3123092faf",
+    "durationSeconds": 140.366259,
+    "status": "aligned",
+    "provenance": {
+      "source": "src/data/french-transcripts.fr.json",
+      "referencePath": "src/data/french-transcripts.fr.json",
+      "referenceSha256": "00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7",
+      "verification": "Polish translation of the complete French narration. Piper 1.8.0, Darkman medium. Phrase input mapped to audible PCM samples, correlated with decoded MP3. Local recognition provides an additional pronunciation check.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Synthetic voice; unofficial translation. Polish pronunciation of proper names and terminology remains subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Na południu Normandii, tam, gdzie mieszkaliśmy z ojcem, niemiecka jednostka Panzer Lehr założyła swoją kwaterę główną.",
+        "startSeconds": 0.269116,
+        "endSeconds": 7.994694
+      },
+      {
+        "text": "Mój ojciec już od pewnego czasu zdawał sobie sprawę, że podczas okupacji Francji Niemcy upodobali sobie piękne rezydencje.",
+        "startSeconds": 8.752109,
+        "endSeconds": 16.161406
+      },
+      {
+        "text": "Podczas wystawy w centrum naszego miasta poznał człowieka, który opowiedział mu, że w latach czterdziestych jego posiadłość zajęli Niemcy.",
+        "startSeconds": 16.888299,
+        "endSeconds": 24.450794
+      },
+      {
+        "text": "Oczywiście nie trzeba było niczego więcej, żebyśmy pojechali do tego pana.",
+        "startSeconds": 25.196961,
+        "endSeconds": 29.445624
+      },
+      {
+        "text": "Mała, odludna droga przez las, okazała brama, ciągnące się bez końca kamienne murki…",
+        "startSeconds": 30.153424,
+        "endSeconds": 36.34712
+      },
+      {
+        "text": "Tak wygląda sceneria.",
+        "startSeconds": 37.029252,
+        "endSeconds": 38.492109
+      },
+      {
+        "text": "Mijamy dom dozorcy.",
+        "startSeconds": 39.214104,
+        "endSeconds": 40.560544
+      },
+      {
+        "text": "Naprzeciwko niego stoi inny budynek, który wygląda na zrujnowany.",
+        "startSeconds": 41.317007,
+        "endSeconds": 45.501633
+      },
+      {
+        "text": "Za nim znajduje się zagłębienie.",
+        "startSeconds": 46.257596,
+        "endSeconds": 48.198458
+      },
+      {
+        "text": "Gospodarz nas wita i zaczyna się zwiedzanie…",
+        "startSeconds": 48.908707,
+        "endSeconds": 51.593333
+      },
+      {
+        "text": "Co za atmosfera…",
+        "startSeconds": 52.292698,
+        "endSeconds": 53.484308
+      },
+      {
+        "text": "Skrzypiący parkiet, stare szafy pełne opisanych skamieniałości z jeszcze dawniejszej epoki, a w półmroku rozmaite drobne przedmioty niemieckiej armii.",
+        "startSeconds": 54.092018,
+        "endSeconds": 62.754014
+      },
+      {
+        "text": "Ta chwila naprawdę zapadła nam w pamięć…",
+        "startSeconds": 63.461723,
+        "endSeconds": 65.924036
+      },
+      {
+        "text": "Ale największe zaskoczenie dopiero nas czeka.",
+        "startSeconds": 66.662313,
+        "endSeconds": 69.24644
+      },
+      {
+        "text": "W drugim pomieszczeniu, pośrodku opuszczonego salonu, króluje coś w rodzaju małego czołgu.",
+        "startSeconds": 69.993333,
+        "endSeconds": 75.519637
+      },
+      {
+        "text": "Można się poczuć zdezorientowanym, kiedy nie wiadomo, co się ma przed sobą.",
+        "startSeconds": 76.026848,
+        "endSeconds": 80.633152
+      },
+      {
+        "text": "Niemcy po raz kolejny opracowali wyjątkowo pomysłowe rozwiązanie.",
+        "startSeconds": 81.372925,
+        "endSeconds": 85.127755
+      },
+      {
+        "text": "To Goliath, miniaturowy czołg sterowany przewodem, który przewoził ładunek wybuchowy przeznaczony do atakowania budynków lub pojazdów wroga.",
+        "startSeconds": 85.829524,
+        "endSeconds": 93.600136
+      },
+      {
+        "text": "Goliath należał do tego, co określa się mianem „broni specjalnej Hitlera”.",
+        "startSeconds": 94.321723,
+        "endSeconds": 99.157687
+      },
+      {
+        "text": "To bardzo rzadki i poszukiwany okaz kolekcjonerski.",
+        "startSeconds": 99.891474,
+        "endSeconds": 103.058277
+      },
+      {
+        "text": "Przed wami znajduje się wersja z silnikiem benzynowym.",
+        "startSeconds": 103.698413,
+        "endSeconds": 106.932834
+      },
+      {
+        "text": "Wnętrze jest kompletne, oczywiście bez ładunku wybuchowego.",
+        "startSeconds": 107.655238,
+        "endSeconds": 111.585397
+      },
+      {
+        "text": "Goliath stoi na przeznaczonym do tego stelażu, który mógł pomieścić cztery takie pojazdy.",
+        "startSeconds": 112.302494,
+        "endSeconds": 117.224399
+      },
+      {
+        "text": "Na zakończenie opowiem o pewnym tragicznym zdarzeniu.",
+        "startSeconds": 117.964898,
+        "endSeconds": 120.901134
+      },
+      {
+        "text": "Podczas lądowania w sektorze Utah Beach alianci znaleźli na plażach małe groty, w których składowano pojazdy Goliath…",
+        "startSeconds": 121.58458,
+        "endSeconds": 128.064218
+      },
+      {
+        "text": "Nie wiedząc, czym są, i biorąc je za „zabawki”, niektórzy żołnierze wrzucili tam granat…",
+        "startSeconds": 128.812608,
+        "endSeconds": 134.182721
+      },
+      {
+        "text": "Niestety zginęli, ponieważ ładunki dziesięciokrotnie zwiększyły siłę wybuchu.",
+        "startSeconds": 134.961814,
+        "endSeconds": 139.851791
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Na południu Normandii, tam, gdzie mieszkaliśmy z ojcem, niemiecka jednostka Panzer Lehr założyła swoją kwaterę główną. Mój ojciec już od pewnego czasu zdawał sobie sprawę, że podczas okupacji Francji Niemcy upodobali sobie piękne rezydencje.",
+      "Podczas wystawy w centrum naszego miasta poznał człowieka, który opowiedział mu, że w latach czterdziestych jego posiadłość zajęli Niemcy. Oczywiście nie trzeba było niczego więcej, żebyśmy pojechali do tego pana.",
+      "Mała, odludna droga przez las, okazała brama, ciągnące się bez końca kamienne murki… Tak wygląda sceneria. Mijamy dom dozorcy. Naprzeciwko niego stoi inny budynek, który wygląda na zrujnowany. Za nim znajduje się zagłębienie. Gospodarz nas wita i zaczyna się zwiedzanie… Co za atmosfera… Skrzypiący parkiet, stare szafy pełne opisanych skamieniałości z jeszcze dawniejszej epoki, a w półmroku rozmaite drobne przedmioty niemieckiej armii. Ta chwila naprawdę zapadła nam w pamięć…",
+      "Ale największe zaskoczenie dopiero nas czeka. W drugim pomieszczeniu, pośrodku opuszczonego salonu, króluje coś w rodzaju małego czołgu.",
+      "Można się poczuć zdezorientowanym, kiedy nie wiadomo, co się ma przed sobą. Niemcy po raz kolejny opracowali wyjątkowo pomysłowe rozwiązanie. To Goliath, miniaturowy czołg sterowany przewodem, który przewoził ładunek wybuchowy przeznaczony do atakowania budynków lub pojazdów wroga. Goliath należał do tego, co określa się mianem „broni specjalnej Hitlera”. To bardzo rzadki i poszukiwany okaz kolekcjonerski.",
+      "Przed wami znajduje się wersja z silnikiem benzynowym. Wnętrze jest kompletne, oczywiście bez ładunku wybuchowego. Goliath stoi na przeznaczonym do tego stelażu, który mógł pomieścić cztery takie pojazdy.",
+      "Na zakończenie opowiem o pewnym tragicznym zdarzeniu.",
+      "Podczas lądowania w sektorze Utah Beach alianci znaleźli na plażach małe groty, w których składowano pojazdy Goliath… Nie wiedząc, czym są, i biorąc je za „zabawki”, niektórzy żołnierze wrzucili tam granat… Niestety zginęli, ponieważ ładunki dziesięciokrotnie zwiększyły siłę wybuchu."
+    ]
+  },
+  "15": {
+    "id": "15",
+    "language": "pl",
+    "audioSha256": "a398f6fea737d3dd2de349223c9c4c4d785fc2844f3cbcc2645b273edca4a466",
+    "durationSeconds": 148.256871,
+    "status": "aligned",
+    "provenance": {
+      "source": "src/data/french-transcripts.fr.json",
+      "referencePath": "src/data/french-transcripts.fr.json",
+      "referenceSha256": "00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7",
+      "verification": "Polish translation of the complete French narration. Piper 1.8.0, Darkman medium. Phrase input mapped to audible PCM samples, correlated with decoded MP3. Local recognition provides an additional pronunciation check.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Synthetic voice; unofficial translation. Polish pronunciation of proper names and terminology remains subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Zapraszam teraz do odkrycia jednego z najbardziej fascynujących eksponatów w naszej kolekcji.",
+        "startSeconds": 0.268163,
+        "endSeconds": 5.504082
+      },
+      {
+        "text": "To Welbike, niewielki brytyjski motocykl o niezwykłej historii.",
+        "startSeconds": 6.047256,
+        "endSeconds": 10.186712
+      },
+      {
+        "text": "Wyobraźcie sobie, że przenosicie się w sam środek II wojny światowej, do lat czterdziestych.",
+        "startSeconds": 10.968345,
+        "endSeconds": 16.923719
+      },
+      {
+        "text": "Siły alianckie szukają nowatorskich rozwiązań, które pozwolą im skutecznie prowadzić działania wojskowe, często za liniami wroga.",
+        "startSeconds": 17.685351,
+        "endSeconds": 25.068844
+      },
+      {
+        "text": "W tych właśnie okolicznościach powstaje Welbike.",
+        "startSeconds": 25.569887,
+        "endSeconds": 28.382948
+      },
+      {
+        "text": "Welbike, zaprojektowany przez jednostkę Station IX brytyjskich służb specjalnych, to motocykl zadziwiająco prosty, a przy tym niezwykle skuteczny.",
+        "startSeconds": 29.146485,
+        "endSeconds": 38.502948
+      },
+      {
+        "text": "Opracowano go specjalnie dla spadochroniarzy i sił specjalnych armii brytyjskiej.",
+        "startSeconds": 39.238367,
+        "endSeconds": 43.781224
+      },
+      {
+        "text": "Był to przemyślany pomysł.",
+        "startSeconds": 44.528345,
+        "endSeconds": 46.209796
+      },
+      {
+        "text": "Chodziło o stworzenie lekkiego, kompaktowego pojazdu, który można łatwo transportować drogą powietrzną.",
+        "startSeconds": 46.870794,
+        "endSeconds": 52.715147
+      },
+      {
+        "text": "Gdy rozlega się gwizdek i rozpoczyna się misja, Welbike pokazuje, co potrafi.",
+        "startSeconds": 53.456508,
+        "endSeconds": 58.690839
+      },
+      {
+        "text": "Zrzucony na spadochronie w cylindrycznym pojemniku, ląduje w tym samym czasie co żołnierze.",
+        "startSeconds": 59.418639,
+        "endSeconds": 64.409161
+      },
+      {
+        "text": "Wystarczy kilka minut, by był gotowy do jazdy, bez użycia skomplikowanych narzędzi.",
+        "startSeconds": 65.166168,
+        "endSeconds": 70.767211
+      },
+      {
+        "text": "Konstruktorzy stworzyli motocykl, który mimo niewielkich rozmiarów i masy zaledwie 32 kilogramów ma zasięg niemal 145 kilometrów dzięki dwusuwowemu silnikowi benzynowemu.",
+        "startSeconds": 71.513016,
+        "endSeconds": 83.152562
+      },
+      {
+        "text": "Choć jego skromny wygląd często wywołuje uśmiech, rola, jaką odegrał podczas wojny, była znacząca.",
+        "startSeconds": 83.827483,
+        "endSeconds": 90.31932
+      },
+      {
+        "text": "Welbike wykorzystywano w różnych misjach, między innymi podczas operacji Market Garden w Holandii w 1944 roku.",
+        "startSeconds": 91.10127,
+        "endSeconds": 99.446712
+      },
+      {
+        "text": "Szybki i dyskretny, pozwalał żołnierzom przewozić wiadomości i pokonywać duże odległości, by tworzyć stanowiska w strategicznych miejscach.",
+        "startSeconds": 100.106485,
+        "endSeconds": 109.002857
+      },
+      {
+        "text": "Dziś ten niezwykły, pieczołowicie zachowany eksponat znajduje się przed wami.",
+        "startSeconds": 109.722358,
+        "endSeconds": 114.249705
+      },
+      {
+        "text": "Uosabia pomysłowość i determinację ludzi epoki, w której każda innowacja techniczna mogła przesądzić o powodzeniu lub niepowodzeniu misji.",
+        "startSeconds": 114.975692,
+        "endSeconds": 123.215329
+      },
+      {
+        "text": "Jako zapalony kolekcjoner czuję się zaszczycony, że mogę podzielić się z wami tym wyjątkowym świadectwem historii.",
+        "startSeconds": 123.951837,
+        "endSeconds": 131.034286
+      },
+      {
+        "text": "Welbike pozostaje żywym świadectwem ducha oporu i wynalazczości, który naznaczył II wojnę światową.",
+        "startSeconds": 131.797868,
+        "endSeconds": 137.92517
+      },
+      {
+        "text": "Mam nadzieję, że to odkrycie zaciekawiło was tak bardzo, jak mnie fascynuje.",
+        "startSeconds": 138.62059,
+        "endSeconds": 143.95356
+      },
+      {
+        "text": "Ruszajmy dalej w naszą wspólną podróż przez historię…",
+        "startSeconds": 144.723673,
+        "endSeconds": 147.789932
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Zapraszam teraz do odkrycia jednego z najbardziej fascynujących eksponatów w naszej kolekcji. To Welbike, niewielki brytyjski motocykl o niezwykłej historii. Wyobraźcie sobie, że przenosicie się w sam środek II wojny światowej, do lat czterdziestych. Siły alianckie szukają nowatorskich rozwiązań, które pozwolą im skutecznie prowadzić działania wojskowe, często za liniami wroga. W tych właśnie okolicznościach powstaje Welbike.",
+      "Welbike, zaprojektowany przez jednostkę Station IX brytyjskich służb specjalnych, to motocykl zadziwiająco prosty, a przy tym niezwykle skuteczny. Opracowano go specjalnie dla spadochroniarzy i sił specjalnych armii brytyjskiej. Był to przemyślany pomysł. Chodziło o stworzenie lekkiego, kompaktowego pojazdu, który można łatwo transportować drogą powietrzną.",
+      "Gdy rozlega się gwizdek i rozpoczyna się misja, Welbike pokazuje, co potrafi. Zrzucony na spadochronie w cylindrycznym pojemniku, ląduje w tym samym czasie co żołnierze. Wystarczy kilka minut, by był gotowy do jazdy, bez użycia skomplikowanych narzędzi. Konstruktorzy stworzyli motocykl, który mimo niewielkich rozmiarów i masy zaledwie 32 kilogramów ma zasięg niemal 145 kilometrów dzięki dwusuwowemu silnikowi benzynowemu.",
+      "Choć jego skromny wygląd często wywołuje uśmiech, rola, jaką odegrał podczas wojny, była znacząca. Welbike wykorzystywano w różnych misjach, między innymi podczas operacji Market Garden w Holandii w 1944 roku. Szybki i dyskretny, pozwalał żołnierzom przewozić wiadomości i pokonywać duże odległości, by tworzyć stanowiska w strategicznych miejscach.",
+      "Dziś ten niezwykły, pieczołowicie zachowany eksponat znajduje się przed wami. Uosabia pomysłowość i determinację ludzi epoki, w której każda innowacja techniczna mogła przesądzić o powodzeniu lub niepowodzeniu misji.",
+      "Jako zapalony kolekcjoner czuję się zaszczycony, że mogę podzielić się z wami tym wyjątkowym świadectwem historii. Welbike pozostaje żywym świadectwem ducha oporu i wynalazczości, który naznaczył II wojnę światową.",
+      "Mam nadzieję, że to odkrycie zaciekawiło was tak bardzo, jak mnie fascynuje. Ruszajmy dalej w naszą wspólną podróż przez historię…"
+    ]
+  },
+  "20": {
+    "id": "20",
+    "language": "pl",
+    "audioSha256": "08f2a41aa3dea66a89df571483adeeb29c754241d4db5719b00b5f073f21544e",
+    "durationSeconds": 158.513152,
+    "status": "aligned",
+    "provenance": {
+      "source": "src/data/french-transcripts.fr.json",
+      "referencePath": "src/data/french-transcripts.fr.json",
+      "referenceSha256": "00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7",
+      "verification": "Polish translation of the complete French narration. Piper 1.8.0, Darkman medium. Phrase input mapped to audible PCM samples, correlated with decoded MP3. Local recognition provides an additional pronunciation check.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Synthetic voice; unofficial translation. Polish pronunciation of proper names and terminology remains subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "W tej gablocie zgromadzono kilka przedmiotów należących do armii brytyjskiej, odnalezionych w różnych miejscach na obszarze brytyjskich sektorów desantu w dniu D.",
+        "startSeconds": 0.187937,
+        "endSeconds": 9.21415
+      },
+      {
+        "text": "Przypomina mi to mojego wuja, który już w dzieciństwie opowiadał nam różne historie, którymi dzielił się z moim ojcem w małym barze niedaleko mostu Pegasus Bridge.",
+        "startSeconds": 9.904127,
+        "endSeconds": 19.167619
+      },
+      {
+        "text": "To świadectwo czasów, gdy odwaga przekraczała granice i sięgała nieba.",
+        "startSeconds": 19.729478,
+        "endSeconds": 24.254512
+      },
+      {
+        "text": "Anglia, ostatni wolny bastion okupowanej Europy w latach czterdziestych, miała pozostać wyłomem w nazistowskim systemie, od którego rozpoczęła się droga ku wyzwoleniu.",
+        "startSeconds": 25.011655,
+        "endSeconds": 35.675011
+      },
+      {
+        "text": "Po prawej stronie widzicie skrzynkę dla gołębi pocztowych.",
+        "startSeconds": 36.435193,
+        "endSeconds": 39.683265
+      },
+      {
+        "text": "Ci skrzydlaci posłańcy nieśli nadzieję i kluczowe informacje.",
+        "startSeconds": 40.366757,
+        "endSeconds": 43.810159
+      },
+      {
+        "text": "Przelatywali nad liniami wroga, umożliwiając koordynację działań aliantów.",
+        "startSeconds": 44.540862,
+        "endSeconds": 48.900952
+      },
+      {
+        "text": "Byli prawdziwymi żołnierzami ciszy, którzy samym trzepotem skrzydeł ratowali życie.",
+        "startSeconds": 49.462358,
+        "endSeconds": 54.179546
+      },
+      {
+        "text": "Brytyjski hełm spadochroniarski z oznaczeniem jednostki medycznej jest dziś prawdziwą rzadkością.",
+        "startSeconds": 54.981587,
+        "endSeconds": 60.593878
+      },
+      {
+        "text": "Takie hełmy nosili ci, którzy przemierzali przestworza i zeskakiwali na wrogi teren.",
+        "startSeconds": 61.361995,
+        "endSeconds": 66.512925
+      },
+      {
+        "text": "O świcie dnia D skoczyli w nieznane nad miejscami, które przeszły do legendy, takimi jak Pegasus Bridge.",
+        "startSeconds": 67.086168,
+        "endSeconds": 73.393152
+      },
+      {
+        "text": "Nieśli ze sobą przeznaczenie większe niż oni sami.",
+        "startSeconds": 74.182041,
+        "endSeconds": 77.014694
+      },
+      {
+        "text": "Te jedwabne mapy były lekkie, a zarazem niezbędne do orientacji na wrogim terenie.",
+        "startSeconds": 77.753424,
+        "endSeconds": 82.541814
+      },
+      {
+        "text": "Zaprojektowano je tak, by przetrwały niepogodę, a nawet katastrofę samolotu.",
+        "startSeconds": 83.309569,
+        "endSeconds": 88.705442
+      },
+      {
+        "text": "W trakcie misji prowadziły naszych sojuszników przez tereny, na których trudno było przewidzieć, co ich czeka.",
+        "startSeconds": 89.32839,
+        "endSeconds": 95.10839
+      },
+      {
+        "text": "Broń, którą tu widzicie, to PIAT, brytyjska broń przeciwpancerna.",
+        "startSeconds": 95.879592,
+        "endSeconds": 100.147755
+      },
+      {
+        "text": "Świadczy o sile, jaka kryła się w rękach zdeterminowanych brytyjskich żołnierzy.",
+        "startSeconds": 100.856145,
+        "endSeconds": 105.713605
+      },
+      {
+        "text": "Choć zawodna i mało celna, uosabiała opór potrzebny, by odeprzeć wrogie siły pancerne.",
+        "startSeconds": 106.424444,
+        "endSeconds": 112.448753
+      },
+      {
+        "text": "Typowa brytyjska kurtka mundurowa typu battle dress z oznaczeniami spadochroniarzy przywodzi na myśl noce, kiedy ciemne niebo wypełniało się unoszącymi się sylwetkami.",
+        "startSeconds": 113.198413,
+        "endSeconds": 122.206395
+      },
+      {
+        "text": "To nieustraszeni żołnierze, którzy zstępowali z nieba, by wyciągnąć rękę ku wolności.",
+        "startSeconds": 122.949615,
+        "endSeconds": 128.468118
+      },
+      {
+        "text": "Sztylet komandosów typu Fairbairn, karabin Lee-Enfield, autonomiczny aparat nurkowy używany podczas poszukiwań…",
+        "startSeconds": 129.170249,
+        "endSeconds": 135.940408
+      },
+      {
+        "text": "Wszystkie te przedmioty odnajdywano przez lata, a ich odkrywanie wiązało się z badaniami, wymianą i inwestycjami.",
+        "startSeconds": 136.497596,
+        "endSeconds": 143.39288
+      },
+      {
+        "text": "Osobiście wciąż jestem pod wrażeniem tego, jak Brytyjczycy wyprzedzali innych w tak wielu dziedzinach.",
+        "startSeconds": 144.134104,
+        "endSeconds": 149.900363
+      },
+      {
+        "text": "Ich innowacje, zarówno pod względem technologicznym, jak i historycznym, do dziś odciskają piętno na historii.",
+        "startSeconds": 150.436372,
+        "endSeconds": 158.024399
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "W tej gablocie zgromadzono kilka przedmiotów należących do armii brytyjskiej, odnalezionych w różnych miejscach na obszarze brytyjskich sektorów desantu w dniu D. Przypomina mi to mojego wuja, który już w dzieciństwie opowiadał nam różne historie, którymi dzielił się z moim ojcem w małym barze niedaleko mostu Pegasus Bridge. To świadectwo czasów, gdy odwaga przekraczała granice i sięgała nieba. Anglia, ostatni wolny bastion okupowanej Europy w latach czterdziestych, miała pozostać wyłomem w nazistowskim systemie, od którego rozpoczęła się droga ku wyzwoleniu.",
+      "Po prawej stronie widzicie skrzynkę dla gołębi pocztowych. Ci skrzydlaci posłańcy nieśli nadzieję i kluczowe informacje. Przelatywali nad liniami wroga, umożliwiając koordynację działań aliantów. Byli prawdziwymi żołnierzami ciszy, którzy samym trzepotem skrzydeł ratowali życie.",
+      "Brytyjski hełm spadochroniarski z oznaczeniem jednostki medycznej jest dziś prawdziwą rzadkością. Takie hełmy nosili ci, którzy przemierzali przestworza i zeskakiwali na wrogi teren. O świcie dnia D skoczyli w nieznane nad miejscami, które przeszły do legendy, takimi jak Pegasus Bridge. Nieśli ze sobą przeznaczenie większe niż oni sami.",
+      "Te jedwabne mapy były lekkie, a zarazem niezbędne do orientacji na wrogim terenie. Zaprojektowano je tak, by przetrwały niepogodę, a nawet katastrofę samolotu. W trakcie misji prowadziły naszych sojuszników przez tereny, na których trudno było przewidzieć, co ich czeka.",
+      "Broń, którą tu widzicie, to PIAT, brytyjska broń przeciwpancerna. Świadczy o sile, jaka kryła się w rękach zdeterminowanych brytyjskich żołnierzy. Choć zawodna i mało celna, uosabiała opór potrzebny, by odeprzeć wrogie siły pancerne.",
+      "Typowa brytyjska kurtka mundurowa typu battle dress z oznaczeniami spadochroniarzy przywodzi na myśl noce, kiedy ciemne niebo wypełniało się unoszącymi się sylwetkami. To nieustraszeni żołnierze, którzy zstępowali z nieba, by wyciągnąć rękę ku wolności.",
+      "Sztylet komandosów typu Fairbairn, karabin Lee-Enfield, autonomiczny aparat nurkowy używany podczas poszukiwań… Wszystkie te przedmioty odnajdywano przez lata, a ich odkrywanie wiązało się z badaniami, wymianą i inwestycjami. Osobiście wciąż jestem pod wrażeniem tego, jak Brytyjczycy wyprzedzali innych w tak wielu dziedzinach. Ich innowacje, zarówno pod względem technologicznym, jak i historycznym, do dziś odciskają piętno na historii."
+    ]
+  },
+  "22": {
+    "id": "22",
+    "language": "pl",
+    "audioSha256": "ef096bf90364a412ad66353f88e43c9976a93ea0a8fdbb8db33ae06c587504f1",
+    "durationSeconds": 147.24943310657596,
+    "status": "aligned",
+    "provenance": {
+      "source": "src/data/french-transcripts.fr.json",
+      "referencePath": "src/data/french-transcripts.fr.json",
+      "referenceSha256": "00954a2e5c62293f2e6f67ca9bb186ed16ea5f02bf23362ec48532af7266f8e7",
+      "verification": "Polish translation of the complete French narration. Piper 1.8.0, Darkman medium. Phrase input mapped to audible PCM samples, correlated with decoded MP3. Local recognition provides an additional pronunciation check.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Synthetic voice; unofficial translation. Polish pronunciation of proper names and terminology remains subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Ta gablota poświęcona jest czasom odwagi — czasom francuskiego ruchu oporu podczas drugiej wojny światowej.",
+        "startSeconds": 0.4560544217687075,
+        "endSeconds": 6.783446712018141
+      },
+      {
+        "text": "Każdy z przedmiotów, które tu widzimy, opowiada historię ludzi, którzy w ukryciu walczyli o wolność i godność.",
+        "startSeconds": 7.527392290249433,
+        "endSeconds": 14.231473922902495
+      },
+      {
+        "text": "Po prawej stronie mogą Państwo zobaczyć różne elementy pułapek.",
+        "startSeconds": 15.044308390022676,
+        "endSeconds": 18.650748299319726
+      },
+      {
+        "text": "Te pomysłowo zaprojektowane urządzenia wybuchowe służyły do utrudniania postępów sił okupacyjnych.",
+        "startSeconds": 19.44530612244898,
+        "endSeconds": 25.20113378684807
+      },
+      {
+        "text": "W wyniku takich działań znacznych uszkodzeń doznały na przykład linie kolejowe.",
+        "startSeconds": 26.00888888888889,
+        "endSeconds": 30.541541950113377
+      },
+      {
+        "text": "Noże, ciche, lecz groźne narzędzia w walce wręcz, służyły jako ostatni środek obrony lub pozwalały zadać cios z zaskoczenia.",
+        "startSeconds": 31.320181405895692,
+        "endSeconds": 39.916825396825395
+      },
+      {
+        "text": "Należały do mężczyzn i kobiet gotowych poświęcić wszystko.",
+        "startSeconds": 40.660544217687075,
+        "endSeconds": 44.2362358276644
+      },
+      {
+        "text": "Ulotki, które mogą Państwo tu zobaczyć, miały budzić sumienia i jednoczyć ludzi o wolnych umysłach.",
+        "startSeconds": 45.0497052154195,
+        "endSeconds": 51.241950113378685
+      },
+      {
+        "text": "Rozprowadzane z narażeniem życia, były prawdziwym krzykiem buntu przeciw uciskowi i wezwaniem, by stanąć do walki o lepszą ojczyznę.",
+        "startSeconds": 52.0152380952381,
+        "endSeconds": 59.965986394557824
+      },
+      {
+        "text": "Zielony beret komandosów Kieffera symbolizuje jedność i odwagę 177 francuskich żołnierzy, którzy odpowiedzieli na apel z 18 czerwca, walcząc ramię w ramię z sojusznikami o wyzwolenie kraju zmuszonego do milczenia.",
+        "startSeconds": 60.78562358276644,
+        "endSeconds": 75.65936507936507
+      },
+      {
+        "text": "Detonatory, urządzenia do przebijania opon i ta zmodyfikowana broń marki Mauser świadczą o pomysłowości członków ruchu oporu.",
+        "startSeconds": 76.42249433106576,
+        "endSeconds": 83.85038548752834
+      },
+      {
+        "text": "Są tu także fałszywe pieczęcie, niezbędne do tworzenia fałszywych tożsamości.",
+        "startSeconds": 84.64802721088435,
+        "endSeconds": 89.6643537414966
+      },
+      {
+        "text": "Były prawdziwym kluczem do przetrwania.",
+        "startSeconds": 90.44848072562358,
+        "endSeconds": 92.65818594104309
+      },
+      {
+        "text": "Wielu członkom ruchu oporu pozwoliły wymknąć się z rąk wroga i kontynuować walkę w ukryciu.",
+        "startSeconds": 93.4285260770975,
+        "endSeconds": 98.86843537414966
+      },
+      {
+        "text": "Dysponując ograniczonymi środkami, przekształcali swoje otoczenie, wykorzystując każdy przedmiot i każde narzędzie, by dalej prowadzić swą nieustającą walkę.",
+        "startSeconds": 99.66662131519274,
+        "endSeconds": 109.63229024943311
+      },
+      {
+        "text": "Mieliśmy szczęście poznać kilku członków ruchu oporu jeszcze za ich życia.",
+        "startSeconds": 110.42684807256236,
+        "endSeconds": 114.55863945578231
+      },
+      {
+        "text": "Dzieląc się z nami swoimi opowieściami, przekazali nam przedmioty, które przechowywali w kącie swoich domów.",
+        "startSeconds": 115.33451247165533,
+        "endSeconds": 121.74136054421768
+      },
+      {
+        "text": "Ta gablota pomaga nam zachować pamięć o nich, bo spotkania z tymi ludźmi są częścią naszych wspomnień z dzieciństwa.",
+        "startSeconds": 122.56312925170069,
+        "endSeconds": 129.36163265306124
+      },
+      {
+        "text": "Nie nosili mundurów i z pozoru byli zwykłymi obywatelami…",
+        "startSeconds": 129.86807256235826,
+        "endSeconds": 133.55428571428573
+      },
+      {
+        "text": "Ale cóż za odwaga!",
+        "startSeconds": 134.0280725623583,
+        "endSeconds": 135.65668934240364
+      },
+      {
+        "text": "Cóż za odwaga, by stawić opór!",
+        "startSeconds": 136.2,
+        "endSeconds": 138.57900226757369
+      },
+      {
+        "text": "Ich odwaga i determinacja wciąż inspirują, przypominając, że nawet w najciemniejszych godzinach światło oporu nigdy nie gaśnie.",
+        "startSeconds": 139.32684807256237,
+        "endSeconds": 146.73700680272108
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Ta gablota poświęcona jest czasom odwagi — czasom francuskiego ruchu oporu podczas drugiej wojny światowej. Każdy z przedmiotów, które tu widzimy, opowiada historię ludzi, którzy w ukryciu walczyli o wolność i godność.",
+      "Po prawej stronie mogą Państwo zobaczyć różne elementy pułapek. Te pomysłowo zaprojektowane urządzenia wybuchowe służyły do utrudniania postępów sił okupacyjnych. W wyniku takich działań znacznych uszkodzeń doznały na przykład linie kolejowe.",
+      "Noże, ciche, lecz groźne narzędzia w walce wręcz, służyły jako ostatni środek obrony lub pozwalały zadać cios z zaskoczenia. Należały do mężczyzn i kobiet gotowych poświęcić wszystko.",
+      "Ulotki, które mogą Państwo tu zobaczyć, miały budzić sumienia i jednoczyć ludzi o wolnych umysłach. Rozprowadzane z narażeniem życia, były prawdziwym krzykiem buntu przeciw uciskowi i wezwaniem, by stanąć do walki o lepszą ojczyznę.",
+      "Zielony beret komandosów Kieffera symbolizuje jedność i odwagę 177 francuskich żołnierzy, którzy odpowiedzieli na apel z 18 czerwca, walcząc ramię w ramię z sojusznikami o wyzwolenie kraju zmuszonego do milczenia.",
+      "Detonatory, urządzenia do przebijania opon i ta zmodyfikowana broń marki Mauser świadczą o pomysłowości członków ruchu oporu. Są tu także fałszywe pieczęcie, niezbędne do tworzenia fałszywych tożsamości. Były prawdziwym kluczem do przetrwania. Wielu członkom ruchu oporu pozwoliły wymknąć się z rąk wroga i kontynuować walkę w ukryciu.",
+      "Dysponując ograniczonymi środkami, przekształcali swoje otoczenie, wykorzystując każdy przedmiot i każde narzędzie, by dalej prowadzić swą nieustającą walkę.",
+      "Mieliśmy szczęście poznać kilku członków ruchu oporu jeszcze za ich życia. Dzieląc się z nami swoimi opowieściami, przekazali nam przedmioty, które przechowywali w kącie swoich domów. Ta gablota pomaga nam zachować pamięć o nich, bo spotkania z tymi ludźmi są częścią naszych wspomnień z dzieciństwa. Nie nosili mundurów i z pozoru byli zwykłymi obywatelami… Ale cóż za odwaga! Cóż za odwaga, by stawić opór!",
+      "Ich odwaga i determinacja wciąż inspirują, przypominając, że nawet w najciemniejszych godzinach światło oporu nigdy nie gaśnie."
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verification": "Existing decoded metadata retained for French 01-21 and all English files. French 22 restored from the authorized published Wivi recording after SHA-256, decoded-format and narration comparison. All 22 English recordings detected as English and compared with published English references; editorial human review remains pending. Authorized Wivi DE01 is verified separately. Remaining placeholders are marked unavailable.",
+  "verification": "Existing decoded metadata retained for French 01-21 and all English files. French 22 restored from the authorized published Wivi recording after SHA-256, decoded-format and narration comparison. All 22 English recordings detected as English and compared with published English references; editorial human review remains pending. Authorized Wivi sentence records and explicitly labelled Polish synthetic narrations have their own transcript provenance. Remaining placeholders are marked unavailable.",
   "audio": {
     "fr": {
       "10": {
@@ -628,11 +628,11 @@
     },
     "pl": {
       "10": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "776575e852d784be9202b37842f620e696dae667bec0c6e6b94feb3123092faf",
+        "bytes": 1685569,
+        "durationSeconds": 140.366259,
+        "status": "ready",
+        "reason": "synthetic-narration"
       },
       "11": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -663,11 +663,11 @@
         "reason": "placeholder"
       },
       "15": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "a398f6fea737d3dd2de349223c9c4c4d785fc2844f3cbcc2645b273edca4a466",
+        "bytes": 1780237,
+        "durationSeconds": 148.256871,
+        "status": "ready",
+        "reason": "synthetic-narration"
       },
       "16": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -698,11 +698,11 @@
         "reason": "placeholder"
       },
       "20": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "08f2a41aa3dea66a89df571483adeeb29c754241d4db5719b00b5f073f21544e",
+        "bytes": 1903431,
+        "durationSeconds": 158.513152,
+        "status": "ready",
+        "reason": "synthetic-narration"
       },
       "21": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -712,11 +712,11 @@
         "reason": "placeholder"
       },
       "22": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "ef096bf90364a412ad66353f88e43c9976a93ea0a8fdbb8db33ae06c587504f1",
+        "bytes": 1768012,
+        "durationSeconds": 147.24943310657596,
+        "status": "ready",
+        "reason": "synthetic-narration"
       },
       "01": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -775,11 +775,11 @@
         "reason": "placeholder"
       },
       "09": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "043883ec6fcf33b43f84b3c63fe2fd9a904e82f93d3ae2feafdc3bc9bb999907",
+        "bytes": 786226,
+        "durationSeconds": 65.4271201814059,
+        "status": "ready",
+        "reason": "synthetic-narration"
       }
     },
     "nl": {
@@ -1031,11 +1031,11 @@
         "reason": "placeholder"
       },
       "01": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "d82782761772001cf5f4a7a08dd31a1384b15a75d1d4327cccb6220ab883689f",
+        "bytes": 1816365,
+        "durationSeconds": 113.52,
+        "status": "ready",
+        "reason": "wivi-narration-compared"
       },
       "02": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
