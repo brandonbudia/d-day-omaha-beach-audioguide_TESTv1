@@ -83,3 +83,5 @@ Au checkpoint 44, DE11 ajoute 13 phrases. Les différences lexicales des reconna
 Au checkpoint 45, DE10 et ES07 ajoutent 30 phrases. Il reste 96 pistes originales à intégrer (18 DE, 22 IT, 17 PL, 22 NL, 17 ES). ES07 conserve la variante écrite sur la fiche et utilise la formulation prononcée confirmée dans le lecteur.
 
 Au checkpoint 46, DE19 ajoute 28 phrases. Il reste 95 pistes originales à intégrer (17 DE, 22 IT, 17 PL, 22 NL, 17 ES). Les cinq narrations synthétiques PL sont disponibles en plus des dix pistes Wivi d’origine intégrées.
+
+Au checkpoint 47, ES09 ajoute 15 phrases. Les 94 originaux restants se répartissent entre DE (17), IT (22), PL (17), NL (22) et ES (16). Le repère d’une reprise après une longue pause a été vérifié sur le signal et au clic.

@@ -434,5 +434,98 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "09": {
+    "id": "09",
+    "language": "es",
+    "audioSha256": "82ed43dee89eed8abf719a51877724d90ea16d3ee6aeb1f92f19311ba5ad939f",
+    "durationSeconds": 60.648,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7f2d0041-18f6-4050-8b91-741d664c856c?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"La historia se desarrolla en un campo de tiro de una institución francesa...",
+        "startSeconds": 0.06,
+        "endSeconds": 4.34
+      },
+      {
+        "text": "- ¡Fabián!",
+        "startSeconds": 5.0,
+        "endSeconds": 5.54
+      },
+      {
+        "text": "- Sí ?",
+        "startSeconds": 5.81,
+        "endSeconds": 6.16
+      },
+      {
+        "text": "¡Ven a ver!",
+        "startSeconds": 6.41,
+        "endSeconds": 6.9
+      },
+      {
+        "text": "- Dónde estás ?",
+        "startSeconds": 7.25,
+        "endSeconds": 7.95
+      },
+      {
+        "text": "¡Ven por aquí!",
+        "startSeconds": 8.23,
+        "endSeconds": 8.96
+      },
+      {
+        "text": "- Pero que haces???",
+        "startSeconds": 9.68,
+        "endSeconds": 10.45
+      },
+      {
+        "text": "Escuchando !!!",
+        "startSeconds": 10.57,
+        "endSeconds": 11.25
+      },
+      {
+        "text": "¿Ver?",
+        "startSeconds": 11.67,
+        "endSeconds": 11.97
+      },
+      {
+        "text": "Esto te da una idea de la cadencia de tiro de esta ametralladora alemana, la MG42.",
+        "startSeconds": 12.47,
+        "endSeconds": 18.29
+      },
+      {
+        "text": "Imagínense, el 6 de junio, soldados estadounidenses y aliados aterrizando bajo fuego enemigo, y este fuego también llevaba el nombre de MG42...",
+        "startSeconds": 18.87,
+        "endSeconds": 29.49
+      },
+      {
+        "text": "Lamentablemente, la historia recordará a quien ha sido llamado “la Bestia de Omaha”: Heinrich Severloh, quien, el día 6 de junio del 44, ocupaba su posición detrás de su MG42 desde uno de los búnkeres estratégicos de Omaha.",
+        "startSeconds": 30.36,
+        "endSeconds": 46.78
+      },
+      {
+        "text": "Afirma, en sus relatos, haber disparado alrededor de 12.500 cartuchos.",
+        "startSeconds": 47.44,
+        "endSeconds": 52.89
+      },
+      {
+        "text": "Da miedo.",
+        "startSeconds": 53.33,
+        "endSeconds": 53.92
+      },
+      {
+        "text": "Contará, en sus memorias, que no disparó por placer, sino para mantenerse con vida.\"",
+        "startSeconds": 54.56,
+        "endSeconds": 60.17
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
