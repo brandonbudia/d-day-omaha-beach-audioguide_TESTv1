@@ -1157,5 +1157,119 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "05": {
+    "id": "05",
+    "language": "es",
+    "audioSha256": "c1d48d878940d2f19585b23107c011084a0575302b0a6d600a28a31d3c62f51a",
+    "durationSeconds": 141.768,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/e380d61d-2b12-47d0-a291-86963a56b159?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Both recognitions corroborate « Sólo se requería » in the recording. The exhibit retains the original published Wivi text.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Estoy encantado de compartir con ustedes, en esta sección especial de nuestra audioguía, no solo hechos históricos, sino también algo de mi pasión personal por coleccionar uniformes militares.",
+        "startSeconds": 0.07,
+        "endSeconds": 12.56
+      },
+      {
+        "text": "Hoy voy a hablaros del camuflaje alemán utilizado durante la Segunda Guerra Mundial, un tema que nos toca especialmente en el corazón.",
+        "startSeconds": 13.2,
+        "endSeconds": 21.9
+      },
+      {
+        "text": "Como coleccionista, cada pieza que descubro cuenta una historia única.",
+        "startSeconds": 22.62,
+        "endSeconds": 26.9
+      },
+      {
+        "text": "Los trajes de camuflaje alemanes no son una excepción.",
+        "startSeconds": 27.9,
+        "endSeconds": 31.17
+      },
+      {
+        "text": "Elaborados con meticulosa atención al detalle, reflejan una fascinante combinación de funcionalidad, innovación y adaptación a diversos escenarios de guerra.",
+        "startSeconds": 31.3,
+        "endSeconds": 41.19
+      },
+      {
+        "text": "Con sus patrones desordenados y colores terrosos, proporcionaron un camuflaje eficaz en los entornos europeos.",
+        "startSeconds": 41.93,
+        "endSeconds": 49.22
+      },
+      {
+        "text": "Encontramos aspectos correspondientes a todas las estaciones: si miras de cerca, verás variaciones de primavera y otoño para las regiones frías, blanco para el invierno y colores de verano para nuestras regiones más templadas.",
+        "startSeconds": 50.04,
+        "endSeconds": 64.61
+      },
+      {
+        "text": "También está el motivo de los \"\"lunares\"\", introducido más adelante en el conflicto.",
+        "startSeconds": 65.25,
+        "endSeconds": 69.99
+      },
+      {
+        "text": "Su complejidad recuerda la constante determinación de mejorar el sigilo de los soldados.",
+        "startSeconds": 70.56,
+        "endSeconds": 75.62
+      },
+      {
+        "text": "Este patrón único ilustra cómo la innovación era esencial en estos tiempos difíciles.",
+        "startSeconds": 76.39,
+        "endSeconds": 81.5
+      },
+      {
+        "text": "En nuestra colección, una chaqueta con este motivo fue usada principalmente por miembros de las Juventudes Hitlerianas de las SS, que retuvieron Caen durante más de un mes, mientras que las estimaciones iniciales hablaban de dos días.",
+        "startSeconds": 82.3,
+        "endSeconds": 97.02
+      },
+      {
+        "text": "Los alemanes daban enorme importancia al camuflaje.",
+        "startSeconds": 97.63,
+        "endSeconds": 100.59
+      },
+      {
+        "text": "La historia nos muestra que los aliados también intentaron utilizar un camuflaje similar...",
+        "startSeconds": 101.4,
+        "endSeconds": 106.55
+      },
+      {
+        "text": "pero, lamentablemente, el parecido creó confusión.",
+        "startSeconds": 107.16,
+        "endSeconds": 110.31
+      },
+      {
+        "text": "Por tanto, los aliados abandonaron muy rápidamente la idea.",
+        "startSeconds": 110.94,
+        "endSeconds": 114.86
+      },
+      {
+        "text": "Lo fascinante es imaginar cómo se percibían estos camuflajes en aquella época.",
+        "startSeconds": 115.69,
+        "endSeconds": 120.41
+      },
+      {
+        "text": "Para los soldados que los llevaban, era más que una simple prenda de vestir: era una parte vital de su equipo de supervivencia.",
+        "startSeconds": 121.18,
+        "endSeconds": 128.97
+      },
+      {
+        "text": "En aquellos días, los medios tecnológicos no permitían, como lo harían hoy un satélite o un dron, detectar el ocultamiento de personas o equipos.",
+        "startSeconds": 129.56,
+        "endSeconds": 138.93
+      },
+      {
+        "text": "Sólo se requería el sentido de la vista.\"",
+        "startSeconds": 139.36,
+        "endSeconds": 141.52
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
