@@ -523,5 +523,84 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "07": {
+    "id": "07",
+    "language": "de",
+    "audioSha256": "f420b96c179aa335e16f7d32b42319dc39ccf78961853ad8d0ac7f165b6687f4",
+    "durationSeconds": 124.008,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/98342c97-e5b9-4b02-8860-b2c1824ad395?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Wivi published text compared with separate faster-whisper small and medium passes. Boundary windows checked against the decoded MP3 waveform.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The recording says « Kapläne können », corroborated by both passes and the targeted pass. The Wivi exhibit text remains unchanged.",
+        "Sentence boundaries remain subject to human review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Vor Ihnen liegt das Outfit eines deutschen Geistlichen aus dem Zweiten Weltkrieg.",
+        "startSeconds": 0.07,
+        "endSeconds": 4.81
+      },
+      {
+        "text": "Diese gläubigen Männer nahmen innerhalb der deutschen Armee eine einzigartige Stellung ein und waren für die spirituelle Unterstützung der Soldaten verantwortlich, die in die harte Realität des Krieges eingetaucht waren.",
+        "startSeconds": 5.64,
+        "endSeconds": 18.92
+      },
+      {
+        "text": "Kapläne können katholisch oder protestantisch sein und jeweils den Soldaten ihres Glaubens den Trost ihrer religiösen Tradition bieten.",
+        "startSeconds": 19.6,
+        "endSeconds": 28.43
+      },
+      {
+        "text": "Die Kapläne erlebten täglich ein Paradoxon.",
+        "startSeconds": 28.7,
+        "endSeconds": 31.38
+      },
+      {
+        "text": "In ihrer Rolle als Stütze und Trost trugen sie ein Outfit, das mit Symbolen versehen war, die an eine dunkle und komplexe Zeit unserer heutigen Geschichte erinnern.",
+        "startSeconds": 31.85,
+        "endSeconds": 41.89
+      },
+      {
+        "text": "Obwohl diese Symbole an ihrer Uniform angebracht waren, spiegelten sie nicht unbedingt die persönlichen Überzeugungen dieser Männer wider, deren Hauptaufgabe darin bestand, spirituellen und moralischen Zufluchtsort im umgebenden Chaos zu bieten.",
+        "startSeconds": 42.83,
+        "endSeconds": 58.37
+      },
+      {
+        "text": "Deutsche Seelsorger arbeiteten oft unter äußerst schwierigen Bedingungen und versuchten, das tägliche Leben der Soldaten zu verbessern, indem sie angesichts moralischer und emotionaler Prüfungen Zuhören und Mitgefühl boten.",
+        "startSeconds": 58.5,
+        "endSeconds": 73.13
+      },
+      {
+        "text": "Ihre tägliche Herausforderung?",
+        "startSeconds": 74.1,
+        "endSeconds": 75.68
+      },
+      {
+        "text": "Das Licht der Menschlichkeit und des Glaubens in einem Umfeld bewahren, in dem es oft an moralischen Richtlinien mangelt.",
+        "startSeconds": 76.21,
+        "endSeconds": 83.19
+      },
+      {
+        "text": "Als Vertreter der beiden großen christlichen Konfessionen hatten sie auch die Aufgabe, in einem Umfeld, in dem Spaltungen und Leid allgegenwärtig waren, eine gewisse moralische Einheit innerhalb der Truppen zu fördern.",
+        "startSeconds": 84.14,
+        "endSeconds": 97.93
+      },
+      {
+        "text": "Bei der Präsentation dieses Ensembles ist es entscheidend, alle Dimensionen der Geschichte zu berücksichtigen: das persönliche Engagement der Geistlichen und die Kontexte, die sie prägten, und sich gleichzeitig der Symbole und Ideologien bewusst zu sein, die sie trugen.",
+        "startSeconds": 98.6,
+        "endSeconds": 115.9
+      },
+      {
+        "text": "Es erinnert uns daran, wie wichtig es ist, unsere Vergangenheit zu hinterfragen und zu verstehen.\"",
+        "startSeconds": 116.7,
+        "endSeconds": 123.18
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

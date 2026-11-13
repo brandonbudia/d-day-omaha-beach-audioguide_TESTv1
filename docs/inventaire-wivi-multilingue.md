@@ -91,3 +91,5 @@ Au checkpoint 48, ES02 ajoute 15 phrases. Il reste 93 pistes originales à inté
 Au checkpoint 49, ES16 et ES20 ajoutent 28 phrases et portent le pack espagnol à 9 pistes. Les variantes orales confirmées figurent dans le lecteur. Les deux récits Wivi restent disponibles sans réécriture. Il reste 91 pistes originales à intégrer (17 DE, 22 IT, 17 PL, 22 NL, 13 ES).
 
 Au checkpoint 50, ES11 et ES21 ajoutent 47 phrases et portent le pack espagnol à 11 pistes. Il reste 89 pistes originales à intégrer (17 DE, 22 IT, 17 PL, 22 NL, 11 ES).
+
+Au checkpoint 51, DE07 et ES18 ajoutent 26 phrases. Les disponibilités sont de 6/22 en DE, 12/22 en ES et 5/22 en PL, toutes les pistes PL disponibles étant de synthèse. Il reste 87 originaux à intégrer (16 DE, 22 IT, 17 PL, 22 NL, 10 ES).
