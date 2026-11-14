@@ -670,11 +670,11 @@
         "reason": "synthetic-narration"
       },
       "16": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "f8087f073775fa125725798b562cf890addcba368fd609b24e69ee94da7b0352",
+        "bytes": 3669975,
+        "durationSeconds": 152.852,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "17": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",

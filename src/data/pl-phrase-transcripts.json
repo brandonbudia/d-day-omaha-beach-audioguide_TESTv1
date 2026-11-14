@@ -2040,5 +2040,96 @@
       "Po wylądowaniu skoczek dysponował małą saperką, łopatką, aby ukryć kombinezon, a następnie w możliwie najbardziej naturalny sposób wtopić się w życie wiejskie lub miejskie.",
       "Agentów tych spotykano od Norwegii po Afrykę Północną, a także w krajach Europy Wschodniej, gdzie przyczyniali się do destabilizacji reżimu niemieckiego."
     ]
+  },
+  "16": {
+    "id": "16",
+    "language": "pl",
+    "audioSha256": "f8087f073775fa125725798b562cf890addcba368fd609b24e69ee94da7b0352",
+    "durationSeconds": 152.852,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/589c27ad64e708707fdc5dbf354d895d9e3cf19d.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish recording. The title and passages with uncertain place-name or word readings stay visible without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Zbliżając się do tej sceny, pozwólcie, by wasz wzrok spoczął na starannie rozmieszczonych manekinach, odtwarzających przejmujący moment lądowania amerykańskich żołnierzy podczas pierwszej fali szturmów w czerwcu 1944 roku.",
+        "startSeconds": 8.62,
+        "endSeconds": 27.16
+      },
+      {
+        "text": "Każda twarz, jakby zastygła w czasie, uosabia odwagę tych młodych mężczyzn, którzy, kierowani niezachwianym poczuciem obowiązku, postawili stopy na plażach Normandii.",
+        "startSeconds": 28.6,
+        "endSeconds": 41.87
+      },
+      {
+        "text": "Zwróćcie uwagę na szczegóły: autentyczne mundury, broń trzymaną w dłoniach, gotową na nieuniknioną konfrontację.",
+        "startSeconds": 43.52,
+        "endSeconds": 53.13
+      },
+      {
+        "text": "Ci żołnierze, niektórzy ledwie po okresie dorastania, dźwigali na swoich barkach ciężar świata pragnącego wolności.",
+        "startSeconds": 54.45,
+        "endSeconds": 63.5
+      },
+      {
+        "text": "Tego 6 czerwca 1944 roku odnotowano około 4 tysięcy zabitych, zaginionych i rannych.",
+        "startSeconds": 69.34,
+        "endSeconds": 79.73
+      },
+      {
+        "text": "Te wielkie stalowe krzyże, zwane również czeskimi jeżami, masywne i groźne, znaczą piasek, ukazując przerażające przeszkody, które każdy żołnierz musiał pokonać.",
+        "startSeconds": 81.83,
+        "endSeconds": 94.88
+      },
+      {
+        "text": "Te elementy są surowymi symbolami oporu nieprzyjaciela i świadectwem brutalności środków obronnych zastosowanych na tej plaży przemienionej w teatr wojny.",
+        "startSeconds": 96.71,
+        "endSeconds": 109
+      },
+      {
+        "text": "To oni zapisali literami ognia i krwi historię wyzwolenia, przemieniając fale trwogi w piaski ocalenia.",
+        "startSeconds": 122.46,
+        "endSeconds": 131.02
+      },
+      {
+        "text": "Poświęćcie chwilę, aby poczuć emocje płynące z tego żywego obrazu i pomyślcie o niezliczonych opowieściach o bohaterstwie, które są z nim związane, na zawsze wyrytych w zbiorowej pamięci ludzkości.",
+        "startSeconds": 132.52,
+        "endSeconds": 149.34
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Scena ogólna. Wojska amerykańskie."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Omaha była najkrwawszą plażą lądowania."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Scena ta oddaje [słowo niepewne] tym, którzy odważnie stawili czoła nieznanemu, z lękiem zakorzenionym w ciele, lecz ogromną nadzieją w sercach."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Scena ogólna. Wojska amerykańskie.",
+      "Zbliżając się do tej sceny, pozwólcie, by wasz wzrok spoczął na starannie rozmieszczonych manekinach, odtwarzających przejmujący moment lądowania amerykańskich żołnierzy podczas pierwszej fali szturmów w czerwcu 1944 roku.",
+      "Każda twarz, jakby zastygła w czasie, uosabia odwagę tych młodych mężczyzn, którzy, kierowani niezachwianym poczuciem obowiązku, postawili stopy na plażach Normandii.",
+      "Zwróćcie uwagę na szczegóły: autentyczne mundury, broń trzymaną w dłoniach, gotową na nieuniknioną konfrontację.",
+      "Ci żołnierze, niektórzy ledwie po okresie dorastania, dźwigali na swoich barkach ciężar świata pragnącego wolności.",
+      "Omaha była najkrwawszą plażą lądowania.",
+      "Tego 6 czerwca 1944 roku odnotowano około 4 tysięcy zabitych, zaginionych i rannych.",
+      "Te wielkie stalowe krzyże, zwane również czeskimi jeżami, masywne i groźne, znaczą piasek, ukazując przerażające przeszkody, które każdy żołnierz musiał pokonać.",
+      "Te elementy są surowymi symbolami oporu nieprzyjaciela i świadectwem brutalności środków obronnych zastosowanych na tej plaży przemienionej w teatr wojny.",
+      "Scena ta oddaje [słowo niepewne] tym, którzy odważnie stawili czoła nieznanemu, z lękiem zakorzenionym w ciele, lecz ogromną nadzieją w sercach.",
+      "To oni zapisali literami ognia i krwi historię wyzwolenia, przemieniając fale trwogi w piaski ocalenia.",
+      "Poświęćcie chwilę, aby poczuć emocje płynące z tego żywego obrazu i pomyślcie o niezliczonych opowieściach o bohaterstwie, które są z nim związane, na zawsze wyrytych w zbiorowej pamięci ludzkości."
+    ]
   }
 }
