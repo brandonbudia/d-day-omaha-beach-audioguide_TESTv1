@@ -737,5 +737,279 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "05": {
+    "id": "05",
+    "language": "it",
+    "audioSha256": "164633af196ff6d1e60b04191e14f8b4f048e36218f21a8cd32880688f5fb490",
+    "durationSeconds": 140.808,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/e380d61d-2b12-47d0-a291-86963a56b159?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The actual Italian narration and the published exhibit text differ. The pattern name and the seasonal description should be reviewed before receiving timestamps. Caen and a pois use the published spelling."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Sono lieto di condividere con voi, in questa sezione speciale della nostra audioguida, non solo fatti storici, ma anche parte della mia passione personale per il collezionismo di uniformi militari.",
+        "startSeconds": 0.06,
+        "endSeconds": 12.54
+      },
+      {
+        "text": "Oggi vi parlerò del camuffamento tedesco utilizzato durante la Seconda Guerra Mondiale, un argomento che ci sta particolarmente a cuore.",
+        "startSeconds": 13.2,
+        "endSeconds": 21.67
+      },
+      {
+        "text": "Come collezionista, ogni pezzo che scopro racconta una storia unica.",
+        "startSeconds": 21.99,
+        "endSeconds": 26.84
+      },
+      {
+        "text": "Gli abiti mimetici tedeschi non fanno eccezione.",
+        "startSeconds": 27.28,
+        "endSeconds": 30.46
+      },
+      {
+        "text": "Realizzati con meticolosa attenzione ai dettagli, riflettono un'affascinante miscela di funzionalità, innovazione e adattamento ai vari teatri di guerra.",
+        "startSeconds": 30.71,
+        "endSeconds": 40.39
+      },
+      {
+        "text": "Con i loro motivi casuali e i colori della terra, fornivano un efficace mimetismo negli ambienti europei.",
+        "startSeconds": 40.88,
+        "endSeconds": 46.88
+      },
+      {
+        "text": "La sua complessità richiama la costante determinazione nel migliorare la furtività dei soldati.",
+        "startSeconds": 68.6,
+        "endSeconds": 74.14
+      },
+      {
+        "text": "Questo modello unico illustra come l'innovazione fosse essenziale in questi tempi difficili.",
+        "startSeconds": 74.68,
+        "endSeconds": 80.58
+      },
+      {
+        "text": "Nella nostra collezione, una giacca con questo motivo veniva indossata principalmente dai membri delle SS della gioventù hitleriana, che trattennero Caen per più di un mese, mentre le prime stime parlavano di due giorni.",
+        "startSeconds": 81.16,
+        "endSeconds": 95.59
+      },
+      {
+        "text": "I tedeschi attribuivano enorme importanza al mimetismo.",
+        "startSeconds": 95.91,
+        "endSeconds": 99.35
+      },
+      {
+        "text": "La storia ci insegna che anche gli alleati tentarono di utilizzare mimetiche simili, ma la somiglianza purtroppo creò confusione.",
+        "startSeconds": 99.83,
+        "endSeconds": 108.07
+      },
+      {
+        "text": "Gli alleati, quindi, abbandonarono molto presto l'idea.",
+        "startSeconds": 108.5,
+        "endSeconds": 111.67
+      },
+      {
+        "text": "Ciò che è affascinante è immaginare come venivano percepiti all'epoca questi camuffamenti.",
+        "startSeconds": 112.15,
+        "endSeconds": 117.49
+      },
+      {
+        "text": "Per i soldati che li indossavano era più di un semplice capo di abbigliamento.",
+        "startSeconds": 118.03,
+        "endSeconds": 122.05
+      },
+      {
+        "text": "Era una parte vitale del loro equipaggiamento di sopravvivenza.",
+        "startSeconds": 124.21,
+        "endSeconds": 127.64
+      },
+      {
+        "text": "A quei tempi, i mezzi tecnologici non consentivano, come farebbero oggi un satellite o un drone, di rilevare l'occultamento di persone o attrezzature.",
+        "startSeconds": 128.14,
+        "endSeconds": 137.63
+      },
+      {
+        "text": "Veniva utilizzato solo il senso della vista.",
+        "startSeconds": 138.05,
+        "endSeconds": 140.66
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 6,
+        "text": "Troviamo aspetti corrispondenti a tutte le stagioni: se guardi da vicino, vedrai variazioni primaverili e autunnali per le regioni fredde, bianco per l'inverno e colori estivi per le nostre regioni più temperate."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Esiste anche il motivo a pois, introdotto successivamente nel conflitto."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "06": {
+    "id": "06",
+    "language": "it",
+    "audioSha256": "8ae176cdbebaa59705bac08da765c9297d280f36bdde25e71366822f06272597",
+    "durationSeconds": 178.608,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/f6b7a0ca-4923-4301-837c-f165bc4a770e?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The form of the Wivi exhibit differs from the audio. The audio uses bruchi for the tracks. The uncertain modifier after soldato, the two interjections and bruco cisterna remain visible without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "1989.",
+        "startSeconds": 0.06,
+        "endSeconds": 1.14
+      },
+      {
+        "text": "Ho 9 anni.",
+        "startSeconds": 1.66,
+        "endSeconds": 2.47
+      },
+      {
+        "text": "Mio fratello Fabien e io siamo rannicchiati in questa tenda gelata, aspettando che l'alba sorga su questa terra normanna.",
+        "startSeconds": 2.94,
+        "endSeconds": 10.01
+      },
+      {
+        "text": "Oggi faremo forse una scoperta davvero rilevante.",
+        "startSeconds": 10.74,
+        "endSeconds": 13.78
+      },
+      {
+        "text": "Mio padre infatti fa molte ricerche in Normandia, alla ricerca di vestigia e tracce di storia.",
+        "startSeconds": 14.35,
+        "endSeconds": 19.93
+      },
+      {
+        "text": "Finalmente è arrivato il momento: c'è abbastanza luce per iniziare a scavare.",
+        "startSeconds": 35.17,
+        "endSeconds": 40.0
+      },
+      {
+        "text": "Siamo in cinque: mio fratello, io, mio padre, un suo amico e la persona che manovra la macchina.",
+        "startSeconds": 40.54,
+        "endSeconds": 47.05
+      },
+      {
+        "text": "Ma il suono del rilevatore diventa sempre più forte.",
+        "startSeconds": 51.04,
+        "endSeconds": 54.35
+      },
+      {
+        "text": "Dopo tre minuti, il primo suono molto caratteristico del metallo che incontra un altro metallo.",
+        "startSeconds": 54.93,
+        "endSeconds": 61.3
+      },
+      {
+        "text": "Siamo ossessionati da questo rumore e dalla forma che diventa più chiara man mano che la pala colpisce.",
+        "startSeconds": 61.89,
+        "endSeconds": 69.07
+      },
+      {
+        "text": "La nostra testa si inclina su questo buco, cercando di cogliere la sagoma di ciò che è sepolto nella terra.",
+        "startSeconds": 69.67,
+        "endSeconds": 76.07
+      },
+      {
+        "text": "Il rumore del metallo, che bussa e graffia ad ogni manovra, ci emoziona terribilmente.",
+        "startSeconds": 76.83,
+        "endSeconds": 82.49
+      },
+      {
+        "text": "Quasi dimentichiamo il freddo e l'umidità.",
+        "startSeconds": 82.91,
+        "endSeconds": 85.24
+      },
+      {
+        "text": "Siamo ubriachi di azione, come se potessimo andare più veloci di una pala.",
+        "startSeconds": 85.8,
+        "endSeconds": 90.19
+      },
+      {
+        "text": "Eravamo solo bambini.",
+        "startSeconds": 90.84,
+        "endSeconds": 92.15
+      },
+      {
+        "text": "All'improvviso, dopo aver ripulito un enorme blocco di terra sul lato, vediamo un pezzo di bruco, ma non come immaginavo a quell'età.",
+        "startSeconds": 92.67,
+        "endSeconds": 100.83
+      },
+      {
+        "text": "Non ho capito.",
+        "startSeconds": 107.81,
+        "endSeconds": 108.57
+      },
+      {
+        "text": "Mio padre capì benissimo di cosa si trattava e decise di scavare attorno ad esso un quadrato di circa tre metri per due.",
+        "startSeconds": 109.04,
+        "endSeconds": 116.49
+      },
+      {
+        "text": "Una volta realizzate queste trincee, abbiamo iniziato a rimuovere manualmente tutti i blocchi di terra, e poco a poco ci è apparsa una forma quasi uscita da un film di fantascienza.",
+        "startSeconds": 117.3,
+        "endSeconds": 129.0
+      },
+      {
+        "text": "Io e mio fratello non capivamo assolutamente nulla di ciò che stava prendendo forma davanti a noi: bruchi, manubrio di moto, una scatola con sedili.",
+        "startSeconds": 129.71,
+        "endSeconds": 139.57
+      },
+      {
+        "text": "Eravamo perduti.",
+        "startSeconds": 140.14,
+        "endSeconds": 141.12
+      },
+      {
+        "text": "Mio padre sapeva benissimo cosa avevamo appena trovato: una motocicletta cingolata tedesca o Kettenkrad, un veicolo da ricognizione tedesco utilizzato durante la seconda guerra mondiale.",
+        "startSeconds": 141.65,
+        "endSeconds": 153.8
+      },
+      {
+        "text": "Ecco la storia di questo strano veicolo davanti ai vostri occhi.",
+        "startSeconds": 154.42,
+        "endSeconds": 158.1
+      },
+      {
+        "text": "E per concludere, il racconto del contadino era proprio vero, perché, come possiamo ancora vedere, c'è un pezzo di stoffa mimetizzato tra i bruchi.",
+        "startSeconds": 158.66,
+        "endSeconds": 167.58
+      },
+      {
+        "text": "Non è altro che un pezzo di paracadute americano, che senza dubbio ha permesso a questo soldato di nascondere la motocicletta cingolata sotto il proprio paracadute.",
+        "startSeconds": 168.2,
+        "endSeconds": 178.1
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 5,
+        "text": "Siamo precisamente in un luogo dove, secondo la testimonianza di un contadino, un soldato [parola incerta] ha rubato uno strano veicolo ai tedeschi e lo ha abbandonato frettolosamente in una buca, mentre i suoi aggressori lo inseguivano."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Min, niente!"
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Min, ancora niente!"
+      },
+      {
+        "beforeSegment": 16,
+        "text": "Sapevo molto bene che aspetto aveva un bruco cisterna, e questo era molto piccolo."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
