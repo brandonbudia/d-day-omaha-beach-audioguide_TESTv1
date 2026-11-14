@@ -141,5 +141,122 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "15": {
+    "id": "15",
+    "language": "it",
+    "audioSha256": "e6da7eaa73a052a36eb50da0767b983c201747a1eebe3e4447234d3c3313b230",
+    "durationSeconds": 152.712,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/34de99d4-ae6b-4d5b-9354-802d35fff0c5?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian version differs from the Wivi exhibit text. Three phrases with unresolved boundaries or wording remain visible without timestamps. The Wivi spelling of the vehicle and established unit name are used."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Vi invito ora a scoprire uno dei pezzi più affascinanti della nostra collezione, la Welbike, una piccola motocicletta britannica dal destino eccezionale.",
+        "startSeconds": 0.05,
+        "endSeconds": 10.85
+      },
+      {
+        "text": "Immagina di trovarti nel cuore della Seconda Guerra Mondiale, negli anni 40.",
+        "startSeconds": 11.56,
+        "endSeconds": 16.53
+      },
+      {
+        "text": "Le forze alleate stanno cercando di sviluppare modi innovativi per condurre operazioni militari, spesso dietro le linee nemiche.",
+        "startSeconds": 17.08,
+        "endSeconds": 26.22
+      },
+      {
+        "text": "La Welbike è una motocicletta dalla semplicità disarmante, ma di formidabile efficacia.",
+        "startSeconds": 34.97,
+        "endSeconds": 40.95
+      },
+      {
+        "text": "È stato sviluppato appositamente per i paracadutisti e le forze speciali dell'esercito britannico.",
+        "startSeconds": 41.6,
+        "endSeconds": 48.01
+      },
+      {
+        "text": "L'idea è geniale, creare un veicolo leggero, compatto e facilmente trasportabile in aereo.",
+        "startSeconds": 48.59,
+        "endSeconds": 54.68
+      },
+      {
+        "text": "Non appena suona il fischio e inizia la missione, la Welbike sprigiona tutta la sua magia.",
+        "startSeconds": 55.23,
+        "endSeconds": 61.06
+      },
+      {
+        "text": "In pochi minuti, senza strumenti complessi, è pronto per partire.",
+        "startSeconds": 67.53,
+        "endSeconds": 72.05
+      },
+      {
+        "text": "I suoi progettisti hanno immaginato una moto che nella sua compattezza, solo 32 kg, ha ancora un'autonomia di quasi 145 km, grazie al suo motore a benzina a due tempi.",
+        "startSeconds": 72.55,
+        "endSeconds": 86.0
+      },
+      {
+        "text": "Se il suo aspetto frugale fa spesso sorridere, il suo contributo durante la guerra non è affatto trascurabile.",
+        "startSeconds": 86.35,
+        "endSeconds": 93.09
+      },
+      {
+        "text": "Veloce e discreta, permetteva ai soldati di trasportare messaggi e di coprire lunghe distanze per stabilire posizioni strategiche.",
+        "startSeconds": 103.7,
+        "endSeconds": 112.33
+      },
+      {
+        "text": "E ora, davanti a te, questo straordinario pezzo è accuratamente conservato.",
+        "startSeconds": 112.92,
+        "endSeconds": 118.0
+      },
+      {
+        "text": "Incarna l'ingegno e la determinazione di un'epoca in cui ogni innovazione tecnologica poteva fare la differenza tra il successo e il fallimento di una missione.",
+        "startSeconds": 118.49,
+        "endSeconds": 128.68
+      },
+      {
+        "text": "Come appassionato collezionista, sono onorato di condividere con te questo pezzo unico di storia.",
+        "startSeconds": 128.8,
+        "endSeconds": 134.99
+      },
+      {
+        "text": "La Welbike resta una vibrante testimonianza dello spirito di resistenza e di inventiva che segnò la seconda guerra mondiale.",
+        "startSeconds": 135.54,
+        "endSeconds": 144.15
+      },
+      {
+        "text": "Spero che questa scoperta vi abbia affascinato tanto quanto affascina me.",
+        "startSeconds": 144.89,
+        "endSeconds": 149.1
+      },
+      {
+        "text": "Continuiamo insieme il nostro viaggio nella storia.",
+        "startSeconds": 149.64,
+        "endSeconds": 152.35
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "È in questo contesto che nasce la Welbike, progettata dall'unità Station IX dei servizi segreti britannici."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Paracadutata in un contenitore cilindrico, raggiunse il suolo contemporaneamente ai soldati."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "La Welbike venne utilizzata in varie missioni, in particolare durante l'operazione Market Garden nei Paesi Bassi nel 1944."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

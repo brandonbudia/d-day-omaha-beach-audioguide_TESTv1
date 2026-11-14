@@ -367,5 +367,74 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "16": {
+    "id": "16",
+    "language": "nl",
+    "audioSha256": "60a7f4b6a84124afbe160e538d95b439cc89ae847310aef57b676ae620da9185",
+    "durationSeconds": 112.608,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/62a0a9ce-16c7-4e1d-a07c-7c4af6907a89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Both models omit the opening of phrase nine. The exact published wording remains visible without a timestamp."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Terwijl je dit tafereel nadert, laat je blik rusten op de mannequins die zorgvuldig zijn opgesteld om het aangrijpende moment van de landing van Amerikaanse soldaten tijdens de eerste aanvalsgolf in juni 1944 na te bootsen.",
+        "startSeconds": 0.05,
+        "endSeconds": 15.64
+      },
+      {
+        "text": "Elk gezicht, bevroren in de tijd, belichaamt de moed van deze jonge mannen die, gedreven door een onwrikbaar plichtsbesef, voet zetten op de stranden van Normandië.",
+        "startSeconds": 16.49,
+        "endSeconds": 27.32
+      },
+      {
+        "text": "Let op de details: de authentieke uniformen, de wapens in de hand, klaar voor de onvermijdelijke confrontatie.",
+        "startSeconds": 28.14,
+        "endSeconds": 36.05
+      },
+      {
+        "text": "Deze soldaten, waarvan sommigen nog maar net de puberteit hadden bereikt, droegen op hun schouders het gewicht van een wereld die op zoek was naar vrijheid.",
+        "startSeconds": 36.61,
+        "endSeconds": 45.54
+      },
+      {
+        "text": "Omaha was het bloedigste landingsstrand: ongeveer 4.000 doden, vermisten en gewonden op 6 juni 1944.",
+        "startSeconds": 46.28,
+        "endSeconds": 54.97
+      },
+      {
+        "text": "Deze grote stalen kruisen, ook wel “Tsjechische egels” genoemd, imposant en bedreigend, accentueren het zand en illustreren de enorme obstakels die elke soldaat moest overwinnen.",
+        "startSeconds": 55.7,
+        "endSeconds": 67.63
+      },
+      {
+        "text": "Deze stukken zijn sobere symbolen van vijandelijk verzet en getuigen van de brutaliteit van de verdedigingsmiddelen op dit strand, omgevormd tot een waar oorlogstheater.",
+        "startSeconds": 68.34,
+        "endSeconds": 79.48
+      },
+      {
+        "text": "Deze scène is een eerbetoon aan degenen die moedig het onbekende tegemoet gingen, met angst in hun lichaam maar hoop in hun hart.",
+        "startSeconds": 80.31,
+        "endSeconds": 88.33
+      },
+      {
+        "text": "Neem even de tijd om de emotie te voelen die uit dit levende schilderij voortkomt, en denk aan de talloze verhalen over moed die ermee verbonden zijn, voor altijd gegrift in het collectieve geheugen van de mensheid.\"",
+        "startSeconds": 97.8,
+        "endSeconds": 112.09
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 8,
+        "text": "Ze schreven in brieven van vuur en bloed het verhaal van de bevrijding, waarbij ze de golven van angst veranderden in zand van bevrijding."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

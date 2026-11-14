@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 61 ; trois pistes allemandes et NL21 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 62 ; IT15, PL02 et NL16 ajoutées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -192,6 +192,12 @@ Le checkpoint 60 ajoute ES12 (9/19), ES15 (18/19), IT08 (6/11) et NL18 (9/14). L
 Le checkpoint 60 est publié sous `ebe547a0da5f644b1ff934bd65f29cc3d38cb7de`, SHA distant confirmé sur TESTv1.
 
 Le checkpoint 61 ajoute DE06 (21/27), DE21 (28/34), DE22 (10/19) et NL21 (28/36). Le texte publié reste lisible aux 29 endroits sans repère. Le navigateur a confirmé le clic, la lecture et la phrase active sur les quatre pistes. TypeScript et le build `index-BJ_cEaS1.js` ont réussi. Le premier lancement des tests est resté en attente sur un scénario qui utilisait DE22 comme piste indisponible. Deux scénarios ont été reportés vers DE04 et IT21, encore indisponibles. Les 126 tests ont ensuite réussi avec un délai maximal de 15 secondes par test. Les lots suivants doivent conserver ce contrôle et déplacer les fixtures lorsqu’une piste utilisée comme repli devient disponible.
+
+Le checkpoint 61 est publié sous `918f75fd7a3c360420ac1d00f0bdfc58e9179793`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 62 ajoute IT15 (17/20), PL02 (7/16) et NL16 (9/10). Les enregistrements d'origine correspondent au manifeste Wivi. IT15 présente le récit publié dans la fiche et la version prononcée dans le lecteur. PL02 utilise une transcription automatique révisée et conserve ses passages incertains sans minutage. NL16 conserve le texte Wivi et laisse sans repère la phrase dont les deux modèles omettent le début. Les bornes retenues ont été comparées au signal du MP3. Premier contrôle TypeScript et tests en échec sur un champ de transcription manquant dans PL02. Après ajout du champ attendu, 126 tests, TypeScript et build `index-CdK-tNwV.js` réussis. Les trois pistes ont été vérifiées dans le navigateur aux positions 55,23 s, 92,41 s et 46,28 s. Le clic, la lecture, le surlignage et les 13 phrases statiques ont été vérifiés. Aucune validation humaine des transcriptions et des repères.
+
+Bilan audio par langue après le checkpoint 62 : DE 15/22, ES 22/22, IT 3/22, NL 4/22 et PL 7/22 (2 voix originales et les 5 synthèses signalées). Il reste 59 MP3 originaux à intégrer. Les nouvelles passes sont conservées dans `wivi-authorized-2026-11-13/recognition`. Reprendre DE13, DE17, NL06, IT03 et PL03 à partir de leurs caches et des analyses enregistrées. Les repères FR/EN et `dev-dist/sw.js` sont exclus des modifications.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

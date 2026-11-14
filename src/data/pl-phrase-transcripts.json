@@ -823,5 +823,114 @@
       "Witamy w historii."
     ],
     "referenceOnlyParagraphs": []
+  },
+  "02": {
+    "id": "02",
+    "language": "pl",
+    "audioSha256": "e611542f8696e9309ff6e39aa538754b0bc7bac6e6f1001eee976866908167c6",
+    "durationSeconds": 185.53466666666668,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/6c217ec4a3e289141b7e2dc1af638cd5ad0adaa5.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish audio with no Wivi transcript. Automated transcription reconciles both recognized versions. Uncertain boundaries or readings in nine sentences remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "To właśnie podczas przeglądania stron gazety mój wzrok zatrzymał się na fascynującym artykule.",
+        "startSeconds": 37.78,
+        "endSeconds": 44.24
+      },
+      {
+        "text": "Kierowany odwagą i niezachwianą pasją do historii skontaktowałem się z burmistrzem gminy, aby wyrazić chęć zachowania jednego z tych historycznych obiektów w naszym muzeum.",
+        "startSeconds": 61.47,
+        "endSeconds": 73.49
+      },
+      {
+        "text": "Zaproszony do obejrzenia miejsca, w którym przechowywano silniki, udałem się do gospodarstwa, gdzie miał się rozegrać kolejny etap moich poszukiwań.",
+        "startSeconds": 74.83,
+        "endSeconds": 84.72
+      },
+      {
+        "text": "Pozostałe zostały skradzione, zabierając ze sobą kolejne fragmenty przeszłości.",
+        "startSeconds": 92.41,
+        "endSeconds": 98.01
+      },
+      {
+        "text": "Los jednak doprowadził mnie właśnie do tego egzemplarza, najpiękniejszego, przechowywanego w ciemności, z dala od pożądliwych spojrzeń.",
+        "startSeconds": 99.28,
+        "endSeconds": 109.34
+      },
+      {
+        "text": "Ten silnik Focke-Wulfa jest prawdziwym arcydziełem inżynierii.",
+        "startSeconds": 110.88,
+        "endSeconds": 115.5
+      },
+      {
+        "text": "Stojąc przed tym reliktem, potwierdzamy nasze zaangażowanie w zachowanie historii w całej jej autentyczności.",
+        "startSeconds": 172.18,
+        "endSeconds": 181.49
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Niemiecki samolotowy silnik Focke-Wulfa."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Stoimy przed fascynującą sceną, bogatą w historię: imponującym samolotowym silnikiem Focke-Wulfa, groźnego niemieckiego myśliwca z czasów II wojny światowej, któremu towarzyszą dwa manekiny pilotów Luftwaffe."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Ten silnik, stanowiący centralny element ekspozycji, niesie ze sobą niezwykłą historię, którą z przyjemnością dziś Państwu opowiem."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Opisywał on wydarzenia w małej miejscowości, gdzie prace prowadzone przed dworcem ujawniły nieprawdopodobne znalezisko: kilka silników niemieckiego lotnictwa pochodzących z Focke-Wulfów."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Spośród czterech pierwotnie wystawionych silników na miejscu pozostał już tylko jeden."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Zaprojektowany z myślą o ekstremalnych osiągach ucieleśniał najnowocześniejszą technologię swojej epoki, umożliwiając samolotowi osiąganie zawrotnych prędkości i wyjątkowej zwrotności, kluczowych w pojedynkach powietrznych."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Jego zaawansowana konstrukcja i moc świadczą o ambicjach oraz umiejętnościach technicznych wykorzystywanych na powietrznych polach bitew."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Otoczony przez dwóch pilotów Luftwaffe, nieruchomych i milczących, silnik ten zdaje się wciąż rozbrzmiewać rykiem w przestworzach, które przemierzał."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Streszcza siłę i złożoność ówczesnej technologii lotniczej, świadcząc o nieustannych wysiłkach człowieka, by sięgnąć nieba, nawet w czasach wojny."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Niemiecki samolotowy silnik Focke-Wulfa.",
+      "Stoimy przed fascynującą sceną, bogatą w historię: imponującym samolotowym silnikiem Focke-Wulfa, groźnego niemieckiego myśliwca z czasów II wojny światowej, któremu towarzyszą dwa manekiny pilotów Luftwaffe.",
+      "Ten silnik, stanowiący centralny element ekspozycji, niesie ze sobą niezwykłą historię, którą z przyjemnością dziś Państwu opowiem.",
+      "To właśnie podczas przeglądania stron gazety mój wzrok zatrzymał się na fascynującym artykule.",
+      "Opisywał on wydarzenia w małej miejscowości, gdzie prace prowadzone przed dworcem ujawniły nieprawdopodobne znalezisko: kilka silników niemieckiego lotnictwa pochodzących z Focke-Wulfów.",
+      "Kierowany odwagą i niezachwianą pasją do historii skontaktowałem się z burmistrzem gminy, aby wyrazić chęć zachowania jednego z tych historycznych obiektów w naszym muzeum.",
+      "Zaproszony do obejrzenia miejsca, w którym przechowywano silniki, udałem się do gospodarstwa, gdzie miał się rozegrać kolejny etap moich poszukiwań.",
+      "Spośród czterech pierwotnie wystawionych silników na miejscu pozostał już tylko jeden.",
+      "Pozostałe zostały skradzione, zabierając ze sobą kolejne fragmenty przeszłości.",
+      "Los jednak doprowadził mnie właśnie do tego egzemplarza, najpiękniejszego, przechowywanego w ciemności, z dala od pożądliwych spojrzeń.",
+      "Ten silnik Focke-Wulfa jest prawdziwym arcydziełem inżynierii.",
+      "Zaprojektowany z myślą o ekstremalnych osiągach ucieleśniał najnowocześniejszą technologię swojej epoki, umożliwiając samolotowi osiąganie zawrotnych prędkości i wyjątkowej zwrotności, kluczowych w pojedynkach powietrznych.",
+      "Jego zaawansowana konstrukcja i moc świadczą o ambicjach oraz umiejętnościach technicznych wykorzystywanych na powietrznych polach bitew.",
+      "Otoczony przez dwóch pilotów Luftwaffe, nieruchomych i milczących, silnik ten zdaje się wciąż rozbrzmiewać rykiem w przestworzach, które przemierzał.",
+      "Streszcza siłę i złożoność ówczesnej technologii lotniczej, świadcząc o nieustannych wysiłkach człowieka, by sięgnąć nieba, nawet w czasach wojny.",
+      "Stojąc przed tym reliktem, potwierdzamy nasze zaangażowanie w zachowanie historii w całej jej autentyczności."
+    ]
   }
 }
