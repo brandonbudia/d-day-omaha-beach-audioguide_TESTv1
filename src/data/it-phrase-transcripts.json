@@ -1011,5 +1011,227 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "09": {
+    "id": "09",
+    "language": "it",
+    "audioSha256": "14725f2e25e47052db0a3bcb943af52dd04e92799868a0a8a2df92a9c95530b5",
+    "durationSeconds": 60.648,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7f2d0041-18f6-4050-8b91-741d664c856c?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian dialogue and several formulations differ from the Wivi text. The proper names and two brief dialogue readings need review and retain no timestamp."
+      ]
+    },
+    "segments": [
+      {
+        "text": "La storia si svolge in un poligono di tiro di un'istituzione francese.",
+        "startSeconds": 0.06,
+        "endSeconds": 4.65
+      },
+      {
+        "text": "Sì?",
+        "startSeconds": 6.25,
+        "endSeconds": 6.56
+      },
+      {
+        "text": "Vieni a vedere.",
+        "startSeconds": 7.03,
+        "endSeconds": 7.79
+      },
+      {
+        "text": "Dove sei?",
+        "startSeconds": 8.32,
+        "endSeconds": 8.85
+      },
+      {
+        "text": "Vieni da questa parte.",
+        "startSeconds": 9.18,
+        "endSeconds": 10.26
+      },
+      {
+        "text": "Ma cosa stai facendo?",
+        "startSeconds": 10.8,
+        "endSeconds": 11.89
+      },
+      {
+        "text": "Questo vi dà un'idea della cadenza di fuoco di questa mitragliatrice tedesca, la MG 42.",
+        "startSeconds": 14.42,
+        "endSeconds": 20.36
+      },
+      {
+        "text": "Immaginate, il 6 giugno, soldati americani e alleati che sbarcano sotto il fuoco nemico, e anche questo fuoco portava il nome di MG 42.",
+        "startSeconds": 20.85,
+        "endSeconds": 31.14
+      },
+      {
+        "text": "Nei suoi racconti sostiene di aver sparato circa 12.500 cartucce.",
+        "startSeconds": 48.57,
+        "endSeconds": 53.86
+      },
+      {
+        "text": "È spaventoso.",
+        "startSeconds": 54.43,
+        "endSeconds": 55.25
+      },
+      {
+        "text": "Racconterà nelle sue memorie che non sparava per diletto, ma per restare in vita.",
+        "startSeconds": 55.76,
+        "endSeconds": 60.59
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Fabiano!"
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Ascolto."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Vedere?"
+      },
+      {
+        "beforeSegment": 8,
+        "text": "La storia, purtroppo, ricorderà colei che è stata chiamata la bestia di Omaha, Heinrich Severloh, che quel giorno 6 giugno ’44 mantenne la sua posizione dietro il suo MG 42 da uno dei bunker strategici di Omaha."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "10": {
+    "id": "10",
+    "language": "it",
+    "audioSha256": "cde84858a1aed684344d2fb3e508c2b3968241539863ed44c3158601540e3dc3",
+    "durationSeconds": 150.912,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ef4b797-5c3c-4896-ba1a-baeb88d60d33?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Italian spoken version differs from the exhibit text. Four passages with uncertain syntax or exact wording remain without timestamps. Proper names use the exhibit spelling."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Mio padre aveva capito, da tempo, che i tedeschi, durante l'occupazione in Francia, prediligevano le belle residenze.",
+        "startSeconds": 10.65,
+        "endSeconds": 18.06
+      },
+      {
+        "text": "Fu proprio durante una mostra, nel cuore della nostra città, che conobbe una persona che gli spiegò che la sua proprietà era stata occupata dai tedeschi negli anni quaranta.",
+        "startSeconds": 18.62,
+        "endSeconds": 29.79
+      },
+      {
+        "text": "Ovviamente non ci è voluto molto per andare a casa di questo signore.",
+        "startSeconds": 30.36,
+        "endSeconds": 34.52
+      },
+      {
+        "text": "Stradina isolata nel bosco, cancello maestoso, muretti in pietra senza fine, la scena è ambientata.",
+        "startSeconds": 35.19,
+        "endSeconds": 43.14
+      },
+      {
+        "text": "Veniamo accolti dal signore in questione e la visita ha inizio.",
+        "startSeconds": 51.55,
+        "endSeconds": 55.61
+      },
+      {
+        "text": "Che atmosfera!",
+        "startSeconds": 56.01,
+        "endSeconds": 56.84
+      },
+      {
+        "text": "Pavimenti in parquet che scricchiolano, vecchi armadi pieni di fossili etichettati, risalenti ad un'epoca ancora più antica, e in questa oscurità vari piccoli oggetti dell'esercito tedesco.",
+        "startSeconds": 57.25,
+        "endSeconds": 70.19
+      },
+      {
+        "text": "È davvero un momento che rimane impresso nei nostri ricordi.",
+        "startSeconds": 70.81,
+        "endSeconds": 74.2
+      },
+      {
+        "text": "Sconcertante quando non sai di cosa si tratta.",
+        "startSeconds": 85.25,
+        "endSeconds": 87.94
+      },
+      {
+        "text": "Ancora una volta i tedeschi hanno sviluppato una tecnologia davvero inventiva.",
+        "startSeconds": 88.51,
+        "endSeconds": 93.5
+      },
+      {
+        "text": "È un Goliath.",
+        "startSeconds": 93.94,
+        "endSeconds": 94.88
+      },
+      {
+        "text": "Un minicarro armato filoguidato che trasportava una carica esplosiva da proiettare contro edifici o veicoli nemici.",
+        "startSeconds": 95.11,
+        "endSeconds": 102.96
+      },
+      {
+        "text": "Questo Goliath faceva parte delle cosiddette armi speciali di Hitler.",
+        "startSeconds": 103.6,
+        "endSeconds": 108.08
+      },
+      {
+        "text": "È un pezzo molto raro e pregiato nel mondo del collezionismo.",
+        "startSeconds": 108.67,
+        "endSeconds": 112.58
+      },
+      {
+        "text": "Qui davanti a voi c'è la versione con motore a benzina, e l'intero interno è completo.",
+        "startSeconds": 113.2,
+        "endSeconds": 118.59
+      },
+      {
+        "text": "Senza carica esplosiva, ovviamente.",
+        "startSeconds": 119.05,
+        "endSeconds": 121.38
+      },
+      {
+        "text": "Goliath viene posto sulla sua rastrelliera, prevista allo scopo che potrebbe contenerne quattro.",
+        "startSeconds": 121.99,
+        "endSeconds": 127.9
+      },
+      {
+        "text": "Concludo con uno spiacevole aneddoto.",
+        "startSeconds": 128.66,
+        "endSeconds": 130.97
+      },
+      {
+        "text": "Non sapendo cosa fossero, pensando ai giocattoli, alcuni soldati lanciarono lì una granata, e purtroppo morirono, perché l'esplosione fu decuplicata dalle cariche.",
+        "startSeconds": 140.51,
+        "endSeconds": 150.65
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Nel sud della Normandia, dove vivevamo io e mio padre, un'unità tedesca chiamata Lehr Panzer aveva stabilito il suo quartier generale in questa regione."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Passiamo davanti alla casa del custode e di fronte un altro edificio che sembra fatiscente, con un falso retro."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Ma la cosa più sorprendente verrà perché nell'altra stanza, troneggiata al centro di questo salotto abbandonato, c'è una sorta di piccola vasca."
+      },
+      {
+        "beforeSegment": 18,
+        "text": "Durante lo sbarco nel settore di Utah Beach, gli alleati trovarono piccole grotte [parola incerta] le spiagge, e dentro queste erano ammassati dei Goliath."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

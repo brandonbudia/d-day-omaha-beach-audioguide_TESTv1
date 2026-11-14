@@ -1540,5 +1540,99 @@
       "Ich codziennym wyzwaniem było podtrzymywanie światła człowieczeństwa i wiary w środowisku często pozbawionym moralnych punktów odniesienia.",
       "Jako przedstawiciele dwóch głównych wyznań chrześcijańskich, kapelani mieli również za zadanie promować pewną jedność moralną wśród oddziałów, w kontekście, w którym podziały i cierpienia były wszechobecne."
     ]
+  },
+  "08": {
+    "id": "08",
+    "language": "pl",
+    "audioSha256": "f561865e05aa3432814100725f121261c80845bca0a14c2e5cb899106381ef61",
+    "durationSeconds": 156.26533333333333,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/d804de4ff930439345328a7e65af76f73c917b53.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish Wivi recording without a published transcript. The recording does not include the final invitation heard in other languages. The spelling Rupert follows the exhibit source. Six passages still have wording or boundary uncertainty."
+      ]
+    },
+    "segments": [
+      {
+        "text": "W wiejskim domu położonym na południu Normandii, pewnego poranka, pełnego tajemnicy i emocji, odkryto nieoczekiwany skarb.",
+        "startSeconds": 9.17,
+        "endSeconds": 18.57
+      },
+      {
+        "text": "To znalezisko, będące czymś znacznie więcej niż zwykłą zabawką, okazało się lalką.",
+        "startSeconds": 19.87,
+        "endSeconds": 26.99
+      },
+      {
+        "text": "Ma znoszone ubrania i niemal niewidoczne rysy twarzy.",
+        "startSeconds": 41.89,
+        "endSeconds": 45.54
+      },
+      {
+        "text": "Jednak tym, co czyni tę lalkę naprawdę poruszającą, jest jej wyjątkowa rola w historii ruchu oporu i operacji alianckich.",
+        "startSeconds": 46.66,
+        "endSeconds": 56.16
+      },
+      {
+        "text": "W każdym razie to odkrycie na strychu, którego dokonaliśmy wraz z moim ojcem, skłania nas do myśli, że ta lalka jest prawdziwie namacelną ilustracją tego, w jaki sposób nawet najbardziej niewinne przedmioty mogą odegrać kluczową rolę w wielkich strategiach wojennych.",
+        "startSeconds": 110.08,
+        "endSeconds": 130.91
+      },
+      {
+        "text": "To historie niewidzialnych żołnierzy, genialnych forteli i nocy pełnych napięcia.",
+        "startSeconds": 132.14,
+        "endSeconds": 138.56
+      },
+      {
+        "text": "Ta lalka, tak krucha i niewinna, przypomina nam, że nawet w najciemniejszych czasach podstęp zawsze potrafi znaleźć drogę, by zatryumfować.",
+        "startSeconds": 139.68,
+        "endSeconds": 151.63
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Rupert, lalka, brytyjski manekin spadochroniarza."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Lalką Rupert, strażniczką mało znanej historii II wojny światowej."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Na pierwszy rzut oka Rupert przypomina każdą inną lalkę z tamtych czasów."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Podczas operacji Titanic, śmiałej misji mającej na celu zmylenie sił niemieckich [słowa niepewne] lądowaniem w Normandii, z nieba zrzucono setki podobnych lalek nazywanych Rupertami."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Były one wyposażone w urządzenia dźwiękowe i niewielkie ładunki wybuchowe, naśladując obecność spadochroniarzy, sięjąc zamęt i dezinformację za liniami wroga."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Zatrzymując się przed tym reliktem, nie mogę powstrzymać się od myśli, że niektórzy żołnierze elitarnych oddziałów alianckich towarzyszyli zrzutowi tych lalek, strzelając z karabinów maszynowych i odtwarzając efekty dźwiękowe, aby dywersja była jak najbardziej zbliżona do rzeczywistości."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Rupert, lalka, brytyjski manekin spadochroniarza.",
+      "W wiejskim domu położonym na południu Normandii, pewnego poranka, pełnego tajemnicy i emocji, odkryto nieoczekiwany skarb.",
+      "To znalezisko, będące czymś znacznie więcej niż zwykłą zabawką, okazało się lalką.",
+      "Lalką Rupert, strażniczką mało znanej historii II wojny światowej.",
+      "Na pierwszy rzut oka Rupert przypomina każdą inną lalkę z tamtych czasów.",
+      "Ma znoszone ubrania i niemal niewidoczne rysy twarzy.",
+      "Jednak tym, co czyni tę lalkę naprawdę poruszającą, jest jej wyjątkowa rola w historii ruchu oporu i operacji alianckich.",
+      "Podczas operacji Titanic, śmiałej misji mającej na celu zmylenie sił niemieckich [słowa niepewne] lądowaniem w Normandii, z nieba zrzucono setki podobnych lalek nazywanych Rupertami.",
+      "Były one wyposażone w urządzenia dźwiękowe i niewielkie ładunki wybuchowe, naśladując obecność spadochroniarzy, sięjąc zamęt i dezinformację za liniami wroga.",
+      "Zatrzymując się przed tym reliktem, nie mogę powstrzymać się od myśli, że niektórzy żołnierze elitarnych oddziałów alianckich towarzyszyli zrzutowi tych lalek, strzelając z karabinów maszynowych i odtwarzając efekty dźwiękowe, aby dywersja była jak najbardziej zbliżona do rzeczywistości.",
+      "W każdym razie to odkrycie na strychu, którego dokonaliśmy wraz z moim ojcem, skłania nas do myśli, że ta lalka jest prawdziwie namacelną ilustracją tego, w jaki sposób nawet najbardziej niewinne przedmioty mogą odegrać kluczową rolę w wielkich strategiach wojennych.",
+      "To historie niewidzialnych żołnierzy, genialnych forteli i nocy pełnych napięcia.",
+      "Ta lalka, tak krucha i niewinna, przypomina nam, że nawet w najciemniejszych czasach podstęp zawsze potrafi znaleźć drogę, by zatryumfować."
+    ]
   }
 }
