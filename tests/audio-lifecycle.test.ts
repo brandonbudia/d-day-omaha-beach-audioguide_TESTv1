@@ -453,7 +453,7 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   assert.equal(player.getState().currentStopId, '01');
   assert.equal(player.getState().currentTime, 0);
   assert.equal(player.restoreLastPlayback(), false);
-  player.setStop('22', false);
+  player.setStop('04', false);
   player.setLanguage('de');
   await player.play();
   assert.equal(media.playCalls, 0);
@@ -549,11 +549,11 @@ test('switching a playing narration to an unavailable language resets the clock 
   media.playedRanges = [[0, 170.125]];
   media.dispatchEvent(new Event('timeupdate'));
   const calls = media.playCalls;
-  player.setLanguage('de');
+  player.setLanguage('it');
   media.flush();
   await nextTurn();
   assert.equal(player.getState().currentStopId, '21');
-  assert.equal(player.getState().language, 'de');
+  assert.equal(player.getState().language, 'it');
   assert.equal(player.getState().currentTime, 0);
   assert.equal(media.currentTime, 0);
   assert.equal(player.getState().isPlaying, false);
@@ -563,7 +563,7 @@ test('switching a playing narration to an unavailable language resets the clock 
   assert.equal(media.loadCalls, 1, 'resetting the media element releases the old recording');
   assert.equal(player.getState().duration, 0);
   assert.deepEqual(visitorStore.getSnapshot().pieces['21'].listening.fr?.heardRanges, [[0, 170.125]]);
-  assert.equal(visitorStore.getSnapshot().pieces['21'].listening.de, undefined);
+  assert.equal(visitorStore.getSnapshot().pieces['21'].listening.it, undefined);
   await player.play();
   assert.equal(media.playCalls, calls, 'the explicit play guard also remains active');
   assert.equal(player.getState().error, 'unavailable');

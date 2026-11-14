@@ -111,3 +111,5 @@ Au checkpoint 58, DE14, ES03 et ES10 ajoutent 47 phrases synchronisées. Les sep
 Au checkpoint 59, DE02, DE15, DE20, ES14 et ES19 ajoutent 95 phrases synchronisées et 11 phrases lisibles sans repère. Il reste 70 originaux à intégrer (10 DE, 21 IT, 16 PL, 21 NL, 2 ES).
 
 Au checkpoint 60, ES12, ES15, IT08 et NL18 ajoutent 42 phrases synchronisées. L’espagnol compte 22 pistes sur 22 et sept suivis partiels. Il reste 66 originaux à intégrer (10 DE, 20 IT, 16 PL, 20 NL). Les quatre pistes ajoutées totalisent 21 passages à relire, visibles sans repère.
+
+Au checkpoint 61, DE06, DE21, DE22 et NL21 ajoutent 87 phrases synchronisées et 29 phrases lisibles sans repère. Il reste 62 originaux à intégrer (7 DE, 20 IT, 16 PL, 19 NL).

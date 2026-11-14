@@ -175,5 +175,197 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "21": {
+    "id": "21",
+    "language": "nl",
+    "audioSha256": "baede331fb4637540a3ffd09b7fa864d7f337830077972aa5336341a364e72e0",
+    "durationSeconds": 193.368,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/76a873b3-d22f-454d-819f-9a8a7f11e607?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Eight sentences remain untimed for boundaries and uncertain wording, including the designation of the crane and the spoken currency."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"In het ouderlijk huis wachtte mij een paar jaar na de dood van onze vader een ongelooflijke ontdekking.",
+        "startSeconds": 0.06,
+        "endSeconds": 5.76
+      },
+      {
+        "text": "Een luik dat op het eerste gezicht heel gewoon leek.",
+        "startSeconds": 18.64,
+        "endSeconds": 21.61
+      },
+      {
+        "text": "Ik begreep de aanwezigheid van deze pijp gewoon niet.",
+        "startSeconds": 32.31,
+        "endSeconds": 35.26
+      },
+      {
+        "text": "Vraag me niet waarom, maar in een volkomen onschuldig gebaar begon ik het grind dat op de bodem lag te roeren...",
+        "startSeconds": 35.75,
+        "endSeconds": 42.54
+      },
+      {
+        "text": "Wat was mijn verrassing toen ik een slot ontdekte.",
+        "startSeconds": 43.2,
+        "endSeconds": 45.5
+      },
+      {
+        "text": "Er moest een la open zijn geweest, maar er bewoog niets.",
+        "startSeconds": 49.37,
+        "endSeconds": 52.82
+      },
+      {
+        "text": "In de opwinding van deze ontdekking herinnerde ik me dat ik tussen alle sleutels van het pand een bijzonder vreemde sleutel was tegengekomen.",
+        "startSeconds": 52.96,
+        "endSeconds": 60.63
+      },
+      {
+        "text": "Ze was erg lang, met een enorme ring.",
+        "startSeconds": 61.15,
+        "endSeconds": 63.53
+      },
+      {
+        "text": "Zonder erbij na te denken ren ik ernaartoe om ernaar te zoeken...",
+        "startSeconds": 64.04,
+        "endSeconds": 67.66
+      },
+      {
+        "text": "en dan schuift de lade plotseling zwaar naar me toe.",
+        "startSeconds": 74.46,
+        "endSeconds": 77.43
+      },
+      {
+        "text": "Het was geen lade, maar een ingang!",
+        "startSeconds": 77.95,
+        "endSeconds": 80.13
+      },
+      {
+        "text": "Mijn hart klopte; Ik was verbaasd omdat ik het huis al sinds mijn kindertijd kende: ik had overal gezocht en gespeeld.",
+        "startSeconds": 84.3,
+        "endSeconds": 92.34
+      },
+      {
+        "text": "Als er iemand was die het huis uit zijn hoofd kende, dan was ik het wel.",
+        "startSeconds": 93.04,
+        "endSeconds": 96.88
+      },
+      {
+        "text": "Nou, dat dacht ik al.",
+        "startSeconds": 97.42,
+        "endSeconds": 98.67
+      },
+      {
+        "text": "Ik kan het nog steeds niet geloven.",
+        "startSeconds": 99.23,
+        "endSeconds": 100.88
+      },
+      {
+        "text": "Ik ga naar beneden...",
+        "startSeconds": 101.43,
+        "endSeconds": 102.3
+      },
+      {
+        "text": "we zien niets.",
+        "startSeconds": 102.83,
+        "endSeconds": 103.59
+      },
+      {
+        "text": "Eerst voeten, dan handen.",
+        "startSeconds": 104.04,
+        "endSeconds": 105.59
+      },
+      {
+        "text": "Eenmaal op deze smalle ladder staat links van mij een oude elektriciteitskast: ik druk op...",
+        "startSeconds": 106.18,
+        "endSeconds": 111.74
+      },
+      {
+        "text": "En daar...",
+        "startSeconds": 111.92,
+        "endSeconds": 112.39
+      },
+      {
+        "text": "een kamer niet heel groot, maar gevuld met wapens uit de Tweede Wereldoorlog: MG's, Mausers, eindeloos.",
+        "startSeconds": 113.05,
+        "endSeconds": 119.94
+      },
+      {
+        "text": "Er werden ongeveer 200 wapens opgeslagen.",
+        "startSeconds": 120.44,
+        "endSeconds": 123.19
+      },
+      {
+        "text": "En in het midden van dit alles, het wapen voor je: een FG 42.",
+        "startSeconds": 123.73,
+        "endSeconds": 128.25
+      },
+      {
+        "text": "Een Duits parachutistenmachinegeweer, geproduceerd in slechts 2500 exemplaren.",
+        "startSeconds": 128.55,
+        "endSeconds": 134.28
+      },
+      {
+        "text": "Het is een item dat zeer gewild is bij verzamelaars.",
+        "startSeconds": 134.76,
+        "endSeconds": 137.69
+      },
+      {
+        "text": "Het is om deze reden dat deze cache in zijn vrije tijd werd gebouwd, waardoor het voor de FG onmogelijk werd om te stelen.",
+        "startSeconds": 156.05,
+        "endSeconds": 163.63
+      },
+      {
+        "text": "Ik had ook vernomen dat deze kleine schat uit de ‘death row cliff pocket’ kwam.",
+        "startSeconds": 164.33,
+        "endSeconds": 169.04
+      },
+      {
+        "text": "Terwijl ik afdaalde naar dit weinig bekende hol, voelde ik meer dan ooit het gewicht van het familie-erfgoed en de roep om te ontdekken wat hun vastberadenheid had gemotiveerd om zo’n ruimte te creëren, om deze kostbare dingen te verbergen.\"",
+        "startSeconds": 177.06,
+        "endSeconds": 192.88
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Begraven onder het gewicht van jaren en de stilte van bewaarde geheimen, was het door een ongelooflijke kans dat mijn blik op een gewone dag bleef hangen op een luik in de vloer van een hangar."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Door de basis te openen ontdekte ik een kleine uitsparing van ongeveer 40 cm, een pijp voorzien van een kraan en een bodem bedekt met grind."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Ik stond verbijsterd en probeerde het te begrijpen."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Eenmaal in het slot probeer ik manoeuvres uit te voeren om het te articuleren, ik zoek een richting..."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Een zwart gat presenteerde zich aan mij met een ladder."
+      },
+      {
+        "beforeSegment": 25,
+        "text": "Op een dag bijvoorbeeld, na een bezoek aan het museum, bood iemand ons bijna € 100.000 aan om met dit machinegeweer te vertrekken."
+      },
+      {
+        "beforeSegment": 25,
+        "text": "Later ontdekte ik, door verschillende getuigenissen onder de kennissen van mijn vader te vergelijken, dat dit stuk veel jaloezie bij hem opwekte."
+      },
+      {
+        "beforeSegment": 27,
+        "text": "Mijn vader en oom behoorden tot de eersten die relikwieën uit de Tweede Wereldoorlog opgraven en verzamelden."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

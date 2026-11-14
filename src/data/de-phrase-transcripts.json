@@ -1236,5 +1236,444 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "22": {
+    "id": "22",
+    "language": "de",
+    "audioSha256": "17ba047816621000ffaf21992b287727a9cec0778edc2be009273c79b9e620b4",
+    "durationSeconds": 160.368,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Nine sentences remain untimed for uncertain wording, narrow boundaries and the closing recognition artifact. The original text stays readable."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Dieses Fenster ist einer Ära des Mutes gewidmet: der des französischen Widerstands während des Zweiten Weltkriegs.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.5
+      },
+      {
+        "text": "Jedes der hier präsentierten Objekte erzählt die Geschichte derjenigen, die im Schatten für Freiheit und Würde kämpften.",
+        "startSeconds": 8.12,
+        "endSeconds": 15.43
+      },
+      {
+        "text": "Messer, stille, aber beeindruckende Werkzeuge im Nahkampf, dienten entweder als letzte Verteidigung oder als Mittel für einen heimlichen Angriff.",
+        "startSeconds": 33.4,
+        "endSeconds": 43.04
+      },
+      {
+        "text": "Sie gehörten Männern und Frauen, die bereit waren, alles zu opfern.",
+        "startSeconds": 43.8,
+        "endSeconds": 47.95
+      },
+      {
+        "text": "Diese unter Lebensgefahr verbreiteten Papiere waren echte Aufschreie der Revolte gegen die Unterdrückung, Aufrufe, sich für ein besseres Heimatland einzusetzen.",
+        "startSeconds": 55.77,
+        "endSeconds": 66.03
+      },
+      {
+        "text": "Und dann sind da noch die gefälschten Briefmarken, unverzichtbare Instrumente zur Schaffung falscher Identitäten: echte Schlüssel zum Überleben, die es vielen Widerstandskämpfern ermöglichen, den Fängen des Feindes zu entkommen und ihren Kampf im Schatten fortzusetzen.",
+        "startSeconds": 92.64,
+        "endSeconds": 109.88
+      },
+      {
+        "text": "Wir hatten das Glück, im Laufe ihres Lebens mehrere Widerstandskämpfer kennenzulernen.",
+        "startSeconds": 120.68,
+        "endSeconds": 125.48
+      },
+      {
+        "text": "Durch ihre Geschichten gaben sie uns die Gegenstände weiter, die sie in einer Ecke ihres Hauses aufbewahrten.",
+        "startSeconds": 126.12,
+        "endSeconds": 132.0
+      },
+      {
+        "text": "Durch dieses Fenster bewahren wir ihre Erinnerung auf, denn es ist eine echte Kindheitserinnerung an die Begegnung mit diesen Menschen, die keine Uniform trugen – scheinbar einfache Bürger ...",
+        "startSeconds": 132.6,
+        "endSeconds": 144.38
+      },
+      {
+        "text": "Aber was für eine Kühnheit!",
+        "startSeconds": 144.94,
+        "endSeconds": 146.47
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Auf der rechten Seite sind verschiedene Fangelemente zu sehen: diese raffiniert konstruierten Sprengkörper, mit denen der Vormarsch der Besatzungstruppen unterbrochen werden sollte ..."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Die Eisenbahnen beispielsweise erlitten durch diese Aktionen großen Schaden."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Die Flugblätter, die Sie hier sehen können, dienten der Sensibilisierung und der Mobilisierung freier Geister."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Das grüne Barett der KIEFFER-Kommandos symbolisiert die Einheit und den Mut der 177 französischen Soldaten, die dem Aufruf vom 18."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Juni folgten und Seite an Seite mit ihren Verbündeten für die Befreiung eines zum Schweigen gebrachten Landes kämpften."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Die Zünder, Reifenschlitze und diese modifizierte Mauser-Waffe zeugen vom Erfindungsreichtum der Widerstandskämpfer."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Angesichts begrenzter Ressourcen veränderten sie ihre Umgebung und nutzten jedes Teil, jedes Werkzeug, um ihren endlosen Kampf voranzutreiben."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Was für eine Kühnheit, sich gewehrt zu haben!"
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Ihr Mut und ihre Entschlossenheit inspirieren uns weiterhin und erinnern uns daran, dass selbst in den dunkelsten Stunden das Licht des Widerstands niemals erlischt.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "06": {
+    "id": "06",
+    "language": "de",
+    "audioSha256": "de1e9ebaa3cec1cc14a1afda44fef2c1c3f00f529d38c21a0c9ee35537c73d7d",
+    "durationSeconds": 179.16,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/f6b7a0ca-4923-4301-837c-f165bc4a770e?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Six sentences remain untimed for the opening year, several spoken terms and two uncertain boundaries. The focused date check did not resolve the opening."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Mein Bruder Fabien und ich sitzen zusammengekauert in diesem eiskalten Zelt und warten darauf, dass in diesem normannischen Land das Tageslicht anbricht.",
+        "startSeconds": 3.65,
+        "endSeconds": 12.59
+      },
+      {
+        "text": "Heute werden wir vielleicht eine höchst relevante Entdeckung machen.",
+        "startSeconds": 13.26,
+        "endSeconds": 16.6
+      },
+      {
+        "text": "Endlich ist es soweit: Es ist hell genug, um mit dem Graben zu beginnen.",
+        "startSeconds": 40.02,
+        "endSeconds": 44.23
+      },
+      {
+        "text": "Wir sind zu fünft: mein Bruder, ich, mein Vater, einer seiner Freunde und die Person, die die Maschine bedient.",
+        "startSeconds": 44.65,
+        "endSeconds": 52.12
+      },
+      {
+        "text": "Min...nichts!",
+        "startSeconds": 52.74,
+        "endSeconds": 54.11
+      },
+      {
+        "text": "Min, immer noch nichts!",
+        "startSeconds": 54.34,
+        "endSeconds": 55.76
+      },
+      {
+        "text": "Doch das Geräusch des Detektors wird immer lauter.",
+        "startSeconds": 55.95,
+        "endSeconds": 58.93
+      },
+      {
+        "text": "Nach drei Minuten das erste sehr charakteristische Geräusch von Metall, das auf ein anderes Metall trifft.",
+        "startSeconds": 59.45,
+        "endSeconds": 66.3
+      },
+      {
+        "text": "Wir sind besessen von diesem Geräusch und der Form, die beim Auftreffen der Schaufel klarer wird.",
+        "startSeconds": 66.82,
+        "endSeconds": 72.29
+      },
+      {
+        "text": "Unsere Köpfe neigen sich über dieses Loch und versuchen, die Silhouette dessen zu verstehen, was in der Erde vergraben ist.",
+        "startSeconds": 72.88,
+        "endSeconds": 80.24
+      },
+      {
+        "text": "Das Klopfen und Kratzen von Metall bei jedem Manöver macht uns furchtbar aufgeregt: Wir vergessen fast die Kälte und Feuchtigkeit.",
+        "startSeconds": 80.86,
+        "endSeconds": 88.6
+      },
+      {
+        "text": "Wir sind aktionsrauschend, als ob wir schneller als eine Schaufel sein könnten.",
+        "startSeconds": 89.03,
+        "endSeconds": 93.48
+      },
+      {
+        "text": "Wir waren nur Kinder...",
+        "startSeconds": 93.96,
+        "endSeconds": 95.07
+      },
+      {
+        "text": "Ich habe es nicht verstanden.",
+        "startSeconds": 110.3,
+        "endSeconds": 111.6
+      },
+      {
+        "text": "Mein Vater verstand sehr gut, worum es ging, und beschloss, darum herum ein Quadrat von etwa drei mal zwei Metern zu graben.",
+        "startSeconds": 112.08,
+        "endSeconds": 119.65
+      },
+      {
+        "text": "Nachdem diese Gräben angelegt waren, begannen wir, alle Erdblöcke von Hand zu entfernen ...",
+        "startSeconds": 120.33,
+        "endSeconds": 125.48
+      },
+      {
+        "text": "und nach und nach erschien uns eine Form, die fast einem Science-Fiction-Film ähnelte.",
+        "startSeconds": 126.13,
+        "endSeconds": 131.28
+      },
+      {
+        "text": "Mein Bruder und ich verstanden absolut nichts von dem, was sich vor uns abzeichnete: Raupen, Motorradlenker, eine Kiste mit Sitzen … Wir waren verloren.",
+        "startSeconds": 131.84,
+        "endSeconds": 142.15
+      },
+      {
+        "text": "Hier ist die Geschichte dieses seltsamen Fahrzeugs vor Ihren Augen.",
+        "startSeconds": 154.75,
+        "endSeconds": 157.95
+      },
+      {
+        "text": "Und zum Schluss: Die Geschichte des Bauern stimmte tatsächlich, denn wie wir noch sehen können, ist in den Raupen ein Stück Stoff getarnt.",
+        "startSeconds": 158.59,
+        "endSeconds": 166.22
+      },
+      {
+        "text": "Es handelt sich um nichts anderes als ein Stück amerikanischen Fallschirms, der es diesem Soldaten zweifellos ermöglichte, das Raupenmotorrad unter seinem eigenen Fallschirmdach zu verstecken.\"",
+        "startSeconds": 166.78,
+        "endSeconds": 178.19
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"1989… Ich bin 9 Jahre alt."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Tatsächlich forscht mein Vater viel in der Normandie und sucht nach Überresten und Spuren der Geschichte."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Wir befinden uns genau an einem Ort, an dem nach der Aussage eines Bauern ein amerikanischer Soldat den Deutschen ein seltsames Fahrzeug gestohlen und es hastig in einem Granatenschacht zurückgelassen hat, während seine Angreifer die Verfolgung aufgenommen hatten."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Plötzlich, nachdem wir nebenbei einen riesigen Erdblock abgeräumt haben, sehen wir ein Stück Raupe – allerdings nicht so, wie ich es mir in dem Alter vorgestellt habe."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Ich wusste sehr gut, wie eine Panzerraupe aussah … und diese war sehr klein."
+      },
+      {
+        "beforeSegment": 18,
+        "text": "Mein Vater wusste sehr gut, was wir gerade gefunden hatten: eine deutsche Motorradraupe oder Kettenkrad, ein deutsches Aufklärungsfahrzeug, das im Zweiten Weltkrieg eingesetzt wurde."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "21": {
+    "id": "21",
+    "language": "de",
+    "audioSha256": "6431157d3f7db3854090f1d0d5b2b01de90426ef06c2e0287d89dfa29fde0c15",
+    "durationSeconds": 201.96,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/76a873b3-d22f-454d-819f-9a8a7f11e607?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Six sentences remain untimed for boundaries and spoken variants, including the manoeuvres passage and the collector’s anecdote."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Im Haus der Familie erwartete mich einige Jahre nach dem Tod unseres Vaters eine unglaubliche Entdeckung.",
+        "startSeconds": 0.07,
+        "endSeconds": 6.02
+      },
+      {
+        "text": "Begraben unter der Last der Jahre und dem Schweigen gehüteter Geheimnisse blieb mein Blick an einem ganz gewöhnlichen Tag durch einen unglaublichen Zufall an einer Falltür im Boden eines Hangars hängen.",
+        "startSeconds": 6.85,
+        "endSeconds": 19.2
+      },
+      {
+        "text": "Eine Luke, die auf den ersten Blick ganz gewöhnlich wirkte.",
+        "startSeconds": 19.99,
+        "endSeconds": 23.78
+      },
+      {
+        "text": "Ich habe das Vorhandensein dieser Pfeife einfach nicht verstanden.",
+        "startSeconds": 34.27,
+        "endSeconds": 37.9
+      },
+      {
+        "text": "Was war meine Überraschung, als ich ein Schloss entdeckte.",
+        "startSeconds": 46.28,
+        "endSeconds": 49.36
+      },
+      {
+        "text": "Ich stand fassungslos da und versuchte zu verstehen.",
+        "startSeconds": 49.96,
+        "endSeconds": 53.16
+      },
+      {
+        "text": "Es muss eine Schublade geöffnet haben, aber nichts bewegte sich.",
+        "startSeconds": 53.69,
+        "endSeconds": 57.52
+      },
+      {
+        "text": "In der Aufregung über diese Entdeckung fiel mir ein, dass ich unter all den Schlüsseln zum Anwesen einen besonders seltsamen Schlüssel gefunden hatte.",
+        "startSeconds": 58.29,
+        "endSeconds": 66.54
+      },
+      {
+        "text": "Sie war sehr groß und hatte einen riesigen Ring.",
+        "startSeconds": 67.25,
+        "endSeconds": 70.02
+      },
+      {
+        "text": "Ohne darüber nachzudenken, renne ich los, um danach zu suchen ...",
+        "startSeconds": 70.75,
+        "endSeconds": 74.88
+      },
+      {
+        "text": "dann gleitet die Schublade plötzlich schwer auf mich zu.",
+        "startSeconds": 82.35,
+        "endSeconds": 85.26
+      },
+      {
+        "text": "Es war keine Schublade, sondern ein Eingang!",
+        "startSeconds": 85.61,
+        "endSeconds": 88.32
+      },
+      {
+        "text": "Mit einer Leiter präsentierte sich mir ein schwarzes Loch.",
+        "startSeconds": 88.61,
+        "endSeconds": 91.59
+      },
+      {
+        "text": "Mein Herz klopfte; Ich war erstaunt, weil ich das Haus seit meiner Kindheit kannte: Ich hatte überall gesucht und gespielt.",
+        "startSeconds": 92.11,
+        "endSeconds": 99.62
+      },
+      {
+        "text": "Wenn es jemanden gab, der das Haus auswendig kannte, dann ich … Nun, das dachte ich mir.",
+        "startSeconds": 100.31,
+        "endSeconds": 106.57
+      },
+      {
+        "text": "Ich kann es immer noch nicht glauben.",
+        "startSeconds": 107.0,
+        "endSeconds": 108.58
+      },
+      {
+        "text": "Ich gehe runter...",
+        "startSeconds": 109.11,
+        "endSeconds": 109.95
+      },
+      {
+        "text": "wir sehen nichts.",
+        "startSeconds": 110.5,
+        "endSeconds": 111.4
+      },
+      {
+        "text": "Zuerst die Füße, dann die Hände.",
+        "startSeconds": 111.75,
+        "endSeconds": 114.18
+      },
+      {
+        "text": "Auf dieser schmalen Leiter angekommen, steht links von mir ein alter Elektrokasten: Ich drücke… Und da...",
+        "startSeconds": 114.69,
+        "endSeconds": 121.83
+      },
+      {
+        "text": "ein Raum, nicht sehr groß, aber gefüllt mit Waffen aus dem Zweiten Weltkrieg: MGs, Mauser, endlos.",
+        "startSeconds": 122.12,
+        "endSeconds": 129.43
+      },
+      {
+        "text": "Etwa 200 Waffen wurden eingelagert.",
+        "startSeconds": 129.9,
+        "endSeconds": 132.29
+      },
+      {
+        "text": "Es ist ein unter Sammlern sehr begehrtes Objekt.",
+        "startSeconds": 143.1,
+        "endSeconds": 145.74
+      },
+      {
+        "text": "Später erfuhr ich durch Gegenprüfung verschiedener Zeugenaussagen im Bekanntenkreis meines Vaters, dass dieses Stück bei ihm große Neid erregte.",
+        "startSeconds": 156.23,
+        "endSeconds": 165.08
+      },
+      {
+        "text": "Aus diesem Grund wurde dieser Cache in seiner Freizeit gebaut, um es der FG unmöglich zu machen, zu stehlen.",
+        "startSeconds": 165.62,
+        "endSeconds": 172.5
+      },
+      {
+        "text": "Ich hatte auch erfahren, dass dieser kleine Schatz aus der „Klippentasche des Todestrakts“ stammte.",
+        "startSeconds": 173.23,
+        "endSeconds": 178.33
+      },
+      {
+        "text": "Mein Vater und mein Onkel gehörten zu den ersten, die Relikte aus dem Zweiten Weltkrieg ausgruben und sammelten.",
+        "startSeconds": 178.97,
+        "endSeconds": 185.26
+      },
+      {
+        "text": "Als ich in dieses wenig bekannte Versteck hinabstieg, spürte ich mehr denn je die Last des Familienerbes und den Ruf herauszufinden, was ihre Entschlossenheit motiviert hatte, einen solchen Raum zu schaffen, um diese kostbaren Dinge zu verstecken.\"",
+        "startSeconds": 185.86,
+        "endSeconds": 201.5
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Als ich den Sockel öffnete, entdeckte ich eine kleine Aussparung von etwa 40 cm, ein Rohr mit Wasserhahn und einen mit Kies bedeckten Boden."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Fragen Sie mich nicht warum, aber in einer völlig harmlosen Geste begann ich, den Kies am Boden aufzurühren ..."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Sobald ich im Schloss bin, versuche ich, es zu artikulieren, ich suche nach einer Richtung ..."
+      },
+      {
+        "beforeSegment": 22,
+        "text": "Und mittendrin die Waffe vor Ihnen: ein FG 42."
+      },
+      {
+        "beforeSegment": 22,
+        "text": "Ein deutsches Fallschirmjäger-Maschinengewehr, hergestellt in nur 2500 Exemplaren."
+      },
+      {
+        "beforeSegment": 23,
+        "text": "Beispielsweise hätte uns eines Tages nach dem Museumsbesuch beinahe 100.000 Euro angeboten, wenn wir mit diesem Maschinengewehr gehen würden."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
