@@ -1793,5 +1793,170 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "19": {
+    "id": "19",
+    "language": "it",
+    "audioSha256": "d8c6239bb0c3d043eeccbb21ee62ade1b006fd02b07f9a9c64a0fc50b90bd343",
+    "durationSeconds": 237.168,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ec903cf-4ec0-4fa7-87a0-801924a37ee7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The player uses the original Italian narration. Five passages with uncertainty in wording or grammar stay readable without timing. The Wivi exhibit text is preserved separately."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Nei complessi colpi di scena della Seconda Guerra Mondiale, la macchina Enigma si ergeva come una fortezza inespugnabile di crittografia, sfidando chiunque a infrangere i suoi segreti attentamente custoditi.",
+        "startSeconds": 0.06,
+        "endSeconds": 13.95
+      },
+      {
+        "text": "Al centro di questo puzzle strabiliante, la pressione di un tasto da parte dell'operatore sulla tastiera di Enigma trasformava il messaggio originale in un complesso groviglio di lettere, che cambiava quotidianamente in base alle impostazioni attentamente configurate.",
+        "startSeconds": 30.02,
+        "endSeconds": 47.25
+      },
+      {
+        "text": "La sfida fu raccolta da un team di brillanti matematici e ingegneri alleati, guidati dal famoso Alan Turing.",
+        "startSeconds": 54.93,
+        "endSeconds": 62.37
+      },
+      {
+        "text": "Fu nel centro di Bletchley Park, in Inghilterra, che menti ingegnose come Turing, Gordon Welchman e altri dedicarono innumerevoli ore alla comprensione dei misteri dell’Enigma.",
+        "startSeconds": 62.99,
+        "endSeconds": 75.33
+      },
+      {
+        "text": "Grazie alla loro perseveranza e ingegnosità, gli alleati riuscirono a leggere il traffico criptato dell'alto comando tedesco, ribaltando il corso della guerra al loro favore.",
+        "startSeconds": 92.91,
+        "endSeconds": 103.85
+      },
+      {
+        "text": "Il loro lavoro scrupoloso e spesso non riconosciuto ha abbreviato il conflitto e salvato milioni di vite, gettando le basi dell'informatica moderna.",
+        "startSeconds": 104.64,
+        "endSeconds": 114.35
+      },
+      {
+        "text": "Adesso vi racconto una delle grandi coincidenze della vita.",
+        "startSeconds": 114.77,
+        "endSeconds": 118.17
+      },
+      {
+        "text": "Durante l'ennesimo mercatino delle pulci, a cui mio padre stava partecipando, si fermò davanti ad uno stand, che, a prima vista, sembrava vendere una macchina da scrivere.",
+        "startSeconds": 118.67,
+        "endSeconds": 129.64
+      },
+      {
+        "text": "Ovviamente ha chiesto al venditore quale fosse il prezzo di questa macchina da scrivere.",
+        "startSeconds": 130.15,
+        "endSeconds": 134.83
+      },
+      {
+        "text": "Questi rispose cinquanta franchi.",
+        "startSeconds": 135.57,
+        "endSeconds": 137.81
+      },
+      {
+        "text": "Niente da fare, cinquanta franchi, ultimo prezzo.",
+        "startSeconds": 142.55,
+        "endSeconds": 145.81
+      },
+      {
+        "text": "E così mio padre cedette e offrì la somma di cinquanta franchi per questa macchina da scrivere, che altro non era che un’Enigma.",
+        "startSeconds": 146.43,
+        "endSeconds": 154.92
+      },
+      {
+        "text": "Enigma ha un vero peso storico, e rappresenta un interesse molto particolare per i collezionisti.",
+        "startSeconds": 155.0,
+        "endSeconds": 161.16
+      },
+      {
+        "text": "La storia continua con questa rapina avvenuta proprio in questo museo, più di dieci anni fa.",
+        "startSeconds": 161.85,
+        "endSeconds": 167.51
+      },
+      {
+        "text": "Il giorno stesso dell'inaugurazione, quattro intrusi sono entrati nel museo e hanno rapito la cassiera.",
+        "startSeconds": 168.05,
+        "endSeconds": 174.26
+      },
+      {
+        "text": "Ma soprattutto presero la macchinetta Enigma.",
+        "startSeconds": 184.02,
+        "endSeconds": 187.04
+      },
+      {
+        "text": "Qualche tempo dopo, in un surplus militare a Parigi, si presentarono alcuni giovani che si offrirono di vendere una macchina Enigma.",
+        "startSeconds": 187.21,
+        "endSeconds": 195.45
+      },
+      {
+        "text": "L'unica prova, una foto.",
+        "startSeconds": 196.01,
+        "endSeconds": 197.8
+      },
+      {
+        "text": "Il direttore del locale non poteva credere ai suoi occhi.",
+        "startSeconds": 198.41,
+        "endSeconds": 201.57
+      },
+      {
+        "text": "Ha organizzato un incontro con questi giovani con la macchina per offrire loro una bella somma.",
+        "startSeconds": 201.99,
+        "endSeconds": 207.39
+      },
+      {
+        "text": "Una volta partiti, la situazione sembrava troppo strana per essere vera.",
+        "startSeconds": 207.95,
+        "endSeconds": 212.25
+      },
+      {
+        "text": "Ha quindi contattato la polizia per spiegare loro ciò a cui aveva appena assistito.",
+        "startSeconds": 212.81,
+        "endSeconds": 218.1
+      },
+      {
+        "text": "Evidentemente le autorità lo avevano informato che di recente era stato derubato un museo e che era stata rubata una macchina Enigma.",
+        "startSeconds": 218.5,
+        "endSeconds": 227.17
+      },
+      {
+        "text": "Fu allora organizzata un'imboscata e i delinquenti caddero stupidamente nella trappola.",
+        "startSeconds": 227.79,
+        "endSeconds": 233.25
+      },
+      {
+        "text": "La macchina Enigma è stata ritrovata intatta.",
+        "startSeconds": 233.77,
+        "endSeconds": 236.63
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Progettato da ingegneri tedeschi, l'Enigma era un dispositivo di crittografia elettromeccanico utilizzato per codificare messaggi militari, rendendo [parola incerta] comunicazioni nemiche incomprensibili e apparentemente inattaccabili."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Per lo sforzo bellico alleato, decifrare questi messaggi era cruciale per contrastare [parola incerta] piani dell’Asse."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Con il prezioso aiuto dei matematici polacchi, che avevano già fatto notevoli progressi sull'Enigma prima dello scoppio della guerra, il team britannico costruì la macchina Bombe, capace di testare rapidamente le numerose possibili configurazioni dell'Enigma."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Mio padre fece una piccola smorfia e gli offrì quarantacinque."
+      },
+      {
+        "beforeSegment": 15,
+        "text": "Il rumore dei vetri delle finestre si frantumarono, mentre uno dei delinquenti osservava la cassiera e gli altri rubavano alcune cose."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

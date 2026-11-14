@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 81 ; PL16 ajoutée.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 82 ; IT19 ajoutée.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -312,6 +312,12 @@ Le checkpoint 80 est publié sous `bedeae68a5636f3f9fb9c6ff448cee92d079c557`, SH
 Le checkpoint 81 ajoute l’enregistrement polonais original PL16 (9/12). Les deux modèles et les pauses décodées corroborent les neuf repères. Le titre, une lecture autour d’Omaha et un mot dans l’hommage restent lisibles sans repère. Le navigateur a confirmé la lecture au clic, la phrase active et les trois passages statiques. Les 126 tests, TypeScript et le build `index-uO-GdtZ7.js` ont réussi.
 
 État après le checkpoint 81 : DE 22/22, ES 22/22, IT 18/22, NL 19/22, PL 18/22 (13 originaux et 5 synthèses signalées). Il reste 11 originaux. Prochaine action : reprendre IT19 puis NL19 et PL17 dès que les passes locales déjà lancées sont disponibles. Ne pas refaire PL16, dont le lot est testé et prêt à publier à ce checkpoint.
+
+Le checkpoint 81 est publié sous `52c273532c4bdc26d56c67553080dc7c44a28ea3`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 82 ajoute IT19 (25/30). Le lecteur suit la narration originale et la fiche conserve le récit publié. Cinq passages restent sans repère. Les 126 tests, TypeScript et le build `index-dHKT2IFz.js` ont réussi. La recette a confirmé le clic à 212,81 s, le démarrage, la phrase active et les cinq passages lisibles sans repère.
+
+État après le checkpoint 82 : DE 22/22, ES 22/22, IT 19/22, NL 19/22 et PL 18/22 (13 originaux et 5 synthèses signalées). Il reste 10 enregistrements originaux, soit IT20–22, NL19/20/22 et PL17/18/19/21. La file locale a entamé la seconde passe NL19. Consulter les caches suivants avant toute relance. Les 44 lignes FR/EN correspondent au rapport de référence et aucun fichier du lecteur audio ni des repères FR/EN n’a été modifié.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 
