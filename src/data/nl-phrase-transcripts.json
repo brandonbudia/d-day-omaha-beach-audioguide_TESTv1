@@ -725,5 +725,111 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "01": {
+    "id": "01",
+    "language": "nl",
+    "audioSha256": "58842c5f0e038b0695e62dcc35304bc217caf85b977e627d4724101b3059d5e5",
+    "durationSeconds": 124.248,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Dutch Wivi text is readable. The welcome and two introduction clauses are timed at their documented pauses. Nine passages with uncertain readings or boundaries retain text without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Hier begint...",
+        "startSeconds": 0.06,
+        "endSeconds": 0.9
+      },
+      {
+        "text": "verhalen over vrouwen en mannen, anekdotes over historische feiten en soms drama's.",
+        "startSeconds": 1.3,
+        "endSeconds": 7.71
+      },
+      {
+        "text": "Deze plek herbergt een verzameling verhalen vol verhalen, die getuigen van de relatie van de mens met zijn verleden.",
+        "startSeconds": 8.41,
+        "endSeconds": 16.06
+      },
+      {
+        "text": "Maar laat ik ons ​​even voorstellen:",
+        "startSeconds": 30.92,
+        "endSeconds": 32.5
+      },
+      {
+        "text": "wij zijn twee broers, Fabien en Antoine.",
+        "startSeconds": 37.14,
+        "endSeconds": 39.77
+      },
+      {
+        "text": "We zijn opgegroeid met een vader… best bijzonder.",
+        "startSeconds": 40.36,
+        "endSeconds": 43.15
+      },
+      {
+        "text": "Maar tegen welke prijs...",
+        "startSeconds": 64.57,
+        "endSeconds": 65.97
+      },
+      {
+        "text": "Door het plotselinge vertrek van onze vader en onze verschillende paden kwamen de toekomst en de ziel van deze plek in gevaar.",
+        "startSeconds": 93.21,
+        "endSeconds": 101.31
+      },
+      {
+        "text": "Welkom bij ons verhaal.",
+        "startSeconds": 118.74,
+        "endSeconds": 120.15
+      },
+      {
+        "text": "Welkom in de geschiedenis.\"",
+        "startSeconds": 120.58,
+        "endSeconds": 122.04
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Deze plaats is ook erg belangrijk, omdat het het eerste veldhospitaal was dat op de stranden van Omaha werd gevestigd na de landing van de eerste aanvalsgolven, waarvan er vele een tragisch lot ondergingen."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Een echte geschiedenisliefhebber, die het grootste deel van zijn leven wijdde aan het zoeken naar overblijfselen uit deze periode."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Wij brachten onze jeugd, mijn jongere broer en ik, door bossen, rivieren en oude schuren, op zoek naar alle sporen die de strijdende partijen van de Tweede Wereldoorlog hadden achtergelaten."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Onze vader was geobsedeerd, zelfs geobsedeerd!"
+      },
+      {
+        "beforeSegment": 7,
+        "text": "door deze passie..."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Het was een permanente waanzin geworden die in de loop der jaren ons gezin en hemzelf verwoestte."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Hij stierf in 2012, verteerd door bepaalde demonen als gevolg van de ondeugden van bezetenheid, verteerd door wroeging omdat hij de waarden van familie en vriendschap de rug had toegekeerd."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Het was een ongrijpbaar instinct dat mijn broer en mij ervan overtuigde om ons avontuur voort te zetten door de zoektocht naar historische voorwerpen, en deze aan u te presenteren met hun geschiedenis."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Want geloof me, je zult niet teleurgesteld worden."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

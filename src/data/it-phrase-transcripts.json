@@ -413,5 +413,171 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "01": {
+    "id": "01",
+    "language": "it",
+    "audioSha256": "dbf2e6de649aaa429dd0cc72f8aea7c79cf074c4e15ee4394440101103a273cb",
+    "durationSeconds": 109.008,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/42f44a68-f430-4e36-8251-470075f2cff3?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original recording uses a different Italian narration than the Wivi exhibit text. Three passages with grammatical or pronunciation uncertainties remain without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Qui cominciano storie di donne e di uomini, aneddoti di fatti storici e talvolta drammi.",
+        "startSeconds": 0.06,
+        "endSeconds": 6.14
+      },
+      {
+        "text": "Questo luogo ospita una raccolta ricca di storie che testimoniano il rapporto dell'uomo con il suo passato.",
+        "startSeconds": 6.59,
+        "endSeconds": 12.84
+      },
+      {
+        "text": "Questo luogo è anche molto importante perché è stato il primo ospedale da campo istituito sulle spiagge di Omaha dopo lo sbarco delle prime ondate di assalti, molti dei quali incontrarono un tragico destino.",
+        "startSeconds": 13.43,
+        "endSeconds": 27.39
+      },
+      {
+        "text": "Siamo due fratelli, Fabien e Antoine.",
+        "startSeconds": 30.13,
+        "endSeconds": 33.05
+      },
+      {
+        "text": "Siamo cresciuti con un papà davvero speciale, un vero appassionato di storia, che ha dedicato gran parte della sua vita alla ricerca delle vestigia di questo periodo.",
+        "startSeconds": 33.4,
+        "endSeconds": 43.25
+      },
+      {
+        "text": "Ma a quale prezzo?",
+        "startSeconds": 56.4,
+        "endSeconds": 57.39
+      },
+      {
+        "text": "Nostro padre era ossessionato, addirittura ossessionato, da questa passione.",
+        "startSeconds": 57.61,
+        "endSeconds": 62.65
+      },
+      {
+        "text": "Era diventata una follia permanente, che negli anni distrusse la nostra famiglia e lui stesso.",
+        "startSeconds": 63.31,
+        "endSeconds": 69.35
+      },
+      {
+        "text": "Morì nel 2012, consumato da certi demoni derivanti dai vizi di possessione, consumato dal rimorso per aver voltato le spalle ai valori della famiglia e dell'amicizia.",
+        "startSeconds": 69.94,
+        "endSeconds": 81.29
+      },
+      {
+        "text": "È stato un istinto sfuggente che ha convinto me e mio fratello a continuare la nostra avventura attraverso la ricerca di oggetti storici e a presentarveli con la loro storia.",
+        "startSeconds": 91.1,
+        "endSeconds": 102.07
+      },
+      {
+        "text": "Perché credimi, non rimarrai deluso.",
+        "startSeconds": 102.56,
+        "endSeconds": 104.79
+      },
+      {
+        "text": "Benvenuti nella nostra storia.",
+        "startSeconds": 105.23,
+        "endSeconds": 106.87
+      },
+      {
+        "text": "Benvenuti nella storia.",
+        "startSeconds": 107.22,
+        "endSeconds": 108.66
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Ma lasciatemi presentarci."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Abbiamo trascorso la nostra giovinezza, io e mio fratello minore, tra boschi, fiumi e vecchi fienili, alla ricerca di tutte le tracce lasciate dai belligeranti della seconda guerra mondiale."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Con la partenza improvvisa di nostro padre e le nostre diverse strade, il futuro e l'anima di questo luogo si sono ritrovati compromessi."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "16": {
+    "id": "16",
+    "language": "it",
+    "audioSha256": "b99695124ce619d6b32fc8a80e32b3a33aa47e2561a8dd78a9d3881528d85480",
+    "durationSeconds": 116.808,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/62a0a9ce-16c7-4e1d-a07c-7c4af6907a89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian text differs from the exhibit text. One brief reading near mezzi di difesa remains visible without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Avvicinandoti a questa scena, lascia che il tuo sguardo si poggi sui manichini meticolosamente disposti per ricreare il momento toccante dello sbarco dei soldati americani durante la prima ondata di assalto nel giugno 1944.",
+        "startSeconds": 0.06,
+        "endSeconds": 17.17
+      },
+      {
+        "text": "Ogni volto, fermo nel tempo, incarna il coraggio di questi giovani che, spinti da un incrollabile senso del dovere, misero piede sulle spiagge della Normandia.",
+        "startSeconds": 18.4,
+        "endSeconds": 30.17
+      },
+      {
+        "text": "Osserva i dettagli, le uniformi autentiche, le armi alla mano, pronte per l'inevitabile confronto.",
+        "startSeconds": 30.88,
+        "endSeconds": 37.7
+      },
+      {
+        "text": "Questi soldati, alcuni appena usciti dall'adolescenza, portavano sulle spalle il peso di un mondo in cerca di libertà.",
+        "startSeconds": 38.22,
+        "endSeconds": 46.49
+      },
+      {
+        "text": "Omaha fu lo sbarco sulla spiaggia più sanguinoso, circa 4.000 morti, dispersi e feriti il 6 giugno 1944.",
+        "startSeconds": 47.34,
+        "endSeconds": 57.95
+      },
+      {
+        "text": "Queste grandi croci d'acciaio, chiamate anche ricci cechi, imponenti e minacciose, punteggiano la sabbia, illustrando i formidabili ostacoli che ogni soldato doveva superare.",
+        "startSeconds": 59.08,
+        "endSeconds": 71.7
+      },
+      {
+        "text": "Questa scena rende omaggio a coloro che hanno affrontato coraggiosamente l'ignoto, con la paura nel corpo ma la speranza nel cuore.",
+        "startSeconds": 84.32,
+        "endSeconds": 92.9
+      },
+      {
+        "text": "Hanno scritto in lettere di fuoco e sangue la storia della liberazione, trasformando le onde dell'angoscia in sabbie di liberazione.",
+        "startSeconds": 93.62,
+        "endSeconds": 102.6
+      },
+      {
+        "text": "Prenditi un momento per sentire l'emozione che emana da questo dipinto vivente e pensa alle innumerevoli storie di coraggio ad esso associate, incise per sempre nella memoria collettiva dell'umanità.",
+        "startSeconds": 102.69,
+        "endSeconds": 116.33
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 6,
+        "text": "Questi pezzi sono austeri simboli della resistenza nemica, testimoniando la brutalità [parola incerta] mezzi di difesa su questa spiaggia, trasformata in un vero e proprio teatro di guerra."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

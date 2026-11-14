@@ -1102,5 +1102,139 @@
       "Dziś stajemy wobec dwoistości ludzkiej technologii, zdolnej zarówno do wielkich osiągnięć, jak i do największego okrucieństwa.",
       "To działo, zapomniane przez czas, przypomina nam o kruchości pokoju i o cenie, jaką zapłaciło tak wiele istnień pod grzmotem jego ognia."
     ]
+  },
+  "05": {
+    "id": "05",
+    "language": "pl",
+    "audioSha256": "b5d8ac921d7b2523af994a410061a2866ebd6532bdc1652388571f323c7ce4f9",
+    "durationSeconds": 173.24666666666667,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/cb8bf33563ad046d2be5c044a06275e7db9f2e0e.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish audio with no Wivi text. Title boundary, Caen and two unclear words require review. Only corroborated phrases have timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Jako kolekcjoner wiem, że każdy odnaleziony przeze mnie element opowiada wyjątkową historię.",
+        "startSeconds": 34.54,
+        "endSeconds": 42.34
+      },
+      {
+        "text": "Niemieckie mundury maskujące nie są tu wyjątkiem.",
+        "startSeconds": 43.92,
+        "endSeconds": 46.88
+      },
+      {
+        "text": "Opracowane z niezwykłą dbałością o szczegóły odzwierciedlają fascynujące połączenie funkcjonalności, innowacji oraz dostosowania do różnych teatrów działań wojennych.",
+        "startSeconds": 48.12,
+        "endSeconds": 60.35
+      },
+      {
+        "text": "Dzięki nieregularnym wzorom i ziemistym kolorom zapewniały skuteczny kamuflaż w europejskich warunkach.",
+        "startSeconds": 61.66,
+        "endSeconds": 69.18
+      },
+      {
+        "text": "Istnieje również tak zwany wzór groszkowy, wprowadzony później w trakcie konfliktu.",
+        "startSeconds": 90.81,
+        "endSeconds": 96.27
+      },
+      {
+        "text": "Jego złożoność przypomina o nieustannym dążeniu do poprawy niewidoczności żołnierzy.",
+        "startSeconds": 97.39,
+        "endSeconds": 102.98
+      },
+      {
+        "text": "Ten jedyny w swoim rodzaju wzór pokazuje, jak ważna była innowacja w tak niespokojnym okresie.",
+        "startSeconds": 104.49,
+        "endSeconds": 111.98
+      },
+      {
+        "text": "Niemcy przywiązywali ogromną wagę do kamuflaży.",
+        "startSeconds": 131.45,
+        "endSeconds": 134.82
+      },
+      {
+        "text": "Niestety, podobieństwo prowadziło do pomyłek.",
+        "startSeconds": 141.53,
+        "endSeconds": 144.84
+      },
+      {
+        "text": "Alianci bardzo szybko porzucili ten pomysł.",
+        "startSeconds": 145.67,
+        "endSeconds": 148.32
+      },
+      {
+        "text": "Dla żołnierzy, którzy je nosili, były czymś znacznie więcej niż zwykłą odzieżą.",
+        "startSeconds": 156.76,
+        "endSeconds": 162.12
+      },
+      {
+        "text": "Stanowiły istotną część ich wyposażenia niezbędnego do przetrwania.",
+        "startSeconds": 163.23,
+        "endSeconds": 170.0
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Umundurowanie maskujące."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Cieszę się, że w tej specjalnej części naszego audioprzewodnika mogę podzielić się z Państwem nie tylko faktami historycznymi, lecz także częścią mojej osobistej pasji do kolekcjonowania mundurów wojskowych."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Teraz opowiem Państwu o niemieckim kamuflażu używanym podczas II wojny światowej, temacie, który jest nam szczególnie bliski."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Można w nich odnaleźć elementy [słowo niepewne] każdej porze roku."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Jeśli dobrze się Państwo przyjrzą, [słowo niepewne] warianty wiosenne i jesienne, przeznaczone dla chłodnych krajów, biel zimy oraz letnie barwy naszych regionów."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "W naszej kolekcji znajduje się kurtka z tym wzorem noszona głównie przez żołnierzy SS z Hitlerjugend, którzy utrzymali Caen przez ponad miesiąc, wbrew pierwotnym planom zakładającym zdobycie miasta w ciągu dwóch dni."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Historia pokaże, że alianci również próbowali stosować kamuflaż."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Fascynujące jest wyobrażenie sobie, jak te kamuflaże były postrzegane w tamtych czasach."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Umundurowanie maskujące.",
+      "Cieszę się, że w tej specjalnej części naszego audioprzewodnika mogę podzielić się z Państwem nie tylko faktami historycznymi, lecz także częścią mojej osobistej pasji do kolekcjonowania mundurów wojskowych.",
+      "Teraz opowiem Państwu o niemieckim kamuflażu używanym podczas II wojny światowej, temacie, który jest nam szczególnie bliski.",
+      "Jako kolekcjoner wiem, że każdy odnaleziony przeze mnie element opowiada wyjątkową historię.",
+      "Niemieckie mundury maskujące nie są tu wyjątkiem.",
+      "Opracowane z niezwykłą dbałością o szczegóły odzwierciedlają fascynujące połączenie funkcjonalności, innowacji oraz dostosowania do różnych teatrów działań wojennych.",
+      "Dzięki nieregularnym wzorom i ziemistym kolorom zapewniały skuteczny kamuflaż w europejskich warunkach.",
+      "Można w nich odnaleźć elementy [słowo niepewne] każdej porze roku.",
+      "Jeśli dobrze się Państwo przyjrzą, [słowo niepewne] warianty wiosenne i jesienne, przeznaczone dla chłodnych krajów, biel zimy oraz letnie barwy naszych regionów.",
+      "Istnieje również tak zwany wzór groszkowy, wprowadzony później w trakcie konfliktu.",
+      "Jego złożoność przypomina o nieustannym dążeniu do poprawy niewidoczności żołnierzy.",
+      "Ten jedyny w swoim rodzaju wzór pokazuje, jak ważna była innowacja w tak niespokojnym okresie.",
+      "W naszej kolekcji znajduje się kurtka z tym wzorem noszona głównie przez żołnierzy SS z Hitlerjugend, którzy utrzymali Caen przez ponad miesiąc, wbrew pierwotnym planom zakładającym zdobycie miasta w ciągu dwóch dni.",
+      "Niemcy przywiązywali ogromną wagę do kamuflaży.",
+      "Historia pokaże, że alianci również próbowali stosować kamuflaż.",
+      "Niestety, podobieństwo prowadziło do pomyłek.",
+      "Alianci bardzo szybko porzucili ten pomysł.",
+      "Fascynujące jest wyobrażenie sobie, jak te kamuflaże były postrzegane w tamtych czasach.",
+      "Dla żołnierzy, którzy je nosili, były czymś znacznie więcej niż zwykłą odzieżą.",
+      "Stanowiły istotną część ich wyposażenia niezbędnego do przetrwania."
+    ]
   }
 }

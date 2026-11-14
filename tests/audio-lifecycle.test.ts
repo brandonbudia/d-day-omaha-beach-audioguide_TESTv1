@@ -458,7 +458,7 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   await player.play();
   assert.equal(media.playCalls, 0);
   assert.equal(player.getState().error, 'unavailable');
-  player.setStop('01', false);
+  player.setStop('21', false);
   player.setLanguage('it');
   await player.play();
   assert.equal(media.playCalls, 0);
@@ -570,7 +570,10 @@ test('switching a playing narration to an unavailable language resets the clock 
 });
 
 test('an unavailable language at startup has no media source and can switch to a real recording', async () => {
-  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_lang: 'it' });
+  const resource = getMediaResource('21', 'fr');
+  const checkpoint = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '21', language: 'fr', audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 1, updatedAt: 100 } });
+  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_visitor_state_v2: checkpoint }, '?hl=it');
+  assert.equal(player.getState().currentStopId, '21');
   assert.equal(media.src, '');
   assert.equal(media.loadCalls, 0, 'an empty element needs no reset');
   assert.equal(player.getState().duration, 0);
@@ -578,7 +581,7 @@ test('an unavailable language at startup has no media source and can switch to a
   assert.equal(media.playCalls, 0);
 
   player.setLanguage('fr');
-  assert.equal(media.src, getMediaResource('01', 'fr').url);
+  assert.equal(media.src, resource.url);
   await start();
   assert.equal(player.getState().isPlaying, true);
   assert.equal(instances(), 1);
