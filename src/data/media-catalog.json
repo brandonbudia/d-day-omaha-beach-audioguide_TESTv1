@@ -570,11 +570,11 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "02": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "190198e5b19305db6f43a65e2771e98e50362fc577d09d111cf34c24124bd8e0",
+        "bytes": 2180013,
+        "durationSeconds": 136.248,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "03": {
         "sha256": "67a86c139f22f07cd229230e3e5c8c93cb3ebffd9a96fc6c9285fb8504fa78b5",
@@ -584,11 +584,11 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "04": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "66f3f7a769e84b39de5020ab94eee176060989c6d606509fef8f7494d3e71b8b",
+        "bytes": 1556013,
+        "durationSeconds": 97.248,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "05": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -882,18 +882,18 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "02": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "4518aef66fc2076149dd16cbb63e867e509a228bb34650b3baefd6241d902377",
+        "bytes": 2358573,
+        "durationSeconds": 147.408,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "03": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "a40a617451c69aec39a9cbece6c7f184e84335cbaa46bacc7a6e75a5ce1c957c",
+        "bytes": 2085165,
+        "durationSeconds": 130.32,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "04": {
         "sha256": "87178a6cdfa1b2a781afbff766c497121e00b341be9b93d816fe0586b58fa9a1",

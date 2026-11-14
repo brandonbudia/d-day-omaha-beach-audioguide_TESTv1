@@ -831,5 +831,164 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "02": {
+    "id": "02",
+    "language": "nl",
+    "audioSha256": "4518aef66fc2076149dd16cbb63e867e509a228bb34650b3baefd6241d902377",
+    "durationSeconds": 147.408,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/0d527c76-01c1-4b91-becf-c0095ebf1eb9?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Dutch Wivi text remains visible. Vergetelheid lacks a convincing reading. Both models recognize haar instead of zijn in the final phrase. These two passages have no timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Hier staan ​​we voor een boeiend tafereel rijk aan geschiedenis: een indrukwekkende Focke-Wulf-motor, deze formidabele Duitse jager uit de Tweede Wereldoorlog, vergezeld van twee modellen van Luftwaffe-piloten.",
+        "startSeconds": 0.07,
+        "endSeconds": 14.59
+      },
+      {
+        "text": "Deze motor, het centrale onderdeel van de scène, belichaamt een uniek verhaal dat ik vandaag graag met u wil delen.",
+        "startSeconds": 15.41,
+        "endSeconds": 23.18
+      },
+      {
+        "text": "Terwijl ik door de pagina's van een krant bladerde, bleef mijn blik op een fascinerend artikel hangen.",
+        "startSeconds": 23.97,
+        "endSeconds": 29.72
+      },
+      {
+        "text": "Het verhaal speelde zich af in een klein dorpje waar tijdens ontwikkelingswerkzaamheden voor het station een onwaarschijnlijke ontdekking plaatsvond: verschillende Duitse vliegtuigmotoren, Focke-Wulf.",
+        "startSeconds": 30.11,
+        "endSeconds": 42.62
+      },
+      {
+        "text": "Gedreven door lef en een niet aflatende passie voor geschiedenis nam ik contact op met de burgemeester van de stad om mijn wens kenbaar te maken om een ​​van deze historische stukken in ons museum te behouden.",
+        "startSeconds": 43.1,
+        "endSeconds": 56.07
+      },
+      {
+        "text": "Uitgenodigd om de motoropslaglocatie te bezoeken, vond de volgende fase van mijn zoektocht uiteindelijk plaats op een boerderij.",
+        "startSeconds": 57.2,
+        "endSeconds": 64.65
+      },
+      {
+        "text": "Maar van de vier aanvankelijk tentoongestelde motoren was er nog maar één aanwezig.",
+        "startSeconds": 65.58,
+        "endSeconds": 70.87
+      },
+      {
+        "text": "De anderen waren gestolen en hadden zoveel fragmenten uit het verleden met zich meegebracht.",
+        "startSeconds": 71.52,
+        "endSeconds": 76.7
+      },
+      {
+        "text": "Deze Focke-Wulf-motor is een waar technisch meesterwerk.",
+        "startSeconds": 85.14,
+        "endSeconds": 88.84
+      },
+      {
+        "text": "Ontworpen voor extreme prestaties, belichaamde het de allernieuwste technologie van zijn tijd, waardoor het vliegtuig duizelingwekkende snelheden en uitzonderlijke manoeuvreerbaarheid kon bereiken, cruciaal bij luchtduels.",
+        "startSeconds": 89.56,
+        "endSeconds": 104.88
+      },
+      {
+        "text": "Het geavanceerde ontwerp en de kracht ervan getuigen van de ambities en technische vaardigheden die op de slagvelden van de lucht worden gemobiliseerd.",
+        "startSeconds": 105.54,
+        "endSeconds": 114.8
+      },
+      {
+        "text": "Omringd door twee Luftwaffe-piloten, roerloos en stil, lijkt deze motor te resoneren met het gebrul van de lucht die hij heeft doorkruist.",
+        "startSeconds": 115.51,
+        "endSeconds": 124.75
+      },
+      {
+        "text": "Het weerspiegelt de kracht en complexiteit van de luchttechnologie van dat tijdperk en getuigt van de meedogenloze inspanningen van de mensheid om het luchtruim te bereiken, zelfs in tijden van oorlog.",
+        "startSeconds": 125.45,
+        "endSeconds": 138.72
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 8,
+        "text": "Het lot leidde me echter naar deze: de mooiste, bewaard in de vergetelheid, veilig voor hebzucht."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Voor dit overblijfsel bevestigen wij onze toewijding aan het behoud van de geschiedenis in al zijn authenticiteit.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "03": {
+    "id": "03",
+    "language": "nl",
+    "audioSha256": "a40a617451c69aec39a9cbece6c7f184e84335cbaa46bacc7a6e75a5ce1c957c",
+    "durationSeconds": 130.32,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/01c06e1a-5227-47ce-bedb-3f31d16671fb?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Dutch Wivi text remains visible. Four passages with uncertain readings remain without timing. Decoded silence corroborates the end of kilometer and the next onset."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Ontdekt door mijn vader en ik eind jaren tachtig, dankzij de herinnering en vriendelijkheid van een plaatselijke boer, is deze PAK 40 nu een middelpunt van onze collectie, tentoongesteld om een ​​opvallend inzicht te geven in de Duitse artillerie tijdens de Slag om Normandië.",
+        "startSeconds": 22.73,
+        "endSeconds": 41.48
+      },
+      {
+        "text": "De PAK 40 was een van de meest gevreesde antitankkanonnen in het Duitse arsenaal.",
+        "startSeconds": 42.11,
+        "endSeconds": 47.78
+      },
+      {
+        "text": "Ontworpen om het dikke pantser van geallieerde tanks te doorboren, speelde het een sleutelrol bij de verdediging van de Duitse troepen tegen gemechaniseerde aanvallen.",
+        "startSeconds": 48.43,
+        "endSeconds": 58.77
+      },
+      {
+        "text": "Het maximale schietbereik was ongeveer 7 km.",
+        "startSeconds": 77.47,
+        "endSeconds": 81.23
+      },
+      {
+        "text": "Dit kanon voert ons rechtstreeks naar 1944, naar het hart van het Normandische platteland, waar het door de verborgen of hinderlaagposities een dodelijk en effectief wapen werd.",
+        "startSeconds": 81.77,
+        "endSeconds": 93.96
+      },
+      {
+        "text": "Helaas kan ik niet onthullen hoe het werd gevonden, noch de precieze locatie van zijn ontdekking, omdat het tot een ander tijdperk behoort...",
+        "startSeconds": 113.05,
+        "endSeconds": 121.96
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Verborgen tussen de overblijfselen uit de geschiedenis, in een gebied dat in Normandië de tragische bijnaam ‘dodencel’ kreeg, lag een kostbaar stuk uit de Tweede Wereldoorlog: een antitankkanon genaamd de PAK 40, nog steeds versierd met zijn authentieke historische driekleurige camouflage."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Dankzij het kaliber van 75 mm en het vermogen om snel verschillende soorten munitie af te vuren, kon het aanzienlijke schade aanrichten onder vijandelijke gepantserde eenheden, waardoor hun voortgang werd vertraagd en aanzienlijke verliezen werden toegebracht."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "De camouflage, speciaal ontworpen om de artillerie met het landschap te verwarren, herinnert ons eraan hoe sluw en vindingrijkheid essentieel waren in de kunst van het oorlogvoeren, waardoor elke hinderlaag potentieel fataal kon zijn voor de geallieerde strijdkrachten."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "De echo's van de veldslagen, die ooit weerklank vonden in deze \"\"dodencel\"\", bewaken angstvallig hun geheimen.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

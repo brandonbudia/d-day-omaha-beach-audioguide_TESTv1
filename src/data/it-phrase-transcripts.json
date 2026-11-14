@@ -579,5 +579,163 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "02": {
+    "id": "02",
+    "language": "it",
+    "audioSha256": "190198e5b19305db6f43a65e2771e98e50362fc577d09d111cf34c24124bd8e0",
+    "durationSeconds": 136.248,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/0d527c76-01c1-4b91-becf-c0095ebf1eb9?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Italian recording differs from the exhibit text. The opening name pronunciation awaits review. Focke-Wulf uses the Wivi spelling, supported by later recognized mentions."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Questo motore, il pezzo centrale della scena, incarna una storia unica che sono felice di condividere con voi oggi.",
+        "startSeconds": 14.52,
+        "endSeconds": 21.7
+      },
+      {
+        "text": "È stato mentre sfogliavo le pagine di un giornale che il mio sguardo si è soffermato su un articolo affascinante.",
+        "startSeconds": 22.13,
+        "endSeconds": 29.24
+      },
+      {
+        "text": "La storia si svolge in un piccolo villaggio dove, durante i lavori di sviluppo davanti alla stazione, avviene un’improbabile scoperta: diversi motori dell'aviazione tedesca, Focke-Wulf.",
+        "startSeconds": 29.34,
+        "endSeconds": 41.04
+      },
+      {
+        "text": "Spinto dall'audacia e da un'incrollabile passione per la storia, ho contattato il sindaco della città per esprimere il mio desiderio di preservare uno di questi pezzi storici nel nostro museo.",
+        "startSeconds": 41.64,
+        "endSeconds": 53.3
+      },
+      {
+        "text": "Invitato a visitare il luogo di deposito del motore, la fase successiva della mia ricerca si è finalmente svolta in una fattoria, ma dei quattro motori inizialmente esposti, ne era ancora presente solo uno.",
+        "startSeconds": 53.83,
+        "endSeconds": 67.63
+      },
+      {
+        "text": "Gli altri erano stati rubati, portando con sé tanti frammenti del passato.",
+        "startSeconds": 68.13,
+        "endSeconds": 73.3
+      },
+      {
+        "text": "Ma il destino mi ha portato a questo, il più bello, conservato nell'oscurità, al riparo dalla cupidigia.",
+        "startSeconds": 74.02,
+        "endSeconds": 80.68
+      },
+      {
+        "text": "Questo motore Focke-Wulf è un vero capolavoro di ingegneria.",
+        "startSeconds": 81.13,
+        "endSeconds": 84.73
+      },
+      {
+        "text": "Progettato per prestazioni estreme, incarnava la tecnologia all'avanguardia del suo tempo, consentendo all'aereo di raggiungere velocità vertiginose e una manovrabilità eccezionale, cruciali nei duelli aerei.",
+        "startSeconds": 85.28,
+        "endSeconds": 98.58
+      },
+      {
+        "text": "Il suo design avanzato e la sua potenza testimoniano le ambizioni e le competenze tecniche mobilitate sui campi di battaglia dell'aria.",
+        "startSeconds": 99.0,
+        "endSeconds": 107.79
+      },
+      {
+        "text": "Circondato da due piloti della Luftwaffe, immobile e silenzioso, questo motore sembra risuonare con il ruggito dell'aria che ha attraversato.",
+        "startSeconds": 108.14,
+        "endSeconds": 117.68
+      },
+      {
+        "text": "Racchiude la forza e la complessità della tecnologia aerea dell'epoca, testimoniando gli incessanti sforzi dell'umanità per raggiungere i cieli, anche in tempo di guerra.",
+        "startSeconds": 117.76,
+        "endSeconds": 128.83
+      },
+      {
+        "text": "Di fronte a queste vestigia affermiamo il nostro impegno a preservare la storia in tutta la sua autenticità.",
+        "startSeconds": 129.33,
+        "endSeconds": 136.15
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Eccoci davanti ad una scena accattivante e ricca di storia, un imponente motore Focke-Wulf. Questo formidabile caccia tedesco della Seconda Guerra Mondiale, accompagnato da due modellini di piloti della Luftwaffe."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "04": {
+    "id": "04",
+    "language": "it",
+    "audioSha256": "66f3f7a769e84b39de5020ab94eee176060989c6d606509fef8f7494d3e71b8b",
+    "durationSeconds": 97.248,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/72a22281-e529-4082-9587-062ba1a49e74?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian text differs from the Wivi exhibit text. The uncertain pronunciation of fulminea remains without a timestamp."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Davanti a te c'è l'imponente Flakvierling 38, un potente testimone dell'ingegno militare della Seconda Guerra Mondiale.",
+        "startSeconds": 0.06,
+        "endSeconds": 7.58
+      },
+      {
+        "text": "Questo mostro di metallo, a volte soprannominato il trituratore del cielo, è stato ritrovato in Germania, simbolo di un'epoca in cui l'ombra dei conflitti si estendeva su tutto il mondo.",
+        "startSeconds": 21.02,
+        "endSeconds": 32.33
+      },
+      {
+        "text": "La sua imponente presenza ricorda i momenti in cui, con un rumore assordante, fendeva i cieli per difendere il territorio tedesco dagli incessanti assalti aerei.",
+        "startSeconds": 32.84,
+        "endSeconds": 43.35
+      },
+      {
+        "text": "Posizionate su un rimorchio per una mobilità ottimale o su veicoli come i semicingolati, queste armi potevano essere spostate ovunque se ne presentasse la necessità, trasformando i campi di battaglia con la loro versatilità.",
+        "startSeconds": 43.96,
+        "endSeconds": 57.97
+      },
+      {
+        "text": "Il terreno stesso vibrava con l'intensità di ogni salva, ridefinendo le regole dell'ingaggio aereo.",
+        "startSeconds": 58.33,
+        "endSeconds": 64.31
+      },
+      {
+        "text": "Ma il Flakvierling 38 non minacciava solo gli uccelli di metallo che perforavano le nuvole.",
+        "startSeconds": 64.83,
+        "endSeconds": 70.08
+      },
+      {
+        "text": "La sua capacità di colpire bersagli terrestri lo rendeva anche un formidabile avversario per le forze avanzate, che dovevano affrontare raffiche spietate.",
+        "startSeconds": 70.62,
+        "endSeconds": 80.05
+      },
+      {
+        "text": "Oggi ci troviamo di fronte alla dualità della tecnologia umana, capace del meglio e del peggio.",
+        "startSeconds": 80.66,
+        "endSeconds": 86.52
+      },
+      {
+        "text": "Questo cannone, deliberatamente dimenticato dal tempo, ci ricorda la fragilità della pace e il prezzo pagato da tante vite sotto il suo tuono di fuoco.",
+        "startSeconds": 86.94,
+        "endSeconds": 97.11
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Progettato dalle forze tedesche, questo cannone antiaereo a quattro canne da 20 millimetri squarciò il cielo con una velocità di fuoco fulminea, proiettando un muro di fuoco contro gli aerei alleati."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
