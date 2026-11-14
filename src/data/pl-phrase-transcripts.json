@@ -1236,5 +1236,309 @@
       "Dla żołnierzy, którzy je nosili, były czymś znacznie więcej niż zwykłą odzieżą.",
       "Stanowiły istotną część ich wyposażenia niezbędnego do przetrwania."
     ]
+  },
+  "06": {
+    "id": "06",
+    "language": "pl",
+    "audioSha256": "13882a330f3bd762c729a1c702f0da5da3f54f6142db7ce82b1f4803216b11ba",
+    "durationSeconds": 283.75333333333333,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/5a5b7d5d5d56e2c84217518ac7ef4ba41cb7d454.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "This original Polish recording has no published transcript. Its additional narration is retained. Seven passages with uncertain wording, proper names, or boundaries are visible without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Kettenkrad, niemiecki motocykl półgąsienicowy.",
+        "startSeconds": 2.82,
+        "endSeconds": 8.1
+      },
+      {
+        "text": "Rok 1989.",
+        "startSeconds": 9.22,
+        "endSeconds": 11.82
+      },
+      {
+        "text": "Mam 9 lat.",
+        "startSeconds": 13.15,
+        "endSeconds": 14.38
+      },
+      {
+        "text": "Dziś powinniśmy dokonać odkrycia co najmniej niezwykłego.",
+        "startSeconds": 25.71,
+        "endSeconds": 29.22
+      },
+      {
+        "text": "Mój ojciec prowadzi bowiem w Normandii liczne poszukiwania śladów historii i pozostawionych tam wojennych pozostałości.",
+        "startSeconds": 30.64,
+        "endSeconds": 38.92
+      },
+      {
+        "text": "Znajdujemy się dokładnie w miejscu, gdzie według relacji pewnego rolnika amerykański żołnierz miał ukraść Niemcom dziwny pojazd.",
+        "startSeconds": 40.31,
+        "endSeconds": 50.2
+      },
+      {
+        "text": "Wreszcie nadchodzi właściwy moment.",
+        "startSeconds": 57.76,
+        "endSeconds": 60.31
+      },
+      {
+        "text": "Jest już wystarczająco jasno, by zacząć kopać.",
+        "startSeconds": 61.58,
+        "endSeconds": 64.62
+      },
+      {
+        "text": "Jest nas pięciu: mój brat i ja, mój ojciec, jeden z jego przyjaciół oraz człowiek obsługujący maszynę do kopania.",
+        "startSeconds": 65.75,
+        "endSeconds": 74.97
+      },
+      {
+        "text": "Pierwsza minuta?",
+        "startSeconds": 76.34,
+        "endSeconds": 77.43
+      },
+      {
+        "text": "Nic.",
+        "startSeconds": 78.49,
+        "endSeconds": 79.02
+      },
+      {
+        "text": "Dwie minuty?",
+        "startSeconds": 80.28,
+        "endSeconds": 81.41
+      },
+      {
+        "text": "Nadal nic, ale dźwięk wykrywacza metalu staje się coraz głośniejszy.",
+        "startSeconds": 82.3,
+        "endSeconds": 87.31
+      },
+      {
+        "text": "Mijają trzy minuty i pojawia się pierwszy bardzo charakterystyczny odgłos metalu uderzającego o metal.",
+        "startSeconds": 88.88,
+        "endSeconds": 95.5
+      },
+      {
+        "text": "Jesteśmy całkowicie pochłonięci tym dźwiękiem i kształtem, który z każdym uderzeniem łopaty staje się coraz wyraźniejszy.",
+        "startSeconds": 97.24,
+        "endSeconds": 105.05
+      },
+      {
+        "text": "Pochyleni nad wykopem, próbujemy zrozumieć formę tego, co spoczywa w ziemi.",
+        "startSeconds": 106.73,
+        "endSeconds": 112.51
+      },
+      {
+        "text": "Odgłos metalu, który przy każdym ruchu uderza i zgrzyta, wprawia nas w ogromne podekscytowanie.",
+        "startSeconds": 114.38,
+        "endSeconds": 121.49
+      },
+      {
+        "text": "Prawie zapominamy o zimnie i wilgoci.",
+        "startSeconds": 123.41,
+        "endSeconds": 126.2
+      },
+      {
+        "text": "Jesteśmy upojeni akcją, jakbyśmy mogli działać szybciej niż łopata.",
+        "startSeconds": 127.15,
+        "endSeconds": 131.66
+      },
+      {
+        "text": "Byliśmy przecież dzieciakami.",
+        "startSeconds": 132.99,
+        "endSeconds": 134.6
+      },
+      {
+        "text": "Doskonale wiedziałem, jak duża jest gąsienica czołgu, a ta była zupełnie mała.",
+        "startSeconds": 147.1,
+        "endSeconds": 153.21
+      },
+      {
+        "text": "Nie rozumiałem.",
+        "startSeconds": 153.88,
+        "endSeconds": 154.83
+      },
+      {
+        "text": "Mój ojciec, przeciwnie, od razu zrozumiał, z czym mamy do czynienia.",
+        "startSeconds": 155.82,
+        "endSeconds": 161.05
+      },
+      {
+        "text": "Gdy rowy były już gotowe, zaczęliśmy ręcznie usuwać wszystkie bryły ziemi i stopniowo ukazał nam się kształt niemal jak z filmu science fiction.",
+        "startSeconds": 172.32,
+        "endSeconds": 183.18
+      },
+      {
+        "text": "Mój brat i ja kompletnie nie rozumieliśmy, co właśnie wyłania się przed naszymi oczyma: gąsienice, kierownica motocykla, skrzynia z siedzeniami… Byliśmy całkowicie zagubieni.",
+        "startSeconds": 184.66,
+        "endSeconds": 198.28
+      },
+      {
+        "text": "Mój ojciec jednak doskonale wiedział, co właśnie znaleźliśmy.",
+        "startSeconds": 199.65,
+        "endSeconds": 204.54
+      },
+      {
+        "text": "Niemiecki motocykl gąsienicowy, czyli Kettenkrad.",
+        "startSeconds": 205.55,
+        "endSeconds": 210.44
+      },
+      {
+        "text": "Niemiecki pojazd rozpoznawczy i ciągnikowy używany podczas II wojny światowej.",
+        "startSeconds": 212.69,
+        "endSeconds": 217.83
+      },
+      {
+        "text": "To nic innego jak fragment amerykańskiego spadochronu, którym tamten żołnierz musiał przykryć motocykl gąsienicowy, używając własnej czaszy spadochronu.",
+        "startSeconds": 262.68,
+        "endSeconds": 273.68
+      },
+      {
+        "text": "Oto historia tego dziwnego pojazdu, który widzicie przed sobą.",
+        "startSeconds": 275.54,
+        "endSeconds": 280.04
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Razem z moim bratem Fabien, zmarznięci w namiocie, czekamy, aż nad normandzką ziemią wstanie świt."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Porzucił go pospiesznie w leju po pocisku, ponieważ ścigali go napastnicy."
+      },
+      {
+        "beforeSegment": 20,
+        "text": "Nagle, po odsłonięciu po boku ogromnej bryły ziemi, dostrzegamy fragment gąsienicy, ale nie takiej, jaką sobie wówczas wyobrażałem."
+      },
+      {
+        "beforeSegment": 23,
+        "text": "Postanowił więc, że wykopiemy w gruncie linie rowów w kształcie boków prostokąta o wymiarach około 3 metrów na 2 metry."
+      },
+      {
+        "beforeSegment": 28,
+        "text": "Stanowił on niemiecką adaptację i rozwinięcie idei z początku XX wieku francuskiego wynalazcy Adolfa Kégresse’a, na którego licencji, począwszy od 1921 roku, francuski producent samochodów André Citroën wytwarzał pojazdy o napędzie półgąsienicowym."
+      },
+      {
+        "beforeSegment": 28,
+        "text": "Koło, koła kierownicze z przodu, napęd gąsienicowy z tyłu."
+      },
+      {
+        "beforeSegment": 28,
+        "text": "Na zakończenie: opowiedziana przez rolnika historia okazała się całkowicie prawdziwa, ponieważ, jak nadal można zauważyć, w gąsienicach znajduje się kawałek materiału maskującego."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Kettenkrad, niemiecki motocykl półgąsienicowy.",
+      "Rok 1989.",
+      "Mam 9 lat.",
+      "Razem z moim bratem Fabien, zmarznięci w namiocie, czekamy, aż nad normandzką ziemią wstanie świt.",
+      "Dziś powinniśmy dokonać odkrycia co najmniej niezwykłego.",
+      "Mój ojciec prowadzi bowiem w Normandii liczne poszukiwania śladów historii i pozostawionych tam wojennych pozostałości.",
+      "Znajdujemy się dokładnie w miejscu, gdzie według relacji pewnego rolnika amerykański żołnierz miał ukraść Niemcom dziwny pojazd.",
+      "Porzucił go pospiesznie w leju po pocisku, ponieważ ścigali go napastnicy.",
+      "Wreszcie nadchodzi właściwy moment.",
+      "Jest już wystarczająco jasno, by zacząć kopać.",
+      "Jest nas pięciu: mój brat i ja, mój ojciec, jeden z jego przyjaciół oraz człowiek obsługujący maszynę do kopania.",
+      "Pierwsza minuta?",
+      "Nic.",
+      "Dwie minuty?",
+      "Nadal nic, ale dźwięk wykrywacza metalu staje się coraz głośniejszy.",
+      "Mijają trzy minuty i pojawia się pierwszy bardzo charakterystyczny odgłos metalu uderzającego o metal.",
+      "Jesteśmy całkowicie pochłonięci tym dźwiękiem i kształtem, który z każdym uderzeniem łopaty staje się coraz wyraźniejszy.",
+      "Pochyleni nad wykopem, próbujemy zrozumieć formę tego, co spoczywa w ziemi.",
+      "Odgłos metalu, który przy każdym ruchu uderza i zgrzyta, wprawia nas w ogromne podekscytowanie.",
+      "Prawie zapominamy o zimnie i wilgoci.",
+      "Jesteśmy upojeni akcją, jakbyśmy mogli działać szybciej niż łopata.",
+      "Byliśmy przecież dzieciakami.",
+      "Nagle, po odsłonięciu po boku ogromnej bryły ziemi, dostrzegamy fragment gąsienicy, ale nie takiej, jaką sobie wówczas wyobrażałem.",
+      "Doskonale wiedziałem, jak duża jest gąsienica czołgu, a ta była zupełnie mała.",
+      "Nie rozumiałem.",
+      "Mój ojciec, przeciwnie, od razu zrozumiał, z czym mamy do czynienia.",
+      "Postanowił więc, że wykopiemy w gruncie linie rowów w kształcie boków prostokąta o wymiarach około 3 metrów na 2 metry.",
+      "Gdy rowy były już gotowe, zaczęliśmy ręcznie usuwać wszystkie bryły ziemi i stopniowo ukazał nam się kształt niemal jak z filmu science fiction.",
+      "Mój brat i ja kompletnie nie rozumieliśmy, co właśnie wyłania się przed naszymi oczyma: gąsienice, kierownica motocykla, skrzynia z siedzeniami… Byliśmy całkowicie zagubieni.",
+      "Mój ojciec jednak doskonale wiedział, co właśnie znaleźliśmy.",
+      "Niemiecki motocykl gąsienicowy, czyli Kettenkrad.",
+      "Niemiecki pojazd rozpoznawczy i ciągnikowy używany podczas II wojny światowej.",
+      "Stanowił on niemiecką adaptację i rozwinięcie idei z początku XX wieku francuskiego wynalazcy Adolfa Kégresse’a, na którego licencji, począwszy od 1921 roku, francuski producent samochodów André Citroën wytwarzał pojazdy o napędzie półgąsienicowym.",
+      "Koło, koła kierownicze z przodu, napęd gąsienicowy z tyłu.",
+      "Na zakończenie: opowiedziana przez rolnika historia okazała się całkowicie prawdziwa, ponieważ, jak nadal można zauważyć, w gąsienicach znajduje się kawałek materiału maskującego.",
+      "To nic innego jak fragment amerykańskiego spadochronu, którym tamten żołnierz musiał przykryć motocykl gąsienicowy, używając własnej czaszy spadochronu.",
+      "Oto historia tego dziwnego pojazdu, który widzicie przed sobą."
+    ]
+  },
+  "07": {
+    "id": "07",
+    "language": "pl",
+    "audioSha256": "ed31d66e60cea5b7905fc8025370071efa0e1c4f3040f5e79a280b55d924ff97",
+    "durationSeconds": 97.044,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/41efdec39d9e59e2fb1112a34f89b52cfab395c1.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Wivi Polish narration differs from longer published narratives in other languages. It is transcribed to its actual end, with three uncertain sentences displayed without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Strój niemieckiego kapelana wojskowego.",
+        "startSeconds": 3.3,
+        "endSeconds": 6.3
+      },
+      {
+        "text": "Przed Państwem znajduje się strój niemieckiego kapelana wojskowego z czasów II wojny światowej.",
+        "startSeconds": 8.38,
+        "endSeconds": 15.64
+      },
+      {
+        "text": "Każdy z nich niósł pocieszenie wynikające z własnej tradycji religijnej żołnierzom swojego wyznania.",
+        "startSeconds": 37.88,
+        "endSeconds": 45.01
+      },
+      {
+        "text": "Pracując często w niezwykle trudnych warunkach, niemieccy kapelani starali się poprawić codzienne życie żołnierzy, oferując im wysłuchanie i współczucie w obliczu moralnych oraz emocjonalnych prób.",
+        "startSeconds": 46.73,
+        "endSeconds": 62.74
+      },
+      {
+        "text": "Jako przedstawiciele dwóch głównych wyznań chrześcijańskich, kapelani mieli również za zadanie promować pewną jedność moralną wśród oddziałów, w kontekście, w którym podziały i cierpienia były wszechobecne.",
+        "startSeconds": 76.55,
+        "endSeconds": 92.73
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Ci ludzie wiary zajmowali wyjątkowe miejsce w armii niemieckiej, mając zadanie nieść duchowe wsparcie żołnierzom pogrążonym w trudnej rzeczywistości [słowo niepewne]."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Kapelani mogli być zarówno katolicy, jak i protestanci."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Ich codziennym wyzwaniem było podtrzymywanie światła człowieczeństwa i wiary w środowisku często pozbawionym moralnych punktów odniesienia."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Strój niemieckiego kapelana wojskowego.",
+      "Przed Państwem znajduje się strój niemieckiego kapelana wojskowego z czasów II wojny światowej.",
+      "Ci ludzie wiary zajmowali wyjątkowe miejsce w armii niemieckiej, mając zadanie nieść duchowe wsparcie żołnierzom pogrążonym w trudnej rzeczywistości [słowo niepewne].",
+      "Kapelani mogli być zarówno katolicy, jak i protestanci.",
+      "Każdy z nich niósł pocieszenie wynikające z własnej tradycji religijnej żołnierzom swojego wyznania.",
+      "Pracując często w niezwykle trudnych warunkach, niemieccy kapelani starali się poprawić codzienne życie żołnierzy, oferując im wysłuchanie i współczucie w obliczu moralnych oraz emocjonalnych prób.",
+      "Ich codziennym wyzwaniem było podtrzymywanie światła człowieczeństwa i wiary w środowisku często pozbawionym moralnych punktów odniesienia.",
+      "Jako przedstawiciele dwóch głównych wyznań chrześcijańskich, kapelani mieli również za zadanie promować pewną jedność moralną wśród oddziałów, w kontekście, w którym podziały i cierpienia były wszechobecne."
+    ]
   }
 }
