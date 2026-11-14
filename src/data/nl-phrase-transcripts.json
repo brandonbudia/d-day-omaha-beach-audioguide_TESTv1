@@ -591,5 +591,71 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "04": {
+    "id": "04",
+    "language": "nl",
+    "audioSha256": "87178a6cdfa1b2a781afbff766c497121e00b341be9b93d816fe0586b58fa9a1",
+    "durationSeconds": 102.168,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/72a22281-e529-4082-9587-062ba1a49e74?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Four sentences with unresolved wording or timing remain without timestamps. The exact published Dutch text is preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Dit metalen monster, ook wel \"\"de versnipperaar van de lucht\"\" genoemd, werd gevonden in Duitsland, symbool van een tijd waarin de schaduw van conflicten zich over de hele wereld uitstrekte.",
+        "startSeconds": 20.66,
+        "endSeconds": 32.08
+      },
+      {
+        "text": "Geplaatst op een aanhangwagen voor optimale mobiliteit of op voertuigen zoals halfrupsvoertuigen, konden deze kanonnen worden verplaatst waar dat nodig was, waarbij hun veelzijdigheid de slagvelden transformeerde.",
+        "startSeconds": 44.97,
+        "endSeconds": 58.68
+      },
+      {
+        "text": "De grond zelf trilde met de intensiteit van elk salvo, waardoor de regels voor luchtgevechten opnieuw werden gedefinieerd.",
+        "startSeconds": 59.16,
+        "endSeconds": 66.71
+      },
+      {
+        "text": "Maar de Flakvierling 38 bedreigde niet alleen de metalen vogels die door de wolken vlogen.",
+        "startSeconds": 67.23,
+        "endSeconds": 72.88
+      },
+      {
+        "text": "Zijn vermogen om landdoelen aan te vallen maakte het ook tot een geduchte tegenstander voor geavanceerde troepen, die te maken kregen met genadeloze windstoten.",
+        "startSeconds": 73.44,
+        "endSeconds": 82.89
+      },
+      {
+        "text": "Tegenwoordig worden we geconfronteerd met de dualiteit van de menselijke technologie: in staat tot het beste en het slechtste.",
+        "startSeconds": 83.24,
+        "endSeconds": 90.74
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Voor je staat de imposante Flakvierling 38, een krachtige getuige van het militaire vernuft van de Tweede Wereldoorlog."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Dit 20 mm luchtafweerkanon met vier cilinders, ontworpen door Duitse troepen, scheurde met een bliksemsnelheid door de lucht en projecteerde een muur van vuur tegen geallieerde vliegtuigen."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Zijn imposante aanwezigheid doet denken aan de momenten waarop hij met een oorverdovend lawaai de lucht spleet om het Duitse grondgebied te verdedigen tegen onophoudelijke luchtaanvallen."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Deze canon, die door de tijd opzettelijk is vergeten, herinnert ons aan de kwetsbaarheid van de vrede en de prijs die zoveel levens moeten betalen onder het donderend vuur.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

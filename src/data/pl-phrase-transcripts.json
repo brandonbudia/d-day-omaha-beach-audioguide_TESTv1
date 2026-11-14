@@ -932,5 +932,90 @@
       "Streszcza siłę i złożoność ówczesnej technologii lotniczej, świadcząc o nieustannych wysiłkach człowieka, by sięgnąć nieba, nawet w czasach wojny.",
       "Stojąc przed tym reliktem, potwierdzamy nasze zaangażowanie w zachowanie historii w całej jej autentyczności."
     ]
+  },
+  "03": {
+    "id": "03",
+    "language": "pl",
+    "audioSha256": "a52d9f9e3032ee6b9861b86faa65ea8a45b2b7b6e89f285b52813aa760a72ebd",
+    "durationSeconds": 160.44666666666666,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/073ad80fcd86da3b6159c68180e1c59f478246cb.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish audio with no Wivi transcript. Three phrases have two corroborated boundaries. Reading of bocage and the following phrase remain subject to review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Zaprojektowana do przebijania grubego pancerza alianckich czołgów, odgrywała kluczową rolę w obronie sił niemieckich przed zmechanizowanymi atakami.",
+        "startSeconds": 70.07,
+        "endSeconds": 80.27
+      },
+      {
+        "text": "Maksymalny zasięg ognia wynosił około siedmiu kilometrów.",
+        "startSeconds": 100.95,
+        "endSeconds": 105.53
+      },
+      {
+        "text": "Kamuflaż stosowany specjalnie po to, by zlać artylerię z krajobrazem, przypomina nam, jak bardzo podstęp i pomysłowość były niezbędne w sztuce wojennej, czyniąc każdą zasadzkę potencjalnie śmiertelną dla sił alianckich.",
+        "startSeconds": 138.67,
+        "endSeconds": 157.51
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "PAK 40, niemiecka armata przeciwpancerna. Ukryta pośród śladów historii, na obszarze tragicznie nazywanym w Normandii korytarzem śmierci, znajdowała się cenna pamiątka z czasu II wojny światowej."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Armata przeciwpancerna o nazwie PAK 40."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Wciąż pokryta autentycznym, trójbarwnym kamuflażem z epoki, została odkryta przez mojego ojca i przeze mnie pod koniec lat osiemdziesiątych, dzięki pamięci i życzliwości miejscowego rolnika."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Dziś ten PAK 40 stanowi jeden z najważniejszych eksponatów naszej kolekcji, prezentowany po to, by ukazać wymowny obraz niemieckiej artylerii podczas bitwy o Normandię."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "PAK 40 był jedną z najbardziej budzących obawy armat przeciwpancernych w niemieckim arsenale."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Kaliber 75 mm oraz zdolność do szybkiego wystrzeliwania różnych typów amunicji pozwalały jej siać znaczne spustoszenie w szeregach wrogich jednostek pancernych, spowalniając ich natarcie i zadając poważne straty."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "To działo przynosi nas bezpośrednio do roku 1944, w sam środek zamętu normandzkich bocage."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Bocage to w Normandii obszar pól i pastwisk pociętych siatką [słowa niepewne] obsadzonych gęstymi krzewami i drzewami."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Ukryte w bocage i zamaskowane stanowiska ogniowe armat PAK 40 czyniły z tych armat broń śmiercionośną i niezwykle skuteczną."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "PAK 40, niemiecka armata przeciwpancerna. Ukryta pośród śladów historii, na obszarze tragicznie nazywanym w Normandii korytarzem śmierci, znajdowała się cenna pamiątka z czasu II wojny światowej.",
+      "Armata przeciwpancerna o nazwie PAK 40.",
+      "Wciąż pokryta autentycznym, trójbarwnym kamuflażem z epoki, została odkryta przez mojego ojca i przeze mnie pod koniec lat osiemdziesiątych, dzięki pamięci i życzliwości miejscowego rolnika.",
+      "Dziś ten PAK 40 stanowi jeden z najważniejszych eksponatów naszej kolekcji, prezentowany po to, by ukazać wymowny obraz niemieckiej artylerii podczas bitwy o Normandię.",
+      "PAK 40 był jedną z najbardziej budzących obawy armat przeciwpancernych w niemieckim arsenale.",
+      "Zaprojektowana do przebijania grubego pancerza alianckich czołgów, odgrywała kluczową rolę w obronie sił niemieckich przed zmechanizowanymi atakami.",
+      "Kaliber 75 mm oraz zdolność do szybkiego wystrzeliwania różnych typów amunicji pozwalały jej siać znaczne spustoszenie w szeregach wrogich jednostek pancernych, spowalniając ich natarcie i zadając poważne straty.",
+      "Maksymalny zasięg ognia wynosił około siedmiu kilometrów.",
+      "To działo przynosi nas bezpośrednio do roku 1944, w sam środek zamętu normandzkich bocage.",
+      "Bocage to w Normandii obszar pól i pastwisk pociętych siatką [słowa niepewne] obsadzonych gęstymi krzewami i drzewami.",
+      "Ukryte w bocage i zamaskowane stanowiska ogniowe armat PAK 40 czyniły z tych armat broń śmiercionośną i niezwykle skuteczną.",
+      "Kamuflaż stosowany specjalnie po to, by zlać artylerię z krajobrazem, przypomina nam, jak bardzo podstęp i pomysłowość były niezbędne w sztuce wojennej, czyniąc każdą zasadzkę potencjalnie śmiertelną dla sił alianckich."
+    ]
   }
 }

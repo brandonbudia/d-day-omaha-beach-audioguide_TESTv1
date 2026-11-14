@@ -1831,5 +1831,77 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "03": {
+    "id": "03",
+    "language": "de",
+    "audioSha256": "6aba2ade82a0451ecc1add70198f977bd1e5055f126441bc91694eca42268397",
+    "durationSeconds": 124.104,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/01c06e1a-5227-47ce-bedb-3f31d16671fb?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Unconfirmed readings of Dieses, da es, and widerhallten remain visible without timestamps. The decoded pause corroborates the onset of Entwickelt after the previous sentence."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Unter den Relikten der Geschichte, in einem Bereich, der in der Normandie tragischerweise den Spitznamen „Todestrakt“ trägt, war ein kostbares Stück des Zweiten Weltkriegs verborgen: eine Panzerabwehrkanone namens PAK 40, immer noch mit ihrer authentischen dreifarbigen Tarnung aus der Zeit verziert.",
+        "startSeconds": 0.06,
+        "endSeconds": 19.84
+      },
+      {
+        "text": "Es bietet einen beeindruckenden Einblick in die deutsche Artillerie während der Schlacht um die Normandie.",
+        "startSeconds": 33.13,
+        "endSeconds": 39.05
+      },
+      {
+        "text": "Die PAK 40 war eine der am meisten gefürchteten Panzerabwehrkanonen im deutschen Arsenal.",
+        "startSeconds": 39.77,
+        "endSeconds": 45.37
+      },
+      {
+        "text": "Entwickelt, um die dicke Panzerung alliierter Panzer zu durchdringen, spielte es eine Schlüsselrolle bei der Verteidigung der deutschen Streitkräfte gegen maschinelle Angriffe.",
+        "startSeconds": 46.29,
+        "endSeconds": 56.35
+      },
+      {
+        "text": "Sein Kaliber 75 mm und seine Fähigkeit, mehrere Munitionsarten schnell abzufeuern, ermöglichten es ihm, bei feindlichen Panzereinheiten erheblichen Schaden anzurichten, deren Vormarsch zu verlangsamen und erhebliche Verluste zu verursachen.",
+        "startSeconds": 57.07,
+        "endSeconds": 73.8
+      },
+      {
+        "text": "Die maximale Schussreichweite betrug etwa 7 km.",
+        "startSeconds": 74.66,
+        "endSeconds": 78.4
+      },
+      {
+        "text": "Diese Kanone versetzt uns direkt ins Jahr 1944, ins Herz der Normandie, wo sie aufgrund ihrer versteckten Stellungen oder Hinterhalte eine tödliche und wirksame Waffe war.",
+        "startSeconds": 78.6,
+        "endSeconds": 91.5
+      },
+      {
+        "text": "Die Tarnung, die speziell entwickelt wurde, um die Artillerie mit der Landschaft zu verwechseln, erinnert uns daran, wie wichtig List und Einfallsreichtum in der Kriegskunst waren und dass jeder Hinterhalt für die alliierten Streitkräfte potenziell tödlich war.",
+        "startSeconds": 92.31,
+        "endSeconds": 108.54
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Dieses PAK 40 wurde Ende der 1980er Jahre von meinem Vater und mir dank der Erinnerung und der Freundlichkeit eines örtlichen Bauern entdeckt und ist heute ein Herzstück unserer Sammlung."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Leider kann ich nicht verraten, wie es gefunden wurde und auch nicht den genauen Ort seiner Entdeckung, da es aus einer anderen Zeit stammt ..."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Die Echos der Schlachten, die einst in diesem „Todestrakt“ widerhallten, hüten eifersüchtig ihre Geheimnisse.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

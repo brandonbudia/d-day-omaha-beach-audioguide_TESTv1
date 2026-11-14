@@ -220,7 +220,7 @@ test('home keeps its welcome, seven languages and tour action without the redund
 });
 
 test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
-  const audioCounts = { fr: 22, en: 22, de: 17, es: 22, pl: 7, it: 4, nl: 5 };
+  const audioCounts = { fr: 22, en: 22, de: 18, es: 22, pl: 8, it: 4, nl: 6 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
@@ -237,7 +237,7 @@ test('language selection distinguishes seven interfaces and reports validated au
 
 test('unavailable languages expose French reference text with disabled audio; restored FR22 and real English use their own synchronized text', () => {
   audioPlayer.setLanguage('de');
-  audioPlayer.setStop('03', false);
+  audioPlayer.setStop('04', false);
   const missing = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
   assert.match(missing, /Texte de référence en français/);
   assert.match(missing, /pas encore disponible/);
