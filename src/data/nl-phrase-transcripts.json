@@ -1736,5 +1736,112 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "15": {
+    "id": "15",
+    "language": "nl",
+    "audioSha256": "e7693e8169fabd571b61f704466190c30011bd8171bd76798ff35f9dab53e64b",
+    "durationSeconds": 160.32,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/34de99d4-ae6b-4d5b-9354-802d35fff0c5?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Both passes recognize Station X and 135 km, while the published text says Station IX and 145 km. Those phrases and six other uncertain passages remain readable without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Stel u voor dat u zich in het hart van de Tweede Wereldoorlog bevindt, in de jaren veertig: de geallieerde strijdkrachten proberen innovatieve manieren te ontwikkelen om militaire operaties uit te voeren, vaak achter de vijandelijke linies.",
+        "startSeconds": 10.76,
+        "endSeconds": 26.51
+      },
+      {
+        "text": "Het is in deze context dat de Welbike werd geboren.",
+        "startSeconds": 27.03,
+        "endSeconds": 30.29
+      },
+      {
+        "text": "Het is speciaal ontwikkeld voor parachutisten en speciale troepen van het Britse leger.",
+        "startSeconds": 40.91,
+        "endSeconds": 45.87
+      },
+      {
+        "text": "Het idee is ingenieus: een voertuig creëren dat licht, compact en gemakkelijk door de lucht vervoerbaar is.",
+        "startSeconds": 46.32,
+        "endSeconds": 53.82
+      },
+      {
+        "text": "Zodra het fluitsignaal klinkt en de missie begint, ontketent de Welbike al zijn magie.",
+        "startSeconds": 54.31,
+        "endSeconds": 60.85
+      },
+      {
+        "text": "In slechts een paar minuten is hij, zonder ingewikkeld gereedschap, klaar om de weg op te gaan.",
+        "startSeconds": 69.27,
+        "endSeconds": 74.99
+      },
+      {
+        "text": "De Welbike werd bij verschillende missies gebruikt, met name tijdens Operatie Market Garden in Nederland in 1944.",
+        "startSeconds": 98.2,
+        "endSeconds": 107.05
+      },
+      {
+        "text": "Hij was snel en discreet en stelde soldaten in staat berichten te vervoeren en lange afstanden af ​​te leggen om strategische posities in te nemen.",
+        "startSeconds": 107.55,
+        "endSeconds": 117.27
+      },
+      {
+        "text": "En nu, voor u, wordt dit opmerkelijke stuk zorgvuldig bewaard.",
+        "startSeconds": 117.8,
+        "endSeconds": 122.47
+      },
+      {
+        "text": "Als fervent verzamelaar ben ik vereerd dit unieke stukje geschiedenis met u te mogen delen.",
+        "startSeconds": 136.18,
+        "endSeconds": 142.34
+      },
+      {
+        "text": "Laten we samen onze reis door de geschiedenis voortzetten...\"",
+        "startSeconds": 156.07,
+        "endSeconds": 159.39
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Ik nodig je nu uit om een ​​van de meest fascinerende stukken uit onze collectie te ontdekken: de Welbike, een kleine Britse motorfiets met een uitzonderlijk lot."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Ontworpen door de Station IX-eenheid van de Britse geheime dienst, is de Welbike een motorfiets van ontwapenende eenvoud, maar formidabel effectief."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Ze werd met een parachute in een cilindrische container geparachuteerd en bereikte tegelijkertijd met de soldaten de grond."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "De ontwerpers hebben zich een motorfiets voorgesteld die dankzij zijn compactheid (slechts 32 kg) dankzij zijn tweetaktbenzinemotor toch een actieradius van bijna 145 kilometer heeft."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Hoewel zijn sobere uiterlijk vaak een glimlach oproept, is zijn bijdrage tijdens de oorlog verre van te verwaarlozen."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Het belichaamt de vindingrijkheid en vastberadenheid van een tijdperk waarin elke technologische innovatie het verschil kon maken tussen het succes en de mislukking van een missie."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "De Welbike blijft een levendig getuigenis van de geest van verzet en inventiviteit die de Tweede Wereldoorlog kenmerkte."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Ik hoop dat deze ontdekking u net zo zal hebben geboeid als mij."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

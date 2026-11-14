@@ -1701,5 +1701,97 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "18": {
+    "id": "18",
+    "language": "it",
+    "audioSha256": "65750d6614168e106904d0942e5b126aa14901829957003d88165bce2eae2ed4",
+    "durationSeconds": 126.36,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/eec8f080-383f-486f-b75f-1a1748bbac22?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian narrative differs from the Wivi exhibit text. Three passages with uncertain names, unit designations or words remain readable without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Sappiamo che Hitler si aspettava che gli alleati sbarcassero in Europa da ovest, mentre l'esercito tedesco era impegnato sul fronte orientale.",
+        "startSeconds": 8.47,
+        "endSeconds": 18.03
+      },
+      {
+        "text": "Per rallentare o sventare qualsiasi tentativo di sfondamento verso ovest, ordinò la costruzione del Vallo Atlantico, dalla Norvegia ai Paesi Baschi.",
+        "startSeconds": 18.73,
+        "endSeconds": 28.78
+      },
+      {
+        "text": "La Normandia vide allora le sue coste fortificate con bunker, e pochi mesi prima dello sbarco queste truppe furono rinforzate di numero.",
+        "startSeconds": 29.36,
+        "endSeconds": 38.47
+      },
+      {
+        "text": "La strategia prevista nel D-Day per le spiagge di Omaha e Utah prevedeva ancor prima delle operazioni di sbarco via terra, bombardamenti aerei per neutralizzare i bunker e le altre postazioni di tiro.",
+        "startSeconds": 39.13,
+        "endSeconds": 53.1
+      },
+      {
+        "text": "Purtroppo all'alba, a causa del maltempo, i bombardamenti avvennero dietro le linee nemiche, lasciando intatte le difese.",
+        "startSeconds": 53.57,
+        "endSeconds": 61.98
+      },
+      {
+        "text": "È così che le prime ondate d'assalto finirono sotto il fuoco nemico.",
+        "startSeconds": 62.28,
+        "endSeconds": 66.47
+      },
+      {
+        "text": "Il mare era allora tra due maree, fornendo un evidente campo di tiro per i tedeschi.",
+        "startSeconds": 66.98,
+        "endSeconds": 72.56
+      },
+      {
+        "text": "Alcuni bunker erano orientati non verso il mare, ma lungo la spiaggia, il che causò tragiche perdite.",
+        "startSeconds": 73.31,
+        "endSeconds": 80.25
+      },
+      {
+        "text": "I carri armati anfibi erano stati progettati per galleggiare e raggiungere la spiaggia.",
+        "startSeconds": 80.72,
+        "endSeconds": 86.55
+      },
+      {
+        "text": "Dei trentadue carri armati impegnati, solo due non affondarono.",
+        "startSeconds": 86.93,
+        "endSeconds": 91.47
+      },
+      {
+        "text": "Fu necessario attendere fino alla fine della mattinata perché due navi si affiancassero e offrissero ai loro cannoni l'opportunità di distruggere le famose difese tedesche, permettendo finalmente alle truppe di avanzare.",
+        "startSeconds": 102.4,
+        "endSeconds": 115.9
+      },
+      {
+        "text": "Questa è l'origine del nome dato a Bloody Omaha.",
+        "startSeconds": 122.92,
+        "endSeconds": 126.18
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "In fronte a questo diorama di Vierville-sur-Mer, cercheremo di capire perché questa spiaggia porta il nome Bloody Omaha."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "L'unico rifugio che i soldati del 29°, [parole incerte] dei Ranger, riuscirono a trovare furono le difese sulla spiaggia che i tedeschi avevano installato."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Il bilancio a Omaha è tragico: circa 4.000 morti, [parola incerta] e feriti."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
