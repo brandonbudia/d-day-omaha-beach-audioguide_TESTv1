@@ -1757,5 +1757,309 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "14": {
+    "id": "14",
+    "language": "es",
+    "audioSha256": "444ac6e244417ca61963483d9b0f85fb567fe97010ed538281af95ba2a124bc8",
+    "durationSeconds": 191.616,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/af38999f-39d5-4b73-98af-329590948c77?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The start of sentence 17 and the final word in sentence 24 require review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"He aquí un maniquí que, por su vestimenta (seguramente lo habrás observado entreabierto), sugiere una función particular.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.05
+      },
+      {
+        "text": "En realidad, se trata de una agente encubierta, miembro del famoso Ejecutivo de Operaciones Especiales (SOE) británico, dispuesta a “prender fuego a Europa desde dentro”, como decía Churchill.",
+        "startSeconds": 7.69,
+        "endSeconds": 19.84
+      },
+      {
+        "text": "El Ejecutivo de Operaciones Especiales, desde su creación en 1940, reclutó agentes y los entrenó en la guerra subversiva: técnicas de sabotaje, búsqueda de inteligencia y desinformación, organización de la resistencia, infiltración en paracaídas.",
+        "startSeconds": 20.8,
+        "endSeconds": 38.2
+      },
+      {
+        "text": "El mono que se muestra frente a ti es muy interesante, porque una vez que se lo quitan, los agentes vestían ropa de civil debajo.",
+        "startSeconds": 38.93,
+        "endSeconds": 46.4
+      },
+      {
+        "text": "Una vez en el suelo, utilizaron una pequeña pala para enterrar el traje e integrarse con la mayor normalidad posible en la vida rural o urbana.",
+        "startSeconds": 46.97,
+        "endSeconds": 55.8
+      },
+      {
+        "text": "Estos agentes fueron encontrados desde Noruega hasta el norte de África, pasando por los países del Este, donde trabajaron para desestabilizar el régimen nazi.",
+        "startSeconds": 56.6,
+        "endSeconds": 65.91
+      },
+      {
+        "text": "Muchas mujeres se distinguieron dentro de la SOE y algunas sufrieron un destino trágico.",
+        "startSeconds": 66.66,
+        "endSeconds": 71.64
+      },
+      {
+        "text": "Este fue el caso de “Claire Dumont”, una joven francesa que se lanzó en paracaídas al Loira, dotada de un talento lingüístico excepcional y una gran determinación.",
+        "startSeconds": 72.27,
+        "endSeconds": 81.73
+      },
+      {
+        "text": "En 1943, su misión era infiltrarse en los círculos nazis y transmitir información vital a Londres, mientras orquestaba operaciones de sabotaje.",
+        "startSeconds": 82.54,
+        "endSeconds": 92.54
+      },
+      {
+        "text": "Gracias a sus conocimientos lingüísticos, logró hacerse pasar por una simpatizante alemana, ganándose así su confianza.",
+        "startSeconds": 93.06,
+        "endSeconds": 100.46
+      },
+      {
+        "text": "Una noche, mientras llevaba carga en una línea ferroviaria crucial para los alemanes, Claire casi es capturada: su presencia había sido denunciada por uno de sus colaboradores...",
+        "startSeconds": 101.1,
+        "endSeconds": 111.76
+      },
+      {
+        "text": "Sin embargo, logró escapar en el último minuto hacia el bosque y encontró refugio en casa de un granjero, también miembro de la resistencia.",
+        "startSeconds": 112.27,
+        "endSeconds": 120.94
+      },
+      {
+        "text": "A pesar del miedo constante a ser descubierta, Claire continuó enviando mensajes codificados a Londres.",
+        "startSeconds": 121.3,
+        "endSeconds": 127.35
+      },
+      {
+        "text": "Se distinguió por organizar un nuevo acto de sabotaje: el descarrilamiento de un tren alemán.",
+        "startSeconds": 127.8,
+        "endSeconds": 133.4
+      },
+      {
+        "text": "La operación fue un éxito, pero atrajo aún más la atención.",
+        "startSeconds": 134.05,
+        "endSeconds": 137.68
+      },
+      {
+        "text": "Los días siguientes estuvieron marcados por una intensa caza, pero astuta, utilizó su ingenio para escapar de la búsqueda...",
+        "startSeconds": 138.31,
+        "endSeconds": 145.95
+      },
+      {
+        "text": "A pesar de semanas de brutales interrogatorios, no reveló información sobre sus redes.",
+        "startSeconds": 154.67,
+        "endSeconds": 160.0
+      },
+      {
+        "text": "Su silencio y resistencia exasperaron a los alemanes.",
+        "startSeconds": 160.57,
+        "endSeconds": 164.1
+      },
+      {
+        "text": "En represalia, y para dar ejemplo, los nazis decidieron ejecutarlo sumariamente.",
+        "startSeconds": 164.69,
+        "endSeconds": 169.8
+      },
+      {
+        "text": "La llevaron temprano en la mañana al patio de la prisión.",
+        "startSeconds": 170.54,
+        "endSeconds": 173.52
+      },
+      {
+        "text": "Frente a sus torturadores, Claire se mantuvo digna y decidida.",
+        "startSeconds": 173.96,
+        "endSeconds": 177.85
+      },
+      {
+        "text": "Dirigió sus últimas palabras a sus compañeros de resistencia...",
+        "startSeconds": 178.27,
+        "endSeconds": 181.67
+      },
+      {
+        "text": "Le dispararon poco antes de la liberación de la región por las fuerzas aliadas.\"",
+        "startSeconds": 186.32,
+        "endSeconds": 191.02
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 16,
+        "text": "Desafortunadamente, durante una redada sorpresa, fue capturada e internada en una prisión famosa por los agentes del SOE."
+      },
+      {
+        "beforeSegment": 22,
+        "text": "palabras de coraje y perseverancia en la lucha por la libertad."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "19": {
+    "id": "19",
+    "language": "es",
+    "audioSha256": "3e8aaa83dcb793a2c6a0bbf8d76ce9335bfc3b7faeed04f6bce635e374fdaffb",
+    "durationSeconds": 248.904,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ec903cf-4ec0-4fa7-87a0-801924a37ee7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Two spoken-word divergences and the boundary between sentences 13 and 14 remain under review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"En los complejos giros y vueltas de la Segunda Guerra Mundial, la máquina Enigma se mantuvo como una fortaleza inexpugnable de la criptografía, desafiando a cualquiera a romper sus secretos cuidadosamente guardados.",
+        "startSeconds": 0.06,
+        "endSeconds": 15.32
+      },
+      {
+        "text": "Diseñado por ingenieros alemanes, el Enigma era un dispositivo de cifrado electromecánico utilizado para codificar mensajes militares, haciendo que las comunicaciones enemigas fueran incomprensibles y aparentemente imposibles de piratear.",
+        "startSeconds": 15.98,
+        "endSeconds": 33.73
+      },
+      {
+        "text": "En el corazón de este alucinante rompecabezas, la pulsación de cada operador en el teclado del Enigma transformó el mensaje original en una compleja maraña de letras, cambiando diariamente según ajustes cuidadosamente configurados.",
+        "startSeconds": 34.05,
+        "endSeconds": 51.07
+      },
+      {
+        "text": "Para el esfuerzo bélico aliado, descifrar estos mensajes fue crucial para frustrar los planes del Eje.",
+        "startSeconds": 51.65,
+        "endSeconds": 58.91
+      },
+      {
+        "text": "El desafío fue asumido por un equipo de brillantes matemáticos e ingenieros aliados, liderados por el famoso Alan Turing.",
+        "startSeconds": 59.62,
+        "endSeconds": 68.44
+      },
+      {
+        "text": "Fue en el centro de Bletchley Park, Inglaterra, donde mentes ingeniosas como Turing, Gordon Welchman y otros dedicaron innumerables horas a comprender los misterios del Enigma.",
+        "startSeconds": 68.77,
+        "endSeconds": 81.31
+      },
+      {
+        "text": "Con la valiosa ayuda de matemáticos polacos, que ya habían logrado importantes avances en la Enigma antes del estallido de la guerra, el equipo británico construyó la máquina Bombe, capaz de probar rápidamente las múltiples configuraciones posibles de la Enigma.",
+        "startSeconds": 81.88,
+        "endSeconds": 99.31
+      },
+      {
+        "text": "Gracias a su perseverancia e ingenio, los aliados pudieron leer el tráfico cifrado del alto mando alemán, cambiando el curso de la guerra a su favor.",
+        "startSeconds": 99.88,
+        "endSeconds": 110.05
+      },
+      {
+        "text": "Ahora déjame contarte una de las grandes coincidencias de la vida...",
+        "startSeconds": 121.55,
+        "endSeconds": 125.32
+      },
+      {
+        "text": "Durante otro mercadillo al que asistía mi padre, se detuvo frente a un puesto que, a primera vista, parecía estar vendiendo una máquina de escribir.",
+        "startSeconds": 126.02,
+        "endSeconds": 136.05
+      },
+      {
+        "text": "Obviamente, le preguntó al vendedor cuál era el precio de esta máquina de escribir.",
+        "startSeconds": 136.63,
+        "endSeconds": 141.75
+      },
+      {
+        "text": "Nada que hacer, 50 francos, último precio.",
+        "startSeconds": 149.92,
+        "endSeconds": 153.83
+      },
+      {
+        "text": "Enigma tiene un peso histórico real y representa un interés muy particular para los coleccionistas.",
+        "startSeconds": 163.2,
+        "endSeconds": 169.54
+      },
+      {
+        "text": "La historia continúa con este robo ocurrido en este mismo museo, hace más de diez años.",
+        "startSeconds": 170.13,
+        "endSeconds": 176.36
+      },
+      {
+        "text": "El mismo día de la inauguración, cuatro intrusos entraron en el museo y secuestraron al cajero.",
+        "startSeconds": 177,
+        "endSeconds": 183.4
+      },
+      {
+        "text": "Se escuchó el sonido de los vidrios de las ventanas al romperse, mientras uno de los delincuentes observaba al cajero y los demás robaban algunas cosas...",
+        "startSeconds": 184.14,
+        "endSeconds": 194.25
+      },
+      {
+        "text": "Pero sobre todo se llevaron la máquina Enigma.",
+        "startSeconds": 194.71,
+        "endSeconds": 197.32
+      },
+      {
+        "text": "Tiempo después, en un excedente militar en París, se presentaron unos jóvenes y se ofrecieron a vender una máquina Enigma.",
+        "startSeconds": 197.95,
+        "endSeconds": 205.77
+      },
+      {
+        "text": "La única prueba: una foto.",
+        "startSeconds": 206.4,
+        "endSeconds": 208.25
+      },
+      {
+        "text": "El gerente del establecimiento no podía creer lo que veía.",
+        "startSeconds": 208.78,
+        "endSeconds": 212.35
+      },
+      {
+        "text": "Quedó encontrarse con estos jóvenes con la máquina para ofrecerles una suma muy bonita.",
+        "startSeconds": 213.0,
+        "endSeconds": 218.86
+      },
+      {
+        "text": "Una vez que se fueron, la situación parecía demasiado extraña para ser verdad; por ello se puso en contacto con la policía para explicarles lo que acababa de presenciar.",
+        "startSeconds": 219.49,
+        "endSeconds": 229.63
+      },
+      {
+        "text": "Obviamente, las autoridades le informaron que recientemente habían robado un museo y que habían robado una máquina Enigma.",
+        "startSeconds": 230.37,
+        "endSeconds": 238.38
+      },
+      {
+        "text": "Se organizó entonces una emboscada y los delincuentes cayeron estúpidamente en la trampa.",
+        "startSeconds": 239.0,
+        "endSeconds": 244.75
+      },
+      {
+        "text": "La máquina Enigma fue encontrada intacta.\"",
+        "startSeconds": 245.49,
+        "endSeconds": 248.55
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 8,
+        "text": "Su trabajo minucioso y a menudo no reconocido acortó el conflicto y salvó millones de vidas, al tiempo que sentó las bases de la informática moderna."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Éste respondió: 50 francos..."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Mi padre hizo una pequeña mueca y le ofreció 45."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Entonces mi padre cedió y ofreció la suma de 50 francos por esta “máquina de escribir” que no era otra que una “Enigma”."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

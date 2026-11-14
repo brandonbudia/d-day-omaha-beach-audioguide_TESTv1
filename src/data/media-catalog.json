@@ -351,11 +351,11 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "15": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "0f94c9cf10e257ebca916f126eff1533e04a163efe5757bec6b86660617d6973",
+        "bytes": 2645037,
+        "durationSeconds": 165.312,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "16": {
         "sha256": "dc07eb1055a8eb46a97b14a53c16d5bfe1c71bcff3fafe8e1cd3bcbfd531b18a",
@@ -386,11 +386,11 @@
         "reason": "wivi-narration-compared"
       },
       "20": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "de2409dd12f0281a7ea129c17232ad794ed540b30e803ed11d6d110bb3021692",
+        "bytes": 2528301,
+        "durationSeconds": 158.016,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "21": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -414,11 +414,11 @@
         "reason": "wivi-narration-compared"
       },
       "02": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "bdc835bda7dd972971f8eeb786245b0419d4021c5eb5441bd4dc37b872bd7671",
+        "bytes": 2300973,
+        "durationSeconds": 143.808,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "03": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -968,11 +968,11 @@
         "reason": "wivi-narration-compared"
       },
       "14": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "444ac6e244417ca61963483d9b0f85fb567fe97010ed538281af95ba2a124bc8",
+        "bytes": 3065901,
+        "durationSeconds": 191.616,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "15": {
         "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
@@ -1003,11 +1003,11 @@
         "reason": "wivi-narration-compared"
       },
       "19": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "3e8aaa83dcb793a2c6a0bbf8d76ce9335bfc3b7faeed04f6bce635e374fdaffb",
+        "bytes": 3982509,
+        "durationSeconds": 248.904,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "20": {
         "sha256": "8d513d0374bc76cedd856d99089cb93303e096ac961add5f7a856345dcf1ab98",

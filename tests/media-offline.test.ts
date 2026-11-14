@@ -42,8 +42,8 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
-  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '05', '07', '08', '10', '11', '14', '16', '19'], es: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '13', '16', '17', '18', '20', '21', '22'], pl: ['01', '09', '10', '15', '20', '22'], nl: ['09'], it: ['07'] };
-  const partiallyAligned = new Set(['nl09', 'it07', 'es06', 'pl01', 'es03', 'de14', 'es10']);
+  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: ['01', '02', '05', '07', '08', '10', '11', '14', '15', '16', '19', '20'], es: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '13', '14', '16', '17', '18', '19', '20', '21', '22'], pl: ['01', '09', '10', '15', '20', '22'], nl: ['09'], it: ['07'] };
+  const partiallyAligned = new Set(['nl09', 'it07', 'es06', 'pl01', 'es03', 'de14', 'es10', 'de02', 'de15', 'de20', 'es14', 'es19']);
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
@@ -85,7 +85,7 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
   assert.equal(getLanguageResourceSummary('fr').unavailable, 0);
   assert.equal(getLanguageResourceSummary('en').ready, 22);
   assert.equal(getLanguageResourceSummary('en').editorialReviewRequired, 22);
-  assert.equal(getLanguageResourceSummary('de').unavailable, 13);
+  assert.equal(getLanguageResourceSummary('de').unavailable, 10);
   const restored = getMediaResource('22', 'fr');
   assert.equal(restored.reason, 'public-source-restored');
   assert.equal(restored.sha256, '7087e3c96086d3186c922812cef0ea3af3d908ec73675bfc6b1886c8b0731346');

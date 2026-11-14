@@ -921,5 +921,320 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "02": {
+    "id": "02",
+    "language": "de",
+    "audioSha256": "bdc835bda7dd972971f8eeb786245b0419d4021c5eb5441bd4dc37b872bd7671",
+    "durationSeconds": 143.808,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/0d527c76-01c1-4b91-becf-c0095ebf1eb9?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The final wording of the fourteenth sentence remains unclear. The Wivi reference is displayed without timestamps for that sentence."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Hier stehen wir vor einer faszinierenden, geschichtsträchtigen Szene: ein beeindruckendes Focke-Wulf-Triebwerk, dieses beeindruckende deutsche Jagdflugzeug aus dem Zweiten Weltkrieg, begleitet von zwei Modellen von Luftwaffenpiloten.",
+        "startSeconds": 0.06,
+        "endSeconds": 14.68
+      },
+      {
+        "text": "Dieser Motor, das zentrale Element der Szene, verkörpert eine einzigartige Geschichte, die ich heute gerne mit Ihnen teilen möchte.",
+        "startSeconds": 15.25,
+        "endSeconds": 23.74
+      },
+      {
+        "text": "Beim Durchblättern einer Zeitung fiel mein Blick auf einen faszinierenden Artikel.",
+        "startSeconds": 24.37,
+        "endSeconds": 28.85
+      },
+      {
+        "text": "Die Geschichte spielte sich in einem kleinen Dorf ab, wo während der Entwicklungsarbeiten vor dem Bahnhof eine unwahrscheinliche Entdeckung gemacht wurde: mehrere deutsche Flugzeugmotoren, Focke-Wulf.",
+        "startSeconds": 28.94,
+        "endSeconds": 41.11
+      },
+      {
+        "text": "Angetrieben von Kühnheit und einer unerschütterlichen Leidenschaft für die Geschichte kontaktierte ich den Bürgermeister der Stadt, um meinen Wunsch zum Ausdruck zu bringen, eines dieser historischen Stücke in unserem Museum zu bewahren.",
+        "startSeconds": 41.59,
+        "endSeconds": 55.68
+      },
+      {
+        "text": "Als ich zum Motorlager eingeladen wurde, fand die nächste Etappe meiner Suche schließlich auf einem Bauernhof statt.",
+        "startSeconds": 56.21,
+        "endSeconds": 62.61
+      },
+      {
+        "text": "Doch von den ursprünglich vier ausgestellten Motoren war nur noch einer vorhanden.",
+        "startSeconds": 63.27,
+        "endSeconds": 68.42
+      },
+      {
+        "text": "Die anderen waren gestohlen worden und hatten so viele Fragmente der Vergangenheit mitgenommen.",
+        "startSeconds": 69.03,
+        "endSeconds": 74.63
+      },
+      {
+        "text": "Doch das Schicksal führte mich zu diesem: dem schönsten, im Dunkeln bewahrten, vor Begehrlichkeiten geschützten.",
+        "startSeconds": 75.21,
+        "endSeconds": 82.1
+      },
+      {
+        "text": "Dieser Focke-Wulf-Motor ist ein wahres Meisterwerk der Ingenieurskunst.",
+        "startSeconds": 82.56,
+        "endSeconds": 87.09
+      },
+      {
+        "text": "Entwickelt für extreme Leistung, verkörperte es die modernste Technologie seiner Zeit und ermöglichte dem Flugzeug schwindelerregende Geschwindigkeiten und außergewöhnliche Manövrierfähigkeit, was bei Luftduellen von entscheidender Bedeutung ist.",
+        "startSeconds": 87.65,
+        "endSeconds": 103.04
+      },
+      {
+        "text": "Sein fortschrittliches Design und seine Leistung zeugen von den Ambitionen und technischen Fähigkeiten, die auf den Schlachtfeldern der Luft eingesetzt werden.",
+        "startSeconds": 103.67,
+        "endSeconds": 112.85
+      },
+      {
+        "text": "Umgeben von zwei Luftwaffenpiloten, regungslos und still, scheint dieses Triebwerk mit dem Dröhnen der Luft, die es durchquert hat, mitzuschwingen.",
+        "startSeconds": 113.41,
+        "endSeconds": 122.51
+      },
+      {
+        "text": "Vor diesem Überbleibsel bekräftigen wir unser Engagement für die Bewahrung der Geschichte in ihrer ganzen Authentizität.\"",
+        "startSeconds": 135.51,
+        "endSeconds": 143.56
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 13,
+        "text": "Es verdeutlicht die Stärke und Komplexität der Luftfahrttechnologie der damaligen Zeit und zeugt von den unermüdlichen Bemühungen der Menschheit, den Himmel zu erreichen, selbst in Kriegszeiten."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "15": {
+    "id": "15",
+    "language": "de",
+    "audioSha256": "0f94c9cf10e257ebca916f126eff1533e04a163efe5757bec6b86660617d6973",
+    "durationSeconds": 165.312,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/34de99d4-ae6b-4d5b-9354-802d35fff0c5?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken number of Station IX and the end of sentence 12 require review. The published text remains readable at both points."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ich lade Sie nun ein, eines der faszinierendsten Stücke unserer Sammlung zu entdecken: das Welbike, ein kleines britisches Motorrad mit einem außergewöhnlichen Schicksal.",
+        "startSeconds": 0.04,
+        "endSeconds": 11.12
+      },
+      {
+        "text": "Stellen Sie sich vor, Sie befinden sich mitten im Zweiten Weltkrieg, in den 1940er Jahren: Die alliierten Streitkräfte versuchen, innovative Methoden zur Durchführung militärischer Operationen zu entwickeln, oft hinter den feindlichen Linien.",
+        "startSeconds": 11.88,
+        "endSeconds": 28.95
+      },
+      {
+        "text": "In diesem Zusammenhang wurde das Welbike geboren.",
+        "startSeconds": 29.63,
+        "endSeconds": 32.45
+      },
+      {
+        "text": "Es wurde speziell für Fallschirmjäger und Spezialeinheiten der britischen Armee entwickelt.",
+        "startSeconds": 43.89,
+        "endSeconds": 49.23
+      },
+      {
+        "text": "Die Idee ist genial: ein Fahrzeug zu schaffen, das leicht, kompakt und einfach per Flugzeug zu transportieren ist.",
+        "startSeconds": 50.09,
+        "endSeconds": 57.71
+      },
+      {
+        "text": "Sobald der Pfiff ertönt und die Mission beginnt, entfaltet das Welbike seine ganze Magie.",
+        "startSeconds": 58.28,
+        "endSeconds": 64.31
+      },
+      {
+        "text": "Mit dem Fallschirm in einen zylindrischen Behälter abgeworfen, erreichte sie gleichzeitig mit den Soldaten den Boden.",
+        "startSeconds": 64.51,
+        "endSeconds": 71.68
+      },
+      {
+        "text": "In nur wenigen Minuten ist es ohne komplexe Werkzeuge fahrbereit.",
+        "startSeconds": 72.33,
+        "endSeconds": 76.88
+      },
+      {
+        "text": "Seine Designer haben sich ein Motorrad vorgestellt, das trotz seiner Kompaktheit (nur 32 kg) dank seines Zweitakt-Benzinmotors immer noch eine Reichweite von fast 145 Kilometern hat.",
+        "startSeconds": 77.45,
+        "endSeconds": 91.82
+      },
+      {
+        "text": "Auch wenn sein sparsames Aussehen oft ein Lächeln hervorruft, ist sein Beitrag während des Krieges keineswegs unerheblich.",
+        "startSeconds": 92.58,
+        "endSeconds": 100.92
+      },
+      {
+        "text": "Es war schnell und diskret und ermöglichte es Soldaten, Nachrichten zu übermitteln und große Entfernungen zurückzulegen, um strategische Positionen zu errichten.",
+        "startSeconds": 112.94,
+        "endSeconds": 123.69
+      },
+      {
+        "text": "Und nun liegt dieses bemerkenswerte Stück sorgfältig vor Ihnen.",
+        "startSeconds": 124.34,
+        "endSeconds": 128.63
+      },
+      {
+        "text": "Es verkörpert den Einfallsreichtum und die Entschlossenheit einer Zeit, in der jede technologische Innovation über Erfolg und Misserfolg einer Mission entscheiden konnte.",
+        "startSeconds": 128.8,
+        "endSeconds": 139.47
+      },
+      {
+        "text": "Als begeisterter Sammler fühle ich mich geehrt, dieses einzigartige Stück Geschichte mit Ihnen zu teilen.",
+        "startSeconds": 140.25,
+        "endSeconds": 146.9
+      },
+      {
+        "text": "Das Welbike ist nach wie vor ein lebendiges Zeugnis des Widerstands- und Erfindungsgeistes, der den Zweiten Weltkrieg prägte.",
+        "startSeconds": 147.59,
+        "endSeconds": 155.36
+      },
+      {
+        "text": "Ich hoffe, diese Entdeckung hat Sie ebenso fasziniert wie mich.",
+        "startSeconds": 156.07,
+        "endSeconds": 159.58
+      },
+      {
+        "text": "Lassen Sie uns gemeinsam unsere Reise durch die Geschichte fortsetzen …\"",
+        "startSeconds": 159.96,
+        "endSeconds": 164.45
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Das von der Station IX des britischen Geheimdienstes entworfene Welbike ist ein Motorrad von entwaffnender Einfachheit, aber beeindruckend effektiv."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Das Welbike wurde in verschiedenen Missionen eingesetzt, insbesondere während der Operation Market Garden in den Niederlanden im Jahr 1944."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "20": {
+    "id": "20",
+    "language": "de",
+    "audioSha256": "de2409dd12f0281a7ea129c17232ad794ed540b30e803ed11d6d110bb3021692",
+    "durationSeconds": 158.016,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7d903007-924c-4055-beb5-6493e0fc9f99?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The opening pronoun and the reading of the Fairbairn object name remain under review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Diese Vitrine ist einigen Objekten der britischen Armee gewidmet, die an verschiedenen Orten in den englischen Sektoren des D-Days gefunden wurden.",
+        "startSeconds": 0.05,
+        "endSeconds": 8.6
+      },
+      {
+        "text": "Als letzte freie Bastion eines in den 1940er Jahren besetzten Europas wird England eine Bruchlinie im Nazi-Regime bleiben, an der der Weg zur Befreiung beginnen wird.",
+        "startSeconds": 24.09,
+        "endSeconds": 35.82
+      },
+      {
+        "text": "Rechts ist hier eine Kiste mit Brieftauben.",
+        "startSeconds": 36.5,
+        "endSeconds": 38.91
+      },
+      {
+        "text": "In der Luft überbrachten diese geflügelten Boten Hoffnung und wichtige Informationen und überquerten die feindlichen Linien, um die Koordination alliierter Operationen sicherzustellen.",
+        "startSeconds": 39.5,
+        "endSeconds": 50.86
+      },
+      {
+        "text": "Sie waren wahre Soldaten des Schweigens und retteten Leben durch den einfachen Flügelschlag.",
+        "startSeconds": 51.11,
+        "endSeconds": 56.47
+      },
+      {
+        "text": "Der englische Fallschirmjägerhelm mit der Aufschrift „Medical Unit“ ist mittlerweile sehr selten zu finden.",
+        "startSeconds": 56.93,
+        "endSeconds": 63.32
+      },
+      {
+        "text": "Dieser Helm bedeckte die Köpfe derer, die durch die Lüfte flogen und in feindliche Gebiete stürzten.",
+        "startSeconds": 63.97,
+        "endSeconds": 69.59
+      },
+      {
+        "text": "Zu Beginn des D-Days sprangen sie an unbekannte, oberirdische Orte, die zu Mythen geworden sind, wie die Pegasus-Brücke, und trugen ein Schicksal in sich, das größer war als sie selbst.",
+        "startSeconds": 70.4,
+        "endSeconds": 82.39
+      },
+      {
+        "text": "Diese Seidenkarten, so leicht und doch so wichtig für die Navigation in feindlichem Gebiet, wurden entwickelt, um schlechtes Wetter oder sogar einen Flugzeugabsturz zu überstehen.",
+        "startSeconds": 82.95,
+        "endSeconds": 93.63
+      },
+      {
+        "text": "Sie führten unsere Verbündeten bei ihrer Mission durch unsichere Landschaften.",
+        "startSeconds": 94.36,
+        "endSeconds": 98.59
+      },
+      {
+        "text": "Die Waffe, die Sie hier sehen, ist eine PIAT, eine britische Panzerabwehrwaffe, ein Beweis für die Macht, die in den entschlossenen Händen englischer Soldaten verborgen ist.",
+        "startSeconds": 99.28,
+        "endSeconds": 109.08
+      },
+      {
+        "text": "Unzuverlässig und ungenau, verkörperte es dennoch den nötigen Widerstand, um feindliche Panzertruppen abzuwehren.",
+        "startSeconds": 109.5,
+        "endSeconds": 116.45
+      },
+      {
+        "text": "Die typische englische Kampfjacke mit den Abzeichen der Fallschirmjäger erinnert an jene Nächte, als der schwarze Himmel mit schwebenden Silhouetten bevölkert war: diese rücksichtslosen Kämpfer, die herabstiegen, um ihre Hand in die Freiheit auszustrecken.",
+        "startSeconds": 117.29,
+        "endSeconds": 132.72
+      },
+      {
+        "text": "all diese Objekte wurden im Laufe der Jahre gefunden und gaben Anlass zu Forschung, Austausch und Investitionen.",
+        "startSeconds": 138.35,
+        "endSeconds": 145.41
+      },
+      {
+        "text": "Ich persönlich bin erstaunt, wie die Engländer in vielen Bereichen wahre Pioniere waren.",
+        "startSeconds": 146.21,
+        "endSeconds": 151.43
+      },
+      {
+        "text": "Ihre Innovationen, sowohl technologisch als auch historisch, schreiben auch heute noch Geschichte.\"",
+        "startSeconds": 152.1,
+        "endSeconds": 157.41
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Das erinnert mich an meinen Onkel, der uns schon als Kind seine Anekdoten erzählte, die er mit meinem Vater in der kleinen Bar nahe der „Pégasus-Brücke“ teilte – Zeugen einer Zeit, in der Tapferkeit Grenzen und Himmel überschritt."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Der Fairbairn-Kommandodolch, ein Lee-Enfield-Gewehr, eine Taucheinheit ..."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

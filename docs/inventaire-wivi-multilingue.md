@@ -107,3 +107,5 @@ Au checkpoint 56, PL01 est le premier enregistrement polonais Wivi activé. Sa t
 Au checkpoint 57, DE16, ES04 et ES08 ajoutent 33 phrases. Il reste 78 originaux à intégrer (14 DE, 21 IT, 16 PL, 21 NL, 6 ES). Dix phrases restent sans repère sur les quatre pistes à suivi partiel.
 
 Au checkpoint 58, DE14, ES03 et ES10 ajoutent 47 phrases synchronisées. Les sept phrases restantes sont lisibles avec le texte publié. Il reste 75 originaux à intégrer (13 DE, 21 IT, 16 PL, 21 NL, 4 ES).
+
+Au checkpoint 59, DE02, DE15, DE20, ES14 et ES19 ajoutent 95 phrases synchronisées et 11 phrases lisibles sans repère. Il reste 70 originaux à intégrer (10 DE, 21 IT, 16 PL, 21 NL, 2 ES).
