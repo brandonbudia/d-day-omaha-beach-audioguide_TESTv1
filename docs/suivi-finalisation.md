@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 69 ; IT05 et IT06 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 70 ; NL05 et NL07 ajoutées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -240,6 +240,12 @@ Le checkpoint 68 est publié sous `8415d20af3ecafaec7eca62814ff6299aa73e947`, SH
 Le checkpoint 69 ajoute IT05 (17/19) et IT06 (25/29). Les deux pistes Wivi utilisent leur propre version prononcée. La fiche conserve le récit Wivi publié. Les deux comparaisons de reconnaissance, les MP3 décodés et les extraits de signal autour des raccords permettent de repérer les phrases corroborées. Le motif « a pois » dans IT05 et le mot après « soldato » dans IT06 restent parmi les points à réécouter. Les 126 tests, TypeScript et le build `index-D7_ib1AX.js` sont validés. Le clic, le surlignage, la lecture et le nombre de passages statiques ont été confirmés dans le navigateur aux stations 05 et 06.
 
 État après le checkpoint 69 : DE 22/22, ES 22/22, IT 11/22, NL 10/22, PL 10/22 (dont cinq synthèses signalées). Il reste 35 originaux à intégrer. Poursuivre les comparaisons NL05 et NL07, puis PL06–08 et IT09–10 à partir de leurs reconnaissances en cache. Les fichiers FR/EN conservent leurs repères mot à mot.
+
+Le checkpoint 69 est publié sous `91440ffee95e4260e9cfd93433df5f41ed89130c`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 70 ajoute NL05 (13/19) et NL07 (4/12), audios Wivi et textes d'origine. Pour NL05, les deux modèles entendent « belang » et « was vereist » à la place de « waarde » et « werd gebruikt ». Pour NL07 les termes « kapelaan » et « aalmoezeniers » demandent une vérification. Les 14 passages non corroborés restent lisibles sans repère. Les 126 tests, TypeScript et le build `index-DgWCd5Q4.js` ont réussi. Le clic, le démarrage de lecture, la phrase active et les passages statiques des deux lecteurs ont été vérifiés dans le navigateur. Les SHA des jeux de repères FR/EN concordent avec le bilan initial.
+
+État après le checkpoint 70 : DE 22/22, ES 22/22, IT 11/22, NL 12/22, PL 10/22 (5 originaux et 5 synthèses signalées). Il reste 33 originaux à intégrer (11 IT, 10 NL, 12 PL). Prochain lot : PL06, PL07 et PL08. Consulter le dossier de reconnaissance avant de relancer un modèle ; la seconde passe de PL06 avait commencé pendant le lot NL. Le navigateur et les tests techniques établissent le fonctionnement des nouveaux repères, et la liste des écarts sert aux futures écoutes éditoriales.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

@@ -990,5 +990,186 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "05": {
+    "id": "05",
+    "language": "nl",
+    "audioSha256": "9a0dbc07b7ac11985bca0430ae82a2c2f7ed4ea958b5abadb930f3230632d27b",
+    "durationSeconds": 146.304,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/e380d61d-2b12-47d0-a291-86963a56b159?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Wivi exhibit wording is preserved. Both models suggest belang in place of waarde and was vereist in place of werd gebruikt. These and four other unclear phrases keep text without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Ik ben blij om in dit speciale gedeelte van onze audiogids niet alleen historische feiten met u te delen, maar ook een deel van mijn persoonlijke passie voor het verzamelen van militaire uniformen.",
+        "startSeconds": 0.06,
+        "endSeconds": 11.55
+      },
+      {
+        "text": "Vandaag ga ik met jullie praten over de Duitse camouflage die tijdens de Tweede Wereldoorlog werd gebruikt, een onderwerp dat ons bijzonder na aan het hart ligt.",
+        "startSeconds": 12.18,
+        "endSeconds": 22.26
+      },
+      {
+        "text": "Als verzamelaar vertelt elk stuk dat ik ontdek een uniek verhaal.",
+        "startSeconds": 22.95,
+        "endSeconds": 27.68
+      },
+      {
+        "text": "Duitse camouflageoutfits zijn geen uitzondering.",
+        "startSeconds": 28.12,
+        "endSeconds": 31.5
+      },
+      {
+        "text": "Ze zijn vervaardigd met nauwgezette aandacht voor detail en weerspiegelen een fascinerende mix van functionaliteit, innovatie en aanpassing aan verschillende oorlogsgebieden.",
+        "startSeconds": 32.03,
+        "endSeconds": 43.56
+      },
+      {
+        "text": "Met hun willekeurige patronen en aardse kleuren zorgden ze voor effectieve camouflage in Europese omgevingen.",
+        "startSeconds": 44.23,
+        "endSeconds": 52.02
+      },
+      {
+        "text": "Dit unieke patroon illustreert hoe innovatie essentieel was in deze moeilijke tijden.",
+        "startSeconds": 79.75,
+        "endSeconds": 85.6
+      },
+      {
+        "text": "De geschiedenis leert ons dat de geallieerden ook soortgelijke camouflage probeerden te gebruiken...",
+        "startSeconds": 103.35,
+        "endSeconds": 109.26
+      },
+      {
+        "text": "maar de gelijkenis zorgde helaas voor verwarring.",
+        "startSeconds": 109.86,
+        "endSeconds": 112.7
+      },
+      {
+        "text": "De geallieerden lieten het idee dan ook zeer snel varen.",
+        "startSeconds": 113.16,
+        "endSeconds": 116.7
+      },
+      {
+        "text": "Het is fascinerend om je voor te stellen hoe deze camouflages destijds werden waargenomen.",
+        "startSeconds": 117.24,
+        "endSeconds": 122.63
+      },
+      {
+        "text": "Voor de soldaten die ze droegen was het meer dan alleen een kledingstuk: het was een essentieel onderdeel van hun overlevingsuitrusting.",
+        "startSeconds": 122.75,
+        "endSeconds": 130.38
+      },
+      {
+        "text": "In die tijd maakten technologische middelen het niet mogelijk, zoals een satelliet of een drone vandaag de dag zouden doen, om de verberging van mensen of apparatuur te detecteren.",
+        "startSeconds": 130.92,
+        "endSeconds": 142.73
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 6,
+        "text": "We vinden aspecten die overeenkomen met alle seizoenen: als je goed kijkt, zie je lente- en herfstvariaties voor koude streken, wit voor de winter en zomerkleuren voor onze meer gematigde streken."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Er is ook het \"\"polka dot\"\"-motief, dat later in het conflict werd geïntroduceerd."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "De complexiteit ervan herinnert aan de voortdurende vastberadenheid om de stealth van soldaten te verbeteren."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "In onze collectie werd een jasje met dit motief vooral gedragen door SS-leden van de Hitlerjugend, die Caen ruim een ​​maand vasthielden, terwijl aanvankelijke schattingen spraken van twee dagen."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "De Duitsers hechtten enorm veel waarde aan camouflage."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Alleen het gezichtsvermogen werd gebruikt.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "07": {
+    "id": "07",
+    "language": "nl",
+    "audioSha256": "dad06b51f069f292c89e70315e200e9887ce3e3bf5a84f9923f23805cc374b82",
+    "durationSeconds": 115.248,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/98342c97-e5b9-4b02-8860-b2c1824ad395?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original text is preserved. Readings of kapelaan and aalmoezenier, along with several brief wording differences, require further review. Four corroborated phrases are timed."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Deze gelovige mannen bekleedden een unieke plaats binnen het Duitse leger en waren verantwoordelijk voor het bieden van geestelijke steun aan soldaten die ondergedompeld waren in de harde realiteit van oorlog.",
+        "startSeconds": 4.69,
+        "endSeconds": 17.03
+      },
+      {
+        "text": "In hun rol van steun en troost droegen ze een outfit met symbolen die een donkere en complexe periode in onze hedendaagse geschiedenis oproepen.",
+        "startSeconds": 29.7,
+        "endSeconds": 39.08
+      },
+      {
+        "text": "Hun dagelijkse uitdaging?",
+        "startSeconds": 69.46,
+        "endSeconds": 70.91
+      },
+      {
+        "text": "Het licht van de mensheid en het geloof behouden in een omgeving die vaak verstoken is van morele richtlijnen.",
+        "startSeconds": 71.41,
+        "endSeconds": 78.27
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Voor je ligt de outfit van een Duitse kapelaan uit de Tweede Wereldoorlog."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Kapelaans kunnen katholiek of protestant zijn en elk de troost van hun religieuze traditie aanbieden aan soldaten van hun geloof."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "De aalmoezeniers leefden in een dagelijkse paradox."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Hoewel deze symbolen op hun uniform waren aangebracht, definieerden ze niet noodzakelijkerwijs de persoonlijke overtuigingen van deze mannen, wier voornaamste missie het was om spirituele en morele toevlucht te bieden in de omringende chaos."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Duitse aalmoezeniers werkten vaak onder extreem moeilijke omstandigheden en probeerden het dagelijkse leven van soldaten te verbeteren door te luisteren en medeleven te bieden ondanks morele en emotionele beproevingen."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Als vertegenwoordigers van de twee belangrijkste christelijke denominaties hadden zij ook de taak om een ​​zekere morele eenheid binnen de troepen te bevorderen, in een context waarin verdeeldheid en lijden alomtegenwoordig waren."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Bij de presentatie van deze outfit is het cruciaal om alle dimensies van de geschiedenis te erkennen: het persoonlijke engagement van de aalmoezeniers en de contexten die hen gevormd hebben, terwijl ze zich bewust zijn van de symbolen en ideologieën die ze droegen."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Het herinnert ons aan het belang van het in vraag stellen en begrijpen van ons verleden.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
