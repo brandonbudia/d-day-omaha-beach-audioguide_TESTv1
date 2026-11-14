@@ -1675,5 +1675,161 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "13": {
+    "id": "13",
+    "language": "de",
+    "audioSha256": "f99eba5a60ff2c582d97785d9f28e82277939f5f2951451e2185b3f567d9593c",
+    "durationSeconds": 146.664,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9361f95f-8238-411c-9d32-e133e9d8c022?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Wivi reference is preserved. The wording around Marineschiff and trotzten and the last sentence boundary still need review. An acoustic pause places the ORIN-Minen onset before sind."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Zu den mächtigen Artefakten in unserer Sammlung gehören die beeindruckenden Seeminen vom Typ ORIN…, greifbare Zeugen der Marinestrategien während des Zweiten Weltkriegs.",
+        "startSeconds": 0.05,
+        "endSeconds": 10.36
+      },
+      {
+        "text": "Diese beeindruckenden Maschinen, die dazu bestimmt waren, feindliche Schiffe zu zerstören, spielten eine entscheidende Rolle bei der Kontrolle der Seewege und hatten großen Einfluss auf militärische Operationen und Nachschubbemühungen.",
+        "startSeconds": 11.07,
+        "endSeconds": 25.02
+      },
+      {
+        "text": "Diese in einem berühmten französischen Hafen gefundenen Minen erinnern an die ständige und unsichtbare Bedrohung, die auf alliierten und feindlichen Flotten lastete.",
+        "startSeconds": 25.52,
+        "endSeconds": 35.25
+      },
+      {
+        "text": "Sie waren zu Dutzenden angeordnet und schützten so eine strategische Seepassage.",
+        "startSeconds": 49.13,
+        "endSeconds": 54.18
+      },
+      {
+        "text": "Ihre Installation entlang wichtiger Seewege sollte den Transport von Truppen, Waffen und Vorräten stören und den Verlauf von Operationen und Schlachten auf den Gewässern direkt beeinflussen.",
+        "startSeconds": 54.81,
+        "endSeconds": 66.33
+      },
+      {
+        "text": "Die Auswirkungen von Seeminen während des Krieges waren erheblich: Sie richteten verheerende Schäden in den Reihen der Seestreitkräfte an, forderten Vorsicht und verlangsamten den Seeverkehr erheblich.",
+        "startSeconds": 67.3,
+        "endSeconds": 79.59
+      },
+      {
+        "text": "Die Maßnahmen zu ihrer Räumung und sicheren Navigation mobilisierten erhebliche personelle und technologische Ressourcen und spiegelten damit die strategische Bedeutung dieser Kriegsinstrumente wider.",
+        "startSeconds": 79.95,
+        "endSeconds": 92.31
+      },
+      {
+        "text": "Wenn man diese ausgestellten Relikte betrachtet, kann man sich nur die Geschichten der Seeleute und Besatzungen vorstellen, die diese unsichtbaren Gefahren bewältigten und sich den Gefahren unter Wasser stellten, während sie Schlachten an der Oberfläche kämpften.",
+        "startSeconds": 93.06,
+        "endSeconds": 107.9
+      },
+      {
+        "text": "ORIN-Minen sind nicht nur Waffen, sondern auch Symbole psychologischer Kriegsführung auf See, die darauf abzielt, Terror und Unsicherheit zu säen.",
+        "startSeconds": 108.12,
+        "endSeconds": 117.47
+      },
+      {
+        "text": "Unsere Präsentation lädt Sie ein, die Komplexität der Seekriegsführung anhand dieser Artefakte zu verstehen, die von der technischen Innovation sowie den Verteidigungs- und Offensivtaktiken zeugen, die den Konflikt prägten.",
+        "startSeconds": 118.15,
+        "endSeconds": 131.52
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Die unter der Wasseroberfläche verankerten ORIN-Minen waren mit empfindlichen Auslösern ausgestattet, die auf Druck oder Geräusche reagierten und explodierten, wenn ein vorbeifahrendes Marineschiff vorbeifuhr."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Indem wir sie ausstellen, ehren wir die Erinnerung an diejenigen, die den mit dem Seekampf verbundenen Risiken trotzten, und reflektieren gleichzeitig über den menschlichen Einfallsreichtum, der erneut in den Dienst des Krieges gestellt wurde.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "17": {
+    "id": "17",
+    "language": "de",
+    "audioSha256": "41e48d1ccd7b5d385db9b56a5a1a418818374255326b120512adb7ec69e3ba45",
+    "durationSeconds": 146.352,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/1e4f43a7-82d4-43dc-a73d-4da043db6ae7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The audio models differ on Überbleibsel and both recognize Versorgung where the published text says Pflege. Those two Wivi sentences are readable without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Im Herzen unseres Museums erwartet Sie ein Stück Medizingeschichte, das an die Herausforderungen und Innovationen erinnert, die die Kriegsmedizin prägten.",
+        "startSeconds": 0.05,
+        "endSeconds": 10.91
+      },
+      {
+        "text": "Dieses Zelt mit all seinen sorgfältig arrangierten Utensilien erzählt die Geschichte der ersten Interventionen vor Ort während des Zweiten Weltkriegs.",
+        "startSeconds": 25.46,
+        "endSeconds": 35.68
+      },
+      {
+        "text": "Unter den ausgestellten Geräten finden Sie eines der ersten Röntgengeräte, die in diesem Bereich eingesetzt wurden.",
+        "startSeconds": 55.0,
+        "endSeconds": 62.18
+      },
+      {
+        "text": "Dieses revolutionäre Gerät spiegelt das Engagement medizinischer Teams wider, schnelle und genaue Diagnosen zu stellen, eine Innovation, die die Behandlung von Kriegsverletzungen verändert hat.",
+        "startSeconds": 62.86,
+        "endSeconds": 75.56
+      },
+      {
+        "text": "Dank dieser technischen Fortschritte konnten Ärzte Brüche und Granatsplitter sofort erkennen, die für das bloße Auge unsichtbar waren, was die Überlebenschancen verletzter Soldaten erheblich erhöhte.",
+        "startSeconds": 76.27,
+        "endSeconds": 89.58
+      },
+      {
+        "text": "Wenn Sie diesen Raum erkunden, werden Sie auch die wesentlichen Werkzeuge und Hilfsmittel entdecken, die das Arsenal mutiger Ärzte und Krankenschwestern ausmachen.",
+        "startSeconds": 90.19,
+        "endSeconds": 100.1
+      },
+      {
+        "text": "Diese Objekte, von der einfachen Spritze bis zu chirurgischen Instrumenten, sind stille Zeugen des Fortschritts in der Medizin, von verbesserten Operationstechniken bis hin zur Entwicklung neuer Desinfektions- und Behandlungsmethoden.",
+        "startSeconds": 100.82,
+        "endSeconds": 116.6
+      },
+      {
+        "text": "Dank dieser Feldstrukturen haben sich die Arztpraxen in den Operationssälen erheblich weiterentwickelt.",
+        "startSeconds": 116.95,
+        "endSeconds": 123.59
+      },
+      {
+        "text": "Das Feldlazarettzelt, das Sie betrachten, ist nicht nur ein Ort der Erinnerung, sondern auch eine lebendige Hommage an den Einfallsreichtum und die Widerstandsfähigkeit der Militärmediziner.",
+        "startSeconds": 124.18,
+        "endSeconds": 136.4
+      },
+      {
+        "text": "Ihre unermüdliche Arbeit angesichts der Schrecken des Krieges ebnete den Weg für Innovationen, die unsere Welt bis heute beeinflussen.\"",
+        "startSeconds": 137.19,
+        "endSeconds": 146.15
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Vor Ihnen liegt ein amerikanisches Feldlazarettzelt, ein bewegendes Überbleibsel militärischer Operationen, die die medizinische Praxis inmitten des Chaos an der Front neu definierten."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Der dringende Bedarf an schneller und wirksamer Pflege hat zu erheblichen Fortschritten in den medizinischen Techniken geführt; Feldlazarette wie dieses spielten eine entscheidende Rolle, indem sie lebensrettende Versorgung nahe an die Front brachten, wo jede Sekunde zählte."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

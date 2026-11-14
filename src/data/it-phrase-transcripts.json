@@ -258,5 +258,72 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "03": {
+    "id": "03",
+    "language": "it",
+    "audioSha256": "67a86c139f22f07cd229230e3e5c8c93cb3ebffd9a96fc6c9285fb8504fa78b5",
+    "durationSeconds": 115.968,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/01c06e1a-5227-47ce-bedb-3f31d16671fb?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian narration differs from the published text. The reader reflects the actual audio, with three wording uncertainties left without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Nascosto tra le reliquie della storia, in una zona tragicamente soprannominata Braccio della Morte in Normandia, c'era un pezzo prezioso della Seconda Guerra Mondiale, un cannone anticarro chiamato PAK 40, ancora adornato con la sua autentica mimetica tricolore d'epoca.",
+        "startSeconds": 0.06,
+        "endSeconds": 17.5
+      },
+      {
+        "text": "Scoperto da me e mio padre alla fine degli anni 80, grazie alla memoria e alla gentilezza di un agricoltore locale, questo PAK 40 è ora il pezzo forte della nostra collezione, esposto per fornire uno sguardo sorprendente sull'artiglieria tedesca durante la battaglia di Normandia.",
+        "startSeconds": 18.28,
+        "endSeconds": 35.79
+      },
+      {
+        "text": "Il PAK 40 era uno dei cannoni anticarro più temuti dell'arsenale tedesco.",
+        "startSeconds": 36.35,
+        "endSeconds": 41.25
+      },
+      {
+        "text": "Progettato per perforare la spessa armatura dei carri armati alleati, giocò un ruolo chiave nella difesa delle forze tedesche dagli assalti meccanizzati.",
+        "startSeconds": 42.04,
+        "endSeconds": 50.82
+      },
+      {
+        "text": "Il suo raggio di tiro massimo era di circa 7 km.",
+        "startSeconds": 67.76,
+        "endSeconds": 71.48
+      },
+      {
+        "text": "La mimetica, appositamente studiata per confondere l'artiglieria con il paesaggio, ricorda quanto l'astuzia e l'ingegno fossero essenziali nell'arte della guerra, rendendo ogni agguato potenzialmente fatale per le forze alleate.",
+        "startSeconds": 85.67,
+        "endSeconds": 99.82
+      },
+      {
+        "text": "Gli echi delle battaglie che un tempo risuonavano in questo Braccio della Morte ne custodiscono gelosamente i segreti.",
+        "startSeconds": 108.93,
+        "endSeconds": 115.78
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 4,
+        "text": "Il suo calibro da 75 mm e la sua capacità di sparare rapidamente con diversi tipi di munizioni gli permisero di provocare un notevole caos tra le unità corazzate nemiche, rallentandone l'avanzata e infliggendo ingenti perdite."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Questo cannone ci trasporta direttamente nel 1944, nel cuore della Campagna della Normandia, dove le posizioni nascoste o d'imboscata ne facevano un'arma micidiale ed efficace."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Purtroppo non posso rivelare come sia stato ritrovato, né il luogo preciso del suo ritrovamento perché appartiene ad un'altra epoca."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

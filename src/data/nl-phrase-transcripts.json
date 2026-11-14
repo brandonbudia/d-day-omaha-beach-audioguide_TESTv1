@@ -436,5 +436,160 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "06": {
+    "id": "06",
+    "language": "nl",
+    "audioSha256": "f81ab360dee22acd1eaf862eb77a7048c4d6ff7c0045cdb865949671970d81e7",
+    "durationSeconds": 180.504,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/f6b7a0ca-4923-4301-837c-f165bc4a770e?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original Dutch reference is preserved. Five phrases with uncertain wording or boundaries remain readable without timing. The model agrees on spelling variants and spoken numbers elsewhere."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"1989… Ik ben 9 jaar oud.",
+        "startSeconds": 0.06,
+        "endSeconds": 3.23
+      },
+      {
+        "text": "Mijn broer Fabien en ik zitten ineengedoken in deze ijskoude tent, wachtend tot het daglicht aanbreekt in dit Normandische land.",
+        "startSeconds": 3.49,
+        "endSeconds": 12.27
+      },
+      {
+        "text": "Mijn vader doet inderdaad veel onderzoek in Normandië, op zoek naar overblijfselen en sporen van de geschiedenis.",
+        "startSeconds": 17.27,
+        "endSeconds": 24.26
+      },
+      {
+        "text": "We bevinden ons precies op een plek waar, volgens de getuigenis van een boer, een Amerikaanse soldaat een vreemd voertuig van de Duitsers heeft gestolen en dit haastig in een granaatgat heeft achtergelaten, terwijl zijn aanvallers de achtervolging in gingen.",
+        "startSeconds": 24.85,
+        "endSeconds": 41.04
+      },
+      {
+        "text": "Het is eindelijk zover: het is licht genoeg om te beginnen met graven.",
+        "startSeconds": 41.77,
+        "endSeconds": 45.76
+      },
+      {
+        "text": "We zijn met ons vijven: mijn broer, ik, mijn vader, een van zijn vrienden en de persoon die de machine bedient.",
+        "startSeconds": 46.27,
+        "endSeconds": 53.4
+      },
+      {
+        "text": "Min, nog steeds niets!",
+        "startSeconds": 55.51,
+        "endSeconds": 57.04
+      },
+      {
+        "text": "Maar het geluid van de detector wordt luider en luider.",
+        "startSeconds": 57.48,
+        "endSeconds": 61.11
+      },
+      {
+        "text": "Na drie minuten klinkt het eerste zeer karakteristieke geluid van metal die een ander metaal ontmoet.",
+        "startSeconds": 61.31,
+        "endSeconds": 68.05
+      },
+      {
+        "text": "Wij zijn geobsedeerd door dit geluid en door de vorm die duidelijker wordt naarmate de schep slaat.",
+        "startSeconds": 68.7,
+        "endSeconds": 74.79
+      },
+      {
+        "text": "Onze hoofden kantelen over dit gat en proberen het silhouet te begrijpen van wat er in de aarde begraven ligt.",
+        "startSeconds": 75.65,
+        "endSeconds": 82.41
+      },
+      {
+        "text": "Het geluid van kloppen en krabben van metaal bij elke manoeuvre maakt ons vreselijk opgewonden: we vergeten bijna de kou en vochtigheid.",
+        "startSeconds": 83.09,
+        "endSeconds": 92.2
+      },
+      {
+        "text": "We zijn dronken van actie, alsof we sneller kunnen gaan dan een schep.",
+        "startSeconds": 92.36,
+        "endSeconds": 96.49
+      },
+      {
+        "text": "Wij waren nog maar kinderen...",
+        "startSeconds": 96.97,
+        "endSeconds": 98.22
+      },
+      {
+        "text": "Plotseling, nadat we een enorm blok aarde aan de zijkant hebben opgeruimd, zien we een stukje rups – maar niet zoals ik me op die leeftijd had voorgesteld.",
+        "startSeconds": 98.75,
+        "endSeconds": 108.64
+      },
+      {
+        "text": "Ik wist heel goed hoe een tankrups eruit zag… en deze was heel klein.",
+        "startSeconds": 109.34,
+        "endSeconds": 113.9
+      },
+      {
+        "text": "Ik begreep het niet.",
+        "startSeconds": 114.44,
+        "endSeconds": 115.38
+      },
+      {
+        "text": "Mijn vader begreep heel goed waar het over ging en besloot er een vierkant omheen te graven van ongeveer drie bij twee meter.",
+        "startSeconds": 115.86,
+        "endSeconds": 123.68
+      },
+      {
+        "text": "Toen deze loopgraven eenmaal waren gemaakt, begonnen we alle blokken aarde met de hand te verwijderen...",
+        "startSeconds": 123.79,
+        "endSeconds": 129.48
+      },
+      {
+        "text": "en beetje bij beetje verscheen er een vorm die bijna uit een sciencefictionfilm leek.",
+        "startSeconds": 130.11,
+        "endSeconds": 135.17
+      },
+      {
+        "text": "Mijn vader wist heel goed wat we zojuist hadden gevonden: een Duitse motorrups, oftewel Kettenkrad, een Duits verkenningsvoertuig dat tijdens de Tweede Wereldoorlog werd gebruikt.",
+        "startSeconds": 145.3,
+        "endSeconds": 156.66
+      },
+      {
+        "text": "Hier is het verhaal van dit vreemde voertuig voor je ogen.",
+        "startSeconds": 157.2,
+        "endSeconds": 160.35
+      },
+      {
+        "text": "En tot slot...",
+        "startSeconds": 160.84,
+        "endSeconds": 161.53
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Vandaag gaan we misschien een zeer relevante ontdekking doen."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Min...niets!"
+      },
+      {
+        "beforeSegment": 20,
+        "text": "Mijn broer en ik begrepen absoluut niets van wat zich voor ons afspeelde: rupsen, motorsturen, een kist met stoelen… We waren verdwaald."
+      },
+      {
+        "beforeSegment": 23,
+        "text": "het verhaal van de boer klopte inderdaad, want zoals we nog kunnen zien, zit er in de rupsen een stukje stof gecamoufleerd."
+      },
+      {
+        "beforeSegment": 23,
+        "text": "Het is niets anders dan een stuk Amerikaanse parachute, waarmee deze soldaat ongetwijfeld de rupsmotorfiets onder zijn eigen parachutekap kon verstoppen.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
