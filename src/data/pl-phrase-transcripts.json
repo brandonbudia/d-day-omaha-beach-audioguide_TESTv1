@@ -1980,5 +1980,65 @@
       "Patrząc na te eksponowane relikty, można jedynie wyobrazić sobie historię marynarzy i załóg, którzy przemierzali te niewidzialne zagrożenia, stawiając czoła podwodnym niebezpieczeństwom, a jednocześnie prowadząc walkę na powierzchni.",
       "Miny ORIN są nie tylko bronią, lecz także symbolami wojny psychologicznej prowadzonej na morzach, której celem było sianie strachu i niepewności."
     ]
+  },
+  "14": {
+    "id": "14",
+    "language": "pl",
+    "audioSha256": "191be7df376c27e506dfb1190b760853ebeeadd09fc0d3996c51f6eca62c2a70",
+    "durationSeconds": 97.21466666666667,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/c20bc34c91745cb8304c48701c450a6d58c26f9f.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish recording with no published transcript. The title appears in one pass, and its acronym is unclear. It remains readable without timing. The narration ends with the geographic overview and does not include the story found in other languages."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Oto manekin, którego lekko rozchylony strój pozwala domyślać się szczególnej funkcji.",
+        "startSeconds": 8.48,
+        "endSeconds": 15.13
+      },
+      {
+        "text": "Prezentowany przed Państwem strój skoczka jest bardzo interesujący, ponieważ po jego zdjęciu agenci mieli pod spodem ubranie cywilne.",
+        "startSeconds": 54.57,
+        "endSeconds": 64.81
+      },
+      {
+        "text": "Agentów tych spotykano od Norwegii po Afrykę Północną, a także w krajach Europy Wschodniej, gdzie przyczyniali się do destabilizacji reżimu niemieckiego.",
+        "startSeconds": 81.25,
+        "endSeconds": 93.01
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Brytyjski manekin SOE."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Chodzi bowiem o agentkę działającą pod przykryciem, członkinię słynnego brytyjskiego SOE, gotową podpalić Europę od środka, jak mówił Churchill."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Od momentu utworzenia w 1940 roku Special Operations Executive rekrutowało agentów i szkoliło ich w zakresie wojny dywersyjnej: technik sabotażu, zdobywania informacji i dezinformacji, organizowania ruchu oporu oraz infiltracji drogą zrzutów spadochronowych."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Po wylądowaniu skoczek dysponował małą saperką, łopatką, aby ukryć kombinezon, a następnie w możliwie najbardziej naturalny sposób wtopić się w życie wiejskie lub miejskie."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Brytyjski manekin SOE.",
+      "Oto manekin, którego lekko rozchylony strój pozwala domyślać się szczególnej funkcji.",
+      "Chodzi bowiem o agentkę działającą pod przykryciem, członkinię słynnego brytyjskiego SOE, gotową podpalić Europę od środka, jak mówił Churchill.",
+      "Od momentu utworzenia w 1940 roku Special Operations Executive rekrutowało agentów i szkoliło ich w zakresie wojny dywersyjnej: technik sabotażu, zdobywania informacji i dezinformacji, organizowania ruchu oporu oraz infiltracji drogą zrzutów spadochronowych.",
+      "Prezentowany przed Państwem strój skoczka jest bardzo interesujący, ponieważ po jego zdjęciu agenci mieli pod spodem ubranie cywilne.",
+      "Po wylądowaniu skoczek dysponował małą saperką, łopatką, aby ukryć kombinezon, a następnie w możliwie najbardziej naturalny sposób wtopić się w życie wiejskie lub miejskie.",
+      "Agentów tych spotykano od Norwegii po Afrykę Północną, a także w krajach Europy Wschodniej, gdzie przyczyniali się do destabilizacji reżimu niemieckiego."
+    ]
   }
 }

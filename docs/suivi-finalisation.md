@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 78 ; IT14 ajoutée.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 79 ; NL14 et PL14 ajoutées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -294,6 +294,12 @@ Le checkpoint 77 est publié sous `41d2b159f4190aca2cf0e1f95bcd4b5e148dc84a`, SH
 Le checkpoint 78 ajoute IT14 (21/26). Le texte du lecteur suit la version prononcée, la fiche conserve le texte Wivi. L’ouverture, une préposition, deux formes incertaines et le pronom de « giustiziarlo » restent sans repère. Le navigateur a confirmé le clic à 128,02 s, le démarrage, le surlignage et les cinq passages statiques. Les 126 tests, TypeScript et le build `index-CcRFqS8U.js` ont réussi.
 
 État après le checkpoint 78 : DE 22/22, ES 22/22, IT 17/22, NL 17/22 et PL 16/22 (11 originaux et 5 synthèses signalées). Il reste 16 MP3 originaux. Prochaine action : NL14 et PL14, dont les reconnaissances locales sont dans la même file déjà lancée, puis IT18 et NL15. Consulter les caches avant toute relance et conserver les passages incertains en texte lisible.
+
+Le checkpoint 78 est publié sous `c417368d8d21642c9e97eb87b4d0808b6372a3d8`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 79 ajoute NL14 (14/25) et PL14 (3/7). Le texte néerlandais de Wivi est préservé. Le récit polonais s’arrête au passage attesté dans son enregistrement, avant le récit de Claire Dumont présent dans d’autres langues. Son titre, reconnu par une seule passe, est affiché sans repère. Les 126 tests, TypeScript et le build `index-9iocg0p-.js` ont réussi. Le navigateur a confirmé le clic, la lecture et la phrase active sur les deux pistes.
+
+État après le checkpoint 79 : DE 22/22, ES 22/22, IT 17/22, NL 18/22 et PL 17/22 (12 originaux et 5 synthèses signalées). Il reste 14 originaux, répartis en IT 5, NL 4 et PL 5. Les deux passes d’IT18 sont disponibles. Consulter ensuite les caches de NL15 et PL16 sans relancer un traitement déjà mis en file ou terminé.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

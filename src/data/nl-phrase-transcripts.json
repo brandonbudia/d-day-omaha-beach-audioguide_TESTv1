@@ -1602,5 +1602,139 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "14": {
+    "id": "14",
+    "language": "nl",
+    "audioSha256": "7482d83c4407a8089f9de0f2f8869e789af787a8d7c41b8306096c4df8a40b9c",
+    "durationSeconds": 201.552,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/af38999f-39d5-4b73-98af-329590948c77?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original Dutch exhibit text is preserved. Eleven sentences with unresolved wording or timing remain readable without timestamps. The final boundary is supported by a decoded pause."
+      ]
+    },
+    "segments": [
+      {
+        "text": "De Special Operations Executive rekruteerde vanaf haar oprichting in 1940 agenten en trainde hen in subversieve oorlogsvoering: sabotagetechnieken, zoeken naar inlichtingen en desinformatie, organisatie van verzet, infiltratie per parachute.",
+        "startSeconds": 20.43,
+        "endSeconds": 38.0
+      },
+      {
+        "text": "Het springpak dat voor je wordt uitgestald is heel interessant, want eenmaal uitgetrokken droegen de agenten daaronder burgerkleding.",
+        "startSeconds": 38.77,
+        "endSeconds": 46.6
+      },
+      {
+        "text": "Eenmaal op de grond gebruikten ze een kleine schep om het pak te begraven en zo normaal mogelijk te integreren in het plattelands- of stadsleven.",
+        "startSeconds": 47.28,
+        "endSeconds": 56.03
+      },
+      {
+        "text": "Deze agenten werden gevonden van Noorwegen tot Noord-Afrika, via oostelijke landen, waar ze werkten om het naziregime te destabiliseren.",
+        "startSeconds": 56.68,
+        "endSeconds": 65.67
+      },
+      {
+        "text": "Dit was het geval met “Claire Dumont”, een jonge Franse vrouw die met een parachute naar de Loire werd gedropt en begiftigd was met een uitzonderlijk taaltalent en een grote vastberadenheid.",
+        "startSeconds": 72.12,
+        "endSeconds": 83.51
+      },
+      {
+        "text": "Op een nacht, terwijl ze ladingen vervoerde op een cruciale spoorlijn voor de Duitsers, werd Claire bijna gevangengenomen: haar aanwezigheid was aan de kaak gesteld door een van haar medewerkers...",
+        "startSeconds": 102.89,
+        "endSeconds": 114.21
+      },
+      {
+        "text": "Ze slaagde er echter op het laatste moment in het bos te ontvluchten en vond onderdak bij een boer, die zelf lid was van het verzet.",
+        "startSeconds": 114.88,
+        "endSeconds": 124.21
+      },
+      {
+        "text": "Ondanks de constante angst om ontdekt te worden, bleef Claire gecodeerde berichten naar Londen sturen.",
+        "startSeconds": 124.91,
+        "endSeconds": 130.44
+      },
+      {
+        "text": "De operatie was een succes, maar trok nog meer aandacht naar zichzelf.",
+        "startSeconds": 138.54,
+        "endSeconds": 142.46
+      },
+      {
+        "text": "Helaas werd ze tijdens een verrassingsaanval gevangengenomen en geïnterneerd in een gevangenis die berucht was vanwege SOE-agenten.",
+        "startSeconds": 152.27,
+        "endSeconds": 160.42
+      },
+      {
+        "text": "Ondanks weken van brutale ondervragingen onthulde ze geen informatie over haar netwerken.",
+        "startSeconds": 161.22,
+        "endSeconds": 166.76
+      },
+      {
+        "text": "Ze werd in de vroege ochtend naar de binnenplaats van de gevangenis gebracht.",
+        "startSeconds": 178.04,
+        "endSeconds": 181.76
+      },
+      {
+        "text": "woorden van moed en doorzettingsvermogen in de strijd voor vrijheid.",
+        "startSeconds": 191.64,
+        "endSeconds": 195.81
+      },
+      {
+        "text": "Ze werd kort voor de bevrijding van de regio door geallieerde troepen neergeschoten.\"",
+        "startSeconds": 196.5,
+        "endSeconds": 201.39
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Hier is een mannequin die door zijn uitrusting (je hebt hem zeker op een kier gezien) een bepaalde functie suggereert."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Ze is in feite een undercoveragent, lid van de beroemde Britse Special Operations Executive (SOE), klaar om “Europa van binnenuit in vuur en vlam te zetten”, zoals Churchill zei."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Veel vrouwen onderscheidden zich binnen de SOE, en sommigen ondergingen een tragisch lot."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "In 1943 was het zijn missie om nazi-kringen te infiltreren en essentiële informatie naar Londen door te geven, terwijl hij sabotageoperaties orkestreerde."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Dankzij haar taalvaardigheid slaagde ze erin zich voor te doen als Duitse sympathisante en zo hun vertrouwen te winnen."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Ze onderscheidde zich door het organiseren van een nieuwe sabotagedaad: de ontsporing van een Duitse trein."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "De volgende dagen werden gekenmerkt door een intense jacht, maar sluw gebruikte ze haar vindingrijkheid om aan de zoektocht te ontsnappen..."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Zijn stilzwijgen en verzet irriteerden de Duitsers."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Als vergelding, en om een ​​voorbeeld te geven, besloten de nazi's hem standrechtelijk te executeren."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Geconfronteerd met haar kwelgeesten bleef Claire waardig en vastberaden."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Ze richtte haar laatste woorden tot haar mede-verzetsstrijders..."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
