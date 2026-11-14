@@ -1473,5 +1473,88 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "13": {
+    "id": "13",
+    "language": "it",
+    "audioSha256": "64d13b415f9668c87776e8762e1b4b6d774a032c522aa676f82c74bf5600de79",
+    "durationSeconds": 145.152,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9361f95f-8238-411c-9d32-e133e9d8c022?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original Italian recording differs from the Wivi exhibit wording. Two uncertain words remain in untimed phrases. ORIN follows the published exhibit spelling."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Tra i potenti manufatti della nostra collezione ci sono le imponenti mine marine di tipo ORIN, testimonianze tangibili delle strategie navali durante la Seconda Guerra Mondiale.",
+        "startSeconds": 0.05,
+        "endSeconds": 11.8
+      },
+      {
+        "text": "Trovate in un famoso porto francese, queste mine ricordano la minaccia costante e invisibile che gravava sulle flotte alleate e nemiche.",
+        "startSeconds": 25.99,
+        "endSeconds": 34.79
+      },
+      {
+        "text": "Ancorate sotto la superficie dell'acqua, le mine ORIN erano dotate di grilletti sensibili che rispondevano alla pressione o al suono, esplodendo al passaggio di una nave militare di passaggio.",
+        "startSeconds": 35.44,
+        "endSeconds": 47.64
+      },
+      {
+        "text": "Erano disposti a decine, proteggendo così un passaggio marittimo strategico.",
+        "startSeconds": 48.18,
+        "endSeconds": 53.4
+      },
+      {
+        "text": "La loro installazione, lungo rotte marittime vitali, aveva lo scopo di interrompere il trasporto di truppe, armi e rifornimenti, influenzando direttamente il corso delle operazioni e delle battaglie sulle acque.",
+        "startSeconds": 53.77,
+        "endSeconds": 67.36
+      },
+      {
+        "text": "L'impatto delle mine marine durante la guerra fu considerevole.",
+        "startSeconds": 68.0,
+        "endSeconds": 71.85
+      },
+      {
+        "text": "Devastarono le fila delle forze navali, imponendo cautela e rallentando notevolmente i movimenti marittimi.",
+        "startSeconds": 72.31,
+        "endSeconds": 79.73
+      },
+      {
+        "text": "Le misure per eliminarli e navigare in sicurezza hanno mobilitato notevoli risorse umane e tecnologiche, riflettendo così l'importanza strategica di questi strumenti di guerra.",
+        "startSeconds": 79.96,
+        "endSeconds": 91.78
+      },
+      {
+        "text": "Le mine ORIN non sono solo armi, ma anche simboli della guerra psicologica condotta sui mari, volta a seminare terrore e incertezza.",
+        "startSeconds": 107.12,
+        "endSeconds": 116.39
+      },
+      {
+        "text": "La nostra presentazione invita a comprendere la complessità della guerra navale attraverso questi manufatti, che testimoniano l'innovazione tecnica e le tattiche difensive e offensive che segnarono il conflitto.",
+        "startSeconds": 117.15,
+        "endSeconds": 130.89
+      },
+      {
+        "text": "Esponendoli, onoriamo la memoria di coloro che hanno sfidato i rischi inerenti al combattimento navale, riflettendo allo stesso tempo sull'ingegno umano, ancora una volta messo al servizio della guerra.",
+        "startSeconds": 131.48,
+        "endSeconds": 144.71
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Queste formidabili macchine, progettate per distruggere le navi nemiche, giocarono un ruolo cruciale nel controllo delle rotte marittime, influenzando fortemente le operazioni militari e gli sforzi di rifornimento."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Osservando queste reliquie esposte, si può solo immaginare le storie dei marinai e degli equipaggi, che hanno navigato tra questi pericoli invisibili, affrontando pericoli sottomarini mentre combattevano battaglie in superficie."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

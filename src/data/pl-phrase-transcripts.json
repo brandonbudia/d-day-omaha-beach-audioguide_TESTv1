@@ -1890,5 +1890,95 @@
       "Zdecydowaliśmy się zaprezentować tę kurtkę i hełm z pewnymi zastrzeżeniami, ponieważ według naszych źródeł historycznych i lokalnych przez długi czas utrzymywano w tajemnicy wydarzenie, które miało miejsce w przeddzień 6 czerwca na terenie gminy Saint-Laurent.",
       "Niewielka grupa kilku ludzi została zrzucona na spadochronach, aby unieszkodliwić Niemców w określonej strefie i przerwać niektóre połączenia radiowe."
     ]
+  },
+  "13": {
+    "id": "13",
+    "language": "pl",
+    "audioSha256": "d711c82eadb4c9e120305f6022215be35170ff36a290d105087ac4c525dad178",
+    "durationSeconds": 142.27066666666667,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/1e5693ee6606f5385093deae5fc28ee3e24eddaa.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish recording, shorter than the Wivi narratives in other languages. Small recognizes a clause omitted by medium. This and three other uncertain passages have no timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Miny morskie.",
+        "startSeconds": 0,
+        "endSeconds": 3.23
+      },
+      {
+        "text": "Wśród potężnych artefaktów naszej kolekcji znajdują się imponujące miny morskie typu ORIN, namacalne świadectwa strategii morskich stosowanych podczas II wojny światowej.",
+        "startSeconds": 4.65,
+        "endSeconds": 17.26
+      },
+      {
+        "text": "Te groźne urządzenia, zaprojektowane do niszczenia wrogich okrętów, odegrały kluczową rolę w kontrolowaniu szlaków morskich, silnie wpływając na działania wojskowe oraz wysiłki związane z zaopatrzeniem.",
+        "startSeconds": 18.58,
+        "endSeconds": 34.55
+      },
+      {
+        "text": "Rozmieszczano je dziesiątkami, chroniąc w ten sposób morski szlak.",
+        "startSeconds": 62.07,
+        "endSeconds": 66.61
+      },
+      {
+        "text": "Wpływ min morskich podczas wojny był znaczący.",
+        "startSeconds": 83.12,
+        "endSeconds": 85.91
+      },
+      {
+        "text": "Siały spustoszenie w szeregach sił morskich, wymuszając ostrożność i znacznie spowalniając ruch morski.",
+        "startSeconds": 86.98,
+        "endSeconds": 94.1
+      },
+      {
+        "text": "Działania związane z ich rozminowywaniem oraz bezpieczną żeglugą angażowały istotne zasoby ludzkie i technologiczne, ukazując strategiczne znaczenie tych narzędzi wojny.",
+        "startSeconds": 95.27,
+        "endSeconds": 107.92
+      },
+      {
+        "text": "Miny ORIN są nie tylko bronią, lecz także symbolami wojny psychologicznej prowadzonej na morzach, której celem było sianie strachu i niepewności.",
+        "startSeconds": 126.98,
+        "endSeconds": 138.41
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Odnalezione we francuskim porcie, miny te przypominają o stałym i niewidzialnym zagrożeniu, które ciążyło nad flotami alianckimi i wrogimi."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Zakotwiczone pod powierzchnią wody miny ORIN były wyposażone w czułe zapalniki, reagujące na [słowo niepewne] lub dźwięk, eksplodując w momencie przepływania jednostki morskiej."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Ich strategiczne rozmieszczenie wzdłuż kluczowych tras morskich miało na celu zakłócenie transportu wojsk, broni i zaopatrzenia, bezpośrednio wpływając na przebieg operacji i bitew na morzu."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Patrząc na te eksponowane relikty, można jedynie wyobrazić sobie historię marynarzy i załóg, którzy przemierzali te niewidzialne zagrożenia, stawiając czoła podwodnym niebezpieczeństwom, a jednocześnie prowadząc walkę na powierzchni."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Miny morskie.",
+      "Wśród potężnych artefaktów naszej kolekcji znajdują się imponujące miny morskie typu ORIN, namacalne świadectwa strategii morskich stosowanych podczas II wojny światowej.",
+      "Te groźne urządzenia, zaprojektowane do niszczenia wrogich okrętów, odegrały kluczową rolę w kontrolowaniu szlaków morskich, silnie wpływając na działania wojskowe oraz wysiłki związane z zaopatrzeniem.",
+      "Odnalezione we francuskim porcie, miny te przypominają o stałym i niewidzialnym zagrożeniu, które ciążyło nad flotami alianckimi i wrogimi.",
+      "Zakotwiczone pod powierzchnią wody miny ORIN były wyposażone w czułe zapalniki, reagujące na [słowo niepewne] lub dźwięk, eksplodując w momencie przepływania jednostki morskiej.",
+      "Rozmieszczano je dziesiątkami, chroniąc w ten sposób morski szlak.",
+      "Ich strategiczne rozmieszczenie wzdłuż kluczowych tras morskich miało na celu zakłócenie transportu wojsk, broni i zaopatrzenia, bezpośrednio wpływając na przebieg operacji i bitew na morzu.",
+      "Wpływ min morskich podczas wojny był znaczący.",
+      "Siały spustoszenie w szeregach sił morskich, wymuszając ostrożność i znacznie spowalniając ruch morski.",
+      "Działania związane z ich rozminowywaniem oraz bezpieczną żeglugą angażowały istotne zasoby ludzkie i technologiczne, ukazując strategiczne znaczenie tych narzędzi wojny.",
+      "Patrząc na te eksponowane relikty, można jedynie wyobrazić sobie historię marynarzy i załóg, którzy przemierzali te niewidzialne zagrożenia, stawiając czoła podwodnym niebezpieczeństwom, a jednocześnie prowadząc walkę na powierzchni.",
+      "Miny ORIN są nie tylko bronią, lecz także symbolami wojny psychologicznej prowadzonej na morzach, której celem było sianie strachu i niepewności."
+    ]
   }
 }

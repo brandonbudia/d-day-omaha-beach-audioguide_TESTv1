@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 76 ; IT12, PL11 et PL12 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 77 ; NL12, NL13, IT13 et PL13 ajoutées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -282,6 +282,12 @@ Le checkpoint 75 est publié sous `13a51ac9a6bf74f639aa32ab5c783662aa1a2214`, SH
 Le checkpoint 76 reprend IT12. Avant toute écriture, le diff montrait uniquement son MP3, son registre et son entrée du catalogue, en plus de `dev-dist/sw.js` préexistant. Les empreintes Wivi et locales, la taille, la durée et les intervalles concordaient. Le lot IT12 était intégralement écrit et n'a pas été rejoué. Le même lot ajoute les pistes polonaises originales PL11 et PL12 d’après les caches vérifiés. Repères IT12 19/26, PL11 9/15, PL12 13/23. Les deux reconnaissances de PL12 disent « piątemu i dwunastemu », différent des autres versions. Ce passage reste lisible sans repère pour revue. Les 126 tests, TypeScript et le build `index-D9-YpLKa.js` sont validés. Le navigateur a confirmé les trois clics, le surlignage, le démarrage et 23 passages statiques.
 
 État après le checkpoint 76 : DE 22/22, ES 22/22, IT 15/22, NL 15/22, PL 15/22 (10 originaux et 5 synthèses signalées). Il reste 21 originaux, sept par langue. Les deux reconnaissances de NL12, NL13, IT13 et PL13 sont en cache. Les brouillons de découpage sont dans les fichiers de comparaison et dans la conversation. Poursuivre depuis ces données et garder la distinction entre essais de lecture et vérification éditoriale.
+
+Le checkpoint 76 est publié sous `9b62e029c1df2e9246ecc4a8fdde8281b976172b`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 77 ajoute NL12 (6/18), NL13 (2/12), IT13 (11/13) et PL13 (8/12). Les récits néerlandais demeurent fidèles au texte publié. Les écarts de formulation, notamment les accords et noms de lieux, restent sans repère. La transcription du MP3 polonais s’arrête à la dernière phrase commune aux deux reconnaissances. Un passage omis par un modèle reste lisible sans minutage. Les 126 tests, TypeScript et le build `index-l1ocTDGw.js` ont réussi. Les quatre lecteurs ont répondu au clic au bon repère, avec surlignage et passages statiques.
+
+État après le checkpoint 77 : DE 22/22, ES 22/22, IT 16/22, NL 17/22 et PL 16/22 (11 originaux et 5 synthèses signalées). Il reste 17 originaux, répartis en 6 italiens, 5 néerlandais et 6 polonais. Les deuxièmes reconnaissances locales ont été lancées en file avec IT14, NL14 et PL14 en tête. Vérifier les caches avant toute relance. Les minutages FR et EN sont préservés, et le suivi partiel reste visible sur les nouvelles pistes.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

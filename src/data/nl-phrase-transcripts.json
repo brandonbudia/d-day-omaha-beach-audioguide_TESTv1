@@ -1434,5 +1434,173 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "12": {
+    "id": "12",
+    "language": "nl",
+    "audioSha256": "a42562e2e6d1a999e6e64f1ffe235a7cb955c00abdb481351b4c07a59e2e9420",
+    "durationSeconds": 196.848,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/189b52a3-b56c-4a71-a826-2493a06cefc7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Twelve passages with uncertain words, proper names or boundaries remain readable without timestamps. Ordinal designations and the conditional nature of the written account are preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Hun motto is: “Let’s Go!” » De 3e buste belicht de 5e en 2e Rangers.",
+        "startSeconds": 56.14,
+        "endSeconds": 62.32
+      },
+      {
+        "text": "Hun motto: “Niemand is 2e”.",
+        "startSeconds": 95.18,
+        "endSeconds": 97.74
+      },
+      {
+        "text": "Deze eenheid landde op 7 juni in Saint-Laurent-sur-Mer, op Omaha, en begon onmiddellijk te vechten; ze zal Brest in augustus 44 belegeren.",
+        "startSeconds": 98.11,
+        "endSeconds": 108.74
+      },
+      {
+        "text": "Vervolgens komt de hele Speciale Ingenieursbrigade.",
+        "startSeconds": 109.44,
+        "endSeconds": 112.34
+      },
+      {
+        "text": "Deze eenheid speelde een cruciale rol tijdens de landing op Omaha: haar missie was ondersteuning en logistiek.",
+        "startSeconds": 112.95,
+        "endSeconds": 120.34
+      },
+      {
+        "text": "Lokale getuigen uit die tijd vertellen deze feiten op een intieme manier, en ik blijf er vrij open over, aangezien we in de zee en op bepaalde boerderijen in de sector al materiaal hebben gevonden dat historisch gezien geen plaats had in de Omaha-sector.",
+        "startSeconds": 178.11,
+        "endSeconds": 193.47
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Deze zes bustes dragen op waardige wijze een authentiek historisch jasje en een helm, die de divisie-eenheden vertegenwoordigen die op 6 juni 1944 op Omaha landden."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "De eerste buste is versierd met het insigne van de Eerste Infanteriedivisie, ook wel bekend als de Big Red One; het cijfer 1 in het rood symboliseert deze eenheid, die deel uitmaakte van de eerste aanvalsgolven op Omaha."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Hun motto: “Geen missie te moeilijk, geen offer te groot: plicht eerst.” Naast hem vinden we een ensemble van de 29th Infantry Division, vertegenwoordigd door een yin-yang-vormige badge in blauwe en grijze kleuren."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Deze dappere mannen, vaak burgersoldaten met weinig ervaring, vochten tegen tirannie door te landen op het bloedige strand van Omaha, een emblematische eenheid van Vierville-sur-Mer."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Hun strijdkreet: ‘Rangers leiden de weg’ weerklinkt vandaag de dag nog steeds tussen de tumultueuze golven van Omaha."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Deze eenheid leed ook zware verliezen bij de 29th Division in de sector Vierville, terwijl de mannen van kolonel Rudder de kliffen van Pointe du Hoc, een paar kilometer verderop, veroverden."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Naarmate je verder komt, wordt de buste met het insigne van de 2e Infanteriedivisie versierd met het hoofd van een Indiaans opperhoofd, een symbool van kracht en strategie."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Bekend om hun vasthoudendheid en veelzijdigheid, werkten de mannen van deze brigades onder vijandelijk vuur: ze kwamen een handje helpen bij de eerste aanvalsgolven, en hun vele heroïsche verliezen markeerden die bloedige dag in Omaha."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Deze laatste outfit tenslotte draagt ​​het beeld van een typische luchtlandingsdivisie van Utah Beach: de 101st Division."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "We hebben besloten dit jasje en deze helm met enig voorbehoud te presenteren, omdat we onder onze historische en lokale bronnen een gebeurtenis vermelden die de dag vóór 6 juni in de stad Saint-Laurent zou hebben plaatsgevonden..."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Een kleine groep van enkele mannen zou zijn geparachuteerd om in een specifiek gebied Duitsers te neutraliseren en bepaalde radioverbindingen te verbreken; Deze operatie zou “Operatie Asquin” zijn genoemd en zou onderdeel zijn geweest van het Sussex-agentinfiltratieprogramma."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "De toekomst zal ons zeker meer vertellen... \""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "13": {
+    "id": "13",
+    "language": "nl",
+    "audioSha256": "9c430692476d460c9411dab7c1be07dd09a950684712c0dcf0b00832b4b519c8",
+    "durationSeconds": 149.76,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9361f95f-8238-411c-9d32-e133e9d8c022?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original Wivi text is preserved. Two corroborated phrases have timings. Word and agreement differences elsewhere require editorial listening before providing more timings."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Ze waren in tientallen gerangschikt en beschermden zo een strategische maritieme doorgang.",
+        "startSeconds": 47.25,
+        "endSeconds": 52.83
+      },
+      {
+        "text": "Hun installatie langs vitale zeeroutes was bedoeld om het transport van troepen, wapens en voorraden te verstoren, wat een directe invloed zou hebben op het verloop van operaties en veldslagen op de wateren.",
+        "startSeconds": 53.44,
+        "endSeconds": 66.15
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Tot de krachtige artefacten in onze collectie behoren de indrukwekkende zeemijnen van het type ORIN…, tastbare getuigen van marinestrategieën tijdens de Tweede Wereldoorlog."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Deze formidabele machines, ontworpen om vijandelijke schepen te vernietigen, speelden een cruciale rol bij het controleren van vaarroutes en hadden een grote invloed op militaire operaties en bevoorradingsinspanningen."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Deze mijnen, gevonden in een beroemde Franse haven, herinneren aan de constante en onzichtbare dreiging die op de geallieerde en vijandelijke vloten drukte."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "ORIN-mijnen, verankerd onder het wateroppervlak, waren uitgerust met gevoelige triggers die reageerden op druk of geluid en tot ontploffing kwamen wanneer een passerend marineschip passeerde."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "De impact van zeemijnen tijdens de oorlog was aanzienlijk: ze veroorzaakten grote schade aan de gelederen van de zeestrijdkrachten, vereisten voorzichtigheid en vertraagden de maritieme bewegingen aanzienlijk."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "De maatregelen om ze op te ruimen en veilig te navigeren, mobiliseerden aanzienlijke menselijke en technologische hulpbronnen, en weerspiegelden daarmee het strategische belang van deze oorlogsinstrumenten."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Als je deze tentoongestelde relikwieën bekijkt, kun je je alleen maar de verhalen voorstellen van de matrozen en bemanningen die door deze onzichtbare gevaren navigeerden en geconfronteerd werden met gevaren onder water terwijl ze gevechten aan de oppervlakte vochten."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "ORIN-mijnen zijn niet alleen wapens, maar ook symbolen van psychologische oorlogvoering op zee, gericht op het zaaien van terreur en onzekerheid."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Onze presentatie nodigt u uit om de complexiteit van oorlogsvoering op zee te begrijpen aan de hand van deze artefacten, die getuigen van de technische innovatie en defensieve en offensieve tactieken die het conflict kenmerkten."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Door ze tentoon te stellen eren we de nagedachtenis van degenen die de risico’s trotseerden die inherent zijn aan zeegevechten, terwijl we nadenken over het menselijk vernuft, opnieuw ten dienste van de oorlog.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
