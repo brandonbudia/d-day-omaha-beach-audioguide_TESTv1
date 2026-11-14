@@ -1556,5 +1556,150 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "14": {
+    "id": "14",
+    "language": "it",
+    "audioSha256": "6d895c037fea1c0685fe74326cfc3f85ba64974729c9b08871d034dc194dd709",
+    "durationSeconds": 204.048,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/af38999f-39d5-4b73-98af-329590948c77?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The player transcribes the actual Italian recording. Five phrases, including the opening and an uncertain pronoun near the end, remain readable without timing. The written Wivi account on the station page is preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Si tratta infatti di un’agente sotto copertura, membro del famoso Special Operations Executive, SOE britannico, pronta a incendiare l'Europa dall'interno, come disse Churchill.",
+        "startSeconds": 9.32,
+        "endSeconds": 21.55
+      },
+      {
+        "text": "La tuta esposta davanti a voi è molto interessante, perché una volta tolta, gli agenti indossavano sotto abiti civili.",
+        "startSeconds": 41.58,
+        "endSeconds": 48.85
+      },
+      {
+        "text": "Una volta a terra, usavano una piccola pala per seppellire la tuta e integrarsi il più normalmente possibile nella vita rurale o cittadina.",
+        "startSeconds": 49.51,
+        "endSeconds": 58.37
+      },
+      {
+        "text": "Questi agenti furono trovati dalla Norvegia al Nord Africa, passando per i paesi dell'Est, dove lavorarono per destabilizzare il regime nazista.",
+        "startSeconds": 59.08,
+        "endSeconds": 67.64
+      },
+      {
+        "text": "Molte donne si distinsero all'interno della SOE e alcune subirono un destino tragico.",
+        "startSeconds": 68.25,
+        "endSeconds": 73.88
+      },
+      {
+        "text": "È stato il caso di Claire Dumont, una giovane francese paracadutata sulla Loira, dotata di un eccezionale talento linguistico e di grande determinazione.",
+        "startSeconds": 74.48,
+        "endSeconds": 84.05
+      },
+      {
+        "text": "Nel 1943 la sua missione era quella di infiltrarsi negli ambienti nazisti e trasmettere informazioni vitali a Londra, mentre orchestrava operazioni di sabotaggio.",
+        "startSeconds": 84.73,
+        "endSeconds": 95.89
+      },
+      {
+        "text": "Grazie alle sue competenze linguistiche riuscì a spacciarsi per simpatizzante tedesca, conquistandosi così la loro fiducia.",
+        "startSeconds": 98.77,
+        "endSeconds": 106.5
+      },
+      {
+        "text": "La sua presenza era stata denunciata da uno dei suoi collaboratori.",
+        "startSeconds": 114.97,
+        "endSeconds": 118.92
+      },
+      {
+        "text": "Nonostante la costante paura di essere scoperta, Claire ha continuato a inviare messaggi in codice a Londra.",
+        "startSeconds": 128.02,
+        "endSeconds": 134.65
+      },
+      {
+        "text": "Si distinse organizzando un nuovo atto di sabotaggio, il deragliamento di un treno tedesco.",
+        "startSeconds": 135.32,
+        "endSeconds": 141.21
+      },
+      {
+        "text": "L'operazione è stata un successo, ma ha attirato ancora più attenzione su di sé.",
+        "startSeconds": 141.87,
+        "endSeconds": 146.85
+      },
+      {
+        "text": "I giorni successivi furono segnati da una caccia intensa, ma con astuzia usò il suo ingegno per sfuggire alla ricerca.",
+        "startSeconds": 147.52,
+        "endSeconds": 154.79
+      },
+      {
+        "text": "Sfortunatamente, durante un raid a sorpresa, fu catturata e internata in una prigione nota per gli agenti della SOE.",
+        "startSeconds": 155.43,
+        "endSeconds": 162.46
+      },
+      {
+        "text": "Nonostante settimane di brutali interrogatori, non ha rivelato alcuna informazione sulle sue reti.",
+        "startSeconds": 163.72,
+        "endSeconds": 169.4
+      },
+      {
+        "text": "Il suo silenzio e la sua resistenza esasperarono i tedeschi.",
+        "startSeconds": 170.04,
+        "endSeconds": 173.92
+      },
+      {
+        "text": "È stata portata la mattina presto nel cortile della prigione.",
+        "startSeconds": 180.52,
+        "endSeconds": 183.84
+      },
+      {
+        "text": "Di fronte ai suoi aguzzini, Claire rimase dignitosa e determinata.",
+        "startSeconds": 184.43,
+        "endSeconds": 188.94
+      },
+      {
+        "text": "Ha rivolto le sue ultime parole ai suoi compagni combattenti della resistenza.",
+        "startSeconds": 189.1,
+        "endSeconds": 193.76
+      },
+      {
+        "text": "Parole di coraggio e perseveranza nella lotta per la libertà.",
+        "startSeconds": 194.33,
+        "endSeconds": 197.61
+      },
+      {
+        "text": "Le hanno sparato poco prima della liberazione della regione da parte delle forze alleate.",
+        "startSeconds": 198.3,
+        "endSeconds": 203.48
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Ecco un manichino che, dal suo outfit — lo avrete sicuramente osservato leggermente socchiuso — suggerisce una funzione particolare."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Lo Special Operations Executive, dalla sua istituzione nel 1940, reclutò agenti e li addestrò alla guerra sovversiva: tecniche di sabotaggio, ricerca di intelligence e disinformazione, organizzazione della resistenza, infiltrazione con paracadute."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Una notte, mentre trasportava cariche [parola incerta] una linea ferroviaria cruciale per i tedeschi, Claire fu quasi catturata."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Riuscì però all'ultimo momento a fuggire nella foresta e trovò rifugio presso un contadino, anch’egli membro della resistenza."
+      },
+      {
+        "beforeSegment": 16,
+        "text": "Per rappresaglia e per dare un esempio, i nazisti decisero di giustiziarlo sommariamente."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

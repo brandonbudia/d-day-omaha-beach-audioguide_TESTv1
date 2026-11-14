@@ -500,11 +500,11 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "14": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "6d895c037fea1c0685fe74326cfc3f85ba64974729c9b08871d034dc194dd709",
+        "bytes": 3264813,
+        "durationSeconds": 204.048,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "15": {
         "sha256": "e6da7eaa73a052a36eb50da0767b983c201747a1eebe3e4447234d3c3313b230",

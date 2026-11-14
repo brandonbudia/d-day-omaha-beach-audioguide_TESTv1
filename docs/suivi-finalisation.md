@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 77 ; NL12, NL13, IT13 et PL13 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 78 ; IT14 ajoutée.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -288,6 +288,12 @@ Le checkpoint 76 est publié sous `9b62e029c1df2e9246ecc4a8fdde8281b976172b`, SH
 Le checkpoint 77 ajoute NL12 (6/18), NL13 (2/12), IT13 (11/13) et PL13 (8/12). Les récits néerlandais demeurent fidèles au texte publié. Les écarts de formulation, notamment les accords et noms de lieux, restent sans repère. La transcription du MP3 polonais s’arrête à la dernière phrase commune aux deux reconnaissances. Un passage omis par un modèle reste lisible sans minutage. Les 126 tests, TypeScript et le build `index-l1ocTDGw.js` ont réussi. Les quatre lecteurs ont répondu au clic au bon repère, avec surlignage et passages statiques.
 
 État après le checkpoint 77 : DE 22/22, ES 22/22, IT 16/22, NL 17/22 et PL 16/22 (11 originaux et 5 synthèses signalées). Il reste 17 originaux, répartis en 6 italiens, 5 néerlandais et 6 polonais. Les deuxièmes reconnaissances locales ont été lancées en file avec IT14, NL14 et PL14 en tête. Vérifier les caches avant toute relance. Les minutages FR et EN sont préservés, et le suivi partiel reste visible sur les nouvelles pistes.
+
+Le checkpoint 77 est publié sous `41d2b159f4190aca2cf0e1f95bcd4b5e148dc84a`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 78 ajoute IT14 (21/26). Le texte du lecteur suit la version prononcée, la fiche conserve le texte Wivi. L’ouverture, une préposition, deux formes incertaines et le pronom de « giustiziarlo » restent sans repère. Le navigateur a confirmé le clic à 128,02 s, le démarrage, le surlignage et les cinq passages statiques. Les 126 tests, TypeScript et le build `index-CcRFqS8U.js` ont réussi.
+
+État après le checkpoint 78 : DE 22/22, ES 22/22, IT 17/22, NL 17/22 et PL 16/22 (11 originaux et 5 synthèses signalées). Il reste 16 MP3 originaux. Prochaine action : NL14 et PL14, dont les reconnaissances locales sont dans la même file déjà lancée, puis IT18 et NL15. Consulter les caches avant toute relance et conserver les passages incertains en texte lisible.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 
