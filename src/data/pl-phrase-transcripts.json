@@ -1634,5 +1634,261 @@
       "To historie niewidzialnych żołnierzy, genialnych forteli i nocy pełnych napięcia.",
       "Ta lalka, tak krucha i niewinna, przypomina nam, że nawet w najciemniejszych czasach podstęp zawsze potrafi znaleźć drogę, by zatryumfować."
     ]
+  },
+  "11": {
+    "id": "11",
+    "language": "pl",
+    "audioSha256": "67bc0a104c0b4f4fab3d7f606401a9f62e51f19e20b34742669607060c3563a7",
+    "durationSeconds": 155.412,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/192238b3a8dd7e7931def1acee662b98b6f76ea9.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Polish transcription derived from the original Wivi MP3. Six passages with uncertain wording or boundaries are readable without timing. The spelling of Simonow does not certify the exact spoken phrase."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Przed Państwem znajduje się imponująca pamiątka z czasów II wojny światowej.",
+        "startSeconds": 10.48,
+        "endSeconds": 15.31
+      },
+      {
+        "text": "Broń, która przypomina mi, jak w dzieciństwie razem z bratem próbowaliśmy, oczywiście bez żadnych szans, bawić się nią, tą bronią ważącą prawie 20 kilogramów.",
+        "startSeconds": 16.16,
+        "endSeconds": 28.93
+      },
+      {
+        "text": "Jej techniczna nazwa jest równie chłodna jak jej wygląd – PTRS-41.",
+        "startSeconds": 30.3,
+        "endSeconds": 36.67
+      },
+      {
+        "text": "Jako dzieci zadawaliśmy sobie przede wszystkim pytanie – kto w ogóle może z tego strzelać?",
+        "startSeconds": 46.63,
+        "endSeconds": 53.18
+      },
+      {
+        "text": "To niemożliwe, nawet dla dorosłego.",
+        "startSeconds": 54.41,
+        "endSeconds": 56.36
+      },
+      {
+        "text": "Oczywiście strzelanie na stojąco było niemożliwe.",
+        "startSeconds": 57.53,
+        "endSeconds": 60.58
+      },
+      {
+        "text": "Strzelać można było wyłącznie w pozycji leżącej.",
+        "startSeconds": 62.43,
+        "endSeconds": 65.6
+      },
+      {
+        "text": "Tak więc, oparty o zamarzniętą ziemię pól bitewnych, ten karabin był zimnym, lecz zdecydowanym promykiem nadziei.",
+        "startSeconds": 128.99,
+        "endSeconds": 137.29
+      },
+      {
+        "text": "Ironią losu jest fakt, że sama armia niemiecka czasami wykorzystywała to narzędzie zniszczenia do własnych celów, uznając siłę, jaką kryła w sobie ta sowiecka broń.",
+        "startSeconds": 138.89,
+        "endSeconds": 151.56
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "PTRS-41, sowiecki ciężki karabin przeciwpancerny."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "To broń przybyła ze Wschodu, świadcząca o zaciekłej walce prowadzonej przez siły sowieckie przeciwko najeźdźcom."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Ten sowiecki ciężki karabin, wynalazku S.G. Simonowa, wzór 1941, dzięki swojej solidności uosabiał prawdziwą brutalną siłę, sam w sobie niosąc determinację i pragnienie ochrony przed wrogimi czołgami."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "To broń przeciwpancerna, odnaleziona w miejscu zwanym korytarzem śmierci, mrocznym i pełnym tragicznych wspomnień."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Używany do przebijania pancerza pojazdów opancerzonych, PTRS-41 stanowił odpowiedź na metalowe tytany, które groziły zniszczeniem miast i obróceniem w popiół wytrwałości całego narodu."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Wyobraźcie sobie żołnierzy na froncie wschodnim, walczących w bezlitosnych warunkach, gdzie każdy strzał mógł być jedyną linią obrony między życiem a śmiercią, między wolnością a niewolą."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "PTRS-41, sowiecki ciężki karabin przeciwpancerny.",
+      "Przed Państwem znajduje się imponująca pamiątka z czasów II wojny światowej.",
+      "Broń, która przypomina mi, jak w dzieciństwie razem z bratem próbowaliśmy, oczywiście bez żadnych szans, bawić się nią, tą bronią ważącą prawie 20 kilogramów.",
+      "Jej techniczna nazwa jest równie chłodna jak jej wygląd – PTRS-41.",
+      "To broń przybyła ze Wschodu, świadcząca o zaciekłej walce prowadzonej przez siły sowieckie przeciwko najeźdźcom.",
+      "Jako dzieci zadawaliśmy sobie przede wszystkim pytanie – kto w ogóle może z tego strzelać?",
+      "To niemożliwe, nawet dla dorosłego.",
+      "Oczywiście strzelanie na stojąco było niemożliwe.",
+      "Strzelać można było wyłącznie w pozycji leżącej.",
+      "Ten sowiecki ciężki karabin, wynalazku S.G. Simonowa, wzór 1941, dzięki swojej solidności uosabiał prawdziwą brutalną siłę, sam w sobie niosąc determinację i pragnienie ochrony przed wrogimi czołgami.",
+      "To broń przeciwpancerna, odnaleziona w miejscu zwanym korytarzem śmierci, mrocznym i pełnym tragicznych wspomnień.",
+      "Używany do przebijania pancerza pojazdów opancerzonych, PTRS-41 stanowił odpowiedź na metalowe tytany, które groziły zniszczeniem miast i obróceniem w popiół wytrwałości całego narodu.",
+      "Wyobraźcie sobie żołnierzy na froncie wschodnim, walczących w bezlitosnych warunkach, gdzie każdy strzał mógł być jedyną linią obrony między życiem a śmiercią, między wolnością a niewolą.",
+      "Tak więc, oparty o zamarzniętą ziemię pól bitewnych, ten karabin był zimnym, lecz zdecydowanym promykiem nadziei.",
+      "Ironią losu jest fakt, że sama armia niemiecka czasami wykorzystywała to narzędzie zniszczenia do własnych celów, uznając siłę, jaką kryła w sobie ta sowiecka broń."
+    ]
+  },
+  "12": {
+    "id": "12",
+    "language": "pl",
+    "audioSha256": "d56f975673645c42dee2520d8d8ee50a6442d02f7199c31646e68f2c6cfaf864",
+    "durationSeconds": 222.31333333333333,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/1fc5465518de6f8b23d0b38b33fe22caf97080b2.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Wivi Polish narration transcribed to its actual ending. Both models recognize piątemu i dwunastemu, differing from the other language versions; the passage stays visible without timing pending editorial review. Other unclear names and wording also remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Czerwona cyfra jeden symbolizuje tę jednostkę, która należała do pierwszych rzutów szturmowych na Omaha Beach.",
+        "startSeconds": 31.16,
+        "endSeconds": 38.69
+      },
+      {
+        "text": "Ich dewiza brzmi – żadna misja nie jest zbyt trudna, żadna ofiara nie jest zbyt wielka, obowiązek przede wszystkim.",
+        "startSeconds": 39.7,
+        "endSeconds": 48.37
+      },
+      {
+        "text": "Obok znajduje się zestaw 29. Dywizji Piechoty reprezentowanej przez insygnium w kształcie yin-yang w kolorach niebieskim i szarym.",
+        "startSeconds": 49.82,
+        "endSeconds": 60.08
+      },
+      {
+        "text": "Ich dewiza to – let's go, chodźmy!",
+        "startSeconds": 71.72,
+        "endSeconds": 76.02
+      },
+      {
+        "text": "Idąc dalej, można zobaczyć popiersie z insygniami drugiej dywizji piechoty przedstawionej za pomocą głowy indiańskiego wodza, symbolu siły i strategii.",
+        "startSeconds": 109.17,
+        "endSeconds": 120.99
+      },
+      {
+        "text": "W sierpniu 1944 roku brała udział w oblężeniu Brestu.",
+        "startSeconds": 137.42,
+        "endSeconds": 144.43
+      },
+      {
+        "text": "Następnie znajduje się zestaw poświęcony Engineer Special Brigade.",
+        "startSeconds": 145.98,
+        "endSeconds": 151.52
+      },
+      {
+        "text": "Jednostka ta odegrała kluczową rolę podczas lądowania na Omaha Beach.",
+        "startSeconds": 152.45,
+        "endSeconds": 156.94
+      },
+      {
+        "text": "Jej podstawową misją było wsparcie i logistyka.",
+        "startSeconds": 157.94,
+        "endSeconds": 161.08
+      },
+      {
+        "text": "Znani ze swej wytrwałości i wszechstronności, żołnierze tych brygad pracowali pod ogniem wroga.",
+        "startSeconds": 161.87,
+        "endSeconds": 168.11
+      },
+      {
+        "text": "Przybyli z pomocą pierwszym falom szturmowym, a ich liczne bohaterskie straty wpisały się w ten krwawy dzień na Omaha.",
+        "startSeconds": 169.23,
+        "endSeconds": 177.12
+      },
+      {
+        "text": "Na koniec ostatni mundur przedstawia typową dywizję powietrzno-desantową z Utah Beach, 101. dywizję powietrzno-desantową.",
+        "startSeconds": 178.7,
+        "endSeconds": 187.58
+      },
+      {
+        "text": "Niewielka grupa kilku ludzi została zrzucona na spadochronach, aby unieszkodliwić Niemców w określonej strefie i przerwać niektóre połączenia radiowe.",
+        "startSeconds": 207.24,
+        "endSeconds": 218.98
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Popiersia z insygniami dywizyjnymi."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Te sześć popiersi z godnością noszą autentyczne kurtki i hełmy z epoki przedstawia jednostki dywizyjne, które wylądowały na Omaha Beach 6 czerwca 1944 roku."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Pierwsze popiersie ozdobione insygnium I Dywizji Piechoty znanej również jako Big Red One."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Ci dzielni ludzie, często żołnierze-obywatele o niewielkim doświadczeniu, walczyli przeciw tyranii, lądując na krwawej plaży Omaha."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Trzecie popiersie oddaje hołd piątemu i dwunastemu batalionowi rangersów."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Ich okrzyk bojowy – Rangers, lead the way! – rangersi prowadzą, to dziś rozbrzmiewa wśród wzburzonych fal Omaha."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Jednostka ta poniosła również ciężkie straty wraz z 29. Dywizją w sektorze Vierville, podczas gdy ludzie pułkownika Ruddera zdobywali klify Pointe du Hoc, kilka kilometrów dalej."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Ich dewiza brzmi: Second to None, nie gorsi od innych."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Jednostka ta wylądowała 7 czerwca w Saint-Laurent-sur-Mer na Omaha Beach i natychmiast rozpoczęła walki."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Zdecydowaliśmy się zaprezentować tę kurtkę i hełm z pewnymi zastrzeżeniami, ponieważ według naszych źródeł historycznych i lokalnych przez długi czas utrzymywano w tajemnicy wydarzenie, które miało miejsce w przeddzień 6 czerwca na terenie gminy Saint-Laurent."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Popiersia z insygniami dywizyjnymi.",
+      "Te sześć popiersi z godnością noszą autentyczne kurtki i hełmy z epoki przedstawia jednostki dywizyjne, które wylądowały na Omaha Beach 6 czerwca 1944 roku.",
+      "Pierwsze popiersie ozdobione insygnium I Dywizji Piechoty znanej również jako Big Red One.",
+      "Czerwona cyfra jeden symbolizuje tę jednostkę, która należała do pierwszych rzutów szturmowych na Omaha Beach.",
+      "Ich dewiza brzmi – żadna misja nie jest zbyt trudna, żadna ofiara nie jest zbyt wielka, obowiązek przede wszystkim.",
+      "Obok znajduje się zestaw 29. Dywizji Piechoty reprezentowanej przez insygnium w kształcie yin-yang w kolorach niebieskim i szarym.",
+      "Ci dzielni ludzie, często żołnierze-obywatele o niewielkim doświadczeniu, walczyli przeciw tyranii, lądując na krwawej plaży Omaha.",
+      "Ich dewiza to – let's go, chodźmy!",
+      "Trzecie popiersie oddaje hołd piątemu i dwunastemu batalionowi rangersów.",
+      "Ich okrzyk bojowy – Rangers, lead the way! – rangersi prowadzą, to dziś rozbrzmiewa wśród wzburzonych fal Omaha.",
+      "Jednostka ta poniosła również ciężkie straty wraz z 29. Dywizją w sektorze Vierville, podczas gdy ludzie pułkownika Ruddera zdobywali klify Pointe du Hoc, kilka kilometrów dalej.",
+      "Idąc dalej, można zobaczyć popiersie z insygniami drugiej dywizji piechoty przedstawionej za pomocą głowy indiańskiego wodza, symbolu siły i strategii.",
+      "Ich dewiza brzmi: Second to None, nie gorsi od innych.",
+      "Jednostka ta wylądowała 7 czerwca w Saint-Laurent-sur-Mer na Omaha Beach i natychmiast rozpoczęła walki.",
+      "W sierpniu 1944 roku brała udział w oblężeniu Brestu.",
+      "Następnie znajduje się zestaw poświęcony Engineer Special Brigade.",
+      "Jednostka ta odegrała kluczową rolę podczas lądowania na Omaha Beach.",
+      "Jej podstawową misją było wsparcie i logistyka.",
+      "Znani ze swej wytrwałości i wszechstronności, żołnierze tych brygad pracowali pod ogniem wroga.",
+      "Przybyli z pomocą pierwszym falom szturmowym, a ich liczne bohaterskie straty wpisały się w ten krwawy dzień na Omaha.",
+      "Na koniec ostatni mundur przedstawia typową dywizję powietrzno-desantową z Utah Beach, 101. dywizję powietrzno-desantową.",
+      "Zdecydowaliśmy się zaprezentować tę kurtkę i hełm z pewnymi zastrzeżeniami, ponieważ według naszych źródeł historycznych i lokalnych przez długi czas utrzymywano w tajemnicy wydarzenie, które miało miejsce w przeddzień 6 czerwca na terenie gminy Saint-Laurent.",
+      "Niewielka grupa kilku ludzi została zrzucona na spadochronach, aby unieszkodliwić Niemców w określonej strefie i przerwać niektóre połączenia radiowe."
+    ]
   }
 }

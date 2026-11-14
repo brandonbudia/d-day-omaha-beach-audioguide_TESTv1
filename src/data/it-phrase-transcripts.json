@@ -1330,5 +1330,148 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "12": {
+    "id": "12",
+    "language": "it",
+    "audioSha256": "eb4dd1620794dacb8d35e5432f2ed52ba48f92bccecb7e745b5c2d6d58bfabb0",
+    "durationSeconds": 213.216,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/189b52a3-b56c-4a71-a826-2493a06cefc7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Italian MP3 uses a distinct narration. Conditional language is retained in the closing historical account. Seven phrases with unclear names, wording or numbers remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Questi sei busti indossano dignitosamente una giacca ed un elmo d'epoca autentici, che rappresentano le unità divisionali che sbarcarono a Omaha il 6 giugno 1944.",
+        "startSeconds": 0.06,
+        "endSeconds": 13.52
+      },
+      {
+        "text": "Il primo busto è ornato con le insegne della prima divisione di fanteria, detta anche la Grande Rossa.",
+        "startSeconds": 14.36,
+        "endSeconds": 21.18
+      },
+      {
+        "text": "Il numero uno in rosso simboleggia questa unità, che fece parte delle prime ondate di assalto a Omaha.",
+        "startSeconds": 21.68,
+        "endSeconds": 28.81
+      },
+      {
+        "text": "Il loro motto: nessuna missione troppo difficile, nessun sacrificio troppo grande, il dovere prima di tutto.",
+        "startSeconds": 29.32,
+        "endSeconds": 37.23
+      },
+      {
+        "text": "Accanto a lui troviamo un insieme della ventinovesima divisione di fanteria rappresentato da uno stemma a forma di yin-yang nei colori blu e grigio.",
+        "startSeconds": 37.72,
+        "endSeconds": 47.75
+      },
+      {
+        "text": "Il loro motto è «Andiamo».",
+        "startSeconds": 62.86,
+        "endSeconds": 64.88
+      },
+      {
+        "text": "Il loro grido di guerra: i Rangers aprono la strada.",
+        "startSeconds": 69.89,
+        "endSeconds": 73.9
+      },
+      {
+        "text": "Risuona ancora oggi tra le onde tumultuose di Omaha.",
+        "startSeconds": 74.25,
+        "endSeconds": 77.64
+      },
+      {
+        "text": "Man mano che si avanza, il busto recante le insegne della seconda divisione di fanteria è adornato dalla testa di un capo indiano, simbolo di forza e strategia.",
+        "startSeconds": 92.88,
+        "endSeconds": 103.95
+      },
+      {
+        "text": "Il loro motto: nessuno è secondo.",
+        "startSeconds": 104.5,
+        "endSeconds": 106.77
+      },
+      {
+        "text": "Assedierà Brest nell'agosto del ’44.",
+        "startSeconds": 113.99,
+        "endSeconds": 116.47
+      },
+      {
+        "text": "Poi arriva l'intera brigata speciale degli ingegneri.",
+        "startSeconds": 117.45,
+        "endSeconds": 120.61
+      },
+      {
+        "text": "La sua missione era di supporto e logistica.",
+        "startSeconds": 126.0,
+        "endSeconds": 129.13
+      },
+      {
+        "text": "Noti per la loro tenacia e versatilità, gli uomini di queste brigate lavorarono sotto il fuoco nemico.",
+        "startSeconds": 129.62,
+        "endSeconds": 136.38
+      },
+      {
+        "text": "Vennero a dare manforte alle prime ondate d'assalto e le loro numerose eroiche perdite segnarono quella sanguinosa giornata di Omaha.",
+        "startSeconds": 136.81,
+        "endSeconds": 146.09
+      },
+      {
+        "text": "Infine, quest'ultimo equipaggiamento porta l'immagine di una tipica divisione aviotrasportata di Utah Beach, la centunesima divisione.",
+        "startSeconds": 146.74,
+        "endSeconds": 156.13
+      },
+      {
+        "text": "Abbiamo deciso di presentare questa giacca e questo elmetto con alcune riserve, perché tra le nostre fonti storiche e locali, menzioniamo un evento che sarebbe avvenuto il giorno prima del 6 giugno nella cittadina di Saint-Laurent.",
+        "startSeconds": 156.51,
+        "endSeconds": 171.49
+      },
+      {
+        "text": "Un piccolo gruppo di pochi uomini sarebbe stato paracadutato per neutralizzare, in una zona specifica, i tedeschi e per interrompere alcuni collegamenti radio.",
+        "startSeconds": 172.14,
+        "endSeconds": 182.62
+      },
+      {
+        "text": "Il futuro ci dirà sicuramente di più.",
+        "startSeconds": 209.98,
+        "endSeconds": 212.33
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 5,
+        "text": "Questi uomini coraggiosi, spesso cittadini-soldato con poca esperienza, hanno combattuto contro la tirannia sbarcando sulla spiaggia insanguinata di Omaha, unità emblematica di Vierville-sur-Mer."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Il terzo busto evidenzia il quinto e il secondo Rangers."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Anche questa unità subì pesanti perdite con la ventinovesima divisione nel settore di Vierville, mentre gli uomini del colonnello Rudder conquistarono le scogliere di Pointe du Hoc alcuni chilometri più avanti."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Questa unità sbarcò il 7 giugno a Saint-Laurent-sur-Mer, a Omaha, e iniziò subito a combattere."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Questa unità ha svolto un ruolo [parola incerta] durante lo sbarco a Omaha."
+      },
+      {
+        "beforeSegment": 18,
+        "text": "Questa operazione sarebbe stata chiamata operazione Asquin e avrebbe fatto parte del programma di infiltrazione degli agenti del Sussex."
+      },
+      {
+        "beforeSegment": 18,
+        "text": "Testimoni locali dell'epoca raccontano questi fatti in modo intimo, e io mantengo una mente abbastanza aperta, poiché abbiamo già trovato, nel mare e in alcune fattorie del settore, materiale che storicamente non trovava posto nel settore di Omaha."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
