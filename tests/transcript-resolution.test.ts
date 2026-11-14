@@ -179,7 +179,7 @@ test('phrase following requires real matching audio and explicit nonoverlapping 
     assert.equal(resolved.mode, 'static');
     assert.equal(resolved.reason, 'invalid-timings');
   }
-  const actual = resolveTranscript('18', language, getMediaResource('18', language));
+  const actual = resolveTranscript('22', 'nl', getMediaResource('22', 'nl'));
   assert.equal(actual.mode, 'french-fallback');
   assert.equal(actual.contentLanguage, 'fr');
   assert.deepEqual(actual.segments, []);

@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 65 ; DE04, IT17, NL17 et PL04 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 66 ; 22 pistes allemandes et 22 pistes espagnoles disponibles.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -216,6 +216,12 @@ Le checkpoint 64 est publié sous `6453df9f5c737f9e3d7cde2a489893974fcffb8f`, SH
 Le checkpoint 65 ajoute DE04 (8/10), IT17 (12/14), NL17 (4/11) et PL04 (3/12). Les textes publiés DE et NL restent intacts. La version prononcée IT17 diffère du récit Wivi conservé sur la fiche. PL04 repose sur le véritable MP3 parmi les ressources sans texte publié. Les mots ambigus chez les deux modèles et les phrases non corroborées sont signalés et restent sans repère. Le navigateur a confirmé le clic, le démarrage de la lecture, le surlignage et les passages statiques sur les quatre pistes. Les 126 tests, TypeScript et build `index-owjy38b1.js` ont réussi. Les scénarios de repli DE04 utilisent maintenant DE18.
 
 État après le checkpoint 65 : DE 19/22, ES 22/22, IT 5/22, NL 7/22 et PL 9/22 (4 originales, 5 synthèses signalées). Il reste 48 MP3 originaux à intégrer. Le jeu de secondes reconnaissances est complété en priorité pour DE09, DE12, DE18, NL01, IT01, PL05, NL02, NL03, IT02 et IT04. Partir des JSON déjà présents. Lors de l'activation de DE18, les scénarios de repli à trois endroits doivent se baser sur une piste encore indisponible dans une autre langue si l'allemand est complet.
+
+Le checkpoint 65 est publié sous `cb34df53398ecdd3263f30704219e28d189590b9`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 66 ajoute DE09 (12/15), DE12 (9/19) et DE18 (11/15). Les textes Wivi sont conservés, avec les dates et numéros laissés à l’intérieur de leurs phrases. Les passages à revoir restent lisibles sans repère. La phrase DE18 dont l’audio ajoute « zu erreichen » est gardée sans minutage. Le navigateur a confirmé le clic, la reprise de lecture et le surlignage aux repères 22,50 s, 113,05 s et 51,81 s. Les 126 tests, TypeScript et le build `index-DHSIokgx.js` ont réussi. Les scénarios de repli portent désormais sur NL22, encore indisponible. Le test des packs recense les 22 MP3 allemands et les 22 espagnols.
+
+État après le checkpoint 66 : DE 22/22, ES 22/22, IT 5/22, NL 7/22 et PL 9/22 (4 originales, 5 synthèses signalées). Il reste 45 originaux à intégrer, répartis en IT 17, NL 15 et PL 13. Poursuivre avec NL01, IT01, IT16 et PL05 depuis les reconnaissances déjà mises en cache. Conserver les avertissements de suivi partiel. Première et seconde reconnaissances ne remplacent pas une relecture humaine.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

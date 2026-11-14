@@ -1971,5 +1971,293 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "09": {
+    "id": "09",
+    "language": "de",
+    "audioSha256": "9eda9233f61c7051ee3af8973deeb9725354a236ae1269788cd1dc334c06745f",
+    "durationSeconds": 67.8,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7f2d0041-18f6-4050-8b91-741d664c856c?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spelling of Severloh, a long passage omitted by one recognition pass, and the end of a short sentence still require review. The exact Wivi wording is preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Die Geschichte spielt auf einem Schießstand einer französischen Institution…",
+        "startSeconds": 0.06,
+        "endSeconds": 4.35
+      },
+      {
+        "text": "- Fabian!",
+        "startSeconds": 5.0,
+        "endSeconds": 5.62
+      },
+      {
+        "text": "- Ja ?",
+        "startSeconds": 6.02,
+        "endSeconds": 6.36
+      },
+      {
+        "text": "Kommen Sie und sehen Sie!",
+        "startSeconds": 7.15,
+        "endSeconds": 8.2
+      },
+      {
+        "text": "- Wo bist du ?",
+        "startSeconds": 8.85,
+        "endSeconds": 9.44
+      },
+      {
+        "text": "Komm hier entlang!",
+        "startSeconds": 10.08,
+        "endSeconds": 10.93
+      },
+      {
+        "text": "- Aber was machst du???",
+        "startSeconds": 11.7,
+        "endSeconds": 12.6
+      },
+      {
+        "text": "Zuhören!!!",
+        "startSeconds": 13.19,
+        "endSeconds": 13.81
+      },
+      {
+        "text": "Sehen?",
+        "startSeconds": 14.53,
+        "endSeconds": 14.98
+      },
+      {
+        "text": "Dies gibt Ihnen einen Eindruck von der Feuerrate dieses deutschen Maschinengewehrs, dem MG42.",
+        "startSeconds": 15.38,
+        "endSeconds": 21.86
+      },
+      {
+        "text": "Stellen Sie sich vor, am 6. Juni landeten amerikanische und alliierte Soldaten unter feindlichem Feuer, und dieses Feuer trug auch den Namen MG42 ...",
+        "startSeconds": 22.5,
+        "endSeconds": 33.91
+      },
+      {
+        "text": "In seinen Memoiren wird er erzählen, dass er nicht zum Vergnügen geschossen hat, sondern um am Leben zu bleiben.\"",
+        "startSeconds": 60.51,
+        "endSeconds": 67.36
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 11,
+        "text": "Die Geschichte wird sich leider an denjenigen erinnern, der als „das Biest von Omaha“ bezeichnet wurde: Heinrich Severloh, der am Tag des 6. Juni 44 seine Position hinter seinem MG42 von einem der strategischen Bunker von Omaha aus hielt."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Er gibt in seinen Erzählungen an, rund 12.500 Patronen verschossen zu haben."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Es ist beängstigend."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "12": {
+    "id": "12",
+    "language": "de",
+    "audioSha256": "a0cc32fe29acd74f036847eeb154edf94a27ad0e5899265f5dc5406f592a4bc8",
+    "durationSeconds": 208.512,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/189b52a3-b56c-4a71-a826-2493a06cefc7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Ten passages with uncertain wording or boundaries remain readable without timing. Dates and ordinal numbers are kept inside their sentences. The published text is preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Diese 6 Büsten tragen mit Würde eine authentische Jacke und einen Helm aus der Zeit und repräsentieren die Divisionseinheiten, die am 6. Juni 1944 auf Omaha gelandet sind.",
+        "startSeconds": 0.06,
+        "endSeconds": 13.6
+      },
+      {
+        "text": "Die erste Büste ist mit den Insignien der Ersten Infanteriedivision, auch bekannt als „Der Große Rote“, geschmückt; Die Zahl 1 in Rot symbolisiert diese Einheit, die Teil der ersten Angriffswellen auf Omaha war.",
+        "startSeconds": 14.55,
+        "endSeconds": 28.73
+      },
+      {
+        "text": "Während Sie voranschreiten, wird die Büste mit den Insignien der 2. Infanteriedivision mit dem Kopf eines Indianerhäuptlings geschmückt, einem Symbol für Stärke und Strategie.",
+        "startSeconds": 87.36,
+        "endSeconds": 98.69
+      },
+      {
+        "text": "Diese Einheit landete am 7. Juni in Saint-Laurent-sur-Mer auf Omaha und begann sofort mit dem Kampf.",
+        "startSeconds": 101.96,
+        "endSeconds": 109.05
+      },
+      {
+        "text": "Als nächstes kommt die gesamte Engineer Special Brigade.",
+        "startSeconds": 113.05,
+        "endSeconds": 116.31
+      },
+      {
+        "text": "Diese Einheit spielte bei der Landung in Omaha eine entscheidende Rolle: Ihr Auftrag bestand in der Unterstützung und Logistik.",
+        "startSeconds": 117.0,
+        "endSeconds": 124.71
+      },
+      {
+        "text": "Die für ihre Hartnäckigkeit und Vielseitigkeit bekannten Männer dieser Brigaden arbeiteten unter feindlichem Beschuss: Sie kamen, um den ersten Angriffswellen zur Seite zu stehen, und ihre vielen heldenhaften Verluste prägten diesen blutigen Tag in Omaha.",
+        "startSeconds": 125.52,
+        "endSeconds": 141.2
+      },
+      {
+        "text": "Schließlich trägt dieses letzte Outfit das Bild einer typischen Luftlandedivision von Utah Beach: der 101. Division.",
+        "startSeconds": 142.03,
+        "endSeconds": 150.35
+      },
+      {
+        "text": "Wir haben beschlossen, diese Jacke und diesen Helm mit gewissen Vorbehalten zu präsentieren, da wir in unseren historischen und lokalen Quellen ein Ereignis erwähnen, das sich am Tag vor dem 6. Juni in der Stadt Saint-Laurent ereignet hätte...",
+        "startSeconds": 151.2,
+        "endSeconds": 166.8
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Ihr Motto: „Keine Mission zu schwierig, kein Opfer zu groß: Pflicht zuerst.“ Neben ihm finden wir ein Ensemble der 29. Infanteriedivision, dargestellt durch ein Yin-Yang-förmiges Abzeichen in den Farben Blau und Grau."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Diese tapferen Männer, oft Bürgersoldaten mit wenig Erfahrung, kämpften gegen die Tyrannei, indem sie am blutigen Strand von Omaha landeten, einer symbolträchtigen Einheit von Vierville-sur-Mer."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Ihr Motto lautet: „Auf geht’s!“ » Die 3. Büste hebt die 5. und 2. Rangers hervor."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Ihr Kriegsruf: „Die Rangers gehen voran“ hallt noch heute in den turbulenten Wellen von Omaha wider."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Auch diese Einheit erlitt mit der 29. Division im Sektor Vierville schwere Verluste, während die Männer von Oberst Rudder einige Kilometer weiter die Klippen von Pointe du Hoc eroberten."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Ihr Motto: „No one’s 2nd“."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Sie wird Brest im August 44 belagern."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Eine kleine Gruppe einiger weniger Männer wäre mit dem Fallschirm abgeworfen worden, um in einem bestimmten Gebiet die Deutschen zu neutralisieren und bestimmte Funkverbindungen zu unterbrechen; Diese Operation hätte „Operation Asquin“ genannt und wäre Teil des Sussex-Programms zur Agenteninfiltration gewesen."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Lokale Zeugen aus dieser Zeit erzählen diese Tatsachen auf intime Weise, und ich bin ziemlich aufgeschlossen, da wir im Meer und auf bestimmten Farmen in diesem Sektor bereits Material gefunden haben, das historisch gesehen keinen Platz im Omaha-Sektor hatte."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Die Zukunft wird uns sicherlich mehr verraten … \""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "18": {
+    "id": "18",
+    "language": "de",
+    "audioSha256": "49428730d7f242d09bea2ceb62493888ade9d201282e3069598c66418f7b9cb7",
+    "durationSeconds": 131.616,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/eec8f080-383f-486f-b75f-1a1748bbac22?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Both ASR passes recognize zu erreichen in the final third, which is absent from the Wivi text. That sentence and three proper-name passages remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Wir wissen, dass Hitler erwartete, dass die Alliierten von Westen her in Europa landen würden, während die deutsche Armee an der Ostfront beschäftigt war.",
+        "startSeconds": 8.44,
+        "endSeconds": 17.93
+      },
+      {
+        "text": "Anschließend wurden die Küsten der Normandie mit Bunkern befestigt, und einige Monate vor der Landung wurden diese Truppen zahlenmäßig verstärkt.",
+        "startSeconds": 28.6,
+        "endSeconds": 37.34
+      },
+      {
+        "text": "Die für den D-Day vorgesehene Strategie für die Strände von Omaha und Utah sah bereits vor den Landungsoperationen Luftangriffe vor, um die Bunker und andere Feuerstellungen zu neutralisieren.",
+        "startSeconds": 38.19,
+        "endSeconds": 51.36
+      },
+      {
+        "text": "Leider fanden die Bombenangriffe aufgrund des schlechten Wetters im Morgengrauen hinter den feindlichen Linien statt und ließen die Verteidigungsanlagen intakt.",
+        "startSeconds": 51.81,
+        "endSeconds": 61.46
+      },
+      {
+        "text": "So landeten die ersten Angriffswellen unter feindlichem Beschuss.",
+        "startSeconds": 62.16,
+        "endSeconds": 65.76
+      },
+      {
+        "text": "Das Meer befand sich damals zwischen zwei Gezeiten und bot den Deutschen ein offensichtliches Schussfeld.",
+        "startSeconds": 66.5,
+        "endSeconds": 72.81
+      },
+      {
+        "text": "Einige Bunker waren nicht zum Meer, sondern entlang des Strandes ausgerichtet, was zu tragischen Verlusten führte.",
+        "startSeconds": 73.51,
+        "endSeconds": 80.73
+      },
+      {
+        "text": "Amphibientanks waren so konzipiert, dass sie schwimmen und den Strand erreichen konnten.",
+        "startSeconds": 81.9,
+        "endSeconds": 87.33
+      },
+      {
+        "text": "Von den 32 eingesetzten Panzern sanken nur 2 nicht.",
+        "startSeconds": 87.93,
+        "endSeconds": 92.06
+      },
+      {
+        "text": "Der einzige Schutz, den die Soldaten der 29. und 5. Rangers sowie die Ingenieure finden konnten, waren die von den Deutschen errichteten Strandverteidigungen.",
+        "startSeconds": 92.67,
+        "endSeconds": 103.18
+      },
+      {
+        "text": "Die Zahl der Opfer in Omaha ist tragisch: rund 4.000 Tote, Vermisste und Verletzte.",
+        "startSeconds": 120.59,
+        "endSeconds": 127.38
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Vor diesem Diorama von Vierville-sur-Mer werden wir versuchen zu verstehen, warum dieser Strand den Namen „Bloody Omaha“ trägt."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Um jeden Durchbruchsversuch nach Westen zu verlangsamen oder zu vereiteln, ordnete er den Bau des Atlantikwalls von Norwegen bis zum Baskenland an."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Es musste bis zum Ende des Vormittags gewartet werden, bis zwei Schiffe flankierten und ihren Kanonen die Gelegenheit boten, die berühmten deutschen Verteidigungsanlagen zu zerstören und den Truppen schließlich den Vormarsch zu ermöglichen."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Daher stammt auch der Name „Bloody Omaha“.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
