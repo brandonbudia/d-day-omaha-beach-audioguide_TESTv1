@@ -924,11 +924,11 @@
         "reason": "wivi-narration-partially-aligned"
       },
       "08": {
-        "sha256": "eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d",
-        "bytes": 239358,
-        "durationSeconds": 14.959875,
-        "status": "unavailable",
-        "reason": "placeholder"
+        "sha256": "c1c3ab0179d4bb9ea6d4c62e16208075d80d162cad37fb99100c0b0e5aee89f7",
+        "bytes": 2057901,
+        "durationSeconds": 128.616,
+        "status": "ready",
+        "reason": "wivi-narration-partially-aligned"
       },
       "09": {
         "sha256": "da4f63ad435a1a3c61ee319d4e20e59ea6492976d36067212eb9b8d6b6c314d2",

@@ -1171,5 +1171,80 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "08": {
+    "id": "08",
+    "language": "nl",
+    "audioSha256": "c1c3ab0179d4bb9ea6d4c62e16208075d80d162cad37fb99100c0b0e5aee89f7",
+    "durationSeconds": 128.616,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/cca5c151-6f2e-4420-be90-fa58a453eb89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Dutch Wivi narrative remains available. Five sentences with unclear wording, including the end of the narration, remain without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"In een landhuis in het zuiden van Normandië werd een onverwachte schat ontdekt tijdens een ochtend vol mysterie en emotie.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.92
+      },
+      {
+        "text": "Deze vondst is, veel meer dan een simpel speeltje, een pop.",
+        "startSeconds": 8.7,
+        "endSeconds": 13.11
+      },
+      {
+        "text": "Een ‘Rupert’-pop, bewaker van een weinig bekend verhaal uit de Tweede Wereldoorlog.",
+        "startSeconds": 13.7,
+        "endSeconds": 19.04
+      },
+      {
+        "text": "Qua uiterlijk lijkt Rupert op elke pop uit die tijd, met zijn versleten kleding en bijna onbestaande gelaatstrekken.",
+        "startSeconds": 19.72,
+        "endSeconds": 27.37
+      },
+      {
+        "text": "Wat deze pop echter echt aangrijpend maakt, is haar unieke rol in de geschiedenis van het verzet en de geallieerde operaties.",
+        "startSeconds": 28.08,
+        "endSeconds": 36.67
+      },
+      {
+        "text": "Deze verhalen zijn die van onzichtbare soldaten, ingenieuze listigheden en gespannen nachten.",
+        "startSeconds": 98.66,
+        "endSeconds": 105.16
+      },
+      {
+        "text": "Deze pop, zo kwetsbaar en onschuldig, herinnert ons eraan dat zelfs in de donkerste tijden sluwheid altijd een manier vindt om te schitteren.",
+        "startSeconds": 105.69,
+        "endSeconds": 114.99
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 5,
+        "text": "Tijdens Operatie TITANIC, een gewaagde missie om nazi-troepen te misleiden vóór de landingen in Normandië, werden honderden soortgelijke poppen, genaamd ‘Ruperts’, uit de lucht gedropt."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Ze waren uitgerust met geluidsapparatuur en kleine explosieven, die de aanwezigheid van parachutisten nabootsten en verwarring en desinformatie achter de vijandelijke linies zaaiden."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Als je voor dit relikwie stopt, kan ik niet anders dan denken dat bepaalde elitesoldaten het parachutespringen van deze poppen hebben begeleid, machinegeweren hebben afgevuurd en verschillende geluidseffecten hebben uitgezonden om de afleiding zo dicht mogelijk bij de realiteit te brengen."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Hoe dan ook, deze ontdekking op deze zolder met mijn vader nodigt ons uit om te denken dat deze pop echt een tastbare illustratie is van hoe de meest onschuldige objecten een cruciale rol kunnen spelen in grote oorlogsstrategieën."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "We nodigen je uit om je te verdiepen in de fascinerende geschiedenis ervan, om te ontdekken hoe het weefsel van oorlog soms werd geweven door draden die zo onwaarschijnlijk waren als een simpele pop.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
