@@ -220,7 +220,7 @@ test('home keeps its welcome, seven languages and tour action without the redund
 });
 
 test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
-  const audioCounts = { fr: 22, en: 22, de: 12, es: 20, pl: 6, it: 1, nl: 1 };
+  const audioCounts = { fr: 22, en: 22, de: 12, es: 22, pl: 6, it: 2, nl: 2 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
@@ -230,7 +230,7 @@ test('language selection distinguishes seven interfaces and reports validated au
     assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);
     const count = audioCounts[code];
     assert.ok(html.includes(escapeText(experienceText(count ? 'audioCount' : 'interfaceOnly', code, { count, total: 22 }))));
-    if (code === 'fr' || code === 'en') assert.match(html, /22\/22/);
+    if (count === 22) assert.match(html, /22\/22/);
     else assert.doesNotMatch(html, /22\/22/);
   }
 });

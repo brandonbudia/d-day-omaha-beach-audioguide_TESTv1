@@ -71,5 +71,75 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "08": {
+    "id": "08",
+    "language": "it",
+    "audioSha256": "a311618fd7d3e7e7ce3aa4a70a4f7c31dd35f89f3c67ef14c8388ec7d6113667",
+    "durationSeconds": 116.952,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/cca5c151-6f2e-4420-be90-fa58a453eb89?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual narration, distinct from the Wivi exhibit text.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian version differs from the Wivi text. Five passages with uncertain wording remain visible without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "In una casa di campagna immersa nel sud della Normandia, durante una mattinata ricca di mistero ed emozione, è stato scoperto un tesoro inaspettato.",
+        "startSeconds": 0.05,
+        "endSeconds": 8.91
+      },
+      {
+        "text": "Questo ritrovamento, molto più che un semplice giocattolo, è una bambola.",
+        "startSeconds": 9.5,
+        "endSeconds": 13.73
+      },
+      {
+        "text": "Una bambola Rupert, custode di una storia poco conosciuta della seconda guerra mondiale.",
+        "startSeconds": 14.05,
+        "endSeconds": 19.22
+      },
+      {
+        "text": "Tuttavia, ciò che rende questa bambola davvero toccante è il suo ruolo singolare nella storia della resistenza e delle operazioni alleate.",
+        "startSeconds": 28.7,
+        "endSeconds": 36.74
+      },
+      {
+        "text": "Queste storie sono quelle di soldati invisibili, di stratagemmi ingegnosi e di notti tese.",
+        "startSeconds": 92.42,
+        "endSeconds": 97.89
+      },
+      {
+        "text": "Questa bambola, così fragile e innocente, ci ricorda che anche nei momenti più bui, l'astuzia trova sempre il modo di brillare.",
+        "startSeconds": 98.33,
+        "endSeconds": 105.78
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "In apparenza, Rupert somiglia a una qualsiasi bambola dell'epoca, con i suoi vestiti logori e i lineamenti del viso quasi inesistenti."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Durante l’operazione Titanic, una [parola incerta] missione per ingannare le forze naziste prima dello sbarco in Normandia, centinaia di bambole simili, chiamate Ruperts, furono lanciate dal cielo."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Erano dotati di dispositivi sonori e piccoli esplosivi, imitando la presenza [parole incerte] paracadutisti e seminando confusione e disinformazione dietro le linee nemiche."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Mentre ti fermi davanti a questa reliquia, non posso fare [parole incerte] di pensare che alcuni soldati d’élite hanno accompagnato il paracadutismo di queste bambole, sparando con mitragliatrici e trasmettendo vari effetti sonori per rendere il diversivo il più vicino possibile alla realtà. In ogni caso, questa scoperta in questa soffitta con mio padre ci invita a pensare [parola incerta] questa bambola sia davvero un esempio tangibile di come gli oggetti più innocenti possano svolgere un ruolo cruciale nelle strategie di grande guerra."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "[Parola incerta] invitiamo ad approfondire la sua affascinante storia, ad esplorare come il [passaggio incerto] talvolta tessuto da fili improbabili, come una semplice bambola."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

@@ -2061,5 +2061,224 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "15": {
+    "id": "15",
+    "language": "es",
+    "audioSha256": "d1fd669f9384ba248938123607db6d3dfcc0c33695e2345244b7f7896d3a92ca",
+    "durationSeconds": 169.368,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/34de99d4-ae6b-4d5b-9354-802d35fff0c5?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The wording « a cabo » is absent in one recognition. The acoustic pause corroborates the Welbike ending and the boundary after « carretera »."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Os invito ahora a descubrir una de las piezas más fascinantes de nuestra colección: la Welbike, una pequeña motocicleta británica con un destino excepcional.",
+        "startSeconds": 0.06,
+        "endSeconds": 11.43
+      },
+      {
+        "text": "Es en este contexto que nació Welbike.",
+        "startSeconds": 29.98,
+        "endSeconds": 32.58
+      },
+      {
+        "text": "Diseñada por la unidad Estación IX del Servicio Secreto Británico, la Welbike es una motocicleta de una simplicidad deslumbrante, pero formidablemente efectiva.",
+        "startSeconds": 32.76,
+        "endSeconds": 44.32
+      },
+      {
+        "text": "Fue desarrollado específicamente para paracaidistas y fuerzas especiales del ejército británico.",
+        "startSeconds": 45.15,
+        "endSeconds": 51.49
+      },
+      {
+        "text": "La idea es ingeniosa: crear un vehículo ligero, compacto y fácilmente transportable en avión.",
+        "startSeconds": 52.27,
+        "endSeconds": 59.03
+      },
+      {
+        "text": "En cuanto suena el silbato y comienza la misión, la Welbike desata toda su magia.",
+        "startSeconds": 59.78,
+        "endSeconds": 65.82
+      },
+      {
+        "text": "Lanzada en paracaídas dentro de un contenedor cilíndrico, llegó al suelo al mismo tiempo que los soldados.",
+        "startSeconds": 66.06,
+        "endSeconds": 73.11
+      },
+      {
+        "text": "En tan solo unos minutos, sin herramientas complejas, está listo para salir a la carretera.",
+        "startSeconds": 73.77,
+        "endSeconds": 80.04
+      },
+      {
+        "text": "Sus diseñadores han imaginado una motocicleta que, pese a su tamaño compacto (sólo 32 kg), tiene una autonomía de casi 145 kilómetros, gracias a su motor de gasolina de dos tiempos.",
+        "startSeconds": 80.77,
+        "endSeconds": 95.79
+      },
+      {
+        "text": "Si su apariencia frugal a menudo provoca sonrisas, su contribución durante la guerra no es despreciable.",
+        "startSeconds": 96.6,
+        "endSeconds": 103.79
+      },
+      {
+        "text": "La Welbike se utilizó en diversas misiones, en particular durante la Operación Market Garden en los Países Bajos en 1944.",
+        "startSeconds": 104.38,
+        "endSeconds": 114.9
+      },
+      {
+        "text": "Rápida y discreta, permitió a los soldados transportar mensajes y recorrer largas distancias para establecer posiciones estratégicas.",
+        "startSeconds": 115.97,
+        "endSeconds": 124.44
+      },
+      {
+        "text": "Y ahora, ante ustedes, esta extraordinaria pieza se conserva cuidadosamente.",
+        "startSeconds": 125.14,
+        "endSeconds": 131.1
+      },
+      {
+        "text": "Encarna el ingenio y la determinación de una era en la que cada innovación tecnológica podía marcar la diferencia entre el éxito y el fracaso de una misión.",
+        "startSeconds": 131.3,
+        "endSeconds": 142.6
+      },
+      {
+        "text": "Como ávido coleccionista, es un honor para mí compartir con ustedes esta pieza única de la historia.",
+        "startSeconds": 143.33,
+        "endSeconds": 150.25
+      },
+      {
+        "text": "La Welbike sigue siendo un testimonio vibrante del espíritu de resistencia e inventiva que marcó la Segunda Guerra Mundial.",
+        "startSeconds": 150.87,
+        "endSeconds": 159.34
+      },
+      {
+        "text": "Espero que este descubrimiento os haya cautivado tanto como a mí me fascina.",
+        "startSeconds": 160.08,
+        "endSeconds": 165.25
+      },
+      {
+        "text": "Sigamos juntos nuestro viaje a través de la historia...\"",
+        "startSeconds": 165.45,
+        "endSeconds": 169.0
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Imagínese en el corazón de la Segunda Guerra Mundial, en la década de 1940: las fuerzas aliadas están tratando de desarrollar formas innovadoras de llevar a cabo operaciones militares, a menudo detrás de las líneas enemigas."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "12": {
+    "id": "12",
+    "language": "es",
+    "audioSha256": "08d863b04c145c28ec31aaef5f3c230e47aa3ce888adfeff9fab26e9d8daf96f",
+    "durationSeconds": 203.568,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/189b52a3-b56c-4a71-a826-2493a06cefc7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=es",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Ten sentences retain the published text without timing because the models disagree on names, ordinals, wording or boundaries."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Estos 6 bustos lucen con dignidad una chaqueta y un casco auténticos de época, que representan las unidades divisionales que desembarcaron en Omaha el 6 de junio de 1944.",
+        "startSeconds": 0.05,
+        "endSeconds": 12.51
+      },
+      {
+        "text": "El primer busto está adornado con la insignia de la Primera División de Infantería, también conocida como el Gran Rojo; El número 1 en rojo simboliza esta unidad, que formó parte de las primeras oleadas de asalto a Omaha.",
+        "startSeconds": 13.54,
+        "endSeconds": 27.85
+      },
+      {
+        "text": "Su lema: “Ninguna misión es demasiado difícil, ningún sacrificio demasiado grande: el deber primero”.",
+        "startSeconds": 28.41,
+        "endSeconds": 35.84
+      },
+      {
+        "text": "Su lema es: \"\"¡Vamos!\"\" » El tercer busto destaca al quinto y segundo Ranger.",
+        "startSeconds": 59.75,
+        "endSeconds": 65.41
+      },
+      {
+        "text": "Su grito de guerra: “Los Rangers lideran el camino” todavía resuena hoy entre las tumultuosas olas de Omaha.",
+        "startSeconds": 66.61,
+        "endSeconds": 73.91
+      },
+      {
+        "text": "Su lema: \"\"Nadie es el segundo\"\".",
+        "startSeconds": 99.99,
+        "endSeconds": 102.21
+      },
+      {
+        "text": "Luego viene toda la Brigada Especial de Ingenieros.",
+        "startSeconds": 114.31,
+        "endSeconds": 117.31
+      },
+      {
+        "text": "Esta unidad jugó un papel crucial durante el desembarco en Omaha: su misión era de apoyo y logística.",
+        "startSeconds": 117.83,
+        "endSeconds": 124.65
+      },
+      {
+        "text": "El futuro seguramente nos dirá más...\"",
+        "startSeconds": 199.55,
+        "endSeconds": 201.85
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Junto a él encontramos un conjunto de la 29.ª División de Infantería, representada por una insignia en forma de yin-yang en colores azul y gris."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Estos valientes, a menudo ciudadanos-soldados con poca experiencia, lucharon contra la tiranía desembarcando en la sangrienta playa de Omaha, una unidad emblemática de Vierville-sur-Mer."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Esta unidad también sufrió grandes pérdidas con la 29.ª División en el sector de Vierville, mientras los hombres del coronel Rudder capturaban los acantilados de Pointe du Hoc, unos kilómetros más adelante."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "A medida que avanzas, el busto que porta la insignia de la 2.ª División de Infantería se adorna con la cabeza de un jefe indio, símbolo de fuerza y ​​estrategia."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Esta unidad desembarcó el 7 de junio en Saint-Laurent-sur-Mer, en Omaha, e inmediatamente comenzó a luchar; asediará Brest en agosto del 44."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Conocidos por su tenacidad y versatilidad, los hombres de estas brigadas trabajaron bajo el fuego enemigo: vinieron a ayudar en las primeras oleadas de asalto, y sus numerosas pérdidas heroicas marcaron ese día sangriento en Omaha."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Finalmente, este último equipo lleva la imagen de una típica división aerotransportada de Utah Beach: la 101.ª División."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Hemos decidido presentar esta chaqueta y este casco con ciertas reservas, porque, entre nuestras fuentes históricas y locales, mencionamos un hecho que habría ocurrido la víspera del 6 de junio en la ciudad de Saint-Laurent..."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Un pequeño grupo de algunos hombres habría sido lanzado en paracaídas para neutralizar, en una zona específica, a los alemanes y cortar ciertas conexiones de radio; Esta operación se habría llamado “Operación Asquin” y habría sido parte del programa de infiltración de agentes de Sussex."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Testigos locales de la época relatan estos hechos de manera íntima, y ​​yo mantengo la mente bastante abierta, pues ya hemos encontrado, en el mar y en ciertas fincas del sector, material que históricamente no tuvo cabida en el sector de Omaha."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

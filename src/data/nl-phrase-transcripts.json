@@ -90,5 +90,90 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "18": {
+    "id": "18",
+    "language": "nl",
+    "audioSha256": "eaeea89e103bd6837ea2832fd90fbfe29a65adbfb60014046b3cb067ba8ddfb0",
+    "durationSeconds": 129.312,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/eec8f080-383f-486f-b75f-1a1748bbac22?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Two local ASR passes and boundary windows of the decoded MP3. Uncertain passages retain the Wivi reference text without timestamps.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Five sentences retain the published text while place names, the spoken D-Day designation, inflections, unit numbers or sentence boundaries need review."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Voor dit diorama van Vierville-sur-Mer zullen we proberen te begrijpen waarom dit strand de naam “Bloody Omaha” draagt.",
+        "startSeconds": 0.06,
+        "endSeconds": 9.01
+      },
+      {
+        "text": "We weten dat Hitler verwachtte dat de geallieerden vanuit het westen in Europa zouden landen, terwijl het Duitse leger bezig was aan het oostfront.",
+        "startSeconds": 9.75,
+        "endSeconds": 18.64
+      },
+      {
+        "text": "Normandië zag toen zijn kusten versterkt worden met bunkers, en een paar maanden voor de landing werden deze troepen in aantal versterkt.",
+        "startSeconds": 30.79,
+        "endSeconds": 39.37
+      },
+      {
+        "text": "Helaas vonden de bombardementen bij zonsopgang, als gevolg van slecht weer, plaats achter de vijandelijke linies, waardoor de verdediging intact bleef.",
+        "startSeconds": 53.42,
+        "endSeconds": 63.72
+      },
+      {
+        "text": "De zee bevond zich toen tussen twee getijden en vormde een duidelijk vuurveld voor de Duitsers; sommige bunkers waren niet op de zee gericht, maar langs het strand, wat tragische verliezen veroorzaakte.",
+        "startSeconds": 68.87,
+        "endSeconds": 82.56
+      },
+      {
+        "text": "Amfibische tanks waren ontworpen om te drijven en het strand te bereiken.",
+        "startSeconds": 83.35,
+        "endSeconds": 88.18
+      },
+      {
+        "text": "Van de 32 tanks die in gevecht waren, zonken er slechts twee niet.",
+        "startSeconds": 88.9,
+        "endSeconds": 93.77
+      },
+      {
+        "text": "De tol in Omaha is tragisch: ongeveer 4.000 doden, vermisten en gewonden.",
+        "startSeconds": 117.89,
+        "endSeconds": 123.94
+      },
+      {
+        "text": "Dit is de oorsprong van de naam die aan \"\"Bloody Omaha\"\" wordt gegeven.\"",
+        "startSeconds": 124.11,
+        "endSeconds": 128.42
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Om elke poging tot een doorbraak naar het westen te vertragen of te verijdelen, gaf hij opdracht tot de bouw van de Atlantikwall, van Noorwegen tot Baskenland."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "De op D-Day beoogde strategie voor de stranden van Omaha en Utah voorzag al vóór de landlandingsoperaties in luchtbombardementen om de bunkers en andere schietposities te neutraliseren."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Dit is hoe de eerste aanvalsgolven onder vijandelijk vuur landden."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "De enige schuilplaats die de soldaten van de 29th, 5th Rangers en genie konden vinden waren de strandverdedigingswerken die de Duitsers hadden geplaatst."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Het was nodig om tot het einde van de ochtend te wachten totdat twee schepen flankeerden en hun kanonnen de kans boden de beroemde Duitse verdedigingswerken te vernietigen, waardoor de troepen uiteindelijk konden oprukken."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
