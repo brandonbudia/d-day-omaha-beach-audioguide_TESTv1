@@ -1233,5 +1233,102 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "11": {
+    "id": "11",
+    "language": "it",
+    "audioSha256": "0e7353284fa03ae03c7141d4cc45ea4bd026042df745623be7b238340be3b090",
+    "durationSeconds": 111.216,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7cc86ceb-9921-4ba7-9f05-254edda0d754?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The player follows the actual Italian recording. Three passages with unresolved wording remain without timing. The published Italian text is retained on the station page."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Davanti a te, c'è un imponente souvenir della Seconda Guerra Mondiale.",
+        "startSeconds": 0.06,
+        "endSeconds": 4.17
+      },
+      {
+        "text": "Un'arma che mi ricorda che, quando ero più piccolo, con mio fratello, provavamo, senza fortuna, ovviamente, a giocarci.",
+        "startSeconds": 4.68,
+        "endSeconds": 12.6
+      },
+      {
+        "text": "Un'arma proveniente dall'Est, che testimonia la feroce lotta intrapresa dalle forze sovietiche contro gli invasori.",
+        "startSeconds": 21.62,
+        "endSeconds": 28.47
+      },
+      {
+        "text": "Da bambini, ci chiedevamo soprattutto: Ma chi può sparare con quello?",
+        "startSeconds": 28.79,
+        "endSeconds": 33.35
+      },
+      {
+        "text": "È impossibile, anche per un adulto.",
+        "startSeconds": 33.65,
+        "endSeconds": 36.2
+      },
+      {
+        "text": "Era obbligatorio sparare in posizione prona.",
+        "startSeconds": 40.23,
+        "endSeconds": 42.83
+      },
+      {
+        "text": "Questo fucile pesante, attraverso la sua robustezza, incarnava la vera forza bruta, trasmettendo determinazione e desiderio di protezione contro i carri armati nemici.",
+        "startSeconds": 43.31,
+        "endSeconds": 54.39
+      },
+      {
+        "text": "È un'arma anticarro.",
+        "startSeconds": 54.74,
+        "endSeconds": 56.12
+      },
+      {
+        "text": "Trovato in quello che veniva chiamato Braccio della Morte, un luogo oscuro e pieno di tragici ricordi.",
+        "startSeconds": 56.63,
+        "endSeconds": 63.36
+      },
+      {
+        "text": "Questo PTRS-41 veniva utilizzato per perforare la corazza dei veicoli blindati.",
+        "startSeconds": 63.67,
+        "endSeconds": 69.95
+      },
+      {
+        "text": "Rappresentava una risposta ai titani metallici che minacciavano di devastare le città e ridurre in cenere la tenacia di un popolo.",
+        "startSeconds": 70.67,
+        "endSeconds": 78.15
+      },
+      {
+        "text": "Immaginate i soldati sul fronte orientale, che combattano in condizioni spietate, dove ogni colpo poteva essere l'unica difesa tra la vita e la morte, tra la libertà e la prigionia.",
+        "startSeconds": 78.65,
+        "endSeconds": 90.34
+      },
+      {
+        "text": "Ancorato al terreno ghiacciato del campo di battaglia, questo fucile era un faro di speranza, freddo ma risoluto.",
+        "startSeconds": 90.77,
+        "endSeconds": 98.63
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Quest'arma pesa quasi venti chili, e il suo nome tecnico è freddo quanto [parola incerta] suo aspetto: PTRS-41."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Ovviamente, era impossibile scattare in piedi."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "[Parola incerta] l’ironia della sorte, lo stesso esercito tedesco a volte adottò questo strumento di distruzione per i propri scopi, riconoscendo la potenza contenuta in questo dispositivo sovietico."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
