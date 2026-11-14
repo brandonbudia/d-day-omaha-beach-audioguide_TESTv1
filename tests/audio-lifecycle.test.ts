@@ -453,7 +453,7 @@ test('a changed audio hash cannot restore a stale position and unavailable recor
   assert.equal(player.getState().currentStopId, '01');
   assert.equal(player.getState().currentTime, 0);
   assert.equal(player.restoreLastPlayback(), false);
-  player.setStop('04', false);
+  player.setStop('18', false);
   player.setLanguage('de');
   await player.play();
   assert.equal(media.playCalls, 0);

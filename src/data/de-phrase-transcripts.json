@@ -1903,5 +1903,73 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "04": {
+    "id": "04",
+    "language": "de",
+    "audioSha256": "da5e9552328b6fbe19d2b7f61124017ce7915bea71e47578de200bb24a6e555a",
+    "durationSeconds": 114.408,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/72a22281-e529-4082-9587-062ba1a49e74?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=de",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Wivi reference is preserved. Two phrases with unconfirmed readings of Schlachtfelder and Dieser remain without timing. Pauses verify the boundaries of the other phrases."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Vor Ihnen steht der imposante Flakvierling 38, ein eindrucksvolles Zeugnis des militärischen Einfallsreichtums des Zweiten Weltkriegs.",
+        "startSeconds": 0.06,
+        "endSeconds": 10.1
+      },
+      {
+        "text": "Dieses von deutschen Streitkräften entworfene vierläufige 20-mm-Flugabwehrgeschütz raste mit blitzschneller Feuerrate durch den Himmel und projizierte eine Feuerwand gegen alliierte Flugzeuge.",
+        "startSeconds": 11.1,
+        "endSeconds": 24.55
+      },
+      {
+        "text": "Dieses Metallmonster, das manchmal auch „der Zerkleinerer des Himmels“ genannt wird, wurde in Deutschland gefunden, Symbol einer Zeit, in der sich der Schatten der Konflikte über die ganze Welt erstreckte.",
+        "startSeconds": 25.34,
+        "endSeconds": 38.48
+      },
+      {
+        "text": "Seine imposante Präsenz erinnert an die Momente, als es mit ohrenbetäubendem Lärm den Himmel spaltete, um deutsches Territorium vor unaufhörlichen Luftangriffen zu verteidigen.",
+        "startSeconds": 39.21,
+        "endSeconds": 51.69
+      },
+      {
+        "text": "Der Boden selbst vibrierte mit der Intensität jeder Salve und definierte die Regeln des Luftangriffs neu.",
+        "startSeconds": 68.06,
+        "endSeconds": 75.35
+      },
+      {
+        "text": "Doch der Flakvierling 38 bedrohte nicht nur die Metallvögel, die durch die Wolken drangen.",
+        "startSeconds": 75.95,
+        "endSeconds": 82.2
+      },
+      {
+        "text": "Seine Fähigkeit, Landziele anzugreifen, machte es auch zu einem gefährlichen Gegner für fortgeschrittene Streitkräfte, die mit gnadenlosen Windböen zu kämpfen hatten.",
+        "startSeconds": 82.9,
+        "endSeconds": 93.38
+      },
+      {
+        "text": "Heute sind wir mit der Dualität der menschlichen Technologie konfrontiert: Sie ist zum Besten und zum Schlechtesten fähig.",
+        "startSeconds": 94.41,
+        "endSeconds": 102.09
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 4,
+        "text": "Für optimale Mobilität auf einem Anhänger oder auf Fahrzeugen wie Halbkettenfahrzeugen platziert, konnten diese Geschütze überall hin bewegt werden, wo Bedarf bestand, und ihre Vielseitigkeit veränderte die Schlachtfelder."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Dieser von der Zeit absichtlich vergessene Kanon erinnert uns an die Zerbrechlichkeit des Friedens und den Preis, den so viele Leben unter seinem Feuerdonner zahlen mussten.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

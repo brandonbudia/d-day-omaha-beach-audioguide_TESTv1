@@ -325,5 +325,93 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "17": {
+    "id": "17",
+    "language": "it",
+    "audioSha256": "af0928d2cdae6bd7b1d1767fc779268b82865ee0ef17cba9531faef699657c17",
+    "durationSeconds": 144.0,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/1e4f43a7-82d4-43dc-a73d-4da043db6ae7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The spoken Italian version is distinct from the exhibit text. Two phrases with uncertain readings remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Nel cuore del nostro museo, ti aspetta un pezzo di storia della medicina, che evoca le sfide e le innovazioni che hanno segnato la medicina di guerra.",
+        "startSeconds": 0.05,
+        "endSeconds": 10.03
+      },
+      {
+        "text": "Davanti a te si trova la tenda di un ospedale da campo americano, un commovente residuo delle operazioni militari che ridefinirono le pratiche mediche nel caos del fronte.",
+        "startSeconds": 10.67,
+        "endSeconds": 22.45
+      },
+      {
+        "text": "Questa tenda, con tutti i suoi utensili accuratamente disposti, racconta la storia dei primi interventi sul terreno durante la Seconda Guerra Mondiale.",
+        "startSeconds": 23.21,
+        "endSeconds": 33.56
+      },
+      {
+        "text": "L'urgente necessità di cure rapide ed efficaci ha portato a progressi significativi nelle tecniche mediche.",
+        "startSeconds": 33.87,
+        "endSeconds": 41.22
+      },
+      {
+        "text": "Ospedali da campo come questo hanno svolto un ruolo cruciale, portando le cure salvavita in prima linea, dove ogni secondo contava.",
+        "startSeconds": 42.08,
+        "endSeconds": 51.43
+      },
+      {
+        "text": "Tra le attrezzature esposte troverete una delle prime macchine a raggi X utilizzate sul campo.",
+        "startSeconds": 52.32,
+        "endSeconds": 58.14
+      },
+      {
+        "text": "Un'innovazione che ha trasformato il trattamento delle ferite di guerra.",
+        "startSeconds": 67.37,
+        "endSeconds": 71.25
+      },
+      {
+        "text": "Grazie a questi progressi tecnici, i medici furono in grado di identificare immediatamente fratture e schegge invisibili a occhio nudo, aumentando notevolmente le possibilità di sopravvivenza dei soldati feriti.",
+        "startSeconds": 71.76,
+        "endSeconds": 86.01
+      },
+      {
+        "text": "Mentre esplori questa stanza, scoprirai anche gli strumenti e le forniture essenziali che compongono l'arsenale di medici e infermieri coraggiosi.",
+        "startSeconds": 86.98,
+        "endSeconds": 96.43
+      },
+      {
+        "text": "Le pratiche mediche nei teatri operativi si sono evolute notevolmente grazie a queste strutture sul campo.",
+        "startSeconds": 113.84,
+        "endSeconds": 120.8
+      },
+      {
+        "text": "La tenda dell'ospedale da campo che stai guardando non è solo un luogo di memoria, ma anche un vibrante tributo all'ingegno e alla resilienza dei professionisti medici militari.",
+        "startSeconds": 121.43,
+        "endSeconds": 132.85
+      },
+      {
+        "text": "Il loro instancabile lavoro, di fronte agli orrori della guerra, ha aperto la strada a innovazioni che continuano a influenzare il nostro mondo oggi.",
+        "startSeconds": 133.5,
+        "endSeconds": 143.52
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 6,
+        "text": "Questo dispositivo rivoluzionario riflette l'impegno delle équipe mediche nel fornire diagnosi rapide e accurate."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Questi oggetti, dalla semplice siringa agli strumenti chirurgici, sono testimoni silenziosi dei progressi compiuti nel campo della medicina, dal miglioramento delle tecniche chirurgiche allo sviluppo di nuovi metodi di disinfezione e cura."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

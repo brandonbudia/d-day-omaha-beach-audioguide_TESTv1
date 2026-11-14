@@ -1017,5 +1017,90 @@
       "Ukryte w bocage i zamaskowane stanowiska ogniowe armat PAK 40 czyniły z tych armat broń śmiercionośną i niezwykle skuteczną.",
       "Kamuflaż stosowany specjalnie po to, by zlać artylerię z krajobrazem, przypomina nam, jak bardzo podstęp i pomysłowość były niezbędne w sztuce wojennej, czyniąc każdą zasadzkę potencjalnie śmiertelną dla sił alianckich."
     ]
+  },
+  "04": {
+    "id": "04",
+    "language": "pl",
+    "audioSha256": "e52854248b9cda56f0d35e9896994c593af20f5ff1942de33917c37ee0e06ab6",
+    "durationSeconds": 139.11333333333334,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/ae51559c2a2fb0b7b689e5619907d3dd7bebbfc5.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Original Polish recording with no Wivi transcript. Exact details of the title and two uncertain words require review. Three phrases with corroborated boundaries are timed."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Ten metalowy kolos, nazywany czasem niszczycielem nieba, został odnaleziony w Niemczech jako symbol epoki, w której cień konfliktu rozciągał się na cały świat.",
+        "startSeconds": 37.91,
+        "endSeconds": 48.99
+      },
+      {
+        "text": "Jego zdolność do prowadzenia ognia, również przeciw celom naziemnym, czyniła z niego groźnego przeciwnika dla nacierających wojsk lądowych, które musiały mierzyć się z bezlitosnymi seriami pocisków.",
+        "startSeconds": 99.12,
+        "endSeconds": 112.1
+      },
+      {
+        "text": "To działo, zapomniane przez czas, przypomina nam o kruchości pokoju i o cenie, jaką zapłaciło tak wiele istnień pod grzmotem jego ognia.",
+        "startSeconds": 124.43,
+        "endSeconds": 135.67
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Niemieckie działko przeciwlotnicze."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Przed Państwem stoi imponujący Flakvierling 38, potężne świadectwo wojskowej pomysłowości czasów II wojny światowej."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Zaprojektowane przez siły niemieckie, to czterolufowe działko przeciwlotnicze kalibru 20 mm rozdzierało [słowo niepewne] oszałamiającą szybkostrzelnością, tworząc ścianę ognia przeciwko alianckim samolotom."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Jego imponująca obecność przypomina chwilę, gdy w ogłuszającym huku przecinał przestworza, broniąc niemieckiego terytorium przed nieustannymi atakami z powietrza."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Umieszczane na przyczepie dla zapewnienia maksymalnej mobilności lub montowane na pojazdach, takich jak półgąsienicowe transportery, działa te mogły być przemieszczane tam, gdzie były najbardziej potrzebne."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Ich wszechstronność zmieniała oblicze pola walki."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Sam grunt drżał pod siłą każdej salwy, na nowo definiując zasady walki powietrznej."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Jednak Flakvierling 38 nie ograniczał się jedynie do zwalczania metalowych ptaków przecinających [słowo niepewne]."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Dziś stajemy wobec dwoistości ludzkiej technologii, zdolnej zarówno do wielkich osiągnięć, jak i do największego okrucieństwa."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Niemieckie działko przeciwlotnicze.",
+      "Przed Państwem stoi imponujący Flakvierling 38, potężne świadectwo wojskowej pomysłowości czasów II wojny światowej.",
+      "Zaprojektowane przez siły niemieckie, to czterolufowe działko przeciwlotnicze kalibru 20 mm rozdzierało [słowo niepewne] oszałamiającą szybkostrzelnością, tworząc ścianę ognia przeciwko alianckim samolotom.",
+      "Ten metalowy kolos, nazywany czasem niszczycielem nieba, został odnaleziony w Niemczech jako symbol epoki, w której cień konfliktu rozciągał się na cały świat.",
+      "Jego imponująca obecność przypomina chwilę, gdy w ogłuszającym huku przecinał przestworza, broniąc niemieckiego terytorium przed nieustannymi atakami z powietrza.",
+      "Umieszczane na przyczepie dla zapewnienia maksymalnej mobilności lub montowane na pojazdach, takich jak półgąsienicowe transportery, działa te mogły być przemieszczane tam, gdzie były najbardziej potrzebne.",
+      "Ich wszechstronność zmieniała oblicze pola walki.",
+      "Sam grunt drżał pod siłą każdej salwy, na nowo definiując zasady walki powietrznej.",
+      "Jednak Flakvierling 38 nie ograniczał się jedynie do zwalczania metalowych ptaków przecinających [słowo niepewne].",
+      "Jego zdolność do prowadzenia ognia, również przeciw celom naziemnym, czyniła z niego groźnego przeciwnika dla nacierających wojsk lądowych, które musiały mierzyć się z bezlitosnymi seriami pocisków.",
+      "Dziś stajemy wobec dwoistości ludzkiej technologii, zdolnej zarówno do wielkich osiągnięć, jak i do największego okrucieństwa.",
+      "To działo, zapomniane przez czas, przypomina nam o kruchości pokoju i o cenie, jaką zapłaciło tak wiele istnień pod grzmotem jego ognia."
+    ]
   }
 }

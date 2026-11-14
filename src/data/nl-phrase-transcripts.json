@@ -657,5 +657,73 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "17": {
+    "id": "17",
+    "language": "nl",
+    "audioSha256": "b66dbafe06fcbdd04c75216ab361fb478316c1a1a37590209ca278695b4fc65a",
+    "durationSeconds": 147.312,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/1e4f43a7-82d4-43dc-a73d-4da043db6ae7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Seven sentences with wording or boundary discrepancies are retained without timing. The published Dutch reference is preserved."
+      ]
+    },
+    "segments": [
+      {
+        "text": "De dringende behoefte aan snelle en effectieve zorg heeft geleid tot aanzienlijke vooruitgang in medische technieken; Veldhospitalen als deze speelden een cruciale rol door levensreddende zorg dicht bij de frontlinie te brengen, waar elke seconde telde.",
+        "startSeconds": 34.18,
+        "endSeconds": 50.81
+      },
+      {
+        "text": "Onder de tentoongestelde apparatuur bevindt zich een van de eerste röntgenapparatuur die in het veld wordt gebruikt.",
+        "startSeconds": 51.56,
+        "endSeconds": 58.52
+      },
+      {
+        "text": "Dit revolutionaire apparaat weerspiegelt de inzet van medische teams om snelle en nauwkeurige diagnoses te stellen, een innovatie die de behandeling van oorlogsverwondingen heeft getransformeerd.",
+        "startSeconds": 58.88,
+        "endSeconds": 70.95
+      },
+      {
+        "text": "Dankzij deze veldstructuren zijn de medische praktijken in operatiekamers aanzienlijk geëvolueerd.",
+        "startSeconds": 114.91,
+        "endSeconds": 121.45
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"In het hart van ons museum wacht u een stukje medische geschiedenis, dat de uitdagingen en innovaties oproept die de oorlogsgeneeskunde kenmerkten."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Voor je ligt een Amerikaanse veldhospitaaltent, een ontroerend overblijfsel van militaire operaties die de medische praktijk opnieuw definieerden te midden van de chaos aan het front."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Deze tent, met al zijn zorgvuldig gerangschikte gebruiksvoorwerpen, vertelt het verhaal van de eerste interventies ter plaatse tijdens de Tweede Wereldoorlog."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Dankzij deze technische vooruitgang konden artsen onmiddellijk breuken en granaatscherven identificeren die onzichtbaar waren voor het blote oog, waardoor de overlevingskansen van gewonde soldaten aanzienlijk toenamen."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Terwijl je deze kamer verkent, zul je ook de essentiële gereedschappen en benodigdheden ontdekken die deel uitmaken van het arsenaal aan moedige artsen en verpleegsters."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Deze voorwerpen, van de eenvoudige injectiespuit tot chirurgische instrumenten, zijn stille getuigen van de vooruitgang die is geboekt op het gebied van de geneeskunde, van verbeterde chirurgische technieken tot de ontwikkeling van nieuwe methoden voor desinfectie en behandeling."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "De veldhospitaaltent waar u nu naar kijkt is niet alleen een plaats van herinnering, maar ook een levendig eerbetoon aan de vindingrijkheid en veerkracht van militair-medische professionals; hun onvermoeibare werk, geconfronteerd met de verschrikkingen van de oorlog, maakte de weg vrij voor innovaties die onze wereld vandaag de dag nog steeds beïnvloeden.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
