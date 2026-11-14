@@ -1246,5 +1246,193 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "10": {
+    "id": "10",
+    "language": "nl",
+    "audioSha256": "e84ce93d89113887d58eea9f9b16ef55190728543bac6d33c3703d2d1865dcf8",
+    "durationSeconds": 155.712,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ef4b797-5c3c-4896-ba1a-baeb88d60d33?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The Dutch Wivi text is preserved. Six sentences with unclear wording or differences in both recognition passes remain without timing, including the unit name and the closing anecdote."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Mijn vader had al een tijdje begrepen dat de Duitsers tijdens de bezetting van Frankrijk de voorkeur gaven aan mooie woningen.",
+        "startSeconds": 11.62,
+        "endSeconds": 19.15
+      },
+      {
+        "text": "Tijdens een tentoonstelling, in het hart van onze stad, ontmoette hij iemand die hem uitlegde dat zijn eigendom in de jaren veertig door de Duitsers was bezet.",
+        "startSeconds": 19.91,
+        "endSeconds": 30.16
+      },
+      {
+        "text": "Het kostte ons duidelijk niet veel moeite om naar het huis van deze heer te gaan.",
+        "startSeconds": 30.3,
+        "endSeconds": 34.78
+      },
+      {
+        "text": "Een klein afgelegen wegje in het bos, een majestueuze poort, eindeloze stenen muren… het tafereel is gezet.",
+        "startSeconds": 35.33,
+        "endSeconds": 43.41
+      },
+      {
+        "text": "We passeren voor het huis van de conciërge en, er tegenover, een ander gebouw dat er vervallen uitziet, met een valse achterkant.",
+        "startSeconds": 44.2,
+        "endSeconds": 52.72
+      },
+      {
+        "text": "We worden verwelkomd door de heer in kwestie en het bezoek begint… Wat een sfeer...",
+        "startSeconds": 53.38,
+        "endSeconds": 59.04
+      },
+      {
+        "text": "Het is werkelijk een moment dat in ons geheugen gegrift blijft...",
+        "startSeconds": 72.92,
+        "endSeconds": 76.79
+      },
+      {
+        "text": "Maar het meest verrassende komt nog, want in de andere kamer, midden in deze verlaten woonkamer, staat een soort kleine tank.",
+        "startSeconds": 77.5,
+        "endSeconds": 85.83
+      },
+      {
+        "text": "Verontrustend als je niet weet wat het is.",
+        "startSeconds": 86.39,
+        "endSeconds": 88.95
+      },
+      {
+        "text": "Opnieuw hebben de Duitsers een zeer inventieve technologie ontwikkeld: het is een Goliath.",
+        "startSeconds": 89.6,
+        "endSeconds": 96.04
+      },
+      {
+        "text": "Hier voor je staat de versie met benzinemotor en het hele interieur is compleet (uiteraard zonder de explosieve lading).",
+        "startSeconds": 115.58,
+        "endSeconds": 123.61
+      },
+      {
+        "text": "Deze Goliath wordt op het daarvoor voorziene rek geplaatst, waar er vier in kunnen.",
+        "startSeconds": 124.36,
+        "endSeconds": 130.05
+      },
+      {
+        "text": "Ik eindig met een ongelukkige anekdote: Tijdens de landing, in de sector Utah Beach, vonden de geallieerden kleine grotten op de stranden, en daarin waren Goliaths opgeslagen...",
+        "startSeconds": 130.55,
+        "endSeconds": 142.29
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"In het zuiden van Normandië, waar mijn vader en ik woonden, had een Duitse eenheid, de Lehr-panzer genaamd, zijn hoofdkwartier in deze regio gevestigd."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "krakende parketvloeren, oude kasten vol gelabelde fossielen, daterend uit een nog ouder tijdperk, en in deze duisternis diverse kleine voorwerpen uit het Duitse leger."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Een draadgeleide minitank die een explosieve lading vervoerde die tegen gebouwen of vijandelijke voertuigen moest worden geprojecteerd."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Deze Goliath maakte deel uit van wat bekend staat als ‘Hitlers speciale wapens’; het is een zeer zeldzaam en gewaardeerd stuk in de verzamelwereld."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "Niet wetende wat ze waren, denkend aan \"\"speelgoed\"\", gooiden sommige soldaten daar een granaat..."
+      },
+      {
+        "beforeSegment": 13,
+        "text": "en stierven helaas, omdat de explosie vertienvoudigd werd door de beschuldigingen.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "11": {
+    "id": "11",
+    "language": "nl",
+    "audioSha256": "e694dad1ff443c96461c1a3d31cde6a2c07ceb5051890e656b622ca708c8fd11",
+    "durationSeconds": 107.52,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7cc86ceb-9921-4ba7-9f05-254edda0d754?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The published Dutch narrative is preserved. Six passages with unclear or differing words remain without timestamps. A decoded pause and both recognitions confirm that antitankwapen must be included in its entirety."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Dit wapen weegt bijna 20 kg en de technische naam is al even koud als zijn uiterlijk: de PTRS 41.",
+        "startSeconds": 14.33,
+        "endSeconds": 22.97
+      },
+      {
+        "text": "Een wapen uit het Oosten, dat getuigt van de felle strijd die de Sovjet-troepen voerden tegen de indringers.",
+        "startSeconds": 23.45,
+        "endSeconds": 30.36
+      },
+      {
+        "text": "Als kinderen vroegen we ons vooral af: \"\"Maar wie kan daarmee schieten?",
+        "startSeconds": 30.93,
+        "endSeconds": 35.44
+      },
+      {
+        "text": "Liggend schieten was verplicht.",
+        "startSeconds": 42.26,
+        "endSeconds": 43.71
+      },
+      {
+        "text": "Dit zware geweer belichaamde door zijn robuustheid echte brute kracht en bracht vastberadenheid en het verlangen naar bescherming tegen vijandelijke tanks over.",
+        "startSeconds": 44.2,
+        "endSeconds": 53.25
+      },
+      {
+        "text": "Het is een antitankwapen!",
+        "startSeconds": 53.91,
+        "endSeconds": 55.32
+      },
+      {
+        "text": "Gevonden in wat de “dodencel” werd genoemd, een donkere plek vol tragische herinneringen, werd deze PTRS-41 gebruikt om het pantser van gepantserde voertuigen te doorboren.",
+        "startSeconds": 55.82,
+        "endSeconds": 66.91
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"Before you is een imposant souvenir uit de Tweede Wereldoorlog, een wapen dat me eraan herinnert dat we, toen ik jonger was, samen met mijn broer – uiteraard zonder enig succes – ermee probeerden te spelen."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Het is onmogelijk, zelfs voor een volwassene...\"\" Het was duidelijk onmogelijk om staand te fotograferen."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Het vertegenwoordigde een reactie op de metalen titanen die dreigden steden te verwoesten en de vasthoudendheid van een volk tot as te reduceren."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Stel je de soldaten aan het Oostfront voor, vechtend in meedogenloze omstandigheden, waar elk schot de enige verdediging zou kunnen zijn tussen leven en dood, tussen vrijheid en gevangenschap."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Verankerd in de bevroren grond van het slagveld was dit geweer een baken van hoop, koud maar vastberaden."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Ironisch genoeg adopteerde het Duitse leger dit vernietigingsinstrument soms zelf voor zijn eigen doeleinden, waarbij het de kracht erkende die in dit Sovjet-apparaat zat.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

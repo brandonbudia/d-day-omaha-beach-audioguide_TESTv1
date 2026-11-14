@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 73 ; NL08 ajoutée.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 74 ; NL10 et NL11 ajoutées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -264,6 +264,12 @@ Le checkpoint 72 est publié sous `6cd6a549ca5e821e93e70a546c7a148a7c1d1c3c`, SH
 Le checkpoint 73 ajoute NL08 (7/12) avec le MP3 et le texte Wivi. L’ouverture de « Wat deze pop… » est corroborée par le silence à 28,08 s. Les écarts de formulation sont conservés sans repère. Les 126 tests, TypeScript et le build `index-Csd2e3nO.js` ont réussi. Le navigateur a confirmé le clic, le démarrage, le surlignage et les cinq passages statiques.
 
 État après le checkpoint 73 : DE 22/22, ES 22/22, IT 13/22, NL 13/22, PL 13/22 (8 originaux et 5 synthèses signalées). Il reste 27 pistes originales, neuf par langue. Une seconde passe locale de NL10 est disponible. Consulter les nouveaux caches pour NL11, IT11, IT12 et PL11–12 avant toute relance, puis exploiter les comparaisons déjà préparées dans la conversation.
+
+Le checkpoint 73 est publié sous `3d241ebe3db30f7b7bc693e9c5ba7004ba173cdd`, SHA distant confirmé sur TESTv1.
+
+Le checkpoint 74 ajoute NL10 (13/19) et NL11 (7/13). Les deux récits Wivi sont préservés. Le repère NL11 à 53,91 s inclut « antitankwapen » jusqu'à sa fin audio, alors que l'appariement brut coupait ce mot. Douze autres passages avec écarts ou incertitudes restent lisibles sans repère. Les 126 tests, TypeScript, le build `index-SLXAHKGA.js` et la recette navigateur des deux pistes sont validés.
+
+État après le checkpoint 74 : DE 22/22, ES 22/22, IT 13/22, NL 15/22 et PL 13/22 (8 originaux et 5 synthèses signalées). Il reste 25 originaux à intégrer : 9 IT, 7 NL, 9 PL. La deuxième reconnaissance IT11 est disponible. Consulter les caches IT12, PL11–12, NL12–13, IT13 et PL13 avant de relancer un traitement.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 
