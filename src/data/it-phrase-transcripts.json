@@ -1958,5 +1958,97 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "20": {
+    "id": "20",
+    "language": "it",
+    "audioSha256": "3858b42ef4d0341598c5984bb90d4aa87890a55e6fd9f44be019ca848f8402a7",
+    "durationSeconds": 160.368,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7d903007-924c-4055-beb5-6493e0fc9f99?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The player uses the actual Italian narration. Three phrases with uncertain words remain readable without timing. The Wivi exhibit text is preserved separately."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Questa vetrina è dedicata ad alcuni oggetti dell'esercito britannico, rinvenuti in vari luoghi dei settori inglesi del D-Day.",
+        "startSeconds": 0.05,
+        "endSeconds": 7.95
+      },
+      {
+        "text": "Questo mi ricorda mio zio che già da bambino ci raccontava i suoi aneddoti, condivisi con mio padre nel piccolo bar vicino al ponte Pegasus, testimoni di un tempo in cui il coraggio oltrepassava i confini e i cieli.",
+        "startSeconds": 8.49,
+        "endSeconds": 22.27
+      },
+      {
+        "text": "A destra, ecco una scatola di piccioni viaggiatori.",
+        "startSeconds": 35.28,
+        "endSeconds": 38.48
+      },
+      {
+        "text": "Nell'aria, questi messaggeri alati trasportavano speranza e informazioni cruciali, attraversando le linee nemiche per garantire il coordinamento delle operazioni alleate.",
+        "startSeconds": 39.02,
+        "endSeconds": 50.35
+      },
+      {
+        "text": "Erano veri soldati del silenzio, salvavano vite umane, con il semplice battito delle ali.",
+        "startSeconds": 50.89,
+        "endSeconds": 56.7
+      },
+      {
+        "text": "L'elmetto da paracadutista inglese. Contrassegnato con l'unità medica, è diventato molto raro da trovare.",
+        "startSeconds": 57.14,
+        "endSeconds": 63.64
+      },
+      {
+        "text": "All'alba del D-Day, si lanciarono nell'ignoto sopra luoghi diventati mitici, come il Ponte Pegasus, portando con sé un destino più grande di loro.",
+        "startSeconds": 70.44,
+        "endSeconds": 80.31
+      },
+      {
+        "text": "Queste mappe di seta, così leggere e pure così vitali per la navigazione in territorio nemico, erano progettate per resistere alle intemperie, o anche in caso di incidente aereo. Hanno guidato i nostri alleati attraverso paesaggi incerti nella loro missione.",
+        "startSeconds": 80.79,
+        "endSeconds": 96.53
+      },
+      {
+        "text": "L'arma che vedete qui è una PIAT, un'arma anticarro britannica, prova della potenza nascosta nelle mani determinate dei soldati inglesi.",
+        "startSeconds": 97.07,
+        "endSeconds": 105.67
+      },
+      {
+        "text": "La tipica giacca da battaglia inglese che riporta le insegne dei paracadutisti, evoca quelle notti in cui il cielo nero si popolava di sagome fluttuanti, questi combattenti spericolati che scendevano per tendere la mano verso la libertà.",
+        "startSeconds": 113.82,
+        "endSeconds": 129.08
+      },
+      {
+        "text": "Il pugnale del commando Fairbairn, un fucile Lee-Enfield, un'unità subacquea: tutti questi oggetti sono stati ritrovati nel corso degli anni, dando luogo a ricerche, scambi e investimenti.",
+        "startSeconds": 129.79,
+        "endSeconds": 142.75
+      },
+      {
+        "text": "Personalmente sono stupito di come gli inglesi siano stati dei veri pionieri in molti ambiti. Le loro innovazioni, sia tecnologicamente che storicamente, continuano a fare la storia oggi.",
+        "startSeconds": 143.23,
+        "endSeconds": 156.14
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 2,
+        "text": "Ultimo bastione libero dell'Europa occupata negli anni 40. L'Inghilterra rimarrà una linea di faglia nel regime nazista, attraverso la quale inizierà il percorso verso la liberazione."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Questo elmo copriva le teste di coloro che, volando nei cieli, si tuffavano in territorio ostile."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Inaffidabile, impreciso, incarnava tuttavia la resistenza necessaria al respingere le forze corazzate nemiche."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

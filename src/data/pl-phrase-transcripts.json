@@ -2131,5 +2131,232 @@
       "To oni zapisali literami ognia i krwi historię wyzwolenia, przemieniając fale trwogi w piaski ocalenia.",
       "Poświęćcie chwilę, aby poczuć emocje płynące z tego żywego obrazu i pomyślcie o niezliczonych opowieściach o bohaterstwie, które są z nim związane, na zawsze wyrytych w zbiorowej pamięci ludzkości."
     ]
+  },
+  "17": {
+    "id": "17",
+    "language": "pl",
+    "audioSha256": "920202dde3c3c308c002a4eb0cf04d5134acbbfe3597ba03687bac759d39d0ac",
+    "durationSeconds": 193.98266666666666,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/dc877feeb373709551bf0467bce9c213ccf67888.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The original Wivi recording includes the final acquisition account confirmed by both caches. Six passages remain without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Amerykański szpital polowy.",
+        "startSeconds": 2.72,
+        "endSeconds": 5.02
+      },
+      {
+        "text": "W sercu naszego muzeum czeka na Państwa wyjątkowy fragment historii, przywołujący wyzwania i innowacje, które ukształtowały medycynę wojenną.",
+        "startSeconds": 6.17,
+        "endSeconds": 16.98
+      },
+      {
+        "text": "Przed Państwem znajduje się amerykański namiot szpitala polowego, poruszający ślad operacji wojskowych, które na nowo zdefiniowały praktyki medyczne pośród chaosu frontu.",
+        "startSeconds": 17.98,
+        "endSeconds": 30.32
+      },
+      {
+        "text": "Podczas II wojny światowej pilna potrzeba szybkiej i skutecznej opieki medycznej doprowadziła do znaczącego postępu w technikach leczenia.",
+        "startSeconds": 42.38,
+        "endSeconds": 52.1
+      },
+      {
+        "text": "Szpitale polowe, takie jak ten, odgrywały kluczową rolę, umożliwiając udzielenie niezbędnej pomocy w pobliżu linii frontu, tam, gdzie liczyła się każda sekunda.",
+        "startSeconds": 53.43,
+        "endSeconds": 66.56
+      },
+      {
+        "text": "Wśród prezentowanego wyposażenia znajdą Państwo jeden z pierwszych aparatów rentgenowskich używanych w warunkach polowych.",
+        "startSeconds": 68.41,
+        "endSeconds": 76.34
+      },
+      {
+        "text": "Dzięki tym postępom technicznym lekarze mogli natychmiast rozpoznawać złamania i odłamki pocisków niewidocznych gołym okiem, znacznie zwiększając tym samym szansę przeżycia rannych żołnierzy.",
+        "startSeconds": 92.46,
+        "endSeconds": 106.37
+      },
+      {
+        "text": "Namiot szpitala polowego, który Państwo oglądają, nie jest jedynie miejscem pamięci.",
+        "startSeconds": 151.53,
+        "endSeconds": 157.34
+      },
+      {
+        "text": "To także żywy hołd dla pomysłowości i odporności wojskowego personelu medycznego.",
+        "startSeconds": 158.11,
+        "endSeconds": 164.92
+      },
+      {
+        "text": "Ten zestaw pozyskaliśmy na południu Paryża i wzbogacaliśmy go stopniowo z biegiem czasu.",
+        "startSeconds": 184.05,
+        "endSeconds": 190.08
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Ten namiot, wraz ze wszystkimi starannie rozmieszczonymi utensyliami, opowiada historię pierwszych interwencji prowadzonych w terenie."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "To rewolucyjne urządzenie odzwierciedla zaangażowanie zespołów medycznych w zapewnienie szybkiej i precyzyjnej diagnostyki, innowacja, która odmieniła leczenie ran wojennych."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Przemierzając [słowo niepewne] przestrzeń, odkryją Państwo również narzędzia i podstawowe materiały, które stanowiły wyposażenie odważnych lekarzy i pielęgniarek."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Te przedmioty, od prostej strzykawki po bandaże i narzędzia chirurgiczne, są cichymi świadkami postępu dokonanego w dziedzinie medycyny wojennej."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Od udoskonalonych technik chirurgicznych, po opracowanie nowych metod dezynfekcji i leczenia infekcji, praktyki medyczne na teatrach działań wojennych znacząco ewoluowały dzięki takim właśnie polowym placówkom."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Ich niestrudzona praca, prowadzona w obliczu [słowo niepewne] wojny, ratowanie życia w niewyobrażalnych okolicznościach utorowała drogę innowacjom medycznym, które do dziś wpływają na nasz świat."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Amerykański szpital polowy.",
+      "W sercu naszego muzeum czeka na Państwa wyjątkowy fragment historii, przywołujący wyzwania i innowacje, które ukształtowały medycynę wojenną.",
+      "Przed Państwem znajduje się amerykański namiot szpitala polowego, poruszający ślad operacji wojskowych, które na nowo zdefiniowały praktyki medyczne pośród chaosu frontu.",
+      "Ten namiot, wraz ze wszystkimi starannie rozmieszczonymi utensyliami, opowiada historię pierwszych interwencji prowadzonych w terenie.",
+      "Podczas II wojny światowej pilna potrzeba szybkiej i skutecznej opieki medycznej doprowadziła do znaczącego postępu w technikach leczenia.",
+      "Szpitale polowe, takie jak ten, odgrywały kluczową rolę, umożliwiając udzielenie niezbędnej pomocy w pobliżu linii frontu, tam, gdzie liczyła się każda sekunda.",
+      "Wśród prezentowanego wyposażenia znajdą Państwo jeden z pierwszych aparatów rentgenowskich używanych w warunkach polowych.",
+      "To rewolucyjne urządzenie odzwierciedla zaangażowanie zespołów medycznych w zapewnienie szybkiej i precyzyjnej diagnostyki, innowacja, która odmieniła leczenie ran wojennych.",
+      "Dzięki tym postępom technicznym lekarze mogli natychmiast rozpoznawać złamania i odłamki pocisków niewidocznych gołym okiem, znacznie zwiększając tym samym szansę przeżycia rannych żołnierzy.",
+      "Przemierzając [słowo niepewne] przestrzeń, odkryją Państwo również narzędzia i podstawowe materiały, które stanowiły wyposażenie odważnych lekarzy i pielęgniarek.",
+      "Te przedmioty, od prostej strzykawki po bandaże i narzędzia chirurgiczne, są cichymi świadkami postępu dokonanego w dziedzinie medycyny wojennej.",
+      "Od udoskonalonych technik chirurgicznych, po opracowanie nowych metod dezynfekcji i leczenia infekcji, praktyki medyczne na teatrach działań wojennych znacząco ewoluowały dzięki takim właśnie polowym placówkom.",
+      "Namiot szpitala polowego, który Państwo oglądają, nie jest jedynie miejscem pamięci.",
+      "To także żywy hołd dla pomysłowości i odporności wojskowego personelu medycznego.",
+      "Ich niestrudzona praca, prowadzona w obliczu [słowo niepewne] wojny, ratowanie życia w niewyobrażalnych okolicznościach utorowała drogę innowacjom medycznym, które do dziś wpływają na nasz świat.",
+      "Ten zestaw pozyskaliśmy na południu Paryża i wzbogacaliśmy go stopniowo z biegiem czasu."
+    ]
+  },
+  "18": {
+    "id": "18",
+    "language": "pl",
+    "audioSha256": "7fbe5791d914d074ecd3f66265f42f4afc29d0aaff000f4df8b0465f2b5a04e9",
+    "durationSeconds": 183.828,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/6d39287f6f4e2019a7cf64c2afb71933c89efae4.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The player presents the original Wivi narration. The opening is attested in small and retained without timing. Other unclear words and numbers remain readable without timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Aby spowolnić lub uniemożliwić każdą próbę przełamania na zachodzie, rozkazał budowę Wału Atlantyckiego od Norwegii aż po Kraj Basków w południowo-zachodniej Francji.",
+        "startSeconds": 31.7,
+        "endSeconds": 45.06
+      },
+      {
+        "text": "Niestety, o świcie 6 czerwca 1944 roku, z powodu złej pogody bomby spadły za liniami wroga, pozostawiając niemieckie umocnienia nienaruszone.",
+        "startSeconds": 75.41,
+        "endSeconds": 90.26
+      },
+      {
+        "text": "W ten sposób pierwsze rzuty szturmowe wylądowały pod ogniem nieprzyjaciela.",
+        "startSeconds": 91.42,
+        "endSeconds": 97.09
+      },
+      {
+        "text": "Morze znajdowało się między przypływem a odpływem, co tworzyło dla Niemców doskonałe pole ostrzału.",
+        "startSeconds": 98.03,
+        "endSeconds": 104.84
+      },
+      {
+        "text": "Niektóre bunkry były skierowane nie w stronę morza, lecz wzdłuż całej plaży, co spowodowało dramatyczne straty.",
+        "startSeconds": 106.26,
+        "endSeconds": 114.69
+      },
+      {
+        "text": "Zaprojektowano także czołgi amfibijne, które miały utrzymać się na wodzie i dotrzeć do brzegu.",
+        "startSeconds": 116.38,
+        "endSeconds": 122.67
+      },
+      {
+        "text": "Spośród 32 czołgów tylko dwa nie zatonęły.",
+        "startSeconds": 124.37,
+        "endSeconds": 128.4
+      },
+      {
+        "text": "Około 4 tysięcy zabitych, zaginionych i rannych.",
+        "startSeconds": 165.17,
+        "endSeconds": 170.28
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Plaża Omaha, makieta."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Stojąc przed tą dioramą przedstawiającą Vierville-sur-Mer, spróbujemy zrozumieć, dlaczego ta plaża nosi nazwę Bloody Omaha – Krwawa Omaha."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "[słowo niepewne], że Hitler spodziewał się alianckiego desantu w Europie od strony zachodniej, podczas gdy armia niemiecka była zaangażowana na froncie wschodnim."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Na kilka miesięcy przed lądowaniem wybrzeża Normandii zostały umocnione bunkrami, a liczebność wojsk niemieckich została zwiększona."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Strategia aliantów przewidziana na D-Day [słowa niepewne] Omaha i Utah zakładała jeszcze przed rozpoczęciem operacji desantu lądowego przeprowadzenie bombardowań lotniczych w celu zneutralizowania niemieckich bunkrów i innych stanowisk ogniowych."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Jedynymi osłonami, jakie żołnierze 29. Dywizji, 5. Batalionu Rangersów oraz saperzy mogli znaleźć, były przeszkody plażowe zainstalowane przez Niemców."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Dopiero pod koniec poranka doszło do manewru dwóch okrętów, które ustawiły się burtą i skierowały ogień swoich dział na słynne niemieckie umocnienia, blokujące postęp wojska."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Bilans amerykańskich strat tego dnia na plaży Omaha był tragiczny."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "To właśnie stąd wzięła się nazwa Bloody Omaha. Krwawa Omaha."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Plaża Omaha, makieta.",
+      "Stojąc przed tą dioramą przedstawiającą Vierville-sur-Mer, spróbujemy zrozumieć, dlaczego ta plaża nosi nazwę Bloody Omaha – Krwawa Omaha.",
+      "[słowo niepewne], że Hitler spodziewał się alianckiego desantu w Europie od strony zachodniej, podczas gdy armia niemiecka była zaangażowana na froncie wschodnim.",
+      "Aby spowolnić lub uniemożliwić każdą próbę przełamania na zachodzie, rozkazał budowę Wału Atlantyckiego od Norwegii aż po Kraj Basków w południowo-zachodniej Francji.",
+      "Na kilka miesięcy przed lądowaniem wybrzeża Normandii zostały umocnione bunkrami, a liczebność wojsk niemieckich została zwiększona.",
+      "Strategia aliantów przewidziana na D-Day [słowa niepewne] Omaha i Utah zakładała jeszcze przed rozpoczęciem operacji desantu lądowego przeprowadzenie bombardowań lotniczych w celu zneutralizowania niemieckich bunkrów i innych stanowisk ogniowych.",
+      "Niestety, o świcie 6 czerwca 1944 roku, z powodu złej pogody bomby spadły za liniami wroga, pozostawiając niemieckie umocnienia nienaruszone.",
+      "W ten sposób pierwsze rzuty szturmowe wylądowały pod ogniem nieprzyjaciela.",
+      "Morze znajdowało się między przypływem a odpływem, co tworzyło dla Niemców doskonałe pole ostrzału.",
+      "Niektóre bunkry były skierowane nie w stronę morza, lecz wzdłuż całej plaży, co spowodowało dramatyczne straty.",
+      "Zaprojektowano także czołgi amfibijne, które miały utrzymać się na wodzie i dotrzeć do brzegu.",
+      "Spośród 32 czołgów tylko dwa nie zatonęły.",
+      "Jedynymi osłonami, jakie żołnierze 29. Dywizji, 5. Batalionu Rangersów oraz saperzy mogli znaleźć, były przeszkody plażowe zainstalowane przez Niemców.",
+      "Dopiero pod koniec poranka doszło do manewru dwóch okrętów, które ustawiły się burtą i skierowały ogień swoich dział na słynne niemieckie umocnienia, blokujące postęp wojska.",
+      "Bilans amerykańskich strat tego dnia na plaży Omaha był tragiczny.",
+      "Około 4 tysięcy zabitych, zaginionych i rannych.",
+      "To właśnie stąd wzięła się nazwa Bloody Omaha. Krwawa Omaha."
+    ]
   }
 }

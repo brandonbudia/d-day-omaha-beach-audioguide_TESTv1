@@ -1843,5 +1843,252 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "19": {
+    "id": "19",
+    "language": "nl",
+    "audioSha256": "31fd91bcbd49ea652c8eb187850b15d5a10cae7540236233f95ac8186b884d18",
+    "durationSeconds": 245.904,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/9ec903cf-4ec0-4fa7-87a0-801924a37ee7?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The published Dutch text is preserved. Differences in cash amounts, proper names and the account of the theft require review. Uncorroborated passages have no timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Voor de geallieerde oorlogsinspanningen was het ontcijferen van deze berichten cruciaal om de plannen van de Asmogendheden te dwarsbomen.",
+        "startSeconds": 48.89,
+        "endSeconds": 57.69
+      },
+      {
+        "text": "De uitdaging werd aangegaan door een team van briljante geallieerde wiskundigen en ingenieurs, onder leiding van de beroemde Alan Turing.",
+        "startSeconds": 57.82,
+        "endSeconds": 66.48
+      },
+      {
+        "text": "Door hun doorzettingsvermogen en vindingrijkheid waren de geallieerden in staat het gecodeerde verkeer van het Duitse opperbevel te lezen, waardoor het verloop van de oorlog in hun voordeel kon veranderen.",
+        "startSeconds": 98.21,
+        "endSeconds": 110.81
+      },
+      {
+        "text": "Laat me je nu iets vertellen over een van de grootste toevalligheden in het leven...",
+        "startSeconds": 122.6,
+        "endSeconds": 127.37
+      },
+      {
+        "text": "Uiteraard vroeg hij de verkoper wat de prijs van deze typemachine was.",
+        "startSeconds": 138.71,
+        "endSeconds": 142.84
+      },
+      {
+        "text": "Niets te doen, 50 frank, laatste prijs.",
+        "startSeconds": 150.24,
+        "endSeconds": 153.55
+      },
+      {
+        "text": "Maar bovenal namen ze de Enigma-machine mee.",
+        "startSeconds": 192.8,
+        "endSeconds": 195.56
+      },
+      {
+        "text": "Het enige bewijs: een foto.",
+        "startSeconds": 205.33,
+        "endSeconds": 207.39
+      },
+      {
+        "text": "De manager van het etablissement kon zijn ogen niet geloven.",
+        "startSeconds": 207.56,
+        "endSeconds": 211.25
+      },
+      {
+        "text": "Hij regelde een ontmoeting met deze jongeren met de machine en bood hen een heel mooi bedrag aan.",
+        "startSeconds": 211.66,
+        "endSeconds": 217.3
+      },
+      {
+        "text": "Toen ze eenmaal vertrokken waren, leek de situatie te vreemd om waar te zijn; daarom nam hij contact op met de politie om hen uit te leggen wat hij zojuist had gezien.",
+        "startSeconds": 218.16,
+        "endSeconds": 228.27
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "\"In de complexe wendingen van de Tweede Wereldoorlog stond de Enigma-machine als een onneembare vesting van de cryptografie, die iedereen uitdaagde zijn zorgvuldig bewaarde geheimen te doorbreken."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "De Enigma, ontworpen door Duitse ingenieurs, was een elektromechanisch versleutelingsapparaat dat werd gebruikt om militaire berichten te coderen, waardoor vijandelijke communicatie onbegrijpelijk en schijnbaar onhackbaar werd."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "In het hart van deze verbijsterende puzzel transformeerde elke toetsaanslag van elke operator op het toetsenbord van de Enigma het oorspronkelijke bericht in een complexe wirwar van letters, die dagelijks veranderde volgens zorgvuldig geconfigureerde instellingen."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Het was in het centrum van Bletchley Park, Engeland, dat ingenieuze geesten als Turing, Gordon Welchman en anderen talloze uren besteedden aan het begrijpen van de mysteries van de Enigma."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Met de waardevolle hulp van Poolse wiskundigen, die vóór het uitbreken van de oorlog al aanzienlijke vooruitgang hadden geboekt met de Enigma, bouwde het Britse team de Bombe-machine, die in staat was om snel de vele mogelijke configuraties van de Enigma te testen."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Hun nauwgezette en vaak niet erkende werk verkortte het conflict en redde miljoenen levens, terwijl ze de basis legden voor het moderne computergebruik."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Tijdens weer een andere vlooienmarkt waar mijn vader aanwezig was, stopte hij voor een kraampje waar op het eerste gezicht een typemachine leek te worden verkocht."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Deze antwoordde: 50 frank..."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Mijn vader trok een klein gezicht en bood hem 45 frank aan."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "En dus gaf mijn vader toe en bood een bedrag van 50 frank aan voor deze ‘typemachine’, die niets anders was dan een ‘Enigma’."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Enigma heeft een echt historisch gewicht en vertegenwoordigt een zeer bijzondere interesse voor verzamelaars."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Het verhaal gaat verder met deze overval die ruim tien jaar geleden in dit museum plaatsvond."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Op de dag van de opening drongen vier indringers het museum binnen en ontvoerden de kassamedewerker."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Het geluid van glas uit de ramen verbrijzelde, terwijl een van de delinquenten naar de kassamedewerker keek en de anderen een paar dingen stalen..."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Enige tijd later, tijdens een militair overschot in Parijs, kwamen enkele jonge mensen opdagen en boden aan een Enigma-machine te verkopen."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "De autoriteiten vertelden hem uiteraard dat er onlangs een museum was beroofd en dat er een Enigma-machine was gestolen."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Vervolgens werd er een hinderlaag georganiseerd, en de delinquenten liepen domweg in de val."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "De Enigma-machine werd intact aangetroffen.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "20": {
+    "id": "20",
+    "language": "nl",
+    "audioSha256": "a6e2c2b16c7177997a2633a080ea456884bde03da39c2b5c9e6edf3cb4da4d40",
+    "durationSeconds": 170.448,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/7d903007-924c-4055-beb5-6493e0fc9f99?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The published Dutch text is preserved. Passages with unresolved phrase boundaries or differences between narration and exhibit text remain visible without timing."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Deze vitrine is gewijd aan enkele voorwerpen uit het Britse leger, gevonden op verschillende plaatsen in de Engelse sectoren van D-Day.",
+        "startSeconds": 0.06,
+        "endSeconds": 9.29
+      },
+      {
+        "text": "Engeland, het laatste vrije bastion van een Europa dat in de jaren veertig werd bezet, zal een breuklijn blijven in het naziregime waarlangs de weg naar bevrijding zal beginnen.",
+        "startSeconds": 24.64,
+        "endSeconds": 36.69
+      },
+      {
+        "text": "Het waren echte soldaten van de stilte, die levens redden met het simpele klapperen van hun vleugels.",
+        "startSeconds": 55.61,
+        "endSeconds": 62.76
+      },
+      {
+        "text": "De Engelse parachutistenhelm, gemerkt met een medische eenheid, is zeer zeldzaam geworden.",
+        "startSeconds": 63.07,
+        "endSeconds": 68.83
+      },
+      {
+        "text": "Aan het begin van D-Day sprongen ze in het onbekende boven plaatsen die mythisch zijn geworden, zoals de Pegasusbrug, met een bestemming die groter is dan zijzelf.",
+        "startSeconds": 76.6,
+        "endSeconds": 87.36
+      },
+      {
+        "text": "Zij leidden onze Bondgenoten tijdens hun missie door onzekere landschappen.",
+        "startSeconds": 100.24,
+        "endSeconds": 105.06
+      },
+      {
+        "text": "al deze voorwerpen zijn door de jaren heen gevonden en hebben aanleiding gegeven tot onderzoek, uitwisselingen en investeringen.",
+        "startSeconds": 148.0,
+        "endSeconds": 156.38
+      },
+      {
+        "text": "Persoonlijk ben ik verbaasd over het feit dat de Engelsen op veel gebieden echte pioniers waren.",
+        "startSeconds": 156.75,
+        "endSeconds": 162.45
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Dit doet me denken aan mijn oom die ons als kind al zijn anekdotes vertelde, die hij met mijn vader deelde in de kleine bar bij de “Pégasusbrug” – getuigen van een tijd waarin moed de grenzen en de hemel overschreed."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Aan de rechterkant staat een doos met postduiven."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "In de lucht brachten deze gevleugelde boodschappers hoop en cruciale informatie met zich mee, waarbij ze de vijandelijke linies overschreden om de coördinatie van de geallieerde operaties te verzekeren."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Deze helm bedekte de hoofden van degenen die, vliegend door de lucht, zich in vijandige gebieden stortten."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Deze zijden kaarten, zo licht en toch zo belangrijk voor het navigeren door vijandelijk gebied, zijn ontworpen om slecht weer te overleven, of zelfs bij een vliegtuigongeluk."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Het wapen dat je hier ziet is een PIAT, een Brits antitankwapen, een bewijs van de kracht die verborgen ligt in de vastberaden handen van Engelse soldaten."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Onbetrouwbaar en onnauwkeurig, belichaamde het niettemin de weerstand die nodig was om vijandelijke gepantserde troepen af ​​te weren."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Het typische Engelse battledress-jasje, met het insigne van de parachutisten, doet denken aan die nachten waarin de zwarte lucht bevolkt was met zwevende silhouetten: deze roekeloze strijders die afdaalden om hun hand uit te strekken naar de vrijheid."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "De Fairbairn-commandodolk, een Lee-Enfield-geweer, een duikeenheid..."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Hun innovaties, zowel technologisch als historisch, blijven vandaag de dag geschiedenis schrijven.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
