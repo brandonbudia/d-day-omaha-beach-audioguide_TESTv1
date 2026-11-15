@@ -1,6 +1,6 @@
 # Suivi de finalisation TESTv1
 
-Format : 1 ; exécution unique-2026-11-09 ; checkpoint 83 ; IT20, NL19, NL20, PL17 et PL18 ajoutées.
+Format : 1 ; exécution unique-2026-11-09 ; checkpoint 84 ; les 105 pistes originales Wivi sont intégrées.
 Travail unique repris manuellement. Un seul écrivain ; assistants limités à la lecture. Un heartbeat existant cible ce chat, sans autorisation d'écriture récurrente tant que son préalable natif manque.
 Dossier : C:\Users\brand\OneDrive\Documents\d-day-omaha-beach-audioguide_TESTv1\d-day-omaha-beach-audioguide_TESTv1
 Branche : codex/overnight-audio-highlight
@@ -61,8 +61,9 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | EDIT-7 | P1 | blocked-human | Relecture idiomatique des sept interfaces par locuteurs |
 | RIGHTS-01 | P1 | blocked-human | Photos/plan/faits/citations/noms/logo/Officiel : décisions musée et droits |
 | LANG-WIVI | P1 | validated | 22 fiches, 88 textes localisés et 105 MP3 confirmés. Inventaire par station et preuves conservés |
-| LANG-de/it/nl/es | P1 | in_progress | 88 récits consultables. 15 pistes DE, 22 ES, 2 IT et 3 NL. Les suivis partiels sont signalés dans le lecteur |
-| LANG-pl | P1 | in_progress | PL01 d’origine avec 14 phrases sur 17 synchronisées. PL09, 10, 15, 20 et 22 de synthèse identifiés. Corroborer les transcriptions et les bornes des 16 autres originaux |
+| LANG-de/it/nl/es | P1 | validated | 88 récits Wivi conservés et 22 pistes originales par langue. Les 65 suivis partiels sont signalés dans le lecteur |
+| LANG-pl | P1 | validated | 17 pistes originales avec suivi partiel et 5 narrations de synthèse identifiées pour PL09, PL10, PL15, PL20 et PL22 |
+| LANG-ECOUTE | P1 | blocked-human | 461 passages sans repère dans les 5 langues. Écoute ciblée des écarts et validation éditoriale des passages signalés, notamment PL19 |
 | PHRASE-01 | P1 | validated | Suivi par phrase testé avec horloge simulée. Débuts et fins explicites, navigation et reprise du défilement. Activation par station à la réception des ressources authentiques |
 | NAV-01 | P1 | validated | Langue conservée sur les liens des 22 fiches dans les sept langues. Navigation et cache vérifiés |
 | OFF-02 | P1 | validated | Arrêt accessible après changement de langue. Refus de lecture du cache signalé comme erreur de stockage |
@@ -71,7 +72,7 @@ Une validation requiert critères/preuves liés aux fichiers réellement testés
 | RESUME-01 | P1 | validated | Reprise proposée seulement pour une version audio compatible ; retour à la dernière fiche sinon. Test et recette navigateur réussis |
 | OFF-03 | P1 | validated | Les fichiers déjà vérifiés restent comptés après un échec réseau ; aucune requête pour les pistes factices testées |
 | NAV-02 | P2 | validated | La langue du lien est prise en compte avant la première requête audio. Le lien anglais n’a demandé aucun MP3 français |
-| QA-01 | P1 | validated | 122 tests applicatifs, TypeScript et build réussis. Recette navigateur du suivi par phrase et des lecteurs FR/EN. Essais physiques à faire |
+| QA-01 | P1 | validated | 127 tests applicatifs, TypeScript et build réussis. Cinq nouvelles pistes vérifiées dans le navigateur, pack PL complet et PL19 depuis le cache. Essais physiques à faire |
 | DEP-01 | P2 | blocked-permission | Audit dépendances lecture seule, exposition réelle ; aucune installation forcée |
 | PERF-01 | P2 | blocked-resource | Référence HTTP locale mesurée (six GET200) et compression réelle EN ; fournir hébergement/appareil cible pour mesure représentative. Pas de Core Web Vitals prétendus |
 | QR-01 | P1 | blocked-resource | Destination/hébergement/QR physique à fournir |
@@ -324,6 +325,27 @@ Le checkpoint 82 est publié sous `6f44e81082326a5f88cc531432bf0177e899a60d`, SH
 Le checkpoint 83 ajoute IT20 (12/15), NL19 (11/29), NL20 (8/18), PL17 (10/16) et PL18 (8/17). Les textes néerlandais publiés sont préservés. Les textes du lecteur italien et polonais suivent leur MP3, avec les passages incertains sans repère. Le passage sur l’acquisition au sud de Paris est reconnu par les deux passes de PL17. L’ouverture reconnue par une seule passe de PL18 reste lisible sans repère. Le navigateur a vérifié le clic, le démarrage, la phrase active et les 46 passages statiques. Les 126 tests, TypeScript et le build `index-BCEC3w1i.js` ont réussi.
 
 État après le checkpoint 83 : IT 20/22, NL 21/22, PL 20/22, DE et ES 22/22. Les cinq derniers originaux sont IT21, IT22, NL22, PL19 et PL21. Toutes leurs reconnaissances sont en cache. Poursuivre la comparaison des bornes et la recette du dernier lot depuis ces fichiers.
+
+## Checkpoint 84 — intégration des derniers originaux Wivi
+
+Le checkpoint 83 est publié sur TESTv1 sous `38b94375b83aa181e28a043e61ef7249f127705f`. IT21, IT22, NL22, PL19 et PL21 complètent l’intégration des 105 originaux Wivi. Le dernier lot apporte 64 phrases minutées et laisse 76 passages lisibles sans repère. Les deux reconnaissances disponibles en cache et les frontières acoustiques du MP3 ont servi à corroborer les repères retenus. La recette dans le navigateur a vérifié le clic, la position audio, la phrase active et le nombre de passages statiques sur chacune de ces pistes. Les transcriptions issues de la reconnaissance et les passages ambigus restent à relire. Pour PL19, le récit sur Alan Turing, Christopher et le logo Apple relève d’une validation éditoriale du musée.
+
+| Langue | Pistes originales Wivi | Pistes de synthèse | Suivi complet | Suivi partiel | Phrases minutées | Passages sans repère |
+|---|---:|---:|---:|---:|---:|---:|
+| DE | 22 | 0 | 8 | 14 | 322 | 56 |
+| ES | 22 | 0 | 15 | 7 | 356 | 22 |
+| IT | 22 | 0 | 0 | 22 | 316 | 75 |
+| NL | 22 | 0 | 0 | 22 | 225 | 157 |
+| PL | 17 | 5 | 5 | 17 | 272 | 151 |
+| **Total** | **105** | **5** | **28** | **82** | **1 491** | **461** |
+
+Le suivi complet indique que chaque passage du registre a un repère. La validation humaine reste distincte. Les 88 récits DE/ES/IT/NL correspondent aux textes et aux liens Wivi déjà archivés, après normalisation des espaces de mise en paragraphes. Les tailles et empreintes des 154 fichiers correspondent au catalogue. Les empreintes des 105 originaux correspondent au manifeste Wivi archivé. Les 110 registres de suivi par phrase ont l’empreinte et la durée de leur piste et des intervalles sans chevauchement.
+
+FR/EN avant et après le lot : toutes les lignes des 44 stations du registre de couverture sont identiques. FR garde 7 233 mots minutés et 43 manquants (99,41 %). EN garde 6 614 mots minutés et 408 manquants (94,19 %). Les empreintes des deux registres sont inchangées. Le lecteur, les pistes et les minutages FR/EN sont inchangés.
+
+127 tests applicatifs réussis, TypeScript et build de production réussis. Le build signale toujours un bloc de transcription supérieur à 500 ko. Le navigateur a téléchargé et vérifié le pack polonais (22/22, 82,4 Mo sur 82,4 Mo). Après arrêt du serveur local et confirmation que le port ne répondait plus, PL19 a été rechargée depuis le cache. Le clic sur « Już w 1932 roku » a repris vers 94,01 s avec la phrase active. Cet essai a été réalisé sur le navigateur de bureau.
+
+Reprise après publication : aucun original Wivi connu en attente d’intégration. Consulter le reçu `checkpoint84-publication.json` et le SHA distant TESTv1. Les prochains travaux dépendent d’une écoute ciblée, de la validation éditoriale ou d’essais sur appareils physiques. Les cinq originaux polonais absents du catalogue public restent représentés par des synthèses signalées. Le fichier local `dev-dist/sw.js` est préservé et exclu du lot.
 
 État de reprise au 13 novembre : les 105 MP3 originaux ont leur première reconnaissance mise en cache et 32 ont déjà une seconde passe. Les cinq synthèses PL ont deux passes après encodage et des repères mesurés. Les écarts DE05 concernent notamment « hinschauen » et « war erforderlich » dans les deux passes. La date d’ouverture et plusieurs noms de DE06 restent ambigus. DE13 et DE21 présentent aussi des écarts relevés dans les caches. Consulter `phrase-candidates-2026-11-13.json` et les fenêtres ciblées avant de relancer un modèle. Prioriser les nouveaux candidats ES et DE sans seconde passe, puis les passages précis qui bloquent les transcriptions IT, NL et PL. Aucune validation humaine n’a été enregistrée pour les nouveaux repères.
 

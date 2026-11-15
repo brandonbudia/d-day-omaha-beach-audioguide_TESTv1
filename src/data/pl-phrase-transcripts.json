@@ -2358,5 +2358,438 @@
       "Około 4 tysięcy zabitych, zaginionych i rannych.",
       "To właśnie stąd wzięła się nazwa Bloody Omaha. Krwawa Omaha."
     ]
+  },
+  "19": {
+    "id": "19",
+    "language": "pl",
+    "audioSha256": "237794451d27ba028b70eeecd8d9e39fa8fc9d94635f71e6b611c308a2c24414",
+    "durationSeconds": 388.45733333333334,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/f694f5afff0c89ea20f0d179617bb24679041c99.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Proper names, the Apple logo legend and several other passages need editorial or listening review. Historical assertions reported by the narrator are not independently verified. Only sentences with corroborated boundaries have timestamps."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Już w 1932 roku udało się polskim kryptologom po raz pierwszy rozszyfrować szyfrogramy zakodowane przy pomocy Enigmy.",
+        "startSeconds": 93.81,
+        "endSeconds": 105.4
+      },
+      {
+        "text": "Od imienia swojej pierwszej miłości nazwał go Christopher.",
+        "startSeconds": 204.97,
+        "endSeconds": 209.27
+      },
+      {
+        "text": "Dzięki temu alianci wiedzieli, gdzie znajduje się wróg i mogli unikać niektórych pułapek.",
+        "startSeconds": 219.88,
+        "endSeconds": 226.85
+      },
+      {
+        "text": "Czy to niczego Państwu nie przypomina?",
+        "startSeconds": 319.29,
+        "endSeconds": 321.98
+      },
+      {
+        "text": "Prezentowana tutaj maszyna Enigma została znaleziona na pchlim targu.",
+        "startSeconds": 331.77,
+        "endSeconds": 336.36
+      },
+      {
+        "text": "W 2008 roku została ona skradziona podczas zuchwałego włamania do muzeum.",
+        "startSeconds": 346.28,
+        "endSeconds": 351.96
+      },
+      {
+        "text": "Po kilku dniach niepokoju i smutku ponownie pojawiła się w regionie paryskim, gdzie włamywacze próbowali ją sprzedać na targu staroci.",
+        "startSeconds": 353.07,
+        "endSeconds": 362.32
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "Enigma – niemiecka maszyna szyfrująca."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Maszyna szyfrująca Enigma została wynaleziona przez Niemca Artura Scherbiusa na podstawie patentu Holendra Hugo Kocha z 1919 roku."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Enigma była używana przez Niemców głównie na użytek wojska i wywiadu podczas II wojny światowej."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Przenośna elektromechaniczna maszyna Enigma służyła do szyfrowania i deszyfrowania wiadomości."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Została zaprojektowana zasadniczo z trzema lub czterema wirnikami."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Jej twórcy uważali ją za niemożliwą do złamania ze względu na ogromną liczbę możliwych kombinacji kodu."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Wyzwanie to od 1930 roku podjęła grupa wybitnych polskich młodych matematyków z Uniwersytetu Poznańskiego, pracujących w biurze szyfrów Sztabu Generalnego Wojska Polskiego. Marian Rejewski, Jerzy Różycki i Henryk Zygalski."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Wymyślili wiele metod służących do łamania szyfu Enigmy, w tym kryptologiczną bombę Rejewskiego skonstruowaną w celu automatycznego łamania szyfrogramów niemieckiej maszyny szyfrującej Enigma."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Jeszcze przed wybuchem wojny, w styczniu i lipcu 1939 roku, polskie biuro szyfrów ujawniło przedstawicielom francuskiego i brytyjskiego wywiadu wojskowego, które wówczas nie miały jeszcze poważniejszych sukcesów w tym zakresie techniki i sprzęt związany z rozszyfrowaniem enigmy."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Po wybuchu wojny w 1939 roku Niemcy wciąż udoskonalali metody szyfrowania stosowane w enigmie."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "W tym czasie Brytyjczycy dokonali znaczących postępów w badaniach nad enigmą."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Brytyjski zespół zbudował własną, nowoczesną bombę kryptologiczną, zdolną szybko testować liczne możliwe ustawienia enigmy."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "W Bletchley Park koło Londynu powołano ośrodek badań nad szyframi na czele ze słynnym Alanem Turingiem."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Alan Turing przy pomocy grupy uczonych, matematyków, fizyków oraz osób o bardzo wysokim ilorazie inteligencji zdołał złamać ten kod."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Nie było to zadanie łatwe, ponieważ kod zmieniany był codziennie o północy, co sprawiało, że cała praca wykonana w ciągu dnia stawała się dnia następnego bezużyteczna."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "Aby szybciej odszyfrować ustawicznie zmieniany kod enigmy, gdy ludzki mózg nie działa wystarczająco szybko, Turing wymyślił pierwszy komputer."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "Informacje uzyskane dzięki odszyfrowaniu wiadomości Enigmy dały aliantom znaczną przewagę w prowadzeniu wojny."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "By jednak ukryć przed Niemcami fakt, że szyfrowane przez nich za pomocą enigmy informacje są już przez aliantów regularnie i szybko rozkodowywane, trzeba było przyzwalać, by np. niektóre znane już aliantom ruchy niemieckich wojsk odbywały się w sposób niezakłócony."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Szacuje się, że konflikt w Europie został skrócony o co najmniej 2 lata dzięki kryptoanalizie niemieckich szyfrów i kodów."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Prace Alana Turinga zostały ujawnione publicznie dopiero kilka lat później, pośmiertnie."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Wyrok sądowy za ujawniony jego praktyczny, wówczas w Anglii karalny, homoseksualizm pozostawiał mu do wyboru dożywotnie więzienie albo chemiczną kastrację. Wybrał to drugie."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Chemiczna kastracja Alana Turinga doprowadziła go do szaleństwa i depresji."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Ostatecznie odebrał sobie życie w 1954 roku, wkładając syjanek do jabłka. Po czym jabłko ugryzł."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Legenda głosi, że Steve Jobs oddał Alanowi Turingowi hołd poprzez logo swojej firmy Apple, nawiązując do wynalezienia przezeń pierwszego komputera Christophera."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "Myślę, że odtąd będą Państwo inaczej patrzeć na swój telefon lub komputer."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Pan Michel Brissard kupił ją za 50 franków."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "To naprawdę daje do myślenia."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Zorganizowano więc zasadzkę, a maszyna Enigma została odzyskana i zwrócona właścicielowi."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Znów, ku naszej wielkiej radości, zajęła swoje miejsce w ekspozycji."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Po to, by mogła być ciągle u nas podziwiana."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "Enigma – niemiecka maszyna szyfrująca.",
+      "Maszyna szyfrująca Enigma została wynaleziona przez Niemca Artura Scherbiusa na podstawie patentu Holendra Hugo Kocha z 1919 roku.",
+      "Enigma była używana przez Niemców głównie na użytek wojska i wywiadu podczas II wojny światowej.",
+      "Przenośna elektromechaniczna maszyna Enigma służyła do szyfrowania i deszyfrowania wiadomości.",
+      "Została zaprojektowana zasadniczo z trzema lub czterema wirnikami.",
+      "Jej twórcy uważali ją za niemożliwą do złamania ze względu na ogromną liczbę możliwych kombinacji kodu.",
+      "Wyzwanie to od 1930 roku podjęła grupa wybitnych polskich młodych matematyków z Uniwersytetu Poznańskiego, pracujących w biurze szyfrów Sztabu Generalnego Wojska Polskiego. Marian Rejewski, Jerzy Różycki i Henryk Zygalski.",
+      "Wymyślili wiele metod służących do łamania szyfu Enigmy, w tym kryptologiczną bombę Rejewskiego skonstruowaną w celu automatycznego łamania szyfrogramów niemieckiej maszyny szyfrującej Enigma.",
+      "Już w 1932 roku udało się polskim kryptologom po raz pierwszy rozszyfrować szyfrogramy zakodowane przy pomocy Enigmy.",
+      "Jeszcze przed wybuchem wojny, w styczniu i lipcu 1939 roku, polskie biuro szyfrów ujawniło przedstawicielom francuskiego i brytyjskiego wywiadu wojskowego, które wówczas nie miały jeszcze poważniejszych sukcesów w tym zakresie techniki i sprzęt związany z rozszyfrowaniem enigmy.",
+      "Po wybuchu wojny w 1939 roku Niemcy wciąż udoskonalali metody szyfrowania stosowane w enigmie.",
+      "W tym czasie Brytyjczycy dokonali znaczących postępów w badaniach nad enigmą.",
+      "Brytyjski zespół zbudował własną, nowoczesną bombę kryptologiczną, zdolną szybko testować liczne możliwe ustawienia enigmy.",
+      "W Bletchley Park koło Londynu powołano ośrodek badań nad szyframi na czele ze słynnym Alanem Turingiem.",
+      "Alan Turing przy pomocy grupy uczonych, matematyków, fizyków oraz osób o bardzo wysokim ilorazie inteligencji zdołał złamać ten kod.",
+      "Nie było to zadanie łatwe, ponieważ kod zmieniany był codziennie o północy, co sprawiało, że cała praca wykonana w ciągu dnia stawała się dnia następnego bezużyteczna.",
+      "Aby szybciej odszyfrować ustawicznie zmieniany kod enigmy, gdy ludzki mózg nie działa wystarczająco szybko, Turing wymyślił pierwszy komputer.",
+      "Od imienia swojej pierwszej miłości nazwał go Christopher.",
+      "Informacje uzyskane dzięki odszyfrowaniu wiadomości Enigmy dały aliantom znaczną przewagę w prowadzeniu wojny.",
+      "Dzięki temu alianci wiedzieli, gdzie znajduje się wróg i mogli unikać niektórych pułapek.",
+      "By jednak ukryć przed Niemcami fakt, że szyfrowane przez nich za pomocą enigmy informacje są już przez aliantów regularnie i szybko rozkodowywane, trzeba było przyzwalać, by np. niektóre znane już aliantom ruchy niemieckich wojsk odbywały się w sposób niezakłócony.",
+      "Szacuje się, że konflikt w Europie został skrócony o co najmniej 2 lata dzięki kryptoanalizie niemieckich szyfrów i kodów.",
+      "Prace Alana Turinga zostały ujawnione publicznie dopiero kilka lat później, pośmiertnie.",
+      "Wyrok sądowy za ujawniony jego praktyczny, wówczas w Anglii karalny, homoseksualizm pozostawiał mu do wyboru dożywotnie więzienie albo chemiczną kastrację. Wybrał to drugie.",
+      "Chemiczna kastracja Alana Turinga doprowadziła go do szaleństwa i depresji.",
+      "Ostatecznie odebrał sobie życie w 1954 roku, wkładając syjanek do jabłka. Po czym jabłko ugryzł.",
+      "Legenda głosi, że Steve Jobs oddał Alanowi Turingowi hołd poprzez logo swojej firmy Apple, nawiązując do wynalezienia przezeń pierwszego komputera Christophera.",
+      "Czy to niczego Państwu nie przypomina?",
+      "Myślę, że odtąd będą Państwo inaczej patrzeć na swój telefon lub komputer.",
+      "Prezentowana tutaj maszyna Enigma została znaleziona na pchlim targu.",
+      "Pan Michel Brissard kupił ją za 50 franków.",
+      "To naprawdę daje do myślenia.",
+      "W 2008 roku została ona skradziona podczas zuchwałego włamania do muzeum.",
+      "Po kilku dniach niepokoju i smutku ponownie pojawiła się w regionie paryskim, gdzie włamywacze próbowali ją sprzedać na targu staroci.",
+      "Zorganizowano więc zasadzkę, a maszyna Enigma została odzyskana i zwrócona właścicielowi.",
+      "Znów, ku naszej wielkiej radości, zajęła swoje miejsce w ekspozycji.",
+      "Po to, by mogła być ciągle u nas podziwiana."
+    ]
+  },
+  "21": {
+    "id": "21",
+    "language": "pl",
+    "audioSha256": "789f917510af53addf5528998886f032453b1e1bfd6285d2e01cff4b1a3d6cf5",
+    "durationSeconds": 283.924,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.api.wivi.app/files/019a658bc293428fc469dc75e8046b65a96c7b89.mp3",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The two opening lines are supported by the small pass and are kept static. The lock, cellar entry and closing provenance passages remain static where their wording or boundaries disagree."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Po uniesieniu pokrywy odkryłem niewielkie zagłębienie w ziemi około czterdziestocentymetrowej głębokości, rurę z kranikiem i dno wysypane żwirem.",
+        "startSeconds": 37.8,
+        "endSeconds": 48.14
+      },
+      {
+        "text": "Nie rozumiałem tylko obecności tej rury.",
+        "startSeconds": 51.76,
+        "endSeconds": 54.36
+      },
+      {
+        "text": "Nie pytajcie mnie dlaczego, ale zupełnie odruchowo zacząłem przegarniać żwir znajdujący się na dnie.",
+        "startSeconds": 55.97,
+        "endSeconds": 62.38
+      },
+      {
+        "text": "Stałem osłupiały i próbowałem zrozumieć sytuację.",
+        "startSeconds": 70.3,
+        "endSeconds": 73.53
+      },
+      {
+        "text": "W emocjach związanych z tym odkryciem przypomniałem sobie, że jakiś czas wcześniej pośród wszystkich kluczy do posiadłości natknąłem się na jeden szczególnie dziwny.",
+        "startSeconds": 80.14,
+        "endSeconds": 90.46
+      },
+      {
+        "text": "Gdy wsunąłem go do zamka zacząłem nim poruszać szukając właściwego kierunku aż nagle szuflada ciężko wysunęła się w moją stronę.",
+        "startSeconds": 100.5,
+        "endSeconds": 111.54
+      },
+      {
+        "text": "Wszędzie szukałem i bawiłem się, więc jeśli ktoś znał go na pamięć, to właśnie ja.",
+        "startSeconds": 126.72,
+        "endSeconds": 132.7
+      },
+      {
+        "text": "Do dziś nie mogę w to uwierzyć.",
+        "startSeconds": 137.58,
+        "endSeconds": 139.33
+      },
+      {
+        "text": "Przechowywano tam około 200 sztuk broni.",
+        "startSeconds": 169.32,
+        "endSeconds": 172.1
+      },
+      {
+        "text": "Karabin maszynowy niemieckich spadochroniarzy.",
+        "startSeconds": 182.87,
+        "endSeconds": 185.36
+      },
+      {
+        "text": "Dla przykładu pewnego dnia jedna osoba po zwiedzeniu muzeum zaoferowała nam niemal 100 tysięcy euro, by wyjechać z tym karabinem maszynowym.",
+        "startSeconds": 197.63,
+        "endSeconds": 208.25
+      },
+      {
+        "text": "Schodząc do tej nieznanej kryjówki, bardziej niż kiedykolwiek odczuwałem ciężar rodzinnego dziedzictwa i wezwanie, by zrozumieć, co motywowało ich determinację do stworzenia takiego miejsca, aby ukryć w nim to, co najcenniejsze.",
+        "startSeconds": 260.92,
+        "endSeconds": 280.39
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 0,
+        "text": "FG 42."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Karabin maszynowy niemieckich spadochroniarzy."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "W rodzinnym domu kilka lat po śmierci naszego ojca czekało na mnie niezwykłe odkrycie."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Pogrzebane pod ciężarem lat i milczeniem skrywanych sekretów ujawniło się zupełnym przypadkiem pewnego zwyczajnego dnia, gdy mój wzrok zatrzymał się na klapie w podłodze hangaru."
+      },
+      {
+        "beforeSegment": 0,
+        "text": "Klapie, która na pierwszy rzut oka wydawała się całkiem banalna."
+      },
+      {
+        "beforeSegment": 1,
+        "text": "To właśnie zobaczyłem."
+      },
+      {
+        "beforeSegment": 3,
+        "text": "Jakież było moje zaskoczenie, gdy odkryłem zamek do klucza."
+      },
+      {
+        "beforeSegment": 4,
+        "text": "To z pewnością musiał otwierać jakąś szufladę, ale nic się nie ruszało."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Był bardzo duży i miał ogromne kółko."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Bez chwili namysłu pobiegłem po ten klucz."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "To nie była szuflada, lecz wejście."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Otworzyła się przede mną czarna dziura z drabiną."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Serce waliło mi jak oszalałe."
+      },
+      {
+        "beforeSegment": 6,
+        "text": "Byłem oszałomiony, bo znałem ten dom od dziecka."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "A przynajmniej tak mi się wydawało."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Zszedłem w dół. Nic nie było widać. Najpierw stopy, potem dłonie, a kiedy znalazłem się na tej wąskiej drabinie, po lewej stronie zobaczyłem stary przycisk elektryczny."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Nacisnąłem. I wtedy ukazało się niewielkie pomieszczenie wypełnione bronią z czasów II wojny światowej."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "MG, Mausery i wiele, wiele innych."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "A pośrodku tego wszystkiego znajdowała się broń, którą widzicie przed sobą. FG 42."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "Ten model wyprodukowano w zaledwie 2500 egzemplarzach."
+      },
+      {
+        "beforeSegment": 10,
+        "text": "To obiekt niezwykle pożądany przez kolekcjonerów."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Później dowiedziałem się, próbując powiązać różne świadectwa, które zebrałem dzięki znajomym mojego ojca, że to pomieszczenie wzbudzało wiele zazdrości wśród osób z jego otoczenia."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "I właśnie dlatego tę skrytkę zbudowano po kryjomu w wolnych chwilach, czyniąc kradzież FG niemożliwą."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Dowiedziałem się również, że ten mały skarb miał pochodzić z kotła Falaise, w którym znalazła się w sierpniu 1944 roku okrążona armia niemiecka. Z tego korytarza śmierci."
+      },
+      {
+        "beforeSegment": 11,
+        "text": "Mój ojciec i mój wuj należeli do pierwszych, którzy przeszukiwali teren i kolekcjonowali pozostałości po II wojnie światowej."
+      }
+    ],
+    "referenceOnlyParagraphs": [],
+    "narrativeParagraphs": [
+      "FG 42.",
+      "Karabin maszynowy niemieckich spadochroniarzy.",
+      "W rodzinnym domu kilka lat po śmierci naszego ojca czekało na mnie niezwykłe odkrycie.",
+      "Pogrzebane pod ciężarem lat i milczeniem skrywanych sekretów ujawniło się zupełnym przypadkiem pewnego zwyczajnego dnia, gdy mój wzrok zatrzymał się na klapie w podłodze hangaru.",
+      "Klapie, która na pierwszy rzut oka wydawała się całkiem banalna.",
+      "Po uniesieniu pokrywy odkryłem niewielkie zagłębienie w ziemi około czterdziestocentymetrowej głębokości, rurę z kranikiem i dno wysypane żwirem.",
+      "To właśnie zobaczyłem.",
+      "Nie rozumiałem tylko obecności tej rury.",
+      "Nie pytajcie mnie dlaczego, ale zupełnie odruchowo zacząłem przegarniać żwir znajdujący się na dnie.",
+      "Jakież było moje zaskoczenie, gdy odkryłem zamek do klucza.",
+      "Stałem osłupiały i próbowałem zrozumieć sytuację.",
+      "To z pewnością musiał otwierać jakąś szufladę, ale nic się nie ruszało.",
+      "W emocjach związanych z tym odkryciem przypomniałem sobie, że jakiś czas wcześniej pośród wszystkich kluczy do posiadłości natknąłem się na jeden szczególnie dziwny.",
+      "Był bardzo duży i miał ogromne kółko.",
+      "Bez chwili namysłu pobiegłem po ten klucz.",
+      "Gdy wsunąłem go do zamka zacząłem nim poruszać szukając właściwego kierunku aż nagle szuflada ciężko wysunęła się w moją stronę.",
+      "To nie była szuflada, lecz wejście.",
+      "Otworzyła się przede mną czarna dziura z drabiną.",
+      "Serce waliło mi jak oszalałe.",
+      "Byłem oszałomiony, bo znałem ten dom od dziecka.",
+      "Wszędzie szukałem i bawiłem się, więc jeśli ktoś znał go na pamięć, to właśnie ja.",
+      "A przynajmniej tak mi się wydawało.",
+      "Do dziś nie mogę w to uwierzyć.",
+      "Zszedłem w dół. Nic nie było widać. Najpierw stopy, potem dłonie, a kiedy znalazłem się na tej wąskiej drabinie, po lewej stronie zobaczyłem stary przycisk elektryczny.",
+      "Nacisnąłem. I wtedy ukazało się niewielkie pomieszczenie wypełnione bronią z czasów II wojny światowej.",
+      "MG, Mausery i wiele, wiele innych.",
+      "Przechowywano tam około 200 sztuk broni.",
+      "A pośrodku tego wszystkiego znajdowała się broń, którą widzicie przed sobą. FG 42.",
+      "Karabin maszynowy niemieckich spadochroniarzy.",
+      "Ten model wyprodukowano w zaledwie 2500 egzemplarzach.",
+      "To obiekt niezwykle pożądany przez kolekcjonerów.",
+      "Dla przykładu pewnego dnia jedna osoba po zwiedzeniu muzeum zaoferowała nam niemal 100 tysięcy euro, by wyjechać z tym karabinem maszynowym.",
+      "Później dowiedziałem się, próbując powiązać różne świadectwa, które zebrałem dzięki znajomym mojego ojca, że to pomieszczenie wzbudzało wiele zazdrości wśród osób z jego otoczenia.",
+      "I właśnie dlatego tę skrytkę zbudowano po kryjomu w wolnych chwilach, czyniąc kradzież FG niemożliwą.",
+      "Dowiedziałem się również, że ten mały skarb miał pochodzić z kotła Falaise, w którym znalazła się w sierpniu 1944 roku okrążona armia niemiecka. Z tego korytarza śmierci.",
+      "Mój ojciec i mój wuj należeli do pierwszych, którzy przeszukiwali teren i kolekcjonowali pozostałości po II wojnie światowej.",
+      "Schodząc do tej nieznanej kryjówki, bardziej niż kiedykolwiek odczuwałem ciężar rodzinnego dziedzictwa i wezwanie, by zrozumieć, co motywowało ich determinację do stworzenia takiego miejsca, aby ukryć w nim to, co najcenniejsze."
+    ]
   }
 }

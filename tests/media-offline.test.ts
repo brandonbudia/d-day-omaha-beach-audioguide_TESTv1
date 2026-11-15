@@ -42,8 +42,8 @@ function fixture(overrides: Partial<OfflineDependencies> = {}) {
 
 test('catalogue reflects all 154 actual audio files and separates readiness from editorial review', async () => {
   const placeholder = 'eeb31574962689da3867ef0db9b71bd55c4bf9809069e06ce404c529c40e685d';
-  const phraseStops: Partial<Record<SupportedLanguage, string[]>> = { de: Array.from({ length: 22 }, (_, index) => String(index + 1).padStart(2, '0')), es: Array.from({ length: 22 }, (_, index) => String(index + 1).padStart(2, '0')), pl: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '20', '22'], nl: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'], it: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'] };
-  const partiallyAligned = new Set(['nl09', 'it07', 'es06', 'pl01', 'es03', 'de14', 'es10', 'de02', 'de15', 'de20', 'es14', 'es19', 'es12', 'es15', 'it08', 'nl18', 'de06', 'de21', 'de22', 'nl21', 'it15', 'pl02', 'nl16', 'de13', 'de17', 'nl06', 'it03', 'de03', 'nl04', 'pl03', 'de04', 'nl17', 'it17', 'pl04', 'de09', 'de12', 'de18', 'nl01', 'it01', 'it16', 'pl05', 'nl02', 'nl03', 'it02', 'it04', 'it05', 'it06', 'nl05', 'nl07', 'pl06', 'pl07', 'pl08', 'it09', 'it10', 'nl08', 'nl10', 'nl11', 'it11', 'it12', 'pl11', 'pl12', 'nl12', 'nl13', 'it13', 'pl13', 'it14', 'nl14', 'pl14', 'it18', 'nl15', 'pl16', 'it19', 'nl19', 'nl20', 'it20', 'pl17', 'pl18']);
+  const stations = Array.from({ length: 22 }, (_, index) => String(index + 1).padStart(2, '0'));
+  const partiallyAligned = new Set(['nl09', 'it07', 'es06', 'pl01', 'es03', 'de14', 'es10', 'de02', 'de15', 'de20', 'es14', 'es19', 'es12', 'es15', 'it08', 'nl18', 'de06', 'de21', 'de22', 'nl21', 'it15', 'pl02', 'nl16', 'de13', 'de17', 'nl06', 'it03', 'de03', 'nl04', 'pl03', 'de04', 'nl17', 'it17', 'pl04', 'de09', 'de12', 'de18', 'nl01', 'it01', 'it16', 'pl05', 'nl02', 'nl03', 'it02', 'it04', 'it05', 'it06', 'nl05', 'nl07', 'pl06', 'pl07', 'pl08', 'it09', 'it10', 'nl08', 'nl10', 'nl11', 'it11', 'it12', 'pl11', 'pl12', 'nl12', 'nl13', 'it13', 'pl13', 'it14', 'nl14', 'pl14', 'it18', 'nl15', 'pl16', 'it19', 'nl19', 'nl20', 'it20', 'pl17', 'pl18', 'it21', 'it22', 'nl22', 'pl19', 'pl21']);
   assert.equal(LANGUAGES.length, 7);
   for (const { code } of LANGUAGES) {
     assert.equal(Object.keys(MEDIA_CATALOG[code]).length, 22);
@@ -62,24 +62,20 @@ test('catalogue reflects all 154 actual audio files and separates readiness from
         assert.equal(record.status, 'ready');
         assert.equal(record.reason, 'language-detected-editorial-review-pending');
         assert.notEqual(record.sha256, placeholder);
-      } else if (phraseStops[code]?.includes(record.id)) {
+      } else {
         assert.equal(record.status, 'ready');
         assert.equal(record.reason, partiallyAligned.has(`${code}${record.id}`) ? 'wivi-narration-partially-aligned' : code === 'pl' ? 'synthetic-narration' : 'wivi-narration-compared');
         assert.notEqual(record.sha256, placeholder);
         assert.equal(resolveTranscript(record.id, code, record).mode, 'phrase-synchronized');
-      } else {
-        assert.equal(record.status, 'unavailable');
-        assert.equal(record.sha256, placeholder);
       }
     }
   }
   assert.equal(getDownloadableAudio('fr').length, 22);
   assert.equal(getDownloadableAudio('en').length, 22);
   for (const language of ['de', 'es', 'it', 'nl', 'pl'] as const) {
-    const expected = (phraseStops[language] ?? []).toSorted();
-    assert.deepEqual(getDownloadableAudio(language).map(({ id }) => id).toSorted(), expected);
+    assert.deepEqual(getDownloadableAudio(language).map(({ id }) => id).toSorted(), stations);
     assert.deepEqual(getOfflineResources(language).filter(({ url }) => url.startsWith('/audio/')).map(({ url }) => url).toSorted(),
-      expected.map(id => getMediaResource(id, language).url));
+      stations.map(id => getMediaResource(id, language).url));
   }
   assert.equal(getMediaResource('99', 'fr').status, 'unavailable');
   assert.equal(getLanguageResourceSummary('fr').unavailable, 0);

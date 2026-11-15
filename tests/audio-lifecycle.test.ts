@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { setImmediate as nextTurn } from 'node:timers/promises';
 import { getMediaResource } from '../src/data/mediaCatalog';
+import { importWithUnavailableAudio } from './helpers/unavailable-audio';
 
 function deferred() {
   let resolve!: () => void;
@@ -117,7 +118,7 @@ const storageMock = {
   setItem: (key: string, value: string) => { storedValues.set(key, value); storageWrites += 1; },
 };
 
-async function fixture(name: string, seed: Record<string, string> = {}, search = '') {
+async function fixture(name: string, seed: Record<string, string> = {}, search = '', unavailableAudio: string[] = []) {
   storedValues.clear();
   storedValues.set('dday_lang', 'fr');
   Object.entries(seed).forEach(([key, value]) => storedValues.set(key, value));
@@ -156,7 +157,10 @@ async function fixture(name: string, seed: Record<string, string> = {}, search =
   visitorStore.reloadFromStorage();
   const url = new URL('../src/audio/audioStore.ts', import.meta.url);
   url.searchParams.set('lifecycle', name);
-  const { audioPlayer: player } = await import(url.href) as typeof import('../src/audio/audioStore');
+  type AudioStore = typeof import('../src/audio/audioStore');
+  const { audioPlayer: player } = unavailableAudio.length
+    ? await importWithUnavailableAudio<AudioStore>(url, unavailableAudio)
+    : await import(url.href) as AudioStore;
   const start = async () => {
     const pending = player.play();
     await nextTurn();
@@ -449,7 +453,7 @@ test('a direct language link selects its first audio source without reusing the 
 
 test('a changed audio hash cannot restore a stale position and unavailable recordings cannot start', async () => {
   const seed = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '02', language: 'fr', audioIdentity: 'old-sha', durationSeconds: 100, positionSeconds: 55, updatedAt: 100 } });
-  const { media, player } = await fixture('checkpoint-hash-and-unavailable', { dday_visitor_state_v2: seed });
+  const { media, player } = await fixture('checkpoint-hash-and-unavailable', { dday_visitor_state_v2: seed }, '', ['nl:22', 'it:21']);
   assert.equal(player.getState().currentStopId, '01');
   assert.equal(player.getState().currentTime, 0);
   assert.equal(player.restoreLastPlayback(), false);
@@ -540,7 +544,7 @@ test('changing a paused language stays paused and does not seek the new narratio
 });
 
 test('switching a playing narration to an unavailable language resets the clock and cannot autoplay its placeholder', async () => {
-  const { media, player, visitorStore, start } = await fixture('language-unavailable');
+  const { media, player, visitorStore, start } = await fixture('language-unavailable', {}, '', ['it:21']);
   player.setStop('21', false);
   media.duration = getMediaResource('21', 'fr').durationSeconds;
   media.dispatchEvent(new Event('loadedmetadata'));
@@ -572,7 +576,7 @@ test('switching a playing narration to an unavailable language resets the clock 
 test('an unavailable language at startup has no media source and can switch to a real recording', async () => {
   const resource = getMediaResource('21', 'fr');
   const checkpoint = JSON.stringify({ version: 2, pieces: {}, lastPlayback: { id: '21', language: 'fr', audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 1, updatedAt: 100 } });
-  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_visitor_state_v2: checkpoint }, '?hl=it');
+  const { media, player, start, instances } = await fixture('startup-no-placeholder', { dday_visitor_state_v2: checkpoint }, '?hl=it', ['it:21']);
   assert.equal(player.getState().currentStopId, '21');
   assert.equal(media.src, '');
   assert.equal(media.loadCalls, 0, 'an empty element needs no reset');

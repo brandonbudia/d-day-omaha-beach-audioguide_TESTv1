@@ -21,6 +21,7 @@ import { getStopLabel } from '../src/data/stopLabels';
 import { OfflineManager } from '../src/components/OfflineManager';
 import { offlineStore } from '../src/offline/offlineStore';
 import App from '../src/App';
+import { importWithUnavailableAudio } from './helpers/unavailable-audio';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -220,7 +221,6 @@ test('home keeps its welcome, seven languages and tour action without the redund
 });
 
 test('language selection distinguishes seven interfaces and reports validated audio counts', () => {
-  const audioCounts = { fr: 22, en: 22, de: 22, es: 22, pl: 20, it: 20, nl: 21 };
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<LanguageSelector currentLang={code} onLanguageChange={noop} />);
     assert.equal((html.match(/class="museum-language-button"/g) ?? []).length, 7);
@@ -228,21 +228,28 @@ test('language selection distinguishes seven interfaces and reports validated au
     assert.match(html, /aria-describedby="language-audio-status"/);
     assert.match(html, /role="status"/);
     assert.doesNotMatch(html, /disabled=|\{languages\}|\{count\}|\{total\}/);
-    const count = audioCounts[code];
-    assert.ok(html.includes(escapeText(experienceText(count ? 'audioCount' : 'interfaceOnly', code, { count, total: 22 }))));
-    if (count === 22) assert.match(html, /22\/22/);
-    else assert.doesNotMatch(html, /22\/22/);
+    assert.ok(html.includes(escapeText(experienceText('audioCount', code, { count: 22, total: 22 }))));
+    assert.match(html, /22\/22/);
   }
 });
 
-test('unavailable languages expose French reference text with disabled audio; restored FR22 and real English use their own synchronized text', () => {
+test('an unavailable recording disables playback and keeps its own transcript readable', async () => {
+  const url = new URL('../src/pages/PlayerPage.tsx?fixture=unavailable-audio', import.meta.url);
+  const { PlayerPage: UnavailablePlayer } = await importWithUnavailableAudio<typeof import('../src/pages/PlayerPage')>(url, ['nl:22']);
   audioPlayer.setLanguage('nl');
   audioPlayer.setStop('22', false);
-  const missing = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
-  assert.match(missing, /Texte de référence en français/);
-  assert.match(missing, /pas encore disponible/);
-  assert.match(missing, /class="player-play-button" disabled=""/);
-  assert.doesNotMatch(missing, /class="transcript-word"/);
+  try {
+    const missing = renderToStaticMarkup(<UnavailablePlayer currentLang="nl" onSelectStopDetail={noop} />);
+    assert.ok(missing.includes(escapeText(experienceText('unavailable', 'nl'))));
+    assert.match(missing, /<div lang="nl">/);
+    assert.match(missing, /class="player-play-button" disabled=""/);
+    assert.doesNotMatch(missing, /class="transcript-word"|class="transcript-phrase-button"/);
+  } finally {
+    audioPlayer.setLanguage('fr');
+  }
+});
+
+test('German follows phrases; French 22 and English retain their own word-synchronized text', () => {
   audioPlayer.setLanguage('de');
   audioPlayer.setStop('01', false);
   const german = renderToStaticMarkup(<PlayerPage currentLang="de" onSelectStopDetail={noop} />);

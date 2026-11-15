@@ -2050,5 +2050,273 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "21": {
+    "id": "21",
+    "language": "it",
+    "audioSha256": "673ec265e735b9f2a461bdad983ee05d5d62d24207a6e66b2f4c1234d34bb6ce",
+    "durationSeconds": 194.208,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/76a873b3-d22f-454d-819f-9a8a7f11e607?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "Both ASR passes were compared against the recording and published text. The recognition passes disagree around the lock, switch and final passages; those phrases remain static."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Nella casa di famiglia, qualche anno dopo la morte di nostro padre, mi aspettava un'incredibile scoperta.",
+        "startSeconds": 0.06,
+        "endSeconds": 6.18
+      },
+      {
+        "text": "Sepolto sotto il peso degli anni e il silenzio dei segreti custoditi, fu per un incredibile caso, in un giorno qualunque, che il mio sguardo si soffermò su una botola nel pavimento di un hangar.",
+        "startSeconds": 6.74,
+        "endSeconds": 18.52
+      },
+      {
+        "text": "Uno sportello, che a prima vista sembrava del tutto normale.",
+        "startSeconds": 19.25,
+        "endSeconds": 23.03
+      },
+      {
+        "text": "Aprendo la base, ho scoperto una leggera rientranza di circa 40 centimetri.",
+        "startSeconds": 23.84,
+        "endSeconds": 28.88
+      },
+      {
+        "text": "Un tubo dotato di rubinetto e un fondo ricoperto di ghiaia.",
+        "startSeconds": 29.2,
+        "endSeconds": 32.78
+      },
+      {
+        "text": "Proprio non capivo la presenza di questo tubo.",
+        "startSeconds": 33.25,
+        "endSeconds": 35.75
+      },
+      {
+        "text": "Non chiedetemi perché, ma con un gesto del tutto innocuo, ho iniziato a rimescolare la ghiaia che c'era sul fondo.",
+        "startSeconds": 36.24,
+        "endSeconds": 43.09
+      },
+      {
+        "text": "Qual è stata la mia sorpresa quando ho scoperto una serratura?",
+        "startSeconds": 43.85,
+        "endSeconds": 47.14
+      },
+      {
+        "text": "Nell'emozione di questa scoperta, mi sono ricordato che, tra tutte le chiavi della proprietà, mi ero imbattuto in una chiave particolarmente strana.",
+        "startSeconds": 54.48,
+        "endSeconds": 63.32
+      },
+      {
+        "text": "Era molto alta, con un anello enorme.",
+        "startSeconds": 63.88,
+        "endSeconds": 66.23
+      },
+      {
+        "text": "Senza pensarci due volte, corro a cercarlo.",
+        "startSeconds": 66.51,
+        "endSeconds": 69.28
+      },
+      {
+        "text": "Una volta nella serratura, provo delle manovre per articolarlo, cerco una direzione.",
+        "startSeconds": 69.88,
+        "endSeconds": 75.04
+      },
+      {
+        "text": "Poi all'improvviso, il cassetto scivola pesantemente verso di me.",
+        "startSeconds": 75.64,
+        "endSeconds": 79.39
+      },
+      {
+        "text": "Non era un cassetto, ma un ingresso.",
+        "startSeconds": 79.88,
+        "endSeconds": 82.15
+      },
+      {
+        "text": "Avevo cercato e giocato ovunque, se c'era qualcuno che conosceva la casa a memoria ero io.",
+        "startSeconds": 91.4,
+        "endSeconds": 97.2
+      },
+      {
+        "text": "MG, Mauser all'infinito.",
+        "startSeconds": 117.87,
+        "endSeconds": 120.18
+      },
+      {
+        "text": "Furono immagazzinate circa 200 armi.",
+        "startSeconds": 120.8,
+        "endSeconds": 123.46
+      },
+      {
+        "text": "E in mezzo a tutto, l'arma davanti a te.",
+        "startSeconds": 123.99,
+        "endSeconds": 126.49
+      },
+      {
+        "text": "Un FG 42.",
+        "startSeconds": 126.76,
+        "endSeconds": 128.2
+      },
+      {
+        "text": "Una mitragliatrice da paracadutista tedesca, prodotta in soli 2500 esemplari.",
+        "startSeconds": 128.54,
+        "endSeconds": 134.13
+      },
+      {
+        "text": "Avevo anche appreso che questo piccolo tesoro proveniva dalla tasca della scogliera del Braccio della Morte.",
+        "startSeconds": 165.21,
+        "endSeconds": 171.39
+      },
+      {
+        "text": "Mio padre e mio zio furono tra i primi a scavare e raccogliere cimeli della seconda guerra mondiale.",
+        "startSeconds": 172.07,
+        "endSeconds": 177.72
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 8,
+        "text": "Rimasi sbalordito, cercando di capire."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Deve aver aperto un cassetto, ma non si è mosso nulla."
+      },
+      {
+        "beforeSegment": 14,
+        "text": "Un buco nero si è presentato a me con una scala, il mio cuore palpitava, rimasi stupito perché conoscevo la casa fin da bambino."
+      },
+      {
+        "beforeSegment": 15,
+        "text": "Beh, lo pensavo, non riesco ancora a crederci, scendo non vediamo niente, prima i piedi poi le mani."
+      },
+      {
+        "beforeSegment": 15,
+        "text": "Una volta su questa stretta scala, alla mia sinistra c'è una vecchia scatola elettrica, premo. E lì, una stanza non molto grande, ma piena di armi della Seconda Guerra Mondiale."
+      },
+      {
+        "beforeSegment": 20,
+        "text": "È un oggetto molto ambito dai collezionisti, ad esempio, un giorno, dopo aver visitato il museo, qualcuno ci ha quasi offerto centomila euro per partire con questa mitragliatrice, seppi poi, incrociando varie testimonianze tra i conoscenti di mio padre, che questo pezzo suscitò molta gelosia attorno a lui."
+      },
+      {
+        "beforeSegment": 20,
+        "text": "È per questo motivo che questo nascondiglio è stato costruito durante il suo tempo libero, rendendo impossibile il furto da parte dell'FG."
+      },
+      {
+        "beforeSegment": 22,
+        "text": "Mentre scendevo in questo covo poco conosciuto, ho sentito più che mai il peso dell'eredità familiare e la chiamata a scoprire cosa avesse motivato la loro determinazione a creare uno spazio simile per nascondere queste cose preziose."
+      }
+    ],
+    "referenceOnlyParagraphs": []
+  },
+  "22": {
+    "id": "22",
+    "language": "it",
+    "audioSha256": "ea767e7bbda8f6e5c5656a9f2b7bd3d36474182bf5b3c1e07d6e1836549c8d9e",
+    "durationSeconds": 152.712,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=it",
+      "verification": "Two local ASR passes of the actual Wivi recording and checked phrase boundaries on the decoded MP3.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The name Kieffer, the railway and detonator passage boundaries, and the childhood recollection still require listening review. These phrases remain static."
+      ]
+    },
+    "segments": [
+      {
+        "text": "Questa vetrina è dedicata ad un'epoca di coraggio, quella della resistenza francese durante la Seconda Guerra Mondiale.",
+        "startSeconds": 0.06,
+        "endSeconds": 7.99
+      },
+      {
+        "text": "Ognuno degli oggetti qui presenti racconta la storia di chi, nell'ombra, ha lottato per la libertà e la dignità.",
+        "startSeconds": 8.6,
+        "endSeconds": 15.13
+      },
+      {
+        "text": "Sulla destra si possono vedere diversi elementi di cattura, questi ordigni esplosivi ingegnosamente progettati, utilizzati per interrompere l'avanzata delle forze di occupazione.",
+        "startSeconds": 15.67,
+        "endSeconds": 27.68
+      },
+      {
+        "text": "I coltelli, strumenti silenziosi ma formidabili nel combattimento ravvicinato, costituivano un'ultima difesa o un mezzo di attacco furtivo.",
+        "startSeconds": 34.49,
+        "endSeconds": 43.42
+      },
+      {
+        "text": "Appartenevano a uomini e donne pronti a sacrificare tutto.",
+        "startSeconds": 44.23,
+        "endSeconds": 47.56
+      },
+      {
+        "text": "I volantini che potete vedere qui sono serviti a sensibilizzare e mobilitare gli spiriti liberi.",
+        "startSeconds": 48.02,
+        "endSeconds": 53.91
+      },
+      {
+        "text": "Distribuiti a rischio della vita, questi documenti erano veri e propri gridi di rivolta contro l'oppressione.",
+        "startSeconds": 54.35,
+        "endSeconds": 61.1
+      },
+      {
+        "text": "Appelli a difendere una patria migliore.",
+        "startSeconds": 61.23,
+        "endSeconds": 63.39
+      },
+      {
+        "text": "E poi ci sono i timbri falsi, strumenti essenziali per creare false identità, vere e proprie chiavi di sopravvivenza, che permettono a molti combattenti della resistenza di sfuggire alle grinfie del nemico e continuare la loro lotta nell'ombra.",
+        "startSeconds": 88.89,
+        "endSeconds": 104.0
+      },
+      {
+        "text": "Di fronte a risorse limitate, hanno trasformato il loro ambiente, utilizzando ogni pezzo, ogni strumento, per alimentare la loro lotta senza fine.",
+        "startSeconds": 104.6,
+        "endSeconds": 113.55
+      },
+      {
+        "text": "Abbiamo avuto la fortuna di conoscere diversi combattenti della resistenza durante la loro vita.",
+        "startSeconds": 114.1,
+        "endSeconds": 119.55
+      },
+      {
+        "text": "Attraverso i loro racconti ci hanno tramandato gli oggetti che custodivano in un angolo della loro casa.",
+        "startSeconds": 119.87,
+        "endSeconds": 125.81
+      },
+      {
+        "text": "Ma che audacia, che audacia aver resistito!",
+        "startSeconds": 138.75,
+        "endSeconds": 142.04
+      },
+      {
+        "text": "Il loro coraggio e la loro determinazione continuano a ispirare, ricordandoci che anche nelle ore più buie, la luce della resistenza non si spegne mai.",
+        "startSeconds": 142.51,
+        "endSeconds": 152.37
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 3,
+        "text": "Le ferrovie, ad esempio, hanno subito molti danni a causa di queste azioni."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "Il berretto verde dei commando Kieffer simboleggia l'unità e il coraggio dei 177 soldati francesi che hanno risposto all'appello del 18 giugno, combattendo fianco a fianco con i loro alleati per liberare un paese ridotto al silenzio."
+      },
+      {
+        "beforeSegment": 8,
+        "text": "I detonatori, i pneumatici tagliati, e quest'arma Mauser modificata, testimoniano l'inventiva dei combattenti della resistenza."
+      },
+      {
+        "beforeSegment": 12,
+        "text": "Ne perpetuiamo la memoria attraverso questa finestra perché è un vero ricordo d'infanzia l'aver incontrato queste persone, che non indossavano una divisa, apparentemente semplici cittadini."
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }

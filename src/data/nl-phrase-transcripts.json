@@ -2090,5 +2090,106 @@
       }
     ],
     "referenceOnlyParagraphs": []
+  },
+  "22": {
+    "id": "22",
+    "language": "nl",
+    "audioSha256": "c08cd5b8b7c28ca0757702ab304da41b718a8840f313416dc260946414c4200e",
+    "durationSeconds": 155.664,
+    "status": "aligned",
+    "provenance": {
+      "source": "https://d-day-omaha.wivi.app/pois/ac36c6c2-e9e4-4add-b16c-c322f502ca25?collection=d30e0dc5-d0bf-4c93-a165-87a57423f2b6&hl=nl",
+      "verification": "Published Wivi text compared with two local ASR passes and acoustic boundaries.",
+      "humanListeningReviewed": false,
+      "issues": [
+        "The exact Wivi wording is preserved. Passages with differences in words (including Kieffer) or uncorroborated boundaries are static."
+      ]
+    },
+    "segments": [
+      {
+        "text": "\"Dit raam is gewijd aan een tijdperk van moed: dat van het Franse verzet tijdens de Tweede Wereldoorlog.",
+        "startSeconds": 0.08,
+        "endSeconds": 6.36
+      },
+      {
+        "text": "Rechts zie je verschillende vangelementen: deze ingenieus ontworpen explosieven, die gebruikt werden om de opmars van de bezetter te verstoren...",
+        "startSeconds": 15.24,
+        "endSeconds": 24.46
+      },
+      {
+        "text": "Messen, stille maar formidabele instrumenten in gevechten van dichtbij, vormden óf een laatste verdediging óf een middel tot heimelijke aanval.",
+        "startSeconds": 29.7,
+        "endSeconds": 39.25
+      },
+      {
+        "text": "Ze behoorden tot mannen en vrouwen die bereid waren alles op te offeren.",
+        "startSeconds": 40.01,
+        "endSeconds": 44.14
+      },
+      {
+        "text": "De folders die u hier kunt zien, dienden om het bewustzijn te vergroten en vrije geesten te mobiliseren.",
+        "startSeconds": 44.89,
+        "endSeconds": 51.29
+      },
+      {
+        "text": "Geconfronteerd met beperkte middelen transformeerden ze hun omgeving, waarbij ze elk stuk, elk gereedschap gebruikten om hun eindeloze strijd aan te wakkeren.",
+        "startSeconds": 107.38,
+        "endSeconds": 117.53
+      },
+      {
+        "text": "Wij hadden het geluk verschillende verzetsstrijders tijdens hun leven te kennen.",
+        "startSeconds": 118.27,
+        "endSeconds": 122.76
+      },
+      {
+        "text": "Maar wat een durf!",
+        "startSeconds": 141.29,
+        "endSeconds": 142.4
+      },
+      {
+        "text": "Wat een stoutmoedigheid om weerstand te bieden!",
+        "startSeconds": 142.73,
+        "endSeconds": 145.52
+      }
+    ],
+    "untimedPhrases": [
+      {
+        "beforeSegment": 1,
+        "text": "Elk van de hier aanwezige objecten vertelt het verhaal van degenen die in de schaduw vochten voor vrijheid en waardigheid."
+      },
+      {
+        "beforeSegment": 2,
+        "text": "De spoorwegen bijvoorbeeld leden door deze acties veel schade."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "Deze papieren werden met gevaar voor eigen leven verspreid en waren echte uitroepen van opstand tegen de onderdrukking, oproepen om op te komen voor een beter vaderland."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "De groene baret van de KIEFFER-commando's symboliseert de eenheid en moed van de 177 Franse soldaten die gehoor gaven aan de oproep van 18 juni en zij aan zij met hun bondgenoten vochten om een ​​tot zwijgen gebracht land te bevrijden."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "De ontstekers, lekke banden en dit aangepaste Mauser-wapen getuigen van de inventiviteit van de verzetsstrijders."
+      },
+      {
+        "beforeSegment": 5,
+        "text": "En dan zijn er nog de valse postzegels, essentiële instrumenten voor het creëren van valse identiteiten: echte sleutels tot overleving, waardoor veel verzetsstrijders aan de klauwen van de vijand kunnen ontsnappen en hun strijd in de schaduw kunnen voortzetten."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "Via hun verhalen gaven ze ons de voorwerpen door die ze in een hoek van hun huis bewaarden."
+      },
+      {
+        "beforeSegment": 7,
+        "text": "We bestendigen hun herinnering door dit raam, omdat het een echte jeugdherinnering is aan de ontmoeting met deze mensen, die geen uniform droegen – ogenschijnlijk eenvoudige burgers..."
+      },
+      {
+        "beforeSegment": 9,
+        "text": "Hun moed en vastberadenheid blijven inspireren en herinneren ons eraan dat zelfs in de donkerste uren het licht van verzet nooit uitgaat.\""
+      }
+    ],
+    "referenceOnlyParagraphs": []
   }
 }
