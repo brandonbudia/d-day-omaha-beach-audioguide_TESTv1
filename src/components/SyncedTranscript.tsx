@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TimedTranscriptSegment, TimedTranscriptWord } from '../data/stops';
-import type { UntimedPhrase } from '../data/transcripts';
+import type { UntimedPhrase } from '../data/transcriptResolution';
 import { getTimedTokens, getWordState, tokenizeTranscript } from '../audio/transcriptTiming';
 import { SupportedLanguage, t } from '../i18n/translations';
 
@@ -124,7 +124,7 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
       return segments.findIndex((segment) => segment.endSeconds !== undefined
         && currentTime >= segment.startSeconds && currentTime < segment.endSeconds);
     }
-    let active = 0;
+    let active = -1;
     for (let index = 0; index < segments.length; index += 1) {
       if (currentTime >= segments[index].startSeconds) active = index;
       else break;
@@ -234,6 +234,8 @@ export const SyncedTranscript: React.FC<SyncedTranscriptProps> = ({
 
   const resumeFollowing = () => {
     pointerInteractionRef.current = false;
+    // This button disappears on resume. Move focus before re-enabling follow.
+    transcriptViewportRef.current?.focus({ preventScroll: true });
     setIsFollowing(true);
     scrollToActivePhrase();
   };

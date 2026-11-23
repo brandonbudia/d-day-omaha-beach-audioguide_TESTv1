@@ -6,17 +6,34 @@ import { visitorStore, type HeardRange, type PlaybackCheckpoint } from '../visit
 export interface AudioState {
   currentStopId: string;
   isPlaying: boolean;
+  isBuffering: boolean;
   currentTime: number;
   duration: number;
   playbackRate: number;
   isVoiceBoostActive: boolean;
   language: SupportedLanguage;
   error: 'unavailable' | 'playback' | null;
+  errorReason: 'network' | 'decode' | 'unsupported' | 'blocked' | 'unknown' | null;
 }
 
 type AudioListener = (state: AudioState) => void;
 const AUDIO_PREFERENCES_KEY = 'dday-audio-preferences-v1';
 const PLAYBACK_RATES = [1.0, 1.25, 0.8];
+// HTMLMediaElement readiness levels and MediaError codes are available even in hosts
+// that do not expose the corresponding constructors as globals.
+const HAVE_FUTURE_DATA = 3;
+const MEDIA_ERR_ABORTED = 1;
+const MEDIA_ERR_NETWORK = 2;
+const MEDIA_ERR_DECODE = 3;
+const MEDIA_ERR_SRC_NOT_SUPPORTED = 4;
+const getMediaErrorReason = (error: MediaError): AudioState['errorReason'] => {
+  switch (error.code) {
+    case MEDIA_ERR_NETWORK: return 'network';
+    case MEDIA_ERR_DECODE: return 'decode';
+    case MEDIA_ERR_SRC_NOT_SUPPORTED: return 'unsupported';
+    default: return 'unknown';
+  }
+};
 const isAudioPreferences = (value: unknown): value is Record<string, unknown> => Boolean(value && typeof value === 'object' && !Array.isArray(value) && (value as Record<string, unknown>).version === 1);
 
 export function getResumablePlayback(checkpoint?: PlaybackCheckpoint): PlaybackCheckpoint | undefined {
@@ -33,7 +50,6 @@ class GlobalAudioPlayer {
   private playbackFrame: number | null = null;
   private lastFrameNotification = 0;
   private audioCtx: AudioContext | null = null;
-  private sourceNode: MediaElementAudioSourceNode | null = null;
   private voiceFilterNode: BiquadFilterNode | null = null;
   private outputGainNode: GainNode | null = null;
   private playbackIntent = false;
@@ -42,6 +58,7 @@ class GlobalAudioPlayer {
   private pendingSeek: number | null = null;
   private checkpointSource: { id: string; language: SupportedLanguage; audioIdentity: string; durationSeconds: number } | null = null;
   private checkpointStarted = false;
+  private hasManualSeek = false;
   private lastCheckpointAt = 0;
   private lastCheckpointSignature = '';
   private completionBlockedByEndSeek = false;
@@ -79,12 +96,14 @@ class GlobalAudioPlayer {
     this.state = {
       currentStopId: initialStop.id,
       isPlaying: false,
+      isBuffering: false,
       currentTime: initialPosition,
       duration: initialResource.status === 'unavailable' ? 0 : initialResource.durationSeconds,
       playbackRate: savedRate,
       isVoiceBoostActive: savedVoiceBoost,
       language: initialLang,
       error: null,
+      errorReason: null,
     };
     this.pendingSeek = initialPosition > 0 ? initialPosition : null;
 
@@ -104,7 +123,7 @@ class GlobalAudioPlayer {
 
     this.audioElement.addEventListener('timeupdate', () => {
       if (this.audioElement) {
-        this.state.currentTime = this.audioElement.currentTime;
+        this.state.currentTime = this.pendingSeek ?? this.audioElement.currentTime;
         if (this.audioElement.duration && !isNaN(this.audioElement.duration)) {
           this.state.duration = this.audioElement.duration;
         }
@@ -115,7 +134,7 @@ class GlobalAudioPlayer {
 
     const syncSeek = () => {
       if (this.audioElement) {
-        this.state.currentTime = this.audioElement.currentTime;
+        this.state.currentTime = this.pendingSeek ?? this.audioElement.currentTime;
         this.captureCheckpoint();
         this.notify();
       }
@@ -138,14 +157,26 @@ class GlobalAudioPlayer {
       if (this.audioElement && this.audioElement.currentTime < this.state.duration - 0.001) this.completionBlockedByEndSeek = false;
       this.setOutputEnabled(true);
       this.checkpointStarted = true;
+      this.lastCheckpointAt = Date.now();
       this.state.isPlaying = true;
       this.state.error = null;
+      this.state.errorReason = null;
       this.startPlaybackClock();
       this.captureCheckpoint(false, true);
       this.notify();
     });
+    this.audioElement.addEventListener('waiting', () => {
+      const media = this.audioElement;
+      if (this.playbackIntent && media && !media.paused && media.readyState < HAVE_FUTURE_DATA) this.setBuffering(true);
+    });
+    this.audioElement.addEventListener('playing', () => {
+      const media = this.audioElement;
+      if (this.playbackIntent && media && !media.paused && media.readyState >= HAVE_FUTURE_DATA) this.setBuffering(false);
+    });
     this.audioElement.addEventListener('pause', () => {
       if (this.audioElement?.paused) {
+        // A queued pause from a stopped generation can arrive before the new play reaches the media element.
+        if (this.playbackIntent && this.state.isBuffering && !this.state.isPlaying) return;
         if (this.state.isPlaying && !this.audioElement.ended) {
           // Also respect pauses initiated by the browser or device controls.
           this.playbackIntent = false;
@@ -153,6 +184,7 @@ class GlobalAudioPlayer {
         }
         this.setOutputEnabled(false);
         this.state.isPlaying = false;
+        this.state.isBuffering = false;
         this.stopPlaybackClock();
         this.flushCheckpoint();
         // Keep the intent on a natural end; its subsequent ended event advances the tour.
@@ -160,15 +192,10 @@ class GlobalAudioPlayer {
       }
     });
     this.audioElement.addEventListener('error', () => {
-      if (!this.audioElement?.error) return;
-      this.playbackIntent = false;
-      this.playRequest += 1;
-      this.setOutputEnabled(false);
-      this.state.isPlaying = false;
-      this.state.error = 'unavailable';
-      this.stopPlaybackClock();
-      this.flushCheckpoint();
-      void this.syncAudioContext().catch(() => {});
+      const error = this.audioElement?.error;
+      if (!error) return;
+      if (error.code === MEDIA_ERR_ABORTED) this.stopAfterFailure(null, null);
+      else this.stopAfterFailure('unavailable', getMediaErrorReason(error));
     });
 
     this.audioElement.addEventListener('ended', () => {
@@ -184,7 +211,7 @@ class GlobalAudioPlayer {
         if (this.pendingSeek !== null) {
           const target = this.pendingSeek;
           this.pendingSeek = null;
-          this.seek(target);
+          this.seekTo(target);
         }
         this.notify();
       }
@@ -196,13 +223,16 @@ class GlobalAudioPlayer {
     if (!this.audioElement) return;
     this.flushCheckpoint();
     this.checkpointStarted = false;
+    this.hasManualSeek = false;
     this.lastCheckpointSignature = '';
     this.completionBlockedByEndSeek = false;
     this.playRequest += 1;
     this.playbackIntent = false;
     this.setOutputEnabled(false);
     this.state.isPlaying = false;
+    this.state.isBuffering = false;
     this.state.error = null;
+    this.state.errorReason = null;
     this.stopPlaybackClock(false);
     const resource = getMediaResource(this.state.currentStopId, this.state.language);
     if (resource.status === 'unavailable') {
@@ -224,8 +254,18 @@ class GlobalAudioPlayer {
   private captureCheckpoint(ended = false, force = false) {
     const media = this.audioElement;
     const source = this.checkpointSource;
-    if (!media || !source || source.durationSeconds <= 0) return;
-    if (!this.checkpointStarted) {
+    if (!media || !source || source.durationSeconds <= 0 || this.pendingSeek !== null || media.readyState === 0) return;
+    const now = Date.now();
+    if (!force && now - this.lastCheckpointAt < 5000) return;
+    const playedRanges: HeardRange[] = [];
+    if (this.checkpointStarted) {
+      try {
+        const played = media.played;
+        for (let index = 0; index < (played?.length ?? 0); index += 1) playedRanges.push([played.start(index), played.end(index)]);
+      } catch { /* Never infer listening from seeks when played ranges are unavailable. */ }
+    }
+    if (playedRanges.length === 0) {
+      if (!this.hasManualSeek) return;
       const saved = visitorStore.getSnapshot();
       const checkpoint = saved.lastPlayback;
       const record = saved.pieces[source.id]?.listening[source.language];
@@ -233,15 +273,7 @@ class GlobalAudioPlayer {
       // but opening or seeking in an unheard station must not create listening.
       if (!checkpoint || checkpoint.id !== source.id || checkpoint.language !== source.language || checkpoint.audioIdentity !== source.audioIdentity
         || record?.audioIdentity !== source.audioIdentity || !record.heardRanges.length
-        || this.pendingSeek !== null || media.readyState === 0 || media.currentTime === checkpoint.positionSeconds) return;
-    }
-    const now = Date.now();
-    if (!force && now - this.lastCheckpointAt < 5000) return;
-    const playedRanges: HeardRange[] = [];
-    if (this.checkpointStarted) {
-      try {
-        for (let index = 0; index < (media.played?.length ?? 0); index += 1) playedRanges.push([media.played.start(index), media.played.end(index)]);
-      } catch { /* Never infer listening from seeks when played ranges are unavailable. */ }
+        || media.currentTime === checkpoint.positionSeconds) return;
     }
     const signature = JSON.stringify([source.id, source.language, source.audioIdentity, media.currentTime, playedRanges, ended]);
     if (signature === this.lastCheckpointSignature) return;
@@ -266,7 +298,7 @@ class GlobalAudioPlayer {
     this.state.language = checkpoint.language;
     try { localStorage.setItem('dday_lang', checkpoint.language); } catch { /* The explicit resume still works for this visit. */ }
     this.setStop(checkpoint.id, false);
-    this.seek(checkpoint.positionSeconds);
+    this.seekTo(checkpoint.positionSeconds);
     return true;
   }
 
@@ -279,7 +311,7 @@ class GlobalAudioPlayer {
 
       // Keep the UI responsive for word highlighting without notifying React on every display frame.
       if (now - this.lastFrameNotification >= 33) {
-        this.state.currentTime = this.audioElement.currentTime;
+        this.state.currentTime = this.pendingSeek ?? this.audioElement.currentTime;
         this.lastFrameNotification = now;
         this.notify();
       }
@@ -295,37 +327,49 @@ class GlobalAudioPlayer {
       this.playbackFrame = null;
     }
     if (this.audioElement && syncTime) {
-      this.state.currentTime = this.audioElement.currentTime;
+      this.state.currentTime = this.pendingSeek ?? this.audioElement.currentTime;
       this.notify();
     }
   }
 
   private initWebAudio() {
-    if (this.audioCtx || typeof window === 'undefined') return;
+    if (!this.audioElement || typeof window === 'undefined') return;
+    if (this.audioCtx) {
+      if (!this.outputGainNode) throw new Error('Cannot connect audio output');
+      return;
+    }
+    let context: AudioContext | undefined;
+    let source: MediaElementAudioSourceNode;
+    let filter: BiquadFilterNode;
+    let gain: GainNode;
     try {
       const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      this.audioCtx = new AudioContextClass();
+      context = new AudioContextClass();
+      filter = context.createBiquadFilter();
+      filter.type = 'peaking';
+      filter.frequency.value = 2500;
+      filter.Q.value = 1.2;
+      filter.gain.value = this.state.isVoiceBoostActive ? 6.0 : 0.0;
+      gain = context.createGain();
+      gain.gain.value = 0;
 
-      if (this.audioElement && !this.sourceNode) {
-        this.sourceNode = this.audioCtx.createMediaElementSource(this.audioElement);
-        // Voice filter: Peaking filter around 2.5kHz to cut ambient beach wind & boost voice clarity
-        this.voiceFilterNode = this.audioCtx.createBiquadFilter();
-        this.voiceFilterNode.type = 'peaking';
-        this.voiceFilterNode.frequency.value = 2500;
-        this.voiceFilterNode.Q.value = 1.2;
-        this.voiceFilterNode.gain.value = this.state.isVoiceBoostActive ? 6.0 : 0.0;
-
-        // A separate output gate guarantees silence without touching the media position.
-        this.outputGainNode = this.audioCtx.createGain();
-        this.outputGainNode.gain.value = 0;
-
-        this.sourceNode.connect(this.voiceFilterNode);
-        this.voiceFilterNode.connect(this.outputGainNode);
-        this.outputGainNode.connect(this.audioCtx.destination);
-      }
+      // Build the output graph before diverting the media element's native sound.
+      filter.connect(gain);
+      gain.connect(context.destination);
+      source = context.createMediaElementSource(this.audioElement);
     } catch {
-      // Audio context might fail on restricted browser contexts, fall back to native element
+      void context?.close?.().catch(() => {});
+      return;
     }
+    this.audioCtx = context;
+    try {
+      source.connect(filter);
+      this.voiceFilterNode = filter;
+    } catch {
+      // Once the element is routed, keep sound on the output gate if the voice filter fails.
+      source.connect(gain);
+    }
+    this.outputGainNode = gain;
   }
 
   private setOutputEnabled(enabled: boolean) {
@@ -384,7 +428,7 @@ class GlobalAudioPlayer {
     this.updateAudioSource();
     // A different narration has its own wording and duration. Its seconds do
     // not correspond to the old language's position; keep that checkpoint only.
-    this.seek(0);
+    this.seekTo(0);
     if (wasPlaying && getMediaResource(this.state.currentStopId, lang).status !== 'unavailable') {
       void this.play();
     }
@@ -401,7 +445,7 @@ class GlobalAudioPlayer {
     this.state.currentTime = 0;
     this.state.duration = target.durationSeconds;
     this.updateAudioSource();
-    this.seek(0);
+    this.seekTo(0);
 
     if (autoPlay) {
       this.play();
@@ -416,34 +460,55 @@ class GlobalAudioPlayer {
     if (getMediaResource(this.state.currentStopId, this.state.language).status === 'unavailable') {
       this.pause();
       this.state.error = 'unavailable';
+      this.state.errorReason = null;
       this.notify();
       return;
     }
     if (this.audioElement?.error) {
       const position = this.state.currentTime;
       this.updateAudioSource();
-      this.seek(position);
+      this.seekTo(position);
     }
     const request = ++this.playRequest;
     this.playbackIntent = true;
+    if (!this.state.isPlaying) this.setBuffering(true);
     try {
       this.initWebAudio();
       await this.syncAudioContext();
       if (!this.audioElement || request !== this.playRequest || !this.playbackIntent) return;
       await this.audioElement.play();
       if (!this.playbackIntent) this.audioElement.pause();
+      if (request === this.playRequest && this.playbackIntent) this.setBuffering(false);
     } catch (error) {
-      // A stale play request is expected when the visitor changes track or pauses.
-      if (request === this.playRequest && !(error instanceof DOMException && error.name === 'AbortError')) {
-        this.playbackIntent = false;
-        this.setOutputEnabled(false);
-        this.audioElement?.pause();
-        this.state.isPlaying = false;
-        this.state.error = this.audioElement?.error ? 'unavailable' : 'playback';
-        this.stopPlaybackClock();
-        void this.syncAudioContext().catch(() => {});
+      // Rejections from replaced starts are expected. A current abort must release the play intent.
+      if (request === this.playRequest) {
+        const name = error instanceof Error ? error.name : undefined;
+        const mediaError = this.audioElement?.error;
+        if (name === 'AbortError') this.stopAfterFailure(null, null, true);
+        else if (mediaError) this.stopAfterFailure('unavailable', getMediaErrorReason(mediaError), true);
+        else this.stopAfterFailure('playback', name === 'NotAllowedError' ? 'blocked' : name === 'NotSupportedError' ? 'unsupported' : 'unknown', true);
       }
     }
+  }
+
+  private setBuffering(buffering: boolean) {
+    if (this.state.isBuffering === buffering) return;
+    this.state.isBuffering = buffering;
+    this.notify();
+  }
+
+  private stopAfterFailure(error: AudioState['error'], reason: AudioState['errorReason'], pauseMedia = false) {
+    this.playbackIntent = false;
+    this.playRequest += 1;
+    this.setOutputEnabled(false);
+    this.state.isPlaying = false;
+    this.state.isBuffering = false;
+    this.state.error = error;
+    this.state.errorReason = reason;
+    if (pauseMedia) this.audioElement?.pause();
+    this.stopPlaybackClock();
+    this.flushCheckpoint();
+    void this.syncAudioContext().catch(() => {});
   }
 
   public pause() {
@@ -454,6 +519,7 @@ class GlobalAudioPlayer {
       this.audioElement.pause();
     }
     this.state.isPlaying = false;
+    this.state.isBuffering = false;
     // pause() updates the native clock immediately; its event comes in a later task.
     this.stopPlaybackClock();
     this.flushCheckpoint();
@@ -470,6 +536,11 @@ class GlobalAudioPlayer {
 
   public seek(seconds: number) {
     if (!Number.isFinite(seconds)) return;
+    this.hasManualSeek = true;
+    this.seekTo(seconds);
+  }
+
+  private seekTo(seconds: number) {
     const clamped = Math.max(0, Math.min(seconds, this.state.duration));
     this.completionBlockedByEndSeek = clamped >= this.state.duration - 0.001;
     this.state.currentTime = clamped;

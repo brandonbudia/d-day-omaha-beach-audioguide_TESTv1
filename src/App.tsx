@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Header } from './components/Header';
 import { BottomNav, ActiveTab } from './components/BottomNav';
 import { PersistentPlayerBar } from './components/PersistentPlayerBar';
@@ -12,17 +12,32 @@ import { formatTime } from './audio/formatTime';
 import { LANGUAGES, t } from './i18n/translations';
 import { useOnlineStatus } from './hooks/useOnlineStatus';
 import { usePWAInstall } from './hooks/usePWAInstall';
+import { usePWAUpdate } from './hooks/usePWAUpdate';
 import { STOPS } from './data/stops';
 import { useVisitorState } from './visit/useVisitorState';
+import { visitorStore } from './visit/visitorStore';
 import { OfflineManager } from './components/OfflineManager';
 import { experienceText as x } from './i18n/experienceLabels';
 import { PracticalHelp } from './components/PracticalHelp';
 
 const PlayerPage = React.lazy(() => import('./pages/PlayerPage').then((module) => ({ default: module.PlayerPage })));
 
+class PlayerLoadBoundary extends React.Component<{children: React.ReactNode; fallback: React.ReactNode}> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() { return { failed: true }; }
+
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
+const hasActiveAudio = (state = audioPlayer.getState()) => state.isPlaying || state.isBuffering;
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('accueil');
   const [selectedStopId, setSelectedStopId] = useState('01');
+  const focusRoute = `${activeTab}:${selectedStopId}`;
+  const lastFocusRoute = useRef(focusRoute);
   const [homeRevision, setHomeRevision] = useState(0);
   const language = useAudioSelector((state) => state.language);
   const audioStopId = useAudioSelector((state) => state.currentStopId);
@@ -30,11 +45,14 @@ export default function App() {
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const isOnline = useOnlineStatus();
   const installation = usePWAInstall();
+  const updateWaiting = usePWAUpdate();
 
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   useEffect(() => {
+    if (lastFocusRoute.current === focusRoute) return;
+    lastFocusRoute.current = focusRoute;
     document.querySelector<HTMLElement>('#main-content')?.focus({ preventScroll: true });
-  }, [activeTab, selectedStopId]);
+  }, [focusRoute]);
 
   useEffect(() => {
     const handleLocationChange = () => {
@@ -48,7 +66,7 @@ export default function App() {
       } else if (/^\/(player|lecteur)\/?$/.test(url.pathname)) {
         const requested = url.searchParams.get('stop');
         const current = audioPlayer.getState();
-        if (requested && STOPS.some((stop) => stop.id === requested) && requested !== current.currentStopId && !current.isPlaying) audioPlayer.setStop(requested, false);
+        if (requested && STOPS.some((stop) => stop.id === requested) && requested !== current.currentStopId && !hasActiveAudio(current)) audioPlayer.setStop(requested, false);
         setActiveTab('lecteur');
       } else if (/^\/parcours\/?$/.test(url.pathname)) setActiveTab('parcours');
       else setActiveTab('accueil');
@@ -93,16 +111,23 @@ export default function App() {
   const goHome = () => {
     if (activeTab !== 'accueil') { go('accueil'); return; }
     audioPlayer.flushCheckpoint();
-    if (audioPlayer.getState().isPlaying) {
-      // A document reload cannot preserve a live audio element. Refresh the home view instead.
+    const refreshHome = () => {
       setHomeRevision((value) => value + 1);
       window.scrollTo({ top: 0, behavior: 'auto' });
-    } else window.location.reload();
+    };
+    if (hasActiveAudio()) { refreshHome(); return; }
+    const locationBeforeWrite = window.location.href;
+    void visitorStore.whenPersisted().then((persisted) => {
+      if (window.location.href !== locationBeforeWrite) return;
+      // Keep a live audio element and any visit changes that could not be persisted.
+      if (persisted && !hasActiveAudio()) window.location.reload();
+      else refreshHome();
+    });
   };
 
   const resumablePlayback = getResumablePlayback(visit.lastPlayback);
   const resume = () => {
-    if (audioPlayer.getState().isPlaying) { go('lecteur'); return; }
+    if (hasActiveAudio()) { go('lecteur'); return; }
     if (resumablePlayback && audioPlayer.restoreLastPlayback()) {
       go('lecteur');
       void audioPlayer.play(); // Only this explicit visitor action starts playback.
@@ -115,8 +140,15 @@ export default function App() {
 
   return (
     <div className="museum-app min-h-screen flex flex-col">
+      <a className="museum-skip-link" href="#main-content" onClick={(event) => {
+        const main = document.getElementById('main-content');
+        if (!main) return;
+        event.preventDefault();
+        main.focus();
+      }}>{x('skipToContent', language)}</a>
       <Header title={titles[activeTab]} installation={installation} onGoHome={goHome} onOpenInstallGuide={() => setIsInstallModalOpen(true)} />
       <main id="main-content" tabIndex={-1} aria-label={titles[activeTab]} className="app-main flex-1 relative w-full px-4 max-w-3xl mx-auto" style={{ paddingTop: 'calc(var(--museum-header-height, 81px) + 1rem)', paddingBottom: 'calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px) + 1.5rem)' }}>
+        <div role="status">{updateWaiting && <p className="offline-notice">{x('pwaUpdateWaiting', language)}</p>}</div>
         {activeTab === 'accueil' && <div className="space-y-5">
           <WelcomePage key={homeRevision} onStartTour={() => go('parcours')} currentLang={language} onLanguageChange={(lang) => {
             audioPlayer.setLanguage(lang);
@@ -128,7 +160,18 @@ export default function App() {
         </div>}
         {activeTab === 'parcours' && <ParcoursPage onSelectStopDetail={(id) => go('arret', id)} onOpenPlayer={() => go('lecteur')} currentLang={language} />}
         {activeTab === 'arret' && <StopDetailPage stopId={selectedStopId} onNavigateStop={(id) => go('arret', id)} onOpenPlayer={() => go('lecteur')} currentLang={language} />}
-        {activeTab === 'lecteur' && <React.Suspense fallback={<p role="status" aria-busy="true">{t('nav_player', language)}…</p>}><PlayerPage onSelectStopDetail={(id) => go('arret', id)} currentLang={language} /></React.Suspense>}
+        {activeTab === 'lecteur' && <PlayerLoadBoundary fallback={
+          <section className="museum-card p-5">
+            <p role="alert">{x('playerLoadFailed', language)}</p>
+            <button type="button" className="museum-button-secondary mt-3" onClick={() => go('arret', audioStopId)}>
+              {x('resumePiece', language, { number: audioStopId })}
+            </button>
+          </section>
+        }>
+          <React.Suspense fallback={<p role="status" aria-busy="true">{t('nav_player', language)}…</p>}>
+            <PlayerPage onSelectStopDetail={(id) => go('arret', id)} currentLang={language} />
+          </React.Suspense>
+        </PlayerLoadBoundary>}
       </main>
       {activeTab !== 'lecteur' && <PersistentPlayerBar onOpenFullPlayer={() => go('lecteur')} />}
       <BottomNav currentTab={activeTab} onSelectTab={(tab) => go(tab)} />

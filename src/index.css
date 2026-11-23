@@ -35,6 +35,8 @@
 
 :root {
   color-scheme: dark;
+  scroll-padding-block: var(--museum-header-height, 81px)
+    calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px));
   --museum-bg: #1C2528;
   --museum-card: #263338;
   --museum-reading: #101A1D;
@@ -106,6 +108,29 @@ textarea:focus-visible, summary:focus-visible, [role="button"]:focus-visible {
   outline: 3px solid var(--museum-focus); outline-offset: 3px;
 }
 button:disabled { cursor: not-allowed; opacity: .55; }
+.museum-skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.museum-skip-link:focus {
+  position: fixed;
+  z-index: 60;
+  inset-block-start: calc(.75rem + env(safe-area-inset-top, 0px));
+  inset-inline-start: .75rem;
+  width: auto;
+  height: auto;
+  max-width: calc(100% - 1.5rem);
+  padding: .65rem .9rem;
+  clip-path: none;
+  white-space: normal;
+  background: var(--museum-card);
+  color: var(--museum-text);
+  border-radius: var(--museum-radius-control);
+}
 img { max-width: 100%; }
 main { isolation: isolate; }
 main > div { min-width: 0; }
@@ -207,12 +232,12 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .museum-mini-player { bottom: var(--museum-nav-height, calc(68px + env(safe-area-inset-bottom, 0px))); background: var(--museum-card); color: var(--museum-text); border-top: 1px solid var(--museum-line); box-shadow: 0 -3px 14px rgb(10 25 28 / 6%); }
 .museum-mini-player-inner { max-width: 44rem; margin-inline: auto; padding-inline: .75rem; }
 .museum-mini-player-range { width: 100%; height: 44px; min-height: 44px; display: block; margin: 0; padding: 0; background: transparent; appearance: none; -webkit-appearance: none; cursor: pointer; accent-color: var(--museum-action); }
-.museum-mini-player-range::-webkit-slider-runnable-track { height: 4px; border-radius: 3px; background: linear-gradient(to right, var(--museum-action) var(--audio-progress), var(--museum-line) var(--audio-progress)); }
-.museum-mini-player-range::-moz-range-track { height: 4px; border-radius: 3px; background: var(--museum-line); }
+.museum-mini-player-range::-webkit-slider-runnable-track { height: 4px; border-radius: 3px; background: linear-gradient(to right, var(--museum-action) var(--audio-progress), var(--museum-control-line) var(--audio-progress)); }
+.museum-mini-player-range::-moz-range-track { height: 4px; border-radius: 3px; background: var(--museum-control-line); }
 .museum-mini-player-range::-moz-range-progress { height: 4px; background: var(--museum-action); }
 .museum-mini-player-range::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--museum-action); margin-top: -6px; }
 .museum-mini-player-range::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: var(--museum-action); }
-.museum-mini-player-row { display: flex; align-items: center; gap: .4rem; height: 64px; padding-bottom: .5rem; }
+.museum-mini-player-row { display: flex; align-items: center; gap: .4rem; min-height: 64px; padding-bottom: .5rem; }
 .museum-mini-player-open { display: flex; align-items: center; gap: .65rem; min-width: 0; flex: 1; text-align: left; min-height: 48px; border-radius: .5rem; }
 .museum-mini-player-open img { width: 44px; height: 44px; border-radius: .5rem; object-fit: cover; flex-shrink: 0; }
 .museum-mini-player-copy { min-width: 0; flex: 1; }
@@ -456,8 +481,8 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .synced-transcript-phrase[data-active="true"]::before { content: ''; position: absolute; left: -.65rem; top: 1.25rem; width: 3px; height: 1.2rem; border-radius: 2px; background: var(--player-accent); }
 .transcript-word { display: inline-block; max-width: 100%; overflow-wrap: anywhere; min-width: 24px; min-height: 44px; padding: 0 .04em; background: transparent; border: 0; border-radius: 0; box-shadow: none; color: var(--player-future); transition: color 140ms ease; }
 .transcript-word[data-word-state="read"], .transcript-word[data-word-state="current"] { color: var(--player-spoken); background: transparent; box-shadow: none; }
-.transcript-word[data-word-state="current"] { text-decoration: none; }
-.player-page .transcript-word:focus-visible { outline: none; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+.transcript-word[data-word-state="current"] { background: var(--museum-soft); }
+.player-page .transcript-word:focus-visible { outline: 2px solid var(--player-accent); outline-offset: -2px; }
 .transcript-phrase-button { width: 100%; min-height: 3.5rem; text-align: left; }
 .synced-transcript[data-phrase-follow="true"] .transcript-phrase-button { padding: .25em .4em; border-radius: .5rem; overflow-wrap: anywhere; }
 .synced-transcript[data-phrase-follow="true"] [data-active="true"] .transcript-phrase-button { color: var(--player-spoken); background: var(--player-panel); }
@@ -473,8 +498,8 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .player-times { display: flex; justify-content: space-between; gap: .5rem; font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--player-muted); }
 .player-range { display: block; width: 100%; min-height: 44px; height: 44px; margin: -.15rem 0; background: transparent; appearance: none; -webkit-appearance: none; cursor: pointer; accent-color: var(--player-accent); }
 html.light-mode input.player-range { background: transparent !important; border: 0; }
-.player-range::-webkit-slider-runnable-track { height: 5px; border-radius: 4px; background: linear-gradient(to right, var(--player-accent) var(--audio-progress), var(--player-line) var(--audio-progress)); }
-.player-range::-moz-range-track { height: 5px; border-radius: 4px; background: var(--player-line); }
+.player-range::-webkit-slider-runnable-track { height: 5px; border-radius: 4px; background: linear-gradient(to right, var(--player-accent) var(--audio-progress), var(--museum-control-line) var(--audio-progress)); }
+.player-range::-moz-range-track { height: 5px; border-radius: 4px; background: var(--museum-control-line); }
 .player-range::-moz-range-progress { height: 5px; background: var(--player-accent); }
 .player-range::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--player-accent); margin-top: -7.5px; }
 .player-range::-moz-range-thumb { width: 20px; height: 20px; border: 0; border-radius: 50%; background: var(--player-accent); }

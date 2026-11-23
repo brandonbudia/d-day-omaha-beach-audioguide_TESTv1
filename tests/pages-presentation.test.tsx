@@ -10,12 +10,14 @@ import { visitorStore } from '../src/visit/visitorStore';
 import { getMediaResource } from '../src/data/mediaCatalog';
 import { formatTime } from '../src/audio/formatTime';
 import { PlayerPage } from '../src/pages/PlayerPage';
+import { loadTranscript } from '../src/data/loadTranscript';
 import { audioPlayer } from '../src/audio/audioStore';
 import { LANGUAGES } from '../src/i18n/translations';
 import { experienceText } from '../src/i18n/experienceLabels';
 import { LanguageSelector } from '../src/components/LanguageSelector';
 import { PhotoViewer } from '../src/components/PhotoViewer';
 import { PersistentPlayerBar } from '../src/components/PersistentPlayerBar';
+import { BottomNav } from '../src/components/BottomNav';
 import { detailLabel, visualLabel } from '../src/i18n/visualLabels';
 import { getStopLabel } from '../src/data/stopLabels';
 import { OfflineManager } from '../src/components/OfflineManager';
@@ -25,6 +27,45 @@ import { importWithUnavailableAudio } from './helpers/unavailable-audio';
 
 const noop = () => {};
 const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+
+test('the app exposes a translated skip link before the header with a focusable main target', (context) => {
+  const oldDocument = Object.getOwnPropertyDescriptor(globalThis, 'document');
+  Object.defineProperty(globalThis, 'document', {
+    configurable: true,
+    value: { documentElement: { classList: { contains: () => false } } },
+  });
+  context.after(() => {
+    if (oldDocument) Object.defineProperty(globalThis, 'document', oldDocument);
+    else Reflect.deleteProperty(globalThis, 'document');
+  });
+  const html = renderToStaticMarkup(<App />);
+  const link = html.indexOf('href="#main-content"');
+  assert.ok(link >= 0 && link < html.indexOf('<header'));
+  assert.match(html, /<main id="main-content" tabindex="-1"/i);
+  for (const {code} of LANGUAGES) assert.ok(experienceText('skipToContent', code).trim());
+});
+
+test('the current navigation button uses its visible name for assistive controls', () => {
+  const previousLanguage = audioPlayer.getState().language;
+  try {
+    audioPlayer.setLanguage('nl');
+    const navigation = renderToStaticMarkup(<BottomNav currentTab="parcours" onSelectTab={noop} />);
+    const activeButton = /<button[^>]*aria-current="page"[^>]*>[\s\S]*?<\/button>/.exec(navigation)?.[0];
+    assert.ok(activeButton);
+    assert.match(activeButton, /<span>Bezoek<\/span>/);
+    assert.doesNotMatch(activeButton, /aria-label=/);
+  } finally {
+    audioPlayer.setLanguage(previousLanguage);
+  }
+});
+
+test('the full player play button uses its visible name for assistive controls', () => {
+  const player = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
+  const playButton = /<button[^>]*class="player-play-button"[^>]*>[\s\S]*?<\/button>/.exec(player)?.[0];
+  assert.ok(playButton);
+  assert.match(playButton, /<span>Écouter<\/span>/);
+  assert.doesNotMatch(playButton, /aria-label=/);
+});
 
 test('the home page offers only a usable listening or exhibit resume action', (context) => {
   const oldDocument = Object.getOwnPropertyDescriptor(globalThis, 'document');
@@ -239,6 +280,7 @@ test('an unavailable recording disables playback and keeps its own transcript re
   audioPlayer.setLanguage('nl');
   audioPlayer.setStop('22', false);
   try {
+    await loadTranscript('22', 'nl', getMediaResource('22', 'nl'));
     const missing = renderToStaticMarkup(<UnavailablePlayer currentLang="nl" onSelectStopDetail={noop} />);
     assert.ok(missing.includes(escapeText(experienceText('unavailable', 'nl'))));
     assert.match(missing, /<div lang="nl">/);
@@ -249,15 +291,17 @@ test('an unavailable recording disables playback and keeps its own transcript re
   }
 });
 
-test('German follows phrases; French 22 and English retain their own word-synchronized text', () => {
+test('German follows phrases; French 22 and English retain their own word-synchronized text', async () => {
   audioPlayer.setLanguage('de');
   audioPlayer.setStop('01', false);
+  await loadTranscript('01', 'de', getMediaResource('01', 'de'));
   const german = renderToStaticMarkup(<PlayerPage currentLang="de" onSelectStopDetail={noop} />);
   assert.match(german, /lang="de" data-phrase-follow="true"/);
   assert.match(german, /class="transcript-phrase-button"/);
   assert.doesNotMatch(german, /class="transcript-word"|class="player-play-button" disabled=""/);
   audioPlayer.setLanguage('fr');
   audioPlayer.setStop('22', false);
+  await loadTranscript('22', 'fr', getMediaResource('22', 'fr'));
   const french22 = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
   assert.match(french22, /class="synced-transcript" lang="fr"/);
   assert.match(french22, /class="transcript-word"/);
@@ -265,6 +309,7 @@ test('German follows phrases; French 22 and English retain their own word-synchr
   assert.doesNotMatch(french22, /class="player-play-button" disabled=""/);
   audioPlayer.setStop('01', false);
   audioPlayer.setLanguage('en');
+  await loadTranscript('01', 'en', getMediaResource('01', 'en'));
   const english = renderToStaticMarkup(<PlayerPage currentLang="en" onSelectStopDetail={noop} />);
   assert.match(english, /human review is pending/);
   assert.match(english, /class="synced-transcript" lang="en"/);
@@ -274,19 +319,42 @@ test('German follows phrases; French 22 and English retain their own word-synchr
   audioPlayer.setLanguage('fr');
 });
 
-test('the Polish synthetic narration is identified on the exhibit and player', () => {
+test('the Polish synthetic narration is identified on the exhibit and player', async () => {
   const label = escapeText(experienceText('syntheticNarration', 'pl'));
   const detail = renderToStaticMarkup(<StopDetailPage stopId="09" currentLang="pl" onNavigateStop={noop} onOpenPlayer={noop} />);
   assert.ok(detail.includes(label));
   audioPlayer.setLanguage('pl');
   audioPlayer.setStop('09', false);
   try {
+    await loadTranscript('09', 'pl', getMediaResource('09', 'pl'));
     const player = renderToStaticMarkup(<PlayerPage currentLang="pl" onSelectStopDetail={noop} />);
     assert.ok(player.includes(label));
     assert.match(player, /lang="pl" data-phrase-follow="true"/);
     assert.doesNotMatch(player, /class="transcript-word"|class="player-play-button" disabled=""/);
   } finally {
     audioPlayer.setLanguage('fr');
+  }
+});
+
+test('changing to a language still loading keeps the audio controls and avoids showing the previous text', async () => {
+  audioPlayer.setStop('10', false);
+  audioPlayer.setLanguage('fr');
+  try {
+    await loadTranscript('10', 'fr', getMediaResource('10', 'fr'));
+    const before = renderToStaticMarkup(<PlayerPage currentLang="fr" onSelectStopDetail={noop} />);
+    assert.match(before, /class="synced-transcript" lang="fr"/);
+    audioPlayer.setLanguage('it');
+    const switching = renderToStaticMarkup(<PlayerPage currentLang="it" onSelectStopDetail={noop} />);
+    assert.ok(switching.includes(escapeText(experienceText('transcriptLoading', 'it'))));
+    assert.doesNotMatch(switching, /class="synced-transcript"/);
+    assert.doesNotMatch(switching, /class="player-play-button" disabled=""/);
+    await loadTranscript('10', 'it', getMediaResource('10', 'it'));
+    const after = renderToStaticMarkup(<PlayerPage currentLang="it" onSelectStopDetail={noop} />);
+    assert.match(after, /lang="it" data-phrase-follow="true"/);
+    assert.doesNotMatch(after, /class="synced-transcript" lang="fr"/);
+  } finally {
+    audioPlayer.setLanguage('fr');
+    audioPlayer.setStop('01', false);
   }
 });
 

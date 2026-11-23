@@ -4,11 +4,12 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Scrubber } from '../src/components/Scrubber';
 import { SyncedTranscript } from '../src/components/SyncedTranscript';
+import { getMediaResource } from '../src/data/mediaCatalog';
 import type { TimedTranscriptSegment } from '../src/data/stops';
 import { normalizeReadingPreferences } from '../src/hooks/useReadingPreferences';
 import { translations, LANGUAGES, t } from '../src/i18n/translations';
 import { TranscriptNotice } from '../src/components/TranscriptNotice';
-import type { TranscriptResolution } from '../src/data/transcripts';
+import { resolveTranscript, type TranscriptResolution } from '../src/data/transcripts';
 
 const segments: TimedTranscriptSegment[] = [
   {
@@ -54,6 +55,24 @@ test('rendered read/current/upcoming states follow backward seeks and a paused c
   const gap = renderTranscript(0.55);
   assert.equal((gap.match(/data-word-state="read"/g) ?? []).length, 1);
   assert.equal((gap.match(/data-word-state="current"/g) ?? []).length, 0);
+});
+
+test('word-synchronized French and English tracks leave their opening silence unhighlighted', () => {
+  for (const language of ['fr', 'en'] as const) {
+    const transcript = resolveTranscript('10', language, getMediaResource('10', language));
+    assert.equal(transcript.mode, 'synchronized');
+    const first = transcript.segments[0];
+    assert.ok(first.startSeconds > 0);
+    const render = (currentTime: number, isPlaying = false) => renderToStaticMarkup(
+      <SyncedTranscript segments={transcript.segments} currentTime={currentTime} isPlaying={isPlaying}
+        textSize={24} language={language} onSelectPhrase={() => {}} />,
+    );
+    const silence = render(0);
+    assert.doesNotMatch(silence, /aria-current|data-active="true"/, language);
+    assert.match(silence, /data-word-state="upcoming"/);
+    assert.match(render(first.startSeconds, true), /data-word-state="current"/);
+    assert.equal(render(0), silence, 'seeking back into silence clears the highlight');
+  }
 });
 
 test('each timed phrase exposes one word to Tab while retaining every clickable word and its replay button', () => {

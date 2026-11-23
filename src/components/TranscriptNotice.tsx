@@ -1,6 +1,6 @@
 import React from 'react';
 import { tokenizeTranscript } from '../audio/transcriptTiming';
-import type { TranscriptResolution } from '../data/transcripts';
+import type { TranscriptResolution } from '../data/transcriptResolution';
 import type { SupportedLanguage } from '../i18n/translations';
 
 const order: SupportedLanguage[] = ['fr', 'en', 'de', 'it', 'pl', 'nl', 'es'];

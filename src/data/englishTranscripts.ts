@@ -1,6 +1,6 @@
 import source from './english-transcripts.en.json';
 import { tokenizeTranscript } from '../audio/transcriptTiming';
-import type { TranscriptRecord } from './transcripts';
+import type { TranscriptRecord } from './transcriptResolution';
 
 interface CtcWordTiming {
   tokenIndex: number;

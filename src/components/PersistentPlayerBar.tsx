@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
+import { LoaderCircle, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { audioPlayer, AudioState } from '../audio/audioStore';
 import { STOPS } from '../data/stops';
 import { t } from '../i18n/translations';
@@ -30,7 +30,8 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
 
   return (
     <aside aria-label={visualLabel(state.language, 'persistentPlayer')} className="museum-mini-player fixed inset-x-0 z-40">
-      {state.error && !unavailable && <p role="alert" className="museum-mini-player-error">{t('audio_error', state.language)}</p>}
+      {state.error && !unavailable && <p role="alert" className="museum-mini-player-error">{state.errorReason === 'network' ? t('audio_error', state.language) : x('playbackRetry', state.language)}</p>}
+      {state.isBuffering && <p role="status" className="sr-only">{x('audioLoading', state.language)}</p>}
       <div className="museum-mini-player-inner">
         <input
           type="range"
@@ -64,9 +65,9 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
             <button type="button" onClick={() => audioPlayer.prevStop()} aria-label={visualLabel(state.language, 'previous')} className="museum-icon-button"><SkipBack size={21} aria-hidden="true" /></button>
             <button type="button" disabled={unavailable} onClick={() => {
               audioPlayer.togglePlayPause();
-              if (!state.isPlaying) onOpenFullPlayer();
-            }} aria-label={t(state.isPlaying ? 'pause' : 'play', state.language)} className="museum-mini-player-play">
-              {state.isPlaying ? <Pause size={23} fill="currentColor" aria-hidden="true" /> : <Play size={23} fill="currentColor" aria-hidden="true" />}
+              if (!state.isPlaying && !state.isBuffering) onOpenFullPlayer();
+            }} aria-label={t(state.isPlaying || state.isBuffering ? 'pause' : 'play', state.language)} className="museum-mini-player-play">
+              {state.isBuffering ? <LoaderCircle size={23} aria-hidden="true" /> : state.isPlaying ? <Pause size={23} fill="currentColor" aria-hidden="true" /> : <Play size={23} fill="currentColor" aria-hidden="true" />}
             </button>
             <button type="button" onClick={() => audioPlayer.nextStop()} aria-label={visualLabel(state.language, 'next')} className="museum-icon-button"><SkipForward size={21} aria-hidden="true" /></button>
           </div>

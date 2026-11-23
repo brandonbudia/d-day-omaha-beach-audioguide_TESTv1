@@ -10,10 +10,18 @@ export function useOfflineState(language: SupportedLanguage, enabled = true) {
   useEffect(() => {
     if (!enabled) return;
     const inspectOnReturn = () => { if (document.visibilityState === 'visible') void offlineStore.inspect(language); };
+    const workers = navigator.serviceWorker;
     window.addEventListener('focus', inspectOnReturn);
+    window.addEventListener('pageshow', inspectOnReturn);
     document.addEventListener('visibilitychange', inspectOnReturn);
+    workers?.addEventListener('controllerchange', inspectOnReturn);
     void offlineStore.inspect(language);
-    return () => { window.removeEventListener('focus', inspectOnReturn); document.removeEventListener('visibilitychange', inspectOnReturn); };
+    return () => {
+      window.removeEventListener('focus', inspectOnReturn);
+      window.removeEventListener('pageshow', inspectOnReturn);
+      document.removeEventListener('visibilitychange', inspectOnReturn);
+      workers?.removeEventListener('controllerchange', inspectOnReturn);
+    };
   }, [enabled, language]);
   return { ...snapshot.packs[language], activeLanguage: snapshot.activeLanguage };
 }

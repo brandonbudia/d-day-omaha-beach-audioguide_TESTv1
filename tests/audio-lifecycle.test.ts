@@ -23,6 +23,7 @@ class MediaMock extends EventTarget {
   muted = false;
   volume = 1;
   error: object | null = null;
+  nextPlayError: Error | null = null;
   playCalls = 0;
   pauseCalls = 0;
   loadCalls = 0;
@@ -42,6 +43,7 @@ class MediaMock extends EventTarget {
     this.currentTime = 0;
     this.paused = true;
     this.ended = false;
+    this.error = null;
     this.playedRanges = [];
   }
 
@@ -58,6 +60,11 @@ class MediaMock extends EventTarget {
 
   play() {
     this.playCalls += 1;
+    if (this.nextPlayError) {
+      const error = this.nextPlayError;
+      this.nextPlayError = null;
+      return Promise.reject(error);
+    }
     this.paused = false;
     this.ended = false;
     const pending = deferred();
@@ -124,6 +131,8 @@ async function fixture(name: string, seed: Record<string, string> = {}, search =
   Object.entries(seed).forEach(([key, value]) => storedValues.set(key, value));
   storageWrites = 0;
   const media = new MediaMock();
+  const windowEvents = new EventTarget();
+  const documentEvents = Object.assign(new EventTarget(), { hidden: false });
   const frames = new Map<number, FrameRequestCallback>();
   let frameId = 0;
   let instances = 0;
@@ -136,21 +145,25 @@ async function fixture(name: string, seed: Record<string, string> = {}, search =
     suspendGate: null as ReturnType<typeof deferred> | null,
     resumeCalls: 0,
     suspendCalls: 0,
+    closeCalls: 0,
     createMediaElementSource: () => new NodeMock(),
     createBiquadFilter: () => new NodeMock(),
     createGain() { const gain = new NodeMock(); this.gains.push(gain); return gain; },
     async resume() { this.resumeCalls += 1; await this.resumeGate?.promise; this.state = 'running'; },
     async suspend() { this.suspendCalls += 1; await this.suspendGate?.promise; this.state = 'suspended'; },
+    async close() { this.closeCalls += 1; this.state = 'closed'; },
   };
   Object.defineProperties(globalThis, {
     Audio: { configurable: true, value: class { constructor() { instances += 1; return media; } } },
     window: { configurable: true, value: {
       location: { search },
+      addEventListener: windowEvents.addEventListener.bind(windowEvents),
       requestAnimationFrame: (callback: FrameRequestCallback) => { frames.set(++frameId, callback); return frameId; },
       cancelAnimationFrame: (id: number) => frames.delete(id),
       AudioContext: class { constructor() { return context; } },
       localStorage: storageMock,
     } },
+    document: { configurable: true, value: documentEvents },
     localStorage: { configurable: true, value: storageMock },
   });
   const { visitorStore } = await import('../src/visit/visitorStore');
@@ -167,8 +180,121 @@ async function fixture(name: string, seed: Record<string, string> = {}, search =
     media.flush();
     await pending;
   };
-  return { media, player, frames, context, start, visitorStore, writes: () => storageWrites, instances: () => instances };
+  return { media, player, frames, context, start, visitorStore, windowEvents, documentEvents, writes: () => storageWrites, instances: () => instances };
 }
+
+test('current media AbortError releases the intent so the next Play click starts immediately', async () => {
+  const { media, player } = await fixture('current-abort-retry');
+  media.nextPlayError = new DOMException('Playback interrupted', 'AbortError');
+  await player.play();
+  assert.equal(player.getState().isPlaying, false);
+  assert.equal(player.getState().isBuffering, false);
+  assert.equal(player.getState().error, null);
+  player.togglePlayPause();
+  await nextTurn();
+  assert.equal(media.playCalls, 2);
+  media.flush();
+  await nextTurn();
+  assert.equal(player.getState().isPlaying, true);
+});
+
+test('the player reports startup and native buffering without crediting unheard time or changing pause intent', async () => {
+  const { media, player, writes } = await fixture('native-buffering');
+  const pending = player.play();
+  assert.equal(player.getState().isBuffering, true);
+  assert.equal(player.getState().isPlaying, false);
+  await nextTurn();
+  media.flushOne('play');
+  assert.equal(player.getState().isBuffering, true, 'play does not mean media playback has started');
+  media.readyState = 4;
+  media.flushOne('playing');
+  await pending;
+  assert.equal(player.getState().isBuffering, false);
+  assert.equal(player.getState().isPlaying, true);
+  media.readyState = 2;
+  media.dispatchEvent(new Event('waiting'));
+  assert.equal(player.getState().isBuffering, true);
+  assert.equal(writes(), 0);
+  player.togglePlayPause();
+  media.dispatchEvent(new Event('waiting'));
+  media.dispatchEvent(new Event('playing'));
+  assert.equal(player.getState().isBuffering, false);
+  assert.equal(player.getState().isPlaying, false);
+  assert.equal(writes(), 0);
+});
+
+test('network, decode and unsupported media failures are distinct and a native cancellation can be retried', async () => {
+  for (const [code, reason] of [[1, null], [2, 'network'], [3, 'decode'], [4, 'unsupported']] as const) {
+    const { media, player, start } = await fixture(`native-media-error-${code}`);
+    await start();
+    media.paused = true;
+    media.error = { code };
+    media.dispatchEvent(new Event('error'));
+    assert.equal(player.getState().error, code === 1 ? null : 'unavailable');
+    assert.equal(player.getState().errorReason, reason);
+    assert.equal(player.getState().isPlaying, false);
+    assert.equal(player.getState().isBuffering, false);
+    await start();
+    assert.equal(player.getState().isPlaying, true);
+    assert.equal(player.getState().errorReason, null);
+  }
+});
+
+test('a refusal by native play remains distinguishable from a source error', async () => {
+  const { media, player, start } = await fixture('native-play-blocked');
+  media.nextPlayError = new DOMException('Gesture required', 'NotAllowedError');
+  await player.play();
+  assert.equal(player.getState().error, 'playback');
+  assert.equal(player.getState().errorReason, 'blocked');
+  assert.equal(player.getState().isBuffering, false);
+  await start();
+  assert.equal(player.getState().error, null);
+  assert.equal(player.getState().isPlaying, true);
+});
+
+test('a failure preparing Web Audio leaves the native element connected to its output', async () => {
+  const { player, context, start } = await fixture('web-audio-preparation-failure');
+  let diverted = false;
+  context.createMediaElementSource = () => { diverted = true; return new NodeMock(); };
+  context.createBiquadFilter = () => { throw new Error('filter unavailable'); };
+  await start();
+  assert.equal(diverted, false);
+  assert.equal(context.closeCalls, 1);
+  assert.equal(player.getState().isPlaying, true);
+  assert.equal(player.getState().error, null);
+});
+
+test('an unavailable voice filter connection falls back to the existing output gate', async () => {
+  const { player, context, start } = await fixture('web-audio-filter-fallback');
+  const filter = new NodeMock();
+  const source = new NodeMock();
+  const connected: unknown[] = [];
+  context.createBiquadFilter = () => filter;
+  context.createMediaElementSource = () => source;
+  source.connect = <T>(destination: T) => {
+    if (destination === filter) throw new Error('filter connection unavailable');
+    connected.push(destination);
+    return destination;
+  };
+  await start();
+  assert.deepEqual(connected, [context.gains[0]]);
+  assert.equal(context.gains[0].gain.value, 1);
+  player.pause();
+  assert.equal(context.gains[0].gain.value, 0);
+});
+
+test('pagehide flushes the last audible interval without completing the station', async () => {
+  const { media, start, windowEvents, visitorStore, writes } = await fixture('pagehide-checkpoint');
+  await start();
+  assert.equal(writes(), 0);
+  media.currentTime = 7.12;
+  media.playedRanges = [[0, 7.12]];
+  windowEvents.dispatchEvent(new Event('pagehide'));
+  const listening = visitorStore.getSnapshot().pieces['01'].listening.fr;
+  assert.equal(listening?.positionSeconds, 7.12);
+  assert.equal(listening?.completedAt, undefined);
+  assert.deepEqual(listening?.heardRanges, [[0, 7.12]]);
+});
 
 test('pause captures the precise media time and cancels its frame before delayed native events', async () => {
   const { media, player, frames, context, start } = await fixture('synchronous-pause');
@@ -252,6 +378,108 @@ test('pause silences the output immediately and a delayed suspend cannot stop a 
   assert.equal(frames.size, 1);
   player.pause();
   media.flush();
+});
+
+test('a delayed pause from a previous play does not clear a newer start waiting for AudioContext', async () => {
+  const { media, player, context, start } = await fixture('late-pause-buffering');
+  await start();
+  player.pause();
+  await nextTurn();
+  assert.equal(context.state, 'suspended');
+  context.resumeGate = deferred();
+  const replay = player.play();
+  await nextTurn();
+  assert.equal(media.paused, true);
+  assert.equal(player.getState().isBuffering, true);
+  try {
+    media.flushOne('pause');
+    assert.equal(player.getState().isBuffering, true, 'the current start has not yet resumed its AudioContext');
+  } finally {
+    context.resumeGate.resolve();
+    await nextTurn();
+    media.flush();
+    await replay;
+  }
+  assert.equal(player.getState().isPlaying, true);
+  assert.equal(player.getState().isBuffering, false);
+  player.pause();
+  media.flush();
+});
+
+test('a station selected during loading plays only the replacement track and ignores an old ended event', async () => {
+  const { media, player, context, visitorStore } = await fixture('change-station-during-start');
+  context.state = 'suspended';
+  context.resumeGate = deferred();
+  const previous = player.play();
+  await nextTurn();
+  assert.equal(player.getState().isBuffering, true);
+  assert.equal(media.playCalls, 0);
+  media.queue('ended');
+  player.setStop('02', true);
+  context.resumeGate.resolve();
+  await previous;
+  await nextTurn();
+  assert.equal(media.src, getMediaResource('02', 'fr').url);
+  assert.equal(media.playCalls, 1);
+  media.flush();
+  await nextTurn();
+  assert.equal(player.getState().currentStopId, '02');
+  assert.equal(player.getState().isPlaying, true);
+  assert.equal(visitorStore.getSnapshot().lastPlayback, undefined);
+  player.pause();
+  media.flush();
+});
+
+test('hiding an active tab flushes its real position and returning to a paused tab does not start it', async () => {
+  const { media, player, start, visitorStore, documentEvents, writes } = await fixture('visibility-checkpoint');
+  await start();
+  media.currentTime = 8.25;
+  media.playedRanges = [[0, 8.25]];
+  documentEvents.hidden = true;
+  documentEvents.dispatchEvent(new Event('visibilitychange'));
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 8.25);
+  assert.equal(writes(), 1);
+
+  media.pause();
+  media.flush();
+  documentEvents.hidden = false;
+  documentEvents.dispatchEvent(new Event('visibilitychange'));
+  assert.equal(media.playCalls, 1);
+  assert.equal(player.getState().isPlaying, false);
+  assert.equal(writes(), 1);
+});
+
+test('a natural end after discontinuous listening remains completed when the station is replayed', async (context) => {
+  let now = 1000;
+  context.mock.method(Date, 'now', () => now);
+  const { media, player, start, visitorStore } = await fixture('complete-and-replay');
+  const duration = getMediaResource('01', 'fr').durationSeconds;
+  media.duration = duration;
+  await start();
+  media.currentTime = duration;
+  media.playedRanges = [[0, duration / 2], [duration * 0.55, duration]];
+  media.ended = true;
+  media.paused = true;
+  media.queue('pause');
+  media.queue('ended');
+  now = 1500;
+  media.flush();
+  await nextTurn();
+  media.flush();
+  assert.equal(player.getState().currentStopId, '02');
+  assert.equal(visitorStore.getSnapshot().pieces['01'].listening.fr?.completedAt, 1500);
+
+  player.setStop('01', false);
+  await start();
+  now = 2000;
+  media.currentTime = 3;
+  media.playedRanges = [[0, 3]];
+  player.pause();
+  media.flush();
+  const replayed = visitorStore.getSnapshot().pieces['01'].listening.fr;
+  assert.equal(replayed?.completedAt, 1500);
+  assert.equal(replayed?.positionSeconds, 3);
+  assert.deepEqual(replayed?.heardRanges, [[0, duration / 2], [duration * 0.55, duration]]);
 });
 
 test('play-pause-play during a pending resume obeys only the latest play request', async () => {
@@ -676,4 +904,53 @@ test('a paused seek after restoration saves only position and never creates list
   assert.equal(reloaded.visitorStore.getSnapshot().lastPlayback?.id, '02');
   assert.equal(reloaded.visitorStore.getSnapshot().lastListenedId, '02');
   assert.equal(reloaded.visitorStore.getSnapshot().pieces['03'], undefined);
+});
+
+test('reopening a heard station without playing preserves its saved position for explicit resume', async () => {
+  const { media, player, visitorStore, start } = await fixture('reopen-without-playing');
+  await start();
+  media.currentTime = 24.123;
+  media.playedRanges = [[0, 24.123]];
+  player.pause();
+  media.flush();
+
+  player.setStop('02', false);
+  player.setStop('01', false);
+  media.dispatchEvent(new Event('loadedmetadata'));
+  media.dispatchEvent(new Event('timeupdate'));
+  player.flushCheckpoint();
+
+  assert.equal(player.getState().currentTime, 0);
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 24.123);
+  await start();
+  player.pause();
+  media.flush();
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 24.123);
+  assert.equal(player.restoreLastPlayback(), true);
+  assert.equal(media.currentTime, 24.123);
+});
+
+test('events before metadata preserve the pending resume position and checkpoint', async () => {
+  const resource = getMediaResource('02', 'fr');
+  const record = { audioIdentity: resource.sha256, durationSeconds: resource.durationSeconds, positionSeconds: 24.123, heardRanges: [[0, 24.123]], updatedAt: 100 };
+  const seed = JSON.stringify({ version: 2, pieces: { '02': { consulted: false, listening: { fr: record } } }, lastListenedId: '02', lastPlayback: { id: '02', language: 'fr', ...record } });
+  const { media, player, visitorStore, writes } = await fixture('resume-before-metadata', { dday_visitor_state_v2: seed });
+  media.readyState = 0;
+  media.duration = NaN;
+  const pending = player.play();
+  await nextTurn();
+  media.flushOne('play');
+  media.dispatchEvent(new Event('timeupdate'));
+  player.pause();
+  media.flush();
+  await pending;
+
+  assert.equal(player.getState().currentTime, 24.123);
+  assert.equal(visitorStore.getSnapshot().lastPlayback?.positionSeconds, 24.123);
+  assert.equal(writes(), 0);
+  media.readyState = 1;
+  media.duration = resource.durationSeconds;
+  media.dispatchEvent(new Event('loadedmetadata'));
+  assert.equal(media.currentTime, 24.123);
+  assert.equal(player.getState().isPlaying, false);
 });
