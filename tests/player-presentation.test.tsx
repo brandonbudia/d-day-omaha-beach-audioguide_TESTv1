@@ -42,6 +42,23 @@ test('rendered transcript preserves short words, apostrophes and surrounding pun
   assert.equal((html.match(/aria-current="true"/g) ?? []).length, 2); // One phrase, one word.
 });
 
+test('the timed word group keeps every character even when a short word has no timing', () => {
+  const source = '« Oui, à l’abri & au calme. »';
+  const html = renderToStaticMarkup(<SyncedTranscript segments={[{
+    startSeconds: 0,
+    text: source,
+    wordTimings: [
+      { tokenIndex: 0, text: 'Oui', startSeconds: 0.2, endSeconds: 0.45 },
+      { tokenIndex: 2, text: 'l’abri', startSeconds: 0.65, endSeconds: 1 },
+    ],
+  }]} currentTime={0.8} textSize={30} onSelectPhrase={() => {}} />);
+  const group = html.match(/<span[^>]*role="group"[^>]*>(.*?)<\/span>(?=<button[^>]*class="transcript-phrase-replay")/)?.[1];
+  assert.ok(group);
+  assert.match(group, /<span>à<\/span>/);
+  assert.match(group, /data-word-state="current"[^>]*>l’abri<\/button>/);
+  assert.equal(group.replace(/<[^>]+>/g, '').replaceAll('&amp;', '&'), source);
+});
+
 test('rendered read/current/upcoming states follow backward seeks and a paused clock', () => {
   const later = renderTranscript(2.2);
   assert.equal((later.match(/data-word-state="read"/g) ?? []).length, 3);
@@ -127,6 +144,12 @@ test('audio position uses a labelled native range with exact fractional time and
   assert.doesNotMatch(html, /Marée|player-scrubber-caption/);
   const noMedia = renderToStaticMarkup(<Scrubber currentTime={0} duration={0} onSeek={() => {}} />);
   assert.match(noMedia, /disabled=""/);
+});
+
+test('loading the audio has a live status in the timeline without removing or renaming the native slider', () => {
+  const html = renderToStaticMarkup(<Scrubber currentTime={3} duration={60} language="en" status="Loading audio…" onSeek={() => {}} />);
+  assert.match(html, /type="range"[^>]+aria-label="Audio position"[^>]+aria-valuetext="00:03 of 01:00"/);
+  assert.match(html, /<div class="player-times"><span>00:03<\/span><span class="player-transport-status" role="status" aria-atomic="true">Loading audio…<\/span><span>−00:57<\/span>/);
 });
 
 test('reading choices reject malformed stored values and keep the four independent options', () => {

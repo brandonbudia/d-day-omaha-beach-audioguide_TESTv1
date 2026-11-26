@@ -13,6 +13,7 @@ interface ScrubberProps {
   subTextLeft?: string;
   subTextRight?: string;
   language?: SupportedLanguage;
+  status?: string;
 }
 
 export const Scrubber: React.FC<ScrubberProps> = ({
@@ -22,6 +23,7 @@ export const Scrubber: React.FC<ScrubberProps> = ({
   subTextLeft,
   subTextRight,
   language = 'fr',
+  status,
 }) => {
   const safeDuration = Number.isFinite(duration) ? Math.max(0, duration) : 0;
   const displayTime = Number.isFinite(currentTime) ? Math.max(0, Math.min(currentTime, safeDuration)) : 0;
@@ -34,7 +36,7 @@ export const Scrubber: React.FC<ScrubberProps> = ({
   };
 
   return (
-    <div className="player-scrubber">
+    <div className="player-scrubber" data-status={status ? true : undefined}>
       <input
         type="range"
         className="player-range"
@@ -57,6 +59,7 @@ export const Scrubber: React.FC<ScrubberProps> = ({
       />
       <div className="player-times">
         <span>{formatTime(displayTime)}</span>
+        <span className="player-transport-status" role="status" aria-atomic="true">{status}</span>
         <span>−{formatTime(safeDuration - displayTime)}</span>
       </div>
       {(subTextLeft || subTextRight) && (

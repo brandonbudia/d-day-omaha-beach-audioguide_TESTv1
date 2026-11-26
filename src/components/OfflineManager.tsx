@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, RefreshCw, Square } from 'lucide-react';
+import { ChevronDown, Download, RefreshCw, Square } from 'lucide-react';
 import { getLanguageResourceSummary } from '../data/mediaCatalog';
 import { LANGUAGES, type SupportedLanguage } from '../i18n/translations';
 import { offlineStore, type OfflineFailure } from '../offline/offlineStore';
@@ -51,50 +51,89 @@ const labels = {
   },
 } satisfies Record<SupportedLanguage, { [key: string]: string | Record<OfflineFailure, string> }>;
 
-const formatBytes = (bytes: number, language: SupportedLanguage) => `${new Intl.NumberFormat(language, { maximumFractionDigits: 1 }).format(bytes / 1024 / 1024)} MB`;
+const packLabels = {
+  fr: { language: 'Langue du pack', size: 'Taille du pack', partial: 'Pack incomplet', resume: 'Compléter le téléchargement' },
+  en: { language: 'Pack language', size: 'Pack size', partial: 'Pack incomplete', resume: 'Finish downloading' },
+  de: { language: 'Paketsprache', size: 'Paketgröße', partial: 'Paket unvollständig', resume: 'Download vervollständigen' },
+  it: { language: 'Lingua del pacchetto', size: 'Dimensione del pacchetto', partial: 'Pacchetto incompleto', resume: 'Completa il download' },
+  pl: { language: 'Język pakietu', size: 'Rozmiar pakietu', partial: 'Niekompletny pakiet', resume: 'Dokończ pobieranie' },
+  nl: { language: 'Taal van het pakket', size: 'Grootte van het pakket', partial: 'Pakket onvolledig', resume: 'Download voltooien' },
+  es: { language: 'Idioma del paquete', size: 'Tamaño del paquete', partial: 'Paquete incompleto', resume: 'Completar la descarga' },
+} satisfies Record<SupportedLanguage, { language: string; size: string; partial: string; resume: string }>;
+
+function formatBytes(bytes: number, language: SupportedLanguage) {
+  const gigabytes = bytes >= 1_000_000_000;
+  return new Intl.NumberFormat(language, {
+    style: 'unit', unit: gigabytes ? 'gigabyte' : 'megabyte', maximumFractionDigits: 1,
+  }).format(bytes / (gigabytes ? 1_000_000_000 : 1_000_000));
+}
 
 export function OfflineManager({ language }: { language: SupportedLanguage }) {
   const [expanded, setExpanded] = useState(false);
   const state = useOfflineState(language, expanded);
   const copy = labels[language];
+  const pack = packLabels[language];
   const summary = getLanguageResourceSummary(language);
   const busy = state.activeLanguage !== null;
   const checking = state.status === 'checking';
   const available = state.status !== 'unavailable' && state.status !== 'unsupported';
-  const currentAudio = state.currentFile?.match(/stop-(\d+)\.mp3$/)?.[1];
-  const status = checking ? copy.checking : state.status === 'downloading' ? copy.downloading : state.status === 'ready' ? state.shellReady ? copy.ready : copy.filesReady : null;
+  const downloading = state.status === 'downloading';
+  const currentAudio = downloading ? state.currentFile?.match(/stop-(\d+)\.mp3$/)?.[1] : undefined;
+  const hasVerifiedFiles = state.verifiedCount > 0;
+  const canComplete = hasVerifiedFiles && state.verifiedCount < state.totalCount && (state.status === 'partial' || state.status === 'error');
+  let status: string | undefined;
+  if (checking) status = copy.checking;
+  if (downloading) status = copy.downloading;
+  if (state.status === 'ready') status = state.shellReady ? copy.ready : copy.filesReady;
+  if (canComplete) status = pack.partial;
   return (
-    <details className="offline-manager" onToggle={(event) => setExpanded(event.currentTarget.open)}>
-      <summary><Download size={21} aria-hidden="true" /> {copy.title}</summary>
+    <details className="offline-manager offline-exhibit" onToggle={(event) => setExpanded(event.currentTarget.open)}>
+      <summary>
+        <Download size={21} aria-hidden="true" />
+        <span>{copy.title}</span>
+        <ChevronDown className="offline-chevron" size={18} aria-hidden="true" />
+      </summary>
       <div className="offline-manager-content">
-        <p><strong>{LANGUAGES.find((item) => item.code === language)?.name}</strong> · {summary.ready + summary.unverified}/{summary.total} {copy.available}</p>
-        {summary.unavailable > 0 && summary.ready + summary.unverified > 0 && <p className="offline-notice">{copy.partial}</p>}
-        {(summary.editorialReviewRequired > 0 || summary.unverified > 0) && <p className="offline-notice">{copy.editorial}</p>}
-        {state.status === 'unavailable' && <p>{copy.unavailable}</p>}
-        {state.status === 'unsupported' && <p>{copy.unsupported}</p>}
-        {available && <>
+        <dl className="offline-pack-summary">
+          <div>
+            <dt>{pack.language}</dt>
+            <dd>{LANGUAGES.find((item) => item.code === language)?.name}</dd>
+            <dd className="offline-pack-availability">{summary.ready + summary.unverified}/{summary.total} {copy.available}</dd>
+          </div>
+          {state.totalBytes > 0 && <div>
+            <dt>{pack.size}</dt>
+            <dd>{formatBytes(state.totalBytes, language)}</dd>
+          </div>}
+        </dl>
+        {state.status === 'unavailable' && <p className="offline-notice">{copy.unavailable}</p>}
+        {state.status === 'unsupported' && <p className="offline-notice">{copy.unsupported}</p>}
+        {available && <div className="offline-pack-progress">
           <div role="status" aria-live="polite" aria-atomic="true">
-            {status && <p><strong>{status}</strong></p>}
-            <p>{state.cachedAudioCount}/{state.audioCount} {copy.counts}</p>
-            <p>{formatBytes(state.verifiedBytes, language)} / {formatBytes(state.totalBytes, language)} {copy.verified}</p>
+            {status && <p className="offline-pack-status"><strong>{status}</strong></p>}
+            <div className="offline-progress-counts">
+              <p>{state.cachedAudioCount}/{state.audioCount} {copy.counts}</p>
+              <p>{formatBytes(state.verifiedBytes, language)} / {formatBytes(state.totalBytes, language)} {copy.verified}</p>
+            </div>
           </div>
           <progress className="offline-progress" aria-label={copy.verified} value={state.verifiedBytes} max={state.totalBytes || 1} />
-          {state.currentFile && <p className="offline-notice">{currentAudio ? `${copy.commentary} ${currentAudio}` : copy.shared}</p>}
-          {state.error && <p role="status" className="offline-notice">{copy.errors[state.error]}{state.httpStatus ? ` (HTTP ${state.httpStatus})` : ''}</p>}
+          {downloading && state.currentFile && <p className="offline-notice">{currentAudio ? `${copy.commentary} ${currentAudio}` : copy.shared}</p>}
+          {state.error && <p role="status" className="offline-notice offline-pack-message">{copy.errors[state.error]}{state.httpStatus ? ` (HTTP ${state.httpStatus})` : ''}</p>}
           {state.status === 'ready' && !state.shellReady && <p className="offline-notice">{copy.shell}</p>}
-        </>}
-        {busy && state.activeLanguage !== language && <p role="status">{copy.busy}</p>}
+        </div>}
+        {busy && state.activeLanguage !== language && <p role="status" className="offline-notice">{copy.busy}</p>}
         {(available || busy) && <div className="offline-actions">
           {available && <>
-            <button type="button" disabled={busy || checking} onClick={() => void offlineStore.download(language)}><Download size={19} aria-hidden="true" />{copy.download}</button>
+            <button type="button" className="offline-download-action" disabled={busy || checking} onClick={() => void offlineStore.download(language)}><Download size={19} aria-hidden="true" />{canComplete ? pack.resume : copy.download}</button>
             <button type="button" disabled={busy || checking} onClick={() => void offlineStore.inspect(language)}><RefreshCw size={19} aria-hidden="true" />{copy.check}</button>
           </>}
           {busy && <button type="button" onClick={offlineStore.cancelDownload}><Square size={18} aria-hidden="true" />{copy.cancel}</button>}
         </div>}
-        {available && <>
+        <div className="offline-pack-notes">
+          {summary.unavailable > 0 && summary.ready + summary.unverified > 0 && <p className="offline-notice">{copy.partial}</p>}
+          {(summary.editorialReviewRequired > 0 || summary.unverified > 0) && <p className="offline-notice">{copy.editorial}</p>}
           {state.storageQuotaBytes !== undefined && <p className="offline-notice">{copy.storage} : {formatBytes(state.storageUsageBytes ?? 0, language)} · {copy.quota} : {formatBytes(state.storageQuotaBytes, language)}</p>}
-          <p className="offline-notice">{copy.limits}</p>
-        </>}
+          {available && <p className="offline-notice">{copy.limits}</p>}
+        </div>
       </div>
     </details>
   );

@@ -74,33 +74,38 @@ export const StopDetailPage: React.FC<StopDetailPageProps> = ({ stopId, onNaviga
 
   return (
     <article className="museum-piece">
-      <div className="museum-piece-cover museum-card">
-        <button type="button" className="museum-piece-cover-open" onClick={() => setExpandedPhoto({ url: stop.imageUrl, caption: `${visualLabel(currentLang, 'collectionPhoto')} — ${stop.number}`, source: detailLabel(currentLang, 'photoAssociation'), contentLanguage: currentLang })} aria-label={t('enlarge_photo', currentLang)}>
-          {imageFailed ? <span className="museum-image-unavailable">{detailLabel(currentLang, 'unavailableImage')}</span> : <img src={stop.imageUrl} alt="" decoding="async" onError={() => setImageFailed(true)} />}
-          <span className="museum-piece-zoom"><ZoomIn size={19} aria-hidden="true" />{t('enlarge_photo', currentLang)}</span>
-        </button>
-        <button type="button" className="museum-piece-bookmark museum-icon-button" aria-label={isFavorite ? detailLabel(currentLang, 'removeFavorite') : t('save_step', currentLang)} aria-pressed={isFavorite} onClick={() => visitorStore.toggleFavorite(stop.id)}>
-          <Bookmark size={23} fill={isFavorite ? 'currentColor' : 'none'} aria-hidden="true" />
-        </button>
-      </div>
-      <p className="museum-piece-image-note">{detailLabel(currentLang, 'photoAssociation')}</p>
-
-      <header className="museum-piece-heading">
+      <header className="museum-piece-heading visit-piece-heading">
         <p className="museum-eyebrow">{t('station_badge', currentLang, { num: stop.number, total: STOPS.length })}</p>
         <h2 id={`${tabPrefix}-title`} lang={title.language}>{title.text}</h2>
         <span className="museum-piece-duration"><Clock3 size={17} aria-hidden="true" />{detailLabel(currentLang, 'duration')} · {resource.status === 'unavailable' ? '—' : formatTime(resource.durationSeconds)}</span>
       </header>
+
+      <div className="visit-piece-actions">
+        <button type="button" onClick={handleStartPlayback} disabled={resource.status === 'unavailable'} className="museum-button museum-piece-listen" aria-describedby={mediaNotice ? `${tabPrefix}-media-notice` : undefined}>
+          <Play size={23} fill="currentColor" aria-hidden="true" />{t('start_playback', currentLang)}
+        </button>
+        {mediaNotice && <p id={`${tabPrefix}-media-notice`} className="museum-piece-resource-note">{mediaNotice}</p>}
+        {resource.status === 'unavailable' && <button type="button" className="museum-button-secondary w-full" onClick={() => { audioPlayer.setStop(stop.id, false); onOpenPlayer(); }}><BookOpen size={21} aria-hidden="true" />{x('readText', currentLang)}</button>}
+      </div>
+
+      <figure className="visit-piece-figure">
+        <div className="museum-piece-cover museum-card">
+          <button type="button" className="museum-piece-cover-open" onClick={() => setExpandedPhoto({ url: stop.imageUrl, caption: `${visualLabel(currentLang, 'collectionPhoto')} — ${stop.number}`, source: detailLabel(currentLang, 'photoAssociation'), contentLanguage: currentLang })} aria-label={t('enlarge_photo', currentLang)}>
+            {imageFailed ? <span className="museum-image-unavailable">{detailLabel(currentLang, 'unavailableImage')}</span> : <img src={stop.imageUrl} alt="" decoding="async" onError={() => setImageFailed(true)} />}
+            <span className="museum-piece-zoom"><ZoomIn size={19} aria-hidden="true" />{t('enlarge_photo', currentLang)}</span>
+          </button>
+          <button type="button" className="museum-piece-bookmark museum-icon-button" aria-label={isFavorite ? detailLabel(currentLang, 'removeFavorite') : t('save_step', currentLang)} aria-pressed={isFavorite} onClick={() => visitorStore.toggleFavorite(stop.id)}>
+            <Bookmark size={23} fill={isFavorite ? 'currentColor' : 'none'} aria-hidden="true" />
+          </button>
+        </div>
+        <figcaption className="museum-piece-image-note">{detailLabel(currentLang, 'photoAssociation')}</figcaption>
+      </figure>
 
       <section className="museum-piece-essential" aria-labelledby={`${tabPrefix}-essential`}>
         <h3 id={`${tabPrefix}-essential`}>{detailLabel(currentLang, 'essential')}</h3>
         <p lang="fr">{stop.subtitle}</p>
       </section>
 
-      <button type="button" onClick={handleStartPlayback} disabled={resource.status === 'unavailable'} className="museum-button museum-piece-listen" aria-describedby={mediaNotice ? `${tabPrefix}-media-notice` : undefined}>
-        <Play size={23} fill="currentColor" aria-hidden="true" />{t('start_playback', currentLang)}
-      </button>
-      {mediaNotice && <p id={`${tabPrefix}-media-notice`} className="museum-piece-resource-note">{mediaNotice}</p>}
-      {resource.status === 'unavailable' && <button type="button" className="museum-button-secondary w-full" onClick={() => { audioPlayer.setStop(stop.id, false); onOpenPlayer(); }}><BookOpen size={21} aria-hidden="true" />{x('readText', currentLang)}</button>}
       <button type="button" className="museum-button-secondary museum-piece-discovered" onClick={() => visitorStore.markDiscovered(stop.id)} disabled={discovered} aria-pressed={discovered}>
         <CheckCircle2 size={21} aria-hidden="true" />{detailLabel(currentLang, discovered ? 'discovered' : 'markDiscovered')}
       </button>

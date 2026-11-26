@@ -24,27 +24,25 @@ export function StopCard({ stop, isActive, isPlaying, currentLang, onPlay, onSel
   const media = getMediaResource(stop.id, currentLang);
   const title = getStopLabel(stop, currentLang);
   const status = hasListened(piece) ? x('listened', currentLang) : isDiscovered(piece) ? x('discovered', currentLang) : isConsulted(piece) ? x('consulted', currentLang) : '';
-  return <article className="museum-card overflow-hidden mb-4" data-playing={isPlaying} data-selected={isActive}>
-    <a href={`/stop/${stop.id}?hl=${currentLang}`} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px]" onClick={(event) => {
+  return <article className="visit-station-card" data-playing={isPlaying} data-selected={isActive}>
+    <a href={`/stop/${stop.id}?hl=${currentLang}`} className="visit-station-reference" aria-current={isPlaying ? 'true' : undefined} onClick={(event) => {
       if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault(); onSelectDetail(stop.id);
     }}>
-      <div className="flex gap-4 p-4">
-        <img src={stop.imageUrl} alt={title.text} lang={title.language} loading="lazy" decoding="async" width="96" height="104" className="w-24 h-28 sm:w-32 sm:h-32 rounded-xl object-cover shrink-0" />
-        <div className="min-w-0 flex-1">
-          <p className="museum-eyebrow mb-1">{t('nav_stop', currentLang)} {stop.number}{media.status !== 'unavailable' && ` · ${formatTime(media.durationSeconds)}`}</p>
-          <h2 lang={title.language} className="font-heading font-bold text-lg leading-snug">{title.text}</h2>
-          <p lang="fr" className="museum-muted text-sm mt-2 line-clamp-2">{stop.subtitle}</p>
-          {status && <p className="mt-2 text-sm font-semibold flex items-center gap-1">{isDiscovered(piece) && <Check size={15} aria-hidden="true" />}{status}</p>}
-        </div>
+      <img src={stop.imageUrl} alt={title.text} lang={title.language} loading="lazy" decoding="async" width="72" height="72" />
+      <div className="visit-station-copy">
+        <p className="museum-eyebrow visit-station-number">{t('nav_stop', currentLang)} {stop.number}{media.status !== 'unavailable' && ` · ${formatTime(media.durationSeconds)}`}</p>
+        <h2 lang={title.language}>{title.text}</h2>
+        <p lang="fr" className="museum-muted visit-station-description line-clamp-2">{stop.subtitle}</p>
+        {status && <p className="visit-station-status">{isDiscovered(piece) && <Check size={15} aria-hidden="true" />}{status}</p>}
       </div>
     </a>
-    <div className="flex gap-3 px-4 pb-4">
-      <button type="button" className="museum-button flex-1" onClick={() => onPlay(stop.id)}>
+    <div className="visit-station-actions">
+      <button type="button" className="visit-station-play" onClick={() => onPlay(stop.id)}>
         {media.status === 'unavailable' ? <FileText size={19} aria-hidden="true" /> : isPlaying ? <Pause size={19} aria-hidden="true" /> : <Play size={19} aria-hidden="true" />}
-        {media.status === 'unavailable' ? x('readText', currentLang) : t(isPlaying ? 'pause' : 'play', currentLang)}
+        <span>{media.status === 'unavailable' ? x('readText', currentLang) : t(isPlaying ? 'pause' : 'play', currentLang)}</span>
       </button>
-      <button type="button" aria-pressed={Boolean(piece?.favorite)} aria-label={x(piece?.favorite ? 'removeFavorite' : 'addFavorite', currentLang)} className="museum-button-secondary w-12 shrink-0" onClick={() => visitorStore.toggleFavorite(stop.id)}><Bookmark size={21} fill={piece?.favorite ? 'currentColor' : 'none'} aria-hidden="true" /></button>
+      <button type="button" aria-pressed={Boolean(piece?.favorite)} aria-label={x(piece?.favorite ? 'removeFavorite' : 'addFavorite', currentLang)} className="visit-station-favorite" onClick={() => visitorStore.toggleFavorite(stop.id)}><Bookmark size={21} fill={piece?.favorite ? 'currentColor' : 'none'} aria-hidden="true" /></button>
     </div>
   </article>;
 }

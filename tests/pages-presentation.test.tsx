@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { STOPS } from '../src/data/stops';
 import { StopDetailPage } from '../src/pages/StopDetailPage';
 import { ParcoursPage, matchesStopSearch } from '../src/pages/ParcoursPage';
+import { StopCard } from '../src/components/StopCard';
 import { WelcomePage } from '../src/pages/WelcomePage';
 import { visitorStore } from '../src/visit/visitorStore';
 import { getMediaResource } from '../src/data/mediaCatalog';
@@ -107,16 +108,33 @@ test('station search finds Resistance with or without accents and preserves exis
     assert.equal(STOPS.filter((stop) => matchesStopSearch(stop, '  ', code)).length, 22);
     assert.deepEqual(STOPS.filter((stop) => matchesStopSearch(stop, 'Enigma', code)).map((stop) => stop.id), ['19']);
     assert.equal(STOPS.filter((stop) => matchesStopSearch(stop, 'zzzz-no-piece', code)).length, 0);
-    assert.equal(matchesStopSearch(STOPS.find((stop) => stop.id === '19')!, '19', code), true);
+    for (const [query, expected] of [['1', ['01']], ['01', ['01']], [' 10 ', ['10']], ['19', ['19']], ['22', ['22']], ['00', []], ['23', []]] as const) {
+      assert.deepEqual(STOPS.filter((stop) => matchesStopSearch(stop, query, code)).map((stop) => stop.id), expected, `${code}/${query}`);
+    }
   }
 });
 
 test('station links retain the selected language when opened directly or shared', () => {
   for (const { code } of LANGUAGES) {
     const html = renderToStaticMarkup(<ParcoursPage onSelectStopDetail={noop} onOpenPlayer={noop} currentLang={code} />);
+    const list = html.match(/<ol class="visit-station-list" role="list">(.*?)<\/ol>/)?.[1];
+    assert.ok(list, code);
+    assert.equal((list.match(/<li>/g) ?? []).length, STOPS.length);
     const links = Array.from(html.matchAll(/href="(\/stop\/[^"]+)"/g), (match) => match[1]);
     assert.deepEqual(links, STOPS.map((stop) => `/stop/${stop.id}?hl=${code}`));
   }
+});
+
+test('a station card distinguishes active playback from a selection that is paused', () => {
+  const stop = STOPS.find((item) => item.id === '10')!;
+  const render = (isPlaying: boolean) => renderToStaticMarkup(<StopCard stop={stop} isActive isPlaying={isPlaying} currentLang="fr" onPlay={noop} onSelectDetail={noop} />);
+  const paused = render(false);
+  assert.match(paused, /data-playing="false" data-selected="true"/);
+  assert.doesNotMatch(paused, /aria-current=/);
+  assert.match(paused, /class="visit-station-play"[^>]*>.*<span>Lancer l’écoute<\/span><\/button>/);
+  const playing = render(true);
+  assert.match(playing, /href="\/stop\/10\?hl=fr"[^>]*aria-current="true"/);
+  assert.match(playing, /class="visit-station-play"[^>]*>.*<span>Mettre en pause<\/span><\/button>/);
 });
 
 test('a download can be stopped after switching to a different or unavailable language', (context) => {
@@ -168,7 +186,9 @@ test('mini-player accessible name uses published English titles and identifies F
       const html = renderToStaticMarkup(<PersistentPlayerBar onOpenFullPlayer={noop} />);
       assert.match(html, /class="museum-mini-player-open"[^>]*aria-labelledby="[^"]+ [^"]+"/);
       assert.ok(html.includes(`class="sr-only" lang="${language}">${escapeText(visualLabel(language, 'openPlayer'))}</span>`));
-      assert.ok(html.includes(`lang="${title.language}">${escapeText(title.text)}</strong>`));
+      const titleElement = html.match(/<strong\b([^>]*)>(.*?)<\/strong>/);
+      assert.ok(titleElement?.[1].includes(`lang="${title.language}"`));
+      assert.equal(titleElement?.[2], escapeText(title.text));
       assert.doesNotMatch(html, /class="museum-mini-player-open"[^>]*aria-label=/);
     }
   } finally {
@@ -222,6 +242,7 @@ test('all 22 piece pages expose one launch action and keep narrative, photos, pl
     assert.ok(html.includes(escapeText(stop.title)), stop.id);
     assert.ok(html.includes(escapeText(stop.operationalContext)), stop.id);
     assert.equal((html.match(/Lancer la lecture/g) ?? []).length, 1, stop.id);
+    assert.match(html, /class="museum-piece-heading visit-piece-heading".*Lancer la lecture.*<figure class="visit-piece-figure">.*<figcaption class="museum-piece-image-note">/, stop.id);
     assert.ok(html.includes(`Photos (${stop.photos.length})`), stop.id);
     assert.match(html, /Plan de salle/);
     assert.match(html, /Ajouter aux favoris/);

@@ -17,6 +17,16 @@ interface PlayerPageProps {
   currentLang: SupportedLanguage;
 }
 
+const compactSyntheticNarration: Record<SupportedLanguage, string> = {
+  fr: 'Voix de synthèse · traduction non officielle',
+  en: 'Synthetic voice · unofficial translation',
+  de: 'Synthetische Stimme · inoffizielle Übersetzung',
+  it: 'Voce sintetica · traduzione non ufficiale',
+  pl: 'Głos syntetyczny · nieoficjalne tłumaczenie',
+  nl: 'Synthetische stem · onofficiële vertaling',
+  es: 'Voz sintética · traducción no oficial',
+};
+
 export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, currentLang }) => {
   const [audioState, setAudioState] = useState<AudioState>(audioPlayer.getState());
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(true);
@@ -68,6 +78,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
   const nextStop = STOPS[currentIndex + 1];
   const nextTitle = nextStop ? getStopLabel(nextStop, currentLang) : null;
   const resource = getMediaResource(currentStop.id, audioState.language);
+  const syntheticNarration = resource.reason === 'synthetic-narration';
   const { status: transcriptStatus, transcript } = useTranscript(currentStop.id, audioState.language, resource);
   const followsPhrases = transcript?.mode === 'phrase-synchronized';
   const showsFollowingHelp = followsPhrases || audioState.language === 'fr' || audioState.language === 'en';
@@ -88,13 +99,16 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         <div className="player-station-copy">
           <p className="player-eyebrow">{t('station_badge', currentLang, { num: currentStop.number, total: STOPS.length })} · {LANGUAGES.find((lang) => lang.code === audioState.language)?.short}</p>
           <h2 id={stationHeadingId} lang={title.language}>{title.text}</h2>
-          {resource.reason === 'synthetic-narration'
-            ? <p className="player-speakers">{x('syntheticNarration', currentLang)}</p>
+          {syntheticNarration
+            ? <p className="player-speakers player-narration-provenance">
+                <span className="player-provenance-complete">{x('syntheticNarration', currentLang)}</span>
+                <span className="player-provenance-short">{compactSyntheticNarration[currentLang]}</span>
+              </p>
             : <p lang="fr" className="player-speakers">{currentStop.speakers}</p>}
-          <button type="button" className="player-detail-link" onClick={() => onSelectStopDetail(currentStop.id)}>
-            <BookOpen size={16} aria-hidden="true" /> {t('tab_narrative', currentLang)}
-          </button>
         </div>
+        <button type="button" className="player-detail-link" aria-label={t('tab_narrative', currentLang)} onClick={() => onSelectStopDetail(currentStop.id)}>
+          <BookOpen size={18} aria-hidden="true" /><span>{t('tab_narrative', currentLang)}</span>
+        </button>
         <button ref={settingsButtonRef} type="button" className="player-icon-button player-settings-button" onClick={() => setSettingsOpen(true)} aria-label={t('reading_settings_label', currentLang)}>
           <Settings2 size={22} aria-hidden="true" />
         </button>
@@ -151,8 +165,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
 
       <section className="player-transport" aria-label={x('audioControls', currentLang)}>
         {audioState.error && resource.status !== 'unavailable' && <p role="alert" className="player-error">{audioState.errorReason === 'network' ? t('audio_error', currentLang) : x('playbackRetry', currentLang)}</p>}
-        {audioState.isBuffering && <p role="status" className="sr-only">{x('audioLoading', currentLang)}</p>}
-        <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} language={currentLang} onSeek={(seconds) => audioPlayer.seek(seconds)} />
+        <Scrubber currentTime={audioState.currentTime} duration={resource.status === 'unavailable' ? 0 : audioState.duration} language={currentLang} status={audioState.isBuffering ? x('audioLoading', currentLang) : undefined} onSeek={(seconds) => audioPlayer.seek(seconds)} />
         <div className="player-transport-buttons">
           <button type="button" className="player-track-button" onClick={() => audioPlayer.prevStop()} disabled={currentIndex === 0} aria-label={t('btn_prev', currentLang)}><ChevronLeft size={26} aria-hidden="true" /><span>{t('btn_prev', currentLang)}</span></button>
           <button type="button" className="player-skip-button" disabled={resource.status === 'unavailable'} onClick={() => audioPlayer.rewind(15)} aria-label={t('rewind_15', currentLang)}><RotateCcw size={21} aria-hidden="true" /><span>15 s</span></button>
@@ -189,7 +202,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
           <input type="checkbox" checked={preferences[key]} onChange={() => toggle(key)} />
         </label>)}
         <div className="player-setting-row"><span>{t('voice_boost', currentLang)}</span><button type="button" className="player-secondary-button" aria-pressed={audioState.isVoiceBoostActive} onClick={() => audioPlayer.toggleVoiceBoost()}>{t(audioState.isVoiceBoostActive ? 'reading_on' : 'reading_off', currentLang)}</button></div>
-        <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p>{transcript && <TranscriptNotice transcript={transcript} language={currentLang} />}</details>
+        <details className="player-text-info"><summary>{t('archive_note_title', currentLang)}</summary><p>{t('archive_note_body', currentLang)}</p>{syntheticNarration && <p>{x('syntheticNarration', currentLang)}</p>}{transcript && <TranscriptNotice transcript={transcript} language={currentLang} />}</details>
         {nextStop && nextTitle && <button type="button" className="player-next-detail" onClick={() => onSelectStopDetail(nextStop.id)}>{t('next_stop_distance', currentLang)}<strong lang={nextTitle.language}>{nextTitle.text}</strong><ChevronRight size={20} aria-hidden="true" /></button>}
       </dialog>
     </div>

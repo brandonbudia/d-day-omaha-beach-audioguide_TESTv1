@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createHarness } from './harness.mjs';
+import { recordAudio } from './offline-scenario.mjs';
 
 async function press(tab, key, shift = false) {
   const virtualKey = { Tab: 9, Enter: 13, Escape: 27 }[key];
@@ -56,7 +57,7 @@ test('transcript keyboard actions keep focus when their controls leave the DOM',
   try {
     const build = await harness.build('transcript-keyboard');
     const { holdDownload } = await harness.serve(build);
-    const browser = await harness.openBrowser();
+    const browser = await harness.openBrowser({ install: recordAudio });
 
     await context.test('resuming follow keeps the keyboard in the transcript at 360 px', async () => {
       const tab = await playerTab(browser, 360, 740, true);
@@ -122,6 +123,89 @@ test('transcript keyboard actions keep focus when their controls leave the DOM',
       }
     });
 
+    await context.test('the compact player keeps its exhibit action reachable and its transcript readable', async () => {
+      for (const [width, height] of [[360, 540], [667, 375]]) {
+        const tab = await playerTab(browser, width, height, true);
+        try {
+          const layout = await tab.evaluate(() => {
+            const button = document.querySelector('.player-detail-link');
+            const rect = button.getBoundingClientRect();
+            const transcript = document.querySelector('.transcript-viewport');
+            const wordGroup = transcript.querySelector('[role="group"]');
+            return {
+              width: rect.width, height: rect.height,
+              reachable: button.contains(document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2)),
+              readingHeight: transcript.clientHeight,
+              firstParagraph: wordGroup.textContent,
+            };
+          });
+          assert.ok(layout.width >= 44 && layout.height >= 44 && layout.reachable, JSON.stringify(layout));
+          assert.ok(layout.readingHeight >= 44, JSON.stringify(layout));
+          assert.match(layout.firstParagraph, /Dans le sud normand, là où nous habitions avec mon père, une unité allemande dénommée la Panzer Lehr avait établi son quartier général dans cette région\./);
+          assert.deepEqual(await accessibleControl(tab, '.player-detail-link'), { role: 'button', name: 'Récit & Histoire', disabled: false });
+          if (width > height) {
+            await tab.click('header button[aria-label="Agrandir le texte"]');
+            await tab.waitFor(() => document.documentElement.classList.contains('large-text'));
+            for (let step = 0; step < 7; step += 1) {
+              const size = await tab.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.synced-transcript-phrase')).fontSize));
+              if (size >= 30) break;
+              await tab.click('.player-text-size button:last-child');
+              await tab.waitFor((previous) => parseFloat(getComputedStyle(document.querySelector('.synced-transcript-phrase')).fontSize) > previous, size);
+            }
+            const enlarged = await tab.evaluate(() => {
+              const title = document.querySelector('.player-station h2');
+              const viewport = document.querySelector('.transcript-viewport');
+              const button = document.querySelector('.player-detail-link');
+              const rect = button.getBoundingClientRect();
+              const transport = document.querySelector('.player-transport').getBoundingClientRect();
+              return {
+                title: title.textContent, titleHeight: title.clientHeight, titleScroll: title.scrollHeight,
+                clearsControls: title.getBoundingClientRect().bottom <= transport.top,
+                readingHeight: viewport.clientHeight,
+                textSize: getComputedStyle(viewport.querySelector('.synced-transcript-phrase')).fontSize,
+                reachable: button.contains(document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2)),
+              };
+            });
+            assert.match(enlarged.title, /les armes secrètes.*bâtisse délabrée/i);
+            assert.ok(enlarged.titleScroll <= enlarged.titleHeight + 1 && enlarged.clearsControls, JSON.stringify(enlarged));
+            assert.equal(enlarged.textSize, '30px');
+            assert.ok(enlarged.readingHeight >= 44 && enlarged.reachable, JSON.stringify(enlarged));
+            context.diagnostic(`${width}×${height}px agrandi, titre ${enlarged.titleHeight}px intégral et lecture ${enlarged.readingHeight}px à ${enlarged.textSize}.`);
+            await tab.click('header button[aria-label="Agrandir le texte"]');
+          }
+          await tab.waitFor(() => window.__ddayFixtureAudio.some((audio) => audio.currentSrc.includes('/audio/fr/stop-10.mp3') && audio.readyState >= 1));
+          await tab.click('.transcript-viewport .transcript-word');
+          const decoration = await tab.waitFor(() => {
+            const currentWord = document.querySelector('.transcript-word[aria-current="true"]');
+            return currentWord && getComputedStyle(currentWord).textDecorationLine;
+          });
+          assert.equal(decoration, 'underline');
+          await reachWithTab(tab, '.player-detail-link', { backwards: true });
+          assert.equal((await focused(tab)).visible, true);
+          await press(tab, 'Enter');
+          await tab.waitFor(() => location.pathname === '/stop/10');
+          context.diagnostic(`${width}×${height}px, zone de lecture ${layout.readingHeight}px et lien fiche ${layout.width}×${layout.height}px.`);
+        } finally {
+          await tab.close();
+        }
+      }
+      const tab = await browser.openTab();
+      try {
+        await tab.send('Emulation.setDeviceMetricsOverride', { width: 360, height: 540, deviceScaleFactor: 1, mobile: false });
+        await tab.navigate('/player?stop=09&hl=pl');
+        const provenance = await tab.waitFor(() => {
+          const note = document.querySelector('.player-narration-provenance');
+          const compact = note?.querySelector('.player-provenance-short');
+          return compact?.getClientRects().length && {
+            label: note.innerText, fullyVisible: note.scrollHeight <= note.clientHeight + 1,
+          };
+        });
+        assert.deepEqual(provenance, { label: 'Głos syntetyczny · nieoficjalne tłumaczenie', fullyVisible: true });
+      } finally {
+        await tab.close();
+      }
+    });
+
     await context.test('the keyboard opens the offline panel and its progress is exposed', async () => {
       const tab = await browser.openTab();
       let release;
@@ -130,7 +214,8 @@ test('transcript keyboard actions keep focus when their controls leave the DOM',
         await tab.navigate('/?hl=fr');
         await tab.waitFor(async () => (await navigator.serviceWorker.getRegistration())?.active?.state === 'activated');
         if (!await tab.evaluate(() => Boolean(navigator.serviceWorker.controller))) await tab.reload();
-        await tab.waitFor(() => document.documentElement.lang === 'fr' && navigator.serviceWorker.controller?.state === 'activated');
+        await tab.waitFor(() => document.documentElement.lang === 'fr' && navigator.serviceWorker.controller?.state === 'activated' &&
+          Boolean(document.querySelector('.offline-manager summary')));
         await reachWithTab(tab, '.offline-manager summary');
         await tab.evaluate(() => {
           const panel = document.querySelector('.offline-manager');

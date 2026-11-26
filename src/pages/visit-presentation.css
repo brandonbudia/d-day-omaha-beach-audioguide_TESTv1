@@ -1,0 +1,168 @@
+.visit-tour-controls {
+  padding: .85rem;
+  margin-block-end: 1rem;
+}
+
+.visit-tour-progress {
+  margin-block-end: .45rem;
+  font-size: .9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.visit-tour-help {
+  margin-block-start: .5rem;
+  font-size: .8125rem;
+  line-height: 1.45;
+}
+
+.visit-tour-search {
+  display: grid;
+  gap: .5rem;
+  margin-block-start: .85rem;
+}
+
+.visit-tour-search > label { min-inline-size: 0; }
+
+.visit-tour-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin-block-start: .65rem;
+}
+
+.visit-tour-filters button,
+.visit-station-play,
+.visit-station-favorite {
+  display: inline-flex;
+  min-block-size: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  border: 1px solid var(--museum-control-line);
+  border-radius: .6rem;
+  color: var(--museum-action);
+  padding: .35rem .65rem;
+  font-size: .875rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.visit-tour-filters button {
+  flex: 1 1 auto;
+  min-inline-size: min(100%, 4.5rem);
+  max-inline-size: 100%;
+  padding-inline: .45rem;
+}
+
+.visit-tour-filters button[aria-pressed="true"],
+.visit-station-play:hover {
+  background: var(--museum-action);
+  border-color: var(--museum-action);
+  color: var(--museum-on-action);
+}
+
+.visit-tour-filters button > span,
+.visit-station-play > span {
+  overflow-wrap: anywhere;
+}
+
+.visit-tour-filters button > svg,
+.visit-station-actions button > svg { flex-shrink: 0; }
+
+.visit-station-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--museum-line);
+  border-radius: var(--museum-radius-card);
+  background: var(--museum-card);
+}
+
+.visit-station-list > li + li { border-block-start: 1px solid var(--museum-line); }
+
+.visit-station-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .5rem;
+  border-inline-start: 3px solid transparent;
+  padding: .75rem;
+}
+
+.visit-station-card[data-playing="true"] {
+  border-inline-start-color: var(--museum-action);
+  background: var(--museum-soft);
+}
+
+.visit-station-list > :first-child .visit-station-card { border-radius: var(--museum-radius-card) var(--museum-radius-card) 0 0; }
+.visit-station-list > :last-child .visit-station-card { border-radius: 0 0 var(--museum-radius-card) var(--museum-radius-card); }
+.visit-station-list > :only-child .visit-station-card { border-radius: var(--museum-radius-card); }
+
+.visit-station-reference {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  align-items: start;
+  gap: .65rem;
+  min-inline-size: 0;
+  border-radius: .4rem;
+}
+
+.visit-station-reference > img {
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1;
+  border-radius: .4rem;
+  object-fit: cover;
+}
+
+.visit-station-copy { min-inline-size: 0; }
+.visit-station-number { margin-block-end: .15rem; }
+
+.visit-station-copy h2 {
+  font-size: 1.05rem;
+  font-weight: 750;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.visit-station-description {
+  margin-block-start: .2rem;
+  font-size: .8125rem;
+  line-height: 1.35;
+}
+
+.visit-station-status {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  margin-block-start: .25rem;
+  font-size: .8125rem;
+  font-weight: 600;
+}
+
+.visit-station-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  min-inline-size: 0;
+}
+
+.visit-station-play { flex: 1 1 7.5rem; background: var(--museum-reading); }
+.visit-station-favorite { flex: 0 0 auto; min-inline-size: 44px; padding-inline: .4rem; }
+.visit-station-favorite[aria-pressed="true"] { background: var(--museum-soft); }
+
+.visit-piece-heading { padding-block: .15rem .65rem; border-block-end: 1px solid var(--museum-line); }
+.visit-piece-heading h2 { overflow-wrap: anywhere; }
+.visit-piece-actions { display: grid; gap: .55rem; }
+.visit-piece-actions > button { white-space: normal; }
+.visit-piece-actions > button > svg { flex-shrink: 0; }
+.visit-piece-figure { display: grid; gap: .45rem; margin: 0; }
+.visit-piece-figure .museum-piece-image-note { margin: 0; }
+
+@media (min-width: 600px) {
+  .visit-tour-controls { padding: 1rem 1.15rem; }
+  .visit-tour-search { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .visit-station-card { grid-template-columns: minmax(0, 1fr) minmax(0, 11.75rem); align-items: center; }
+  .visit-station-reference { grid-template-columns: 4.5rem minmax(0, 1fr); }
+  .visit-station-actions { justify-content: flex-end; }
+}
