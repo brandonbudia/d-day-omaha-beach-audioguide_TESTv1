@@ -19,13 +19,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang,
     <div className="museum-language-grid">
       {LANGUAGES.map((lang) => (
         <button key={lang.code} onClick={() => onLanguageChange(lang.code)} className="museum-language-button" type="button" aria-label={lang.name} aria-pressed={lang.code === currentLang} aria-describedby={lang.code === currentLang ? 'language-audio-status' : undefined} lang={lang.code}>
-          <span className="museum-language-flag" aria-hidden="true">{lang.flag}</span>
-          <span>{lang.short}</span>
+          <span>{lang.name.replace(/ \([A-Z]{2}\)$/, '')}</span>
           {lang.code === currentLang && <Check size={14} className="museum-language-check" aria-hidden="true" />}
         </button>
       ))}
     </div>
-    <p className="museum-language-name" lang={currentLang}>{LANGUAGES.find((lang) => lang.code === currentLang)?.name}</p>
     <p className="museum-language-audio" id="language-audio-status" role="status">
       <span>{x('audioLanguages', currentLang, { languages: audioLanguages })}</span>
       <span>{summary.ready > 0 ? x('audioCount', currentLang, { count: summary.ready, total: summary.total }) : x(summary.unverified > 0 ? 'unverified' : 'interfaceOnly', currentLang)}</span>

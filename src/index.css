@@ -37,8 +37,8 @@
   color-scheme: dark;
   scroll-padding-block: var(--museum-header-height, 81px)
     calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px));
-  --museum-bg: #1C2528;
-  --museum-card: #263338;
+  --museum-bg: #192225;
+  --museum-card: #243032;
   --museum-reading: #101A1D;
   --museum-panel: #334347;
   --museum-text: #EBE8DF;
@@ -49,9 +49,10 @@
   --museum-line: #52676A;
   --museum-control-line: #82999A;
   --museum-ochre: #B99556;
+  --museum-caption: #D4B478;
   --museum-focus: #ADDFE2;
-  --museum-radius-card: 1rem;
-  --museum-radius-control: .75rem;
+  --museum-radius-card: .65rem;
+  --museum-radius-control: .45rem;
 }
 html.light-mode {
   color-scheme: light;
@@ -66,6 +67,7 @@ html.light-mode {
   --museum-soft: #E1EAE5;
   --museum-line: #B7C3BC;
   --museum-control-line: #748B88;
+  --museum-caption: #775420;
   --museum-focus: #245D64;
 }
 html.high-contrast {
@@ -173,7 +175,7 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 .museum-header { background: var(--museum-bg); border-bottom: 1px solid var(--museum-line); }
 .museum-header-inner { display: flex; align-items: center; gap: .5rem; min-height: 68px; padding: .25rem .75rem; max-width: 70rem; margin-inline: auto; }
 .museum-home-link { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; border-radius: .5rem; flex-shrink: 0; }
-.museum-header-title { font: 700 clamp(1rem, 3.5vw, 1.25rem)/1.2 var(--font-serif); color: var(--museum-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; flex: 1; min-width: 0; }
+.museum-header-title { font: 700 clamp(1rem, 3.5vw, 1.25rem)/1.2 var(--font-serif); color: var(--museum-text); overflow-wrap: anywhere; margin: 0; flex: 1; min-width: 0; }
 .museum-header-controls { display: flex; align-items: center; gap: .125rem; flex-shrink: 0; }
 .museum-profile-symbol { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--museum-muted); }
 .museum-install-button { background: var(--museum-soft); color: var(--museum-action); }
@@ -190,35 +192,32 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
 @media (max-width: 639px) { .tour-filters button:last-child { grid-column: 1 / -1; } }
 @media (min-width: 640px) { .tour-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
-.museum-welcome { display: flex; flex-direction: column; gap: 1.1rem; width: 100%; padding-bottom: 1rem; }
-.museum-welcome-hero { overflow: hidden; border-radius: 1.15rem; background: var(--museum-card); border: 1px solid var(--museum-line); }
-.museum-welcome-photos { display: grid; grid-template-columns: 1.65fr 1fr; gap: 4px; height: clamp(150px, 35vw, 230px); overflow: hidden; background: var(--museum-line); }
-.museum-welcome-photos img { width: 100%; height: 100%; object-fit: cover; }
-.museum-welcome-main-photo { object-position: center 58%; }
-.museum-welcome-detail-photo { object-position: 44% center; }
-.museum-welcome-intro { position: relative; padding: 1.4rem 1.3rem 1.5rem; }
-.museum-welcome-brand { position: absolute; right: 1.2rem; top: 1.1rem; opacity: .9; }
-.museum-welcome-brand .museum-brand-mark { width: 50px; height: 50px; }
-.museum-welcome-intro .museum-eyebrow { padding-right: 50px; }
-.museum-welcome-intro h2 { font: 700 clamp(1.75rem, 6.5vw, 2.4rem)/1.15 var(--font-serif); letter-spacing: -.02em; margin-block: .5rem .6rem; padding-right: 2rem; }
+.app-main[data-view="accueil"] { max-width: 69rem; }
+.museum-welcome { display: flex; flex-direction: column; gap: 1rem; width: 100%; padding-bottom: .5rem; }
+.museum-welcome-hero { overflow: hidden; border-radius: var(--museum-radius-card); background: var(--museum-card); border: 1px solid var(--museum-line); }
+.museum-welcome-photos { height: clamp(8rem, 39vw, 16rem); overflow: hidden; background: var(--museum-panel); }
+.museum-welcome-photos img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.museum-welcome-intro { padding: clamp(1rem, 3.5vw, 2.8rem); }
+.museum-welcome-intro .museum-eyebrow { display: flex; align-items: center; gap: .7rem; color: var(--museum-caption); }
+.museum-welcome-intro .museum-eyebrow::before { content: ''; width: 1.75rem; height: 1px; flex-shrink: 0; background: currentColor; }
+.museum-welcome-intro h2 { font: 700 clamp(1.9rem, 5vw, 3.6rem)/1.03 var(--font-serif); letter-spacing: -.035em; margin-block: .7rem; }
 .museum-welcome-description { color: var(--museum-text); font-size: 1.1rem; max-width: 30rem; line-height: 1.45; }
 .museum-welcome-subtitle { color: var(--museum-muted); font-size: .875rem; margin-top: .65rem; }
 .museum-welcome-collection { color: var(--museum-muted); font-size: .8rem; margin-top: .4rem; }
-.museum-start-visit { width: 100%; }
+.museum-start-visit { width: 100%; margin-top: 1.1rem; }
+.museum-start-visit svg { flex-shrink: 0; }
 .museum-start-visit span { flex: 1; }
 .museum-resume-card { display: flex; align-items: center; gap: .85rem; min-height: 80px; width: 100%; padding: 1rem; text-align: left; color: var(--museum-action); }
 .museum-resume-card > span { flex: 1; min-width: 0; }
 .museum-resume-card strong { display: block; font-size: 1.05rem; }
 .museum-resume-card small { display: block; font-size: .875rem; font-weight: 400; color: var(--museum-muted); margin-top: .2rem; }
-.museum-language-selector { padding: 1rem; }
+.museum-language-selector { padding: clamp(.85rem, 2vw, 1.25rem); }
 .museum-language-selector h3 { display: flex; align-items: center; gap: .6rem; font: 600 1rem/1.35 var(--font-sans); margin-bottom: .85rem; }
 .museum-language-selector h3 svg { color: var(--museum-action); flex-shrink: 0; }
-.museum-language-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .5rem; }
-.museum-language-button { position: relative; display: flex; align-items: center; justify-content: center; gap: .4rem; min-height: 48px; min-width: 0; border: 1px solid var(--museum-control-line); border-radius: .65rem; color: var(--museum-muted); font-size: .875rem; font-weight: 650; }
+.museum-language-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 6.1rem),1fr)); gap: .45rem; }
+.museum-language-button { position: relative; display: flex; align-items: center; justify-content: center; gap: .35rem; min-height: 44px; min-width: 0; padding: .25rem; overflow-wrap: anywhere; border: 1px solid var(--museum-control-line); border-radius: var(--museum-radius-control); color: var(--museum-text); font-size: .875rem; font-weight: 650; }
 .museum-language-button[aria-pressed="true"] { background: var(--museum-action); color: var(--museum-on-action); border-color: var(--museum-action); }
-.museum-language-flag { font-size: 1.1rem; line-height: 1; }
-.museum-language-check { position: absolute; top: 2px; right: 2px; }
-.museum-language-name { font-size: .875rem; color: var(--museum-muted); margin-top: .6rem; }
+.museum-language-check { flex-shrink: 0; }
 .museum-language-audio { margin-top: .5rem; color: var(--museum-muted); font-size: .875rem; line-height: 1.5; }
 .museum-language-audio span { display: block; }
 .museum-visit-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem; }
@@ -352,15 +351,12 @@ main [class~="text-[12px]"], main [class~="text-[13px]"] { font-size: .875rem; }
   .museum-mini-player-inner { padding-inline: .5rem; }
   .museum-mini-player-open { gap: .4rem; }
   .museum-mini-player-meta > span { font-size: .65rem; }
-  .museum-welcome-intro { padding-inline: 1rem; }
-  .museum-welcome-intro h2 { font-size: 1.65rem; padding-right: 1.5rem; }
 }
-@media (min-width: 900px) {
-  .museum-welcome-hero { display: grid; grid-template-columns: 1fr 1.1fr; }
-  .museum-welcome-photos { height: 100%; min-height: 290px; grid-template-columns: 1fr; }
-  .museum-welcome-detail-photo { display: none; }
-  .museum-welcome-intro { align-self: center; padding: 2rem; }
-  .museum-welcome-brand { right: 1.5rem; top: 1.5rem; }
+@media (min-width: 740px) {
+  .museum-welcome-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+  .museum-welcome-photos { position: relative; height: auto; min-height: 19rem; border-right: 1px solid var(--museum-line); }
+  .museum-welcome-photos img { position: absolute; inset: 0; }
+  .museum-welcome-intro { align-self: center; }
 }
 
 /* Exact legacy utility tokens use the same semantic palette in both themes.

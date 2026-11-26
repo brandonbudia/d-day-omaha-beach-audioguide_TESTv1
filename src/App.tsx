@@ -147,7 +147,7 @@ export default function App() {
         main.focus();
       }}>{x('skipToContent', language)}</a>
       <Header title={titles[activeTab]} installation={installation} onGoHome={goHome} onOpenInstallGuide={() => setIsInstallModalOpen(true)} />
-      <main id="main-content" tabIndex={-1} aria-label={titles[activeTab]} className="app-main flex-1 relative w-full px-4 max-w-3xl mx-auto" style={{ paddingTop: 'calc(var(--museum-header-height, 81px) + 1rem)', paddingBottom: 'calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px) + 1.5rem)' }}>
+      <main id="main-content" tabIndex={-1} aria-label={titles[activeTab]} className="app-main flex-1 relative w-full px-4 max-w-3xl mx-auto" data-view={activeTab} style={{ paddingTop: 'calc(var(--museum-header-height, 81px) + 1rem)', paddingBottom: 'calc(var(--museum-nav-height, 81px) + var(--museum-mini-player-height, 0px) + 1.5rem)' }}>
         <div role="status">{updateWaiting && <p className="offline-notice">{x('pwaUpdateWaiting', language)}</p>}</div>
         {activeTab === 'accueil' && <div className="space-y-5">
           <WelcomePage key={homeRevision} onStartTour={() => go('parcours')} currentLang={language} onLanguageChange={(lang) => {
