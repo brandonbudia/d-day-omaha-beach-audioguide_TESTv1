@@ -222,7 +222,7 @@ test('PWA A/B/C waits without interrupting visitors, then preserves storage acro
     const partial = await c.waitFor(() => document.querySelector('.offline-manager').innerText.includes('1/2 commentaires téléchargés'));
     assert(partial);
     assert.equal(await c.evaluate(() => document.querySelector('.offline-manager').innerText.includes('Visite prête hors connexion')), false);
-    await c.click('.offline-manager button', 'Télécharger cette langue');
+    await c.click('.offline-manager button', 'Compléter le téléchargement');
     await c.waitFor(() => document.querySelector('.offline-manager').innerText.includes('Visite prête hors connexion'));
     const currentPack = await c.evaluate(readFrenchPack);
     assert.deepEqual(currentPack.audio.map(({ url }) => url).sort(), [A.tracks['fr/10'].url, C.tracks['fr/10'].url, C.tracks['fr/11'].url].sort());

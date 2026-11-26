@@ -33,36 +33,36 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
       {state.error && !unavailable && <p role="alert" className="museum-mini-player-error">{state.errorReason === 'network' ? t('audio_error', state.language) : x('playbackRetry', state.language)}</p>}
       {state.isBuffering && <p role="status" className="sr-only">{x('audioLoading', state.language)}</p>}
       <div className="museum-mini-player-inner">
-        <input
+        {duration > 0 && <input
           type="range"
           className="museum-mini-player-range"
           min={0}
-          max={duration || 1}
+          max={duration}
           step={0.1}
           value={Math.min(duration, Math.max(0, state.currentTime))}
-          disabled={duration <= 0}
           onChange={(event) => audioPlayer.seek(Number(event.currentTarget.value))}
           onKeyDown={(event) => {
-            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+            const direction = ['ArrowRight', 'ArrowUp'].includes(event.key) ? 1 : ['ArrowLeft', 'ArrowDown'].includes(event.key) ? -1 : 0;
+            if (direction) {
               event.preventDefault();
-              audioPlayer.seek(Math.max(0, Math.min(duration, state.currentTime + (event.key === 'ArrowRight' ? 5 : -5))));
+              audioPlayer.seek(Math.max(0, Math.min(duration, state.currentTime + direction * 5)));
             }
           }}
           style={{ '--audio-progress': `${progress}%` } as React.CSSProperties}
           aria-label={visualLabel(state.language, 'audioProgress')}
           aria-valuetext={`${formatTime(state.currentTime)} ${visualLabel(state.language, 'audioTime')} ${formatTime(duration)}`}
-        />
+        />}
         <div className="museum-mini-player-row">
           <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-labelledby={`${openLabelId} ${titleId}`}>
             <span id={openLabelId} className="sr-only" lang={state.language}>{visualLabel(state.language, 'openPlayer')}</span>
             <img src={currentStop.imageUrl} alt="" width="44" height="44" />
             <span className="museum-mini-player-copy">
               <span className="museum-mini-player-meta">{t('nav_stop', state.language)} {currentStop.number}<span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span></span>
-              <strong id={titleId} lang={title.language}>{title.text}</strong>
+            <strong id={titleId} lang={title.language} title={title.text}>{title.text}</strong>
             </span>
           </button>
           <div className="museum-mini-player-controls">
-            <button type="button" onClick={() => audioPlayer.prevStop()} aria-label={visualLabel(state.language, 'previous')} className="museum-icon-button"><SkipBack size={21} aria-hidden="true" /></button>
+            <button type="button" onClick={() => audioPlayer.prevStop()} aria-label={currentStop.id === STOPS[0].id ? x('backToAudioStart', state.language) : visualLabel(state.language, 'previous')} className="museum-icon-button"><SkipBack size={21} aria-hidden="true" /></button>
             <button type="button" disabled={unavailable} onClick={() => {
               audioPlayer.togglePlayPause();
               if (!state.isPlaying && !state.isBuffering) onOpenFullPlayer();
