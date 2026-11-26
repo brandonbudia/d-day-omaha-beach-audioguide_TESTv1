@@ -449,12 +449,13 @@ test('hiding an active tab flushes its real position and returning to a paused t
   assert.equal(writes(), 1);
 });
 
-test('a natural end after discontinuous listening remains completed when the station is replayed', async (context) => {
+test('a natural end at 3× remains completed when the station is replayed at 0.5×', async (context) => {
   let now = 1000;
   context.mock.method(Date, 'now', () => now);
   const { media, player, start, visitorStore } = await fixture('complete-and-replay');
   const duration = getMediaResource('01', 'fr').durationSeconds;
   media.duration = duration;
+  player.setPlaybackRate(3);
   await start();
   media.currentTime = duration;
   media.playedRanges = [[0, duration / 2], [duration * 0.55, duration]];
@@ -470,6 +471,7 @@ test('a natural end after discontinuous listening remains completed when the sta
   assert.equal(visitorStore.getSnapshot().pieces['01'].listening.fr?.completedAt, 1500);
 
   player.setStop('01', false);
+  player.setPlaybackRate(0.5);
   await start();
   now = 2000;
   media.currentTime = 3;
@@ -875,6 +877,69 @@ test('audio preferences validate their values and protect unreadable or future f
     assert.equal(protectedPreferences.player.getState().playbackRate, 1.25);
     assert.equal(protectedPreferences.player.getState().isVoiceBoostActive, false);
   }
+});
+
+test('precise playback rates share the legacy shortcut, preserve position and persist across tracks and reload', async () => {
+  const preferenceKey = 'dday-audio-preferences-v1';
+  const { player, media, start, visitorStore } = await fixture('precise-rate');
+  await start();
+  media.currentTime = 7;
+  media.playedRanges = [[0, 7]];
+  media.dispatchEvent(new Event('timeupdate'));
+  const before = { plays: media.playCalls, pauses: media.pauseCalls, loads: media.loadCalls, sources: media.sourceAssignments.length };
+  for (const rate of [0.50, 0.55, 0.85, 1, 1.35, 1.95, 2, 2.75, 3]) {
+    player.setPlaybackRate(rate);
+    assert.equal(media.playbackRate, rate);
+    assert.equal(player.getState().playbackRate, rate);
+    assert.equal(media.currentTime, 7);
+    assert.equal(media.paused, false);
+  }
+  for (const invalid of [0.45, 3.05, 1.01, NaN, Infinity]) player.setPlaybackRate(invalid);
+  assert.equal(media.playbackRate, 3);
+  assert.deepEqual({ plays: media.playCalls, pauses: media.pauseCalls, loads: media.loadCalls, sources: media.sourceAssignments.length }, before);
+  player.flushCheckpoint();
+  assert.deepEqual(visitorStore.getSnapshot().pieces['01'].listening.fr?.heardRanges, [[0, 7]]);
+  assert.equal(visitorStore.getSnapshot().pieces['01'].listening.fr?.completedAt, undefined);
+
+  for (const expected of [1, 1.25, 0.8, 1]) {
+    player.cyclePlaybackRate();
+    assert.equal(media.playbackRate, expected);
+  }
+  player.pause();
+  media.flush();
+  player.setPlaybackRate(2.75);
+  assert.equal(media.paused, true);
+  assert.equal(media.currentTime, 7);
+  player.setStop('10', false);
+  assert.equal(media.playbackRate, 2.75);
+  player.setLanguage('en');
+  assert.equal(media.playbackRate, 2.75);
+  const saved = storedValues.get(preferenceKey)!;
+  const reloaded = await fixture('precise-rate-reload', { [preferenceKey]: saved });
+  assert.equal(reloaded.media.playbackRate, 2.75);
+  assert.equal(reloaded.media.playCalls, 0);
+});
+
+test('a rejected native speed stays out of the displayed and persisted preference', async () => {
+  const preferenceKey = 'dday-audio-preferences-v1';
+  const { player, media } = await fixture('native-rate-refused');
+  player.setPlaybackRate(1.35);
+  let applied = 1.35;
+  Object.defineProperty(media, 'playbackRate', {
+    get: () => applied,
+    set: (rate) => {
+      if (rate === 3) throw new DOMException('Unsupported speed', 'NotSupportedError');
+      if (rate !== 2.75) applied = rate; // An engine can also decline by keeping the current value.
+    },
+  });
+  for (const rate of [3, 2.75]) {
+    player.setPlaybackRate(rate);
+    assert.equal(player.getState().playbackRate, 1.35);
+    assert.equal(player.getState().playbackRateRejected, true);
+    assert.equal(JSON.parse(storedValues.get(preferenceKey)!).playbackRate, 1.35);
+  }
+  player.setPlaybackRate(1);
+  assert.equal(player.getState().playbackRateRejected, false);
 });
 
 test('a paused seek after restoration saves only position and never creates listening for an unheard station', async () => {

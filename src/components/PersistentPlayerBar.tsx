@@ -21,12 +21,14 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
   const [state, setState] = React.useState<AudioState>(audioPlayer.getState());
   const openLabelId = React.useId();
   const titleId = React.useId();
+  const speedId = React.useId();
   React.useEffect(() => audioPlayer.subscribe(setState), []);
   const currentStop = STOPS.find((stop) => stop.id === state.currentStopId) || STOPS[0];
   const title = getStopLabel(currentStop, state.language);
   const unavailable = getMediaResource(currentStop.id, state.language).status === 'unavailable';
   const duration = !unavailable && Number.isFinite(state.duration) ? Math.max(0, state.duration) : 0;
   const progress = duration > 0 ? Math.max(0, Math.min(100, state.currentTime / duration * 100)) : 0;
+  const showSpeed = !unavailable && state.playbackRate !== 1;
 
   return (
     <aside aria-label={visualLabel(state.language, 'persistentPlayer')} className="museum-mini-player fixed inset-x-0 z-40">
@@ -53,11 +55,15 @@ export const PersistentPlayerBar: React.FC<PersistentPlayerBarProps> = ({ onOpen
           aria-valuetext={`${formatTime(state.currentTime)} ${visualLabel(state.language, 'audioTime')} ${formatTime(duration)}`}
         />}
         <div className="museum-mini-player-row">
-          <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-labelledby={`${openLabelId} ${titleId}`}>
+          <button type="button" className="museum-mini-player-open" onClick={onOpenFullPlayer} aria-labelledby={`${openLabelId} ${titleId}`} aria-describedby={showSpeed ? speedId : undefined}>
             <span id={openLabelId} className="sr-only" lang={state.language}>{visualLabel(state.language, 'openPlayer')}</span>
             <img src={currentStop.imageUrl} alt="" width="44" height="44" />
             <span className="museum-mini-player-copy">
-              <span className="museum-mini-player-meta">{t('nav_stop', state.language)} {currentStop.number}<span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span></span>
+              <span className="museum-mini-player-meta">
+                {t('nav_stop', state.language)} {currentStop.number}
+                <span>{unavailable ? x('readText', state.language) : `${formatTime(state.currentTime)} / ${formatTime(duration)}`}</span>
+                {showSpeed && <span className="museum-mini-player-speed"><span id={speedId} className="sr-only">{t('reading_speed_current', state.language, { speed: state.playbackRate })}</span><span aria-hidden="true">{state.playbackRate}×</span></span>}
+              </span>
             <strong id={titleId} lang={title.language} title={title.text}>{title.text}</strong>
             </span>
           </button>

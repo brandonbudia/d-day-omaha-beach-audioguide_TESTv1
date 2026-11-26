@@ -65,6 +65,11 @@ test('fixture pack survives offline tour, native playback and a full Chrome rest
     const stable = await tab.evaluate(audioSample);
     assert.equal(stable.paused, true);
     assert(Math.abs(stable.time - pause.time) < 0.1);
+    await tab.click('.player-settings-button');
+    await tab.click('.player-rate-presets button', '2,00×');
+    await tab.waitFor(() => window.__ddayFixtureAudio[0].playbackRate === 2);
+    assert(Math.abs((await tab.evaluate(audioSample)).time - stable.time) < 0.1);
+    await tab.click('.player-settings-heading button');
     await tab.click('main button', 'Écouter');
     const resumed = await until(async () => {
       const sample = await tab.evaluate(audioSample);
@@ -90,7 +95,10 @@ test('fixture pack survives offline tour, native playback and a full Chrome rest
     await tab.waitFor(() => document.readyState === 'complete' && !navigator.onLine && navigator.serviceWorker.controller?.state === 'activated' && Boolean(document.querySelector('main')));
     const secondFailure = await offlineProof(tab, probePath);
     assert.deepEqual(await tab.evaluate(readFrenchPack), initial);
-    context.diagnostic(`${browser.product}; ${build.shared} ressources communes et ${initial.audio.length} MP3 vérifiés; ${firstFailure}/${secondFailure}; FR10 206 Service Worker, ${resumed.decoded} octets décodés; cache identique après redémarrage.`);
+    await tab.navigate('/player?stop=10&hl=fr');
+    await tab.waitFor(() => window.__ddayFixtureAudio[0].playbackRate === 2 &&
+      document.querySelector('.player-speed-button strong')?.textContent === '2×');
+    context.diagnostic(`${browser.product}; ${build.shared} ressources communes et ${initial.audio.length} MP3 vérifiés; ${firstFailure}/${secondFailure}; FR10 206 Service Worker, ${resumed.decoded} octets décodés; cache identique et vitesse 2× conservée après redémarrage.`);
   } catch (error) {
     const recent = tab?.events.filter(({ type }) => type === 'Network.loadingFailed' || type === 'Runtime.exceptionThrown').slice(-5);
     context.diagnostic(JSON.stringify({ stage, recent }));

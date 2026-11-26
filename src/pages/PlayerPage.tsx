@@ -4,6 +4,7 @@ import { audioPlayer, AudioState } from '../audio/audioStore';
 import { STOPS } from '../data/stops';
 import { LANGUAGES, t, SupportedLanguage } from '../i18n/translations';
 import { Scrubber } from '../components/Scrubber';
+import { PlaybackSpeedSettings } from '../components/PlaybackSpeedSettings';
 import { SyncedTranscript } from '../components/SyncedTranscript';
 import { TranscriptNotice } from '../components/TranscriptNotice';
 import { useReadingPreferences } from '../hooks/useReadingPreferences';
@@ -184,6 +185,7 @@ export const PlayerPage: React.FC<PlayerPageProps> = ({ onSelectStopDetail, curr
         if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) setSettingsOpen(false);
       }}>
         <div className="player-settings-heading"><h2 id="player-settings-title">{t('reading_settings', currentLang)}</h2><button type="button" className="player-icon-button" onClick={() => setSettingsOpen(false)} aria-label={t('close_reading_settings', currentLang)}><X size={22} aria-hidden="true" /></button></div>
+        <PlaybackSpeedSettings language={currentLang} rate={audioState.playbackRate} rejected={audioState.playbackRateRejected} onRateChange={(rate) => audioPlayer.setPlaybackRate(rate)} />
         {showsFollowingHelp && <aside className="player-reading-help" aria-label={t('reading_help_title', currentLang)}>
           <h3>{t('reading_help_title', currentLang)}</h3>
           <ul>

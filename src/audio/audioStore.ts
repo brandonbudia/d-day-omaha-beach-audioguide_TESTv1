@@ -2,6 +2,7 @@ import { STOPS, StopData } from '../data/stops';
 import { LANGUAGES, SupportedLanguage } from '../i18n/translations';
 import { getMediaResource } from '../data/mediaCatalog';
 import { visitorStore, type HeardRange, type PlaybackCheckpoint } from '../visit/visitorStore';
+import { validatePlaybackRate } from './playbackRate';
 
 export interface AudioState {
   currentStopId: string;
@@ -10,6 +11,7 @@ export interface AudioState {
   currentTime: number;
   duration: number;
   playbackRate: number;
+  playbackRateRejected: boolean;
   isVoiceBoostActive: boolean;
   language: SupportedLanguage;
   error: 'unavailable' | 'playback' | null;
@@ -18,7 +20,7 @@ export interface AudioState {
 
 type AudioListener = (state: AudioState) => void;
 const AUDIO_PREFERENCES_KEY = 'dday-audio-preferences-v1';
-const PLAYBACK_RATES = [1.0, 1.25, 0.8];
+const SHORTCUT_RATES = [1.0, 1.25, 0.8];
 // HTMLMediaElement readiness levels and MediaError codes are available even in hosts
 // that do not expose the corresponding constructors as globals.
 const HAVE_FUTURE_DATA = 3;
@@ -77,7 +79,7 @@ class GlobalAudioPlayer {
       const preferences: unknown = saved === null ? { version: 1 } : JSON.parse(saved);
       if (isAudioPreferences(preferences)) {
         this.audioPreferences = { ...preferences };
-        if (typeof preferences.playbackRate === 'number' && PLAYBACK_RATES.includes(preferences.playbackRate)) savedRate = preferences.playbackRate;
+        savedRate = validatePlaybackRate(preferences.playbackRate) ?? savedRate;
         if (typeof preferences.isVoiceBoostActive === 'boolean') savedVoiceBoost = preferences.isVoiceBoostActive;
       }
     } catch { /* An unreadable or unknown preference format is preserved untouched. */ }
@@ -100,6 +102,7 @@ class GlobalAudioPlayer {
       currentTime: initialPosition,
       duration: initialResource.status === 'unavailable' ? 0 : initialResource.durationSeconds,
       playbackRate: savedRate,
+      playbackRateRejected: false,
       isVoiceBoostActive: savedVoiceBoost,
       language: initialLang,
       error: null,
@@ -120,6 +123,7 @@ class GlobalAudioPlayer {
     this.audioElement = new Audio();
     this.audioElement.crossOrigin = 'anonymous';
     this.audioElement.preload = 'metadata';
+    if ('preservesPitch' in this.audioElement) this.audioElement.preservesPitch = true;
 
     this.audioElement.addEventListener('timeupdate', () => {
       if (this.audioElement) {
@@ -247,7 +251,9 @@ class GlobalAudioPlayer {
       this.state.duration = resource.durationSeconds;
       this.audioElement.src = resource.url;
     }
-    this.audioElement.playbackRate = this.state.playbackRate;
+    const rate = this.state.playbackRate;
+    this.state.playbackRate = this.applyPlaybackRate(rate);
+    if (this.state.playbackRate !== rate) this.state.playbackRateRejected = true;
     void this.syncAudioContext().catch(() => {});
   }
 
@@ -584,14 +590,26 @@ class GlobalAudioPlayer {
   }
 
   public cyclePlaybackRate() {
-    const currentIndex = PLAYBACK_RATES.indexOf(this.state.playbackRate);
-    const nextRate = PLAYBACK_RATES[(currentIndex + 1) % PLAYBACK_RATES.length];
-    this.state.playbackRate = nextRate;
-    if (this.audioElement) {
-      this.audioElement.playbackRate = nextRate;
-    }
-    this.saveAudioPreferences();
+    const currentIndex = SHORTCUT_RATES.indexOf(this.state.playbackRate);
+    this.setPlaybackRate(SHORTCUT_RATES[(currentIndex + 1) % SHORTCUT_RATES.length]);
+  }
+
+  public setPlaybackRate(value: number) {
+    const rate = validatePlaybackRate(value);
+    if (rate === undefined) return;
+    this.state.playbackRate = this.applyPlaybackRate(rate);
+    this.state.playbackRateRejected = this.state.playbackRate !== rate;
+    if (!this.state.playbackRateRejected) this.saveAudioPreferences();
     this.notify();
+  }
+
+  private applyPlaybackRate(rate: number) {
+    const media = this.audioElement;
+    if (!media) return rate;
+    try {
+      if (media.playbackRate !== rate) media.playbackRate = rate;
+    } catch { /* Keep reporting the rate accepted by this media element. */ }
+    return media.playbackRate;
   }
 
   public toggleVoiceBoost() {
